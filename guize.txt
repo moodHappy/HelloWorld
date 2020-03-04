@@ -131,6 +131,7 @@ Proxy Group:
     - "c26s3.jamjams.net"
   url: 'http://www.gstatic.com/generate_204'
   interval: 300
+  
 # 代理节点选择
 - name: "PROXY"
   type: select
