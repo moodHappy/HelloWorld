@@ -110,7 +110,7 @@ Proxy:
   type: ss
   server: c26s1.jamjams.net
   port: 51329
-  cipher: chacha20-ietf-poly1305
+  cipher: aes-256-gcm
   password: "uHUfLv5N5B"
   plugin: obfs
   plugin-opts:                 
