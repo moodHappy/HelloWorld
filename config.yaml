@@ -28,11 +28,11 @@ secret: ''
 
 
 Proxy:
-- {"name":"Just My Socks1","type":"ss","server":"c8s1.jamjams.net","port":123123,"cipher":"aes-256-gcm","password":"123123"}
-- {"name":"Just My Socks2","type":"ss","server":"c8s2.jamjams.net","port":123123,"cipher":"aes-256-gcm","password":"123123"}
-- {"name":"Just My Socks3","type":"ss","server":"c8s3.jamjams.net","port":123123,"cipher":"aes-256-gcm","password":"123123","obfs":"tls"}
-- {"name":"Just My Socks4","type":"ss","server":"c8s4.jamjams.net","port":123123,"cipher":"aes-256-gcm","password":"123123","obfs":"tls"}
-- {"name":"Just My Socks5","type":"ss","server":"c8s5.jamjams.net","port":123123,"cipher":"aes-256-cfb","password":"123123"}
+- {"name":"Just My Socks1","type":"ss","server":"c26s1.jamjams.net","port":51329,"cipher":"aes-256-gcm","password":"uHUfLv5N5B"}
+- {"name":"Just My Socks2","type":"ss","server":"c26s2.jamjams.net","port":51329,"cipher":"aes-256-gcm","password":"uHUfLv5N5B"}
+- {"name":"Just My Socks3","type":"ss","server":"c26s3.jamjams.net","port":51329,"cipher":"aes-256-gcm","password":"uHUfLv5N5B","obfs":"tls"}
+- {"name":"Just My Socks4","type":"ss","server":"c26s4.jamjams.net","port":51329,"cipher":"aes-256-gcm","password":"uHUfLv5N5B","obfs":"tls"}
+- {"name":"Just My Socks5","type":"ss","server":"c26s5.jamjams.net","port":51329,"cipher":"aes-256-cfb","password":"uHUfLv5N5B"}
 
 
 Proxy Group:
