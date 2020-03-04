@@ -106,9 +106,9 @@ Proxy:
 # 配置开始
 #第二种配置
 # Shadowsocks + simple-obfs   配置范本
-- name: "c26s1.jamjams.net"
+- name: "c26s3.jamjams.net"
   type: ss
-  server: c26s1.jamjams.net
+  server: c26s3.jamjams.net
   port: 51329
   cipher: aes-256-gcm
   password: "uHUfLv5N5B"
@@ -128,7 +128,7 @@ Proxy Group:
 - name: "自动节点选择"
   type: url-test
   proxies:
-    - "c26s1.jamjams.net"
+    - "c26s3.jamjams.net"
   url: 'http://www.gstatic.com/generate_204'
   interval: 300
 # 代理节点选择
@@ -136,7 +136,7 @@ Proxy Group:
   type: select
   proxies:
     - "自动节点选择"
-    - "c26s1.jamjams.net"
+    - "c26s3.jamjams.net"
 # 白名单模式 PROXY，黑名单模式 DIRECT
 - name: "Final"
   type: select
@@ -154,13 +154,13 @@ Proxy Group:
   type: select
   proxies:
     - "PROXY"
-    - "c26s1.jamjams.net"
+    - "c26s3.jamjams.net"
 # 大陆流媒体面向港澳台限定服务
 - name: "HKMTMedia"
   type: select
   proxies:
     - "DIRECT"
-    - "c26s1.jamjams.net"
+    - "c26s3.jamjams.net"
 # 运营商及声名狼藉网站劫持
 - name: "Hijacking"
   type: select
