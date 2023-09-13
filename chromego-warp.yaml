@@ -1,0 +1,466 @@
+mixed-port: 7890
+allow-lan: false
+log-level: info
+dns:
+  enabled: true
+  nameserver:
+  - 119.29.29.29
+  - 223.5.5.5
+  fallback:
+  - 8.8.8.8
+  - 8.8.4.4
+  - tls://1.0.0.1:853
+  - tls://dns.google:853
+proxies:
+- name: 油管-绵阿羊
+  type: trojan
+  server: a
+  port: 1
+  password: 72ac875a-f5b9-461e-a7a4-942b468b0d83
+  udp: true
+  sni: gw.alicdn.com
+  skip-cert-verify: true
+- name: WARP
+  type: wireguard
+  server: engage.cloudflareclient.com
+  port: 2408
+  ip: 172.16.0.2
+  ipv6: 2606:4700:110:87c0:ba32:773a:8d44:e353
+  private-key: +HpHpY/KjSv5hJdGrN2ok1A6CKhCmTQv5Unwyul9S1g=
+  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+  udp: true
+  reserved:
+  - 0
+  - 0
+  - 0
+  remote-dns-resolve: true
+  dns:
+  - 1.1.1.1
+  - 8.8.8.8
+  dialer-proxy: WARP前置节点
+- name: meta11
+  type: vless
+  server: 108.181.18.187
+  port: 443
+  udp: true
+  uuid: cb26c708-2cbb-4cad-b66d-d7e39808dfad
+  tls: true
+  servername: addons.mozilla.org
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: ipkaULYBqXoRYrNMFDayyc_kFta1POlXisjhHbzZxy4
+  client-fingerprint: chrome
+- name: meta21
+  type: vless
+  server: 108.181.22.130
+  port: 17768
+  udp: true
+  uuid: ddf498c9-9ded-4f04-8f8c-22737e13f18a
+  tls: true
+  servername: www.lovelive-anime.jp
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: yQ6_r7lGEwNA20d4wdcMtbll75rH3Hv7W74Nn_503Cs
+  client-fingerprint: chrome
+- name: meta31
+  type: vless
+  server: 185.22.153.124
+  port: 34562
+  udp: true
+  uuid: 1aebdc19-0794-40c8-98fd-ed4eb69aa596
+  tls: true
+  servername: itunes.apple.com
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: DL3tRdvx41PM2ia5va65Arz9iadqDgF9DXbfpuYa-Qc
+  client-fingerprint: chrome
+- name: meta41
+  type: vless
+  server: 185.22.153.124
+  port: 34562
+  udp: true
+  uuid: 1aebdc19-0794-40c8-98fd-ed4eb69aa596
+  tls: true
+  servername: itunes.apple.com
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: DL3tRdvx41PM2ia5va65Arz9iadqDgF9DXbfpuYa-Qc
+  client-fingerprint: chrome
+- name: meta51
+  type: vless
+  server: 166.1.18.191
+  port: 10489
+  udp: true
+  uuid: f25e53a6-1694-45c5-8011-9aac6a58c6da
+  tls: true
+  servername: gateway.icloud.com
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: hTq0VT11aaSIhEJBSwG058LquoM-sKZAMGPlWcIsaR0
+  client-fingerprint: chrome
+- name: meta61
+  type: vless
+  server: 108.181.22.139
+  port: 10982
+  udp: true
+  uuid: 3f4c685d-23c8-4236-8c72-598f36c89930
+  tls: true
+  servername: www.nokia.com
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: S6ycbWYBM6WB-5SzRQSwVTFHF6v4BUHQf0Rus5B7KG0
+  client-fingerprint: chrome
+- name: meta71
+  type: hysteria
+  server: 108.181.17.116
+  port: 54703
+  47000-48000: null
+  sni: www.microsoft.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  protocol: udp
+  auth_str: J6LqWv5zrUwWGuVHeZt4i3hu8LW17GKqXCh0kE096ILzaioTCQ
+  up: 11
+  down: 55
+  hop_interval: 10
+- name: meta81
+  type: hysteria
+  server: www.dtku50.xyz
+  port: 43250
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  protocol: udp
+  auth_str: 2S9M5Gs0pgRsaTObNghoLZx6wPkBJOGTFWvf4R06Us5hUNtfr7
+  up: 11
+  down: 55
+- name: meta91
+  type: vless
+  server: 45.150.165.61
+  port: 25678
+  udp: true
+  uuid: 34f36b97-1fb7-41f3-8db4-912cc69e724a
+  tls: true
+  servername: itunes.apple.com
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: sJsSZcA2DyAHDTcoe8Utbz9JaXJPMVmtHmiXxWmcExc
+  client-fingerprint: chrome
+- name: meta101
+  type: vless
+  server: www.dtku49.xyz
+  port: 18113
+  udp: true
+  uuid: 1a66f4f9-00b8-460e-b02e-17b2eaa9eae5
+  tls: true
+  servername: s0.awsstatic.com
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: tCyy6NnNNay5yqWTaotWm53q-STtoHdBpjqH9OxXOmE
+  client-fingerprint: chrome
+- name: hysteria0
+  type: hysteria
+  server: 167.160.91.115
+  port: 13928
+  ports: 13928
+  auth_str: BF0LL4L2jlqSdW3KxjQv81AiFFjj90vWRHeUoqUuTVPeDAGvq3
+  up: 11
+  down: 55
+  fast-open: true
+  protocol: udp
+  sni: paypal.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: hysteria1
+  type: hysteria
+  server: 173.234.25.52
+  port: 20164
+  ports: 20164
+  auth_str: Ljg6NNEATDqP97hdAdHe1lJv7ggtKc0h7zmCCZKCX3qY0LR64F
+  up: 11
+  down: 55
+  fast-open: true
+  protocol: udp
+  sni: www.microsoft.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: hysteria2
+  type: hysteria
+  server: 166.1.18.191
+  port: 16542
+  ports: 21000-22000
+  auth_str: PidedzMQ9WgikepaWKUdAaC2hLDFqxK5z1Aw19dxAluufRwpll
+  up: 11
+  down: 55
+  fast-open: true
+  protocol: udp
+  sni: www.microsoft.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: hysteria3
+  type: hysteria
+  server: 51.158.54.46
+  port: 49139
+  ports: 49139
+  auth_str: dongtaiwang.com
+  up: 11
+  down: 55
+  fast-open: true
+  protocol: udp
+  sni: www.paypal.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: reality0
+  type: vless
+  server: 173.234.25.51
+  port: 29295
+  uuid: 9e2626df-3467-4393-9f7c-aaca6fe4336c
+  network: tcp
+  tls: true
+  udp: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: m.media-amazon.com
+  reality-opts:
+    public-key: LN86WNkTPKjU0rSHPg1X7TGZy1ba9vGwnt_MukdZOB8
+    short-id: ''
+- name: reality1
+  type: vless
+  server: 45.140.168.221
+  port: 443
+  uuid: 40ccefc6-35da-4e64-8a60-7c98671debb7
+  network: tcp
+  tls: true
+  udp: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: d1.awsstatic.com
+  reality-opts:
+    public-key: 9UVYudHsbabswlvOuDRMweSC31_qhToDx4_QDIf-oGk
+    short-id: ''
+- name: reality2
+  type: vless
+  server: 45.129.2.15
+  port: 24515
+  uuid: 5e4efe94-b4f5-47d7-bc12-f1f1e4ef7f72
+  network: tcp
+  tls: true
+  udp: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: mensura.cdn-apple.com
+  reality-opts:
+    public-key: HMlkLQGbE-XvrwExv46WToHNmkg8o_XQ5UsKZ_E09DA
+    short-id: ''
+- name: reality3
+  type: vless
+  server: 45.140.168.221
+  port: 443
+  uuid: 40ccefc6-35da-4e64-8a60-7c98671debb7
+  network: tcp
+  tls: true
+  udp: true
+  flow: xtls-rprx-vision
+  client-fingerprint: chrome
+  servername: d1.awsstatic.com
+  reality-opts:
+    public-key: 9UVYudHsbabswlvOuDRMweSC31_qhToDx4_QDIf-oGk
+    short-id: ''
+proxy-groups:
+- name: 节点选择
+  type: select
+  proxies:
+  - 油管-绵阿羊
+  - WARP
+  - 自动选择
+  - 负载均衡
+  - 手动选择
+  - DIRECT
+- name: WARP前置节点
+  type: select
+  proxies:
+  - 自动选择
+  - 负载均衡
+  - 手动选择
+- name: 自动选择
+  type: url-test
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+  - 油管-绵阿羊
+  - meta11
+  - meta21
+  - meta31
+  - meta41
+  - meta51
+  - meta61
+  - meta71
+  - meta81
+  - meta91
+  - meta101
+  - hysteria0
+  - hysteria1
+  - hysteria2
+  - hysteria3
+  - reality0
+  - reality1
+  - reality2
+  - reality3
+- name: 手动选择
+  type: select
+  proxies:
+  - 油管-绵阿羊
+  - meta11
+  - meta21
+  - meta31
+  - meta41
+  - meta51
+  - meta61
+  - meta71
+  - meta81
+  - meta91
+  - meta101
+  - hysteria0
+  - hysteria1
+  - hysteria2
+  - hysteria3
+  - reality0
+  - reality1
+  - reality2
+  - reality3
+- name: 负载均衡
+  type: load-balance
+  proxies:
+  - 油管-绵阿羊
+  - meta11
+  - meta21
+  - meta31
+  - meta41
+  - meta51
+  - meta61
+  - meta71
+  - meta81
+  - meta91
+  - meta101
+  - hysteria0
+  - hysteria1
+  - hysteria2
+  - hysteria3
+  - reality0
+  - reality1
+  - reality2
+  - reality3
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  strategy: round-robin
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
+    path: ./ruleset/reject.yaml
+    interval: 86400
+  icloud:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt
+    path: ./ruleset/icloud.yaml
+    interval: 86400
+  apple:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt
+    path: ./ruleset/apple.yaml
+    interval: 86400
+  google:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt
+    path: ./ruleset/google.yaml
+    interval: 86400
+  proxy:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+  direct:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt
+    path: ./ruleset/direct.yaml
+    interval: 86400
+  private:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt
+    path: ./ruleset/private.yaml
+    interval: 86400
+  gfw:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt
+    path: ./ruleset/gfw.yaml
+    interval: 86400
+  tld-not-cn:
+    type: http
+    behavior: domain
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt
+    path: ./ruleset/tld-not-cn.yaml
+    interval: 86400
+  telegramcidr:
+    type: http
+    behavior: ipcidr
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt
+    path: ./ruleset/telegramcidr.yaml
+    interval: 86400
+  cncidr:
+    type: http
+    behavior: ipcidr
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt
+    path: ./ruleset/cncidr.yaml
+    interval: 86400
+  lancidr:
+    type: http
+    behavior: ipcidr
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt
+    path: ./ruleset/lancidr.yaml
+    interval: 86400
+  applications:
+    type: http
+    behavior: classical
+    url: https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt
+    path: ./ruleset/applications.yaml
+    interval: 86400
+rules:
+- RULE-SET,applications,DIRECT
+- DOMAIN,clash.razord.top,DIRECT
+- DOMAIN,yacd.haishan.me,DIRECT
+- RULE-SET,private,DIRECT
+- RULE-SET,reject,REJECT
+- RULE-SET,icloud,DIRECT
+- RULE-SET,apple,DIRECT
+- RULE-SET,google,节点选择
+- RULE-SET,proxy,节点选择
+- RULE-SET,direct,DIRECT
+- RULE-SET,lancidr,DIRECT
+- RULE-SET,cncidr,DIRECT
+- RULE-SET,telegramcidr,节点选择
+- GEOIP,LAN,DIRECT
+- GEOIP,CN,DIRECT
+- MATCH,节点选择
