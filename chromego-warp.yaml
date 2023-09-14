@@ -12,7 +12,7 @@ dns:
   - tls://1.0.0.1:853
   - tls://dns.google:853
 proxies:
-- name: 油管-绵阿羊
+- name: 油管绵阿羊
   type: trojan
   server: a
   port: 1
