@@ -8,4 +8,4 @@
 
 `https://raw.githubusercontent.com/moodHappy/HelloWorld/master/Workers+Wireguard.yaml`
 
-`https://raw.githubusercontent.com/moodHappy/HelloWorld/master/ClashMeta.yaml`
+`https://raw.githubusercontent.com/moodHappy/HelloWorld/master/ClashMate.yaml`
