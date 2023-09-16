@@ -87,17 +87,17 @@ proxies:
 #==============================（vless-ws-tls节点）
 - name: vless-ws-tls节点                           #可自定义名称
   type: vless
-  server: yg.ygkkk.eu.org                          #解析的域名或者优选域名IP
-  port: 12345                                      #自定义的端口
-  uuid: 3cc9a51c-db76-4ad2-a76b-8cb993bddb73       #自定义的uuid
+  server: 104.16.171.183                          #解析的域名或者优选域名IP
+  port: 443                                      #自定义的端口
+  uuid: cc261eba-b991-4284-ffa0-c92d7b512be0       #自定义的uuid
   udp: true
   tls: true
   network: ws
-  servername: abc.ygkkk.eu.org                     #sni域名，与下面的host一致
+  servername: hax.dgxyn.lol                     #sni域名，与下面的host一致
   ws-opts:
-    path: "/?ed=2048"                              #" "内自定义的path路径
+    path: "/h"                              #" "内自定义的path路径
     headers:
-      Host: abc.ygkkk.eu.org                       #host域名，与上面的servername一致
+      Host: hax.dgxyn.lol                       #host域名，与上面的servername一致
 
 #==============================（vless-ws节点）
 - name: vless-ws节点                               #可自定义名称
