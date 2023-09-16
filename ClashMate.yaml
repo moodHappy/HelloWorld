@@ -84,7 +84,7 @@ proxies:
 #==============================（hysteria自签节点）
 - name: cg-hysteria自签节点                           #可自定义名称
   type: hysteria
-  server: 51.158.54.46                                  #服务器本地IP
+  server: 1.158.54.46                                  #服务器本地IP
   port: 49139                                      #自定义的端口，多端口改为 ports:空格1000,2000-3000
   auth-str: dongtaiwang.com                                 #自定义的密码
   alpn:
