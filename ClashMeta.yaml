@@ -85,6 +85,22 @@ proxies:
   client-fingerprint: chrome
 
 #==============================（vless-ws-tls节点）
+- name: workers-vless-ws-tls节点                           #可自定义名称
+  type: vless
+  server: 104.16.171.183                          #解析的域名或者优选域名IP
+  port: 8443                                      #自定义的端口
+  uuid: 8b6c588d-9b7c-4053-8540-b1391d50c32b       #自定义的uuid
+  udp: true
+  tls: true
+  network: ws
+  servername: vless.dgxyn.lol                     #sni域名，与下面的host一致
+  ws-opts:
+    path: "/?ed=2048"                              #" "内自定义的path路径
+    headers:
+      Host: vless.dgxyn.lol
+
+
+#==============================（vless-ws-tls节点）
 - name: hax-vless-ws-tls节点                           #可自定义名称
   type: vless
   server: 104.16.171.183                          #解析的域名或者优选域名IP
@@ -227,6 +243,7 @@ proxy-groups:
   interval: 300
   proxies:
     - warp-wireguard节点                                  #自定义添加协议的name字段
+    - workers-vless-ws-tls节点
     - hax-vless-ws-tls节点
     - vless-ws节点
 
@@ -248,6 +265,7 @@ proxy-groups:
     - vless-reality-vision节点                                    
     - vless-reality-grpc节点
     - vless-xtls-rprx-vision节点
+    - workers-vless-ws-tls节点
     - hax-vless-ws-tls节点
     - vless-ws节点
     - vmess-ws-tls节点
@@ -267,6 +285,7 @@ proxy-groups:
     - vless-reality-vision节点                                    
     - vless-reality-grpc节点
     - vless-xtls-rprx-vision节点
+    - workers-vless-ws-tls节点
     - hax-vless-ws-tls节点
     - vless-ws节点
     - vmess-ws-tls节点
@@ -286,6 +305,7 @@ proxy-groups:
     - vless-reality-vision节点                                    
     - vless-reality-grpc节点
     - vless-xtls-rprx-vision节点
+    - workers-vless-ws-tls节点
     - hax-vless-ws-tls节点
     - vless-ws节点
     - vmess-ws-tls节点
@@ -305,6 +325,7 @@ proxy-groups:
     - vless-reality-vision节点                                    
     - vless-reality-grpc节点
     - vless-xtls-rprx-vision节点
+    - workers-vless-ws-tls节点
     - hax-vless-ws-tls节点
     - vless-ws节点
     - vmess-ws-tls节点
