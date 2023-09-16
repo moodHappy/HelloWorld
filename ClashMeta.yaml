@@ -196,15 +196,15 @@ proxies:
 #==============================（hysteria自签节点）
 - name: hysteria自签节点                           #可自定义名称
   type: hysteria
-  server: 1.2.3.4                                  #服务器本地IP
-  port: 12345                                      #自定义的端口，多端口改为 ports:空格1000,2000-3000
-  auth-str: 123456                                 #自定义的密码
+  server: 51.158.54.46                                  #服务器本地IP
+  port: 49139                                      #自定义的端口，多端口改为 ports:空格1000,2000-3000
+  auth-str: dongtaiwang.com                                 #自定义的密码
   alpn:
     - h3
   protocol: udp                                    #自定义协议：udp/wechat-video/faketcp
   up: 20                                           #自定义的上传限制
   down: 100                                        #自定义的下载限制
-  sni: www.bing.com                                
+  sni: paypal.com                                
   skip-cert-verify: true
   fast-open: true
     
