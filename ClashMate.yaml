@@ -39,6 +39,20 @@ dns:
 #当前12个协议节点配置模版，按需求修改，如某协议节点不用，则无需删除，确保三区代理分流中没有该name节点名称即可
 proxies:
 
+#==============================（hysteria自签节点）
+- name: cg-hysteria自签节点                           #可自定义名称
+  type: hysteria
+  server: 51.158.54.46                                  #服务器本地IP
+  port: 49139                                      #自定义的端口，多端口改为 ports:空格1000,2000-3000
+  auth-str: dongtaiwang.com                                 #自定义的密码
+  alpn:
+    - h3
+  protocol: udp                                    #自定义协议：udp/wechat-video/faketcp
+  up: 20                                           #自定义的上传限制
+  down: 100                                        #自定义的下载限制
+  sni: paypal.com                                
+  skip-cert-verify: true
+  fast-open: true
 
 #==============================（vless-ws-tls节点）
 - name: hax-vless-ws-tls节点                           #可自定义名称
@@ -80,21 +94,6 @@ proxies:
   public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
   private-key: mIkAUzkQKsT7tJ6MXsvuGBRRCCFiGVMUsDOXLI1PW0Q=  #获取private-key，私key
   udp: true
-
-#==============================（hysteria自签节点）
-- name: cg-hysteria自签节点                           #可自定义名称
-  type: hysteria
-  server: 1.158.54.46                                  #服务器本地IP
-  port: 49139                                      #自定义的端口，多端口改为 ports:空格1000,2000-3000
-  auth-str: dongtaiwang.com                                 #自定义的密码
-  alpn:
-    - h3
-  protocol: udp                                    #自定义协议：udp/wechat-video/faketcp
-  up: 20                                           #自定义的上传限制
-  down: 100                                        #自定义的下载限制
-  sni: paypal.com                                
-  skip-cert-verify: true
-  fast-open: true
 
 #==============================（vless-ws节点）
 - name: vless-ws节点                               #可自定义名称
