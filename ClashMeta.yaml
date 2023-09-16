@@ -217,11 +217,11 @@ proxies:
   udp: true
 
 
-
 #（三区）==============================（代理分流）
 #分流组可自行创建添加，proxies参数下的name节点名称，按需求自行增减，确保出现的name节点名称在二区代理协议中可查找
 proxy-groups:
-- name: 负载均衡
+
+- name: 🔮 负载均衡
   type: load-balance
   url: http://www.gstatic.com/generate_204
   interval: 300
@@ -230,7 +230,7 @@ proxy-groups:
     - hax-vless-ws-tls节点
     - vless-ws节点
 
-- name: 自动选择
+- name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
@@ -239,11 +239,11 @@ proxy-groups:
     - vless-reality-vision节点                            #自定义添加协议的name字段
     - vless-reality-grpc节点
     
-- name: 🌍选择代理节点
+- name: 🚀 手动选择
   type: select
   proxies:
-    - 负载均衡                                            #自定义添加协议的name字段
-    - 自动选择
+    - 🔮 负载均衡                                            #自定义添加协议的name字段
+    - ♻️ 自动选择
     - DIRECT
     - vless-reality-vision节点                                    
     - vless-reality-grpc节点
@@ -258,10 +258,68 @@ proxy-groups:
     - tuic-V5节点
     - warp-wireguard节点
 
-
+- name: 📱电报信息
+  type: select
+  proxies:
+    - 🔮 负载均衡                                            #自定义添加协议的name字段
+    - ♻️ 自动选择
+    - DIRECT
+    - vless-reality-vision节点                                    
+    - vless-reality-grpc节点
+    - vless-xtls-rprx-vision节点
+    - hax-vless-ws-tls节点
+    - vless-ws节点
+    - vmess-ws-tls节点
+    - vmess-ws节点
+    - trojan-tcp-tls节点
+    - hysteria证书节点
+    - hysteria自签节点
+    - tuic-V5节点
+    - warp-wireguard节点
+    
+- name: ⚔️推特信息
+  type: select
+  proxies:
+    - 🔮 负载均衡                                            #自定义添加协议的name字段
+    - ♻️ 自动选择
+    - DIRECT
+    - vless-reality-vision节点                                    
+    - vless-reality-grpc节点
+    - vless-xtls-rprx-vision节点
+    - hax-vless-ws-tls节点
+    - vless-ws节点
+    - vmess-ws-tls节点
+    - vmess-ws节点
+    - trojan-tcp-tls节点
+    - hysteria证书节点
+    - hysteria自签节点
+    - tuic-V5节点
+    - warp-wireguard节点
+    
+- name: 📹 油管信息
+  type: select
+  proxies:
+    - 🔮 负载均衡                                            #自定义添加协议的name字段
+    - ♻️ 自动选择
+    - DIRECT
+    - vless-reality-vision节点                                    
+    - vless-reality-grpc节点
+    - vless-xtls-rprx-vision节点
+    - hax-vless-ws-tls节点
+    - vless-ws节点
+    - vmess-ws-tls节点
+    - vmess-ws节点
+    - trojan-tcp-tls节点
+    - hysteria证书节点
+    - hysteria自签节点
+    - tuic-V5节点
+    - warp-wireguard节点
 
 #（四区）==============================（代理规则）
 #代理规则可自行添加 
 rules:
   - GEOIP,CN,DIRECT
-  - MATCH,🌍选择代理节点
+  - MATCH,🚀 手动选择
+  - DOMAIN-SUFFIX,t.me,📱电报信息
+  - DOMAIN-SUFFIX,twitter.com,⚔️推特信息
+  - DOMAIN-SUFFIX,youtube.com,📹 油管信息
