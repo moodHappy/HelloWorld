@@ -242,10 +242,19 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-    - warp-wireguard节点                                  #自定义添加协议的name字段
+    - vless-reality-vision节点                                    
+    - vless-reality-grpc节点
+    - vless-xtls-rprx-vision节点
     - workers-vless-ws-tls节点
     - hax-vless-ws-tls节点
     - vless-ws节点
+    - vmess-ws-tls节点
+    - vmess-ws节点
+    - trojan-tcp-tls节点
+    - hysteria证书节点
+    - cg-hysteria自签节点
+    - tuic-V5节点
+    - warp-wireguard节点
 
 - name: ♻️ 自动选择
   type: url-test
@@ -253,8 +262,19 @@ proxy-groups:
   interval: 300
   tolerance: 50
   proxies:
-    - vless-reality-vision节点                            #自定义添加协议的name字段
+    - vless-reality-vision节点                                    
     - vless-reality-grpc节点
+    - vless-xtls-rprx-vision节点
+    - workers-vless-ws-tls节点
+    - hax-vless-ws-tls节点
+    - vless-ws节点
+    - vmess-ws-tls节点
+    - vmess-ws节点
+    - trojan-tcp-tls节点
+    - hysteria证书节点
+    - cg-hysteria自签节点
+    - tuic-V5节点
+    - warp-wireguard节点
     
 - name: 🚀 手动选择
   type: select
