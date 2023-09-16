@@ -194,7 +194,7 @@ proxies:
   fast-open: true
     
 #==============================（hysteria自签节点）
-- name: hysteria自签节点                           #可自定义名称
+- name: cg-hysteria自签节点                           #可自定义名称
   type: hysteria
   server: 51.158.54.46                                  #服务器本地IP
   port: 49139                                      #自定义的端口，多端口改为 ports:空格1000,2000-3000
@@ -272,7 +272,7 @@ proxy-groups:
     - vmess-ws节点
     - trojan-tcp-tls节点
     - hysteria证书节点
-    - hysteria自签节点
+    - cg-hysteria自签节点
     - tuic-V5节点
     - warp-wireguard节点
 
@@ -292,7 +292,7 @@ proxy-groups:
     - vmess-ws节点
     - trojan-tcp-tls节点
     - hysteria证书节点
-    - hysteria自签节点
+    - cg-hysteria自签节点
     - tuic-V5节点
     - warp-wireguard节点
     
@@ -312,7 +312,7 @@ proxy-groups:
     - vmess-ws节点
     - trojan-tcp-tls节点
     - hysteria证书节点
-    - hysteria自签节点
+    - cg-hysteria自签节点
     - tuic-V5节点
     - warp-wireguard节点
     
@@ -332,7 +332,7 @@ proxy-groups:
     - vmess-ws节点
     - trojan-tcp-tls节点
     - hysteria证书节点
-    - hysteria自签节点
+    - cg-hysteria自签节点
     - tuic-V5节点
     - warp-wireguard节点
 
