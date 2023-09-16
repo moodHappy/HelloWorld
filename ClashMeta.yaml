@@ -85,7 +85,7 @@ proxies:
   client-fingerprint: chrome
 
 #==============================（vless-ws-tls节点）
-- name: vless-ws-tls节点                           #可自定义名称
+- name: hax-vless-ws-tls节点                           #可自定义名称
   type: vless
   server: 104.16.171.183                          #解析的域名或者优选域名IP
   port: 443                                      #自定义的端口
@@ -227,7 +227,7 @@ proxy-groups:
   interval: 300
   proxies:
     - warp-wireguard节点                                  #自定义添加协议的name字段
-    - vless-ws-tls节点
+    - hax-vless-ws-tls节点
     - vless-ws节点
 
 - name: 自动选择
@@ -248,7 +248,7 @@ proxy-groups:
     - vless-reality-vision节点                                    
     - vless-reality-grpc节点
     - vless-xtls-rprx-vision节点
-    - vless-ws-tls节点
+    - hax-vless-ws-tls节点
     - vless-ws节点
     - vmess-ws-tls节点
     - vmess-ws节点
