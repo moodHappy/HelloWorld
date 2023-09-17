@@ -72,17 +72,17 @@ proxies:
 #==============================（vless-ws-tls节点）
 - name: workers-vless-ws-tls节点                           #可自定义名称
   type: vless
-  server: 104.16.171.183                          #解析的域名或者优选域名IP
+  server: 104.19.74.223                          #解析的域名或者优选域名IP
   port: 8443                                      #自定义的端口
-  uuid: 8b6c588d-9b7c-4053-8540-b1391d50c32b       #自定义的uuid
+  uuid: d342d11e-d585-4583-b62e-524ab1f0afa6       #自定义的uuid
   udp: true
   tls: true
   network: ws
-  servername: vless.dgxyn.lol                     #sni域名，与下面的host一致
+  servername: kjkkk.dgxyn.lol                     #sni域名，与下面的host一致
   ws-opts:
     path: "/?ed=2048"                              #" "内自定义的path路径
     headers:
-      Host: vless.dgxyn.lol
+      Host: kjkkk.dgxyn.lol
 
 #==============================（warp-wireguard节点）  
 - name: warp-wireguard节点                                   #可自定义名称
