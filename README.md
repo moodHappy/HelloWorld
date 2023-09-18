@@ -9,3 +9,5 @@
 `https://raw.githubusercontent.com/moodHappy/HelloWorld/master/Workers+Wireguard.yaml`
 
 `https://raw.githubusercontent.com/moodHappy/HelloWorld/master/ClashMate.yaml`
+
+`https://raw.githubusercontent.com/moodHappy/HelloWorld/master/workersbulianglin.yaml.txt`
