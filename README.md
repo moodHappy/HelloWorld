@@ -10,4 +10,4 @@
 
 `https://raw.githubusercontent.com/moodHappy/HelloWorld/master/ClashMate.yaml`
 
-`https://raw.githubusercontent.com/moodHappy/HelloWorld/master/workersbulianglin.yaml.txt`
+`https://v1.mk/1wJSH8o`
