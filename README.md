@@ -1,5 +1,7 @@
 # HelloWorld
 
+`https://gitlab.com/api/v4/projects/moodHappy%2FClashMeta/repository/files/clashmeta.yaml/raw?ref=main&private_token=glpat-pxm-j_LKyxgBpiM2xhPb`
+
 `https://raw.githubusercontent.com/moodHappy/HelloWorld/master/ChromeGo-Warp.yaml`
 
 `https://raw.githubusercontent.com//moodHappy/HelloWorld/master/Workers.yaml`
