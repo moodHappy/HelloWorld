@@ -58,7 +58,7 @@ proxies:
 - name: hax-vless-ws-tls节点                           #可自定义名称
   type: vless
   server: 104.16.171.183                          #解析的域名或者优选域名IP
-  port: 443                                      #自定义的端口
+  port: 433                                      #自定义的端口
   uuid: cc261eba-b991-4284-ffa0-c92d7b512be0       #自定义的uuid
   udp: true
   tls: true
