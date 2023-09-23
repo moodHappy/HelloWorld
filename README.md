@@ -12,6 +12,4 @@
 
 `https://raw.githubusercontent.com/moodHappy/HelloWorld/master/ClashMate.yaml`
 
-`https://raw.githubusercontent.com/moodHappy/HelloWorld/master/clash-misaka.yaml`
-
 `https://v1.mk/BteA4RV`
