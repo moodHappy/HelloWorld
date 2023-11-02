@@ -8,4 +8,4 @@
 
 `https://raw.githubusercontent.com/moodHappy/HelloWorld/master/ClashMate.yaml`
 
-`https://v1.mk/dMVWws3`
+`https://v1.mk/VDoCvmp`
