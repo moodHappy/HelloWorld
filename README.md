@@ -9,3 +9,5 @@
 `https://raw.githubusercontent.com/moodHappy/HelloWorld/master/ClashMate.yaml`
 
 `https://v1.mk/tmOo1Vb`
+
+`https://v1.mk/uvx2qJT`
