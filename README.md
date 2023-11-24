@@ -10,9 +10,9 @@
 
 BWG
 
-`https://raw.githubusercontent.com/moodHappy/HelloWorld/master/singbox.yaml`
-
 `https://raw.githubusercontent.com/moodHappy/HelloWorld/master/clashmate.yaml`
+
+`https://raw.githubusercontent.com/moodHappy/HelloWorld/master/singbox.yaml`
 
 Workers
 
