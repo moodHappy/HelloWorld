@@ -10,4 +10,8 @@
 
 `https://v1.mk/EYu43Am`
 
+BWG
+
 `https://raw.githubusercontent.com/moodHappy/HelloWorld/master/singbox.yaml`
+
+`https://raw.githubusercontent.com/moodHappy/HelloWorld/master/clashmate.yaml`
