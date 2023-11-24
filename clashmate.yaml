@@ -1,0 +1,99 @@
+port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+unified-delay: true
+global-client-fingerprint: chrome
+ipv6: true
+dns:
+  enable: true
+  listen: :53
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver:
+    - 223.5.5.5
+    - 8.8.8.8
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  fallback:
+    - https://1.0.0.1/dns-query
+    - tls://dns.google
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+
+proxies:
+  - name: Reality
+    type: vless
+    server: 65.49.194.187
+    port: 443
+    uuid: 42c1ee69-0fd0-41e1-a188-c19442509712
+    network: tcp
+    udp: true
+    tls: true
+    flow: xtls-rprx-vision
+    servername: itunes.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: XFW_6SEkLYyRaakiIReQQTTwTV14jv-07IH6Dle8p3w
+      short-id: 7cb872d9ad27045a
+
+  - name: Hysteria2
+    type: hysteria2
+    server: 65.49.194.187
+    port: 8443
+    #  up和down均不写或为0则使用BBR流控
+    # up: "30 Mbps" # 若不写单位，默认为 Mbps
+    # down: "200 Mbps" # 若不写单位，默认为 Mbps
+    password: 3579a25fef4c528d
+    sni: bing.com
+    skip-cert-verify: true
+    alpn:
+      - h3
+  - name: Vmess
+    type: vmess
+    server: speed.cloudflare.com
+    port: 443
+    uuid: dc965258-78e9-4072-9a83-1b85239b6412
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    client-fingerprint: chrome
+    skip-cert-verify: true
+    servername: portrait-pam-and-adventure.trycloudflare.com
+    network: ws
+    ws-opts:
+      path: 0a805c7121fa?ed=2048
+      headers:
+        Host: portrait-pam-and-adventure.trycloudflare.com
+
+proxy-groups:
+  - name: 节点选择
+    type: select
+    proxies:
+      - 自动选择
+      - Reality
+      - Hysteria2
+      - Vmess
+      - DIRECT
+
+  - name: 自动选择
+    type: url-test #选出延迟最低的机场节点
+    proxies:
+      - Reality
+      - Hysteria2
+      - Vmess
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+
+
+rules:
+    - GEOIP,LAN,DIRECT
+    - GEOIP,CN,DIRECT
+    - MATCH,节点选择
