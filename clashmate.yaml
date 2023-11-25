@@ -29,9 +29,9 @@ dns:
 proxies:
   - name: Reality
     type: vless
-    server: 65.49.194.187
+    server: 91.149.233.143
     port: 443
-    uuid: 42c1ee69-0fd0-41e1-a188-c19442509712
+    uuid: 84427c1d-8a3d-44bf-a69d-0590e6d94193
     network: tcp
     udp: true
     tls: true
@@ -39,17 +39,17 @@ proxies:
     servername: itunes.apple.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: XFW_6SEkLYyRaakiIReQQTTwTV14jv-07IH6Dle8p3w
-      short-id: 7cb872d9ad27045a
+      public-key: p4A0fU-X-07-as3RT1yeiv4Z1FjTIqGeyqTHAN8RRhY
+      short-id: e174abaeeb14a6b5
 
   - name: Hysteria2
     type: hysteria2
-    server: 65.49.194.187
+    server: 91.149.233.143
     port: 8443
     #  up和down均不写或为0则使用BBR流控
     # up: "30 Mbps" # 若不写单位，默认为 Mbps
     # down: "200 Mbps" # 若不写单位，默认为 Mbps
-    password: 3579a25fef4c528d
+    password: f0b26f4b86127b9c
     sni: bing.com
     skip-cert-verify: true
     alpn:
@@ -58,19 +58,19 @@ proxies:
     type: vmess
     server: speed.cloudflare.com
     port: 443
-    uuid: dc965258-78e9-4072-9a83-1b85239b6412
+    uuid: d8b4f659-6c76-4195-bd0f-47028a34c685
     alterId: 0
     cipher: auto
     udp: true
     tls: true
     client-fingerprint: chrome
     skip-cert-verify: true
-    servername: portrait-pam-and-adventure.trycloudflare.com
+    servername: behalf-berry-salon-dog.trycloudflare.com
     network: ws
     ws-opts:
-      path: 0a805c7121fa?ed=2048
+      path: 61aa91c3b6c6?ed=2048
       headers:
-        Host: portrait-pam-and-adventure.trycloudflare.com
+        Host: behalf-berry-salon-dog.trycloudflare.com
 
 proxy-groups:
   - name: 节点选择
