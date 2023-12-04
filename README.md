@@ -8,12 +8,6 @@
 
 `https://raw.githubusercontent.com/moodHappy/HelloWorld/master/ClashMate.yaml`
 
-BWG
-
-`https://raw.githubusercontent.com/moodHappy/HelloWorld/master/clashmate.yaml`
-
-`https://raw.githubusercontent.com/moodHappy/HelloWorld/master/singbox.yaml`
-
 Workers
 
 `https://v1.mk/BmZLkLa`
