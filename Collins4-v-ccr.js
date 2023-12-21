@@ -1,6 +1,5 @@
-// Keslin's four-star vocabulary changes color randomly
 // ==UserScript==
-// @name         Collins4-v-ccr
+// @name         随机颜色关键词
 // @namespace    https://greasyfork.org/zh-TW
 // @version      1.0
 // @description  给网页关键词改变成随机颜色，完整匹配
