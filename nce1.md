@@ -1,4 +1,4 @@
-`too和either的区别`  
+`too和either都表示也的意思,但是too只能用于肯定与中,either用于否定句中`  
 She likes chocolate, and I do too.  
 I don't like coffee, and she doesn't either.  
 
