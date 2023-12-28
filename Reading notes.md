@@ -3,4 +3,8 @@ The detective carefully collected evidence at the crime scene to build a strong 
 
 `"Declined" 和 "refuse" 都表示拒绝，但它们在用法上有一些微妙的区别。"Declined" 更常用于礼貌或正式的场合，表示谢绝邀请、提议或请求。而"refuse" 则更直接，通常表示坚决地拒绝或不愿意接受某事物。`  
 "I appreciate the invitation to the party, but I must decline as I have prior commitments."  
-"She refused to compromise on her principles, even when faced with pressure."
+"She refused to compromise on her principles, even when faced with pressure."  
+
+`to face the music，面对困难`  
+The boy was caught cheating in an examination and had to face the music.  
+在一次考试中那孩子作弊被当场抓住, 他只能自己承担后果。
