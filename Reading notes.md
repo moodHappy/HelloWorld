@@ -8,3 +8,8 @@ The detective carefully collected evidence at the crime scene to build a strong 
 `to face the music，面对困难`  
 The boy was caught cheating in an examination and had to face the music.  
 在一次考试中那孩子作弊被当场抓住, 他只能自己承担后果。
+
+`Probably（很可能）,“Perhaps”更为正式,“Maybe”是一种非正式而多用途的表达方式，介于“probably”和“perhaps”之间。它表达了中等程度的不确定性，常用于日常语言中。`  
+She will probably arrive at the party late.  
+Perhaps we can go to the beach this weekend.  
+Maybe I'll join you for dinner later.
