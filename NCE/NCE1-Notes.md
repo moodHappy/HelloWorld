@@ -12,5 +12,9 @@ Give me some glasses
 `some通常用于肯定句中和希望得到用some做肯定回答的疑问句中`  
 I bought some apples at the grocery store  
 
-I couldn't find any information about that topic.  
+I couldn't find any information about that topic.    
 
+----
+`一般疑问句`
+Is this your backpack?
+Is this your pen on the table?
