@@ -12,4 +12,17 @@ The boy was caught cheating in an examination and had to face the music.
 `Probably（很可能）,“Perhaps”更为正式,“Maybe”是一种非正式而多用途的表达方式，介于“probably”和“perhaps”之间。它表达了中等程度的不确定性，常用于日常语言中。`  
 She will probably arrive at the party late.  
 Perhaps we can go to the beach this weekend.  
-Maybe I'll join you for dinner later.
+Maybe I'll join you for dinner later.  
+
+`"Against" 是一个多功能的介词，其用法取决于上下文。以下是一些常见用法总结：Against" 是一个多功能的介词，其用法取决于句子。`
+
+对抗、对付： The team fought against their opponents.（球队与对手搏斗。）
+
+针对、反对： They protested against the new policy.（他们抗议反对这项新政策。）
+
+比较： He measured his skills against hers.（他把自己的技能与她的进行比较。）
+
+保护： The wall provides shelter against the wind.（这堵墙能够遮挡风雨。） against the wind.（
+
+预防、防御： Vaccination is effective against certain diseases.（疫苗对某些疾病有效。）against
+倚靠： She leaned against the tree.（她靠在树上。）
