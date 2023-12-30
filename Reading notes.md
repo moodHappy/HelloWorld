@@ -29,6 +29,7 @@ Maybe I'll join you for dinner later.
 ***
 Committee（委员会） 通常指一个小组，负责特定任务或处理特定事务。例如，审查文件、制定政策或解决问题的小组可以被称为委员会。  
 The school formed a committee to review and update the curriculum to better meet the needs of students.  
+
 Council（理事会、委员会） 通常指一个组织或机构的议会，代表更大的群体来制定决策或规定政策。城市议会、学术理事会等都是这样的例子。  
 council met to discuss new policies for urban development and address the concerns of locThe city council met to discuss new policies for urban development and address the concerns of local residents.
 
