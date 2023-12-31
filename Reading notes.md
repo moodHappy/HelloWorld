@@ -33,4 +33,11 @@ The school formed a committee to review and update the curriculum to better meet
 Council（理事会、委员会） 通常指一个组织或机构的议会，代表更大的群体来制定决策或规定政策。城市议会、学术理事会等都是这样的例子。  
 council met to discuss new policies for urban development and address the concerns of locThe city council met to discuss new policies for urban development and address the concerns of local residents.
 
-总的来说，"committee" 更侧重于特定任务或问题的小组，而 "council" 则更广泛，可能代表一个整体组织的决策机构。committee" 更侧重于特定任务或问题的小组，而 "council" 则更广committee" 更侧重于
+总的来说，"committee" 更侧重于特定任务或问题的小组，而 "council" 则更广泛，可能代表一个整体组织的决策机构。committee" 更侧重于特定任务或问题的小组，而 "council" 则更广committee" 更侧重于。  
+
+***
+`"Hurt" 和 "injured" 都是表示受伤的词汇，但它们在用法上有一些细微的差别。通常来说，"hurt" 更广泛地指一种疼痛或不适的感觉，可能包括精神上的痛苦，而不仅仅是身体上的损伤。例如，你可以说 "My feelings are hurt" 表示感到受伤，但这并不意味着有身体上的损伤。
+
+相反，"injured" 更专门指身体上的损伤或受伤，通常与事故、运动伤害等有关。例如，你会说 "He was injured in a car accident" 来表示他在车祸中受伤。
+
+因此，虽然两者都可以表示受伤，但 "hurt" 的范围更广泛，而 "injured" 更专注于身体上的损伤。`
