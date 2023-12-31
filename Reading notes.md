@@ -40,4 +40,8 @@ council met to discuss new policies for urban development and address the concer
 
 相反，"injured" 更专门指身体上的损伤或受伤，通常与事故、运动伤害等有关。例如，你会说 "He was injured in a car accident" 来表示他在车祸中受伤。
 
-因此，虽然两者都可以表示受伤，但 "hurt" 的范围更广泛，而 "injured" 更专注于身体上的损伤。`
+因此，虽然两者都可以表示受伤，但 "hurt" 的范围更广泛，而 "injured" 更专注于身体上的损伤。`  
+***  
+`"Possible" 表示某事在理论上或技术上有可能发生，而 "likely" 则表示某事更有可能或更有可能发生。`  
+It is possible for a meteor to strike Earth at some point in the future.  
+With dark clouds forming, it seems likely that it will rain later today.
