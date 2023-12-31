@@ -44,4 +44,6 @@ council met to discuss new policies for urban development and address the concer
 ***  
 `"Possible" 表示某事在理论上或技术上有可能发生，而 "likely" 则表示某事更有可能或更有可能发生。`  
 It is possible for a meteor to strike Earth at some point in the future.  
-With dark clouds forming, it seems likely that it will rain later today.
+With dark clouds forming, it seems likely that it will rain later today.  
+***  
+"Consider" 和 "think" 都表示思考，但 "consider" 更强调仔细考虑和权衡不同方面，而 "think" 则更广泛，可以指任何形式的思维。
