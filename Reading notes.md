@@ -48,4 +48,6 @@ With dark clouds forming, it seems likely that it will rain later today.
 ***  
 "Consider" 和 "think" 都表示思考，但 "consider" 更强调仔细考虑和权衡不同方面，而 "think" 则更广泛，可以指任何形式的思维。  
 ***  
-`"greet" 是问候或迎接的意思，通常用于表示欢迎或向某人表达问候。而 "celebration" 则是庆祝的意思，指的是为了纪念或庆祝某个特殊事件或时刻而举行的活动。`
+`"greet" 是问候或迎接的意思，通常用于表示欢迎或向某人表达问候。而 "celebration" 则是庆祝的意思，指的是为了纪念或庆祝某个特殊事件或时刻而举行的活动。`  
+***  
+`"Security" 主要指的是防范和应对潜在的恶意威胁，通常与保护系统、数据或资源免受攻击有关。而 "Safety" 则更侧重于防范和减少潜在的危险、风险，以确保人们的身体和生命安全。`
