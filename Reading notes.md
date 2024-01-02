@@ -67,3 +67,5 @@ Despite:
 
 强调一个事实，即使有一些相反的情况。
 例子：Despite the rain, they decided to go for a walk.
+
+总的来说，"although" 强调对比，引入两个相对独立的情况，而 "despite" 强调一个事实，尽管可能存在一些相反的情况。
