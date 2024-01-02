@@ -53,4 +53,17 @@ With dark clouds forming, it seems likely that it will rain later today.
 `"Security" 主要指的是防范和应对潜在的恶意威胁，通常与保护系统、数据或资源免受攻击有关。而 "Safety" 则更侧重于防范和减少潜在的危险、风险，以确保人们的身体和生命安全。`  
 ***  
 `against翻译为“对”`  
-Putin vows to 'intensify' attacks against Ukraine military targets
+Putin vows to 'intensify' attacks against Ukraine military targets  
+***  
+`"Although" 和 "despite" 都是连接词，用于表达对比关系，但它们在用法上有一些区别`
+
+Although:
+
+表示两个相对独立的事实或情况，强调对比。
+例子：Although it was raining, they decided to go for a walk.
+例：虽然下雨了，他们还是决定去散步。
+
+Despite:尽管：
+
+强调一个事实，即使有一些相反的情况。
+例子：Despite the rain, they decided to go for a walk.
