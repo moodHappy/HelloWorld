@@ -63,7 +63,7 @@ Although:
 例子：Although it was raining, they decided to go for a walk.
 例：虽然下雨了，他们还是决定去散步。
 
-Despite:尽管：
+Despite:
 
 强调一个事实，即使有一些相反的情况。
 例子：Despite the rain, they decided to go for a walk.
