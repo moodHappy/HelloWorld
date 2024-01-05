@@ -299,6 +299,7 @@ a. Where b. Why c. How d. When
 特殊疑问词对后面的答案提问
 how(adv.)——对一个方式、状态提问，对形容词、副词、介词短语提问
 
+```
 7 The young man and the young woman paid _d___ attention to the writer.
 a. none b. any c. not any d. no
 any ——用在否定句和疑问句中
@@ -318,3 +319,4 @@ bear 忍受=stand
 suffer 遭受,忍受 (精神或肉体上)痛苦，suffer 后面必须加一种痛苦
 I suffer the headache.（肉体上的痛苦）
 He often suffers defeat.（精神上的痛苦）（defeat n. 失败）
+```
