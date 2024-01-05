@@ -82,6 +82,7 @@ When all those present(到场者)_D_ he began his lecture.
 A. sit B. set C. seated D. were seated
 sit down 坐下；be seated=take a seat 就坐
 ```
+```
 ★ angry adj. 生气的
 
 ★ angrily adv. 生气的
@@ -89,13 +90,14 @@ angry =cross
 I was angry. /He was cross.
 annoyed: 恼火的;
 be blue in the face 脸上突然变色
-
+```  
+```
 程 I was annoyed.
 度 I was angry/cross.
 加 I was very angry.
 深 I am blue in the face. (脸色都青了, 相当生气了)
-
-
+```
+```
 ★ attention n. 注 意
 Attention ,please. 请注意(口语)
 pay attention 注意
@@ -106,7 +108,8 @@ much attention 多加注意
 pay more attention 更多注意
 pay no attention 不用注意
 pay close attention 特别注意
-
+```  
+```
 ★ bear(bore, born) v. 容忍
 ① vt. 承受，支撑，承担，负担
 Can the ice bear my weight?
@@ -124,7 +127,8 @@ bear/stand/endure 忍受的极限在加大
 bear n.熊 white bear 白熊
 bear hug :热情(热烈)的拥抱
 give sb. a bear hug
-
+```  
+```
 ★ business n. 事, 生意
 ① n. 生意
 business man :生意人
@@ -134,12 +138,13 @@ I went to Tianjin on business.
 ② n. 某人自己的私人的事情
 It's my business. (指私人的事, 自己处理的事)
 It's none of your business. 不关你的事。
-
+```  
+```
 ★ rudely adv. 无礼地, 粗鲁地
 rude adj. 粗鲁的，无礼的
 
 ★ pay vt. &vi. 支 付
-
+```
 
 ```
 ① vt. &vi. 支付（价款等）
@@ -152,6 +157,7 @@ They did not pay any attention.
 We paid a visit to our teacher last Sunday. 上星期天我们去拜访了老师。
 ③ n. 工资，报酬
 I have not received my pay yet. 我还没有领到工资。
+```  
 ```
 【Text】
 Last week I went to the theatre. I had a very good seat. The play was very interesting. I did not enjoy it. A
@@ -159,13 +165,15 @@ young man and a young woman were sitting behind me. They were talking loudly. I 
 hear the actors. I turned round. I looked at the man and the woman angrily. They did not pay any attention. In the
 end, I could not bear it. I turned round again. "I can't hear a word!" I said angrily.
 "It's none of your business," the young man said rudely. "This is a private conversation!"
-
+```  
+```
 参考译文：
 上星期我去看戏. 我的座位很好, 戏很有意思, 但我却无法欣赏. 一青年男子与一青年女子坐在我的身
 后, 大声地说着话. 我非常生气, 因为我听不见演员在说什么. 我回过头去怒视着那一男一女, 他们却毫不理
 会. 最后, 我忍不住了, 又一次回过头去, 生气地说 : “我一个字也听不见了!”
 “不关你的事, “那男的毫不客气地说, “这是私人间的谈话!”
-
+```  
+```
 【课文讲解】
 1 、Last week I went to the theatre.
 动词 go 的原义是离开一个地方去另一个地方，与介词 to 连用后，常加上主语所要去的目的来代表主
@@ -176,12 +184,13 @@ go to the cinema =see a film 去电影院看电影
 go to the dairy 去牛奶店
 go to the + 人 + 's 表示去这个人开的店
 go to the doctor's 去看病；go to the butcher's 买肉
-
+```  
+```
 以下短语中名词前不加冠词：
 go to school 去上学；go to church 去做礼拜；go to hospital(医院) 去看病；go to bed 上床，睡觉；
 go home（跟 home 相连一定表示没有事情可做,回家休息）
 I am at home. 在家休息
-
+```
 ```
 2 、I had a very good seat.
 seat 一般指戏院、汽车等配置的固定座位，也可以抽象地表示“座位”或“位子”等概念。
