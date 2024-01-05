@@ -68,13 +68,15 @@ Sit down, please. (命令性)
 Take your seat, please.
 Be seated, please. (更礼貌)
 ```
+```
 作为动词的 seat 与 sit 的区别
 sit（sat，sitten） vi. 就座
 He is sitting there. 他坐在那儿。
 seat vt.让某人就座
 seat sb. 让某人就坐，后面会加人
 Seat yourself.
-You seat him.你给他找个位置.
+You seat him.你给他找个位置.  
+```
 ```
 When all those present(到场者)_D_ he began his lecture.
 A. sit B. set C. seated D. were seated
