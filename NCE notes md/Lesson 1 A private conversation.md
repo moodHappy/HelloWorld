@@ -192,9 +192,6 @@ I am at home. 在家休息
 ```
 2 、I had a very good seat.
 seat 一般指戏院、汽车等配置的固定座位，也可以抽象地表示“座位”或“位子”等概念。
-```
-
-```
 the front seat of a car 汽车的前座
 Take a seat, please. 请 坐 。
 ```
