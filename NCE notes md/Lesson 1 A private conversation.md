@@ -1,7 +1,7 @@
 
 
 Lesson 1 A private conversation
-
+```
 【New words and expressions】生词和短语（ 12 ）
 private adj. 私人的
 conversation n. 谈话
@@ -15,7 +15,7 @@ attention n. 注意
 bear v. 容忍
 business n. 事
 rudely adv. 无礼地，粗鲁地
-
+```
 ```
 ★ private adj.私人的
 ① adj. 私人的
@@ -47,16 +47,18 @@ subject of conversation 话题
 They are having a conversation.
 talk 内容可正式可不正式, 也可以私人
 ```
-
+```
 Let’s have a talk.
 dialogue 对话, 可以指正式国家与国家会谈
 China and Korea are having a dialogue.
 chat 闲聊，就是北京人说的“侃”，说的是无关紧要的事。
 gossip 嚼舌头, 说长道短
-
+```
+```
 ★ theatre n.剧场, 戏剧
 cinema n.电影院
-
+```  
+```
 ★ seat n.座位
 have a good seat/place，这里的 seat 指 place(指地点)，而不是 chair.
 take a seat/take your seat 坐下来, 就坐
@@ -65,7 +67,7 @@ Is the seat taken? 这个位置有人吗?
 Sit down, please. (命令性)
 Take your seat, please.
 Be seated, please. (更礼貌)
-
+```
 作为动词的 seat 与 sit 的区别
 sit（sat，sitten） vi. 就座
 He is sitting there. 他坐在那儿。
@@ -73,11 +75,11 @@ seat vt.让某人就座
 seat sb. 让某人就坐，后面会加人
 Seat yourself.
 You seat him.你给他找个位置.
-
+```
 When all those present(到场者)_D_ he began his lecture.
 A. sit B. set C. seated D. were seated
 sit down 坐下；be seated=take a seat 就坐
-
+```
 ★ angry adj. 生气的
 
 ★ angrily adv. 生气的
