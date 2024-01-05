@@ -48,10 +48,10 @@ They are having a conversation.
 talk 内容可正式可不正式, 也可以私人
 ```
 
-Let’s have a talk.
-dialogue 对话, 可以指正式国家与国家会谈
-China and Korea are having a dialogue.
-chat 闲聊，就是北京人说的“侃”，说的是无关紧要的事。
+Let’s have a talk.  
+dialogue 对话, 可以指正式国家与国家会谈  
+China and Korea are having a dialogue.  
+chat 闲聊，就是北京人说的“侃”，说的是无关紧要的事。  
 gossip 嚼舌头, 说长道短
 
 ★ theatre n.剧场, 戏剧
