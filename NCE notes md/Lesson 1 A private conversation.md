@@ -205,6 +205,7 @@ enjoy the dinner/film/program/game
 We always enjoy ourselves.
 ③ enjoy +动名词
 Jane doesn’t enjoy swimming. She enjoys going to the theatre.
+```  
 ```
 4 、I got very angry.
 get 在这里有“逐渐变得”的含义，接近 become，是个表示过程的动词，表示状态的变化。而 I was very
@@ -215,6 +216,7 @@ It is hot.
 It got hot.
 got 取代 be 动词，got 是一个半联系动词,可以直接加形容词。
 
+```  
 ```
 5 、I could not hear the actors. I turned round.
 hear+人:听见某人的话
