@@ -3,7 +3,7 @@
 Lesson 1 A private conversation
 
 `New words and expressions】生词和短语（ 12 ）`
-private adj. 私人的
+private adj. 私人的  
 conversation n. 谈话
 theatre n. 剧场，戏院
 seat n. 座位
