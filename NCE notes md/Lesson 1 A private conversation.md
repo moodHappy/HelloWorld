@@ -251,6 +251,7 @@ She kept none of his letters. 他的信件她一封也没有保留。
 none of 这个短语有时可以表达一种断然、甚至粗暴的口气，尤其是在祈使句中：
 None of your silly remarks! 别说傻话了！
 ```
+```
 【Key structures】
 **简单陈述句的语序**
 陈述句一定是有主语,有动词,有宾语,有句号
@@ -287,7 +288,7 @@ He arrived before six o'clock.
 before he came back
 above 在......上面
 ahead of 在......前面 (+时间、位置)(动态的行为)
-
+```
 
 ```
 ahead of time
