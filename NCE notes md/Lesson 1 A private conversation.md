@@ -4,16 +4,16 @@ Lesson 1 A private conversation
 
 `New words and expressions】生词和短语（ 12 ）`
 private adj. 私人的  
-conversation n. 谈话
-theatre n. 剧场，戏院
-seat n. 座位
-play n. 戏
-loudly adv. 大声地
-angry adj. 生气的
-angrily adv. 生气地
-attention n. 注意
-bear v. 容忍
-business n. 事
+conversation n. 谈话  
+theatre n. 剧场，戏院  
+seat n. 座位  
+play n. 戏  
+loudly adv. 大声地  
+angry adj. 生气的  
+angrily adv. 生气地  
+attention n. 注意  
+bear v.容忍  
+business n. 事  
 rudely adv. 无礼地，粗鲁地
 
 ```
