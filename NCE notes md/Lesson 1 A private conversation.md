@@ -2,18 +2,18 @@
 
 Lesson 1 A private conversation
 
-`New words and expressions】生词和短语（ 12 ）`
-private adj. 私人的  
-conversation n. 谈话  
-theatre n. 剧场，戏院  
-seat n. 座位  
-play n. 戏  
-loudly adv. 大声地  
-angry adj. 生气的  
-angrily adv. 生气地  
-attention n. 注意  
-bear v.容忍  
-business n. 事  
+【New words and expressions】生词和短语（ 12 ）
+private adj. 私人的
+conversation n. 谈话
+theatre n. 剧场，戏院
+seat n. 座位
+play n. 戏
+loudly adv. 大声地
+angry adj. 生气的
+angrily adv. 生气地
+attention n. 注意
+bear v. 容忍
+business n. 事
 rudely adv. 无礼地，粗鲁地
 
 ```
@@ -48,10 +48,10 @@ They are having a conversation.
 talk 内容可正式可不正式, 也可以私人
 ```
 
-Let’s have a talk.  
-dialogue 对话, 可以指正式国家与国家会谈  
-China and Korea are having a dialogue.  
-chat 闲聊，就是北京人说的“侃”，说的是无关紧要的事。  
+Let’s have a talk.
+dialogue 对话, 可以指正式国家与国家会谈
+China and Korea are having a dialogue.
+chat 闲聊，就是北京人说的“侃”，说的是无关紧要的事。
 gossip 嚼舌头, 说长道短
 
 ★ theatre n.剧场, 戏剧
@@ -307,4 +307,3 @@ bear 忍受=stand
 suffer 遭受,忍受 (精神或肉体上)痛苦，suffer 后面必须加一种痛苦
 I suffer the headache.（肉体上的痛苦）
 He often suffers defeat.（精神上的痛苦）（defeat n. 失败）
-
