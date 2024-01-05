@@ -184,8 +184,6 @@ go to the cinema =see a film 去电影院看电影
 go to the dairy 去牛奶店
 go to the + 人 + 's 表示去这个人开的店
 go to the doctor's 去看病；go to the butcher's 买肉
-```  
-```
 以下短语中名词前不加冠词：
 go to school 去上学；go to church 去做礼拜；go to hospital(医院) 去看病；go to bed 上床，睡觉；
 go home（跟 home 相连一定表示没有事情可做,回家休息）
