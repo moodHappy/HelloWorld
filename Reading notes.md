@@ -74,10 +74,10 @@ Despite:
 charge n. 费用；责任；冲锋
 
 ① n. 费用
-The hotel bill included a charge for room service.（酒店账单包括了客房服务的费用。）hotel b
+The hotel bill included a charge for room service.（酒店账单包括了客房服务的费用。）
 
 ② n. 责任
-She was given the charge of organizing the event.（她被委以组织该活动的责任。）given
+She was given the charge of organizing the event.（她被委以组织该活动的责任。）
 ③ n. 冲锋
 The soldiers bravely led the charge into enemy territory.（士兵们勇敢地发起了对敌领土的冲锋。）
 ```
