@@ -69,3 +69,15 @@ Despite:
 例子：Despite the rain, they decided to go for a walk.
 
 总的来说，"although" 强调对比，引入两个相对独立的情况，而 "despite" 强调一个事实，尽管可能存在一些相反的情况。
+
+```
+charge n. 费用；责任；冲锋
+
+① n. 费用
+The hotel bill included a charge for room service.（酒店账单包括了客房服务的费用。）hotel b
+
+② n. 责任
+She was given the charge of organizing the event.（她被委以组织该活动的责任。）given
+③ n. 冲锋
+The soldiers bravely led the charge into enemy territory.（士兵们勇敢地发起了对敌领土的冲锋。）
+```
