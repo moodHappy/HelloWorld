@@ -21,7 +21,8 @@ She was given the charge of organizing the event
 她被委以组织该活动的责任。
 
 ③ n. 冲锋
-The soldiers bravely led the charge into enemy territory.（士兵们勇敢地发起了对敌领土的冲锋。）
+The soldiers bravely led the charge into enemy territory.  
+士兵们勇敢地发起了对敌领土的冲锋
 ```
 
 ```
