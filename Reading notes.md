@@ -9,6 +9,30 @@ Security measures are in place to prevent unauthorized access.
 Vaccination is an effective way to prevent certain diseases.  
 接种疫苗是预防某些疾病的有效途径。
 ```
+```
+charge n. 费用；责任；冲锋
+
+① n. 费用
+The hotel bill included a charge for room service.（酒店账单包括了客房服务的费用。）
+
+② n. 责任
+She was given the charge of organizing the event.（她被委以组织该活动的责任。）
+
+③ n. 冲锋
+The soldiers bravely led the charge into enemy territory.（士兵们勇敢地发起了对敌领土的冲锋。）
+```
+
+```
+affect v. 影响；感动
+
+① v. 影响
+The change in weather can affect your mood.  
+天气的变化可能会影响你的心情
+
+② v. 感动
+The touching story deeply affected the audience.  
+那感人的故事深深地感动了观众
+
 `evidence和proof的区别,Evidence"（证据）通常指一组信息或事实，可能支持某种主张，但并不一定是不可辩驳的。而"proof"（证明）更强调提供确凿、无可争议的信息`  
 The detective carefully collected evidence at the crime scene to build a strong case against the suspect.  
 ***
@@ -80,27 +104,3 @@ Despite:
 例子：Despite the rain, they decided to go for a walk.
 
 总的来说，"although" 强调对比，引入两个相对独立的情况，而 "despite" 强调一个事实，尽管可能存在一些相反的情况。
-
-```
-charge n. 费用；责任；冲锋
-
-① n. 费用
-The hotel bill included a charge for room service.（酒店账单包括了客房服务的费用。）
-
-② n. 责任
-She was given the charge of organizing the event.（她被委以组织该活动的责任。）
-
-③ n. 冲锋
-The soldiers bravely led the charge into enemy territory.（士兵们勇敢地发起了对敌领土的冲锋。）
-```
-
-```
-affect v. 影响；感动
-
-① v. 影响
-The change in weather can affect your mood.  
-天气的变化可能会影响你的心情
-
-② v. 感动
-The touching story deeply affected the audience.  
-那感人的故事深深地感动了观众
