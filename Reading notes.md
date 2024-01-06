@@ -82,3 +82,14 @@ She was given the charge of organizing the event.（她被委以组织该活动�
 ③ n. 冲锋
 The soldiers bravely led the charge into enemy territory.（士兵们勇敢地发起了对敌领土的冲锋。）
 ```
+
+```
+affect v. 影响；感动
+
+① v. 影响
+The change in weather can affect your mood.  
+天气的变化可能会影响你的心情
+
+② v. 感动
+The touching story deeply affected the audience.  
+那感人的故事深深地感动了观众
