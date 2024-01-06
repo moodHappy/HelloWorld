@@ -2,10 +2,12 @@
 prevent v. 阻止；预防
 
 ① v. 阻止
-Security measures are in place to prevent unauthorized access.（已经采取了安全措施，以阻止未经授权的访问。）
+Security measures are in place to prevent unauthorized access.  
+已经采取了安全措施，以阻止未经授权的访问。
 
 ② v. 预防
-Vaccination is an effective way to prevent certain diseases.（接种疫苗是预防某些疾病的有效途径。）
+Vaccination is an effective way to prevent certain diseases.  
+接种疫苗是预防某些疾病的有效途径。
 ```
 `evidence和proof的区别,Evidence"（证据）通常指一组信息或事实，可能支持某种主张，但并不一定是不可辩驳的。而"proof"（证明）更强调提供确凿、无可争议的信息`  
 The detective carefully collected evidence at the crime scene to build a strong case against the suspect.  
