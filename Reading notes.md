@@ -1,3 +1,11 @@
+
+```
+tension
+① n. 紧张
+The tension in the room heightened as the crucial announcement drew near.（随着关键公告的临近，房间里的紧张气氛升高。）
+② n. 张力
+The bridge cables were adjusted to maintain the proper tension for structural stability.（桥梁的钢缆被调整以保持结构稳定所需的适当张力。）
+```
 ```
 poll
 ① n. 民意调查
