@@ -1,4 +1,15 @@
 ```
+remain v. 保持；仍然存在
+
+① v. 保持
+The old building has managed to remain standing for decades.
+（这座老建筑已经成功保持站立数十年。）
+② v. 仍然存在
+Despite the challenges, a sense of optimism remains among the team.
+（尽管面临挑战，团队中仍然存在一种乐观情绪。）
+```
+
+```
 prevent v. 阻止；预防
 
 ① v. 阻止
