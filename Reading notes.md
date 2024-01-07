@@ -2,8 +2,8 @@
 rescue
 ① vt. 营救，救援，解救
 
-The rescue team was dispatched to save the climbers stranded on the mountain. rescue team was dispatched to save the climbers stranded。
-救援队被派出救援被困山上的登山者。救援队出动救援被困登山者
+The rescue team was dispatched to save the climbers stranded on the mountain. 
+救援队被派出救援被困山上的登山者
 
 ② vt. 挽救，拯救
 Her dedication and hard work helped rescue the failing project from disaster.
