@@ -1,4 +1,12 @@
 ```
+poll
+① n. 民意调查
+The recent poll indicated a shift in public opinion towards environmental conservation.（最近的民意调查显示公众对环保态度发生了变化。）
+② v. 投票
+People will poll on their preferred candidate in the upcoming election.（人们将在即将到来的选举中投票支持他们喜欢的候选人。）
+```
+
+```
 remain v. 保持；仍然存在
 
 ① v. 保持
