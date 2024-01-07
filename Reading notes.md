@@ -1,4 +1,14 @@
 ```
+focus n./v. 焦点；集中
+
+① n. 焦点
+The photographer adjusted the lens to capture a sharp focus on the subject.
+（摄影师调整镜头，使主题能够清晰呈现在焦点上。）
+② v. 集中
+It's crucial to focus on the task at hand to achieve better results.
+（集中精力于手头的任务是实现更好结果的关键。）
+```
+```
 rescue
 ① vt. 营救，救援，解救
 
