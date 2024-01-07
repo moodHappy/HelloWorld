@@ -1,12 +1,10 @@
 ```
 controversial
-有争议的;引起争议的
 a controversial issue/decision/speech/figure
-有争议的问题/决定/演讲/人物
-
 有争议的问题／决议／讲话／数字
+
 The book was very controversial.
-这本书引起了很大争议。
+这本书很有争议。
 ```
 ```
 focus n./v. 焦点；集中
