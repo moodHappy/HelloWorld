@@ -1,4 +1,9 @@
 ```
+widespread 广泛的;普遍的;遍布的
+There are reports of widespread flooding in northern France.
+据报道，法国北部发生大范围洪水。
+```
+```
 controversial
 a controversial issue/decision/speech/figure
 有争议的问题／决议／讲话／数字
