@@ -1,4 +1,10 @@
 ```
+section
+the sports section of the newspaper
+报纸的体育版
+the tail section of an aircraft
+```
+```
 potential 潜在的，可能的
 A number of potential buyers have expressed interest in the company.
 一些潜在的买主表达了对该公司的兴趣。
