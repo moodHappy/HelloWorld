@@ -7,11 +7,14 @@
 [009](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F009.md)  
 [011](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F011.md)  
 
+<center>
 
-| 所有格形容词 | my   | your | his  | her  | its  | our  | their |
+| 所有格形式 | my   | your | his  | her  | its  | our  | their |
 |------------|------|------|------|------|------|------|-------|
 | 所有格代词   | mine | yours| his  | hers | -    | ours | theirs|
-| 中文译名     | 我的  | 你(们)的   | 他的   | 她的   |它的    | 我们的 | 他们的 |
+| 中文译名     | 我的  | 你(们)的   | 他的   | 她的   |-    | 我们的 | 他们的 |
+
+</center>
 
 
 
