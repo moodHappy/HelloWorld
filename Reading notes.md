@@ -1,4 +1,13 @@
 ```
+senior 高级的
+senior management
+高级管理层
+a senior government minister
+政府高级部长
+She's senior to me, so I have to do what she tells me.
+她是我的上级，所以我得听她的。
+```
+```
 widespread 广泛的;普遍的;遍布的
 There are reports of widespread flooding in northern France.
 据报道，法国北部发生大范围洪水。
