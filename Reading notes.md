@@ -1,4 +1,9 @@
 ```
+potential 潜在的，可能的
+A number of potential buyers have expressed interest in the company.
+一些潜在的买主表达了对该公司的兴趣。
+```
+```
 senior 高级的
 senior management
 高级管理层
