@@ -15,7 +15,7 @@
 | 111 | 113 | 115 | 117 | 119 |
 | 121 | 123 | 125 | 127 | 129 |
 | 131 | 133 | 135 | 137 | 139 |
-| 141 | 143 |  [News](https://github.com/moodHappy/HelloWorld/blob/master/Reading%20notes.md)   |  [nce1](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2Fnce1%20notes.txt)   |     |
+| 141 | 143 |  [New](https://github.com/moodHappy/HelloWorld/blob/master/Reading%20notes.md)   |  [NCE1](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2Fnce1%20notes.txt)   |     |
   
 
 ---
