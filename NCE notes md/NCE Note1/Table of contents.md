@@ -1,4 +1,4 @@
-| 1 | 3 | 5 | 7 |
+| [001](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F001.md) | [003](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F003.md) | 5 | 7 |
 |:-:|:-:|:-:|:-:|
 | 9 | 11 | 13 | 15 |
 | 17 | 19 | 21 | 23 |
@@ -19,8 +19,8 @@
 | 137 | 139 | 141 | 143 |
 | 145 | 147 | 149 | 151 |
 
-[001](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F001.md)  
-[003](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F003.md)  
+  
+
 [005](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F005.md)  
 [007](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F007.md)  
 [009](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F009.md)  
