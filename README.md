@@ -42,5 +42,7 @@
 [Reading Notes](https://github.com/moodHappy/HelloWorld/blob/master/Reading%20notes.md)  
 
 ---
+[NCE1](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2FTable%20of%20contents.md)  
 
-https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2FTable%20of%20contents.md
+[NCE2](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2FTable%20of%20contents.md)
+
