@@ -1,6 +1,4 @@
 Lessons 31～ 32 
-
-
 课文详注 Further notes on the text 
 1 ．Where's =Where is。 
 2 ．She's sitting under the tree. 她正在树阴下坐着。 
@@ -16,8 +14,6 @@ Lessons 31～ 32
 5 ．数字 200 ， 000 与 1 ， 000 ， 000 的英文写法 
 200 ， 000 ----two hundred thousand 
 1 ， 000 ， 000 ----one million 
-
-
 语法 Grammar in use 
 现在进行时（ 1 ） 
 （ 1 ）在英文中若想表达此刻正在进行的动作或事件，要用动词的现 
@@ -39,8 +35,6 @@ The dog is drinking its milk.
 狗正在喝它的那份牛奶。⇒ 
 The dog is not drinking its milk. 
 狗没在喝它的那份牛奶。 
-
-
 词汇学习 Word study 
 1 ．climb v. 
 （ 1 ）攀登，攀爬： 
@@ -74,8 +68,6 @@ The dog is running after a cat.
 那只狗正在追赶一只猫。 
 Many young men are running after that girl. 
 许多年轻人在追求那个姑娘。 
-
-
 练习答案 Key to written exercises 
 Lesson 32 
 A 
@@ -120,45 +112,19 @@ She's turning off the tap.
 9 What is the boy doing? 
 Is he cleaning his teeth? 
 No, he isn't cleaning his teeth. 
-
-
 He's putting on his shirt. 
 10 What is Miss Jones doing? 
 Is she putting on her coat? 
 No, she isn't putting on her coat. 
 She's taking off her coat. 
-
-
 Lessons 33～ 34 
-
-
 课文详注 Further notes on the text 
 1 ．It is a fine day today.今天天气好。 
 句中的it是指天气。又如： 
-Is it cold today? 
-
-``` 
+Is it cold today? ``` 
 No, it isn't. 
 ``` 
-## 今天冷吗？ 
-
-## 不，不冷。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-2 ．some clouds，几朵云。 
+ 今天冷吗？  不，不冷。             2 ．some clouds，几朵云。 
 some既可修饰可数名词，也可修饰不可数名词。如：some tables一 
 些椅子（可数名词），some milk一些牛奶（不可数名词）。 
 3 ．There are some clouds in the sky, but the sun is shining.天空中飘着几 
@@ -188,40 +154,16 @@ There is a dog under the tree.
 ship一般指海洋中行驶的大船。boat一词指河中行驶的小船。另外： 
 aeroplane（英国英语），airplane（美国英语），飞机（正式用语）； plane， 
 飞机（非正式用语）。 
-
-
 语法 Grammar in use 
 现在进行时（ 2 ） 
 （请参见 Lessons 31～ 32 语法部分。） 
 现在进行时的形式是由be的现在时形式+现在分词形式构成。当句 
 中主语名词为复数或者人称代词为第 2 人称或第 3 人称复数时，be的现 
 在时形式应为are。 
-What are the cooks doing? Are they washing dishes? 
-
-``` 
+What are the cooks doing? Are they washing dishes? ``` 
 No, they aren't washing dishes. They're cooking. 
 ``` 
-## 这些厨师在干什么？在洗盘子吗？ 
-
-## 没有，他们没在洗盘子。他们正在烹饪。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-## 现在进行时的各种形式（包括缩略形式）列表如下： 
-
-``` 
+ 这些厨师在干什么？在洗盘子吗？  没有，他们没在洗盘子。他们正在烹饪。              现在进行时的各种形式（包括缩略形式）列表如下： ``` 
 I am 
 You are 
 He is 
@@ -238,23 +180,7 @@ washing.
 drinking milk 
 opening the window. 
 ``` 
-##  
-
-##  
-
-##       
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+                     ``` 
 I'm 
 You're 
 He's 
@@ -271,23 +197,7 @@ washing.
 drinking milk. 
 opening the window 
 ``` 
-##  
-
-##  
-
-##       
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+                     
 词汇学习 Word study 
 1 ．jump v. 
 （ 1 ）跳跃；跃过： 
@@ -312,8 +222,6 @@ I was so excited that I could hardly sleep.
 （ 2 ）n.睡眠；睡觉： 
 He had a good sleep last night. 
 他昨天夜里睡得很酣畅。 
-
-
 练习答案 Key to written exercises 
 Lesson 34 
 A 
@@ -347,11 +255,7 @@ They're walking over the bridge.
 They're waiting for a bus. 
 12 What are the children doing? 
 They're jumping off the wall. 
-
-
 Lessons 35～ 36 
-
-
 课文详注 Further notes on the text 
 1 ．This is a photograph of our village.这是我们村庄的一张照片。 
 句中of是介词，表示“⋯⋯的”。又如： 
@@ -367,8 +271,6 @@ along为介词，表示“沿着”。
 across为介词，表示“通过”某个平面。 
 5 ．beside a park，位于公园旁边。 
 beside为介词，表示“在⋯⋯旁边”。 
-
-
 语法 Grammar in use 
 短语动词 
 短语动词通常是指后面常跟一个介词或副词短语的动词，即动词+ 
@@ -383,8 +285,6 @@ The children are jumping off the branch.
 孩子们正从树枝上跳下来。 
 不仅一个单个动词可以同大量的介词或副词小品词一起构成短语动 
 词，而且一个短语动词本身也可能有几种不同的意义。 
-
-
 词汇学习 Word study 
 1 ．go into 
 （ 1 ）走进；进入： 
@@ -407,8 +307,6 @@ The dogs are running along the river banks.
 （ 2 ）离开；走开： 
 It's getting dark, we must run along. 
 天黑了，我们得走了。 
-
-
 练习答案 Key to written exercises 
 Lesson 36 
 A 
@@ -429,11 +327,7 @@ B
 11 Where are they sitting? They're sitting on the grass. 
 12 Where are the man and the woman reading? They're reading in the living 
 room. 
-
-
 Lessons 37～ 38 
-
-
 课文详注 Further notes on the text 
 1 ．What are you going to do now, George?你现在准备干什么，乔治？ 
 be going to，是打算、准备、按计划在最近做某事，表示将来。请参 
@@ -441,8 +335,6 @@ be going to，是打算、准备、按计划在最近做某事，表示将来。
 2 ．Pink's＝Pink is。 
 3 ．It's for my daughter, Susan.是为我的女儿苏珊做的。 
 Susan作my daughter的同位语。 
-
-
 语法 Grammar in use 
 将来时 be going to 
 （ 1 ）将来时be going to的形式由am/is/are going to +动词原形构成。 
@@ -474,8 +366,6 @@ Is George going to paint it pink?
 在助动词后面加上not可以得到否定句。如上句可变为： 
 George is not going to point it pink. 
 乔治不打算把它刷成粉红色。 
-
-
 词汇学习 Word study 
 1 ．paint 
 （ 1 ）v.上漆，涂： 
@@ -509,8 +399,6 @@ The students finished all their work in class.
 学生们当堂把全部作业都完成了。 
 He is without work. 
 他失业了。 
-
-
 练习答案 Key to written exercises 
 Lesson 38 
 A 
@@ -539,11 +427,7 @@ I'm listening to the stereo.
 I'm going to wash the dishes. 
 What are you doing now? 
 I'm washing the dishes. 
-
-
 Lessons 39～ 40 
-
-
 课文详注 Further notes on the text 
 1 ． Don't do that.不要放在那儿。 
 在英文中需用祈使语气来表示直接的命令、建议等多种意图。而祈 
@@ -555,107 +439,31 @@ me的句型。
 在动词give后面可以有两个宾语：即直接宾语（指物，如a book, it） 
 和间接宾语（指人，如me）。如果直接宾语置于动词give之后，间接宾 
 语之前则带to。再比较一下下列句式： 
-Show her the magazine. 
-
-``` 
+Show her the magazine. ``` 
 Show it to her. 
 ``` 
-## 给她那本杂志。 
-
-## 把它给她。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 给她那本杂志。  把它给她。             ``` 
 Give me that knife. 
 ``` 
 ``` 
 Give it to me. 
 ``` 
-## 给我那把小刀。 
-
-## 把它给我。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 给我那把小刀。  把它给我。             ``` 
 Send him the letter. 
 ``` 
 ``` 
 Send it to him. 
 ``` 
-## 送给他这封信。 
-
-## 把它送给他。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 送给他这封信。  把它送给他。             ``` 
 Give me the newspapers. 
 ``` 
 ``` 
 Give them to me. 
 ``` 
-## 给我报纸。 
-
-## 把它们给我。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-3 ．in front of，在⋯⋯前面。 
+ 给我报纸。  把它们给我。             3 ．in front of，在⋯⋯前面。 
 有别于in the front of，在⋯⋯的前部。 
 4 ．There we are!就放在那里! 
 在这里表示说话人的满意心情，可理解为“好了”、“行了”等。 
-
-
 语法 Grammar in use 
 祈使句的否定缩略式 
 形式为Don't（或Do not）+动词原形，如： 
@@ -667,8 +475,6 @@ Don't speak to me like that!
 文，都说明这种形式用于表示是否友好、不客气、愤怒、不耐烦、有说 
 服性等。一般而言，祈使句的否定式通常用Don't来表示，完整形式Do not 
 主要用于正式文告中。 
-
-
 词汇学习 Word study 
 1 ．drop v. 
 （ 1 ）（失手）落下；掉下；放下： 
@@ -695,8 +501,6 @@ He sent his secretary for a doctor.
 他派他的秘书去请医生了。 
 Her mother often sends her to the store for some groceries. 
 她母亲经常差遣她去商店买些杂货。 
-
-
 练习答案 Key to written exercises 
 Lesson 40 
 A 
@@ -716,40 +520,16 @@ B
 8 I'm going to turn it off. 
 9 I'm going to turn them off. 
 10 I'm going to turn it on. 
-
-
 Lessons 41～ 42 
-
-
 课文详注 Further notes on the text 
 1 ．Not very.不太重。 
 是It is not very heavy的省略形式。口语中回答问题时，常把主语、动 
 词和宾语都省略，只剩一个副词、一个副词词组或一个动词不定式短语 
 等。又如： 
-Is that tin of tobacco for me? 
-
-``` 
+Is that tin of tobacco for me? ``` 
 No, certainly not. 
 ``` 
-## 那听烟草是为我准备的吗？ 
-
-## 不，当然不是。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-2 ．Put it on this chair.把它放在这把椅子上。 
+ 那听烟草是为我准备的吗？  不，当然不是。             2 ．Put it on this chair.把它放在这把椅子上。 
 it指bag。在没有扶手的椅子上用on，在有扶手的椅子上用in。如： 
 sit on a chair坐在椅子上 
 sit in an armchair 坐在扶手椅里 
@@ -758,54 +538,16 @@ sit in an armchair 坐在扶手椅里
 数形式。如果想表示“一些”之意，可用some，any等词。some用于肯 
 定句，any用于否定句和疑问句。（可参见Lessons 27～ 28 语法部分。） 
 如： 
-Is there any milk here? 
-
-``` 
+Is there any milk here? ``` 
 Yes, there is. There's some on the table. 
 ``` 
-## 这儿有牛奶吗？ 
-
-## 有，桌子上有一些。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 这儿有牛奶吗？  有，桌子上有一些。             ``` 
 Is there any bread on the table? 
 ``` 
 ``` 
 There isn't any bread. There's some milk. 
 ``` 
-## 桌子上有面包吗？ 
-
-## 没有面包，有些牛奶。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-如果要表示“一块”、“一张”、“一条”等，需加如a piece of这 
+ 桌子上有面包吗？  没有面包，有些牛奶。             如果要表示“一块”、“一张”、“一条”等，需加如a piece of这 
 表示数量的短语。本课表示数量的短语还有： 
 a loaf of 一个 
 a bar of 一条 
@@ -818,8 +560,6 @@ a tin of 一听
 指西餐中切成片吃的整个面包。 
 5 ．a bar of chocolate，一块巧克力。 
 指一长条巧克力糖。这种形状的巧克力有时也可称为一块巧克力。 
-
-
 语法 Grammar in use 
 there＋be结构（ 3 ） 
 当there＋be后跟单数名词或不可数名词时，动词be的一般现在时形 
@@ -836,8 +576,6 @@ There is a pen, two books and a knife on the desk.
 课桌上有一枝钢笔、两本书和一把小刀。（第一个并列名词是 
 单数） 
 也请参见Lessons 19～ 20 以及Lessons 27～ 28 语法部分。 
-
-
 词汇学习 Word study 
 1 ．bar n. 
 （ 1 ）条；块： 
@@ -862,8 +600,6 @@ The shirt costs me ￡ 20.
 买这件衬衣花了我 20 镑。 
 Half a pound of coffee costs one pound. 
 半磅咖啡的价格是一英镑。 
-
-
 练习答案 Key to written exercises 
 Lesson 42 
 A 
@@ -894,11 +630,7 @@ Yes, there is. There's some in the tin.
 Yes, there is. There's some on the desk. 
 10 Is there any cheese here? 
 Yes, there is. There's some on the plate. 
-
-
 Lessons 43～ 44 
-
-
 课文详注 Further notes on the text 
 1 ． Can you make the tea, Sam? 你会沏茶吗，萨姆？ 
 make the tea,沏茶。句中can是英语中最常见的几个情态助动词之一， 
@@ -922,8 +654,6 @@ I can't see any coffee.
 我看不见什么咖啡。 
 He can't find the cups. 
 他找不到杯子。 
-
-
 词汇学习 Word study 
 1 ．find v. 
 （ 1 ）找到；寻得： 
@@ -946,8 +676,6 @@ The stormy sea is boiling.
 （ 3 ）（人、感情等）激动；发怒： 
 Seeing the national flag made me boil. 
 看着国旗，我心潮澎湃。 
-
-
 练习答案 Key to written exercises 
 Lesson 44 
 A 
@@ -979,11 +707,7 @@ Yes, there are. There are some in that cupboard.
 Yes, there are. There are some in front of that building. 
 10 Is there any coffee here? 
 Yes, there is. There's some on the table. 
-
-
 Lessons 45～ 46 
-
-
 课文详注 Further notes on the text 
 1 ．Can you come here a minute please, Bob? 请你来一下好吗，鲍勃？ 
 句中的 a minute是时间状语，表示“一会儿”、“片刻”。又如： 
@@ -991,158 +715,44 @@ Wait a minute, please.
 请稍等一会儿。 
 2 ．She's next door. 她在隔壁。 
 这里 next door起副词作用，作表语。 
-
-
 语法 Grammar in use 
 can(2) 
 can是情态助动词，表示“能力”。情态助动词的否定式由情态助动 
 词加not构成；疑问句中将情态助动词置于句首，后接句子的主语和主要 
 谓语动词。又如： 
-Can Penny and Jane wash the dishes? 
-
-``` 
+Can Penny and Jane wash the dishes? ``` 
 Yes, they can. 
 ``` 
-## 彭妮和简会洗盘子吗？ 
-
-## 是的，她们会。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 彭妮和简会洗盘子吗？  是的，她们会。             ``` 
 Can George take these flowers to her? 
 ``` 
 ``` 
 No, he can't. 
 ``` 
-## 乔治会把这些花带给她吗？ 
-
-## 不，他不会。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-can本身没有人称或数方面的变化。它还可以与疑问词一起用在特殊 
+ 乔治会把这些花带给她吗？  不，他不会。             can本身没有人称或数方面的变化。它还可以与疑问词一起用在特殊 
 疑问句中。如： 
-Who can go into the boss's office? 
-
-``` 
+Who can go into the boss's office? ``` 
 Bob can. 
 ``` 
-## 谁能到老板的办公室里去？ 
-
-## 鲍勃能。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 谁能到老板的办公室里去？  鲍勃能。             ``` 
 What can Penny and Jane do? 
 ``` 
 ``` 
 They can wash the dishes. 
 ``` 
-## 彭妮和简会干什么？ 
-
-## 她们会洗盘子。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 彭妮和简会干什么？  她们会洗盘子。             ``` 
 What can the cat do? 
 ``` 
 ``` 
 It can drink its milk. 
 ``` 
-## 猫会干什么？ 
-
-## 它会喝它的那份牛奶。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 猫会干什么？  它会喝它的那份牛奶。             ``` 
 What can't she do? 
 ``` 
 ``` 
 She can't put her coat on. 
 ``` 
-## 她不会干什么？ 
-
-## 她不会穿上衣。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+ 她不会干什么？  她不会穿上衣。             
 词汇学习 Word study 
 1 ．lift v. 
 （ 1 ）提；抬；举： 
@@ -1182,8 +792,6 @@ I've got a terrible headache.
 （ 4 ）＜口＞糟透的；很蹩脚的： 
 She is terrible at maths. 
 她的数学很蹩脚。 
-
-
 练习答案 Key to written exercises 
 Lesson 46 
 A 
@@ -1227,11 +835,7 @@ I can see that aeroplane.
 Yes, she can. 
 What can she do? 
 She can read this book. 
-
-
 Lessons 47～ 48 
-
-
 课文详注 Further notes on the text 
 1 ．Yes, I do. 是的，我喜欢。 
 是一句肯定的简略回答。如果是否定的回答，则应为 No, I don't. I 
@@ -1267,55 +871,17 @@ The earth goes round the sun.
 一般现在时的疑问句和否定句中使用do／does。用he, she, it 作主语 
 时，应使用动词第 3 人称单数形式，在动词原形后加-s；在疑问句中，则 
 用does来表示这层意思。如： 
-Do you like oranges? 
-
-``` 
+Do you like oranges? ``` 
 Yes, I do. I like oranges, but I don't want one. 
 ``` 
-## 你喜欢橙子吗？ 
-
-## 是的，我喜欢。我喜欢橙子，但是我现在不想吃。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+ 你喜欢橙子吗？  是的，我喜欢。我喜欢橙子，但是我现在不想吃。             
 ``` 
 Does Ann want any milk in her coffee? 
 ``` 
 ``` 
 No, she doesn't. She likes black coffee. 
 ``` 
-## 安想给她的咖啡中加一些牛奶吗？ 
-
-## 不，她不想。她喜欢清咖啡。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+ 安想给她的咖啡中加一些牛奶吗？  不，她不想。她喜欢清咖啡。             
 词汇学习 Word study 
 1 ．like v. 
 （ 1 ）喜欢： 
@@ -1339,8 +905,6 @@ Those drooping flowers want water.
 那些正在枯萎的花朵需要水分。 
 My leather shoes want cleaning. 
 我的皮鞋需要擦擦了。 
-
-
 练习答案 Key to written exercises 
 Lesson 48 
 A 
@@ -1373,11 +937,7 @@ I like wine, but I don't want any.
 I like biscuits, but I don't want one. 
 10 Yes, I do. 
 I like beer, but I don't want any. 
-
-
 Lessons 49～ 50 
-
-
 课文详注 Further notes on the text 
 1 ．What about some steak? 来点牛排吗？ 
 句中What可以换成How，用来征求对方看法或意见。请参看Lessons 
@@ -1391,8 +951,6 @@ To tell you the truth, I don't like his new car at all.
 16th----sixteenth 17th----seventeenth 18th----eighteenth 
 19th----nineteenth 20th----twentieth 21st----twenty-first 
 22nd----twenty-second 23rd----twenty-third 24th----twenty-fourth 
-
-
 语法 Grammar in use 
 1 ．选择疑问句 
 含有or的问句称为选择疑问句。or之前的部分读升调，之后的部分 
@@ -1417,78 +975,22 @@ Did you or didn't you go there?
 2 ．一般现在时的单数第 3 人称形式 
 （可参见 Lessons 47～ 48 语法部分。） 
 在肯定句、否定句以及疑问句中的表现方式如下所示： 
-Who likes lamb? 
-
-``` 
+Who likes lamb? ``` 
 Mrs. Bird does. 
 ``` 
-## 谁喜欢（吃）羊肉？ 
-
-## 伯德夫人喜欢。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 谁喜欢（吃）羊肉？  伯德夫人喜欢。             ``` 
 Does Mr. Bird like chicken? 
 ``` 
 ``` 
 No, he doesn't. He doesn't like chicken at all. 
 ``` 
-## 伯德先生喜欢鸡肉吗？ 
-
-## 不，他不喜欢。他一点儿也不喜欢鸡肉。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 伯德先生喜欢鸡肉吗？  不，他不喜欢。他一点儿也不喜欢鸡肉。             ``` 
 Mr. Bird likes potatoes, but Mrs. Bird doesn't. 
 ``` 
 ``` 
 I don't like potatoes, either. 
 ``` 
-## 伯德先生喜欢土豆，但是伯德夫人不喜欢。 
-
-## 我也不喜欢土豆。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+ 伯德先生喜欢土豆，但是伯德夫人不喜欢。  我也不喜欢土豆。             
 词汇学习 Word study 
 1 ．too adv. 
 也，还（常用于肯定句，有时也用于疑问句，但不能用于否定句。 
@@ -1508,8 +1010,6 @@ If you do not go, I shall not go, either.
 如果你不去，那么我也不去。 
 I haven't seen the film and my sister hasn't either. 
 我没有看过那部电影，我妹妹也没看过。 
-
-
 练习答案 Key to written exercises 
 Lesson 50 
 A 
@@ -1540,11 +1040,7 @@ She likes pears, but she doesn't want any.
 I like grapes, but I don't want any. 
 10 Yes, she does. 
 She likes peaches, but she doesn't want any. 
-
-
 Lessons 51～ 52 
-
-
 课文详注 Further notes on the text 
 1 ．Where do you come from? 你是哪国人？ 
 问对方是什么地方人。come from表示来源或籍贯。也可说：Where are 
@@ -1560,8 +1056,6 @@ April（在 4 月），in June（在 6 月），in September（在 9 月）等�
 often（经常），always（总是，老是），sometimes（有时）都是课文 
 中出现的表示非确定频度的副词。这些副词一般用来回答用how often 提 
 问的问题。 
-
-
 语法 Grammar in use 
 What⋯(be. look, etc.) like? 
 我们把What⋯like? 这一句型用于询问事物的状况，例如天气、气候 
@@ -1581,8 +1075,6 @@ What's your house like?
 以笼统的或确切的信息。例如课文中表示天气或气候的形容词有pleasant 
 （宜人的），windy（有风的），hot（热的），cold（冷的），warm（温 
 暖的）等等。 
-
-
 词汇学习 Word study 
 1 ．sometimes adv. 
 有时，间或： 
@@ -1601,8 +1093,6 @@ She's such a pleasant girl.
 她真是个可爱的姑娘。 
 Andrew seemed very pleasant on the phone. 
 安德鲁在电话里显得很和蔼可亲。 
-
-
 练习答案 Key to written exercises 
 Lesson 52 
 A 
@@ -1647,8 +1137,6 @@ They're Norwegian.
 7 Where do they come from? 
 Do they come from Norway? 
 No, they don't come from Norway. They come from Greece. 
-
-
 What nationality are they? 
 They're Greek. 
 8 Where does she come from? 
@@ -1666,11 +1154,7 @@ Does he come from the U. S.?
 No, he doesn't come from the U. S. He comes from Brazil. 
 What nationality is he? 
 He's Brazilian. 
-
-
 Lessons 53～ 54 
-
-
 课文详注 Further notes on the text 
 1 ．in the North=in the north of England. 
 North的首字母大写，是因为它单独使用，特指英国的北部。表示一 
@@ -1692,8 +1176,6 @@ a south window 南窗
 英国人见面时谈话通常是从天气开始的。一方面这与英国的自然地 
 理情况有关，另一方面则与英国人的民族性格有关。谈论天气是任何人 
 都可接受的话题，而且这可避免介入令人尴尬的或侵入私人领域的话题。 
-
-
 语法 Grammar in use 
 like (v.)与like (prep.) 
 like(v.)表示“喜欢”、“想要”（请参见 Lessons 47～ 48 词汇部分）， 
@@ -1704,8 +1186,6 @@ She is very like her sister.
 她和她姐姐相像极了。 
 The new building looks like a big bird. 
 那座新建筑看上去像是一只大鸟。 
-
-
 词汇学习 Word study 
 1 ．mild adj. 
 （ 1 ）（天气等）温暖的；暖和的： 
@@ -1737,8 +1217,6 @@ My mother always rises early.
 我母亲总是很早起床。 
 The house rose to the singers. 
 全场起立向歌唱演员们致意。 
-
-
 练习答案 Key to written exercises 
 Lesson 54 
 A 
@@ -1771,11 +1249,7 @@ Yes. They're Nigerian. They come from Nigeria.
 Yes. She's Turkish. She comes from Turkey. 
 10 Where does she come from? Is she Korean? 
 Yes. She's Korean. She comes from Korea. 
-
-
 Lessons 55～ 56 
-
-
 课文详注 Further notes on the text 
 1 ．go to work, 上班。 
 由动词 go引导的短语课文中还有：go to school（上学）， go to bed 
@@ -1788,8 +1262,6 @@ housework是不可数名词。请比较：do the homework（做作业）。
 4 ．at night, 在夜里。 
 如果说某日夜里，则用介词 on: 
 on the night of June 2 在 6 月 2 日的夜里 
-
-
 语法 Grammar in use 
 一般现在时（ 2 ） 
 （请参见 Lessons 47～ 48 语法部分。） 
@@ -1807,15 +1279,11 @@ wash----washes
 go----goes 
 watch----watches 
 do----does 
-（ 3 ）以辅音加 - y结尾的动词，把 - y改成 - i，再加 - es；而元音加 
-
-- y结尾的动词，只加 - s即可： 
+（ 3 ）以辅音加 - y结尾的动词，把 - y改成 - i，再加 - es；而元音加 - y结尾的动词，只加 - s即可： 
     hurry----hurries 
     carry----carries 
     play----plays 
     stay----stays 
-
-
 词汇学习 Word study 
 1 ．arrive v. 
 （ 1 ）到达；到来： 
@@ -1859,8 +1327,6 @@ We were staying at the same hotel.
 （ 3 ）持续；保留： 
 The house has to stay exactly as it was. 
 这所房子必须完全保持原来的样子。 
-
-
 练习答案 Key to written exercises 
 Lesson 56 
 A 
@@ -1892,11 +1358,7 @@ They sometimes watch television in the evening.
 She always eats her lunch at noon. 
 11 What does he do in the evening? 
 He often reads his newspaper in the evening. 
-
-
 Lessons 57～ 58 
-
-
 课文详注 Further notes on the text 
 1 ．by car, 乘汽车。 
 by（乘坐）表示“乘坐（某种交通工具）”，但它必须与动词连用。 
@@ -1906,74 +1368,30 @@ by bus 乘公共汽车
 by plane 乘飞机 
 by sea 乘船 
 2 ．on foot, 步行。 
-
-
 语法 Grammar in use 
 一般现在时与现在进行时 
 一般现在时表示一般的动作或不断重复发生的动作；现在进行时表 
 示说话时正在发生的动作，动作还没有完成。简单图示如下： 
 ←⋯⋯⋯⋯⋯ ⋯⋯⋯⋯⋯→ 
-过去 现在 将来 
-
-## 过去 现在 将来 
-
-``` 
+过去 现在 将来  过去 现在 将来 ``` 
 I do 
 ``` 
 ``` 
 I an doing 
 ``` 
-## 一般现在时表示永久的情况；进行时表示暂时的情况。请比较： 
-
-``` 
+ 一般现在时表示永久的情况；进行时表示暂时的情况。请比较： ``` 
 Jane works very hard most of the time. 
 ``` 
 ``` 
 Jane is working hard today. 
 ``` 
-## 简大多工作努力。 
-
-## 简今天工作很努力。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 简大多工作努力。  简今天工作很努力。             ``` 
 His parents live in Rome. 
 ``` 
 ``` 
 He's living with some friends now. 
 ``` 
-## 他父母住在罗马。 
-
-## 他现在与一些朋友们住在一起。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-进行时只用于表示动作或偶尔发生的事件（We are eating, it is raining 
+ 他父母住在罗马。  他现在与一些朋友们住在一起。             进行时只用于表示动作或偶尔发生的事件（We are eating, it is raining 
 等等）。有些动词（如 like, want, know等）不是动作动词，因此不能用 
 进行时态，如不能说 I am knowing或We are liking，而只能说 I know或 We 
 like。 
@@ -1984,8 +1402,6 @@ tonight等连用。如：
 We usually watch television at night. But we are listening to the stereo 
 tonight. 
 我们通常晚上看电视。但是今晚我们正在听立体声节目。 
-
-
 词汇学习 Word study 
 1 ．play 
 （ 1 ）v. 玩，做游戏： 
@@ -2010,8 +1426,6 @@ Tom works as a cook in a local restaurant.
 汤姆在当地的一家餐馆当厨子。 
 My dad is really a good cook. 
 我爸爸烹调手艺特棒。 
-
-
 练习答案 Key to written exercises 
 Lesson 58 
 A 
@@ -2037,11 +1451,7 @@ I am reading a book this evening.
 We usually watch television at night. 
 What are you doing tonight? 
 We are listening to the stereo tonight. 
-
-
 Lessons 59～ 60 
-
-
 课文详注 Further notes on the text 
 1 ．writing paper, 信纸。 
 paper意为“纸”、“纸张”时是不可数名词，一张纸应是 a sheet of 
@@ -2061,56 +1471,18 @@ When else shall we meet again?
 什么其他的时间我们再见面？ 
 What else did he say? 
 他还说了些什么？ 
-
-
 语法 Grammar in use 
 完全动词 have（ 1 ） 
 完全动词have的意思相当于“拥有”、“具有”，其疑问句、肯定 
 句及否定句形式分别如下： 
-Do you/we/they have any? 
-
-``` 
+Do you/we/they have any? ``` 
 Yes, I/we/they have some 
 ``` 
 ``` 
 No, I/we/they do not/don't have any 
 ``` 
-## ⋯ 
-
-## 你（们）／我们／他（她）们有一些⋯⋯吗？ 
-
-## ⋯ 
-
-## 是的，我／我们／他（她们）有一些⋯⋯ 
-
-## ⋯ 
-
-## 不，我／我们／他（她）们没有一些⋯⋯ 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-have 当“拥有”讲时，可用于所有的一般时态，却不能用于进行时 
+ ⋯  你（们）／我们／他（她）们有一些⋯⋯吗？  ⋯  是的，我／我们／他（她们）有一些⋯⋯  ⋯  不，我／我们／他（她）们没有一些⋯⋯                   have 当“拥有”讲时，可用于所有的一般时态，却不能用于进行时 
 态（is having, are having等）。 
-
-
 词汇学习 Word study 
 1 ．change n. 
 （ 1 ）找头；零钱： 
@@ -2134,8 +1506,6 @@ There are houses of all sizes in that town.
 那个镇上有着大大小小各式房子。 
 We have chosen some boys all of the same size. 
 我们选出了一些个头一般高的男孩子。 
-
-
 练习答案 Key to written exercises 
 Lesson 60 
 A 
@@ -2154,11 +1524,7 @@ B
 7 The children don't have any butter, but they have some eggs. 
 8 I don't have any lettuces, but I have some cabbages. 
 9 Penny and I don't have any beans, but we have some peas. 
-
-
 Lessons 61～ 62 
-
-
 课文详注 Further notes on the text 
 1 ．fell ill, 感觉病了；look ill, 看起来有病。 
 前者指自我感觉，后者指外表形象。ill是表语，look和feel都是系动 
@@ -2176,8 +1542,6 @@ for two hours each day 每天两小时
 ache（胃疼）。 
 5 ．take/have an aspirin, 服／吃一片阿司匹林。 
 6 ．have a temperature, 发烧。 
-
-
 语法 Grammar in use 
 1 ．完全动词 have（ 2 ） 
 have（和 have got）常与表示疼痛和疾病的名词连用。关于与这种名 
@@ -2205,30 +1569,10 @@ He's got the flu/the measles/the mumps
 must是情态助动词（如can一样），它本身没有时态、性或数的变 
 化，也不能单独作谓语动词（简短回答除外）。must 表示“必要性”， 
 即某人必须做某事。（请参见 Lessons 29～ 30 语法部分。）如： 
-Must she see a doctor, or take an aspirin? 
-
-``` 
+Must she see a doctor, or take an aspirin? ``` 
 She mustn't see a doctor. She must take an aspirin. 
 ``` 
-## 她必须去看病或服用阿司匹林吗？ 
-
-## 她不该去找大夫看病。她必须服用阿司匹林。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+ 她必须去看病或服用阿司匹林吗？  她不该去找大夫看病。她必须服用阿司匹林。             
 词汇学习 Word study 
 1 ．feel v. 
 （ 1 ）觉得；感到；意识到： 
@@ -2257,8 +1601,6 @@ I tried hard to remember the long passage of Shakespeare.
 我努力记住莎士比亚的大段说白。 
 Remember your appointment with the dentist. 
 别忘了你和牙医的预约。 
-
-
 练习答案 Key to written exercises 
 Lesson 62 
 A 
@@ -2303,19 +1645,13 @@ So he must stay in bed.
 Does he have a headache? 
 No, he doesn't have a headache. 
 He has measles. 
-
-
 So we must call the doctor. 
 8 What's the matter with Susan? 
 Does she have an earache? 
 No, she doesn't have an earache. 
 She has mumps. 
 So we must call the doctor. 
-
-
 Lessons 63～ 64 
-
-
 课文详注 Further notes on the text 
 1 ．play with, 玩⋯⋯（东西）。 
 The children are playing with a toy car in the garden. 
@@ -2328,108 +1664,32 @@ have a rest 休息一下
 take a look at⋯ 看一眼⋯⋯ 
 3 ．lean out of the window, 把身子探出窗外。 
 out of是介词短语，与 in或 into相对，表示“离开”、“脱离”。 
-
-
 语法 Grammar in use 
 禁令 
 don't与mustn't都可用来表示禁令。用mustn't表示“禁止”或“不许 
 可”，语气比较强烈。例如： 
-Don't take this medicine! 
-
-``` 
+Don't take this medicine! ``` 
 You mustn't take this medicine! 
 ``` 
-## 不要吃这个药！ 
-
-## 你不许吃这个药！ 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 不要吃这个药！  你不许吃这个药！             ``` 
 Don't call the doctor! 
 ``` 
 ``` 
 You mustn't call the doctor! 
 ``` 
-## 不要给大夫打电话！ 
-
-## 你不许给大夫打电话！ 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 不要给大夫打电话！  你不许给大夫打电话！             ``` 
 Don't talk in the library! 
 ``` 
 ``` 
 You mustn't talk in the library! 
 ``` 
-## 请勿在图书馆交谈！ 
-
-## 你不许在图书馆内交谈！ 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 请勿在图书馆交谈！  你不许在图书馆内交谈！             ``` 
 Don't lean out of the window! 
 ``` 
 ``` 
 You mustn't lean out of the window! 
 ``` 
-## 别把头或身子探出窗外！ 
-
-## 你不许把头或身子探出窗外！ 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+ 别把头或身子探出窗外！  你不许把头或身子探出窗外！             
 词汇学习 Word study 
 1 ．keep v. 
 （ 1 ）使保持某状态；保持： 
@@ -2458,8 +1718,6 @@ It will remain cold for a couple of days.
 天气还将持续冷几天。 
 Most people remained silent at the meeting. 
 多数人在会上保持沉默。 
-
-
 练习答案 Key to written exercises 
 Lesson 64 
 A 
@@ -2488,11 +1746,7 @@ You mustn't drive so quickly!
 You mustn't lean out of the window! 
 9 Don't break that vase! 
 You mustn't break that vase! 
-
-
 Lessons 65～ 66 
-
-
 课文详注 Further notes on the text 
 1 ．What are you going to do this evening, Jill? 今晚你打算干什么，吉 
 尔？ 
@@ -2512,8 +1766,6 @@ at all/Don't mention it。
 非正式的告别语，语气较随便。非正式的告别语还有 So long,See you 
 或 I'll be seeing you等。正式的告别语是 Goodbye，而夜里向人告别时用 
 Good night。 
-
-
 语法 Grammar in use 
 1 ．反身代词 
 （ 1 ）当宾语和主语是同一个人时，一般需要用反身代词： 
@@ -2545,56 +1797,18 @@ He goes to school at 7. 30.
 期一）、具体时间（如 on that day在那一天）、周年纪念日（如 on your 
 birthday在你的生日）以及节日（如 on Christmas Day在圣诞节）等。请 
 看下面的例句： 
-What's the time? 
-
-``` 
+What's the time? ``` 
 It's half past ten. 
 10 
 ``` 
-## 几点了？ 
-
-## 点半。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 几点了？  点半。             ``` 
 When must I come home? 
 ``` 
 ``` 
 You must come home at five o'clock. 
 5 
 ``` 
-## 我必须什么时候回家？ 
-
-## 你必须 点钟回家。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+ 我必须什么时候回家？  你必须 点钟回家。             
 ``` 
 When must he telephone you? 
 ``` 
@@ -2602,50 +1816,14 @@ When must he telephone you?
 He must telephone me at a quarter to three. 
 3 1 
 ``` 
-## 他必须何时给你打电话？ 
-
-## 他必须在 点差刻时给我打电话。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 他必须何时给你打电话？  他必须在 点差刻时给我打电话。             ``` 
 When't your birthday? 
 ``` 
 ``` 
 My birthday's on July the 18th. 
 7 18 
 ``` 
-## 你的生日是在什么时候？ 
-
-## 我的生日是 月 日。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+ 你的生日是在什么时候？  我的生日是 月 日。             
 词汇学习 Word study 
 1 ．enjoy v. 
 （ 1 ）过得快活： 
@@ -2668,8 +1846,6 @@ Please hear her.
 请听她讲。 
 We'd better hear what he has to say. 
 我们最好还是听听他要说些什么。 
-
-
 练习答案 Key to written exercises 
 Lesson 66 
 A 
@@ -2691,11 +1867,7 @@ B
 9 They must come home at 2. 15. 
 10 I must meet Sam at 1. 45. 
 11 He must telephone me at 2. 45. 
-
-
 Lessons 67～ 68 
-
-
 课文详注 Further notes on the text 
 1 ．Were you at the butcher's? 刚才您在肉店里吗？ 
 at the butcher's = at the butcher's shop。在英文中，表示店铺、住宅、公 
@@ -2710,15 +1882,11 @@ St. Paul's(Church) 圣保罗教堂
 2 ．be absent from, 不在，缺席。 
 3 ．the country = the countryside, 乡下。 
 country表示“农村”时，前面一定要加定冠词the。 
-
-
 语法 Grammar in use 
 一般过去时（ 1 ） 
 be(am／is／are) 的过去式是was／were： 
 I/he/she/it was/wasn't 
-we/you/they were/weren't 
-
-``` 
+we/you/they were/weren't ``` 
 was I/he/she/it? 
 Were we/you/they? 
 ``` 
@@ -2728,105 +1896,29 @@ Were we/you/they?
 用be动词的一般现在时形式的一般疑问句及特殊疑问句迄今已介绍 
 过，其过去时形式也一样，只是动词be在形式上变为was或were。请看 
 以下例句： 
-Was Mrs. Johnson at the butcher's? 
-
-``` 
+Was Mrs. Johnson at the butcher's? ``` 
 No, she wasn't. 
 ``` 
-## 约翰逊夫人在肉店吗？ 
-
-## 不，她不在。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 约翰逊夫人在肉店吗？  不，她不在。             ``` 
 Were you at school or at church on January 1st? 
 1 1 
 I wasn't at school on January 1st. I was at church. 
 1 1 
 ``` 
-## 月号你在学校还是上教堂了？ 
-
-## 我月 号没上学。我上教堂做礼拜了。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 月号你在学校还是上教堂了？  我月 号没上学。我上教堂做礼拜了。             ``` 
 When was he absent from school? 
 ``` 
 ``` 
 He was absent on Monday, Tuesday, Wednesday and 
 Thursday. 
 ``` 
-## 他何时缺课了？ 
-
-## 他周一、周二、周三和周四缺课了。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 他何时缺课了？  他周一、周二、周三和周四缺课了。               ``` 
 Where were you on Sunday? 
 ``` 
 ``` 
 I was at church on Sunday. 
 ``` 
-## 周日你在哪儿？ 
-
-## 我周日在教堂做礼拜。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+ 周日你在哪儿？  我周日在教堂做礼拜。             
 词汇学习 Word study 
 1 ．spend v. 
 （ 1 ）花（时间等）；度过： 
@@ -2857,8 +1949,6 @@ I prefer country life to life in the city.
 乡村生活与城市生活相比，我更喜欢乡村生活。 
 After nearly thirty years in the city, he's still country. 
 他在城里住了将近三十年，可还是土气十足。 
-
-
 练习答案 Key to written exercises 
 Lesson 68 
 A 
@@ -2882,11 +1972,7 @@ She was at the baker's on Friday.
 She was at the grocer's on Monday. 
 6 When was Nicola at the office? 
 She was at the office on Tuesday. 
-
-
 Lessons 69～ 70 
-
-
 课文详注 Further notes on the text 
 1 ．hundreds of, 数以百计的。 
 这是用来表示不定数量的复数形式。类似的结构还有thousands of（数 
@@ -2904,8 +1990,6 @@ Lesson 67 第 67 课
 Page 2第 2 页 
 Bus No. 332第 332 路公共汽车 
 Question 10第 10 个问题 
-
-
 语法 Grammar in use 
 用介词at, on和in的时间短语 
 （ 1 ）用介词 at的时间短语通常可表示：确切的时间（如 at 10 o' clock 
@@ -2926,8 +2010,6 @@ evening在晚上），月份（如 in March在 3 月），年份（如 in 1997�
 年），季节（如 in spring在春天），世纪（如 in the 20th century在 20 世 
 纪），节日（如in Easter week在复活节那一周），时期（如 in the holidays 
 在假期里）等。 
-
-
 词汇学习 Word study 
 1 ． stand v. 
 （ 1 ）站立，起立： 
@@ -2951,8 +2033,6 @@ His dancing lacks finish.
 他的舞跳得并不完美。 
 We hoped that four years of college would give him some finish. 
 我们希望 4 年的大学教育会使他有些教养。 
-
-
 练习答案 Key to written exercises 
 Lesson 70 
 A 
@@ -2979,11 +2059,7 @@ They were at home on May 25th.
 We were in Finland in December. 
 8 Where were you and Sam on February 22nd? 
 We were at school on February 22nd. 
-
-
 Lessons 71～ 72 
-
-
 课文详注 Further notes on the text 
 1 ．What's Ron Marston like, Pauline? 波琳，朗·马斯顿是怎样一个人？ 
 What is sb. like? 这一句式可用来询问某人的外貌或品行。就本课的 
@@ -3016,8 +2092,6 @@ This is Mary speaking.
 我是玛丽。 
 This is Edward calling from London. 
 我是爱德华，现正在伦敦给你打电话。 
-
-
 语法 Grammar in use 
 一般过去时（ 2 ） 
 （请参见 Lessons 67～ 68 语法部分。） 
@@ -3029,8 +2103,6 @@ telephoned, arrived。另一部分动词的过去式拼写不规则，因此称�
 课中的 yesterday（昨天），the day before yesterday（前天），yesterday morning 
 （昨天上午），yesterday afternoon（昨天下午），yesterday evening（昨天 
 晚上），last night（昨夜）。 
-
-
 词汇学习 Word study 
 answer 
 （ 1 ）v. 对⋯⋯作出反应；响应： 
@@ -3048,8 +2120,6 @@ Do you know the answer to Question 10?
 你知道第 10 题的答案吗？ 
 This is one of the possible answers to today's environmental problems. 
 这是有可能解决当今环境问题的办法之一。 
-
-
 练习答案 Key to written exercises 
 Lesson 72 
 A 
@@ -3078,11 +2148,7 @@ He stayed in bed in the morning the day before yesterday.
 She telephoned her husband yesterday evening. 
 10 What did she do the night before last? 
 She called the doctor the night before last. 
-
-
 Lessons 73～ 74 
-
-
 课文详注 Further notes on the text 
 1 ．She does not know London very well. 她对伦敦不很熟悉。 
 know⋯well这一短语意为“对⋯⋯了解”。又如： 
@@ -3099,8 +2165,6 @@ tell sb. the way(to), 告诉某人（去⋯⋯的）路。
 6 ．cut himself＝ cut his face。 
 以整体代替部分是英语中的一种修辞格，叫提喻（merism ／'merim 
 ／）。 
-
-
 语法 Grammar in use 
 1 ．副词 
 副词（adverb）这个词的本意是补充动词的意义。这就是许多副词的 
@@ -3144,8 +2208,6 @@ find----found
 give----gave 
 swim----swam 
 have----had 
-
-
 词汇学习 Word study 
 1 ．lose v. 
 （ 1 ）迷失；（使）迷路： 
@@ -3175,8 +2237,6 @@ How the machine works is still not fully understood.
 Only today have I begun to understand the political 
 situation in Northern Ireland. 
 直到今天我才了解了北爱尔兰的政治局势。 
-
-
 练习答案 Key to written exercises 
 Lesson 74 
 A 
@@ -3195,11 +2255,7 @@ B
 6 She drank a glass of water thirstily. 
 7 He greeted me warmly. 
 8 We enjoyed ourselves very much. 
-
-
 Lessons 75～ 76 
-
-
 课文详注 Further notes on the text 
 1 ．Do you have any shoes like these? 像这样的鞋你们有吗？ 
 这个句子里的 like these是介词短语作定语，修饰 shoes，意思是“像 
@@ -3210,12 +2266,8 @@ Lessons 75～ 76
 即什么号码： 
 What size do you wear? 
 你穿几码的？ 
-3 ．They are very uncomfortable.的确．．很不舒适。 
-
-这个句子中的are用斜体表示强调，应重读。这里的强调表明了售货 
+3 ．They are very uncomfortable.的确．．很不舒适。 这个句子中的are用斜体表示强调，应重读。这里的强调表明了售货 
 员对女士所说的话的反感和愤怒。 
-
-
 语法 Grammar in use 
 一般过去时与时间短语 
 一般过去时通常与表示确切的过去时间的短语连用。这些短语一般 
@@ -3235,8 +2287,6 @@ last（前一个星期）, the month before last（前一个月）, the year bef
 年）, the day before yesterday（前天）, the night before last（前天夜里）: 
 She dusted the cupboard the day before yesterday. 
 她前天清扫了橱柜。 
-
-
 词汇学习 Word study 
 1 ．wear v. 
 （ 1 ）穿着；戴着；佩带着： 
@@ -3265,8 +2315,6 @@ This pair of shoes look very uncomfortable.
 这双鞋看上去很不舒适。 
 It's really an uncomfortable day! 
 这真是令人难受的一天！ 
-
-
 练习答案 Key to written exercises 
 Lesson 76 
 A 
@@ -3300,11 +2348,7 @@ I painted that bookcase the year before last.
 I wanted a car like that one a year ago. 
 12 When did you greet her? 
 I greeted her a minute ago. 
-
-
 Lessons 77～ 78 
-
-
 课文详注 Further notes on the text 
 1 ．I want to see the dentist, please. 我想见牙科医生。 
 I want to see sb., please 这一句式是表示想见某人时常用的句式之一。 
@@ -3326,8 +2370,6 @@ Can you come at⋯? 这一句式通常用来约定见面时间。注意英语中
 6 ．at the moment, 正在说话的这会儿，此时。 
 7 ．Can't you wait till this afternoon? 您就不能等到今天下午了吗？ 
 这是情态助动词的否定疑问句形式，表示请求。 
-
-
 语法 Grammar in use 
 否定疑问句 
 否定疑问句可以表示说话者惊异的情绪、责难的口吻或赞叹；也可 
@@ -3347,42 +2389,16 @@ Isn't it hot here?
 难道你昨天没看见他吗？ 
 回答这种问题时用简略回答。如果答语是肯定的，就用 Yes；如果 
 答语是否定的，就用No。不过，这种答语的汉语译法有特殊之处。如： 
-Don't you know English? 
-
-``` 
+Don't you know English? ``` 
 Yes, I do. 
 ``` 
-## 你不懂英语吧？ 
-
-## 不，我懂。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-## 一般否定疑问句有完全式和简略式之分，它们的词序是不同的。 
-
-## 完全式： 
-
-``` 
+ 你不懂英语吧？  不，我懂。              一般否定疑问句有完全式和简略式之分，它们的词序是不同的。  完全式： ``` 
 Is she not a nurse? 
 她不是一位护士吗？ 
 简略式： 
 Isn't she a nurse? 
 她不是一位护士吗？ 
-``` 
-
-词汇学习 Word study 
+``` 词汇学习 Word study 
 1 ． urgent adj. 
 （ 1 ）紧迫的；急迫的： 
 There's an urgent message for you. 
@@ -3400,8 +2416,6 @@ When is your lunch appointment?
 你与别人共进午餐的约会定在什么时候？ 
 Once you've made an appointment, you should try to keep it. 
 一旦你定好约会的事情，那么你应努力守约。 
-
-
 练习答案 Key to written exercises 
 Lesson 78 
 A 
@@ -3415,11 +2429,7 @@ B
 2 She met him on 5th November. 
 3 They arrived a quarter to eleven. 
 4 He lost his pen on Saturday. 
-
-
 Lessons 79～ 80 
-
-
 课文详注 Further notes on the text 
 1 ． And I'm not going to get any!不过，我不打算去买！ 
 这里get表示“买”，与buy同义： 
@@ -3451,8 +2461,6 @@ Do you need any sugar?
 你需要一些糖吗？ 
 What do they need this week? 
 他们这周需要什么东西？ 
-
-
 词汇学习 Word study 
 1 ．hope 
 （ 1 ）v. 希望；盼望；期待： 
@@ -3485,8 +2493,6 @@ There's a growing need of new housing in many cities.
 许多城市正面临着对新建房屋的不断增长的需求。 
 We don't have any urgent need for money. 
 我们并不急需钱。 
-
-
 练习答案 Key to written exercises 
 Lesson 80 
 A 
@@ -3510,11 +2516,7 @@ She must go to the grocer's to get some butter.
 They must go to the greengrocer's to get some bananas. 
 7 He needs a lot of medicine. He hasn't got much. 
 He must go to the chemist's to get some medicine. 
-
-
 Lessons 81～ 82 
-
-
 课文详注 Further notes on the text 
 1 ．No, thanks, Tom. 不，谢谢，汤姆。 
 在别人请你吃东西时，如果你吃，就说Ok, thanks／Oh, thank you。 
@@ -3524,8 +2526,6 @@ Lessons 81～ 82
 3 ．Well, you're going to have roast beef and potatoes again tonight!唉， 
 今晚你们又要吃烤牛肉和土豆了！ 
 是陈述句形式的感叹句。这里的well可理解为感叹词，表示惊讶。 
-
-
 语法 Grammar in use 
 完全动词have（ 3 ） 
 have可以代替常用动词，表示eat, enjoy, experience, drink, take等意义。 
@@ -3542,78 +2542,22 @@ We had lunch together today.
 当have不表示“有”而表示其他意思时，其用法和英语中的其他动 
 词相同，意即：在疑问和否定结构中，have 的一般现在时和一般过去时 
 形式必须用do，does和 did： 
-Do you have milk in your tea? 
-
-``` 
+Do you have milk in your tea? ``` 
 I don't have milk in my tea. 
 ``` 
-## 你喝茶加牛奶吗？ 
-
-## 我喝茶不加牛奶。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 你喝茶加牛奶吗？  我喝茶不加牛奶。             ``` 
 Did you have a nice holiday? 
 ``` 
 ``` 
 I didn't have a nice holiday. 
 ``` 
-## 你的假日过得愉快吗？ 
-
-## 我的假日过得不愉快。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 你的假日过得愉快吗？  我的假日过得不愉快。             ``` 
 Does he have lessons on Friday? 
 ``` 
 ``` 
 He doesn't have lessons on Friday. 
 ``` 
-## 他周五上课吗？ 
-
-## 他周五不上课。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+ 他周五上课吗？  他周五不上课。             
 词汇学习 Word study 
 1 ． nearly v. 
 （ 1 ）几乎；差不多；差点儿： 
@@ -3642,8 +2586,6 @@ He gave a ready consent.
 他立即爽快地表示同意。 
 This new system gives users readier access to the data. 
 这个新系统可以使用户们更快捷地进入数据库。 
-
-
 练习答案 Key to written exercises 
 Lesson 82 
 A 
@@ -3666,11 +2608,7 @@ B
 10 They had a party. 
 11 They must have a holiday. 
 12 They are going to have a good time. 
-
-
 Lessons 83～ 84 
-
-
 课文详注 Further notes on the text 
 1 ．Come in. 进来吧。 
 Have a cup of tea then. 那么喝杯咖啡吧。 
@@ -3682,8 +2620,6 @@ Let's go into the living－room, Carol. 我们到客厅里去吧，卡罗尔。
 3 ．We're going to leave tomorrow. 明天我们就要走了。 
 这里的 are going to表示“打算”、“准备”。请参见 Lessons 37～ 
 38 语法部分。 
-
-
 语法 Grammar in use 
 现在完成时 
 （ 1 ）在英语中，现在完成时主要用于以下两种情况：或者表示在过 
@@ -3697,8 +2633,6 @@ has，其他人称皆用have。规则动词的过去分词与过去式相同，�
 规则动词的过去分词则无统一的规律可言，需特别加以记忆。 
 （ 4 ）一般现在完成时通常与表示不确定的时间副词或短语连用如 
 just, already, before, never, ever, twice, three times等。 
-
-
 词汇学习 Word study 
 1 ． leave v. 
 （ 1 ）离开，出发： 
@@ -3727,8 +2661,6 @@ The movie fans packed the hall.
 大厅里挤满了影迷。 
 The bus was packed with people. 
 公共汽车里挤满了人。 
-
-
 练习答案 Key to written exercises 
 Lesson 84 
 A 
@@ -3760,11 +2692,7 @@ She's just had some vegetables.
 I've just had some steak. 
 10 They haven't had any bananas. 
 They've just had some oranges. 
-
-
 Lessons 85～ 86 
-
-
 课文详注 Further notes on the text 
 1 ．I've never been there. 我从未去过。 
 never 表示“从无”、“从未”，在这里有强调之意。 
@@ -3772,66 +2700,20 @@ never 表示“从无”、“从未”，在这里有强调之意。
 ever 常用于否定句、疑问句以及表示条件的从句中表示“以往任何 
 时候”、“曾经”、“在任何时候”、“从来”这类意思。用在此句中 
 也有强调之意。 
-
-
 语法 Grammar in use 
 have been与 have gone 
 have been to a place表示曾经去过某地，但现在不在那个地方了；have 
 gone to a place表示已经去某地了，现在在那个地方或正在去的路上。如： 
-George has been to Paris. 
-
-``` 
+George has been to Paris. ``` 
 George has gone to Paris. 
 ``` 
-## 乔治去过巴黎。（他现在不在巴黎。） 
-
-## 乔治去巴黎了。（他在巴黎或去巴黎的路上。） 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 乔治去过巴黎。（他现在不在巴黎。）  乔治去巴黎了。（他在巴黎或去巴黎的路上。）             ``` 
 Have you ever been to America? 
 ``` 
 ``` 
 Has he gone to Washington D. C.? 
 ``` 
-## 你去过美国吗？（对方不在美国境内。） 
-
-## 他去华盛顿了吗？（被提到的人有可能现在美国境内 
-
-## 或在赴美途中。） 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+ 你去过美国吗？（对方不在美国境内。）  他去华盛顿了吗？（被提到的人有可能现在美国境内  或在赴美途中。）                 
 词汇学习 Word study 
 beautiful adj. 
 （ 1 ）美丽的，使生美感的： 
@@ -3846,8 +2728,6 @@ He did a beautiful job of painting the desk.
 他油漆了书桌，活干得很漂亮。 
 Beautiful weather, isn't it? 
 天气晴朗宜人，对吗？ 
-
-
 练习答案 Key to written exercises 
 Lesson 86 
 A 
@@ -3880,11 +2760,7 @@ I walked across the park an hour ago.
 I painted that bookcase a year ago. 
 12 I've already dusted the cupboard. 
 I dusted the cupboard this afternoon. 
-
-
 Lessons 87～ 88 
-
-
 课文详注 Further notes on the text 
 1 ．When did you bring it to us? 您什么时候送来的？ 
 bring表示“送来”、“带来”和“拿来”的意思，在方位上多指朝 
@@ -3899,8 +2775,6 @@ work on 表示“从事”、“干”（某事）。 still是“仍然”、“
 Didn't you have a crash? 难道您没有出车祸吗？ 
 在英文中可以用一般疑问句的否定形式来表示期待、请求或希望得 
 到肯定的答复。 
-
-
 语法 Grammar in use 
 现在完成时的疑问式及否定式 
 现在完成时的构成是 have／has+ 过去分词，因此其疑问式是将have 
@@ -3908,148 +2782,38 @@ Didn't you have a crash? 难道您没有出车祸吗？
 Have they lived here for 10 years? 
 10 
 No, they haven' t lived here for 10 years. 
-10 
-
-## 他们在这儿住了 年了吗？ 
-
-## 没有，他们在这儿没有住了 年。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+10  他们在这儿住了 年了吗？  没有，他们在这儿没有住了 年。             ``` 
 How long have they lived here? 
 ``` 
 ``` 
 They've lived here only for 5 years. 
 5 
 ``` 
-## 他们在这儿住了多久？ 
-
-## 他们在这儿仅住了 年。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 他们在这儿住了多久？  他们在这儿仅住了 年。             ``` 
 Has she just aired the room or cleaned her shoes? 
 ``` 
 ``` 
 She hasn't cleaned her shoes. She has just aired the room. 
 ``` 
-## 她刚给房间通风还是擦鞋？ 
-
-## 她没有擦鞋，她刚给房间通了风。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 她刚给房间通风还是擦鞋？  她没有擦鞋，她刚给房间通了风。             ``` 
 What have they just done? 
 ``` 
 ``` 
 They have just made their beds. 
 ``` 
-## 他们刚干了什么事情？ 
-
-## 他们刚铺好床。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 他们刚干了什么事情？  他们刚铺好床。             ``` 
 Hasn't he just been to the cinema? 
 ``` 
 ``` 
 Yes, he has. 
 ``` 
-## 他不是刚去看电影了吗？ 
-
-## 对。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 他不是刚去看电影了吗？  对。             ``` 
 Has she left the office? 
 ``` 
 ``` 
 No, she hasn't left the office yet. 
 ``` 
-## 她离开办公室了吗？ 
-
-## 没有，她还没有离开办公室。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+ 她离开办公室了吗？  没有，她还没有离开办公室。             
 词汇学习 Word study 
 1 ．repair v. 
 （ 1 ）修理；修复；修补： 
@@ -4073,8 +2837,6 @@ She's trying her new car.
 她正在试她的新车。 
 I'll try that Italian restaurant next time. 
 下次我要到那家意大利餐馆去尝尝他们的菜。 
-
-
 练习答案 Key to written exercises 
 Lesson 88 
 A 
@@ -4119,8 +2881,6 @@ She heard the news yesterday.
 Yes, she has already made the bed. 
 When did she make the bed? 
 She made the bed this morning. 
-
-
 8 Has he sent the letter yet? 
 Yes, he has already sent the letter. 
 When did he send the letter? 
@@ -4133,11 +2893,7 @@ She swept the floor yesterday morning.
 Yes, she has already told him the truth. 
 When did she tell him the truth? 
 She told him the truth last night. 
-
-
 Lessons 89～ 90 
-
-
 课文详注 Further notes on the text 
 1 ．I believe that this house is for sale. 我想这房子是要出售的吧！ 
 believe 是“相信”、“认为”的意思，后可跟某人或名词性从句。 
@@ -4159,66 +2915,24 @@ how much常用于询问东西的价格。 cost是指得到一件东西所花费�
 价值。 
 5 ．⋯I can'T decide yet．⋯⋯我还不能决定。 
 句中的yet常见于否定句，表示“迄今仍未”的意思。 
-
-
 语法 Grammar in use 
 for与 since 
 现在完成时还可以描述发生在过去且一直延续到现在的动作，这种 
 动作甚至有可能延续下去。在这种情况下，它一般与for+ 一段时间、since+ 
 某个时间点连用。如： 
-How long has Ian lived in the house? 
-
-``` 
+How long has Ian lived in the house? ``` 
 He's lived here for twenty years. 
 20 
 ``` 
-## 伊恩在这幢房子里住多久了？ 
-
-## 他在这里住了 年了。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 伊恩在这幢房子里住多久了？  他在这里住了 年了。             ``` 
 Since when has he been there? 
 ``` 
 ``` 
 Since 1976. 
 1976 
 ``` 
-## 他是从何时起就在那儿的？ 
-
-## 从 年起。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-请注意：for+ 一段时间表示某个动作持续多长时间；since+ 某个时 
+ 他是从何时起就在那儿的？  从 年起。             请注意：for+ 一段时间表示某个动作持续多长时间；since+ 某个时 
 间点表示某个动作是何时开始的。 
-
-
 词汇学习 Word study 
 1 ．retire v. 
 （ 1 ）退休；离职： 
@@ -4242,8 +2956,6 @@ That city is worth visiting.
 那座城市值得一游。 
 Is the film worth seeing? 
 这部电影值得一看吗？ 
-
-
 练习答案 Key to written exercises 
 Lesson 90 
 A 
@@ -4272,19 +2984,13 @@ Sam hasn't swum across it yet.
 Sam and Penny haven't seen that film yet. 
 6 Yes, Tim took off his shoes a minute ago. 
 Frank hasn't taken off his shoes yet. 
-
-
 Lessons 91～ 92 
-
-
 课文详注 Further notes on the text 
 1 ．We'll all miss him. 我们大家都会想念他的。 
 all，大家，全部，指 3 个或 3 个以上的人或物；指两个用both。这里 
 的all作we的同位语。 
 2 ．⋯but his wife did.⋯⋯可是他妻子离开。 
 句中 did代替上文中的 wanted to leave。 
-
-
 语法 Grammar in use 
 一般将来时 
 （ 1 ）一般将来时表示将来某一时刻的动作、状态以及打算。该时态 
@@ -4321,8 +3027,6 @@ the night after next后天夜里
 in the morning在上午 
 in the afternoon 在下午 
 in the evening在晚上 
-
-
 词汇学习 Word study 
 1 ．miss v. 
 （ 1 ）想念，惦念： 
@@ -4351,8 +3055,6 @@ He is sitting still.
 他一动不动地坐着。 
 The patient is lying still. 
 病人安静地躺着。 
-
-
 练习答案 Key to written exercises 
 Lesson 92 
 A 
@@ -4369,18 +3071,12 @@ B
 6 Yes, and she will telephone him tomorrow, too. 
 7 Yes, and he will have a shave tomorrow, too. 
 8 Yes, and she will sweep the floor tomorrow, too. 
-
-
 Lessons 93～ 94 
-
-
 课文详注 Further notes on the text 
 1 ．next-door, 隔壁的。 
 2 ．the month after next, 再下个月。 
 after next 表示“下下个”，如： 
 the week after next下下个星期 
-
-
 语法 Grammar in use 
 可与一般将来时连用的时间短语 
 （ 1 ） this week（这周）,next week（下周）,the week after next（下下 
@@ -4389,112 +3085,30 @@ the week after next下下个星期
 注：一般过去时中通常会用last一词，而不是next. 
 （ 2 ） in a day's time（一天以后）, in a year's time（一年以后）, in two 
 weeks time（两周后）, in three months' time（ 3 个月后）等等。 
-Where will he be the month after next? 
-
-``` 
+Where will he be the month after next? ``` 
 He'll be in Tokyo. 
 ``` 
-## 下下个月他将在哪儿？ 
-
-## 他将在东京。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 下下个月他将在哪儿？  他将在东京。             ``` 
 When will he come back to London? 
 ``` 
 ``` 
 He'll come back the week after next. 
 ``` 
-## 他将于何时回伦敦？ 
-
-## 他将于下下周回来。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 他将于何时回伦敦？  他将于下下周回来。             ``` 
 Will you go to Athens next week? 
 ``` 
 ``` 
 No, I shan' t go to Athens next week. I shall go to 
 Beijing. 
 ``` 
-## 你下周去雅典吗？ 
-
-## 不，我下周不去雅典。我将去北京。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 你下周去雅典吗？  不，我下周不去雅典。我将去北京。                 ``` 
 Will Sam leave for Bombay next month? 
 ``` 
 ``` 
 No, he won't leave for Bombay next month. He will 
 leave for Berlin. 
 ``` 
-## 萨姆下月将动身前往孟买吗？ 
-
-## 不，他下月不前往孟买。他将动身去柏林。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+ 萨姆下月将动身前往孟买吗？  不，他下月不前往孟买。他将动身去柏林。                 
 词汇学习 Word study 
 1 ．return v. 
 （ 1 ）回，返回： 
@@ -4523,8 +3137,6 @@ He didn't really know the answer----it was just a lucky guess.
 他并非真知道答案——那不过是个侥幸的猜测。 
 It's lucky he's here. 
 他碰巧在这儿。 
-
-
 练习答案 Key to written exercises 
 Lesson 94 
 A 
@@ -4541,73 +3153,29 @@ B
 Madrid. 
 5 No, Carol and Helen won't stay in New York next month. They'll stay in 
 Moscow. 
-
-
 Lessons 95～ 96 
-
-
 课文详注 Further notes on the text 
 1 ．plenty of, 充足的，足够的。 
 后面可跟可数名词或不可数名词。 
 2 ．ten minutes slow, 慢 10 分钟； ten minutes fast, 快 10 分钟。 
 3 ．When's the next train?下一班车是什么时候？ 
 这个句子是用来询问火车启程时间时常见的句型。 
-
-
 语法 Grammar in use 
 had better与 must 
 had better表示“最好还是”、“最好”，表达某种忠告或建议。 
 must则表示“必须”、“一定”，语气比 had better强烈。 
 had better表示现在时或将来时，而不是过去时。其否定形式为 had 
 better not.请比较下列句子： 
-We must go back to the station. 
-
-``` 
+We must go back to the station. ``` 
 We had better go back to the station. 
 ``` 
-## 我们必须回车站去。 
-
-## 我们最好回车站去。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 我们必须回车站去。  我们最好回车站去。             ``` 
 She must hurry. 
 ``` 
 ``` 
 She had better hurry. 
 ``` 
-## 她得抓紧点儿。 
-
-## 她最好抓紧点儿。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+ 她得抓紧点儿。  她最好抓紧点儿。             
 词汇学习 Word study 
 1 ．exact adj. 
 （ 1 ）精确的；确切的；恰好的： 
@@ -4634,8 +3202,6 @@ The bright colours on the wall caught our attention.
 墙壁上鲜艳的颜色吸引了我们的注意力。 
 The beautiful view in front of me caught and held me. 
 我面前美丽的景色把我迷住了。 
-
-
 练习答案 Key to written exercises 
 Lesson 96 
 A 
@@ -4650,11 +3216,7 @@ B
 2 The next train will leave for Geneva in an hour's time. 
 3 I'll fly to Beijing in two days' time. 
 4 Jean and I will go to London in an hour's time. 
-
-
 Lessons 97～ 98 
-
-
 课文详注 Further notes on the text 
 1 ．I left a suitcase on the train to London the other day. 几天前我把一只 
 手提箱忘在开往伦敦的火车上了。 
@@ -4670,8 +3232,6 @@ the other day表示“几天前”。the other +表示时间的名词通常只�
 句中介词with在这里可理解为“有”的意思。 
 3 ．fifty pence, 50 便士。 
 pence是penny（便士）的复数形式，表示币值。 
-
-
 语法 Grammar in use 
 所有格形容词和所有格代词 （ 2 ） 
 （请参见 Lessons 11～ 12 语法部分。） 
@@ -4679,34 +3239,10 @@ pence是penny（便士）的复数形式，表示币值。
 词是限定词，放在名词前与名词构成名词短语，在句中作定语用。所有 
 格代词后面不能再加名词，在句中作主语、宾语、表语用。 
 请比较下列两个句子： 
-The bicycle belongs to me. 
-
-``` 
+The bicycle belongs to me. ``` 
 The bicycle is mine. 
 ``` 
-## （宾格代词） 
-
-## 这辆自行车属于我。 
-
-## （所有格） 
-
-## 这辆自行车是我的。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+ （宾格代词）  这辆自行车属于我。  （所有格）  这辆自行车是我的。             
 词汇学习 Word study 
 1 ．belong v. 
 （ 1 ）（在所有权方面）属于： 
@@ -4733,8 +3269,6 @@ He described the whole event in detail.
 （ 2 ）把⋯⋯说成；把⋯⋯称为(as)： 
 They describe him as ambitious. 
 他们把他称为雄心勃勃的人。 
-
-
 练习答案 Key to written exercises 
 Lesson 98 
 A 
@@ -4754,18 +3288,12 @@ B
 7 Yes, they' re theirs. They belong to them. 
 8 Yes, it's ours. It belongs to us. 
 9 Yes, they' re theirs. They belong to them. 
-
-
 Lessons 99～ 100 
-
-
 课文详注 Further notes on the text 
 1 ．get up,站起来。 
 这一短语还可表示“起床”。 
 2 ．be afraid that,想，恐怕；be sure that, 想，认为。 
 这两个结构后面通常接从句，在口语中有时that可省略。 
-
-
 语法 Grammar in use 
 1 ．宾语从句（ 1 ） 
 宾语从句在句中作宾语，一般用that引导，但在口语中经常省略掉 
@@ -4788,8 +3316,6 @@ I am sorry that you are ill.
 2 ．间接引述时的时态 
 如果间接引语中的引述动词是现在时，那么其后的时态通常与原来 
 口头陈述句的时态相同。转述刚刚说完的话时通常皆如此。 
-
-
 词汇学习 Word study 
 1 ．slip v. 
 （ 1 ）滑倒： 
@@ -4827,8 +3353,6 @@ France.
 我在法国旅行时，我的法文知识帮了我大忙。 
 Humour can help in a tense situation. 
 幽默能够缓和紧张局面。 
-
-
 练习答案 Key to written exercises 
 Lesson 100 
 A 
@@ -4848,11 +3372,7 @@ B
 8 She says that she is cold. 
 9 He says that he has got a cold. 
 10 He says that he has an earache. 
-
-
 Lessons 101～ 102 
-
-
 课文详注 Further notes on the text 
 1 ． speak up，大声地说，清楚地说。 
 up作副词用时可表示强度等的由弱到强、由低到高： 
@@ -4862,8 +3382,6 @@ Can you get up to that note?
 附加疑问句中的前后两部分的谓语在时态、人称和数上都要一致。 
 回答这种问句时要简略，要根据事实回答。如果答语本身是肯定的，就 
 用 Yes；如果答语本身是否定的，就用 No。 
-
-
 语法 Grammar in use 
 直接引语和间接引语 
 直接引语就是直接引用说话人原来所说的话；间接引语就是原话的 
@@ -4887,8 +3405,6 @@ The girl says: ‘I have finished my homework.’
 那个姑娘说：“我已完成了家庭作业。”⇒ 
 The girl says that she has finished her homework. 
 那个姑娘说她已完成了家庭作业。 
-
-
 词汇学习 Word study 
 1 ．write v. 
 （ 1 ）写，书写： 
@@ -4917,8 +3433,6 @@ Why are you leaving so soon?
 你为什么这么快就要走了？ 
 He came sooner than we expected. 
 他来得比我们预料的快。 
-
-
 练习答案 Key to written exercises 
 Lesson 102 
 A 
@@ -4938,19 +3452,13 @@ B
 7 He says he feels thirsty. 
 8 He says he needs a haircut. 
 9 He says he feels ill. 
-
-
 Lessons 103～ 104 
-
-
 课文详注 Further notes on the text 
 1 ．the rest，剩余部分。 
 这里指其余的题，注意rest与定冠词连用的用法。 
 2 ．at the top of，在⋯⋯顶端。 
 反义词为 at the bottom of（在⋯⋯末端）。 
 3 ．next to，邻近，贴近。 
-
-
 语法 Grammar in use 
 too与enough 
 （ 1 ）enough的用法 
@@ -4993,8 +3501,6 @@ The wall is too high for them to climb over.
 这堵墙太高了，他们无法攀越过去。 
 The wall is low enough for them to climb over. 
 这堵墙矮到如此之程度，以至于他们可以攀越过去。 
-
-
 词汇学习 Word study 
 1 ．fail v. 
 （ 1 ）失败；及格： 
@@ -5023,8 +3529,6 @@ He said that he hated hypocrisy.
 他说他憎恶虚伪。 
 Tom really hates the murderer in that film. 
 汤姆十分仇视那部电影中的杀人凶手。 
-
-
 练习答案 Key to written exercises 
 Lesson 104 
 A 
@@ -5047,11 +3551,7 @@ B
 10 No, she couldn't. It was too hard for her to eat. 
 11 Yes, she could. It was sweet enough for her to eat. 
 12 No, she couldn't. It was too sour for her to eat. 
-
-
 Lessons 105～ 106 
-
-
 课文详注 Further notes on the text 
 1 ．How do you spell⋯？⋯⋯怎样拼写？ 
 这是询问某个单词或某人的姓名如何拼写时常用的句型。 
@@ -5061,8 +3561,6 @@ Lessons 105～ 106
 这是一个倒装句。由here引导、谓语为be的句子通常用倒装语序。 
 这里and 是表示承上启下，使上下文紧密联系，当“于是”、“因此” 
 讲。 
-
-
 语法 Grammar in use 
 动词不定式 
 在英语中，当一个动词被另一个动词紧跟时，它们之间必须加不定 
@@ -5090,8 +3588,6 @@ He told me not to close the window.
 他让我不要把窗户关了。 
 Tell him not to move it. 
 告诉他不要搬动它。 
-
-
 词汇学习 Word study 
 1 ．correct v. 
 （ 1 ）改正； 纠正： 
@@ -5122,8 +3618,6 @@ Any one who breaks the law should be punished.
 任何触犯法律的人都应受到惩罚。 
 The student who broke the school regulations was severely criticized. 
 那位违反了校规的学生受到了严厉的批评。 
-
-
 练习答案 Key to written exercises 
 Lesson 106 
 A 
@@ -5156,11 +3650,7 @@ D
 4 Because she doesn't want them to miss it. 
 5 Because she doesn't want him to break it. 
 6 Because he doesn't want her to drive it. 
-
-
 Lessons 107～ 108 
-
-
 课文详注 Further notes on the text 
 1 ．be in fashion，时髦，流行。 
 2 ．Would you like⋯？你愿意⋯⋯吗？ 
@@ -5178,8 +3668,6 @@ Could you tell me the way to the post office?
 您能告诉我去邮局怎么走吗？ 
 5 ．like that one，像那件那样的。 
 是介词短语，作定语，修饰dress。 
-
-
 语法 Grammar in use 
 形容词的比较级和最高级 
 （ 1 ）构成 
@@ -5213,8 +3701,6 @@ This coat is longer.
 词，并常伴有一个表示范围的介词短语或从句： 
 That girl is the tallest student in our class. 
 那位姑娘是班上个子最高的学生。 
-
-
 词汇学习 Word study 
 1 ．compare v. 
 比较，对照： 
@@ -5234,8 +3720,6 @@ He would not be suited to the job.
 他不适合干那份工作。 
 Blue suits her. 
 蓝色与她相配。 
-
-
 练习答案 Key to written exercises 
 Lesson 108 
 A 
@@ -5274,11 +3758,7 @@ She is the shortest woman I have ever seen.
 It is the bluntest knife I have ever seen. 
 6 But that car is cheaper. 
 It is the cheapest car I have ever seen. 
-
-
 Lessons 109～ 110 
-
-
 课文详注 Further notes on the text 
 1 ．Just a little， please．请稍加一点儿。 
 a little (=some)，一些／一点，用于修饰不可数名词。又如： 
@@ -5300,8 +3780,6 @@ I've got the most中 most后省略了 chocolate。形容词的最高级之后的
 略了 mistakes。 
 6 ．I've ever seen，我所见过的。 
 定语从句，分别修饰 the best，the worst。 
-
-
 语法 Grammar in use 
 1 ．不规则形容词的比较级和最高级 
 不规则形容词的比较级和最高级例举如下： 
@@ -5314,9 +3792,7 @@ far----farther----farthest
 2 ．名词的数与修饰词 
 可数名词的多与少，用many与few来表达；不可数名词的多与少， 
 则用much与little来表达： 
-I've got some biscuits. 
-
-``` 
+I've got some biscuits. ``` 
 You've got more biscuits than I have. 
 ``` 
 ``` 
@@ -5325,31 +3801,7 @@ I've got fewer than you have
 ``` 
 I've got very few. 
 ``` 
-## 我有些饼干。 
-
-## 你的饼干比我的多。 
-
-## 我们拥有的比你的少。 
-
-## 我有为数很少的（几块）。 
-
-##  
-
-##  
-
-##       
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 我有些饼干。  你的饼干比我的多。  我们拥有的比你的少。  我有为数很少的（几块）。                    ``` 
 I've got some chocolate. 
 ``` 
 ``` 
@@ -5361,31 +3813,7 @@ I've got less than you have.
 ``` 
 I've got very little. 
 ``` 
-## 我有些巧克力。 
-
-## 你的巧克力比我的多。 
-
-## 我所拥有的比你所拥有的少。 
-
-## 我所有的为数很少。 
-
-##  
-
-##  
-
-##       
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+ 我有些巧克力。  你的巧克力比我的多。  我所拥有的比你所拥有的少。  我所有的为数很少。                    
 词汇学习 Word study 
 1 ．smoke v. 
 （ 1 ）抽（纸烟、烟斗等）： 
@@ -5413,8 +3841,6 @@ She wanted to have milk instead of juice.
 她想要牛奶，而不是果汁。 
 She prefers buying books instead of borrowing them from the library. 
 她宁可买书而不愿到图书馆去借。 
-
-
 练习答案 Key to written exercises 
 Lesson 110 
 A 
@@ -5443,11 +3869,7 @@ D
 4 I've got fewer oranges than you have. I've got the fewest. 
 5 I've got less meat than you have. I've got the least. 
 6 I've got less money than you have. I've got the least. 
-
-
 Lessons 111～ 112 
-
-
 课文详注 Further notes on the text 
 1 ．buy on instalments，以分期付款的方式购买。 
 I have bought this house on instalments. 
@@ -5455,8 +3877,6 @@ I have bought this house on instalments.
 2 ．⋯and then fourteen pounds a month for three years．⋯⋯然后每月 
 14 镑， 3 年付清。 
 then和fourteen之间省略了pay。 
-
-
 语法 Grammar in use 
 形容词的平级比较级：as⋯as 
 形容词的比较形式有 3 种：较高比较级(more expensive, the most 
@@ -5475,8 +3895,6 @@ Robert is not as old as he looks.
 罗伯特没有他看上去那么高。 
 The blue car is not as clean as the red car. 
 蓝车没有红车干净。 
-
-
 词汇学习 Word study 
 1 ．afford v. 
 （ 1 ）买得起；付得起（钱）： 
@@ -5501,8 +3919,6 @@ We were advised to deposit our valuables in the bank safe
 （ 3 ）付（保证金）；预付（定金）： 
 I deposited ＄ 1,500 on a new car. 
 我付了1,500美金作为购新车的定金。 
-
-
 练习答案 Key to written exercises 
 Lesson 112 
 A 
@@ -5532,11 +3948,7 @@ He's the most intelligent person I've ever met.
 It's the most interesting book I've ever read. 
 4 No, it isn't. It is less difficult. 
 It's the least difficult test I've ever done. 
-
-
 Lessons 113～ 114 
-
-
 课文详注 Further notes on the text 
 1 ．I can't change a ten-pound note. 我找不开 10 英镑的钞票。 
 这里 change是动词，意为“兑换”。change还可作名词，意为“零 
@@ -5548,353 +3960,95 @@ Lessons 113～ 114
 None of our passengers can change this note. 
 我们的乘客中没有一个能破开这张钞票的。 
 none在句中通常单独使用，如： 
-There's no beer in the refrigerator. 
-
-``` 
+There's no beer in the refrigerator. ``` 
 There's none. 
 ``` 
-## 冰箱里没有啤酒。 
-
-## 没有什么东西。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 冰箱里没有啤酒。  没有什么东西。             ``` 
 I bought no magazines. 
 ``` 
 ``` 
 I bought none. 
 ``` 
-## 我没买什么杂志。 
-
-## 我没买什么东西。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-3 ．Except us．我们俩除外。 
+ 我没买什么杂志。  我没买什么东西。             3 ．Except us．我们俩除外。 
 意思是：除了我们，他们都是百万富翁。 
-
-
 语法 Grammar in use 
 so与neither引导的简短回答 
 以so 或 neither开头的简短回答，必须用倒装形式，即： So／Neither 
 +助动词+主语。假如前一句是肯定的，后一句就用so开头；如前一句是 
 否定的，后一句则用neither／nor开头。前后两句的时态要一致。 
 （ 1 ）以so开头的句子： 
-I'm hungry. 
-
-``` 
+I'm hungry. ``` 
 So am I. 
 ``` 
-## 我饿了。 
-
-## 我也一样。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 我饿了。  我也一样。             ``` 
 I want some coffee. 
 ``` 
 ``` 
 So do I. 
 ``` 
-## 我想要些咖啡。 
-
-## 我也一样。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 我想要些咖啡。  我也一样。             ``` 
 I was at the party last night. 
 ``` 
 ``` 
 So was I. 
 ``` 
-## 我昨晚参加聚会了。 
-
-## 我也一样。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 我昨晚参加聚会了。  我也一样。             ``` 
 I can swim very well. 
 ``` 
 ``` 
 So can I. 
 ``` 
-## 我游泳游得好。 
-
-## 我也如此。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 我游泳游得好。  我也如此。             ``` 
 I saw George last night. 
 ``` 
 ``` 
 So did I. 
 ``` 
-## 我昨晚看见乔治了。 
-
-## 我也一样。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 我昨晚看见乔治了。  我也一样。             ``` 
 I've got a cold. 
 ``` 
 ``` 
 So have I. 
 ``` 
-## 我感冒了。 
-
-## 我也一样。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 我感冒了。  我也一样。             ``` 
 （ 2 ）以neither开头的句子： 
 I'm not tired. 
 ``` 
 ``` 
 Neither am I. 
 ``` 
-## 我不累。 
-
-## 我也一样。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+ 我不累。  我也一样。             
 ``` 
 I don't want any tea. 
 ``` 
 ``` 
 Neither do I. 
 ``` 
-## 我不想要任何茶。 
-
-## 我也一样。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 我不想要任何茶。  我也一样。             ``` 
 I wasn't tired this morning. 
 ``` 
 ``` 
 Neither was I. 
 ``` 
-## 我今天不累。 
-
-## 我也如此。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 我今天不累。  我也如此。             ``` 
 I can't speak Chinese. 
 ``` 
 ``` 
 Neither can I. 
 ``` 
-## 我不会讲汉语。 
-
-## 我也如此。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 我不会讲汉语。  我也如此。             ``` 
 I didn't buy a new car last year. 
 ``` 
 ``` 
 Neither did I. 
 ``` 
-## 我去年没买新车。 
-
-## 我也如此。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 我去年没买新车。  我也如此。             ``` 
 I haven't got a headache. 
 ``` 
 ``` 
 Neither have I. 
 ``` 
-## 我没头疼。 
-
-## 我也一样。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+ 我没头疼。  我也一样。             
 词汇学习 Word study 
 1 ．change v. 
 （ 1 ）兑换： 
@@ -5920,8 +4074,6 @@ They're open every day except Sunday.
 除星期天之外，他们每天都开门。 
 I like him except when he's gloomy. 
 除了他满脸阴沉的时候之外，我挺喜欢他。 
-
-
 练习答案 Key to written exercises 
 Lesson 114 
 A 
@@ -5952,11 +4104,7 @@ D
 4 So do I. like ice cream, too. 
 5 So can I. I can swim, too. 
 6 So am I. I'm a doctor, too. 
-
-
 Lessons 115～ 116 
-
-
 课文详注 Further notes on the text 
 1 ．Everything's =Everything is. 
 2 ．Nothing at all．什么也看不见。 
@@ -5969,15 +4117,11 @@ Lessons 115～ 116
 它通常位于不定代词之后，出现在 there is／are结构中： 
 There is nothing left in the refrigerator. 
 冰箱中没剩下什么东西。 
-
-
 语法 Grammar in use 
 不定代词 
 （ 1 ）every（每一），no（无），any（若干）及some（一些）可与 
 one，thing构成复合代词，与where构成复合副词。不定代词可作主语、 
-宾语和表语。 
-
-``` 
+宾语和表语。 ``` 
 every no any some 
 everyone no one anyone someone 
 everybody nobody anybody somebody 
@@ -6016,18 +4160,12 @@ Someone is asking to see you.
 There's something under that chair! 
 那个椅子下有个什么东西！ 
 I don't know anyone here. 
-
-
-## 这儿我谁也不认识。 
-
-Is there anything on this shelf? 
+ 这儿我谁也不认识。 Is there anything on this shelf? 
 这个架子上有什么东西吗？ 
 I went nowhere.(=I didn't go anywhere.) 
 我哪儿也没去。 
 I saw no one.(=I didn't see anyone.) 
 我谁也没看到。 
-
-
 词汇学习 Word study 
 1 ．invite v. 
 （ 1 ）邀请： 
@@ -6052,8 +4190,6 @@ The whole thing was a complete joke.
 整件事完全是个笑话。 
 Don't get angry----it was only a joke! 
 别生气——那只是一个玩笑而已！ 
-
-
 练习答案 Key to written exercises 
 Lesson 116 
 A 
@@ -6082,11 +4218,7 @@ They've got something to do.
 She's got something to drink. 
 4 No, I haven't got anything to read. I've got nothing to read. 
 He's got something to read. 
-
-
 Lessons 117～ 118 
-
-
 课文详注 Further notes on the text 
 1 ．look for，寻找（强调动作过程）；find，找到（强调寻找的结果）。 
 2 ．Tommy had already swallowed them! 汤米已经把硬币咽了下去！ 
@@ -6099,8 +4231,6 @@ later是副词late的比较级。
 change 是个多义词，既有“零钱”的意思，也有“变化”的意思。 
 此处既可指“硬币”；也可指“情况的变化”。这是双关（pun /p)n/）修 
 辞法。 
-
-
 语法 Grammar in use 
 过去进行时 
 构成： be的过去式+现在分词。 
@@ -6119,8 +4249,6 @@ Just as she was cleaning her shoes, George knocked at the door.
 她正在擦鞋时，乔治敲门了。 
 While I was cooking the dinner ,he was working in the garden. 
 我做饭时，他正在花园里劳作。 
-
-
 词汇学习 Word study 
 1 ．swallow v. 
 （ 1 ）吞下，咽下： 
@@ -6148,8 +4276,6 @@ You said you were going to ring me last night, but you didn't.
 你说过你昨晚会给我打电话的，然而你并没有打。 
 Somebody is ringing the doorbell. 
 有人在按门铃。 
-
-
 练习答案 Key to written exercises 
 Lesson 118 
 A 
@@ -6177,11 +4303,7 @@ C
 6 While I was cooking the dinner, he was sitting in the dining room. 
 7 While I was cooking the dinner, he was reading the paper. 
 8 While I was cooking the dinner, he was driving home from work. 
-
-
 Lessons 119～ 120 
-
-
 课文详注 Further notes on the text 
 1 ．happen to,发生在⋯⋯身上。 
 What happened to you yesterday? 
@@ -6215,8 +4337,6 @@ We had had dinner before they arrived.
 他们到达之前我们就已吃饭了。 
 The patient had died when the doctor arrived. 
 大夫到达时病人已经死了。 
-
-
 词汇学习 Word study 
 1 ．enter v. 
 （ 1 ）进入；穿入： 
@@ -6240,8 +4360,6 @@ I happened to meet her on my way home.
 在回家的路上，我碰巧遇见了她。 
 I happen to know that professor. 
 我正好认识那位教授。 
-
-
 练习答案 Key to written exercises 
 Lesson 120 
 A 
@@ -6274,11 +4392,7 @@ D
 4 My teacher gave me my exercise book after he had corrected it. 
 5 My sister went on holiday after she had taken the examination. 
 6 I bought a new car after I had sold my old one. 
-
-
 Lessons 121～ 122 
-
-
 课文详注 Further notes on the text 
 1 ．⋯but I forgot to take them with me.⋯⋯但是我忘了拿走。 
 forget to do sth.表示“忘了做某事”，them指两本字典。 
@@ -6291,8 +4405,6 @@ Put on your coat./Put your coat on.
 但只能说： 
 Put it on. 
 把它穿上。 
-
-
 语法 Grammar in use 
 定语从句 
 定语从句像形容词一样起修饰作用，但位于所修饰的名词之后。定 
@@ -6309,8 +4421,6 @@ They're the windows which/that the children broke yesterday.
 这些就是孩子们昨天打碎的窗户。 
 She's the lady whom I served yesterday. 
 她就是我昨天服务过的那位女士。 
-
-
 词汇学习 Word study 
 1 ．recognize v. 
 （ 1 ）认出；认识： 
@@ -6342,8 +4452,6 @@ The old cook has served the family for 30 years.
 这位老厨师已为这家干了 30 年了。 
 He began to serve in the Navy in 1960. 
 他从 1960 年起开始在海军服役。 
-
-
 练习答案 Key to written exercises 
 Lesson 122 
 A 
@@ -6388,14 +4496,8 @@ Yes, she's the woman whom I drove to London.
 7 Whom did you hear? That woman? 
 Yes, she's the woman whom I heard. 
 8 Whom did you remember? That man? 
-
-
 Yes, he's the man whom I remembered. 
-
-
 Lessons 123～ 124 
-
-
 课文详注 Further notes on the text 
 1 ．What a beautiful ship!多漂亮的轮船啊！ 
 what引导的感叹句通常是由 What + a（n）+形容词+名词构成的。 
@@ -6429,8 +4531,6 @@ That's the ship we travelled on.
 那就是我们旅行时乘的船。 
 That's the man I told you about. 
 那就是我告诉过你有关情况的那个人。 
-
-
 词汇学习 Word study 
 1 ．travel v. 
 （ 1 ）旅行；游历： 
@@ -6469,8 +4569,6 @@ He grew a beard during the trip.
 他在旅行时留了胡子。 
 We grew a lot of roses in our garden. 
 我们在自己的花园里种植了大量的玫瑰花。 
-
-
 练习答案 Key to written exercises 
 Lesson 124 
 A 
@@ -6500,11 +4598,7 @@ C
 4 That's right. She is the woman I read about. 
 5 That's right. This is something(new) I haven't thought about. 
 6 That's right. This is something I must decide about. 
-
-
 Lessons 125～ 126 
-
-
 课文详注 Further notes on the text 
 1 ．Can't you come in and have tea now, Peter?彼得，你现在能进来喝茶 
 吗？ 
@@ -6514,8 +4608,6 @@ Lessons 125～ 126
 3 ．don't need to= needn't。 
 表示“不必”，是 must和 have to的一般现在时否定式。 
 4 ． a pleasant surprise,意想不到的好事，令人惊喜的事。 
-
-
 语法院 Grammar in use 
 must, have to和 needn't 
 这 3 个词都表示必要性。在前面已对 must和 have to介绍过。 
@@ -6524,41 +4616,13 @@ must是情态助动词，而have to是普通动词，二者在肯定句中一般
 而have to则更强调客观要求和外界影响。 
 must一般只能表达现在的必要性，而have to则可以表达过去或将来 
 的必要性。请比较： 
-Must you go now? 
-
-``` 
+Must you go now? ``` 
 Yes,I have to leave at once. 
 ``` 
 ``` 
 Yes,I must leave at once. 
 ``` 
-## 你必须现在就走吗？ 
-
-## 是的，我不得不马上就走。 
-
-## 是的，我必须马上就走。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-I shall have to leave London tomorrow. 
+ 你必须现在就走吗？  是的，我不得不马上就走。  是的，我必须马上就走。                   I shall have to leave London tomorrow. 
 我明早得离开伦敦。 
 I had to stop smoking because it was forbidden in my company. 
 因为我所在的公司内禁止抽烟，所以我不得不停止了吸烟。 
@@ -6566,59 +4630,19 @@ I had to stop smoking because it was forbidden in my company.
 needn't 还可以理解为have to的否定回答。needn't (don't need to)和 don't 
 have to都表示不必要；而 mustn't却表示绝对禁止，在说话人看来根本没 
 有选择余地。请看例句： 
-Must she leave early? 
-
-``` 
+Must she leave early? ``` 
 She needn't leave early. 
 ``` 
-## 她必须早走吗？ 
-
-## 她不必早走。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 她必须早走吗？  她不必早走。             ``` 
 Do you have to take a taxi? 
 ``` 
 ``` 
 I don't have to/need to take a taxi. 
 ``` 
-## 你必须乘出租汽车吗？ 
-
-## 我不必乘出租车。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-``` 
+ 你必须乘出租汽车吗？  我不必乘出租车。             ``` 
 You mustn't turn left. 
 你不能左转弯。（表示绝对禁止） 
-``` 
-
-词汇学习 Word study 
+``` 词汇学习 Word study 
 1 ．mean v. 
 （ 1 ）意味着，即： 
 It's raining! That means you don't need to water the garden. 
@@ -6649,8 +4673,6 @@ Someone had been watering the milk.
 有人往牛奶里搀了水。 
 He always waters drinks and sells them to tourists. 
 他总是在饮料里搀水并将之卖给游客们。 
-
-
 练习答案 Key to written exercises 
 Lesson 126 
 A 
@@ -6672,11 +4694,7 @@ C
 2 Does Mary really have to wait for him? 
 3 Does Jim really have to meet her? 
 4 Do Tom and Mary really have to travel by ship? 
-
-
 Lessons 127～ 128 
-
-
 课文详注 Further notes on the text 
 1 ．I thought so.我也这样想。 
 so 是代词，意为“这样”、“如此”。 I think so的否定式为I don't 
@@ -6698,8 +4716,6 @@ I told you so.
 myself是I的同位语，用来加强语气。 
 She did it herself. 
 这事是她自己做的。 
-
-
 语法 Grammar in use 
 表示猜测和推断的情态助动词must和can't（ 1 ） 
 表示最有力的推论的最常用的形式是must和can't。这时，它们一般 
@@ -6715,8 +4731,6 @@ It can't be cheap. It must be expensive.
 它不会便宜。一定价格昂贵。 
 He can't be ill. He must be tired. 
 他不可能生病了。他肯定是累了。 
-
-
 词汇学习 Word study 
 1 ．famous adj. 
 （ 1 ）著名的；出名的： 
@@ -6739,8 +4753,6 @@ He has no plans to go abroad yet, at least as far as I know.
 That party wasn't exciting at all, but at least it filled the time. 
 那个聚会一点儿都不令人兴奋，但不管怎样，它使人打发了那 
 段时光。 
-
-
 练习答案 Key to written exercises 
 Lesson 128 
 A 
@@ -6785,8 +4797,6 @@ It must be difficult.
 16 I don't think so. She can't be old. 
 She must be young. 
 17 I don't think so. They can't be early. 
-
-
 They must be late. 
 18 I don't think so. He can't be reading. 
 He must be sleeping. 
@@ -6794,11 +4804,7 @@ He must be sleeping.
 They must be watching television. 
 20 I don't think so. She can't be retiring. 
 She must be looking for a new job. 
-
-
 Lessons 129～ 130 
-
-
 课文详注 Further notes on the text 
 1 ．Where do you think you are?你认为你现在是在哪儿？ 
 do you think 是用在特殊疑问句中的插入语，用来征询见解或表达看 
@@ -6815,8 +4821,6 @@ why I didn't see the sign作is的表语从句，以why引导的从句用来解�
 事情的原因。 
 4 ．⋯you'd better take my advice!⋯⋯你最好还是听从我的劝告吧！ 
 take one's advice是“听从劝告”的意思。 
-
-
 语法 Grammar in use 
 表示猜测和推断的情态助动词must和can't（ 2 ） 
 must与can't不仅能表达对现在和将来的猜测和推断，而且能表达对 
@@ -6831,8 +4835,6 @@ She can't have been 29.She must have been 36.
 她那时肯定不会是 29 岁，她一定 36 岁了。 
 He can't have been reading. He must have been sleeping. 
 他那时肯定不是在看书，他准是在睡觉。 
-
-
 词汇学习 Word study 
 1 ．charge v. 
 （ 1 ）罚款；使承受经济负担： 
@@ -6871,8 +4873,6 @@ The flag is waving in the wind.
 旗帜正在风中飘扬。 
 She was attracted by the waving sea. 
 她被那汹涌起伏的大海吸引。 
-
-
 练习答案 Key to written exercises 
 Lesson 130 
 A 
@@ -6917,27 +4917,19 @@ It must have been difficult.
 She must have been young. 
 17 I don't think he was. He can't have been ill. 
 He must have been tired. 
-
-
 18 I don't think they were. They can't have been listening to the radio. 
 They must have been watching television. 
 19 I don't think she was. She can't have been retiring. 
 She must have been looking for a new job. 
 20 I don't think they were. They can't have been sitting. 
 They must have been standing. 
-
-
 Lessons 131～ 132 
-
-
 课文详注 Further notes on the text 
 1 ．make up our minds,打定主意。 
 make up one's mind是表示下定决心的一种固定用法。 
 2 ．Will you travel by sea or by air?你们乘船去，还是乘飞机去？ 
 这是一个选择疑问句。 by sea表示“乘船”。 by air表示“乘飞机”。 
 3 ． take a long time,花很长时间。 
-
-
 语法 Grammar in use 
 情态助动词may表示可能性 
 may或might都表示“可能”、“也许”。通常既可以用may，也可 
@@ -6962,9 +4954,7 @@ It may have been right.
 Thry may have been in the garden. 
 他们可能那时一直在花园里。 
 请比较： 
-He is working. 
-
-``` 
+He is working. ``` 
 He may be working. 
 ``` 
 ``` 
@@ -6973,31 +4963,7 @@ He must be working.
 ``` 
 He may have been working. 
 ``` 
-## 他在工作。（对事实确信不疑） 
-
-## 他可能在工作。（对现在可能发生的事情的猜测） 
-
-## 他肯定在工作。（对现在所发生事情有根据的推论） 
-
-## 他那时可能正在工作。（对过去所发生事情的猜测） 
-
-##  
-
-##  
-
-##       
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+ 他在工作。（对事实确信不疑）  他可能在工作。（对现在可能发生的事情的猜测）  他肯定在工作。（对现在所发生事情有根据的推论）  他那时可能正在工作。（对过去所发生事情的猜测）                    
 词汇学习 Word study 
 1 ．worry v. 
 （ 1 ）担忧；发愁： 
@@ -7021,8 +4987,6 @@ Don't worry about me----I can look after myself.
 别担心——我会照顾好自己的。 
 The doctor advised him to look after his health. 
 医生建议他要注意自己的健康。 
-
-
 练习答案 Key to written exercises 
 Lesson 132 
 A 
@@ -7054,11 +5018,7 @@ B
 18 I'm not sure. They may be watching television. 
 19 I'm not sure. She may have been looking for a new job. 
 20 I'm not sure. They may be standing. 
-
-
 Lessons 133～ 134 
-
-
 课文详注 Further notes on the text 
 1 ．Have you just made a new film, Miss Marsh? 您刚拍完一部电影吗， 
 马什小姐？ 
@@ -7067,8 +5027,6 @@ make可理解为“拍（摄）”。
 2 ．make another,再拍一部。 
 之后省略了film。 
 3 ．by our reporter = written by our reporter。 
-
-
 语法 Grammar in use 
 需改变时态的间接陈述句 
 间接引语里常要改变时态，这是因为原来讲的话与转述这些话之间 
@@ -7112,13 +5070,7 @@ She said (that) she would help me.
 ‘I may return at six o'clock,’ she told me. 
 “我可能 6 点钟回来，”她告诉我说。⇒ 
 She told me (that) she might return at six o'clock. 
-
-
-## 她告诉我说她可能 6 点钟回来。 
-
-## （ 6 ）为过去时或条件时态的情态助动词不变： 
-
-``` 
+ 她告诉我说她可能 6 点钟回来。  （ 6 ）为过去时或条件时态的情态助动词不变： ``` 
 ‘I could see you tomorrow,’she said. 
 “我明天可能会见你，”她说。⇒ 
 She said (that) she could see me the next day. 
@@ -7127,9 +5079,7 @@ She said (that) she could see me the next day.
 “如果我是你的话，我就抱怨，”她说。⇒ 
 She told me (that) she would complain if she were me. 
 她告诉我说，如果她是我的话她就会抱怨的。 
-``` 
-
-词汇学习 Word study 
+``` 词汇学习 Word study 
 1 ．wonder v. 
 （ 1 ）感到好奇；想要知道： 
 I wonder why he hasn't come. 
@@ -7151,8 +5101,6 @@ The sensational news report didn't have much effect on them.
 （ 3 ）<口>非常好；给人深刻印象的： 
 She looks sensational in that dress! 
 她穿那条裙子的样子真令人难忘！ 
-
-
 练习答案 Key to written exercises 
 Lesson 134 
 A 
@@ -7178,11 +5126,7 @@ D
 2 He told me he had lost it. 
 3 She told me it had stopped. 
 4 They told me she had arrived. 
-
-
 Lessons 135～ 136 
-
-
 课文详注 Further notes on the text 
 1 ．He won't let me make another film.他不会再让我拍电影了。 
 句中动词let后面的不定式不带to，类似的例子如动词 have，make 
@@ -7195,8 +5139,6 @@ Lessons 135～ 136
 这部分是从句，在整句话中作said的直接宾语。 would have to ask是 
 过去将来时结构。因为主句的谓语动词是said，相对过去的这一时间点的 
 将来就是过去的将来，所以用过去将来时结构。 
-
-
 语法 Grammar in use 
 1 ．let的用法 
 let与一般动词不同，它用于动词+宾语+动词原形结构，即let后面可 
@@ -7236,8 +5178,6 @@ He said he might go to the cinema this evening.
 “我可能不退休，”他说。⇒ 
 He said he might not retire. 
 他说他可能不退休。 
-
-
 词汇学习 Word study 
 1 ．introduce v. 
 （ 1 ）介绍；引导： 
@@ -7267,41 +5207,13 @@ I really don't mind.
 You don't really expect him to believe that, do you? 
 你其实并不指望他相信那一点，对吗？ 
 （ 3 ）<表示疑问、惊讶、恼怒等>真的；是吗；真是的： 
-It is said that she's going to retire. 
-
-``` 
+It is said that she's going to retire. ``` 
 Really? 
 ``` 
 ``` 
 Oh really! It's terrible for him. 
 ``` 
-## 听说她要退休了。 
-
-## 真的吗？ 
-
-## 喔，真是的！这对他来说太可怕了。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-
+ 听说她要退休了。  真的吗？  喔，真是的！这对他来说太可怕了。                   
 练习答案 Key to written exercises 
 Lesson 136 
 A 
@@ -7333,11 +5245,7 @@ D
 4 He told me she might sell it. 
 5 He said she might recognize you. 
 6 She told me she might finish it. 
-
-
 Lessons 137～ 138 
-
-
 课文详注 Further notes on the text 
 1 ．do the football pools,下足球赛的赌注。 
 football pools 是英国流行的一种赌博方式，靠在足球比赛结果上的赌 
@@ -7358,8 +5266,6 @@ travel round the world,周游世界。
 句中then意为“到那时”（指将来）。 
 6 ．a pleasant dream,一个美好的梦。 
 7 ．depend on,取决于，依靠。 
-
-
 语法 Grammar in use 
 第 1 类条件句 
 如果我们认为将来的事件是可能发生的，就可用第 1 类条件句去描 
@@ -7385,35 +5291,13 @@ If I have a headache, I will take an aspirin.
 我要是头疼的话就会服用一片阿司匹林。 
 If I can afford it, I will buy it. 
 要是我买得起的话我就会买它。 
-
-
 词汇学习 Word study 
 1 ．depend v.(on) 
 （ 1 ）视⋯⋯而定；取决于： 
-When are you coming back? 
-
-``` 
+When are you coming back? ``` 
 Well,it depends. 
 ``` 
-## 你什么时候回来？ 
-
-## 哦，看情况吧。 
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-##  
-
-It depends on whether they win or not. 
+ 你什么时候回来？  哦，看情况吧。             It depends on whether they win or not. 
 这取决于他们是否能赢。 
 （ 2 ）依靠；依赖： 
 The country depends heavily on its export of farming products. 
@@ -7436,8 +5320,6 @@ Do you think he will win the election?
 你认为他竞选会成功吗？ 
 He had been applying for a scholarship and he won at last. 
 他一直在申请奖学金并终于获得了。 
-
-
 练习答案 Key to written exercises 
 Lesson 138 
 A 
@@ -7468,11 +5350,7 @@ C
 6 You can offer your boss a job if you are rich. 
 7 He can fly to Tokyo if he is rich. 
 8 She can work less if she is rich. 
-
-
 Lessons 139～ 140 
-
-
 课文详注 Further notes on the text 
 1 ．Tell Mary we'll be late for dinner this evening. 你告诉玛丽，今晚吃 
 饭我们将晚到一会儿。 
@@ -7481,8 +5359,6 @@ Lessons 139～ 140
 表语，与for连用。 
 2 ．by the way, 顺便（问、说一下）。 
 说话者忽然想到另一件事的时候用此来表示改变话题。 
-
-
 语法 Grammar in use 
 宾语从句（ 2 ） 
 在以前已介绍过宾语从句一般由that, which和whom引导，它们有时 
@@ -7501,8 +5377,6 @@ She wants to know why Mary is late.
 她想知道玛丽为何迟到。 
 He wants to know if you are tired. 
 他想知道你是否累了。 
-
-
 词汇学习 Word study 
 1 ．extra 
 （ 1 ）adj. 额外的；外加的；另外收费的： 
@@ -7531,8 +5405,6 @@ John is going to work overseas soon.
 约翰不久就要出国工作了。 
 He has never been overseas. 
 他还从未出过国。 
-
-
 练习答案 Key to written exercises 
 Lesson 140 
 A 
@@ -7569,11 +5441,7 @@ I want to know when Tom arrived. Tell me when Tom arrived.
 his homework yesterday. 
 I want to know when Tom did his homework yesterday. Tell me when 
 Tom did his homework yesterday. 
-
-
 Lessons 141～ 142 
-
-
 课文详注 Further notes on the text 
 1 ．my four-year-old daughter，我那 4 岁的女儿。 
 four-year-old 是名词 daughter的定语。各词用连字符连在一起，构成 
@@ -7602,8 +5470,6 @@ make up意为“化妆”、“打扮”（指擦胭脂、抹粉）。
 这是一个省略句，句首省略了I am doing that，而只留下这个作目的 
 状语的动词不定式短语。 
 8 ．put away，收拾好，储存备用。 
-
-
 语法 Grammar in use 
 被动语态（ 1 ） 
 英语动词有主动语态和被动语态之分。在主动句中，动词的主语是 
@@ -7628,8 +5494,6 @@ She is embarrassed.
 她感到尴尬。 
 They were worried. 
 他们感到担忧。 
-
-
 词汇学习 Word study 
 1 ．embarrassed adj. 
 （ 1 ）尴尬的；局促不安的： 
@@ -7664,8 +5528,6 @@ Kindly acknowledge this letter.
 （ 3 ）乐意地；感谢地： 
 He never takes criticism kindly. 
 他从不乐于接受批评。 
-
-
 练习答案 Key to written exercises 
 Lesson 142 
 A 
@@ -7701,11 +5563,7 @@ C
 9 Someone met them at the station. They were met at the station this 
 morning. 
 10 Someone told them. They were told this morning. 
-
-
 Lessons 143～ 144 
-
-
 课文详注 Further notes on the text 
 1 ．is surrounded by，由⋯⋯环绕着。 
 2 ．hundreds of people，数以百计的（游）人。 
@@ -7717,8 +5575,6 @@ Lessons 143～ 144
 4 ．go for a walk，去散步。 
 5 ．What I saw made me very sad．我所见到的一切使我非常难过。 
 句中的主语What I saw 是 what 引导的名词性从句。 
-
-
 语法 Grammar in use 
 被动语态（ 2 ） 
 上一次介绍了被动语态的一般现在时和一般过去时形式，这里介绍 
@@ -7733,8 +5589,6 @@ The floor will be swept soon.
 地不久就会扫的。 
 The knives will be sharpened soon. 
 刀不久就会磨的。 
-
-
 词汇学习 Word study 
 1 ．place v. 
 （ 1 ）（小心地）放；放置： 
@@ -7766,8 +5620,6 @@ When I went into the room, I saw Tim sitting on the floor surrounded by
 boxes. 
 当我走进房间时，我看到蒂姆正坐在地板上，他的周围到处都 
 是盒子。 
-
-
 练习答案 Key to written exercises 
 Lesson 144 
 A 
@@ -7804,4 +5656,3 @@ C
 8 It hasn't been dusted yet. It will be dusted tomorrow. 
 9 They haven't been corrected yet. They will be corrected tomorrow. 
 10 It hasn't been shut yet. It will be shut tomorrow. 
-
