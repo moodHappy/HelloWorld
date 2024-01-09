@@ -1,4 +1,8 @@
 ```
+Her reply showed that she was very sensitive to criticism.
+她的回复表明她对批评非常敏感。
+```
+```
 average平均
 My income's rather variable, but I earn £175 a day on average.
 我的收入很不稳定，但是平均每天挣175英镑。
