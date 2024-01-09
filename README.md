@@ -22,17 +22,6 @@
 </center>
 
 
-| 肯定句   | 简略式     | 否定简略式                   |
-|:----------:|:----------:|:-------------------------:|
-| I am       | I'm        | I'm not                   |
-| You are    | You're     | You're not = You aren't   |
-| He is      | He's       | He's not = He isn't       |
-| She is     | She's      | She's not = She isn't     |
-| It is      | It's       | It's not = It isn't       |
-| We are     | We're      | We're not = We aren't    |
-| You are    | You're     | You're not = You aren't   |
-| They are   | They're    | They're not = They aren't |
-
 
 
 [nce1 notes](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2Fnce1%20notes.txt
