@@ -1,4 +1,5 @@
 ```
+sensitive 敏感
 Her reply showed that she was very sensitive to criticism.
 她的回复表明她对批评非常敏感。
 ```
