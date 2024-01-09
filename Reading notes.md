@@ -1,4 +1,8 @@
 ```
+average平均
+My income's rather variable, but I earn £175 a day on average.
+我的收入很不稳定，但是平均每天挣175英镑。
+
 section
 the sports section of the newspaper
 报纸的体育版
