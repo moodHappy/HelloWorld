@@ -1,4 +1,9 @@
 ```
+broadcast 广播
+Radio Caroline used to broadcast from a boat in the North Sea.
+加罗林电台过去在北海的一艘船上广播。
+```
+```
 sensitive 敏感
 Her reply showed that she was very sensitive to criticism.
 她的回复表明她对批评非常敏感。
