@@ -18,7 +18,7 @@
 | 141 | 143 |  [New](https://github.com/moodHappy/HelloWorld/blob/master/Reading%20notes.md)   |  [NCE1](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2Fnce1%20notes.txt)   |     |
 
 ---
-`1`一般疑问句`  
+`1,一般疑问句`  
 `47,一般现在时`
 
 ---
