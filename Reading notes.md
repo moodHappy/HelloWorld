@@ -2,6 +2,10 @@
 broadcast 广播
 Radio Caroline used to broadcast from a boat in the North Sea.
 加罗林电台过去在北海的一艘船上广播。
+
+sceptical 怀疑
+Many experts remain sceptical about/of his claims.
+许多专家仍然对他的说法持怀疑态度。
 ```
 ```
 sensitive 敏感
