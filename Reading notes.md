@@ -1,5 +1,5 @@
 ```
-declares 宣布
+declare 宣布
 They declared their support for the proposal
 他们宣布支持这个提议。
 
