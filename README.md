@@ -9,7 +9,7 @@
 | [021](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F021.md) | 人称代词 | [023](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F023.md) | 动词双宾语\/on引导的介词短语 |
 | [025](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F025.md) | 冠词和定冠词the | [027](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F027.md) | there+be结构否定句\/疑问句 |
 | [029](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F029.md) | 情态动词must | [031](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F031.md) | 现在进行时(一) |
-| 33 | 现在进行时(二) | 35 | 短语动词 |
+| [033](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F033.md) | 现在进行时(二) | 35 | 短语动词 |
 | 37 | be going to 将来时/同位语 | 39 | 祈使句的否定 |
 | 41 | there+be（三） | 43 | 情态动词can(一) |
 | 45 | 情态动词can(二) | 47 | 一般现在时（一） |
