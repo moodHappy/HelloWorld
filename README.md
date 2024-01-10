@@ -57,7 +57,7 @@
 | 137 | 138 | 139 | 140 |
 | 141 | 142 | 143 | 144 |
 | 145 | 146 | 147 | 148 |
-| 149 | 150 | [New](https://github.com/moodHappy/HelloWorld/blob/master/Reading%20notes.md) | 152 |
+| 149 | 150 | [New](https://github.com/moodHappy/HelloWorld/blob/master/Reading%20notes.md) | [NCE1](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2Fnce1%20notes.txt) |
 
 
 
