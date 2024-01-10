@@ -18,9 +18,11 @@
 | 141 | 143 |  [New](https://github.com/moodHappy/HelloWorld/blob/master/Reading%20notes.md)   |  [NCE1](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2Fnce1%20notes.txt)   |     |
 
 ---
-`1,一般疑问句`  
-`47,一般现在时`  
-`3,否定陈述句与肯定陈述句`
+
+
+
+
+
 ---
 [NCE1](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2FTable%20of%20contents.md)  
 
