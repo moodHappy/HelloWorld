@@ -13,7 +13,7 @@
 | [037](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F037.md) | be going to 将来时/同位语 | [039](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F039.md) | 祈使句的否定 |
 | [041](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F041.md) | there+be（三） | [043](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F043.md) | 情态动词can(一) |
 | [045](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F045.md) | 情态动词can(二) | [047](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F047.md) | 一般现在时（一） |
-| [049](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F049.md) | 选择疑问句/现在时的单数第3人称 | 51 | 52 |
+| [049](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F049.md) | 选择疑问句/现在时的单数第3人称 | [051](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F051.md) | 52 |
 | 53 | 54 | 55 | 56 |
 | 57 | 58 | 59 | 60 |
 | 61 | 62 | 63 | 64 |
