@@ -1,4 +1,8 @@
 ```
+declares
+They declared their support for the proposal
+他们宣布支持这个提议。
+
 broadcast 广播
 Radio Caroline used to broadcast from a boat in the North Sea.
 加罗林电台过去在北海的一艘船上广播。
