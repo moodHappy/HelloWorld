@@ -2,7 +2,7 @@
 ## **目录**  
 | [001](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F001.md) | 一般疑问句 | [003](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F003.md) | 否定陈述句与肯定陈述句 |
 |:-:|:-:|:-:|:-:|
-| 5 | 特殊疑问句 | 7 | what特殊疑问句 |
+| [005](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F005.md) | 特殊疑问句 | 7 | what特殊疑问句 |
 | 9 | how特殊疑问句 | 11 | whose特殊疑问句 |
 | 13 | 祈使句 | 15 | be的一般现在时形式 |
 | 17 | who特殊疑问句 | 19 | there+be结构 |
