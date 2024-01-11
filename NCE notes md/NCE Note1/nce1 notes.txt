@@ -20,20 +20,14 @@ You mustn't take this medicine!
 ``` 
  不要吃这个药！  你不许吃这个药！             ``` 
 Don't call the doctor! 
-``` 
-``` 
 You mustn't call the doctor! 
 ``` 
  不要给大夫打电话！  你不许给大夫打电话！             ``` 
 Don't talk in the library! 
-``` 
-``` 
 You mustn't talk in the library! 
 ``` 
  请勿在图书馆交谈！  你不许在图书馆内交谈！             ``` 
 Don't lean out of the window! 
-``` 
-``` 
 You mustn't lean out of the window! 
 ``` 
  别把头或身子探出窗外！  你不许把头或身子探出窗外！             
@@ -150,23 +144,17 @@ It's half past ten.
 ``` 
  几点了？  点半。             ``` 
 When must I come home? 
-``` 
-``` 
 You must come home at five o'clock. 
 5 
 ``` 
  我必须什么时候回家？  你必须 点钟回家。             
 ``` 
 When must he telephone you? 
-``` 
-``` 
 He must telephone me at a quarter to three. 
 3 1 
 ``` 
  他必须何时给你打电话？  他必须在 点差刻时给我打电话。             ``` 
 When't your birthday? 
-``` 
-``` 
 My birthday's on July the 18th. 
 7 18 
 ``` 
@@ -254,15 +242,11 @@ I wasn't at school on January 1st. I was at church.
 ``` 
  月号你在学校还是上教堂了？  我月 号没上学。我上教堂做礼拜了。             ``` 
 When was he absent from school? 
-``` 
-``` 
 He was absent on Monday, Tuesday, Wednesday and 
 Thursday. 
 ``` 
  他何时缺课了？  他周一、周二、周三和周四缺课了。               ``` 
 Where were you on Sunday? 
-``` 
-``` 
 I was at church on Sunday. 
 ``` 
  周日你在哪儿？  我周日在教堂做礼拜。             
@@ -894,14 +878,10 @@ I don't have milk in my tea.
 ``` 
  你喝茶加牛奶吗？  我喝茶不加牛奶。             ``` 
 Did you have a nice holiday? 
-``` 
-``` 
 I didn't have a nice holiday. 
 ``` 
  你的假日过得愉快吗？  我的假日过得不愉快。             ``` 
 Does he have lessons on Friday? 
-``` 
-``` 
 He doesn't have lessons on Friday. 
 ``` 
  他周五上课吗？  他周五不上课。             
@@ -1056,8 +1036,6 @@ George has gone to Paris.
 ``` 
  乔治去过巴黎。（他现在不在巴黎。）  乔治去巴黎了。（他在巴黎或去巴黎的路上。）             ``` 
 Have you ever been to America? 
-``` 
-``` 
 Has he gone to Washington D. C.? 
 ``` 
  你去过美国吗？（对方不在美国境内。）  他去华盛顿了吗？（被提到的人有可能现在美国境内  或在赴美途中。）                 
@@ -1131,33 +1109,23 @@ Have they lived here for 10 years?
 No, they haven' t lived here for 10 years. 
 10  他们在这儿住了 年了吗？  没有，他们在这儿没有住了 年。             ``` 
 How long have they lived here? 
-``` 
-``` 
 They've lived here only for 5 years. 
 5 
 ``` 
  他们在这儿住了多久？  他们在这儿仅住了 年。             ``` 
 Has she just aired the room or cleaned her shoes? 
-``` 
-``` 
 She hasn't cleaned her shoes. She has just aired the room. 
 ``` 
  她刚给房间通风还是擦鞋？  她没有擦鞋，她刚给房间通了风。             ``` 
 What have they just done? 
-``` 
-``` 
 They have just made their beds. 
 ``` 
  他们刚干了什么事情？  他们刚铺好床。             ``` 
 Hasn't he just been to the cinema? 
-``` 
-``` 
 Yes, he has. 
 ``` 
  他不是刚去看电影了吗？  对。             ``` 
 Has she left the office? 
-``` 
-``` 
 No, she hasn't left the office yet. 
 ``` 
  她离开办公室了吗？  没有，她还没有离开办公室。             
@@ -1273,8 +1241,6 @@ He's lived here for twenty years.
 ``` 
  伊恩在这幢房子里住多久了？  他在这里住了 年了。             ``` 
 Since when has he been there? 
-``` 
-``` 
 Since 1976. 
 1976 
 ``` 
@@ -1437,21 +1403,15 @@ He'll be in Tokyo.
 ``` 
  下下个月他将在哪儿？  他将在东京。             ``` 
 When will he come back to London? 
-``` 
-``` 
 He'll come back the week after next. 
 ``` 
  他将于何时回伦敦？  他将于下下周回来。             ``` 
 Will you go to Athens next week? 
-``` 
-``` 
 No, I shan' t go to Athens next week. I shall go to 
 Beijing. 
 ``` 
  你下周去雅典吗？  不，我下周不去雅典。我将去北京。                 ``` 
 Will Sam leave for Bombay next month? 
-``` 
-``` 
 No, he won't leave for Bombay next month. He will 
 leave for Berlin. 
 ``` 
@@ -1518,8 +1478,6 @@ We had better go back to the station.
 ``` 
  我们必须回车站去。  我们最好回车站去。             ``` 
 She must hurry. 
-``` 
-``` 
 She had better hurry. 
 ``` 
  她得抓紧点儿。  她最好抓紧点儿。             
@@ -2141,23 +2099,13 @@ far----farther----farthest
 则用much与little来表达： 
 I've got some biscuits. ``` 
 You've got more biscuits than I have. 
-``` 
-``` 
 I've got fewer than you have 
-``` 
-``` 
 I've got very few. 
 ``` 
  我有些饼干。  你的饼干比我的多。  我们拥有的比你的少。  我有为数很少的（几块）。                    ``` 
 I've got some chocolate. 
-``` 
-``` 
 You've got more chocolate than I have. 
-``` 
-``` 
 I've got less than you have. 
-``` 
-``` 
 I've got very little. 
 ``` 
  我有些巧克力。  你的巧克力比我的多。  我所拥有的比你所拥有的少。  我所有的为数很少。                    
@@ -2312,8 +2260,6 @@ There's none.
 ``` 
  冰箱里没有啤酒。  没有什么东西。             ``` 
 I bought no magazines. 
-``` 
-``` 
 I bought none. 
 ``` 
  我没买什么杂志。  我没买什么东西。             3 ．Except us．我们俩除外。 
@@ -2329,70 +2275,48 @@ So am I.
 ``` 
  我饿了。  我也一样。             ``` 
 I want some coffee. 
-``` 
-``` 
 So do I. 
 ``` 
  我想要些咖啡。  我也一样。             ``` 
 I was at the party last night. 
-``` 
-``` 
 So was I. 
 ``` 
  我昨晚参加聚会了。  我也一样。             ``` 
 I can swim very well. 
-``` 
-``` 
 So can I. 
 ``` 
  我游泳游得好。  我也如此。             ``` 
 I saw George last night. 
-``` 
-``` 
 So did I. 
 ``` 
  我昨晚看见乔治了。  我也一样。             ``` 
 I've got a cold. 
-``` 
-``` 
 So have I. 
 ``` 
  我感冒了。  我也一样。             ``` 
 （ 2 ）以neither开头的句子： 
 I'm not tired. 
-``` 
-``` 
 Neither am I. 
 ``` 
  我不累。  我也一样。             
 ``` 
 I don't want any tea. 
-``` 
-``` 
 Neither do I. 
 ``` 
  我不想要任何茶。  我也一样。             ``` 
 I wasn't tired this morning. 
-``` 
-``` 
 Neither was I. 
 ``` 
  我今天不累。  我也如此。             ``` 
 I can't speak Chinese. 
-``` 
-``` 
 Neither can I. 
 ``` 
  我不会讲汉语。  我也如此。             ``` 
 I didn't buy a new car last year. 
-``` 
-``` 
 Neither did I. 
 ``` 
  我去年没买新车。  我也如此。             ``` 
 I haven't got a headache. 
-``` 
-``` 
 Neither have I. 
 ``` 
  我没头疼。  我也一样。             
@@ -2965,8 +2889,6 @@ must一般只能表达现在的必要性，而have to则可以表达过去或将
 的必要性。请比较： 
 Must you go now? ``` 
 Yes,I have to leave at once. 
-``` 
-``` 
 Yes,I must leave at once. 
 ``` 
  你必须现在就走吗？  是的，我不得不马上就走。  是的，我必须马上就走。                   I shall have to leave London tomorrow. 
@@ -2982,8 +2904,6 @@ She needn't leave early.
 ``` 
  她必须早走吗？  她不必早走。             ``` 
 Do you have to take a taxi? 
-``` 
-``` 
 I don't have to/need to take a taxi. 
 ``` 
  你必须乘出租汽车吗？  我不必乘出租车。             ``` 
@@ -3303,11 +3223,7 @@ Thry may have been in the garden.
 请比较： 
 He is working. ``` 
 He may be working. 
-``` 
-``` 
 He must be working. 
-``` 
-``` 
 He may have been working. 
 ``` 
  他在工作。（对事实确信不疑）  他可能在工作。（对现在可能发生的事情的猜测）  他肯定在工作。（对现在所发生事情有根据的推论）  他那时可能正在工作。（对过去所发生事情的猜测）                    
@@ -3556,8 +3472,6 @@ You don't really expect him to believe that, do you?
 （ 3 ）<表示疑问、惊讶、恼怒等>真的；是吗；真是的： 
 It is said that she's going to retire. ``` 
 Really? 
-``` 
-``` 
 Oh really! It's terrible for him. 
 ``` 
  听说她要退休了。  真的吗？  喔，真是的！这对他来说太可怕了。                   
