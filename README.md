@@ -18,7 +18,7 @@
 | [057](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F057.md) | 一般现在时vs现在进行时 | [059](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F059.md) | 完全动词have(一) |
 | [061](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F061.md) | 完全动词have(二)<br>情态动词must(二) | [063](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F063.md) | 64 |
 | [065](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F065.md) | 66 | [067](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F067.md) | 68 |
-| 69 | 70 | 71 | 72 |
+| [069](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F069.md) | 70 | 71 | 72 |
 | 73 | 74 | 75 | 76 |
 | 77 | 78 | 79 | 80 |
 | 81 | 82 | 83 | 84 |
