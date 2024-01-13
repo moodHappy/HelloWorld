@@ -188,3 +188,33 @@ The window can be opened by him.
 - need (needed): 表示需要或不需要
 - ought to: 表示应该或理应
 - used to: 表示过去常常
+
+好的，我来帮你。完整的13个情态动词是：
+
+- can (could)
+- may (might)
+- must
+- have to
+- shall (should)
+- will (would)
+- dare (dared)
+- need (needed)
+- ought to
+- used to
+
+你可以用这个表格来记忆它们的含义和用法：
+
+| 情态动词 | 含义 | 用法 |
+| :---: | :---: | :---: |
+| can (could) | 能力、请求、允许或推测 | I can speak English. 我会说英语。Can you help me? 你能帮我吗？You can go now. 你现在可以走了。It could be true. 这可能是真的。 |
+| may (might) | 请求、允许、祝愿或推测 | May I come in? 我可以进来吗？You may use my phone. 你可以用我的电话。May you be happy. 祝你幸福。He might be late. 他可能会迟到。 |
+| must | 必须、必要或推测 | You must finish your homework. 你必须完成你的作业。You must be tired. 你一定很累。 |
+| have to | 必须、必要或客观需要 | I have to go to the dentist. 我必须去看牙医。We have to work hard. 我们必须努力工作。 |
+| shall (should) | 征求意见、命令、警告、允诺、威胁或应该 | Shall we go now? 我们现在走吗？You shall obey the rules. 你必须遵守规则。You should study harder. 你应该更努力地学习。 |
+| will (would) | 意愿、请求、允许、习惯或推测 | I will help you. 我会帮你的。Will you please be quiet? 你能请安静一点吗？You would do the same. 你也会这样做的。He would smoke every day. 他过去每天都抽烟。She will be fine. 她会没事的。 |
+| dare (dared) | 敢于或不敢 | I dare not tell him the truth. 我不敢告诉他真相。He dared to challenge me. 他敢于挑战我。 |
+| need (needed) | 需要或不需要 | You need to work harder. 你需要更努力地工作。You need not worry. 你不需要担心。 |
+| ought to | 应该或理应 | You ought to apologize to her. 你应该向她道歉。He ought to have arrived by now. 他现在理应已经到了。 |
+| used to | 过去常常 | I used to play soccer. 我过去常常踢足球。She used to be a teacher. 她过去是一名老师。 |
+
+我希望这对你有帮助。如果你还有其他问题，欢迎继续和我聊天。😊
