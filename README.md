@@ -37,7 +37,7 @@
 | 133 | 134 | 135 | 136 |
 | 137 | 138 | 139 | 140 |
 | 141 | 142 | 143 | 144 |
-|     |     |     | [New](https://github.com/moodHappy/HelloWorld/blob/master/Reading%20notes.md) |
+|     |     |  [tense](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2Ftense.md)   | [New](https://github.com/moodHappy/HelloWorld/blob/master/Reading%20notes.md) |
 
 
 
