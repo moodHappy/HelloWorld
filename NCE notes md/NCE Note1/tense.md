@@ -28,7 +28,8 @@ I have learned English for two years.
 
 结构是主语 + have/has been + 动词的现在分词。例句：
 
-He has been working on this project for a month. 他已经在这个项目上工作了一个月。
+He has been working on this project for a month.
+他已经在这个项目上工作了一个月。
 ```
 ```
 - 一般过去时：表示过去某个时间或时间段里发生过的动作或状态。
