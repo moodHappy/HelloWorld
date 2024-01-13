@@ -92,8 +92,8 @@ By the end of this year, I will have graduated from college.
 ```
 - 将来完成进行时：表示将来某个时间开始并一直持续到另一个将来时间的动作或状态，强调动作的持续性或重复性。
 
-结构是主语 + will have been + 动词的现在分词。
+结构是主语 + will have been + 动词的现在分词。例句：
 
-例句：By this time next week, I will have been working here for three years. 
+By this time next week, I will have been working here for three years. 
 到下周这个时候，我将已经在这里工作了三年。
 ```
