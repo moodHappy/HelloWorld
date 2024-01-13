@@ -1,52 +1,70 @@
 英语常用时态的结构和例句有以下几种：
 ```
 - 一般现在时：表示现在的情况、状态和特征，或经常性、习惯性、普遍真理的动作。
+
 结构是主语 + 动词原形（第三人称单数加s或es）。例句：
+
 He likes reading books. 
 他喜欢读书。
 ```
 ```
 - 现在进行时：表示现在正在进行的动作或状态。
+
 结构是主语 + be + 动词的现在分词（ing）。例句：
+
 She is cooking dinner. 
 她正在做晚饭。
 ```
 ```
 - 现在完成时：表示过去发生的动作对现在仍有影响，或从过去某时开始持续到现在的动作或状态。
+
 结构是主语 + have/has + 动词的过去分词。例句：
+
 I have learned English for two years. 
 我已经学习英语两年了。
 ```
 ```
 - 现在完成进行时：表示从过去某时开始并一直持续到现在的动作或状态，强调动作的持续性或重复性。
+
 结构是主语 + have/has been + 动词的现在分词。例句：
+
 He has been working on this project for a month. 他已经在这个项目上工作了一个月。
 ```
 ```
-- 一般过去时：表示过去某个时间或时间段里发生过的动作或状态。结构是主语 + 动词的过去式。例句：
+- 一般过去时：表示过去某个时间或时间段里发生过的动作或状态。
+
+结构是主语 + 动词的过去式。例句：
+
 They went to the park yesterday. 
 他们昨天去了公园。
 ```
 ```
 - 过去进行时：表示过去某个时间正在进行的动作或状态，或过去一段时间内经常发生的动作。
+
 结构是主语 + was/were + 动词的现在分词。例句：
+
 She was watching TV when I came in. 
 我进来的时候她正在看电视。
 ```
 ```
 - 过去完成时：表示在过去某个时间或动作之前已经完成的动作或状态。
+
 结构是主语 + had + 动词的过去分词。例句：
+
 He had finished his homework before he went to bed. 
 他睡觉前已经完成了作业。
 ```
 ```
 - 过去完成进行时：表示从过去某时开始并一直持续到另一个过去时间的动作或状态，强调动作的持续性或重复性。
-结构是主语 + had been + 动词的现在分词。
-例句：She had been studying English for two hours when I called her. 
+
+结构是主语 + had been + 动词的现在分词。例句：
+
+She had been studying English for two hours when I called her. 
 我打电话给她的时候她已经学习了两个小时了。
 ```
 ```
 - 一般将来时：表示将要发生的动作或状态，或按计划、安排即将发生的动作。
+
 结构是主语 + will/shall + 动词原形，
 或主语 + be going to + 动词原形，
 或主语 + be + 现在分词。例句：
@@ -56,13 +74,17 @@ I will go to the library tomorrow.
 ```
 ```
 - 将来进行时：表示将来某个时间正在进行的动作或状态。
+
 结构是主语 + will be + 动词的现在分词。例句：
+
 He will be working at this time tomorrow. 
 他明天这个时候会在工作。
 ```
 ```
 - 将来完成时：表示将来某个时间之前已经完成的动作或状态。
+
 结构是主语 + will have + 动词的过去分词。例句：
+
 By the end of this year, I will have graduated from college. 
 到今年年底，我将已经从大学毕业了。
 ```
