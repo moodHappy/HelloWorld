@@ -203,3 +203,5 @@ The window can be opened by him.
 | need (needed) | 需要或不需要 | You need to work harder. 你需要更努力地工作。You need not worry. 你不需要担心。 |
 | ought to | 应该或理应 | You ought to apologize to her. 你应该向她道歉。He ought to have arrived by now. 他现在理应已经到了。 |
 | used to | 过去常常 | I used to play soccer. 我过去常常踢足球。She used to be a teacher. 她过去是一名老师。 |
+
+Can、could、may、might、must、need ought to、dare、shall、should、will、would、 dared。
