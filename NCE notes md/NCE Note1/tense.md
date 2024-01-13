@@ -188,21 +188,8 @@ The window can be opened by him.
 - need (needed): 表示需要或不需要
 - ought to: 表示应该或理应
 - used to: 表示过去常常
+```
 
-好的，我来帮你。完整的13个情态动词是：
-
-- can (could)
-- may (might)
-- must
-- have to
-- shall (should)
-- will (would)
-- dare (dared)
-- need (needed)
-- ought to
-- used to
-
-你可以用这个表格来记忆它们的含义和用法：
 
 | 情态动词 | 含义 | 用法 |
 | :---: | :---: | :---: |
