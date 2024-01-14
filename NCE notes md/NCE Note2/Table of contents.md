@@ -46,14 +46,3 @@
 | the | me | the | me |
 | the | me | the | me |
 | the | me | the | me |
-```
-
-这是表格的效果：
-
-| the | me | the | me |
-| --- | --- | --- | --- |
-| the | me | the | me |
-| the | me | the | me |
-| the | me | the | me |
-| the | me | the | me |
-| the | me | the | me |
