@@ -24,19 +24,19 @@
 | [081](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F081.md) | 完全动词have(三) | [083](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F083.md) | 现在完成时 |
 | [085](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F085.md) | have been<br>have gone | [087](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F087.md) | 现在完成时的疑问式及否定式 |
 |  [089](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F089.md)  | 90 | [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 92 |
-| 93 | 94 | 95 | 96 |
-| 97 | 98 | 99 | 100 |
-| 101 | 102 | 103 | 104 |
-| 105 | 106 | 107 | 108 |
-| 109 | 110 | 111 | 112 |
-| 113 | 114 | 115 | 116 |
-| 117 | 118 | 119 | 120 |
-| 121 | 122 | 123 | 124 |
-| 125 | 126 | 127 | 128 |
-| 129 | 130 | 131 | 132 |
-| 133 | 134 | 135 | 136 |
-| 137 | 138 | 139 | 140 |
-| 141 | 142 | 143 | 144 |
+| [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 94 | [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 96 |
+| [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 98 | [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 100 |
+| [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 102 | [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 104 |
+| [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 106 | [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 108 |
+| [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 110 | [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 112 |
+| [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 114 | [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 116 |
+| [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 118 | [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 120 |
+| [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 122 | [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 124 |
+| [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 126 | [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 128 |
+| [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 130 | [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 132 |
+| [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 134 | [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 136 |
+| [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 138 | [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 140 |
+| [091](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F091.md) | 142 | [143](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2F143.md) | 144 |
 |     |  [clause](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2Fclause.md)   |  [tense](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note1%2Ftense.md)   | [New](https://github.com/moodHappy/HelloWorld/blob/master/Reading%20notes.md) |
 
 
