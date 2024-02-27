@@ -8,7 +8,7 @@ https://mareep.netlify.app/sub/shadowrocket_base64.txt
 ```
 ### workers：  
 ```
-https://sing-box-subscribe.vercel.app/config/https://v1.mk/VDoCvmp
+https://v1.mk/VDoCvmp
 ```
 
 ### markbang：  
