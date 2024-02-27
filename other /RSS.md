@@ -11,3 +11,6 @@
 
 workers：  
 `https://sing-box-subscribe.vercel.app/config/https://v1.mk/VDoCvmp`
+
+markbang：  
+`https://sing-box-subscribe.vercel.app/config/https://raw.githubusercontent.com/markbang/chromegopacs/main/hy2pac.txt`
