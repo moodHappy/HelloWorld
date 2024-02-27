@@ -63,4 +63,7 @@ https://raw.githubusercontent.com/markbang/chromegopacs/main/hy2pac.txt
 ```
 https://neko-warp.nloli.xyz
 ```
-
+## ermaozi
+```
+https://git.io/emzclash
+```
