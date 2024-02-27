@@ -49,7 +49,7 @@ https://sing-box-subscribe.vercel.app/config/https://raw.githubusercontent.com/m
 
 ### 绵阿羊：  
 ```
-https://mareep.netlify.app/sub/sb.json
+https://mareep.netlify.app/sub/shadowrocket_base64.txt
 ```
 ### workers：  
 ```
@@ -58,5 +58,8 @@ https://v1.mk/VDoCvmp
 ### markbang：  
 ```
 https://raw.githubusercontent.com/markbang/chromegopacs/main/hy2pac.txt
+```
+### nloli
+```
 ```
 
