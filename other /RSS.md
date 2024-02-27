@@ -10,7 +10,6 @@ https://mareep.netlify.app/sub/shadowrocket_base64.txt
 ```
 https://v1.mk/VDoCvmp
 ```
-
 ### markbang：  
 ```
 https://raw.githubusercontent.com/markbang/chromegopacs/main/hy2pac.txt
@@ -26,7 +25,6 @@ https://mareep.netlify.app/sub/merged_proxies_new.yaml
 ```
 https://v1.mk/VDoCvmp
 ```
-
 ### markbang：  
 ```
 不支持
@@ -42,7 +40,6 @@ https://mareep.netlify.app/sub/sb.json
 ```
 https://sing-box-subscribe.vercel.app/config/https://v1.mk/VDoCvmp
 ```
-
 ### markbang：  
 ```
 https://sing-box-subscribe.vercel.app/config/https://raw.githubusercontent.com/markbang/chromegopacs/main/hy2pac.txt
@@ -56,9 +53,8 @@ https://mareep.netlify.app/sub/sb.json
 ```
 ### workers：  
 ```
-https://sing-box-subscribe.vercel.app/config/https://v1.mk/VDoCvmp
+https://v1.mk/VDoCvmp
 ```
-
 ### markbang：  
 ```
 https://raw.githubusercontent.com/markbang/chromegopacs/main/hy2pac.txt
