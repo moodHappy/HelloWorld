@@ -6,5 +6,5 @@
 
 # singbox
 
-绵阿羊
+绵阿羊  
 `https://mareep.netlify.app/sub/sb.json`
