@@ -24,7 +24,7 @@ https://mareep.netlify.app/sub/merged_proxies_new.yaml
 ```
 ### workers：  
 ```
-https://sing-box-subscribe.vercel.app/config/https://v1.mk/VDoCvmp
+https://v1.mk/VDoCvmp
 ```
 
 ### markbang：  
