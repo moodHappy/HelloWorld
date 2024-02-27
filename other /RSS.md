@@ -20,7 +20,7 @@ https://raw.githubusercontent.com/markbang/chromegopacs/main/hy2pac.txt
 
 ### 绵阿羊：  
 ```
-https://mareep.netlify.app/sub/sb.json
+https://mareep.netlify.app/sub/merged_proxies_new.yaml
 ```
 ### workers：  
 ```
