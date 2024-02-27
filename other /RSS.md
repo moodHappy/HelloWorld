@@ -61,5 +61,6 @@ https://raw.githubusercontent.com/markbang/chromegopacs/main/hy2pac.txt
 ```
 ### nloli
 ```
+https://neko-warp.nloli.xyz
 ```
 
