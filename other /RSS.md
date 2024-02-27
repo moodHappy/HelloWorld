@@ -1,6 +1,6 @@
 # RSS
 
-## nekobox
+## Nekobox
 
 ### 绵阿羊：  
 ```
@@ -16,7 +16,7 @@ https://sing-box-subscribe.vercel.app/config/https://v1.mk/VDoCvmp
 https://sing-box-subscribe.vercel.app/config/https://raw.githubusercontent.com/markbang/chromegopacs/main/hy2pac.txt
 ```
 
-## clashmate
+## Clashmate
 
 ### 绵阿羊：  
 ```
@@ -32,7 +32,7 @@ https://sing-box-subscribe.vercel.app/config/https://v1.mk/VDoCvmp
 https://sing-box-subscribe.vercel.app/config/https://raw.githubusercontent.com/markbang/chromegopacs/main/hy2pac.txt
 ```
 
-## singbox
+## Singbox
 
 ### 绵阿羊：  
 ```
