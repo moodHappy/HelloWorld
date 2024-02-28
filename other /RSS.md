@@ -57,7 +57,7 @@ vless://8b6c588d-9b7c-4053-8540-b1391d50c32b@shopify.com:443/?type=ws&encryption
 ```
 ### warp-wirrguard：
 ```
-https://raw.githubusercontent.com/moodHappy/HelloWorld/master/other%20/Wireguard%2BWorkers.yaml#wirrguard
+https://raw.githubusercontent.com/moodHappy/HelloWorld/master/other%20/Wireguard%2BWorkers.yaml
 ```
 ### markbang：  
 ```
