@@ -59,6 +59,10 @@ https://v1.mk/VDoCvmp
 ```
 https://raw.githubusercontent.com/markbang/chromegopacs/main/hy2pac.txt
 ```
+### warp-wirrguard：
+```
+https://raw.githubusercontent.com/moodHappy/HelloWorld/master/other%20/Wireguard%2BWorkers.yaml#wirrguard
+```
 ### nloli
 ```
 https://neko-warp.nloli.xyz
