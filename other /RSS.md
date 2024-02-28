@@ -55,7 +55,7 @@ https://mareep.netlify.app/sub/shadowrocket_base64.txt
 ```
 vless://8b6c588d-9b7c-4053-8540-b1391d50c32b@shopify.com:443/?type=ws&encryption=none&host=vless.dgxyn.lol&path=%2F%3Fed%3D2048&security=tls&sni=vless.dgxyn.lol&fp=random&packetEncoding=xudp#shopify.com
 ```
-### warp-wirrguard：
+### warp-wireguard：
 ```
 https://raw.githubusercontent.com/moodHappy/HelloWorld/master/other%20/WireGuard.yaml
 ```
