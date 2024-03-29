@@ -10,3 +10,6 @@
 [NCE4](https://github.com/moodHappy/HelloWorld/blob/master/NCE%20notes%20md%2FNCE%20Note4%2FTable%20of%20contents.md)
 
 [RSS](https://github.com/moodHappy/HelloWorld/blob/master/other%20%2FRSS.md)
+
+[英语简易教程](https://github.com/moodHappy/HelloWorld/tree/master/English%20tutorial)
+
