@@ -43,7 +43,8 @@
   color: #333333; /* 深灰色 */
   background-color: #fafafa; /* 非常浅的灰色 */
   border: 1px solid #d3d3d3; /* 浅灰色边框 */
-  padding: 15px;
+  padding: 0; /* 将 padding 设为零 */
+  margin: 0; /* 将 margin 设为零 */
   line-height: 1.6; /* 增加行间距 */
 }
 img {
@@ -52,6 +53,7 @@ img {
   width: 400px;
   border-radius: 0; /* 移除圆角 */
   border: 1px solid #d3d3d3; /* 浅灰色边框 */
+  margin: 0; /* 将 margin 设为零 */
 }
 
 body {
