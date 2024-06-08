@@ -39,7 +39,7 @@
 ```
 .card {
   font-family: "Georgia", serif;
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
   color: #333333; /* 深灰色 */
   background-color: #fafafa; /* 非常浅的灰色 */
@@ -47,11 +47,10 @@
   padding: 15px;
   line-height: 1.6; /* 增加行间距 */
 }
-
 img {
   max-width: 100%;
-  height: auto;
-  width: 100px;
+  height: 300px;
+  width: 400px;
   border-radius: 0; /* 移除圆角 */
   border: 1px solid #d3d3d3; /* 浅灰色边框 */
 }
@@ -73,7 +72,7 @@ body {
 
 .pronunciation {
   font-family: "Georgia", serif;
-  font-size: 18px;
+  font-size: 16px;
   color: #333333; /* 深灰色 */
   text-align: center;
   margin-bottom: 20px;
@@ -103,7 +102,7 @@ body {
 .content {
   text-align: left;
   font-family: "Georgia", serif;
-  font-size: 18px;
+  font-size: 16px;
   color: #333333; /* 深灰色 */
   line-height: 1.6; /* 增加行间距 */
 }
