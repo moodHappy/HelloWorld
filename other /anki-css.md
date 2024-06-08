@@ -110,3 +110,72 @@ body {
 }
 ```
 
+# z-7k-麦克米伦样式：
+## 正面：
+```
+<div class="custom-div">{{单词}}</div>
+```
+## 背面：
+```
+<div class="card">
+  {{图片}}
+  <br>
+  {{例句}}
+  <br>
+  {{例句翻译}}
+  <br>
+  <br>
+  {{基本释义}}
+  <br>
+  <br>
+  <div class="centered">
+    {{音标}}
+  </div>
+</div>
+{{FrontSide}}
+```
+
+## CSS样式：
+```
+.custom-div {
+  font-family: "Times New Roman", serif;
+  font-size: 24px;
+  position: fixed;
+  bottom: 150px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #f5f5dc; /* 浅米色 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  box-sizing: border-box;
+  border: 2px solid #d2b48c; /* 黄褐色边框 */
+}
+
+.card {
+  font-family: "Georgia", serif;
+  font-size: 18px;
+  text-align: left;
+  background-color: #fffaf0; /* 花色白 */
+  padding: 20px;
+  border: 1px solid #d2b48c; /* 黄褐色边框 */
+  border-radius: 0; /* 移除圆角 */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border: 1px solid #d2b48c; /* 为图片添加边框 */
+}
+
+.card p {
+  margin-bottom: 10px;
+  line-height: 1.6; /* 增加行间距 */
+}
+
+.centered {
+  text-align: center;
+}
+```
