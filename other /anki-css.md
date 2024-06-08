@@ -16,11 +16,11 @@
 
 ## 背面：
 ```
+{{FrontSide}}
 {{中文}}
 <hr>
 {{Image}}
 <hr>
-
 <div class="content">
   <div class="meaning">
     → Meaning:{{Meaning}}
@@ -29,7 +29,6 @@
     → Example:{{Example}}
   </div>
 </div>
-
 <hr>
 {{Sound_Meaning}}
 [sound:_1sec.mp3]
@@ -49,7 +48,7 @@
 }
 img {
   max-width: 100%;
-  height: 300px;
+  height: 240px;
   width: 400px;
   border-radius: 0; /* 移除圆角 */
   border: 1px solid #d3d3d3; /* 浅灰色边框 */
@@ -59,16 +58,17 @@ body {
   margin: 0;
   background-color: #f9f9f9; /* 非常浅的灰色背景 */
 }
-
 .header {
   font-family: 'EB Garamond', serif;
-  font-size: 50px;
+  font-size: 35px;
+  font-weight: bold;
   color: #6b8e23; /* 橄榄绿 */
   text-align: center;
-  margin-bottom: 10px;
-  padding: 10px;
   border-bottom: 3px solid #6b8e23; /* 橄榄绿底边 */
+  margin: 0;
+  padding: 0;
 }
+
 
 .pronunciation {
   font-family: "Georgia", serif;
@@ -91,10 +91,8 @@ body {
 }
 
 .sound-btn {
-  display: inline-block;
   background-color: #6b8e23; /* 橄榄绿按钮 */
   color: white;
-  padding: 8px 16px;
   border-radius: 0; /* 移除圆角 */
   border: 1px solid #d3d3d3; /* 浅灰色边框 */
 }
