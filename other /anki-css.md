@@ -177,3 +177,69 @@ body {
   text-align: center;
 }
 ```
+
+# 百词斩样式：
+## 正面：
+```
+<div class="card" style="position: relative; min-height: 100vh;">
+    <!-- 这里放你的卡片内容 -->
+    <div style="position: absolute; bottom: 280px; width: 100%; text-align: center;">
+        {{hint:.}}{{单词发音}}
+    </div>
+</div>
+```
+## 背面：
+```
+<div style="text-align:center;">{{单词配图}}
+
+<div style="font-size: 40px;text-align:center; color: green">{{.}}
+<div style="font-size: 20px;text-align:center; color: OrangeRed">{{edit:音标}}
+<div style="font-size: 24px;text-align:left; color:Olive ">{{例句}}
+<hr id=answer>
+
+<div style="font-size: 20px;text-align:left; color: green">{{英文释义}}
+<hr id=answer>
+
+<div style="font-size: 16px;text-align:left; color: Gray">{{edit:中文释义}}
+
+
+
+<div style="font-size: 16px;text-align:left; color: black">{{例句翻译}}
+
+<div style="font-size: 16px; text-align:left; color: black;">
+    <a href="eudic://dict/{{.}}" style="font-size: 20px; text-decoration: none;">📖</a>
+    {{例句发音}}
+    {{单词发音}}
+</div>
+```
+## CSS样式：
+```
+.card {
+ font-family: arial;
+ font-size: 24px;
+ color: black;
+ background-color: rgb(199,237,204);
+}
+#danci, #yinbiao
+{
+text-align:center;
+font-family:serif;
+font-size:30px;
+}
+
+.back {
+ text-align: left;
+line-height:80%;
+}
+
+.back img {
+	width:720px;
+}
+
+.example
+{
+	font-size:20px;
+	text-align:left;
+       line-height:95%;
+}
+```
