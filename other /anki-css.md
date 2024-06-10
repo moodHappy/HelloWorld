@@ -321,15 +321,104 @@ b {
 
 ## 正面：
 ```
-
+<div class="card-front">
+  <h1>{{word}}</h1>
+  <p class="phonetic">{{phonetic}}</p>
+</div>
 ```
 
 ## 背面：
 ```
+<div class="card-back">
+  <h1>{{word}}</h1>
+  <p class="phonetic">{{phonetic}}</p>
+  <div class="translation-section">
+    <p><strong>Translation:</strong></p>
+    <p>{{translation}}</p>
+  </div>
+  <div class="sentences-section">
+    <p><strong>Example Sentences:</strong></p>
+    <div id="sentences-container"></div>
+  </div>
+  <div class="mastered-section">
+    <p><strong>Mastered:</strong> {{mastered}}</p>
+  </div>
+</div>
 
+<script>
+  function renderSentences() {
+    var sentences = `{{sentences}}`;
+    var container = document.getElementById('sentences-container');
+
+    if (sentences.includes(';')) {
+      var sentencesArray = sentences.split(';');
+      var ul = document.createElement('ul');
+      sentencesArray.forEach(function(sentence) {
+        var li = document.createElement('li');
+        li.textContent = sentence.trim();
+        ul.appendChild(li);
+      });
+      container.appendChild(ul);
+    } else {
+      var p = document.createElement('p');
+      p.textContent = sentences;
+      container.appendChild(p);
+    }
+  }
+
+  renderSentences();
+</script>
 ```
 
 ## CSS样式：
 ```
+.card {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  text-align: left;
+  margin: 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.card-front, .card-back {
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+p {
+  font-size: 18px;
+  color: #555;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.phonetic {
+  font-size: 16px;
+  color: #888;
+}
+
+.translation-section, .sentences-section, .mastered-section {
+  margin-top: 20px;
+}
+
+ul {
+  list-style-type: disc;
+  margin: 10px 0 0 20px;
+  padding: 0;
+}
+
+li {
+  font-size: 18px;
+  color: #555;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
 ```
