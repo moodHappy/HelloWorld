@@ -242,3 +242,74 @@ line-height:80%;
        line-height:95%;
 }
 ```
+
+# 自建新闻生词卡片
+
+## 正面：
+```
+<div class="card front">
+  <a href="eudic://dict/{{单词}}" class="word">{{单词}}</a>
+  <br>
+  <div class="definition">{{释义}}</div>
+</div>
+```
+
+## 背面：
+```
+<div class="card back">
+  <div class="content">
+    <div class="example">{{例句和笔记一}}</div>
+    <hr>
+    <div class="notes">{{例句和笔记二}}</div>
+    <hr>
+    <div class="source">{{例句和笔记三}}</div>
+  </div>
+  <div class="front-side">{{FrontSide}}</div>
+</div>
+```
+
+## CSS样式：
+```
+.card {
+  font-family: Arial, sans-serif;
+  padding: 5px; /* 调整卡片内边距 */
+  margin: 2px; /* 调整卡片外边距 */
+  border-radius: 3px; /* 调整边框圆角 */
+  background-color: #e0f7fa; /* 淡红色 */
+  color: #333333; /* 深灰色 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.card.front, .card.back {
+  padding: 5px; /* 调整正面和背面的内边距 */
+  border-top: 1px solid #999999; /* 淡灰色 */
+  background-color: #c3e6cb; /* 淡绿色 */
+}
+
+.word {
+  font-size: 20px; /* 调整单词字体大小 */
+  font-weight: bold;
+  color: #333333; /* 深灰色 */
+}
+
+.definition, .example, .notes, .source {
+  font-size: 14px; /* 调整内容字体大小 */
+  color: #333333; /* 深灰色 */
+  margin-top: 3px; /* 调整内容上边距 */
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #999999; /* 淡灰色 */
+  margin: 5px 0; /* 调整水平线的上下边距 */
+}
+
+.content {
+  padding: 5px; /* 调整内容区域的内边距 */
+}
+
+b {
+  color: #333333; /* 深灰色 */
+}
+```
+
