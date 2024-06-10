@@ -260,6 +260,7 @@ line-height:80%;
 
 ## 背面：
 ```
+{{图片}}
 <div class="card back">
   <div class="content">
     <div class="example">{{例句和笔记一}}</div>
