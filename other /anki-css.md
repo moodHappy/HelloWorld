@@ -649,14 +649,111 @@ li {
 
 ## 正面：
 ```
-
+<div class="card-front">
+  <h1>{{word}}</h1>
+  <p class="phonetic">{{phonetic}}</p>
+</div>
 ```
 
 ## 背面：
 ```
+<div class="card-back">
+  <h1>{{word}}</h1>
+  <p class="phonetic">{{phonetic}}</p>
+  <div class="translation-section">
+    <p><strong>Translation:</strong></p>
+    <p>{{translation}}</p>
+  </div>
+  <div class="sentences-section">
+    <p><strong>Example Sentences:</strong></p>
+    <div id="sentences-container"></div>
+  </div>
+  <div class="mastered-section">
+    <p><strong>Mastered:</strong> {{mastered}}</p>
+  </div>
+</div>
+
+<script>
+  function renderSentences() {
+    var sentences = `{{sentences}}`;
+    var container = document.getElementById('sentences-container');
+
+    if (sentences.includes(';')) {
+      var sentencesArray = sentences.split(';');
+      var ul = document.createElement('ul');
+      sentencesArray.forEach(function(sentence) {
+        var li = document.createElement('li');
+        li.textContent = sentence.trim();
+        ul.appendChild(li);
+      });
+      container.appendChild(ul);
+    } else {
+      var p = document.createElement('p');
+      p.textContent = sentences;
+      container.appendChild(p);
+    }
+  }
+
+  renderSentences();
+</script>
 ```
 
 ## CSS样式：
 ```
+.card {
+  font-family: 'Georgia', serif;
+  text-align: left;
+  margin: 0;
+  padding: 10px;
+  background-color: #eae3d2;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
+}
+
+.card-front, .card-back {
+  padding: 12px;
+  background: linear-gradient(145deg, #f0f0f0, #d9d9d9);
+  border-radius: 12px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), 0 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  font-size: 20px;
+  color: #4b4b4b;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+p {
+  font-size: 16px;
+  color: #5a5a5a;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.phonetic {
+  font-size: 14px;
+  color: #7a7a7a;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.translation-section, .sentences-section, .mastered-section {
+  margin-top: 10px;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  list-style-type: disc;
+  margin: 5px 0 0 15px;
+  padding: 0;
+}
+
+li {
+  font-size: 16px;
+  color: #5a5a5a;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
 ```
 
