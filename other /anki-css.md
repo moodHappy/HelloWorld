@@ -317,7 +317,7 @@ b {
   color: #333333; /* 深灰色 */
 }
 ```
-# Anki-Relingo模板
+# Anki-Relingo模板拟物化设计
 
 ## 正面：
 ```
@@ -373,52 +373,58 @@ b {
 ## CSS样式：
 ```
 .card {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: 'Georgia', serif;
   text-align: left;
   margin: 0;
-  padding: 20px;
-  background-color: #f5f5f5;
+  padding: 10px;
+  background-color: #eae3d2;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
 }
 
 .card-front, .card-back {
-  padding: 20px;
-  background: #fff;
+  padding: 10px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
   border-radius: 10px;
-  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), 0 3px 5px rgba(0, 0, 0, 0.15);
 }
 
 h1 {
-  font-size: 24px;
-  color: #333;
+  font-size: 20px;
+  color: #4b4b4b;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 p {
-  font-size: 18px;
-  color: #555;
+  font-size: 16px;
+  color: #5a5a5a;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .phonetic {
-  font-size: 16px;
-  color: #888;
+  font-size: 14px;
+  color: #7a7a7a;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .translation-section, .sentences-section, .mastered-section {
-  margin-top: 20px;
+  margin-top: 10px;
+  background: #fafafa;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 ul {
   list-style-type: disc;
-  margin: 10px 0 0 20px;
+  margin: 5px 0 0 15px;
   padding: 0;
 }
 
 li {
-  font-size: 18px;
-  color: #555;
+  font-size: 16px;
+  color: #5a5a5a;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 ```
