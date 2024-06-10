@@ -252,6 +252,10 @@ line-height:80%;
   <br>
   <div class="definition">{{释义}}</div>
 </div>
+
+<div style="text-align: center;">
+    {{发音}}
+</div>
 ```
 
 ## 背面：
@@ -312,4 +316,3 @@ b {
   color: #333333; /* 深灰色 */
 }
 ```
-
