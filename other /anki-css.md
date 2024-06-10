@@ -433,13 +433,106 @@ li {
 
 ## 正面：
 ```
+<div class="card-front">
+  <h1>{{word}}</h1>
+  <p class="phonetic">{{phonetic}}</p>
+</div>
 ```
 
 ## 背面：
 ```
+<div class="card-back">
+  <h1>{{word}}</h1>
+  <p class="phonetic">{{phonetic}}</p>
+  <div class="translation-section">
+    <p><strong>Translation:</strong></p>
+    <p>{{translation}}</p>
+  </div>
+  <div class="sentences-section">
+    <p><strong>Example Sentences:</strong></p>
+    <div id="sentences-container"></div>
+  </div>
+  <div class="mastered-section">
+    <p><strong>Mastered:</strong> {{mastered}}</p>
+  </div>
+</div>
+
+<script>
+  function renderSentences() {
+    var sentences = `{{sentences}}`;
+    var container = document.getElementById('sentences-container');
+
+    if (sentences.includes(';')) {
+      var sentencesArray = sentences.split(';');
+      var ul = document.createElement('ul');
+      sentencesArray.forEach(function(sentence) {
+        var li = document.createElement('li');
+        li.textContent = sentence.trim();
+        ul.appendChild(li);
+      });
+      container.appendChild(ul);
+    } else {
+      var p = document.createElement('p');
+      p.textContent = sentences;
+      container.appendChild(p);
+    }
+  }
+
+  renderSentences();
+</script>
 ```
 
 ## CSS样式：
 ```
+.card {
+  font-family: 'Arial', sans-serif;
+  text-align: left;
+  margin: 0;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
 
+.card-front, .card-back {
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 18px;
+  color: #333333;
+}
+
+p {
+  font-size: 14px;
+  color: #555555;
+}
+
+.phonetic {
+  font-size: 12px;
+  color: #777777;
+}
+
+.translation-section, .sentences-section, .mastered-section {
+  margin-top: 10px;
+  background: #f5f5f5;
+  padding: 8px;
+  border-radius: 6px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+ul {
+  list-style-type: disc;
+  margin: 5px 0 0 15px;
+  padding: 0;
+}
+
+li {
+  font-size: 14px;
+  color: #555555;
+}
 ```
