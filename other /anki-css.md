@@ -1,3 +1,168 @@
+# relingo新拟物样式表，最完美版本
+## 正面：
+```
+<div class="card front">
+  <div class="word"><a href="eudic://dict/{{word}}" class="link">{{word}}</a></div>
+  <div class="phonetic">{{phonetic}}</div>
+</div>
+
+<style>
+.card {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #f0f0f3;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 8px 8px 16px #d1d1d4, -8px -8px 16px #ffffff;
+}
+
+.front .word {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.front .link {
+  color: inherit; /* Inherit the color from the parent element */
+  text-decoration: none; /* Remove underline */
+}
+
+.front .phonetic {
+  font-size: 14px;
+  color: #888;
+}
+</style>
+```
+
+## 背面：
+```
+{{FrontSide}}
+<div class="card back">
+  <div class="translation">{{translation}}</div>
+  <div class="sentences" id="sentences">{{sentences}}</div>
+  <div class="image-container">
+    {{image}}
+  </div>
+</div>
+
+<div class="centered">
+    {{mastered}}
+</div>
+
+<style>
+.centered {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 100%; /* 占满父元素高度 */
+}
+
+.card {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #f0f0f3;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 8px 8px 16px #d1d1d4, -8px -8px 16px #ffffff;
+}
+
+.back .translation {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #0a74da;
+}
+
+.back .sentences {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+  text-align: left;
+}
+
+.back .sentences p {
+  margin: 5px 0; /* Reduce the margin to decrease line spacing */
+}
+
+.back .image-container {
+  margin-top: 20px;
+}
+
+.back .image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 4px 4px 8px #d1d1d4, -4px -4px 8px #ffffff;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var sentencesDiv = document.getElementById('sentences');
+  var sentences = sentencesDiv.innerHTML.split(';');
+  sentencesDiv.innerHTML = sentences.map(function(sentence) {
+    return '<p>' + sentence.trim() + '</p>';
+  }).join('');
+});
+</script>
+```
+
+## CSS样式：
+```
+.card {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #f0f0f3;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 8px 8px 16px #d1d1d4, -8px -8px 16px #ffffff;
+}
+
+.front .word {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.front .phonetic {
+  font-size: 14px;
+  color: #888;
+}
+
+.back {
+  margin-top: 20px; /* Add margin at the top to separate from FrontSide */
+}
+
+.back .translation {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #0a74da;
+}
+
+.back .sentences {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+  text-align: left;
+}
+
+.back .image-container {
+  margin-top: 20px;
+}
+
+.back .image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 4px 4px 8px #d1d1d4, -4px -4px 8px #ffffff;
+}
+```
+
+
+
+
 # z-4k-样式：
 ## 正面：
 ```
