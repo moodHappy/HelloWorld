@@ -1,4 +1,173 @@
-# relingo新拟物样式表，最完美版本
+# relingo新拟物样式表，最完美版本蓝色系
+
+## 正面：
+```
+<div class="card front">
+  <div class="word"><a href="eudic://dict/{{word}}" class="link">{{word}}</a></div>
+  <div class="phonetic">{{phonetic}}</div>
+</div>
+
+
+<div id="mastered">{{mastered}}</div>
+
+<style>
+  #mastered {
+    position: absolute;
+    bottom: 0;
+    bottom: 150px;
+    right: 184px;
+  }
+</style>
+
+<style>
+.card {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #e0f7fa; /* 浅蓝色背景 */
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 8px 8px 16px #b0bec5, -8px -8px 16px #ffffff; /* 浅灰色阴影 */
+}
+
+.front .word {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #0277bd; /* 深蓝色字体 */
+}
+
+.front .link {
+  color: inherit; /* 继承父元素颜色 */
+  text-decoration: none; /* 移除下划线 */
+}
+
+.front .phonetic {
+  font-size: 16px;
+  color: #4fc3f7; /* 浅蓝色字体 */
+}
+</style>
+```
+
+## 背面：
+```
+{{FrontSide}}
+<div class="card back">
+  <div class="translation">{{translation}}</div>
+  <div class="sentences" id="sentences">{{sentences}}</div>
+  <div class="image-container">
+    {{image}}
+  </div>
+</div>
+
+<style>
+.card {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #e0f7fa;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 8px 8px 16px #b0bec5, -8px -8px 16px #ffffff;
+}
+
+.back .translation {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #01579b;
+}
+
+.back .sentences {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #0277bd;
+  text-align: left;
+}
+
+.back .sentences p {
+  margin: 5px 0;
+}
+
+.back .image-container {
+  margin-top: 20px;
+}
+
+.back .image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 4px 4px 8px #b0bec5, -4px -4px 8px #ffffff;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var sentencesDiv = document.getElementById('sentences');
+  var sentences = sentencesDiv.innerHTML.split(';');
+  sentencesDiv.innerHTML = sentences.map(function(sentence) {
+    return '<p>' + sentence.trim() + '</p>';
+  }).join('');
+});
+</script>
+```
+
+## CSS样式：
+```
+.card {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #e0f7fa;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 8px 8px 16px #b0bec5, -8px -8px 16px #ffffff;
+}
+
+.front .word {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #0277bd;
+}
+
+.front .phonetic {
+  font-size: 16px;
+  color: #4fc3f7;
+}
+
+.back {
+  margin-top: 20px;
+}
+
+.back .translation {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #01579b;
+}
+
+.back .sentences {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #0277bd;
+  text-align: left;
+}
+
+.back .image-container {
+  margin-top: 20px;
+}
+
+.back .image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 4px 4px 8px #b0bec5, -4px -4px 8px #ffffff;
+}
+```
+
+
+
+
+# relingo新拟物样式表，最完美版本白色系
 ## 正面：
 ```
 <div class="card front">
