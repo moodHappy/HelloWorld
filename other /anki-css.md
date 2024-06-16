@@ -3,68 +3,7 @@
 
 ## 正面：
 ```
-<style>
-.card {
-    font-family: Arial, sans-serif;
-    color: #ffffff;
-    background-color: #ff8a65; /* 柔和的橙色 */
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
 
-.word {
-    font-size: 36px;
-    font-weight: bold;
-}
-
-.word a {
-    color: inherit; /* 保持父元素颜色 */
-    text-decoration: none; /* 去掉下划线 */
-}
-
-.phonetic {
-    font-size: 24px;
-    margin-top: 10px;
-}
-</style>
-
-<div class="card">
-    <div class="word"><a href="eudic://dict/{{单词}}">{{单词}}</a></div>
-    <div class="phonetic">{{音标}}</div>
-</div>
-
-<script>
-var tTitle = document.getElementById("s6").innerHTML;
-var uURL = document.getElementById("s5").innerHTML;
-var sentence = localStorage.getItem('sentence'); // 从 localStorage 中获取句子
-document.getElementById('sentence').innerText = sentence; // 显示句子
-
-if(uURL != "") {
-    var para = document.createElement("p");
-    para.innerHTML = '<a href="'+uURL+'">'+tTitle+'</a>';
-    var node = document.createTextNode("");
-    para.appendChild(node);
-
-    var element = document.getElementById("div1");
-    var child = document.getElementById("answer");
-    element.insertBefore(para, child);
-} else {
-    var para = document.createElement("p");
-    para.innerHTML = '<p><font color="grey" size="3">'+tTitle+'</font></p>';
-    var node = document.createTextNode("");
-    para.appendChild(node);
-
-    var element = document.getElementById("div1");
-    var child = document.getElementById("answer");
-    element.insertBefore(para, child);
-}
-</script>
-
-<div style="position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); text-align: center; width: 100%;">
-  <div>{{tts zh_CN voices=Apple_Ava:单词}}</div>
-</div>
 ```
 ## 背面：
 ```
