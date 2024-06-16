@@ -153,7 +153,7 @@ if(uURL != "") {
 ```
 # anki不搭配tts
 ```
-zh_CN换成en_US
+将以上代码中：zh_CN换成en_US
 ```
 
 
