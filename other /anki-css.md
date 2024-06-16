@@ -1,6 +1,8 @@
 
 # anki搭配tts
-
+```
+系统自带，把zh_CN变成en_US
+```
 ## 正面：
 ```
 <style>
