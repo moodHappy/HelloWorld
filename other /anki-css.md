@@ -2,6 +2,7 @@
 # anki搭配tts
 
 ## 正面：
+```
 <style>
 .card {
     font-family: Arial, sans-serif;
@@ -64,9 +65,9 @@ if(uURL != "") {
 <div style="position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); text-align: center; width: 100%;">
   <div>{{tts zh_CN voices=Apple_Ava:单词}}</div>
 </div>
-
+```
 # 背面：
-
+```
 <style>
     /* Existing styles for card */
     .card {
@@ -145,7 +146,7 @@ if(uURL != "") {
   <div>{{tts zh_CN voices=Apple_Ava:单词}}</div>
   <div>{{tts zh_CN voices=Apple_Ava:例句}}</div>
 </div>
-
+```
 ## css样式
 
 无
