@@ -1,3 +1,116 @@
+# 炫彩版
+## 正面
+```
+同炫彩版-Markdown 正面
+```
+## 背面
+```
+<style>
+    /* Existing styles for card */
+    .card {
+        font-family: Arial, sans-serif;
+        color: #ffffff;
+        background-color: #64b5f6; /* 柔和的蓝色 */
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    .word {
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+    .word a {
+        color: inherit; /* 保持父元素颜色 */
+        text-decoration: none; /* 去掉下划线 */
+    }
+
+    .phonetic {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    .definition {
+        font-size: 20px;
+        margin-top: 15px;
+    }
+
+    .example {
+        font-size: 18px;
+        margin-top: 20px;
+        font-style: italic;
+    }
+
+    .translation {
+        font-size: 18px;
+        margin-top: 10px;
+        color: #ffeb3b;
+    }
+
+    /* Styling for notes */
+    .notes {
+        font-size: 12px; /* Further reduced to smaller size */
+        margin-top: 10px; /* Keep consistent with card spacing */
+        line-height: 1.6; /* Slightly increased line height for easier reading */
+        text-align: left; /* Left align the content */
+        opacity: 0.9; /* Slightly reduce opacity for lighter appearance */
+        color: #333333; /* Darker text color for better contrast */
+        background-color: #FFD700; /* Dark yellow background color */
+        padding: 15px; /* Add padding for better spacing */
+        border-radius: 15px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="word"><a href="eudic://dict/{{单词}}">{{单词}}</a></div>
+    <div class="phonetic">{{音标}}</div>
+    <div class="definition">{{释义}}</div>
+    <div class="example">{{例句}}</div>
+    <div class="translation">{{例句翻译}}</div>
+</div>
+
+<div class="notes">
+    {{笔记}}
+</div>
+
+<div style="position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); text-align: center; width: 100%;">
+  <div>{{tts zh_CN voices=Apple_Ava:单词}}</div>
+  <div>{{tts zh_CN voices=Apple_Ava:例句}}</div>
+</div>
+
+<!-- Card Styling -->
+<style>
+  .replay-button {
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  .replay-button svg {
+    width: 24px; /* Adjust size as needed */
+    height: 24px; /* Adjust size as needed */
+  }
+
+
+/* 设置重播按钮图标中圆形*/
+.replay-button svg circle {
+    stroke: #64b5f6;
+    fill: #64b5f6;
+}
+
+/* 设置重播按钮图标三角形*/
+.replay-button svg path {
+    stroke: yellow;
+    fill: yellow;
+}
+  }
+</style>
+```
+
 # 炫彩版-Markdown
 
 ## 正面
