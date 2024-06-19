@@ -1,3 +1,316 @@
+# 炫彩版-Markdown
+
+## 正面
+```
+<style>
+.card {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background-color: #ff8a65; /* 柔和的橙色 */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.word {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.word a {
+    color: inherit; /* 保持父元素颜色 */
+    text-decoration: none; /* 去掉下划线 */
+}
+
+.phonetic {
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+/* Replay Button Styling */
+.replay-button {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.replay-button svg {
+    width: 24px; /* Adjust size as needed */
+    height: 24px; /* Adjust size as needed */
+}
+/* 设置重播按钮图标中圆形 */
+.replay-button svg circle {
+    fill: #ff8a65;
+    stroke: #ff8a65;
+}
+
+/* 设置重播按钮图标三角形 */
+.replay-button svg path {
+    stroke: yellow;
+    fill: yellow;
+}
+</style>
+
+<div class="card">
+    <div class="word"><a href="eudic://dict/{{单词}}">{{单词}}</a></div>
+    <div class="phonetic">{{音标}}</div>
+</div>
+
+<script>
+var tTitle = document.getElementById("s6").innerHTML;
+var uURL = document.getElementById("s5").innerHTML;
+var sentence = localStorage.getItem('sentence'); // 从 localStorage 中获取句子
+document.getElementById('sentence').innerText = sentence; // 显示句子
+
+if(uURL != "") {
+    var para = document.createElement("p");
+    para.innerHTML = '<a href="'+uURL+'">'+tTitle+'</a>';
+    var node = document.createTextNode("");
+    para.appendChild(node);
+
+    var element = document.getElementById("div1");
+    var child = document.getElementById("answer");
+    element.insertBefore(para, child);
+} else {
+    var para = document.createElement("p");
+    para.innerHTML = '<p><font color="grey" size="3">'+tTitle+'</font></p>';
+    var node = document.createTextNode("");
+    para.appendChild(node);
+
+    var element = document.getElementById("div1");
+    var child = document.getElementById("answer");
+    element.insertBefore(para, child);
+}
+</script>
+
+<div style="position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); text-align: center; width: 100%;">
+  <div>{{tts zh_CN voices=Apple_Ava:单词}}</div>
+</div>
+```
+## 背面
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Existing styles for card */
+        .card {
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            background-color: #64b5f6; /* 柔和的蓝色 */
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .word {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .word a {
+            color: inherit; /* 保持父元素颜色 */
+            text-decoration: none; /* 去掉下划线 */
+        }
+
+        .phonetic {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        .definition {
+            font-size: 20px;
+            margin-top: 15px;
+        }
+
+        .example {
+            font-size: 18px;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        .translation {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #ffeb3b;
+        }
+
+        /* Styling for notes */
+        .notes {
+            font-size: 12px; /* Further reduced to smaller size */
+            margin-top: 20px; /* Increased margin to create more space */
+            line-height: 1.6; /* Slightly increased line height for easier reading */
+            text-align: left; /* Left align the content */
+            opacity: 0.9; /* Slightly reduce opacity for lighter appearance */
+            color: #333333; /* Darker text color for better contrast */
+            background-color: #FFD700; /* Dark yellow background color */
+            padding: 15px; /* Add padding for better spacing */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+
+        /* Styles for Markdown rendering */
+        .markdown-body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333;
+            background-color: #FFD700; /* Dark yellow background color */
+            padding: 15px; /* Match the padding of .notes */
+            border-radius: 15px; /* Match the border radius of .notes */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Match the shadow of .notes */
+            margin-top: 20px; /* Create space above the markdown content */
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="word"><a href="eudic://dict/{{单词}}">{{单词}}</a></div>
+    <div class="phonetic">{{音标}}</div>
+    <div class="definition">{{释义}}</div>
+    <div class="example">{{例句}}</div>
+    <div class="translation">{{例句翻译}}</div>
+</div>
+
+<div class="notes md-content">
+    {{笔记}}
+</div>
+
+<div style="position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); text-align: center; width: 100%;">
+  <div>{{tts zh_CN voices=Apple_Ava:单词}}</div>
+  <div>{{tts zh_CN voices=Apple_Ava:例句}}</div>
+</div>
+
+<!-- Card Styling -->
+<style>
+  .replay-button {
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  .replay-button svg {
+    width: 24px; /* Adjust size as needed */
+    height: 24px; /* Adjust size as needed */
+  }
+
+  /* 设置重播按钮图标中圆形 */
+  .replay-button svg circle {
+      stroke: #64b5f6;
+      fill: #64b5f6;
+  }
+
+  /* 设置重播按钮图标三角形 */
+  .replay-button svg path {
+      stroke: yellow;
+      fill: yellow;
+  }
+</style>
+
+<!-- Scripts for Markdown support and syntax highlighting -->
+<script>
+  'use strict'
+
+  function consoleLog(str) {
+    var div = document.createElement('div')
+    div.innerHTML = str
+    document.body.appendChild(div)
+  }
+
+  var MARKDOWN_IT_CDN = 'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/markdown-it/12.3.2/markdown-it.min.js'
+  var HIGHLIGHT_JS_CDN = 'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/highlight.min.js'
+  var HIGHLIGHT_CSS_CDN = 'https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/11.4.0/styles/base16/onedark.min.css'
+  var GITHUB_MARKDOWN_CSS_CDN = 'https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/github-markdown-css/5.1.0/github-markdown.min.css'
+
+  var createScript = (src) => {
+    var scriptElement = document.createElement('script')
+    scriptElement.src = src
+    scriptElement.async = true
+    scriptElement.type = 'text/javascript'
+    document.head.appendChild(scriptElement)
+    return new Promise((resolve) => {
+      scriptElement.onload = function () {
+        resolve(src)
+      }
+    })
+  }
+
+  var createLink = (url) => {
+    var linkElement = document.createElement('link')
+    linkElement.rel = 'stylesheet'
+    linkElement.href = url
+    linkElement.onload = () => {}
+    document.head.appendChild(linkElement)
+  }
+  createLink(GITHUB_MARKDOWN_CSS_CDN)
+  createLink(HIGHLIGHT_CSS_CDN)
+
+  var clearBR = (str) => {
+    str = str.replace(/<br>/g, '\r\n')
+    return str
+  }
+
+  var clearBlankNbsp = (str) => {
+    str = str.replace(/&nbsp;/g, ' ')
+    return str
+  }
+
+  var unescapeHTMLEntities = (innerHTML) =>
+    Object.assign(document.createElement('textarea'), { innerHTML }).value
+
+  var parseMarkDownFn = () => {
+    const md = markdownit({
+      html: true,
+      linkify: true,
+      typographer: true,
+      breaks: true,
+      highlight: function (str, lang) {
+        if (lang && hljs.getLanguage(lang)) {
+          try {
+            return hljs.highlight(str, { language: lang }).value
+          } catch (__) {}
+        }
+        return ''
+      },
+    })
+    document.querySelectorAll('.md-content').forEach((div, index) => {
+      console.log('查找到的容器元素', div)
+      var text = unescapeHTMLEntities(div.innerHTML).trim()
+      console.log('text', text)
+      text = clearBR(text)
+      var html = md.render(text)
+      var newDiv = document.createElement('div')
+      var hr = document.createElement('hr')
+      newDiv.innerHTML = html
+      newDiv.className = 'markdown-body'
+      div.parentNode.insertBefore(newDiv, div.nextSibling)
+      index === 1 ? div.parentNode.insertBefore(hr, div.nextSibling) : null
+      div.className = `x-${index}`
+      div.style.display = 'none'
+    })
+  }
+
+  createScript(HIGHLIGHT_JS_CDN)
+    .then(() => {
+      return createScript(MARKDOWN_IT_CDN)
+    })
+    .then(() => {
+      parseMarkDownFn()
+    })
+    .then(() => {
+      var repeatEl = document.querySelectorAll('.x-0')
+      repeatEl.forEach((el, i) => {
+        if (i === repeatEl.length - 1) {
+          return
+        }
+        document.body.removeChild(el)
+      })
+    })
+</script>
+</body>
+</html>
+```
 
 # anki搭配tts
 ```
