@@ -87,10 +87,13 @@ if(uURL != "") {
 <div style="position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); text-align: center; width: 100%;">
   <div>{{tts zh_CN voices=Apple_Ava:单词}}</div>
 </div>
+
+
 ```
 ## 背面：
 ```
 <style>
+    /* Existing styles for card */
     .card {
         font-family: Arial, sans-serif;
         color: #ffffff;
@@ -133,6 +136,7 @@ if(uURL != "") {
         color: #ffeb3b;
     }
 
+    /* Styling for notes */
     .notes {
         font-size: 12px; /* Further reduced to smaller size */
         margin-top: 10px; /* Keep consistent with card spacing */
@@ -162,6 +166,8 @@ if(uURL != "") {
         height: 100%;
     }
 </style>
+</head>
+<body>
 
 <div class="card">
     <div class="word"><a href="eudic://dict/{{单词}}">{{单词}}</a></div>
@@ -180,6 +186,39 @@ if(uURL != "") {
 <div class="notes">
     {{笔记}}
 </div>
+
+<div style="position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); text-align: center; width: 100%;">
+  <div>{{tts zh_CN voices=Apple_Ava:单词}}</div>
+  <div>{{tts zh_CN voices=Apple_Ava:例句}}</div>
+  <div>{{tts zh_CN voices=Apple_Ava:笔记}}</div>
+</div>
+
+<!-- Card Styling -->
+<style>
+  .replay-button {
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  .replay-button svg {
+    width: 24px; /* Adjust size as needed */
+    height: 24px; /* Adjust size as needed */
+  }
+
+  /* 设置重播按钮图标中圆形 */
+  .replay-button svg circle {
+    stroke: #64b5f6;
+    fill: #64b5f6;
+    opacity: 0.3; /* 设置半透明 */
+  }
+
+  /* 设置重播按钮图标三角形 */
+  .replay-button svg path {
+    stroke: yellow;
+    fill: yellow;
+    opacity: 0.3; /* 设置半透明 */
+  }
+</style>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
