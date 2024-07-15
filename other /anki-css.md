@@ -181,7 +181,29 @@ if(uURL != "") {
     <iframe src="https://www.youtube.com/embed/{{Source-Video}}" frameborder="0" allowfullscreen></iframe>
 </div>
 
-{{Source-URL}}
+
+
+
+
+<div id="source-link-container">
+    <a href="{{Source-playphrase}}" id="source-link">来源</a>
+</div>
+
+<script>
+    (function() {
+        var sourceLink = document.getElementById('source-link');
+        var sourceURL = "{{Source-playphrase}}"; // 这里将被实际的URL替换
+
+        if (!sourceURL) {
+            document.getElementById('source-link-container').style.display = 'none';
+        } else {
+            sourceLink.href = sourceURL;
+        }
+    })();
+</script>
+
+
+
 
 <div class="notes">
     {{笔记}}
