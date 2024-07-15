@@ -1,3 +1,200 @@
+# update 修复YouTube 不显示
+## 背面：
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anki Card Template</title>
+<style>
+    /* Existing styles for card */
+    .card {
+        font-family: Arial, sans-serif;
+        color: #ffffff;
+        background-color: #64b5f6; /* 柔和的蓝色 */
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    .word {
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+    .word a {
+        color: inherit; /* 保持父元素颜色 */
+        text-decoration: none; /* 去掉下划线 */
+    }
+
+    .phonetic {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    .definition {
+        font-size: 20px;
+        margin-top: 15px;
+    }
+
+    .example {
+        font-size: 18px;
+        margin-top: 20px;
+        font-style: italic;
+    }
+
+    .translation {
+        font-size: 18px;
+        margin-top: 10px;
+        color: #ffeb3b;
+    }
+
+    /* Styling for notes */
+    .notes {
+        font-size: 12px; /* Further reduced to smaller size */
+        margin-top: 10px; /* Keep consistent with card spacing */
+        line-height: 1.6; /* Slightly increased line height for easier reading */
+        text-align: left; /* Left align the content */
+        opacity: 0.9; /* Slightly reduce opacity for lighter appearance */
+        color: #333333; /* Darker text color for better contrast */
+        background-color: #FFD700; /* Dark yellow background color */
+        padding: 15px; /* Add padding for better spacing */
+        border-radius: 15px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    }
+
+    .source-link {
+        color: red; /* Red text color */
+        text-decoration: none; /* Remove underline */
+        display: block; /* Makes the link take up the full width */
+        text-align: right; /* Aligns text to the left */
+        font-family: 'Brush Script MT', cursive; /* Changes font to a cursive style */
+        font-size: 28px; /* Sets font size */
+        font-weight: bold; /* Makes the font bold */
+        padding: 5px 0; /* Adds vertical padding */
+    }
+
+    /* Styling for Source-news */
+    .source-news {
+        font-size: 12px; /* Set font size to match notes */
+        color: #333333; /* Set text color */
+        background-color: #FFD700; /* Match background color with notes */
+        padding: 15px; /* Add padding */
+        border-radius: 15px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        margin-top: 20px; /* Add top margin for spacing */
+        text-align: left; /* Align text to the left */
+        opacity: 0.9; /* Slightly reduce opacity for lighter appearance */
+        
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="word"><a href="eudic://dict/{{单词}}">{{单词}}</a></div>
+    <div class="phonetic">{{音标}}</div>
+    <div class="definition">{{释义}}</div>
+    <div class="example">{{例句}}</div>
+    <div class="translation">{{例句翻译}}</div>
+</div>
+
+<div class="source-news"> 
+    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: bold;">News</span><br>
+    <hr style="border: 1px solid grey;">
+    {{Source-news}}
+</div>
+
+<div class="notes">
+    {{笔记}}<br>
+    <a href="https://www.playphrase.me/#/search?q={{单词}}&language=en" class="source-link">{{单词}}</a>
+</div>
+
+<div style="position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); text-align: center; width: 100%;">
+  <div>{{tts zh_CN voices=Apple_Ava:单词}}</div>
+  <div>{{tts zh_CN voices=Apple_Ava:例句}}</div>
+  <div>{{tts zh_CN voices=Apple_Ava:Source-news}}</div>
+  <div>{{tts zh_CN voices=Apple_Ava:笔记}}</div>
+</div>
+
+<!-- Card Styling -->
+<style>
+  .replay-button {
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  .replay-button svg {
+    width: 24px; /* Adjust size as needed */
+    height: 24px; /* Adjust size as needed */
+  }
+
+  /* 设置重播按钮图标中圆形 */
+  .replay-button svg circle {
+    stroke: #64b5f6;
+    fill: #64b5f6;
+    opacity: 0.3; /* 设置半透明 */
+  }
+
+  /* 设置重播按钮图标三角形 */
+  .replay-button svg path {
+    stroke: yellow;
+    fill: yellow;
+    opacity: 0.3; /* 设置半透明 */
+  }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var sourceNews = "{{Source-news}}";
+        var sourceNewsDiv = document.querySelector(".source-news");
+
+        if (!sourceNews.trim()) { // Check if Source-news is empty or only whitespace
+            sourceNewsDiv.style.display = "none"; // Hide the .source-news div
+        }
+    });
+</script>
+
+</body>
+</html>
+
+
+<div id="video-container" class="video-container">
+    <iframe src="https://www.youtube.com/embed/{{Source-Video}}" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<style>
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        background: #000;
+    }
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var videoContainer = document.getElementById("video-container");
+        var sourceURL = "{{Source-Video}}";
+        
+        if (!sourceURL) {
+            videoContainer.style.display = "none";
+        }
+    });
+</script>
+```
+
 # update 添加source-news，正面不变
 
 ## 背面：
