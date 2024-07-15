@@ -1,3 +1,9 @@
+# YouTube 嵌入式链接转换
+
+```
+请注意，这里将链接格式从https://m.youtube.com/watch?v=1mU-1mRECjw&feature=youtu.be更改为https://www.youtube.com/embed/1mU-1mRECjw。这样才能确保iframe可以正确显示视频。
+```
+
 # anki自定义快捷键
 ## 嵌入视频
 
