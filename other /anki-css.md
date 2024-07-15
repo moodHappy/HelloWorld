@@ -178,7 +178,7 @@ if(uURL != "") {
 </div>
 
 <div id="video-container" class="video-container">
-    <iframe src="{{Source-Video}}" frameborder="0" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/{{Source-Video}}" frameborder="0" allowfullscreen></iframe>
 </div>
 
 {{Source-URL}}
