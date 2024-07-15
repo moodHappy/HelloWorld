@@ -185,22 +185,7 @@ if(uURL != "") {
 
 
 
-<div id="source-link-container">
-    <a href="{{Source-playphrase}}" id="source-link">来源</a>
-</div>
-
-<script>
-    (function() {
-        var sourceLink = document.getElementById('source-link');
-        var sourceURL = "{{Source-playphrase}}"; // 这里将被实际的URL替换
-
-        if (!sourceURL) {
-            document.getElementById('source-link-container').style.display = 'none';
-        } else {
-            sourceLink.href = sourceURL;
-        }
-    })();
-</script>
+<a href="https://www.playphrase.me/#/search?q={{单词}}&language=en">来源</a>
 
 
 
