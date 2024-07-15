@@ -95,6 +95,7 @@
         padding: 5px 0; /* Adds vertical padding */
     }
 
+
     /* Styling for Source-news */
     .source-news {
         font-size: 12px; /* Set font size to match notes */
@@ -106,6 +107,7 @@
         margin-top: 20px; /* Add top margin for spacing */
         text-align: left; /* Align text to the left */
         opacity: 0.9; /* Slightly reduce opacity for lighter appearance */
+        
     }
 </style>
 </head>
@@ -119,7 +121,12 @@
     <div class="translation">{{例句翻译}}</div>
 </div>
 
-<div class="source-news">{{Source-news}}</div>
+<div class="source-news"> 
+    <span style="font-family: Georgia, 'Times New Roman', serif; font-size: 16px; font-weight: bold;">News</span><br>
+    <hr style="border: 1px solid grey;">
+    {{Source-news}}
+</div>
+
 
 <div class="video-container">
     <iframe id="sourceVideoFrame" frameborder="0" allowfullscreen></iframe>
@@ -127,13 +134,14 @@
 
 <div class="notes">
     {{笔记}}<br>
-    <hr style="border: 1px solid grey;">
+
     <a href="https://www.playphrase.me/#/search?q={{单词}}&language=en" class="source-link">{{单词}}</a>
 </div>
 
 <div style="position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); text-align: center; width: 100%;">
   <div>{{tts zh_CN voices=Apple_Ava:单词}}</div>
   <div>{{tts zh_CN voices=Apple_Ava:例句}}</div>
+  <div>{{tts zh_CN voices=Apple_Ava:Source-news}}</div>
   <div>{{tts zh_CN voices=Apple_Ava:笔记}}</div>
 </div>
 
