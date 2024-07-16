@@ -1,3 +1,67 @@
+## anki 创建工具栏项目
+```
+换行：
+文本前：<br>
+文本后：
+
+
+颜色：
+文本前：<span style="color: red;">
+文本后：</span>
+
+链接：
+文本前：<a href="
+文本后：" style="text-decoration: none; color: black;">来源</a>
+
+分割线：
+文本前：<hr>
+文本后：
+
+居中：
+文本前：<center>
+文本后：</center>
+
+YouTube 内嵌视频
+文本前：?start=
+文本后：
+
+例句：
+文本前：<span style="font-family: Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: bold;">Example
+文本后：</span>
+
+解析：
+文本前：<span style="font-family: Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: bold;">Discriminate
+文本后：</span>
+
+短语：
+文本前：<span style="font-family: Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: bold;">Parse
+文本后：</span>
+
+
+文本前：
+文本后：
+
+
+文本前：
+文本后：
+
+
+文本前：
+文本后：
+
+
+文本前：
+文本后：
+
+
+文本前：
+文本后：
+
+
+文本前：
+文本后：
+```
+
 # update 修复YouTube 不显示
 ## 背面：
 ```
