@@ -29,11 +29,11 @@ YouTube 内嵌视频
 文本前：<span style="font-family: Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: bold;">Example
 文本后：</span>
 
-解析：
+区分：
 文本前：<span style="font-family: Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: bold;">Discriminate
 文本后：</span>
 
-短语：
+解析：
 文本前：<span style="font-family: Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: bold;">Parse
 文本后：</span>
 
