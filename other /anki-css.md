@@ -22,7 +22,7 @@
             font-weight: bold;
             position: relative;
             display: inline-block;
-            cursor: pointer; /* Add cursor pointer to indicate clickable */
+            cursor: pointer;
         }
 
         .phonetic {
@@ -30,29 +30,26 @@
             margin-top: 10px;
         }
 
-        /* Replay Button Styling */
         .replay-button {
             margin-top: 10px;
             cursor: pointer;
         }
 
         .replay-button svg {
-            width: 24px; /* Adjust size as needed */
-            height: 24px; /* Adjust size as needed */
+            width: 24px;
+            height: 24px;
         }
 
-        /* 设置重播按钮图标中圆形 */
         .replay-button svg circle {
             fill: #000000;
             stroke: #000000;
-            opacity: 0.3; /* 设置半透明 */
+            opacity: 0.3;
         }
 
-        /* 设置重播按钮图标三角形 */
         .replay-button svg path {
             stroke: #000000;
             fill: #000000;
-            opacity: 0.3; /* 设置半透明 */
+            opacity: 0.3;
         }
 
         .typing-effect {
@@ -70,7 +67,7 @@
     </div>
 
     <script>
-        const word = "{{单词}}"; // Replace with dynamic word fetching from Anki
+        const word = "{{单词}}";
         const container = document.getElementById("animated-text");
         const phoneticContainer = document.getElementById("phonetic-text");
 
@@ -82,13 +79,13 @@
             if (index < word.length) {
                 container.innerHTML = `<a href="${eudicURL}" style="color: inherit; text-decoration: none;">${word.substring(0, index + 1)}</a>`;
                 index++;
-                setTimeout(typeLetter, 500); // Adjusted the delay to 500ms for a slower animation
+                setTimeout(typeLetter, 500);
             } else {
-                container.style.borderRight = 'none'; // Remove cursor at the end
+                container.style.borderRight = 'none';
             }
         }
 
-        phoneticContainer.textContent = "{{音标}}"; // Replace with dynamic phonetic symbol fetching
+        phoneticContainer.textContent = "{{音标}}";
 
         typeLetter();
     </script>
@@ -96,8 +93,8 @@
     <script>
         var tTitle = document.getElementById("s6").innerHTML;
         var uURL = document.getElementById("s5").innerHTML;
-        var sentence = localStorage.getItem('sentence'); // Get sentence from localStorage
-        document.getElementById('sentence').innerText = sentence; // Display sentence
+        var sentence = localStorage.getItem('sentence');
+        document.getElementById('sentence').innerText = sentence;
 
         if(uURL != "") {
             var para = document.createElement("p");
@@ -121,9 +118,7 @@
     </script>
 
     <div style="position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); text-align: center; width: 100%;">
-
         <div>{{tts zh_CN voices=Apple_Ava:}}</div>
-
     </div>
 </body>
 </html>
@@ -139,6 +134,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PingFang+SC&display=swap">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap">
+
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -174,19 +172,20 @@
     }
 
     .example {
+        font-family: 'Roboto Condensed', cursive;
         font-size: 18px;
         margin-top: 20px;
-        font-style: italic;
     }
 
     .translation {
+        font-family: 'PingFang SC', sans-serif;
         font-size: 18px;
         margin-top: 10px;
         color: #000000;
     }
 
     .notes {
-        font-family: 'Patrick Hand', 苹方-简;
+        font-family: 'Roboto Condensed', PingFang SC;
         font-size: 16px;
         margin-top: 10px;
         line-height: 1.6;
@@ -215,7 +214,7 @@
     }
 
     .source-news {
-        font-family: 'Patrick Hand', cursive;
+        font-family: 'Roboto Condensed', PingFang SC;
         font-size: 16px;
         color: #000000;
         background-color: #ffffff;
