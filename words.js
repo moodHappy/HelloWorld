@@ -1,3 +1,4 @@
+我自己又手动调整了一下需求，给你欣赏一下：
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,7 +70,12 @@
         border: 1px solid #000000;
     }
 
-    .notes strong {
+    .notes em {
+        font-style: italic;
+        text-shadow: 1px 1px 2px #888;
+    }
+    
+        .notes span {
         font-weight: bold;
     }
 
@@ -112,11 +118,13 @@
     <a href="https://www.playphrase.me/#/search?q={{单词}}&language=en" class="source-link">{{单词}}</a>
 </div>
 
-<div class="source-news"> 
+{{#Source-news}}
+<div class="source-news">
     <span style="font-family: 'PingFang SC', sans-serif; font-size: 18px; font-weight: bold;">News</span><br>
     <hr style="border: 1px solid grey;">
     {{Source-news}}
 </div>
+{{/Source-news}}
 
 <div class="notes">
     {{笔记}}<br>
@@ -158,18 +166,15 @@
         var wordElement = document.querySelector(".word");
         var notesElement = document.querySelector(".notes");
         var wordText = wordElement.textContent.trim().toLowerCase().replace(/\s+/g, '');
-        var notesText = notesElement.textContent.trim();
+        var notesText = notesElement.innerHTML.trim();
 
-        // Split notes text into words and wrap matching words in <strong> tags
-        var words = notesText.split(/\s+/);
-        var formattedNotes = words.map(function(word) {
-            var lowerCaseWord = word.toLowerCase().replace(/\s+/g, '');
-            if (lowerCaseWord === wordText) {
-                return '<strong>' + word + '</strong>';
-            } else {
-                return word;
-            }
-        }).join(' ');
+        // Regular expression to match common English word forms
+        var wordFormsRegex = new RegExp('\\b(' + wordText + '|' + wordText + 's?' + '|' + wordText + 'ed' + '|' + wordText + 'ing' + '|' + wordText + 'd' + ')\\b', 'gi');
+
+        // Wrap matching words in <em> tags (italics)
+        var formattedNotes = notesText.replace(wordFormsRegex, function(match) {
+            return '<em>' + match + '</em>';
+        });
 
         notesElement.innerHTML = formattedNotes;
     });
