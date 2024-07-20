@@ -527,11 +527,11 @@
         height: 24px;
     }
 
-    .replay-button svg circle {
-        stroke: #000000;
-        fill: #000000;
-        opacity: 0.3;
-    }
+        .replay-button svg circle {
+            fill: #00796b; /* 深绿色 */
+            stroke: #00796b; /* 深绿色 */
+            opacity: 0.3;
+        }
 
     .replay-button svg path {
         stroke: #000000;
