@@ -1,3 +1,51 @@
+# anki底部按钮
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page with TTS</title>
+    <style>
+        .bottom-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: transparent; /* Set background to transparent */
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            box-sizing: border-box;
+            z-index: 1000; /* Ensure it stays on top of other content */
+        }
+
+        .bottom-container > div {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Your page content -->
+
+    <div class="bottom-container">
+        <div style="display: inline-block;">
+            {{tts zh_CN voices=Apple_Ava:单词}}
+        </div>
+        <div style="display: inline-block;">
+            {{tts zh_CN voices=Apple_Ava:例句}}
+        </div>
+        <div style="display: inline-block;">
+            {{tts zh_CN voices=Apple_Ava:Source-news}}
+        </div>
+        <div style="display: inline-block;">
+            {{tts zh_CN voices=Apple_Ava:笔记}}
+        </div>
+    </div>
+</body>
+</html>
+```
 # anki 集成查询
 ```
 <!DOCTYPE html>
