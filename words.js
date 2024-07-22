@@ -254,6 +254,9 @@ body {
         <div class="video">
             <a href="https://www.youtube.com/results?search_query={{单词}}" target="_blank">油管查</a>
         </div>
+<div class="giphy">
+    <a href="https://giphy.com/search/{{单词}}" target="_blank">Gif查</a>
+</div>
         <div class="dictionary">
             <a href="https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/%E8%8B%B1%E8%AF%AD-%E6%B1%89%E8%AF%AD-%E7%B9%81%E4%BD%93/{{单词}}" target="_blank">剑桥查</a>
         </div>
