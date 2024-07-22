@@ -1,4 +1,381 @@
 ##anki 调整发音按钮到底部，添加集成查询
+背面：
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anki Card Template</title>
+
+<link href="https://fonts.googleapis.com/css2?family=PingFang+SC&family=Roboto:wght@700&family=Lobster&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        font-family: 'PingFang SC', PingFang SC;
+        background-color: #e0f7fa; /* 鲜艳明亮的蓝绿色背景 */
+        color: #000000; /* 黑色文字 */
+    }
+    .card {
+        color: #000000;
+        background-color: #fffde7; /* 浅黄色背景 */
+        border: 2px solid #00796b; /* 深绿色边框 */
+        padding: 20px;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .word {
+        font-family: 'PingFang SC', Arial, sans-serif;
+        font-size: 36px;
+        font-weight: bold;
+        color: #00796b; /* 深绿色文字 */
+    }
+
+    .word a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .phonetic {
+        font-family: 'PingFang SC', Arial, sans-serif;
+        font-size: 24px;
+        margin-top: 10px;
+        color: #004d40; /* 更深的绿色 */
+    }
+
+    .definition {
+        font-size: 20px;
+        margin-top: 15px;
+        color: #004d40; /* 更深的绿色 */
+    }
+
+    .example {
+        font-family: 'PingFang SC', sans-serif;
+        font-size: 18px;
+        margin-top: 20px;
+        color: #004d40; /* 更深的绿色 */
+    }
+
+    .translation {
+        font-family: 'PingFang SC', sans-serif;
+        font-size: 18px;
+        margin-top: 10px;
+        color: #004d40; /* 更深的绿色 */
+    }
+
+    .notes {
+        font-family: 'Roboto', PingFang SC;
+        font-size: 16px;
+        margin-top: 10px;
+        line-height: 1.6;
+        text-align: left;
+        color: #000000;
+        background-color: #c8e6c9; /* 亮绿色背景 */
+        padding: 15px;
+        border: 2px solid #00796b; /* 深绿色边框 */
+    }
+
+    .notes span {
+        font-size: 20px;
+        font-family: 'Lobster';  
+    }
+
+    .notes b {
+        font-style: italic;
+        text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.5);
+    }
+
+    .highlight {
+        font-style: italic;
+        text-shadow: 2px 2px 4px rgba(255, 0, 0, 0.5); 
+    }
+
+    .source-link {
+        color: #00796b; /* 深绿色 */
+        text-decoration: none;
+        display: block;
+        text-align: right;
+        font-family: 'cursive';
+        font-size: 28px;
+        font-weight: bold;
+        padding: 0;
+    }
+
+    .source-news {
+        font-family: 'PingFang SC', sans-serif;
+        font-size: 16px;
+        color: #000000;
+        background-color: #e0f2f1; /* 亮青绿色背景 */
+        padding: 15px;
+        border: 2px solid #00796b; /* 深绿色边框 */
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .source-news a {
+        text-decoration: none;
+        color: #004d40; /* 更深的绿色 */
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <div class="word"><a href="eudic://dict/{{单词}}">{{单词}}</a></div>
+    <div class="phonetic">{{音标}}</div>
+    <div class="definition">{{释义}}</div>
+    <div class="example">{{例句}}</div>
+    <div class="translation">{{例句翻译}}</div>
+    <a href="https://www.playphrase.me/#/search?q={{单词}}&language=en" class="source-link">{{单词}}</a>
+</div>
+
+{{#Source-news}}
+<div class="source-news">
+    <span style="font-family: 'PingFang SC', sans-serif; font-size: 20px; font-weight: bold;">News</span><br>
+    <hr style="border: 1px solid grey;">
+    {{Source-news}}
+</div>
+{{/Source-news}}
+
+<br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>折叠效果示例</title>
+    <style>
+        .resources {
+            margin: 0;
+            padding: 0;
+        }
+        .resource-header {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #e0f2f1;
+            color: #004d40;
+            border: 2px solid #00796b;
+            border-radius: 4px 4px 0 0;
+            margin: 0;
+            font-weight: bold;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .resource-content {
+            display: none;
+            padding: 10px;
+            background-color: #e0f2f1;
+            border: 2px solid #00796b;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+            box-sizing: border-box;
+        }
+        .resource-content a {
+            display: block;
+            margin-bottom: 5px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .resource-content a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="resources">
+        <div class="resource-header" onclick="toggleContent('resource1')">点击展开/折叠资源链接</div>
+        
+        <div id="resource1" class="resource-content">
+            <div class="video">
+                <a href="https://www.youtube.com/results?search_query={{单词}}" target="_blank">油管查</a>
+            </div>
+            <div class="dictionary">
+                <a href="https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/%E8%8B%B1%E8%AF%AD-%E6%B1%89%E8%AF%AD-%E7%B9%81%E4%BD%93/{{单词}}" target="_blank">剑桥查</a>
+            </div>
+            <div class="dictionary">
+                <a href="https://news.google.com/search?q={{单词}}" target="_blank">谷歌查</a>
+            </div>
+            <div class="dictionary">
+                <a href="https://www.oxfordlearnersdictionaries.com/definition/english/{{单词}}" target="_blank">Oxford</a>
+            </div>
+            <div class="dictionary">
+                <a href="https://www.merriam-webster.com/dictionary/{{单词}}" target="_blank">Merriam</a>
+            </div>
+            <div class="dictionary">
+                <a href="https://www.macmillandictionary.com/dictionary/british/{{单词}}" target="_blank">Macmillan</a>
+            </div>
+            <div class="dictionary">
+                <a href="https://en.wiktionary.org/wiki/{{单词}}" target="_blank">Wiktionary</a>
+            </div>
+            <div class="dictionary">
+                <a href="https://www.wordreference.com/enzh/{{单词}}" target="_blank">WordReference</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+<div class="notes">
+    {{笔记}}<br>
+</div>
+
+
+
+<style>
+    .replay-button {
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .replay-button svg {
+        width: 24px;
+        height: 24px;
+    }
+
+        .replay-button svg circle {
+            fill: #00796b; /* 深绿色 */
+            stroke: #00796b; /* 深绿色 */
+            opacity: 0.3;
+        }
+
+    .replay-button svg path {
+        stroke: #000000;
+        fill: #000000;
+        opacity: 0.3;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var wordElement = document.querySelector(".word");
+        var notesElement = document.querySelector(".notes");
+        var wordText = wordElement.textContent.trim().toLowerCase().replace(/\s+/g, '');
+        var notesText = notesElement.innerHTML.trim();
+
+var wordFormsRegex = new RegExp('\\b(' + 
+    wordText + '|' +                               
+    wordText + 's?' + '|' +                        
+    wordText.replace(/y$/, 'i') + 'es?' + '|' +    
+    wordText + 'ed' + '|' +                        
+    wordText + 'ing' + '|' +                       
+    wordText + 'd' + '|' +                         
+    wordText + 'er' + '|' +                        
+    wordText + 'est' + '|' +                       
+    wordText + 'ly' + '|' +                         
+    wordText.replace(/y$/, 'ily') + '|' +           
+    wordText.replace(/ic$/, 'ically') + '|' +       
+    wordText.replace(/le$/, 'ly') +                
+    ')\\b', 'gi');
+
+
+
+        var formattedNotes = notesText.replace(wordFormsRegex, function(match) {
+            return '<strong class="highlight">' + match + '</strong>';
+        });
+
+        notesElement.innerHTML = formattedNotes;
+    });
+</script>
+
+<div id="video-container" class="video-container">
+    <iframe src="https://www.youtube.com/embed/{{Source-Video}}" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<style>
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        background: #000000;
+    }
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var videoContainer = document.getElementById("video-container");
+        var sourceURL = "{{Source-Video}}";
+
+        if (!sourceURL) {
+            videoContainer.style.display = "none";
+        }
+    });
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page with TTS</title>
+    <style>
+        .bottom-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: transparent; /* Set background to transparent */
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            box-sizing: border-box;
+            z-index: 1000; /* Ensure it stays on top of other content */
+        }
+
+        .bottom-container > div {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Your page content -->
+
+    <div class="bottom-container">
+        <div style="display: inline-block;">
+            {{tts zh_CN voices=Apple_Ava:单词}}
+        </div>
+        <div style="display: inline-block;">
+            {{tts zh_CN voices=Apple_Ava:例句}}
+        </div>
+        <div style="display: inline-block;">
+            {{tts zh_CN voices=Apple_Ava:Source-news}}
+        </div>
+        <div style="display: inline-block;">
+            {{tts zh_CN voices=Apple_Ava:笔记}}
+        </div>
+    </div>
+</body>
+</html>
+```
 正面：
 ```
 <!DOCTYPE html>
