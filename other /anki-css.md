@@ -62,20 +62,23 @@
         .resource-header {
             cursor: pointer;
             padding: 10px;
-            background-color: #00796b; /* 红色背景 */
-            color: #fff; /* 白色文字 */
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-bottom: 5px;
+            background-color: #e0f2f1;
+            color: #004d40;
+            border: 2px solid #00796b;
+            border-radius: 4px 4px 0 0;
+            margin: 0;
             font-weight: bold;
             text-align: center;
+            box-sizing: border-box;
         }
         .resource-content {
             display: none;
             padding: 10px;
-            border: 1px solid #ddd;
+            background-color: #e0f2f1;
+            border: 2px solid #00796b;
             border-top: none;
             border-radius: 0 0 4px 4px;
+            box-sizing: border-box;
         }
         .resource-content a {
             display: block;
@@ -90,40 +93,30 @@
 </head>
 <body>
     <div class="resources">
-        <!-- Resource Header -->
         <div class="resource-header" onclick="toggleContent('resource1')">点击展开/折叠资源链接</div>
         
-        <!-- Resource Content -->
         <div id="resource1" class="resource-content">
-            <!-- YouTube Search -->
             <div class="video">
                 <a href="https://www.youtube.com/results?search_query={{单词}}" target="_blank">油管查</a>
             </div>
-            <!-- Cambridge Dictionary -->
             <div class="dictionary">
                 <a href="https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/%E8%8B%B1%E8%AF%AD-%E6%B1%89%E8%AF%AD-%E7%B9%81%E4%BD%93/{{单词}}" target="_blank">剑桥查</a>
             </div>
-            <!-- Google News -->
             <div class="dictionary">
                 <a href="https://news.google.com/search?q={{单词}}" target="_blank">谷歌查</a>
             </div>
-            <!-- Oxford Learner's Dictionaries -->
             <div class="dictionary">
                 <a href="https://www.oxfordlearnersdictionaries.com/definition/english/{{单词}}" target="_blank">Oxford</a>
             </div>
-            <!-- Merriam-Webster -->
             <div class="dictionary">
                 <a href="https://www.merriam-webster.com/dictionary/{{单词}}" target="_blank">Merriam</a>
             </div>
-            <!-- Macmillan Dictionary -->
             <div class="dictionary">
                 <a href="https://www.macmillandictionary.com/dictionary/british/{{单词}}" target="_blank">Macmillan</a>
             </div>
-            <!-- Wiktionary -->
             <div class="dictionary">
                 <a href="https://en.wiktionary.org/wiki/{{单词}}" target="_blank">Wiktionary</a>
             </div>
-            <!-- WordReference -->
             <div class="dictionary">
                 <a href="https://www.wordreference.com/enzh/{{单词}}" target="_blank">WordReference</a>
             </div>
