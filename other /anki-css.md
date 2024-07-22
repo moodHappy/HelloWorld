@@ -1,3 +1,101 @@
+# anki 集成查询
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>折叠效果示例</title>
+    <style>
+        .resources {
+            margin: 0;
+            padding: 0;
+        }
+        .resource-header {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #00796b; /* 红色背景 */
+            color: #fff; /* 白色文字 */
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .resource-content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+        }
+        .resource-content a {
+            display: block;
+            margin-bottom: 5px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .resource-content a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="resources">
+        <!-- Resource Header -->
+        <div class="resource-header" onclick="toggleContent('resource1')">点击展开/折叠资源链接</div>
+        
+        <!-- Resource Content -->
+        <div id="resource1" class="resource-content">
+            <!-- YouTube Search -->
+            <div class="video">
+                <a href="https://www.youtube.com/results?search_query={{单词}}" target="_blank">油管查</a>
+            </div>
+            <!-- Cambridge Dictionary -->
+            <div class="dictionary">
+                <a href="https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/%E8%8B%B1%E8%AF%AD-%E6%B1%89%E8%AF%AD-%E7%B9%81%E4%BD%93/{{单词}}" target="_blank">剑桥查</a>
+            </div>
+            <!-- Google News -->
+            <div class="dictionary">
+                <a href="https://news.google.com/search?q={{单词}}" target="_blank">谷歌查</a>
+            </div>
+            <!-- Oxford Learner's Dictionaries -->
+            <div class="dictionary">
+                <a href="https://www.oxfordlearnersdictionaries.com/definition/english/{{单词}}" target="_blank">Oxford</a>
+            </div>
+            <!-- Merriam-Webster -->
+            <div class="dictionary">
+                <a href="https://www.merriam-webster.com/dictionary/{{单词}}" target="_blank">Merriam</a>
+            </div>
+            <!-- Macmillan Dictionary -->
+            <div class="dictionary">
+                <a href="https://www.macmillandictionary.com/dictionary/british/{{单词}}" target="_blank">Macmillan</a>
+            </div>
+            <!-- Wiktionary -->
+            <div class="dictionary">
+                <a href="https://en.wiktionary.org/wiki/{{单词}}" target="_blank">Wiktionary</a>
+            </div>
+            <!-- WordReference -->
+            <div class="dictionary">
+                <a href="https://www.wordreference.com/enzh/{{单词}}" target="_blank">WordReference</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
+```
+
 # anki 调整playphrase位置版
 ## 背面
 ```
