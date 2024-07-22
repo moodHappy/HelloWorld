@@ -1,3 +1,133 @@
+##anki 调整发音按钮到底部，添加集成查询
+正面：
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PingFang+SC&display=swap">
+    <style>
+        .card {
+            font-family: 'PingFang SC', sans-serif;
+            color: #000000; /* 黑色文本 */
+            background-color: #fffde7; /* 浅黄色背景 */
+            border: 2px solid #00796b; /* 深绿色边框 */
+            padding: 20px;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .word {
+            font-size: 36px;
+            font-weight: bold;
+            color: #00796b; /* 深绿色文本 */
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .phonetic {
+            font-size: 24px;
+            margin-top: 10px;
+            color: #004d40; /* 更深的绿色 */
+        }
+
+        .replay-button {
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .replay-button svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .replay-button svg circle {
+            fill: #00796b; /* 深绿色 */
+            stroke: #00796b; /* 深绿色 */
+            opacity: 0.3;
+        }
+
+        .replay-button svg path {
+            stroke: #00796b; /* 深绿色 */
+            fill: #00796b; /* 深绿色 */
+            opacity: 0.3;
+        }
+
+        .typing-effect {
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="word typing-effect" id="animated-text"></div>
+        <div class="phonetic" id="phonetic-text"></div>
+    </div>
+
+    <script>
+        const word = "{{单词}}";
+        const container = document.getElementById("animated-text");
+        const phoneticContainer = document.getElementById("phonetic-text");
+
+        const eudicURL = `eudic://dict/${word}`;
+
+        let index = 0;
+
+        function typeLetter() {
+            if (index < word.length) {
+                container.innerHTML = `<a href="${eudicURL}" style="color: inherit; text-decoration: none;">${word.substring(0, index + 1)}</a>`;
+                index++;
+                setTimeout(typeLetter, 500);
+            } else {
+                container.style.borderRight = 'none';
+            }
+        }
+
+        phoneticContainer.textContent = "{{音标}}";
+
+        typeLetter();
+    </script>
+
+    <script>
+        var tTitle = document.getElementById("s6").innerHTML;
+        var uURL = document.getElementById("s5").innerHTML;
+        var sentence = localStorage.getItem('sentence');
+        document.getElementById('sentence').innerText = sentence;
+
+        if (uURL != "") {
+            var para = document.createElement("p");
+            para.innerHTML = '<a href="'+uURL+'" style="color: #00796b;">'+tTitle+'</a>';
+            var node = document.createTextNode("");
+            para.appendChild(node);
+
+            var element = document.getElementById("div1");
+            var child = document.getElementById("answer");
+            element.insertBefore(para, child);
+        } else {
+            var para = document.createElement("p");
+            para.innerHTML = '<p><font color="grey" size="3">'+tTitle+'</font></p>';
+            var node = document.createTextNode("");
+            para.appendChild(node);
+
+            var element = document.getElementById("div1");
+            var child = document.getElementById("answer");
+            element.insertBefore(para, child);
+        }
+    </script>
+
+    <div style="position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); text-align: center; width: 100%;">
+        <div>{{tts zh_CN voices=Apple_Ava:单词}}</div>
+    </div>
+</body>
+</html>
+```
+
 墨韵清风
 背面
 //
