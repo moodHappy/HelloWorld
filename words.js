@@ -1,12 +1,6 @@
 ## anki html、css分离合并版
 # CSS：
 ```
-body {
-    font-family: 'PingFang SC', sans-serif;
-    background-color: #e0f7fa; /* 鲜艳明亮的蓝绿色背景 */
-    color: #000000; /* 黑色文字 */
-}
-
 .card {
     font-family: 'PingFang SC', sans-serif;
     color: #000000; /* 黑色文本 */
@@ -167,6 +161,8 @@ body {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
+    margin-top: 10px;
+    border: 2px solid #00796b;
     overflow: hidden;
     max-width: 100%;
     background: #000000;
