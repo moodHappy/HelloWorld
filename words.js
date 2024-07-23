@@ -285,7 +285,7 @@
             <a href="https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/%E8%8B%B1%E8%AF%AD-%E6%B1%89%E8%AF%AD-%E7%B9%81%E4%BD%93/{{单词}}" target="_blank">剑桥查</a>
         </div>
         <div class="dictionary">
-            <a href="https://news.google.com/search?q=obscure&hl=en" target="_blank">谷歌查</a>
+            <a href="https://news.google.com/search?q={{单词}}&hl=en" target="_blank">谷歌查</a>
         </div>
         <div class="dictionary">
             <a href="https://www.oxfordlearnersdictionaries.com/definition/english/{{单词}}" target="_blank">Oxford</a>
