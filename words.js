@@ -210,14 +210,6 @@ color: #004d40; /* 深绿色文字颜色 */
 }
 
 
-
-
-
-
-
-
-
-
 .responsive-iframe {
 position: relative;
 padding-bottom: 56.25%; /* 16:9 aspect ratio */
@@ -283,13 +275,15 @@ border: none; /* 去掉 iframe 自带的边框 */
 <a href="https://www.youtube.com/results?search_query={{单词}}" target="_blank">油管查</a>
 </div>
 
-<div class="video">
+<div class="Twitter">
 
-<a href="#" onclick="searchTwitter()">搜索 Twitter</a>
-
+<a href="#" onclick="searchTwitter()">Twitter网页</a>
 </div>
 
 
+<div class="Twitter">
+<a href="twitter://search?query={{单词}}" target="_blank">Twitter客户端</a>
+</div>
 
 
 
