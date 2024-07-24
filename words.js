@@ -1,6 +1,6 @@
-## Anki简化news代码：
+## Anki简化Source-news字段代码：
 
-TTS 朗读替换规则 正则表达式，以此实现不朗读网站链接
+TTS 朗读替换规则 正则表达式，以此实现不朗读Source-news字段网站链接
 ```
 https?:\/\/[^\s]+
 ```
