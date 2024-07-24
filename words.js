@@ -1,3 +1,74 @@
+## 简化news代码：
+
+## 正面：
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smooth</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PingFang+SC&display=swap">
+</head>
+<body>
+<div class="card">
+<div class="word typing-effect" id="animated-text"></div>
+<div class="phonetic" id="phonetic-text"></div>
+</div>
+<script>
+const word = "{{单词}}";
+const container = document.getElementById("animated-text");
+const phoneticContainer = document.getElementById("phonetic-text");
+const eudicURL = `eudic://dict/${word}`;
+let index = 0;
+function typeLetter() {
+if (index < word.length) {
+container.innerHTML = `<a href="${eudicURL}" style="color: inherit; text-decoration: none;">${word.substring(0, index + 1)}</a>`;
+index++;
+setTimeout(typeLetter, 500);
+} else {
+container.style.borderRight = 'none';
+}
+}
+phoneticContainer.textContent = "{{音标}}";
+typeLetter();
+</script>
+<script>
+var tTitle = document.getElementById("s6").innerHTML;
+var uURL = document.getElementById("s5").innerHTML;
+var sentence = localStorage.getItem('sentence');
+document.getElementById('sentence').innerText = sentence;
+if (uURL != "") {
+var para = document.createElement("p");
+para.innerHTML = '<a href="'+uURL+'" style="color: #00796b;">'+tTitle+'</a>';
+var node = document.createTextNode("");
+para.appendChild(node);
+var element = document.getElementById("div1");
+var child = document.getElementById("answer");
+element.insertBefore(para, child);
+} else {
+var para = document.createElement("p");
+para.innerHTML = '<p><font color="grey" size="3">'+tTitle+'</font></p>';
+var node = document.createTextNode("");
+para.appendChild(node);
+var element = document.getElementById("div1");
+var child = document.getElementById("answer");
+element.insertBefore(para, child);
+}
+</script>
+<div style="position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); text-align: center; width: 100%;">
+<div>{{tts zh_CN voices=Apple_Ava:单词}}</div>
+</div>
+</body>
+```
+
+
+
+
+
+
+
+🥰🥰🥰
 # 剥离出Twitter
 # 正面不变
 # css：
