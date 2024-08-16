@@ -1,3 +1,236 @@
+配色方案1：
+```
+.card {
+font-family: 'PingFang SC', sans-serif;
+color: #000000; /* 黑色文本 */
+background-color: #fffde7; /* 浅黄色背景 */
+border: 2px solid #00796b; /* 深绿色边框 */
+padding: 20px;
+text-align: center;
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.word {
+font-family: 'PingFang SC', Arial, sans-serif;
+font-size: 36px;
+font-weight: bold;
+color: #00796b; /* 深绿色文字 */
+display: inline-block;
+cursor: pointer;
+}
+.word a {
+color: inherit;
+text-decoration: none;
+}
+.phonetic, .definition, .example, .translation {
+font-family: 'PingFang SC', Arial, sans-serif;
+}
+.phonetic {
+font-size: 24px;
+margin-top: 10px;
+color: #004d40; /* 更深的绿色 */
+}
+.definition {
+font-size: 20px;
+margin-top: 15px;
+color: #004d40; /* 更深的绿色 */
+}
+.example, .translation {
+font-size: 18px;
+margin-top: 10px;
+color: #004d40; /* 更深的绿色 */
+}
+.notes {
+font-family: 'Roboto', 'PingFang SC', sans-serif;
+font-size: 16px;
+margin-top: 10px;
+line-height: 1.6;
+text-align: left;
+color: #000000;
+background-color: #c8e6c9; /* 亮绿色背景 */
+padding: 15px;
+border: 2px solid #00796b; /* 深绿色边框 */
+}
+.notes span {
+font-size: 20px;
+font-family: 'Lobster'; 
+}
+
+.notes img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+.notes b, .highlight {
+  font-style: italic;
+  color: #000000; /* 黑色文字颜色 */
+  text-shadow: 
+    1px 1px 2px rgba(255, 0, 0, 0.5), /* 红色阴影 */
+    2px 2px 4px rgba(255, 0, 0, 0.7), /* 更深的红色阴影 */
+    1px 1px 0 rgba(255, 255, 255, 0.1); /* 边缘高光，增强凹陷感 */
+}
+
+
+
+
+
+.source-link {
+color: #00796b; /* 深绿色 */
+text-decoration: none;
+display: block;
+text-align: right;
+font-family: 'cursive';
+font-size: 28px;
+font-weight: bold;
+padding: 0;
+}
+.source-news {
+font-family: 'PingFang SC', sans-serif;
+font-size: 16px;
+color: #000000;
+background-color: #e0f2f1; /* 亮青绿色背景 */
+padding: 15px;
+border: 2px solid #00796b; /* 深绿色边框 */
+margin-top: 10px;
+text-align: left;
+}
+.source-news a {
+text-decoration: none;
+color: #004d40; /* 更深的绿色 */
+}
+.resources {
+margin-top: 10px;
+padding: 0;
+}
+.resource-header {
+cursor: pointer;
+padding: 10px;
+background-color: #e0f2f1;
+color: #004d40;
+border: 2px solid #00796b;
+border-radius: 4px 4px 0 0;
+margin-top: 10px;
+font-weight: bold;
+text-align: center;
+box-sizing: border-box;
+}
+.resource-content {
+display: none;
+padding: 10px;
+background-color: #e0f2f1;
+border: 2px solid #00796b;
+border-top: none;
+border-radius: 0 0 4px 4px;
+box-sizing: border-box;
+}
+.resource-content a {
+display: block;
+margin-bottom: 5px;
+color: #007bff;
+text-decoration: none;
+}
+.resource-content a:hover {
+text-decoration: underline;
+}
+.replay-button {
+margin-top: 10px;
+cursor: pointer;
+}
+.replay-button svg {
+width: 24px;
+height: 24px;
+}
+.replay-button svg circle, .replay-button svg path {
+fill: #00796b; /* 深绿色 */
+stroke: #00796b; /* 深绿色 */
+opacity: 0.3;
+}
+.replay-button svg path {
+stroke: #000000;
+fill: #000000;
+opacity: 0.3;
+}
+.video-container {
+position: relative;
+padding-bottom: 56.25%;
+height: 0;
+margin-top: 10px;
+border: 2px solid #00796b;
+overflow: hidden;
+max-width: 100%;
+background: #000000;
+}
+.video-container iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+}
+.bottom-container {
+position: fixed;
+bottom: 0;
+left: 0;
+width: 100%;
+background-color: transparent; /* Set background to transparent */
+padding: 10px;
+display: flex;
+gap: 10px;
+justify-content: center;
+box-sizing: border-box;
+z-index: 1000; /* Ensure it stays on top of other content */
+}
+.bottom-container > div {
+display: inline-block;
+}
+.typing-effect {
+white-space: nowrap;
+overflow: hidden;
+border-right: 2px solid;
+display: inline-block;
+}
+.news-title {
+font-family: 'PingFang SC', sans-serif;
+font-size: 20px;
+font-weight: bold;
+color: #004d40; /* 深绿色文字颜色 */
+}
+.responsive-iframe {
+position: relative;
+padding-bottom: 56.25%; /* 16:9 aspect ratio */
+height: 0;
+overflow: hidden;
+max-width: 100%;
+background: #000;
+border: 2px solid #00796b; /* 深绿色边框 */
+margin-top: 10px; /* 上边距 10px */
+}
+.responsive-iframe iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+border: none; /* 去掉 iframe 自带的边框 */
+}
+.Twitter-header {
+cursor: pointer;
+padding: 10px;
+background-color: #e0f2f1;
+color: #004d40;
+border: 2px solid #00796b;
+border-radius: 4px 4px 0 0;
+margin-top: 10px;
+font-weight: bold;
+text-align: center;
+box-sizing: border-box;
+}
+.Twitter-header a {
+text-decoration: none;
+color: #004d40;
+}
+
+```
 更新css：
 ```
 .card {
