@@ -14,7 +14,7 @@
     ];
 
     // 从Anki字段获取文本内容
-    const text = document.querySelector('.kanji').innerText.trim();
+    let text = document.querySelector('.kanji').innerText.trim();
 
     // 如果字段为空，则返回
     if (!text) {
@@ -22,14 +22,17 @@
       return;
     }
 
+    // 解决空格问题，去除所有空格以保证连贯朗读
+    text = text.replace(/\s+/g, '');
+
     // 选择一个语音
-    const voice = 'ja-JP-KeitaNeural'; // 根据需要调整语音名称
+    const voice = 'en-US-EricNeural'; // 根据需要调整语音名称，日文语音
 
     // 生成查询参数
     const queryString = new URLSearchParams({
       text: text,
       voiceName: voice,
-      speed: -4, // 调整语速
+      speed: 0, // 正常语速
     }).toString();
 
     // 检查是否已存在音频元素，防止重复创建
@@ -61,7 +64,7 @@
   // 设置播放按钮的位置
   const playButton = document.getElementById('playAudioButton');
   playButton.style.position = 'fixed';
-  playButton.style.bottom = '250px'; // 距离底部200px
+  playButton.style.bottom = '250px'; // 距离底部250px
   playButton.style.left = '50%'; // 水平居中
   playButton.style.transform = 'translateX(-50%)'; // 调整为居中显示
 </script>
