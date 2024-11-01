@@ -2,35 +2,44 @@
   {{kanji:日文}}
 </div>
 
-<!-- 播放按钮，使用Anki默认的按钮样式，并显示播放符号 -->
-<button class="btn" id="playAudioButton" onclick="playTTS()">▶</button>
+<!-- 播放日文按钮 -->
+<button class="btn" id="playKanjiButton" onclick="playTTS('kanji')">播放单词</button>
+
+<!-- 播放课号按钮 -->
+<button class="btn" id="playLessonButton" onclick="playTTS('lesson')">播放例句</button>
 
 <script>
-  function playTTS() {
-    // 配置两个域名
+  function playTTS(type) {
+    // 配置域名
     const domain = [
-      'https://anki.0w0.live/',
-      'https://ms-ra-forwarder-for-ifreetime-v9q1.vercel.app/',
+      'https://ms-ra-forwarder-for-ifreetime-beta-two.vercel.app/',
     ];
 
-    // 从Anki字段获取文本内容
-    let text = document.querySelector('.kanji').innerText.trim();
+    let textToRead = '';
 
-    // 如果字段为空，则返回
-    if (!text) {
-      alert('文本字段为空，无法生成音频');
-      return;
+    // 根据不同类型，获取不同的文本
+    if (type === 'lesson') {
+      let lessonNumberText = document.querySelector('.lesson-number').innerText.trim();
+      if (!lessonNumberText) {
+        alert('课号字段为空，无法生成音频');
+        return;
+      }
+      textToRead = lessonNumberText.replace(/\s+/g, ''); // 去除空格
+    } else if (type === 'kanji') {
+      let kanjiText = document.querySelector('.kanji').innerText.trim();
+      if (!kanjiText) {
+        alert('日文字段为空，无法生成音频');
+        return;
+      }
+      textToRead = kanjiText.replace(/\s+/g, ''); // 去除空格
     }
 
-    // 解决空格问题，去除所有空格以保证连贯朗读
-    text = text.replace(/\s+/g, '');
-
-    // 选择一个语音
-    const voice = 'en-US-EricNeural'; // 根据需要调整语音名称，日文语音
+    // 保持原来的Eric语音
+    const voice = 'en-US-EricNeural'; // 保持为Eric语音
 
     // 生成查询参数
     const queryString = new URLSearchParams({
-      text: text,
+      text: textToRead,
       voiceName: voice,
       speed: 0, // 正常语速
     }).toString();
@@ -46,13 +55,11 @@
     audio.id = 'hiddenAudio'; // 设置ID以便于后续控制
     audio.style.display = 'none'; // 隐藏音频条
 
-    // 为每个域名生成音频源
-    for (const url of domain) {
-      const source = document.createElement('source');
-      source.src = `${url}api/aiyue?${queryString}`;
-      source.type = 'audio/mpeg';
-      audio.append(source);
-    }
+    // 为域名生成音频源
+    const source = document.createElement('source');
+    source.src = `${domain[0]}api/aiyue?${queryString}`; // 使用新的域名
+    source.type = 'audio/mpeg';
+    audio.append(source);
 
     // 将音频元素插入页面
     document.body.append(audio);
@@ -62,9 +69,22 @@
   }
 
   // 设置播放按钮的位置
-  const playButton = document.getElementById('playAudioButton');
-  playButton.style.position = 'fixed';
-  playButton.style.bottom = '250px'; // 距离底部250px
-  playButton.style.left = '50%'; // 水平居中
-  playButton.style.transform = 'translateX(-50%)'; // 调整为居中显示
+  const playLessonButton = document.getElementById('playLessonButton');
+  const playKanjiButton = document.getElementById('playKanjiButton');
+
+  // 交换两个按钮的位置
+  playLessonButton.style.position = 'fixed';
+  playLessonButton.style.bottom = '150px'; // 将playLessonButton距离底部150px
+  playLessonButton.style.left = '50%'; // 水平居中
+  playLessonButton.style.transform = 'translateX(-50%)'; // 调整为居中显示
+
+  playKanjiButton.style.position = 'fixed';
+  playKanjiButton.style.bottom = '200px'; // 将playKanjiButton距离底部200px
+  playKanjiButton.style.left = '50%'; // 水平居中
+  playKanjiButton.style.transform = 'translateX(-50%)'; // 调整为居中显示
+
+  // 页面加载时自动播放日文
+  window.onload = function() {
+    playTTS('kanji');
+  };
 </script>
