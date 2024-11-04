@@ -64,3 +64,26 @@ function toggleBlur() {
 </div>
 
 <button onclick="toggleBlur()">切换模糊</button>
+
+
+强制清晰：
+<script>
+function forceClear() {
+    var card = document.querySelector('.card');
+    // 强制清除模糊效果
+    card.style.filter = 'blur(0)'; // 设置为清晰
+}
+</script>
+
+<style>
+.card {
+    filter: blur(10px); /* 初始状态为模糊 */
+    transition: filter 0.3s ease; /* 添加过渡效果 */
+}
+</style>
+
+<div class="card">
+    <!-- 卡片内容 -->
+</div>
+
+<button onclick="forceClear()">强制清晰</button>
