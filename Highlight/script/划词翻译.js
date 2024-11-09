@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         划词自动翻译（Kiwi 浏览器支持）
+// @name         划词翻译
 // @namespace    http://tampermonkey.net/
 // @version      0.9
 // @description  支持在 Kiwi 浏览器上使用的划词自动翻译功能，选中文本后自动显示翻译结果并朗读文本
