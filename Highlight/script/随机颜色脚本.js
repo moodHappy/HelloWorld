@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         蓝色
+// @name         蓝色（支持词形变化）
 // @namespace    https://greasyfork.org/zh-TW
-// @version      1.0
-// @description  给网页关键词改变成蓝色，完整匹配
+// @version      1.1
+// @description  给网页关键词及其词形变化改变成蓝色，完整匹配
 // @match        *://*/*
 // @grant        none
 // ==/UserScript==
@@ -10,8 +10,8 @@
 (function() {
     'use strict';
 
-    // 清空关键词数组
-    var keywords = [];
+    // 清空关键词数组，添加一些示例关键词
+    var keywords = []; // 示例关键词，可以根据需要扩展
 
     // 直接返回蓝色
     function randomColor() {
@@ -22,23 +22,35 @@
     function replaceKeywords(node) {
         var text = node.textContent;
         var parent = node.parentNode;
-        var index = -1;
+
         for (var i = 0; i < keywords.length; i++) {
-            var keyword = keywords[i];
-            var regex = new RegExp("\\b" + keyword + "\\b", "g"); // 使用正则表达式，完整匹配关键词
-            var match = regex.exec(text);
-            if (match) {
-                index = match.index;
-                break;
+            var wordText = keywords[i].toLowerCase(); // 将关键词转换为小写
+            var wordFormsRegex = new RegExp('\\b(' +
+                wordText + '|' +
+                wordText + 's?' + '|' +
+                wordText.replace(/y$/, 'i') + 'es?' + '|' +
+                wordText + 'ed' + '|' +
+                wordText + 'ing' + '|' +
+                wordText + 'd' + '|' +
+                wordText + 'er' + '|' +
+                wordText + 'est' + '|' +
+                wordText + 'ly' + '|' +
+                wordText.replace(/y$/, 'ily') + '|' +
+                wordText.replace(/ic$/, 'ically') + '|' +
+                wordText.replace(/le$/, 'ly') +
+            ')\\b', 'gi'); // 构建词形变化的正则表达式，忽略大小写
+
+            // 匹配词形变化并进行替换
+            var match;
+            while ((match = wordFormsRegex.exec(text)) !== null) {
+                var span = document.createElement("span");
+                span.style.color = randomColor(); // 设置为蓝色
+                span.textContent = match[0]; // 匹配到的关键词
+                var after = node.splitText(match.index);
+                after.textContent = after.textContent.slice(match[0].length);
+                parent.insertBefore(span, after);
+                node = after; // 更新节点位置，继续匹配后续词汇
             }
-        }
-        if (index > -1) {
-            var span = document.createElement("span");
-            span.style.color = randomColor(); // 设置为蓝色
-            span.textContent = text.slice(index, index + keyword.length);
-            var after = node.splitText(index);
-            after.textContent = after.textContent.slice(keyword.length);
-            parent.insertBefore(span, after);
         }
     }
 
