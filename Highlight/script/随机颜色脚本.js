@@ -3,7 +3,7 @@
 // ==UserScript==
 // @name         蓝色（支持词形变化）
 // @namespace    https://greasyfork.org/zh-TW
-// @version      2.0
+// @version      3.0
 // @description  给网页关键词及其词形变化改变成蓝色，完整匹配
 // @match        *://www.theguardian.com/*
 // @match        *://www.bbc.com/*
