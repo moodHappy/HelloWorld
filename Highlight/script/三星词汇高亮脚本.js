@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         蓝色（支持词形变化）
 // @namespace    https://greasyfork.org/zh-TW
-// @version      1.1
+// @version      2.0
 // @description  给网页关键词及其词形变化改变成蓝色，完整匹配
 // @match        *://*/*
 // @grant        none
