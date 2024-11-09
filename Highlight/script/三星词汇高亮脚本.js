@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name         蓝色（支持词形变化）
 // @namespace    https://greasyfork.org/zh-TW
-// @version      2.0
+// @version      3.0
 // @description  给网页关键词及其词形变化改变成蓝色，完整匹配
-// @match        *://*/*
+// @match        *://www.theguardian.com/*
+// @match        *://www.bbc.com/*
 // @grant        none
 // ==/UserScript==
 
@@ -11,7 +12,7 @@
     'use strict';
 
     // 定义十个关键词数组
-    var keywords1 = [
+        var keywords1 = [
   'mate', 'raid', 'hint', 'pool', 'neat', 'done', 'fold', 'spur', 'cope', 
   'tone', 'pile', 'gift', 'amid', 'roof', 'peak', 'ease', 'crop', 'edit', 
   'tool', 'trap', 'hunt', 'poem', 'auto', 'stem', 'myth', 'task', 'sand', 
