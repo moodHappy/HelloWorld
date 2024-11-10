@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         自动TTS播放选中文本（适配移动端）
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.6
 // @description  选中文本时自动发音，支持移动端 Kiwi 浏览器
 // @author       You
 // @match        *://*/*
@@ -58,18 +58,14 @@
         audio.play();
     }
 
-    // 监听鼠标和触摸事件
+    // 监听文本选择事件
     function setupTextSelectionListener() {
-        // 鼠标选择事件
-        document.addEventListener('mouseup', function() {
+        // 监听鼠标松开事件或触摸结束事件（移动端）
+        document.addEventListener('selectionchange', function() {
             const selectedText = window.getSelection().toString().trim();
-            playTTS(selectedText);
-        });
-
-        // 移动端的触摸选择事件
-        document.addEventListener('touchend', function() {
-            const selectedText = window.getSelection().toString().trim();
-            playTTS(selectedText);
+            if (selectedText) {
+                playTTS(selectedText); // 选中后触发TTS播放
+            }
         });
     }
 
