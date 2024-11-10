@@ -1,7 +1,7 @@
 // 高级进阶版5.0
 
 // ==UserScript==
-// @name         划词翻译、音标显示和自动TTS播放
+// @name         划词翻译
 // @namespace    http://tampermonkey.net/
 // @version      5.0
 // @description  支持在 Kiwi 浏览器上使用的划词自动翻译功能，选中文本后自动显示翻译结果、音标和例句并朗读文本，点击页面隐藏翻译框
