@@ -1,10 +1,10 @@
 // 新增取消高亮功能
 
 // ==UserScript==
-// @name         蓝色（支持词形变化）- 进阶版3.0
+// @name         蓝色（支持词形变化） - 可取消高亮
 // @namespace    https://greasyfork.org/zh-TW
 // @version      3.1
-// @description  给网页关键词及其词形变化改变成蓝色，允许取消特定词汇的高亮
+// @description  给网页关键词及其词形变化改变成蓝色，并可永久取消某些单词的高亮
 // @match        *://www.theguardian.com/*
 // @match        *://www.bbc.com/*
 // @grant        none
@@ -26,24 +26,34 @@
     var keywords10 = ['study', 'exercise', 'write'];
 
     // 合并所有关键词
-    var allKeywords = [...keywords1, ...keywords2, ...keywords3, ...keywords4, ...keywords5, ...keywords6, ...keywords7, ...keywords8, ...keywords9, ...keywords10];
+    var allKeywords = [
+        ...keywords1, ...keywords2, ...keywords3, 
+        ...keywords4, ...keywords5, ...keywords6, 
+        ...keywords7, ...keywords8, ...keywords9, 
+        ...keywords10
+    ];
 
-    // 获取已取消高亮的单词列表
-    var removedKeywords = JSON.parse(localStorage.getItem('removedKeywords')) || [];
+    // 从localStorage获取已取消高亮的单词列表
+    var canceledKeywords = JSON.parse(localStorage.getItem('canceledKeywords')) || [];
 
-    // 生成蓝色
+    // 定义蓝色
     function randomColor() {
-        return "rgb(0,0,255)";
+        return "rgb(0,0,255)"; // 蓝色
     }
 
-    // 遍历文本节点，查找并替换关键词
+    // 遍历所有的文本节点，查找并替换关键词
     function replaceKeywords(node) {
         var text = node.textContent;
         var parent = node.parentNode;
 
-        allKeywords.forEach(function(wordText) {
-            // 跳过已取消高亮的单词
-            if (removedKeywords.includes(wordText)) return;
+        // 遍历所有关键词
+        for (var i = 0; i < allKeywords.length; i++) {
+            var wordText = allKeywords[i].toLowerCase(); 
+
+            // 如果单词在取消高亮的列表中，则跳过
+            if (canceledKeywords.includes(wordText)) {
+                continue;
+            }
 
             var wordFormsRegex = new RegExp('\\b(' +
                 wordText + '|' +
@@ -60,10 +70,11 @@
                 wordText.replace(/le$/, 'ly') +
             ')\\b', 'gi');
 
+            // 替换匹配的关键词为蓝色
             text = text.replace(wordFormsRegex, function(match) {
-                return `<span style="color:${randomColor()}; cursor: pointer;" class="keyword">${match}</span>`;
+                return `<span style="color:${randomColor()}">${match}</span>`;
             });
-        });
+        }
 
         if (text !== node.textContent) {
             var span = document.createElement('span');
@@ -72,7 +83,7 @@
         }
     }
 
-    // 获取所有文本节点
+    // 获取所有的文本节点
     function getTextNodes() {
         var nodes = [];
         var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
@@ -83,39 +94,36 @@
         return nodes;
     }
 
-    // 执行关键词替换
-    function highlightKeywords() {
-        var textNodes = getTextNodes();
-        textNodes.forEach(replaceKeywords);
+    // 对所有文本节点执行替换操作
+    var textNodes = getTextNodes();
+    for (var i = 0; i < textNodes.length; i++) {
+        replaceKeywords(textNodes[i]);
     }
 
-    // 按钮：取消高亮单词
-    function createButton() {
-        var button = document.createElement('button');
-        button.textContent = '取消高亮单词';
-        button.style.position = 'fixed';
-        button.style.bottom = '10px';
-        button.style.right = '10px';
-        button.style.zIndex = '9999';
-        button.onclick = function() {
-            var wordToRemove = prompt("请输入你要取消高亮的单词:");
-            if (wordToRemove) {
-                removedKeywords.push(wordToRemove.toLowerCase());
-                localStorage.setItem('removedKeywords', JSON.stringify(removedKeywords));
-                location.reload(); // 刷新页面以应用取消效果
+    // 创建按钮并插入页面
+    var button = document.createElement('button');
+    button.textContent = '取消单词高亮';
+    button.style.position = 'fixed';
+    button.style.bottom = '10px';
+    button.style.right = '10px';
+    button.style.zIndex = '1000';
+    document.body.appendChild(button);
+
+    // 按钮点击事件
+    button.addEventListener('click', function() {
+        var wordToCancel = prompt('输入要取消高亮的单词：');
+        if (wordToCancel) {
+            wordToCancel = wordToCancel.toLowerCase();
+            if (!canceledKeywords.includes(wordToCancel)) {
+                canceledKeywords.push(wordToCancel);
+                localStorage.setItem('canceledKeywords', JSON.stringify(canceledKeywords));
+                alert('单词 "' + wordToCancel + '" 已取消高亮。');
+                location.reload(); // 刷新页面以应用更改
+            } else {
+                alert('该单词已经被取消高亮。');
             }
-        };
-        document.body.appendChild(button);
-    }
-
-    // 主函数
-    function init() {
-        highlightKeywords(); // 执行高亮
-        createButton();      // 创建按钮
-    }
-
-    init(); // 初始化脚本
-
+        }
+    });
 })();
 
 //进阶版3.0
