@@ -3,7 +3,7 @@
 // ==UserScript==
 // @name         划词翻译
 // @namespace    http://tampermonkey.net/
-// @version      5.0
+// @version      6.0
 // @description  支持在 Kiwi 浏览器上使用的划词自动翻译功能，选中文本后自动显示翻译结果、音标、例句、释义并朗读文本，点击页面隐藏翻译框
 // @author       YourName
 // @match        *://*/*
