@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Mobile-Friendly Keyword Frequency Counter
+// @name         关键词词频统计
 // @namespace    http://tampermonkey.net/
-// @version      1.6
+// @version      3.0
 // @description  Count the frequency of specified keywords on a webpage (mobile-friendly).
 // @author       You
 // @match        *://*/*
