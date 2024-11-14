@@ -1,3 +1,132 @@
+// 竖向并列
+
+// ==UserScript==
+// @name         蓝色（支持词形变化）并标记已掌握单词
+// @namespace    https://greasyfork.org/zh-TW
+// @version      5.2
+// @description  给网页关键词及其词形变化改变成蓝色，支持导出和导入已掌握的单词
+// @match        *://www.theguardian.com/*
+// @match        *://www.bbc.com/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // 从 localStorage 中加载已掌握的关键词
+    var masteredKeywords = JSON.parse(localStorage.getItem('masteredKeywords')) || ['run', 'write', 'study', 'read'];
+
+    // 定义十个关键词数组
+    var keywords1 = ['run', 'play', 'jump'];
+    var keywords2 = ['speak', 'write', 'read'];
+    var keywords3 = ['eat', 'sleep', 'study'];
+    var keywords4 = ['work', 'travel', 'sing'];
+    var keywords5 = ['cook', 'dance', 'shop'];
+    var keywords6 = ['read', 'swim', 'laugh'];
+    var keywords7 = ['think', 'listen', 'walk'];
+    var keywords8 = ['drive', 'watch', 'meet'];
+    var keywords9 = ['learn', 'talk', 'play'];
+    var keywords10 = ['study', 'exercise', 'write'];
+
+    var allKeywords = [
+        ...keywords1, ...keywords2, ...keywords3, 
+        ...keywords4, ...keywords5, ...keywords6, 
+        ...keywords7, ...keywords8, ...keywords9, 
+        ...keywords10
+    ];
+
+    allKeywords = allKeywords.filter(function(keyword) {
+        return !masteredKeywords.includes(keyword);
+    });
+
+    function randomColor() {
+        return "rgb(0,0,255)"; // 蓝色
+    }
+
+    function markAsMastered(word) {
+        if (!masteredKeywords.includes(word)) {
+            masteredKeywords.push(word);
+            localStorage.setItem('masteredKeywords', JSON.stringify(masteredKeywords));
+        }
+    }
+
+    function exportMasteredKeywords() {
+        var dataStr = JSON.stringify(masteredKeywords);
+        var dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
+        var exportFileDefaultName = 'masteredKeywords.json';
+        var linkElement = document.createElement('a');
+        linkElement.setAttribute('href', dataUri);
+        linkElement.setAttribute('download', exportFileDefaultName);
+        linkElement.click();
+    }
+
+    function importMasteredKeywords() {
+        var input = document.createElement('input');
+        input.type = 'file';
+        input.accept = 'application/json';
+        input.onchange = function(event) {
+            var file = event.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    var importedKeywords = JSON.parse(e.target.result);
+                    if (Array.isArray(importedKeywords)) {
+                        masteredKeywords = [...new Set([...masteredKeywords, ...importedKeywords])];
+                        localStorage.setItem('masteredKeywords', JSON.stringify(masteredKeywords));
+                        alert('成功导入已掌握单词!');
+                    } else {
+                        alert('导入的文件格式不正确');
+                    }
+                } catch (error) {
+                    alert('导入失败，请检查文件格式');
+                }
+            };
+            reader.readAsText(file);
+        };
+        input.click();
+    }
+
+    function addNewMasteredWord() {
+        var newWord = prompt('请输入要加入已掌握的单词:');
+        if (newWord && !masteredKeywords.includes(newWord)) {
+            masteredKeywords.push(newWord);
+            localStorage.setItem('masteredKeywords', JSON.stringify(masteredKeywords));
+            alert(`"${newWord}" 已加入已掌握单词`);
+        } else if (masteredKeywords.includes(newWord)) {
+            alert(`"${newWord}" 已在已掌握单词中`);
+        }
+    }
+
+    var buttonContainer = document.createElement('div');
+    buttonContainer.style.position = 'fixed';
+    buttonContainer.style.bottom = '10px';
+    buttonContainer.style.left = '10px';
+    buttonContainer.style.display = 'flex';
+    buttonContainer.style.flexDirection = 'column';
+    buttonContainer.style.alignItems = 'flex-start'; // 左对齐
+
+    var exportButton = document.createElement('button');
+    exportButton.innerText = '导出';
+    exportButton.style.marginBottom = '10px';
+    exportButton.onclick = exportMasteredKeywords;
+    buttonContainer.appendChild(exportButton);
+
+    var importButton = document.createElement('button');
+    importButton.innerText = '导入';
+    importButton.style.marginBottom = '10px';
+    importButton.onclick = importMasteredKeywords;
+    buttonContainer.appendChild(importButton);
+
+    var addButton = document.createElement('button');
+    addButton.innerText = '添加';
+    addButton.style.marginBottom = '10px';
+    addButton.onclick = addNewMasteredWord;
+    buttonContainer.appendChild(addButton);
+
+    document.body.appendChild(buttonContainer);
+
+})();
+
 // 完善
 
 // ==UserScript==
