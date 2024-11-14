@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         蓝色（支持词形变化）并标记已掌握单词
 // @namespace    https://greasyfork.org/zh-TW
-// @version      5.2
+// @version      5.3
 // @description  给网页关键词及其词形变化改变成蓝色，双击标记为已掌握，支持导出和导入已掌握的单词
 // @match        *://www.theguardian.com/*
 // @match        *://www.bbc.com/*
