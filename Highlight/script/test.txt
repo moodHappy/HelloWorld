@@ -10,7 +10,6 @@ write
 sleep
 eat
 drink
-the
 consecutive
 Oscars
 speaker
