@@ -1,0 +1,13 @@
+run
+walk
+jump
+talk
+study
+play
+work
+read
+write
+sleep
+eat
+drink
+the
