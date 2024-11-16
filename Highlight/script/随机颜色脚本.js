@@ -3,7 +3,7 @@
 // ==UserScript==
 // @name         蓝色与绿色关键词高亮（引入文件）
 // @namespace    https://greasyfork.org/zh-TW
-// @version      1.0
+// @version      13.55
 // @description  给网页两组关键词分别高亮蓝色和绿色，支持导出和导入已掌握的单词
 // @match        *://www.theguardian.com/*
 // @match        *://www.bbc.com/*
