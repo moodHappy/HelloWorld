@@ -1,5 +1,4 @@
 mate
-eastern
 raid
 hint
 pool
@@ -8,8 +7,6 @@ done
 fold
 spur
 cope
-eastern
-and
 tone
 pile
 gift
