@@ -1,3 +1,154 @@
+// 引入文件版本
+
+// ==UserScript==
+// @name         关键词词频统计（引入文件）
+// @namespace    http://tampermonkey.net/
+// @version      10.0
+// @description  统计网页上指定关键词的词频（适配移动端）。
+// @author       You
+// @match        *://*/*
+// @grant        none
+// ==/UserScript==
+
+(function () {
+    'use strict';
+
+    // 在线获取关键词
+    async function fetchKeywords() {
+        const url = 'https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/test.txt';
+        const response = await fetch(`${url}?t=${new Date().getTime()}`); // 添加时间戳参数
+        const text = await response.text();
+        return text.split('\n').map(keyword => keyword.trim()).filter(keyword => keyword.length > 0);
+    }
+
+    // 定义已掌握关键词数组
+    var masteredKeywords = ['run', 'write', 'study', 'read', 'White', 'watch', 'news', 'new', 'being', 'anger', 'done', 'found', 'police', 'live'];
+
+    let isPanelVisible = false; // 用于跟踪面板的显示状态
+    let wordCountBox = null; // 存储结果面板的元素
+    let toggleButton = null; // 存储切换按钮的元素
+
+    // 辅助函数：创建用于显示结果的浮动UI
+    function createResultsBox() {
+        const box = document.createElement('div');
+        box.id = 'wordFrequencyBox';
+        box.style.position = 'fixed';
+        box.style.bottom = '60px'; 
+        box.style.left = '10px';
+        box.style.right = '10px';
+        box.style.maxHeight = '50%';
+        box.style.overflowY = 'auto';
+        box.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+        box.style.border = '2px solid #000';
+        box.style.padding = '10px';
+        box.style.zIndex = '10000';
+        box.style.fontSize = '16px';
+        box.style.lineHeight = '1.5';
+        box.style.fontFamily = 'Arial, sans-serif';
+        box.style.borderRadius = '10px';
+        box.style.boxShadow = '0px 0px 10px rgba(0,0,0,0.5)';
+        box.style.color = '#333';
+        box.style.display = 'none';
+        return box;
+    }
+
+    // 统计关键词频率的函数
+    async function countWords(text) {
+        const allKeywords = await fetchKeywords();
+        const words = text.match(/\b\w+\b/g);
+        const wordCount = {};
+
+        words.forEach(word => {
+            word = word.toLowerCase();
+            // 仅统计未掌握的关键词
+            if (allKeywords.includes(word) && !masteredKeywords.includes(word)) {
+                wordCount[word] = (wordCount[word] || 0) + 1;
+            }
+        });
+
+        // 过滤掉频率小于2的词汇
+        for (const word in wordCount) {
+            if (wordCount[word] < 2) {
+                delete wordCount[word];
+            }
+        }
+
+        return wordCount;
+    }
+
+    // 格式化并展示词频结果的函数
+    async function displayWordCount(wordCount) {
+        if (!wordCountBox) {
+            wordCountBox = createResultsBox();
+            document.body.appendChild(wordCountBox);
+        }
+
+        wordCountBox.innerHTML = ''; 
+        const sortedWords = Object.keys(wordCount).sort((a, b) => wordCount[b] - wordCount[a]);
+
+        sortedWords.forEach(word => {
+            const count = wordCount[word];
+            const p = document.createElement('p');
+            p.textContent = `${word}: ${count}`;
+            wordCountBox.appendChild(p);
+        });
+    }
+
+    // 从页面中提取可见文本的函数
+    function extractVisibleText() {
+        return document.body.innerText;
+    }
+
+    // 切换结果面板的显示状态
+    function toggleWordCountPanel() {
+        isPanelVisible = !isPanelVisible;
+        wordCountBox.style.display = isPanelVisible ? 'block' : 'none';
+    }
+
+    // 添加一个按钮用于切换面板显示
+    function createToggleButton() {
+        const button = document.createElement('button');
+        button.innerText = '词频统计';
+        button.style.position = 'fixed';
+        button.style.bottom = '10px';
+        button.style.right = '10px';
+        button.style.padding = '10px 15px';
+        button.style.backgroundColor = '#007bff';
+        button.style.color = '#fff';
+        button.style.border = 'none';
+        button.style.borderRadius = '5px';
+        button.style.cursor = 'pointer';
+        button.style.zIndex = '10001';
+        button.addEventListener('click', (event) => {
+            event.stopPropagation();
+            toggleWordCountPanel();
+        });
+        document.body.appendChild(button);
+        return button;
+    }
+
+    // 隐藏面板逻辑
+    function handleDocumentClick(event) {
+        if (isPanelVisible && !wordCountBox.contains(event.target) && event.target !== toggleButton) {
+            toggleWordCountPanel();
+        }
+    }
+
+    // 主逻辑
+    async function main() {
+        const text = extractVisibleText();
+        const wordCount = await countWords(text);
+        await displayWordCount(wordCount);
+        toggleButton = createToggleButton(); 
+        document.addEventListener('click', handleDocumentClick); 
+    }
+
+    main();
+
+})();
+
+
+
 // 点击展开逻辑优化
 
 // ==UserScript==
