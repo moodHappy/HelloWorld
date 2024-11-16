@@ -1,6 +1,6 @@
 
 
-[已掌握](https://github.com/moodHappy/HelloWorld/blob/master/Highlight%2Fscript%2Fkeywords%2Ftwo.txt)
+[四星五星难点](https://github.com/moodHappy/HelloWorld/blob/master/Highlight%2Fscript%2Fkeywords%2Ftwo.txt)
 
 # **NCE Notes**  
 ## **目录**  
