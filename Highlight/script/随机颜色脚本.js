@@ -1,3 +1,242 @@
+// 引入双文件/双色版
+
+// ==UserScript==
+// @name         蓝色与绿色关键词高亮（引入文件）
+// @namespace    https://greasyfork.org/zh-TW
+// @version      1.0
+// @description  给网页两组关键词分别高亮蓝色和绿色，支持导出和导入已掌握的单词
+// @match        *://www.theguardian.com/*
+// @match        *://www.bbc.com/*
+// @grant        none
+// ==/UserScript==
+
+(function () {
+    'use strict';
+
+    // 在线获取关键词（蓝色）
+    async function fetchBlueKeywords() {
+        const url = 'https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/three.txt';
+        const response = await fetch(`${url}?t=${new Date().getTime()}`);
+        const text = await response.text();
+        return text.split('\n').map(keyword => keyword.trim()).filter(keyword => keyword.length > 0);
+    }
+
+    // 在线获取关键词（绿色）
+    async function fetchGreenKeywords() {
+        const url = 'https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/two.txt';
+        const response = await fetch(`${url}?t=${new Date().getTime()}`);
+        const text = await response.text();
+        return text.split('\n').map(keyword => keyword.trim()).filter(keyword => keyword.length > 0);
+    }
+
+    // 从 localStorage 中加载已掌握的关键词
+    let masteredBlueKeywords = JSON.parse(localStorage.getItem('masteredBlueKeywords')) || [];
+    let masteredGreenKeywords = JSON.parse(localStorage.getItem('masteredGreenKeywords')) || [];
+
+    // 生成蓝色和绿色
+    function getColor(type) {
+        return type === 'blue' ? 'rgb(0,0,255)' : 'rgb(0,128,0)'; // 蓝色或绿色
+    }
+
+    // 遍历文本节点并替换关键词
+    async function replaceKeywords() {
+        const blueKeywords = await fetchBlueKeywords();
+        const greenKeywords = await fetchGreenKeywords();
+
+        const filteredBlueKeywords = blueKeywords.filter(keyword => !masteredBlueKeywords.includes(keyword.toLowerCase()));
+        const filteredGreenKeywords = greenKeywords.filter(keyword => !masteredGreenKeywords.includes(keyword.toLowerCase()));
+
+        const blueRegex = createRegex(filteredBlueKeywords);
+        const greenRegex = createRegex(filteredGreenKeywords);
+
+        const textNodes = getTextNodes();
+
+        textNodes.forEach(node => {
+            const originalText = node.textContent;
+
+            if (blueRegex.test(originalText) || greenRegex.test(originalText)) {
+                const parent = node.parentNode;
+                let newHtml = originalText;
+
+                if (blueRegex.test(originalText)) {
+                    newHtml = newHtml.replace(blueRegex, match => `<span style="color:${getColor('blue')}">${match}</span>`);
+                }
+                if (greenRegex.test(originalText)) {
+                    newHtml = newHtml.replace(greenRegex, match => `<span style="color:${getColor('green')}">${match}</span>`);
+                }
+
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = newHtml;
+                while (tempDiv.firstChild) {
+                    parent.insertBefore(tempDiv.firstChild, node);
+                }
+                parent.removeChild(node);
+            }
+        });
+    }
+
+    // 构建词形变化正则表达式
+    function createRegex(keywords) {
+        const regexParts = keywords.map(word => {
+            const base = word.toLowerCase();
+            return `\\b(${base}|${base}s?|${base.replace(/y$/, 'i')}es?|${base}ed|${base}ing|${base}d|${base}er|${base}est|${base}ly|${base.replace(/y$/, 'ily')}|${base.replace(/ic$/, 'ically')}|${base.replace(/le$/, 'ly')})\\b`;
+        });
+        return new RegExp(regexParts.join('|'), 'gi');
+    }
+
+    // 获取所有的文本节点
+    function getTextNodes() {
+        const nodes = [];
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+        let node;
+        while (node = walker.nextNode()) {
+            nodes.push(node);
+        }
+        return nodes;
+    }
+
+    // 按钮操作：标记已掌握单词
+    function markAsMastered(keyword, type) {
+        const key = type === 'blue' ? 'masteredBlueKeywords' : 'masteredGreenKeywords';
+        let masteredKeywords = JSON.parse(localStorage.getItem(key)) || [];
+        if (!masteredKeywords.includes(keyword.toLowerCase())) {
+            masteredKeywords.push(keyword.toLowerCase());
+            localStorage.setItem(key, JSON.stringify(masteredKeywords));
+        }
+    }
+
+    // 导出已掌握的单词
+    function exportMasteredWords() {
+        const blueWords = JSON.parse(localStorage.getItem('masteredBlueKeywords')) || [];
+        const greenWords = JSON.parse(localStorage.getItem('masteredGreenKeywords')) || [];
+        const combinedWords = [...new Set([...blueWords, ...greenWords])];
+
+        const data = combinedWords.join('\n');
+        const blob = new Blob([data], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'mastered_keywords.txt';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    // 导入已掌握的单词
+    function importMasteredWords() {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = '.txt';
+        input.onchange = function(e) {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const text = event.target.result;
+                const words = text.split('\n').map(word => word.trim()).filter(word => word.length > 0);
+                // 将导入的已掌握单词存入localStorage
+                const blueWords = JSON.parse(localStorage.getItem('masteredBlueKeywords')) || [];
+                const greenWords = JSON.parse(localStorage.getItem('masteredGreenKeywords')) || [];
+                const newBlueWords = [...new Set([...blueWords, ...words])];
+                const newGreenWords = [...new Set([...greenWords, ...words])];
+                localStorage.setItem('masteredBlueKeywords', JSON.stringify(newBlueWords));
+                localStorage.setItem('masteredGreenKeywords', JSON.stringify(newGreenWords));
+            };
+            reader.readAsText(file);
+        };
+        input.click();
+    }
+
+    // 添加样式
+    const style = document.createElement('style');
+    style.innerHTML = `
+        /* 唤出按钮 */
+        #trigger-button {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        /* 按钮容器 */
+        #buttons-container {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none; /* 初始隐藏 */
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 100%;
+            max-width: 360px;
+            z-index: 999;
+        }
+
+        /* 单个按钮样式 */
+        #buttons-container button {
+            flex: 1;
+            margin: 0 5px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        #buttons-container button:hover {
+            background-color: #0056b3;
+        }
+    `;
+    document.head.appendChild(style);
+
+    // 添加触发按钮
+    const triggerButton = document.createElement('button');
+    triggerButton.id = 'trigger-button';
+    document.body.appendChild(triggerButton);
+
+    // 添加按钮容器及三个按钮
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.id = 'buttons-container';
+    document.body.appendChild(buttonsContainer);
+
+    const buttonNames = ['导出已掌握', '导入已掌握', '标记已掌握'];
+    buttonNames.forEach(name => {
+        const button = document.createElement('button');
+        button.innerText = name;
+        buttonsContainer.appendChild(button);
+    });
+
+    // 按钮点击事件绑定
+    buttonsContainer.children[0].onclick = exportMasteredWords;
+    buttonsContainer.children[1].onclick = importMasteredWords;
+    buttonsContainer.children[2].onclick = function () {
+        const keyword = prompt('请输入已掌握的单词:');
+        if (keyword) {
+            markAsMastered(keyword, 'blue');
+            markAsMastered(keyword, 'green');
+        }
+    };
+
+// 触发按钮事件绑定
+    triggerButton.addEventListener('click', () => {
+        const isVisible = buttonsContainer.style.display === 'flex';
+        buttonsContainer.style.display = isVisible ? 'none' : 'flex';
+    });
+
+    // 初次加载时替换网页中的关键词
+    replaceKeywords();
+
+})();
+
+
 // 引入文件版
 
 // ==UserScript==
