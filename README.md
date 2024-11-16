@@ -1,6 +1,6 @@
 
 
-[已掌握](https://github.com/moodHappy/HelloWorld/blob/master/Highlight%2Fscript%2F%E5%B7%B2%E6%8E%8C%E6%8F%A1.js)
+[已掌握](https://github.com/moodHappy/HelloWorld/blob/master/Highlight%2Fscript%2Fkeywords%2Ftwo.txt)
 
 # **NCE Notes**  
 ## **目录**  
