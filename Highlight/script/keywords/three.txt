@@ -1,3 +1,4 @@
+help
 mate
 raid
 hint
