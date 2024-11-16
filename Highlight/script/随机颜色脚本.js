@@ -1,7 +1,7 @@
 // 引入文件版
 
 // ==UserScript==
-// @name         蓝色（支持词形变化）引入文件
+// @name         三星蓝色（引入文件）
 // @namespace    https://greasyfork.org/zh-TW
 // @version      11.0
 // @description  给网页关键词及其词形变化改变成蓝色，支持导出和导入已掌握的单词
