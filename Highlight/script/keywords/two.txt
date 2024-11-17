@@ -7,3 +7,4 @@ resident
 station
 poll
 prospect
+condition
