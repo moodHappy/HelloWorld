@@ -3,3 +3,4 @@ term
 active
 responsible
 abuse
+resident
