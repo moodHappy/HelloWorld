@@ -16,3 +16,4 @@ character
 subject
 sentence
 correspondent
+purpose
