@@ -10,3 +10,4 @@ prospect
 condition
 public
 achieve
+impose
