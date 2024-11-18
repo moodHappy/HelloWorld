@@ -17,4 +17,5 @@ subject
 sentence
 correspondent
 purpose
+proposal
 legal
