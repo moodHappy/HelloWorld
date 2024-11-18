@@ -19,3 +19,4 @@ correspondent
 purpose
 proposal
 legal
+medical
