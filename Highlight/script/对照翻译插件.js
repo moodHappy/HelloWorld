@@ -1,7 +1,7 @@
 // 添加选中弹出释义并发音
 
 // ==UserScript==
-// @name         沉浸式翻译
+// @name         对照翻译
 // @namespace    http://tampermonkey.net/
 // @version      1.8.5
 // @description  Display bilingual translations, enable word lookup and pronunciation for English learners on BBC mobile, with a toggle switch using two-finger touch.
