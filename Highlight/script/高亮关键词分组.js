@@ -1,264 +1,8 @@
-// 分组、取消高亮JSON
-
-// ==UserScript==
-// @name         关键词高亮
-// @namespace    http://tampermonkey.net/
-// @version      3.0
-// @description  Highlight keywords on a webpage with grouping and custom colors. Supports inflection matching and bulk removal via JSON.
-// @author       You
-// @match        *://*/*
-// @grant        GM_addStyle
-// @grant        GM_registerMenuCommand
-// @grant        GM_getValue
-// @grant        GM_setValue
-// ==/UserScript==
-
-// CSS for highlighted text with groups
-GM_addStyle(`
-.highlighted.group-1 { color: red; font-weight: bold; }
-.highlighted.group-2 { color: green; font-weight: bold; }
-.highlighted.group-3 { color: blue; font-weight: bold; }
-.highlighted.group-4 { color: orange; font-weight: bold; }
-.highlighted.group-5 { color: purple; font-weight: bold; }
-`);
-
-// Function to get stored grouped keywords
-async function getGroupedKeywords() {
-return (await GM_getValue("groupedKeywords", {}));
-}
-
-// Function to save grouped keywords
-async function setGroupedKeywords(groupedKeywords) {
-await GM_setValue("groupedKeywords", groupedKeywords);
-}
-
-// Function to get ignored (deleted) keywords from localStorage
-function getIgnoredKeywords() {
-const ignoredKeywords = localStorage.getItem("ignoredKeywords");
-return ignoredKeywords ? JSON.parse(ignoredKeywords) : [];
-}
-
-// Function to save ignored (deleted) keywords to localStorage
-function setIgnoredKeywords(ignoredKeywords) {
-localStorage.setItem("ignoredKeywords", JSON.stringify(ignoredKeywords));
-}
-
-// Function to highlight grouped keywords with inflection matching
-async function doHighlight(container) {
-const groupedKeywords = await getGroupedKeywords();
-if (!Object.keys(groupedKeywords).length) return;
-
-const ignoredKeywords = getIgnoredKeywords();
-const groupRegexes = Object.entries(groupedKeywords).map(([group, keywords]) => {
-const patterns = keywords.map(wordText => {
-return '\\b(' +
-wordText + '|' +
-wordText + 's?' + '|' +
-wordText.replace(/y$/, 'i') + 'es?' + '|' +
-wordText + 'ed' + '|' +
-wordText + 'ing' + '|' +
-wordText + 'd' + '|' +
-wordText + 'er' + '|' +
-wordText + 'est' + '|' +
-wordText + 'ly' + '|' +
-wordText.replace(/y$/, 'ily') + '|' +
-wordText.replace(/ic$/, 'ically') + '|' +
-wordText.replace(/le$/, 'ly') +
-')\\b';
-}).join("|");
-return { regex: new RegExp(patterns, "gi"), group };
-});
-
-const walker = document.createTreeWalker(
-container,
-NodeFilter.SHOW_TEXT,
-{
-acceptNode: function(node) {
-return groupRegexes.some(({ regex }) => regex.test(node.nodeValue))
-? NodeFilter.FILTER_ACCEPT
-: NodeFilter.FILTER_REJECT;
-}
-}
-);
-
-const nodesToHighlight = [];
-while (walker.nextNode()) {
-nodesToHighlight.push(walker.currentNode);
-}
-
-nodesToHighlight.forEach(node => {
-let highlightedHTML = node.nodeValue;
-groupRegexes.forEach(({ regex, group }) => {
-highlightedHTML = highlightedHTML.replace(regex, match => {
-// Skip highlighting if the keyword is in the ignored list
-if (ignoredKeywords.includes(match)) {
-return match;
-}
-return `<span class="highlighted group-${group}">${match}</span>`;
-});
-});
-const span = document.createElement("span");
-span.innerHTML = highlightedHTML;
-node.parentNode.replaceChild(span, node);
-});
-}
-
-// Menu command to add a keyword to a group
-GM_registerMenuCommand("Add Keyword to Group", async () => {
-const groupedKeywords = await getGroupedKeywords();
-const group = prompt("Enter group number (1-5):");
-if (!group || isNaN(group) || group < 1 || group > 5) return alert("Invalid group number.");
-const keyword = prompt("Enter a keyword to add:");
-if (!keyword) return;
-
-if (!groupedKeywords[group]) groupedKeywords[group] = [];
-if (!groupedKeywords[group].includes(keyword)) {
-groupedKeywords[group].push(keyword);
-await setGroupedKeywords(groupedKeywords);
-alert(`Added keyword "${keyword}" to group ${group}.`);
-await doHighlight(document.body);
-} else {
-alert(`Keyword "${keyword}" is already in group ${group}.`);
-}
-});
-
-// Menu command to delete a specific keyword from a group
-GM_registerMenuCommand("Delete Keyword from Group", async () => {
-const groupedKeywords = await getGroupedKeywords();
-const ignoredKeywords = getIgnoredKeywords();
-const group = prompt("Enter group number (1-5):");
-if (!group || isNaN(group) || group < 1 || group > 5 || !groupedKeywords[group]) {
-return alert("Invalid group number.");
-}
-const keywordToDelete = prompt(
-`Enter a keyword to delete from group ${group}:\n${groupedKeywords[group].join(", ")}`
-);
-if (!keywordToDelete) return;
-
-if (groupedKeywords[group].includes(keywordToDelete)) {
-groupedKeywords[group] = groupedKeywords[group].filter(k => k !== keywordToDelete);
-if (!groupedKeywords[group].length) delete groupedKeywords[group];
-ignoredKeywords.push(keywordToDelete);
-setIgnoredKeywords(ignoredKeywords);
-
-await setGroupedKeywords(groupedKeywords);
-alert(`Deleted keyword "${keywordToDelete}" from group ${group}.`);
-document.body.innerHTML = document.body.innerHTML; // Reset DOM to clear old highlights
-await doHighlight(document.body); // Reapply highlights
-} else {
-alert(`Keyword "${keywordToDelete}" not found in group ${group}.`);
-}
-});
-
-// Menu command to export ignored (deleted) keywords as JSON
-GM_registerMenuCommand("Export Ignored Keywords", async () => {
-const ignoredKeywords = getIgnoredKeywords();
-const json = JSON.stringify(ignoredKeywords, null, 2);
-const blob = new Blob([json], { type: "application/json" });
-const url = URL.createObjectURL(blob);
-const a = document.createElement("a");
-a.href = url;
-a.download = "ignored_keywords.json";
-document.body.appendChild(a);
-a.click();
-document.body.removeChild(a);
-URL.revokeObjectURL(url);
-});
-
-
-
-// Menu command to import ignored (deleted) keywords from JSON
-GM_registerMenuCommand("Import Ignored Keywords", async () => {
-const fileInput = document.createElement("input");
-fileInput.type = "file";
-fileInput.accept = "application/json";
-fileInput.addEventListener("change", async (event) => {
-const file = event.target.files[0];
-if (!file) return;
-
-const reader = new FileReader();
-reader.onload = async () => {
-try {
-const importedKeywords = JSON.parse(reader.result);
-if (!Array.isArray(importedKeywords)) throw new Error("Invalid JSON format.");
-
-// 从 localStorage 获取当前的已忽略单词
-const ignoredKeywords = JSON.parse(localStorage.getItem('ignoredKeywords')) || [];
-
-// 合并导入的单词与当前的已忽略单词
-const mergedKeywords = [...new Set([...ignoredKeywords, ...importedKeywords])];
-
-// 将合并后的单词存回 localStorage
-localStorage.setItem('ignoredKeywords', JSON.stringify(mergedKeywords));
-
-alert("Keywords imported successfully.");
-} catch (error) {
-alert("Failed to import keywords: " + error.message);
-}
-};
-reader.readAsText(file);
-});
-fileInput.click();
-});
-
-
-
-
-
-// Menu command to import keywords from a URL (txt file, one keyword per line)
-GM_registerMenuCommand("Import Keywords from URL", async () => {
-const url = prompt("Enter the URL to fetch keywords (txt file with one keyword per line):");
-if (!url) return;
-
-try {
-const response = await fetch(url);
-const text = await response.text();
-const keywords = text.split("\n").map(keyword => keyword.trim()).filter(Boolean);
-
-if (keywords.length === 0) {
-return alert("No keywords found in the file.");
-}
-
-const group = prompt("Enter group number (1-5):");
-if (!group || isNaN(group) || group < 1 || group > 5) return alert("Invalid group number.");
-
-const groupedKeywords = await getGroupedKeywords();
-if (!groupedKeywords[group]) groupedKeywords[group] = [];
-
-keywords.forEach(keyword => {
-if (!groupedKeywords[group].includes(keyword)) {
-groupedKeywords[group].push(keyword);
-}
-});
-
-await setGroupedKeywords(groupedKeywords);
-alert(`Imported ${keywords.length} keywords to group ${group}.`);
-await doHighlight(document.body);
-} catch (e) {
-alert("Failed to fetch or parse the URL.");
-}
-});
-
-// Menu command to clear all keywords
-GM_registerMenuCommand("Clear All Keywords", async () => {
-if (confirm("Are you sure you want to clear all keywords?")) {
-await setGroupedKeywords({});
-document.body.innerHTML = document.body.innerHTML; // Reset DOM to clear highlights
-alert("All keywords cleared.");
-}
-});
-
-// Initial highlighting
-(async () => {
-await doHighlight(document.body);
-})();
-
-
 // ==UserScript==
 // @name         关键词高亮（支持分组）
 // @namespace    http://tampermonkey.net/
-// @version      2.4
-// @description  Highlight keywords on a webpage with grouping and custom colors. Supports inflection matching and bulk removal via JSON.
+// @version      2.7
+// @description  Highlight keywords on a webpage with grouping and custom colors. Supports inflection matching. Includes feature to remove highlights using keywords from a remote URL.
 // @author       You
 // @match        *://*/*
 // @grant        GM_addStyle
@@ -286,14 +30,35 @@ async function setGroupedKeywords(groupedKeywords) {
   await GM_setValue("groupedKeywords", groupedKeywords);
 }
 
-// Function to get deleted keywords
-async function getDeletedKeywords() {
-  return (await GM_getValue("deletedKeywords", []));
-}
+// Function to remove highlights for specific keywords
+async function removeHighlightsByKeywords(container, keywordsToRemove) {
+  const keywordsRegex = new RegExp(
+    keywordsToRemove.map(word => `\\b${word}\\b`).join("|"),
+    "gi"
+  );
 
-// Function to save deleted keywords
-async function setDeletedKeywords(deletedKeywords) {
-  await GM_setValue("deletedKeywords", deletedKeywords);
+  const walker = document.createTreeWalker(
+    container,
+    NodeFilter.SHOW_ELEMENT,
+    {
+      acceptNode: function (node) {
+        return node.classList?.contains("highlighted") && keywordsRegex.test(node.textContent)
+          ? NodeFilter.FILTER_ACCEPT
+          : NodeFilter.FILTER_REJECT;
+      },
+    }
+  );
+
+  const nodesToRemove = [];
+  while (walker.nextNode()) {
+    nodesToRemove.push(walker.currentNode);
+  }
+
+  nodesToRemove.forEach(node => {
+    const parent = node.parentNode;
+    parent.replaceChild(document.createTextNode(node.textContent), node);
+    parent.normalize(); // Merge adjacent text nodes
+  });
 }
 
 // Function to highlight grouped keywords with inflection matching
@@ -325,7 +90,7 @@ async function doHighlight(container) {
     container,
     NodeFilter.SHOW_TEXT,
     {
-      acceptNode: function(node) {
+      acceptNode: function (node) {
         return groupRegexes.some(({ regex }) => regex.test(node.nodeValue))
           ? NodeFilter.FILTER_ACCEPT
           : NodeFilter.FILTER_REJECT;
@@ -349,101 +114,66 @@ async function doHighlight(container) {
   });
 }
 
-// Menu command to add a keyword to a group
-GM_registerMenuCommand("Add Keyword to Group", async () => {
-  const groupedKeywords = await getGroupedKeywords();
-  const group = prompt("Enter group number (1-5):");
-  if (!group || isNaN(group) || group < 1 || group > 5) return alert("Invalid group number.");
-  const keyword = prompt("Enter a keyword to add:");
-  if (!keyword) return;
+// Menu command to import keywords from a remote TXT file
+GM_registerMenuCommand("Import Keywords from URL", async () => {
+  const baseURL = prompt("Enter the base URL of the TXT file (timestamp will be added automatically):");
+  if (!baseURL) return alert("URL is required.");
 
-  if (!groupedKeywords[group]) groupedKeywords[group] = [];
-  if (!groupedKeywords[group].includes(keyword)) {
-    groupedKeywords[group].push(keyword);
-    await setGroupedKeywords(groupedKeywords);
-    alert(`Added keyword "${keyword}" to group ${group}.`);
-    await doHighlight(document.body);
-  } else {
-    alert(`Keyword "${keyword}" is already in group ${group}.`);
-  }
-});
+  try {
+    const timestampedURL = `${baseURL}?t=${Date.now()}`;
+    const response = await fetch(timestampedURL);
+    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+    const text = await response.text();
+    const keywords = text.split(/\r?\n/).filter(word => word.trim());
 
-// Menu command to delete a specific keyword from a group
-GM_registerMenuCommand("Delete Keyword from Group", async () => {
-  const groupedKeywords = await getGroupedKeywords();
-  const deletedKeywords = await getDeletedKeywords();
-  const group = prompt("Enter group number (1-5):");
-  if (!group || isNaN(group) || group < 1 || group > 5 || !groupedKeywords[group]) {
-    return alert("Invalid group number.");
-  }
-  const keywordToDelete = prompt(
-    `Enter a keyword to delete from group ${group}:\n${groupedKeywords[group].join(", ")}`
-  );
-  if (!keywordToDelete) return;
+    if (!keywords.length) return alert("No keywords found in the file.");
 
-  if (groupedKeywords[group].includes(keywordToDelete)) {
-    groupedKeywords[group] = groupedKeywords[group].filter(k => k !== keywordToDelete);
-    if (!groupedKeywords[group].length) delete groupedKeywords[group];
-    deletedKeywords.push({ group, keyword: keywordToDelete });
-    await setGroupedKeywords(groupedKeywords);
-    await setDeletedKeywords(deletedKeywords);
+    const groupedKeywords = await getGroupedKeywords();
+    const group = prompt("Enter group number (1-5) to add these keywords:");
+    if (!group || isNaN(group) || group < 1 || group > 5) return alert("Invalid group number.");
 
-    alert(`Deleted keyword "${keywordToDelete}" from group ${group}.`);
-    document.body.innerHTML = document.body.innerHTML; // Reset DOM to clear old highlights
-    await doHighlight(document.body); // Reapply highlights
-  } else {
-    alert(`Keyword "${keywordToDelete}" not found in group ${group}.`);
-  }
-});
-
-// Menu command to export deleted keywords as JSON
-GM_registerMenuCommand("Export Deleted Keywords", async () => {
-  const deletedKeywords = await getDeletedKeywords();
-  const json = JSON.stringify(deletedKeywords, null, 2);
-  const blob = new Blob([json], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "deleted_keywords.json";
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-});
-
-// Menu command to import deleted keywords from JSON
-GM_registerMenuCommand("Import Deleted Keywords", async () => {
-  const fileInput = document.createElement("input");
-  fileInput.type = "file";
-  fileInput.accept = "application/json";
-  fileInput.addEventListener("change", async (event) => {
-    const file = event.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = async () => {
-      try {
-        const importedKeywords = JSON.parse(reader.result);
-        if (!Array.isArray(importedKeywords)) throw new Error("Invalid JSON format.");
-        const deletedKeywords = await getDeletedKeywords();
-        const mergedKeywords = [...deletedKeywords, ...importedKeywords];
-        await setDeletedKeywords(mergedKeywords);
-        alert("Keywords imported successfully.");
-      } catch (error) {
-        alert("Failed to import keywords: " + error.message);
+    if (!groupedKeywords[group]) groupedKeywords[group] = [];
+    keywords.forEach(keyword => {
+      if (!groupedKeywords[group].includes(keyword)) {
+        groupedKeywords[group].push(keyword);
       }
-    };
-    reader.readAsText(file);
-  });
-  fileInput.click();
+    });
+
+    await setGroupedKeywords(groupedKeywords);
+    alert(`Imported ${keywords.length} keywords into group ${group}.`);
+    await doHighlight(document.body);
+  } catch (error) {
+    alert(`Failed to fetch keywords: ${error.message}`);
+  }
 });
 
-// Menu command to clear all keywords
-GM_registerMenuCommand("Clear All Keywords", async () => {
-  if (confirm("Are you sure you want to clear all keywords?")) {
-    await setGroupedKeywords({});
-    document.body.innerHTML = document.body.innerHTML; // Reset DOM to clear highlights
-    alert("All keywords cleared.");
+// Menu command to remove highlights using keywords from a remote URL
+GM_registerMenuCommand("Remove Highlights from URL", async () => {
+  const baseURL = prompt("Enter the base URL of the TXT file for keywords to remove (timestamp will be added automatically):");
+  if (!baseURL) return alert("URL is required.");
+
+  try {
+    const timestampedURL = `${baseURL}?t=${Date.now()}`;
+    const response = await fetch(timestampedURL);
+    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+    const text = await response.text();
+    const keywordsToRemove = text.split(/\r?\n/).filter(word => word.trim());
+
+    if (!keywordsToRemove.length) return alert("No keywords found in the file.");
+
+    // First, remove highlights for the keywords to be removed
+    await removeHighlightsByKeywords(document.body, keywordsToRemove);
+
+    // Then, remove those keywords from the stored groupedKeywords
+    const groupedKeywords = await getGroupedKeywords();
+    Object.entries(groupedKeywords).forEach(([group, keywords]) => {
+      groupedKeywords[group] = keywords.filter(keyword => !keywordsToRemove.includes(keyword));
+    });
+
+    await setGroupedKeywords(groupedKeywords);
+    alert(`Removed highlights for ${keywordsToRemove.length} keywords.`);
+  } catch (error) {
+    alert(`Failed to fetch keywords: ${error.message}`);
   }
 });
 
