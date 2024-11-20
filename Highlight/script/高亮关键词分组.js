@@ -5,12 +5,14 @@
 // @description  Highlight keywords on a webpage, including their inflected forms such as plurals, tenses, and adverbs
 // @author       You
 // @match        *://*/*
+// @exclude      *://www.bbc.com/news/*
+// @exclude      *://bbc.co.uk/news/*
 // @grant        GM_addStyle
 // @grant        GM_registerMenuCommand
 // @grant        GM_getValue
 // @grant        GM_setValue
-// @downloadURL https://update.greasyfork.org/scripts/518178/%E5%85%B3%E9%94%AE%E8%AF%8D%E9%AB%98%E4%BA%AE.user.js
-// @updateURL https://update.greasyfork.org/scripts/518178/%E5%85%B3%E9%94%AE%E8%AF%8D%E9%AB%98%E4%BA%AE.meta.js
+// @downloadURL  https://update.greasyfork.org/scripts/518178/%E5%85%B3%E9%94%AE%E8%AF%8D%E9%AB%98%E4%BA%AE.user.js
+// @updateURL    https://update.greasyfork.org/scripts/518178/%E5%85%B3%E9%94%AE%E8%AF%8D%E9%AB%98%E4%BA%AE.meta.js
 // ==/UserScript==
 
 // CSS for highlighted text
