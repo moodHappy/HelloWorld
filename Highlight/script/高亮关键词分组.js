@@ -5,8 +5,8 @@
 // @description  Highlight keywords on a webpage, including their inflected forms such as plurals, tenses, and adverbs
 // @author       You
 // @match        *://*/*
-// @exclude      *://www.bbc.com/news/*
-// @exclude      *://bbc.co.uk/news/*
+// @exclude      *://www.bbc.com/*
+// @exclude      *://bbc.co.uk/*
 // @grant        GM_addStyle
 // @grant        GM_registerMenuCommand
 // @grant        GM_getValue
