@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         关键词高亮（支持分组）
 // @namespace    http://tampermonkey.net/
-// @version      2.3
-// @description  Highlight keywords on a webpage with grouping and custom colors. Supports inflection matching.
+// @version      2.4
+// @description  Highlight keywords on a webpage with grouping and custom colors. Supports inflection matching and bulk removal via JSON.
 // @author       You
 // @match        *://*/*
 // @grant        GM_addStyle
@@ -28,6 +28,16 @@ async function getGroupedKeywords() {
 // Function to save grouped keywords
 async function setGroupedKeywords(groupedKeywords) {
   await GM_setValue("groupedKeywords", groupedKeywords);
+}
+
+// Function to get deleted keywords
+async function getDeletedKeywords() {
+  return (await GM_getValue("deletedKeywords", []));
+}
+
+// Function to save deleted keywords
+async function setDeletedKeywords(deletedKeywords) {
+  await GM_setValue("deletedKeywords", deletedKeywords);
 }
 
 // Function to highlight grouped keywords with inflection matching
@@ -105,6 +115,7 @@ GM_registerMenuCommand("Add Keyword to Group", async () => {
 // Menu command to delete a specific keyword from a group
 GM_registerMenuCommand("Delete Keyword from Group", async () => {
   const groupedKeywords = await getGroupedKeywords();
+  const deletedKeywords = await getDeletedKeywords();
   const group = prompt("Enter group number (1-5):");
   if (!group || isNaN(group) || group < 1 || group > 5 || !groupedKeywords[group]) {
     return alert("Invalid group number.");
@@ -117,7 +128,9 @@ GM_registerMenuCommand("Delete Keyword from Group", async () => {
   if (groupedKeywords[group].includes(keywordToDelete)) {
     groupedKeywords[group] = groupedKeywords[group].filter(k => k !== keywordToDelete);
     if (!groupedKeywords[group].length) delete groupedKeywords[group];
+    deletedKeywords.push({ group, keyword: keywordToDelete });
     await setGroupedKeywords(groupedKeywords);
+    await setDeletedKeywords(deletedKeywords);
 
     alert(`Deleted keyword "${keywordToDelete}" from group ${group}.`);
     document.body.innerHTML = document.body.innerHTML; // Reset DOM to clear old highlights
@@ -125,6 +138,48 @@ GM_registerMenuCommand("Delete Keyword from Group", async () => {
   } else {
     alert(`Keyword "${keywordToDelete}" not found in group ${group}.`);
   }
+});
+
+// Menu command to export deleted keywords as JSON
+GM_registerMenuCommand("Export Deleted Keywords", async () => {
+  const deletedKeywords = await getDeletedKeywords();
+  const json = JSON.stringify(deletedKeywords, null, 2);
+  const blob = new Blob([json], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "deleted_keywords.json";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+});
+
+// Menu command to import deleted keywords from JSON
+GM_registerMenuCommand("Import Deleted Keywords", async () => {
+  const fileInput = document.createElement("input");
+  fileInput.type = "file";
+  fileInput.accept = "application/json";
+  fileInput.addEventListener("change", async (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = async () => {
+      try {
+        const importedKeywords = JSON.parse(reader.result);
+        if (!Array.isArray(importedKeywords)) throw new Error("Invalid JSON format.");
+        const deletedKeywords = await getDeletedKeywords();
+        const mergedKeywords = [...deletedKeywords, ...importedKeywords];
+        await setDeletedKeywords(mergedKeywords);
+        alert("Keywords imported successfully.");
+      } catch (error) {
+        alert("Failed to import keywords: " + error.message);
+      }
+    };
+    reader.readAsText(file);
+  });
+  fileInput.click();
 });
 
 // Menu command to clear all keywords
