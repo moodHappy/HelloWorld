@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         关键词高亮（支持分组和导入导出）
+// @name         关键词高亮（支持分组）
 // @namespace    http://tampermonkey.net/
-// @version      2.1
-// @description  Highlight keywords on a webpage with grouping, custom colors, and import/export functionality
+// @version      2.3
+// @description  Highlight keywords on a webpage with grouping and custom colors. Supports inflection matching.
 // @author       You
 // @match        *://*/*
 // @grant        GM_addStyle
@@ -30,13 +30,28 @@ async function setGroupedKeywords(groupedKeywords) {
   await GM_setValue("groupedKeywords", groupedKeywords);
 }
 
-// Function to highlight grouped keywords
+// Function to highlight grouped keywords with inflection matching
 async function doHighlight(container) {
   const groupedKeywords = await getGroupedKeywords();
   if (!Object.keys(groupedKeywords).length) return;
 
   const groupRegexes = Object.entries(groupedKeywords).map(([group, keywords]) => {
-    const patterns = keywords.map(wordText => `\\b(${wordText})\\b`).join("|");
+    const patterns = keywords.map(wordText => {
+      return '\\b(' +
+        wordText + '|' +
+        wordText + 's?' + '|' +
+        wordText.replace(/y$/, 'i') + 'es?' + '|' +
+        wordText + 'ed' + '|' +
+        wordText + 'ing' + '|' +
+        wordText + 'd' + '|' +
+        wordText + 'er' + '|' +
+        wordText + 'est' + '|' +
+        wordText + 'ly' + '|' +
+        wordText.replace(/y$/, 'ily') + '|' +
+        wordText.replace(/ic$/, 'ically') + '|' +
+        wordText.replace(/le$/, 'ly') +
+        ')\\b';
+    }).join("|");
     return { regex: new RegExp(patterns, "gi"), group };
   });
 
@@ -103,46 +118,12 @@ GM_registerMenuCommand("Delete Keyword from Group", async () => {
     groupedKeywords[group] = groupedKeywords[group].filter(k => k !== keywordToDelete);
     if (!groupedKeywords[group].length) delete groupedKeywords[group];
     await setGroupedKeywords(groupedKeywords);
+
     alert(`Deleted keyword "${keywordToDelete}" from group ${group}.`);
-    // Reapply highlights after deletion
     document.body.innerHTML = document.body.innerHTML; // Reset DOM to clear old highlights
     await doHighlight(document.body); // Reapply highlights
   } else {
     alert(`Keyword "${keywordToDelete}" not found in group ${group}.`);
-  }
-});
-
-// Menu command to import keywords from a URL (txt file, one keyword per line)
-GM_registerMenuCommand("Import Keywords from URL", async () => {
-  const url = prompt("Enter the URL to fetch keywords (txt file with one keyword per line):");
-  if (!url) return;
-
-  try {
-    const response = await fetch(url);
-    const text = await response.text();
-    const keywords = text.split("\n").map(keyword => keyword.trim()).filter(Boolean);
-
-    if (keywords.length === 0) {
-      return alert("No keywords found in the file.");
-    }
-
-    const group = prompt("Enter group number (1-5):");
-    if (!group || isNaN(group) || group < 1 || group > 5) return alert("Invalid group number.");
-
-    const groupedKeywords = await getGroupedKeywords();
-    if (!groupedKeywords[group]) groupedKeywords[group] = [];
-
-    keywords.forEach(keyword => {
-      if (!groupedKeywords[group].includes(keyword)) {
-        groupedKeywords[group].push(keyword);
-      }
-    });
-
-    await setGroupedKeywords(groupedKeywords);
-    alert(`Imported ${keywords.length} keywords to group ${group}.`);
-    await doHighlight(document.body);
-  } catch (e) {
-    alert("Failed to fetch or parse the URL.");
   }
 });
 
