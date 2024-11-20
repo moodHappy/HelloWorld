@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         高亮关键词
 // @namespace    http://tampermonkey.net/
-// @version      1.3
+// @version      2.0
 // @description  Highlight keywords on a webpage, including their inflected forms such as plurals, tenses, and adverbs
 // @author       You
 // @match        *://*/*
 // @exclude      *://www.bbc.com/*
 // @exclude      *://bbc.co.uk/*
+// @exclude      https://www.google.com/*
 // @grant        GM_addStyle
 // @grant        GM_registerMenuCommand
 // @grant        GM_getValue
