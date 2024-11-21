@@ -1,3 +1,4 @@
+lucky
 local
 being
 long
