@@ -2,3 +2,4 @@ long
 new
 news
 watch
+live
