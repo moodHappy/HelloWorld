@@ -1,6 +1,6 @@
 
 
-[四星五星难点](https://github.com/moodHappy/HelloWorld/blob/master/Highlight%2Fscript%2FRemove%20highlight%2F3.txt)
+[取消高亮](https://github.com/moodHappy/HelloWorld/blob/master/Highlight%2Fscript%2FRemove%20highlight%2F3.txt)
 
 # **NCE Notes**  
 ## **目录**  
