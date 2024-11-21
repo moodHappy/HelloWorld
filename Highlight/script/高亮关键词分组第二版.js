@@ -1,3 +1,127 @@
+// 判断页面是否英语版
+
+// ==UserScript==
+// @name         Highlight English Words
+// @namespace    http://tampermonkey.net/
+// @version      1.0
+// @description  Highlight English words based on remote keyword lists.
+// @author       You
+// @match        *://*/*
+// @grant        GM_xmlhttpRequest
+// @run-at       document-end
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // 判断页面是否为英语
+    if (!document.documentElement.lang || !document.documentElement.lang.startsWith('en')) {
+        console.log("Not an English page. Script halted.");
+        return;
+    }
+
+    // 四组URL，带时间戳
+    const timestamp = new Date().getTime();
+    const highlightUrls = [
+        `https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/2-2.txt?${timestamp}`,
+        `https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/3.txt?${timestamp}`,
+        `https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/45.txt?${timestamp}`,
+    ];
+    const cancelHighlightUrl = `https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/Remove%20highlight/3.txt?${timestamp}`;
+
+    const colors = ["red", "blue", "green"]; // 三组高亮颜色
+    const highlightWords = [[], [], []]; // 存储高亮单词
+    const cancelWords = []; // 存储取消高亮的单词
+
+    // Fetch remote keyword lists
+    function fetchKeywords(url, callback) {
+        GM_xmlhttpRequest({
+            method: "GET",
+            url: url,
+            onload: function(response) {
+                if (response.status === 200) {
+                    callback(response.responseText.split('\n').map(word => word.trim()).filter(Boolean));
+                } else {
+                    console.error(`Failed to fetch keywords from ${url}`);
+                }
+            }
+        });
+    }
+
+    // Fetch all keywords
+    function fetchAllKeywords() {
+        highlightUrls.forEach((url, index) => {
+            fetchKeywords(url, words => highlightWords[index] = words);
+        });
+        fetchKeywords(cancelHighlightUrl, words => {
+            cancelWords.push(...words);
+            processPage();
+        });
+    }
+
+    // 创建正则匹配器
+    function createWordRegex(wordText) {
+        return new RegExp('\\b(' +
+            wordText + '|' +
+            wordText + 's?' + '|' +
+            wordText.replace(/y$/, 'i') + 'es?' + '|' +
+            wordText + 'ed' + '|' +
+            wordText + 'ing' + '|' +
+            wordText + 'd' + '|' +
+            wordText + 'er' + '|' +
+            wordText + 'est' + '|' +
+            wordText + 'ly' + '|' +
+            wordText.replace(/y$/, 'ily') + '|' +
+            wordText.replace(/ic$/, 'ically') + '|' +
+            wordText.replace(/le$/, 'ly') +
+            ')\\b', 'gi');
+    }
+
+    // 处理页面：高亮单词
+    function processPage() {
+        const allHighlightWords = new Set();
+        highlightWords.forEach(words => words.forEach(word => allHighlightWords.add(word)));
+        const cancelWordSet = new Set(cancelWords);
+
+        // 优先取消高亮
+        const cancelRegexes = Array.from(cancelWordSet).map(createWordRegex);
+        const highlightRegexes = highlightWords.map(words => words.filter(word => !cancelWordSet.has(word)).map(createWordRegex));
+
+        function highlightNode(node) {
+            if (node.nodeType === Node.TEXT_NODE) {
+                let text = node.textContent;
+                const parent = node.parentNode;
+
+                // 取消高亮
+                cancelRegexes.forEach(regex => {
+                    text = text.replace(regex, match => match);
+                });
+
+                // 高亮单词
+                highlightRegexes.forEach((regexes, groupIndex) => {
+                    regexes.forEach(regex => {
+                        text = text.replace(regex, match => `<span style="color: ${colors[groupIndex]}">${match}</span>`);
+                    });
+                });
+
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = text;
+                while (tempDiv.firstChild) {
+                    parent.insertBefore(tempDiv.firstChild, node);
+                }
+                parent.removeChild(node);
+            } else if (node.nodeType === Node.ELEMENT_NODE && node.childNodes) {
+                node.childNodes.forEach(highlightNode);
+            }
+        }
+
+        document.body.childNodes.forEach(highlightNode);
+    }
+
+    // Fetch and process
+    fetchAllKeywords();
+})();
+
 
 // ==UserScript==
 // @name         高亮关键词并支持多种变形
