@@ -1,6 +1,5 @@
 // 优化性能
 
-
 // ==UserScript==
 // @name         高亮关键词并支持多种变形
 // @namespace    http://tampermonkey.net/
