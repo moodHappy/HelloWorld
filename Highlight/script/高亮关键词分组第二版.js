@@ -1,5 +1,158 @@
-// v3.0：功能全面，支持动态内容监控和缓存，适合复杂页面场景。
+// v3.0：支持动态内容高亮，防嵌套，性能优化全面提升。
 
+// ==UserScript==
+// @name         高亮关键词3.0
+// @namespace    http://tampermonkey.net/
+// @version      3.0
+// @description  支持动态页面内容高亮，修复嵌套问题，优化性能
+// @author       You
+// @match        *://*/*
+// @grant        GM_xmlhttpRequest
+// @connect      *
+// ==/UserScript==
+
+(function () {
+    'use strict';
+
+    if (!document.documentElement.lang || !document.documentElement.lang.startsWith('en')) {
+        console.log("Not an English page. Script halted.");
+        return;
+    }
+
+    const urls = {
+        group1: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/2-2.txt",
+        group2: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/3.txt",
+        group3: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/45.txt",
+        delete: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/Remove%20highlight/3.txt",
+    };
+
+    const colors = {
+        group1: "green",
+        group2: "blue",
+        group3: "red",
+    };
+
+    const addTimestamp = url => `${url}?t=${Date.now()}`;
+
+    async function loadKeywords(url) {
+        return new Promise((resolve, reject) => {
+            GM_xmlhttpRequest({
+                method: "GET",
+                url: addTimestamp(url),
+                onload: res => res.status === 200
+                    ? resolve(res.responseText.split("\n").map(word => word.trim()).filter(Boolean))
+                    : reject(`Failed to load ${url}`),
+                onerror: err => reject(err),
+            });
+        });
+    }
+
+    function buildRegex(word) {
+        const forms = [
+            word,
+            `${word}s?`,
+            word.replace(/y$/, "i") + "es?",
+            `${word}ed`,
+            word.replace(/e$/, "") + "ing",
+            `${word}ing`,
+            `${word}d`,
+            `${word}er`,
+            `${word}est`,
+            `${word}ly`,
+            word.replace(/y$/, "ily"),
+            word.replace(/ic$/, "ically"),
+            word.replace(/le$/, "ly"),
+        ];
+        return new RegExp(`\\b(${forms.join("|")})\\b`, "gi");
+    }
+
+    function highlightTextNode(node, regexList, color) {
+        if (node.parentNode && node.parentNode.hasAttribute('data-highlighted')) {
+            return; // 防止嵌套
+        }
+
+        const matches = regexList.find(regex => regex.test(node.nodeValue));
+        if (matches) {
+            const span = document.createElement("span");
+            span.setAttribute("data-highlighted", "true");
+            span.innerHTML = node.nodeValue.replace(matches, match => `<span style="color: ${color}; font-weight: bold;">${match}</span>`);
+            node.replaceWith(span);
+        }
+    }
+
+    function traverseAndHighlight(node, regexList, color) {
+        if (node.nodeType === 3 && node.nodeValue.trim()) { // 文本节点
+            highlightTextNode(node, regexList, color);
+        } else if (node.nodeType === 1 && node.childNodes && !/^(script|style|iframe|noscript|textarea)$/i.test(node.tagName)) {
+            Array.from(node.childNodes).forEach(child => traverseAndHighlight(child, regexList, color));
+        }
+    }
+
+    function batchHighlight(nodes, regexes, color) {
+        nodes.forEach(node => {
+            traverseAndHighlight(node, regexes, color);
+        });
+    }
+
+    async function main() {
+        try {
+            const [deleteKeywords, group1Keywords, group2Keywords, group3Keywords] = await Promise.all([
+                loadKeywords(urls.delete),
+                loadKeywords(urls.group1),
+                loadKeywords(urls.group2),
+                loadKeywords(urls.group3),
+            ]);
+
+            const deleteRegexList = deleteKeywords.map(buildRegex);
+            const groupRegexes = {
+                group1: group1Keywords.filter(k => !deleteRegexList.some(regex => regex.test(k))).map(buildRegex),
+                group2: group2Keywords.filter(k => !deleteRegexList.some(regex => regex.test(k))).map(buildRegex),
+                group3: group3Keywords.filter(k => !deleteRegexList.some(regex => regex.test(k))).map(buildRegex),
+            };
+
+            const highlightGroups = [
+                { regexes: groupRegexes.group1, color: colors.group1 },
+                { regexes: groupRegexes.group2, color: colors.group2 },
+                { regexes: groupRegexes.group3, color: colors.group3 },
+            ];
+
+            highlightGroups.forEach(({ regexes, color }) => {
+                traverseAndHighlight(document.body, regexes, color);
+            });
+
+            const observer = new MutationObserver(mutationsList => {
+                const nodesToProcess = [];
+                mutationsList.forEach(mutation => {
+                    if (mutation.addedNodes.length) {
+                        mutation.addedNodes.forEach(node => {
+                            if (node.nodeType === 1) {
+                                nodesToProcess.push(node);
+                            }
+                        });
+                    }
+                });
+
+                if (nodesToProcess.length) {
+                    requestIdleCallback(() => {
+                        highlightGroups.forEach(({ regexes, color }) => {
+                            batchHighlight(nodesToProcess, regexes, color);
+                        });
+                    });
+                }
+            });
+
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true,
+            });
+
+        } catch (err) {
+            console.error("Error during execution:", err);
+        }
+    }
+
+    main();
+})();
 
 // v2.5：专注性能优化，适合静态页面，一次性快速高亮内容。
 
