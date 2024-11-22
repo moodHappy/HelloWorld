@@ -1,3 +1,216 @@
+// 8.0：加入了IntersectionObserver来提升页面动态内容的高亮效果，避免不必要的DOM操作。
+
+// ==UserScript==
+// @name         高亮关键词
+// @namespace    http://tampermonkey.net/
+// @version      8.0
+// @description  支持动态页面内容高亮，优化性能，避免嵌套问题
+// @author       You
+// @match        *://*/*
+// @grant        GM_xmlhttpRequest
+// @connect      *
+// ==/UserScript==
+
+(function () {
+    'use strict';
+
+    if (!document.documentElement.lang || !document.documentElement.lang.startsWith('en')) {
+        console.log("Not an English page. Script halted.");
+        return;
+    }
+
+    const CACHE_DB_NAME = "KeywordHighlightCache";
+    const CACHE_STORE_NAME = "keywords";
+    const CACHE_EXPIRY = 3600 * 1000; // 默认缓存有效期1小时
+
+    const urls = {
+        group1: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/2-2.txt",
+        group2: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/3.txt",
+        group3: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/45.txt",
+        delete: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/Remove%20highlight/3.txt",
+    };
+
+    const colors = {
+        group1: "green",
+        group2: "blue",
+        group3: "red",
+    };
+
+    // IndexedDB 操作
+    const dbPromise = new Promise((resolve, reject) => {
+        const request = indexedDB.open(CACHE_DB_NAME, 1);
+        request.onupgradeneeded = (event) => {
+            const db = event.target.result;
+            if (!db.objectStoreNames.contains(CACHE_STORE_NAME)) {
+                db.createObjectStore(CACHE_STORE_NAME, { keyPath: "key" });
+            }
+        };
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+    });
+
+    async function getCachedData(key) {
+        const db = await dbPromise;
+        return new Promise((resolve, reject) => {
+            const transaction = db.transaction(CACHE_STORE_NAME, "readonly");
+            const store = transaction.objectStore(CACHE_STORE_NAME);
+            const request = store.get(key);
+
+            request.onsuccess = () => {
+                const entry = request.result;
+                if (entry && entry.expiry > Date.now()) {
+                    resolve(entry.data);
+                } else {
+                    resolve(null);
+                }
+            };
+            request.onerror = () => reject(request.error);
+        });
+    }
+
+    async function setCachedData(key, data, expiry = CACHE_EXPIRY) {
+        const db = await dbPromise;
+        return new Promise((resolve, reject) => {
+            const transaction = db.transaction(CACHE_STORE_NAME, "readwrite");
+            const store = transaction.objectStore(CACHE_STORE_NAME);
+            const request = store.put({
+                key: key,
+                data: data,
+                expiry: Date.now() + expiry,
+            });
+
+            request.onsuccess = () => resolve();
+            request.onerror = () => reject(request.error);
+        });
+    }
+
+    // 从缓存或请求获取关键词
+    async function fetchKeywords(url, cacheKey) {
+        const cachedData = await getCachedData(cacheKey);
+        if (cachedData) {
+            console.log(`Loaded ${cacheKey} from cache.`);
+            return cachedData;
+        }
+
+        return new Promise((resolve, reject) => {
+            GM_xmlhttpRequest({
+                method: "GET",
+                url: url,
+                onload: (res) => {
+                    if (res.status === 200) {
+                        const keywords = res.responseText.split("\n").map((word) => word.trim()).filter(Boolean);
+                        setCachedData(cacheKey, keywords);
+                        console.log(`Fetched and cached ${cacheKey}.`);
+                        resolve(keywords);
+                    } else {
+                        reject(`Failed to load ${url}`);
+                    }
+                },
+                onerror: (err) => reject(err),
+            });
+        });
+    }
+
+    // 使用Set来优化匹配效率
+    const regexCache = new Map();
+
+    function buildRegex(word) {
+        if (regexCache.has(word)) return regexCache.get(word);
+
+        const forms = [
+            word,
+            `${word}s?`,
+            word.replace(/y$/, "i") + "es?",
+            `${word}ed`,
+            word.replace(/e$/, "") + "ing",
+            `${word}ing`,
+            `${word}d`,
+            `${word}er`,
+            `${word}est`,
+            `${word}ly`,
+            word.replace(/y$/, "ily"),
+            word.replace(/ic$/, "ically"),
+            word.replace(/le$/, "ly"),
+        ];
+
+        const regex = new RegExp(`\\b(${forms.join("|")})\\b`, "gi");
+        regexCache.set(word, regex); // 使用Map缓存正则
+        return regex;
+    }
+
+    // 高亮文本节点
+    function highlightTextNode(node, regexList, color) {
+        if (node.parentNode && node.parentNode.hasAttribute("data-highlighted")) {
+            return; // 防止嵌套
+        }
+
+        regexList.forEach((regex) => {
+            if (regex.test(node.nodeValue)) {
+                const span = document.createElement("span");
+                span.setAttribute("data-highlighted", "true");
+                span.innerHTML = node.nodeValue.replace(regex, (match) => `<span style="color: ${color}; font-weight: bold;">${match}</span>`);
+                node.replaceWith(span);
+            }
+        });
+    }
+
+    // 遍历并高亮文本节点
+    function traverseAndHighlight(node, regexList, color) {
+        if (node.nodeType === 3 && node.nodeValue.trim()) {
+            highlightTextNode(node, regexList, color);
+        } else if (node.nodeType === 1 && node.childNodes && !/^(script|style|iframe|noscript|textarea)$/i.test(node.tagName)) {
+            Array.from(node.childNodes).forEach((child) => traverseAndHighlight(child, regexList, color));
+        }
+    }
+
+    // 使用IntersectionObserver优化性能
+    function observeAndHighlight(regexLists) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    regexLists.forEach(({ regexList, color }) => {
+                        traverseAndHighlight(element, regexList, color);
+                    });
+                    observer.unobserve(element); // 处理完成后停止观察
+                }
+            });
+        });
+
+        document.querySelectorAll("*:not(script):not(style)").forEach((el) => observer.observe(el));
+    }
+
+    // 主功能
+    async function main() {
+        try {
+            const { deleteKeywords, group1Keywords, group2Keywords, group3Keywords } = await Promise.all([
+                fetchKeywords(urls.delete, "deleteKeywords"),
+                fetchKeywords(urls.group1, "group1Keywords"),
+                fetchKeywords(urls.group2, "group2Keywords"),
+                fetchKeywords(urls.group3, "group3Keywords"),
+            ]).then((responses) => ({
+                deleteKeywords: responses[0],
+                group1Keywords: responses[1],
+                group2Keywords: responses[2],
+                group3Keywords: responses[3],
+            }));
+
+            const deleteRegexList = deleteKeywords.map(buildRegex);
+            const regexLists = [
+                { regexList: group1Keywords.filter((k) => !deleteRegexList.some((regex) => regex.test(k))).map(buildRegex), color: colors.group1 },
+                { regexList: group2Keywords.filter((k) => !deleteRegexList.some((regex) => regex.test(k))).map(buildRegex), color: colors.group2 },
+                { regexList: group3Keywords.filter((k) => !deleteRegexList.some((regex) => regex.test(k))).map(buildRegex), color: colors.group3 },
+            ];
+
+            observeAndHighlight(regexLists);
+        } catch (err) {
+            console.error("Error during execution:", err);
+        }
+    }
+
+    main();
+})();
+
 // 7.0：优化了性能，解决了嵌套高亮问题，并支持动态页面内容的高效高亮显示，缓存机制进一步增强。
 
 // ==UserScript==
