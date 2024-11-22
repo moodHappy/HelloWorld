@@ -1,3 +1,177 @@
+// v4.0：该版本通过 MutationObserver 动态高亮新文本，提高性能。
+
+// ==UserScript==
+// @name         高亮关键词4.0
+// @namespace    http://tampermonkey.net/
+// @version      4.0
+// @description  支持动态页面内容高亮，修复嵌套问题，优化性能
+// @author       You
+// @match        *://*/*
+// @grant        GM_xmlhttpRequest
+// @connect      *
+// ==/UserScript==
+
+(function () {
+    'use strict';
+
+    if (!document.documentElement.lang || !document.documentElement.lang.startsWith('en')) {
+        console.log("Not an English page. Script halted.");
+        return;
+    }
+
+    const CACHE_EXPIRY = 3600 * 1000; // 缓存有效期（1小时）
+
+    const urls = {
+        group1: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/2-2.txt",
+        group2: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/3.txt",
+        group3: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/45.txt",
+        delete: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/Remove%20highlight/3.txt",
+    };
+
+    const colors = {
+        group1: "green",
+        group2: "blue",
+        group3: "red",
+    };
+
+    function getCachedData(key) {
+        const cache = JSON.parse(localStorage.getItem(key) || "{}");
+        if (cache.expiry && cache.expiry > Date.now()) {
+            return cache.data;
+        }
+        return null;
+    }
+
+    function setCachedData(key, data) {
+        localStorage.setItem(key, JSON.stringify({
+            data: data,
+            expiry: Date.now() + CACHE_EXPIRY,
+        }));
+    }
+
+    async function fetchKeywords(url, cacheKey) {
+        const cachedData = getCachedData(cacheKey);
+        if (cachedData) {
+            console.log(`Loaded ${cacheKey} from cache.`);
+            return cachedData;
+        }
+
+        return new Promise((resolve, reject) => {
+            GM_xmlhttpRequest({
+                method: "GET",
+                url: url,
+                onload: res => {
+                    if (res.status === 200) {
+                        const keywords = res.responseText.split("\n").map(word => word.trim()).filter(Boolean);
+                        setCachedData(cacheKey, keywords);
+                        console.log(`Fetched and cached ${cacheKey}.`);
+                        resolve(keywords);
+                    } else {
+                        reject(`Failed to load ${url}`);
+                    }
+                },
+                onerror: err => reject(err),
+            });
+        });
+    }
+
+    function buildRegex(word) {
+        const forms = [
+            word,
+            `${word}s?`,
+            word.replace(/y$/, "i") + "es?",
+            `${word}ed`,
+            word.replace(/e$/, "") + "ing",
+            `${word}ing`,
+            `${word}d`,
+            `${word}er`,
+            `${word}est`,
+            `${word}ly`,
+            word.replace(/y$/, "ily"),
+            word.replace(/ic$/, "ically"),
+            word.replace(/le$/, "ly"),
+        ];
+        return new RegExp(`\\b(${forms.join("|")})\\b`, "gi");
+    }
+
+    function highlightTextNode(node, regexList, color) {
+        if (node.parentNode && node.parentNode.hasAttribute('data-highlighted')) {
+            return; // 防止嵌套
+        }
+
+        regexList.forEach(regex => {
+            if (regex.test(node.nodeValue)) {
+                const span = document.createElement("span");
+                span.setAttribute("data-highlighted", "true");
+                span.innerHTML = node.nodeValue.replace(regex, match => `<span style="color: ${color}; font-weight: bold;">${match}</span>`);
+                node.replaceWith(span);
+            }
+        });
+    }
+
+    function traverseAndHighlight(node, regexList, color) {
+        if (node.nodeType === 3 && node.nodeValue.trim()) { // 文本节点
+            highlightTextNode(node, regexList, color);
+        } else if (node.nodeType === 1 && node.childNodes && !/^(script|style|iframe|noscript|textarea)$/i.test(node.tagName)) {
+            Array.from(node.childNodes).forEach(child => traverseAndHighlight(child, regexList, color));
+        }
+    }
+
+    async function main() {
+        try {
+            const { deleteKeywords, group1Keywords, group2Keywords, group3Keywords } = await Promise.all([
+                fetchKeywords(urls.delete, 'deleteKeywords'),
+                fetchKeywords(urls.group1, 'group1Keywords'),
+                fetchKeywords(urls.group2, 'group2Keywords'),
+                fetchKeywords(urls.group3, 'group3Keywords'),
+            ]).then(responses => ({
+                deleteKeywords: responses[0],
+                group1Keywords: responses[1],
+                group2Keywords: responses[2],
+                group3Keywords: responses[3],
+            }));
+
+            const deleteRegexList = deleteKeywords.map(buildRegex);
+            const groupRegexes = {
+                group1: group1Keywords.filter(k => !deleteRegexList.some(regex => regex.test(k))).map(buildRegex),
+                group2: group2Keywords.filter(k => !deleteRegexList.some(regex => regex.test(k))).map(buildRegex),
+                group3: group3Keywords.filter(k => !deleteRegexList.some(regex => regex.test(k))).map(buildRegex),
+            };
+
+            // 使用 MutationObserver 监听 DOM 变化
+            const observer = new MutationObserver(mutations => {
+                mutations.forEach(mutation => {
+                    if (mutation.type === "childList") {
+                        mutation.addedNodes.forEach(node => {
+                            if (node.nodeType === 3) { // 只处理文本节点
+                                [groupRegexes.group1, groupRegexes.group2, groupRegexes.group3].forEach((regexList, index) => {
+                                    traverseAndHighlight(node, regexList, colors[`group${index + 1}`]);
+                                });
+                            }
+                        });
+                    }
+                });
+            });
+
+            // 配置 observer
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true, // 监听所有子节点
+            });
+
+            // 初次加载时高亮所有文本
+            [groupRegexes.group1, groupRegexes.group2, groupRegexes.group3].forEach((regexList, index) => {
+                traverseAndHighlight(document.body, regexList, colors[`group${index + 1}`]);
+            });
+
+        } catch (err) {
+            console.error("Error during execution:", err);
+        }
+    }
+
+    main();
+})();
+
 // v3.0：支持动态内容高亮，防嵌套，性能优化全面提升。
 
 // ==UserScript==
