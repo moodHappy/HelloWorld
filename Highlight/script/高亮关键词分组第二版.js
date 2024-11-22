@@ -1,7 +1,148 @@
-// 优化版
+// 2.0
 
 // ==UserScript==
-// @name         高亮关键词(优化版)
+// @name         高亮关键词
+// @namespace    http://tampermonkey.net/
+// @version      2.0
+// @description  高效高亮关键词，支持单词变形匹配和删除标记规则，优化性能防止卡死
+// @author       You
+// @match        *://*/*
+// @grant        GM_xmlhttpRequest
+// @connect      *
+// ==/UserScript==
+
+(function () {
+    'use strict';
+
+    if (!document.documentElement.lang || !document.documentElement.lang.startsWith('en')) {
+        console.log("Not an English page. Script halted.");
+        return;
+    }
+
+    const urls = {
+        group1: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/2-2.txt",
+        group2: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/3.txt",
+        group3: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/45.txt",
+        delete: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/Remove%20highlight/3.txt",
+    };
+
+    const colors = {
+        group1: "green",
+        group2: "blue",
+        group3: "red",
+    };
+
+    const addTimestamp = url => `${url}?t=${Date.now()}`;
+
+    async function loadKeywords(url) {
+        return new Promise((resolve, reject) => {
+            GM_xmlhttpRequest({
+                method: "GET",
+                url: addTimestamp(url),
+                onload: res => res.status === 200
+                    ? resolve(res.responseText.split("\n").map(word => word.trim()).filter(Boolean))
+                    : reject(`Failed to load ${url}`),
+                onerror: err => reject(err),
+            });
+        });
+    }
+
+    function buildRegex(word) {
+        const forms = [
+            word,
+            `${word}s?`,
+            word.replace(/y$/, "i") + "es?",
+            `${word}ed`,
+            word.replace(/e$/, "") + "ing",
+            `${word}ing`,
+            `${word}d`,
+            `${word}er`,
+            `${word}est`,
+            `${word}ly`,
+            word.replace(/y$/, "ily"),
+            word.replace(/ic$/, "ically"),
+            word.replace(/le$/, "ly"),
+        ];
+        return new RegExp(`\\b(${forms.join("|")})\\b`, "gi");
+    }
+
+    function traverseAndRestore(node, regexList) {
+        if (node.nodeType === 1) {
+            const spans = node.querySelectorAll("span[data-highlighted]");
+            spans.forEach(span => {
+                const text = span.textContent;
+                if (regexList.some(regex => regex.test(text))) {
+                    span.replaceWith(document.createTextNode(text));
+                }
+            });
+        }
+    }
+
+    function highlightTextNode(node, regexList, color) {
+        const matches = regexList.find(regex => regex.test(node.nodeValue));
+        if (matches) {
+            const span = document.createElement("span");
+            span.setAttribute("data-highlighted", "true");
+            span.innerHTML = node.nodeValue.replace(matches, match => `<span style="color: ${color}; font-weight: bold;">${match}</span>`);
+            node.replaceWith(span);
+        }
+    }
+
+    function traverseAndHighlight(node, regexList, color) {
+        if (node.nodeType === 3 && node.nodeValue.trim()) {
+            highlightTextNode(node, regexList, color);
+        } else if (node.nodeType === 1 && node.childNodes && !/^(script|style|iframe|noscript|textarea)$/i.test(node.tagName)) {
+            node.childNodes.forEach(child => traverseAndHighlight(child, regexList, color));
+        }
+    }
+
+    async function main() {
+        try {
+            const [deleteKeywords, group1Keywords, group2Keywords, group3Keywords] = await Promise.all([
+                loadKeywords(urls.delete),
+                loadKeywords(urls.group1),
+                loadKeywords(urls.group2),
+                loadKeywords(urls.group3),
+            ]);
+
+            const deleteRegexList = deleteKeywords.map(buildRegex);
+            const groupRegexes = {
+                group1: group1Keywords.filter(k => !deleteRegexList.some(regex => regex.test(k))).map(buildRegex),
+                group2: group2Keywords.filter(k => !deleteRegexList.some(regex => regex.test(k))).map(buildRegex),
+                group3: group3Keywords.filter(k => !deleteRegexList.some(regex => regex.test(k))).map(buildRegex),
+            };
+
+            traverseAndRestore(document.body, deleteRegexList);
+
+            const highlightGroups = [
+                { regexes: groupRegexes.group1, color: colors.group1 },
+                { regexes: groupRegexes.group2, color: colors.group2 },
+                { regexes: groupRegexes.group3, color: colors.group3 },
+            ];
+
+            const processNodes = () => {
+                highlightGroups.forEach(({ regexes, color }) => {
+                    traverseAndHighlight(document.body, regexes, color);
+                });
+            };
+
+            if (window.requestIdleCallback) {
+                requestIdleCallback(processNodes);
+            } else {
+                setTimeout(processNodes, 100);
+            }
+        } catch (err) {
+            console.error("Error during execution:", err);
+        }
+    }
+
+    main();
+})();
+
+// 1.8
+
+// ==UserScript==
+// @name         高亮关键词
 // @namespace    http://tampermonkey.net/
 // @version      1.8
 // @description  高效高亮关键词，支持单词变形匹配和删除标记规则，优化性能防止卡死
