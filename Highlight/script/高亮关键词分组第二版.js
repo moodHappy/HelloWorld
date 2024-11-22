@@ -1,3 +1,187 @@
+// 5.0：这个版本通过预编译正则和使用IntersectionObserver优化了动态内容的高效处理。
+
+// ==UserScript==
+// @name         高亮关键词
+// @namespace    http://tampermonkey.net/
+// @version      5.0
+// @description  支持动态页面内容高亮，修复嵌套问题，优化性能
+// @author       You
+// @match        *://*/*
+// @grant        GM_xmlhttpRequest
+// @connect      *
+// ==/UserScript==
+
+(function () {
+    'use strict';
+
+    if (!document.documentElement.lang || !document.documentElement.lang.startsWith('en')) {
+        console.log("Not an English page. Script halted.");
+        return;
+    }
+
+    const CACHE_EXPIRY = 3600 * 1000; // 缓存有效期（1小时）
+
+    const urls = {
+        group1: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/2-2.txt",
+        group2: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/3.txt",
+        group3: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/45.txt",
+        delete: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/Remove%20highlight/3.txt",
+    };
+
+    const colors = {
+        group1: "green",
+        group2: "blue",
+        group3: "red",
+    };
+
+    // 缓存数据
+    function getCachedData(key) {
+        const cache = JSON.parse(localStorage.getItem(key) || "{}");
+        if (cache.expiry && cache.expiry > Date.now()) {
+            return cache.data;
+        }
+        return null;
+    }
+
+    function setCachedData(key, data) {
+        localStorage.setItem(key, JSON.stringify({
+            data: data,
+            expiry: Date.now() + CACHE_EXPIRY,
+        }));
+    }
+
+    // 从缓存或请求获取关键词
+    async function fetchKeywords(url, cacheKey) {
+        const cachedData = getCachedData(cacheKey);
+        if (cachedData) {
+            console.log(`Loaded ${cacheKey} from cache.`);
+            return cachedData;
+        }
+
+        return new Promise((resolve, reject) => {
+            GM_xmlhttpRequest({
+                method: "GET",
+                url: url,
+                onload: res => {
+                    if (res.status === 200) {
+                        const keywords = res.responseText.split("\n").map(word => word.trim()).filter(Boolean);
+                        setCachedData(cacheKey, keywords);
+                        console.log(`Fetched and cached ${cacheKey}.`);
+                        resolve(keywords);
+                    } else {
+                        reject(`Failed to load ${url}`);
+                    }
+                },
+                onerror: err => reject(err),
+            });
+        });
+    }
+
+    // 预编译正则表达式并存储
+    const regexCache = {};
+
+    function buildRegex(word) {
+        if (regexCache[word]) return regexCache[word];
+
+        const forms = [
+            word,
+            `${word}s?`,
+            word.replace(/y$/, "i") + "es?",
+            `${word}ed`,
+            word.replace(/e$/, "") + "ing",
+            `${word}ing`,
+            `${word}d`,
+            `${word}er`,
+            `${word}est`,
+            `${word}ly`,
+            word.replace(/y$/, "ily"),
+            word.replace(/ic$/, "ically"),
+            word.replace(/le$/, "ly"),
+        ];
+        const regex = new RegExp(`\\b(${forms.join("|")})\\b`, "gi");
+        regexCache[word] = regex; // 缓存正则
+        return regex;
+    }
+
+    // 高亮文本节点
+    function highlightTextNode(node, regexList, color) {
+        if (node.parentNode && node.parentNode.hasAttribute('data-highlighted')) {
+            return; // 防止嵌套
+        }
+
+        regexList.forEach(regex => {
+            if (regex.test(node.nodeValue)) {
+                const span = document.createElement("span");
+                span.setAttribute("data-highlighted", "true");
+                span.innerHTML = node.nodeValue.replace(regex, match => `<span style="color: ${color}; font-weight: bold;">${match}</span>`);
+                node.replaceWith(span);
+            }
+        });
+    }
+
+    // 遍历并高亮文本节点
+    function traverseAndHighlight(node, regexList, color) {
+        if (node.nodeType === 3 && node.nodeValue.trim()) { // 文本节点
+            highlightTextNode(node, regexList, color);
+        } else if (node.nodeType === 1 && node.childNodes && !/^(script|style|iframe|noscript|textarea)$/i.test(node.tagName)) {
+            Array.from(node.childNodes).forEach(child => traverseAndHighlight(child, regexList, color));
+        }
+    }
+
+    // 使用IntersectionObserver优化大规模动态加载内容
+    function observeDOMChanges(regexes) {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    traverseAndHighlight(entry.target, regexes, colors[entry.target.dataset.group]);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('[data-group]').forEach(el => {
+            observer.observe(el);
+        });
+    }
+
+    // 主要功能
+    async function main() {
+        try {
+            const { deleteKeywords, group1Keywords, group2Keywords, group3Keywords } = await Promise.all([
+                fetchKeywords(urls.delete, 'deleteKeywords'),
+                fetchKeywords(urls.group1, 'group1Keywords'),
+                fetchKeywords(urls.group2, 'group2Keywords'),
+                fetchKeywords(urls.group3, 'group3Keywords'),
+            ]).then(responses => ({
+                deleteKeywords: responses[0],
+                group1Keywords: responses[1],
+                group2Keywords: responses[2],
+                group3Keywords: responses[3],
+            }));
+
+            const deleteRegexList = deleteKeywords.map(buildRegex);
+            const groupRegexes = {
+                group1: group1Keywords.filter(k => !deleteRegexList.some(regex => regex.test(k))).map(buildRegex),
+                group2: group2Keywords.filter(k => !deleteRegexList.some(regex => regex.test(k))).map(buildRegex),
+                group3: group3Keywords.filter(k => !deleteRegexList.some(regex => regex.test(k))).map(buildRegex),
+            };
+
+            // 初始高亮
+            [groupRegexes.group1, groupRegexes.group2, groupRegexes.group3].forEach((regexList, index) => {
+                traverseAndHighlight(document.body, regexList, colors[`group${index + 1}`]);
+            });
+
+            // 动态监听DOM变化
+            observeDOMChanges([...groupRegexes.group1, ...groupRegexes.group2, ...groupRegexes.group3]);
+
+        } catch (err) {
+            console.error("Error during execution:", err);
+        }
+    }
+
+    main();
+})();
+
+
 // v4.0：该版本通过 MutationObserver 动态高亮新文本，提高性能。
 
 // ==UserScript==
