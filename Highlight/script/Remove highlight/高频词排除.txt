@@ -6,6 +6,7 @@ BBC
 CNN
 s
 hrs
+mins
 Russia
 ad
 Nato
