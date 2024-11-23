@@ -5,3 +5,6 @@
 [The week of rising stakes in the Ukraine war
 乌克兰战争事关重大的一周](https://www.bbc.com/news/articles/cvgxly3nzwpo)
 *Date: November 23, 2024*
+
+[Trump nominates Bessent to lead US Treasury in flurry of announcements](https://www.bbc.com/news/articles/cj3mv6l1ypyo)
+*Date: November 23, 2024*
