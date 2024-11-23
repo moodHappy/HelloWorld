@@ -19,3 +19,6 @@
 
 [Israeli](https://www.bbc.com/news/articles/cy8ne9757jdo)
 *Date: November 23, 2024*
+
+[Central](https://www.bbc.com/news/articles/cy8ne9757jdo)
+*Date: November 23, 2024*
