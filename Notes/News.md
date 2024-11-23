@@ -5,3 +5,7 @@
 [The week of rising stakes in the Ukraine war
 乌克兰战争事关重大的一周](https://www.bbc.com/news/articles/cvgxly3nzwpo)
 *Date: November 23, 2024*
+
+[China's giant sinkholes are a tourist hit - but ancient forests inside are at risk
+中国的巨型天坑深受游客欢迎，但其内部的古老森林正面临危险。](https://www.bbc.com/news/articles/c8697gqwyx6o)
+*Date: November 23, 2024*
