@@ -5,6 +5,7 @@ Gaetz
 BBC
 CNN
 s
+t
 hrs
 mins
 Russia
