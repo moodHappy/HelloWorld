@@ -18,7 +18,7 @@
 (function () {
   "use strict";
 
-  // 配置 GitHub 信息
+  // 配置 GitHub 个人信息
   const GITHUB_USERNAME = "moodHappy";
   const GITHUB_REPO = "HelloWorld";
   const GITHUB_FILE_PATH = "Highlight/script/Remove highlight/3.txt";
