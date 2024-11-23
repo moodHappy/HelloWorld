@@ -5,3 +5,6 @@
 
 [How big is Donald Trump’s mandate?](https://www.bbc.com/news/articles/cn5w9w160xdo)
 *Date: November 23, 2024*
+
+[How big is Donald Trump’s mandate?](https://www.bbc.com/news/articles/cn5w9w160xdo)
+*Date: November 23, 2024*
