@@ -9,3 +9,7 @@
 [‘It’s impossible to breathe’: Life in the world’s most polluted city
 “无法呼吸”：世界上污染最严重的城市的生活](https://edition.cnn.com/2024/11/20/india/delhi-pollution-clinic-smog-climate-intl-hnk/index.html)
 *Date: November 23, 2024*
+
+[China’s richest man blasts tech giants and government inaction in rare rebuke
+中国首富罕见谴责科技巨头和政府不作为](https://edition.cnn.com/2024/11/22/tech/china-zhongshanshan-pdd-criticism-hnk-intl/index.html)
+*Date: November 23, 2024*
