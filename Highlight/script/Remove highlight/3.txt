@@ -14,3 +14,4 @@ mins
 missile
 friendly
 world
+Asia
