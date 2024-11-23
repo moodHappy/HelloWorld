@@ -5,3 +5,7 @@
 [Free shots and beer buckets in party town at centre of suspected methanol deaths
 疑似甲醇死亡中心的派对小镇提供免费啤酒和啤酒桶](https://www.bbc.com/news/articles/cdxv700qg50o)
 *Date: November 23, 2024*
+
+[‘It’s impossible to breathe’: Life in the world’s most polluted city
+“无法呼吸”：世界上污染最严重的城市的生活](https://edition.cnn.com/2024/11/20/india/delhi-pollution-clinic-smog-climate-intl-hnk/index.html)
+*Date: November 23, 2024*
