@@ -1,3 +1,14 @@
+//配置项：
+
+用户名：moodHappy
+
+仓库名：HelloWorld
+
+目标文件的完整路径：Highlight/script/Remove highlight/3.txt
+
+个人访问令牌：
+//
+
 // ==UserScript==
 // @name         推送已掌握单词到GitHub
 // @namespace    http://tampermonkey.net/
