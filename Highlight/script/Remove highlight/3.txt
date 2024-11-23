@@ -12,3 +12,4 @@ worst
 white
 mins
 missile
+friendly
