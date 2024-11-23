@@ -13,3 +13,4 @@ white
 mins
 missile
 friendly
+world
