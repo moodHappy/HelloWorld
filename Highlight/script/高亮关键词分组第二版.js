@@ -1,3 +1,147 @@
+// 返璞归真简化功能
+
+// ==UserScript==
+// @name         高亮关键词（无缓存版）
+// @namespace    http://tampermonkey.net/
+// @version      9.0
+// @description  支持动态页面内容高亮，实时从 URL 获取关键词，无缓存
+// @author       You
+// @match        *://*/*
+// @grant        GM_xmlhttpRequest
+// @connect      *
+// ==/UserScript==
+
+(function () {
+    'use strict';
+
+    // 检查语言是否为英语
+    if (!document.documentElement.lang || !document.documentElement.lang.startsWith('en')) {
+        console.log("Not an English page. Script halted.");
+        return;
+    }
+
+    const urls = {
+        group1: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/2-2.txt",
+        group2: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/3.txt",
+        group3: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/45.txt",
+        delete: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/Remove%20highlight/3.txt",
+    };
+
+    const colors = {
+        group1: "green",
+        group2: "blue",
+        group3: "red",
+    };
+
+    let activeGroups = ["group1", "group2", "group3"]; // 默认启用所有高亮组
+
+    // 请求函数
+    async function fetchKeywords(url) {
+        return new Promise((resolve, reject) => {
+            GM_xmlhttpRequest({
+                method: "GET",
+                url: url,
+                onload: res => {
+                    if (res.status === 200) {
+                        const keywords = res.responseText.split("\n").map(word => word.trim()).filter(Boolean);
+                        console.log(`Fetched keywords from ${url}`);
+                        resolve(keywords);
+                    } else {
+                        reject(`Failed to load ${url}`);
+                    }
+                },
+                onerror: err => reject(err),
+            });
+        });
+    }
+
+    const regexCache = {};
+    function buildRegex(word) {
+        if (regexCache[word]) return regexCache[word];
+
+        const regex = new RegExp(
+            '\\b(' +
+            word + '|' +
+            word + 's?' + '|' +
+            word.replace(/y$/, 'i') + 'es?' + '|' +
+            word + 'ed' + '|' +
+            word + 'ing' + '|' +
+            word + 'd' + '|' +
+            word + 'er' + '|' +
+            word + 'est' + '|' +
+            word + 'ly' + '|' +
+            word.replace(/y$/, 'ily') + '|' +
+            word.replace(/ic$/, 'ically') + '|' +
+            word.replace(/le$/, 'ly') +
+            ')\\b', 'gi'
+        );
+        regexCache[word] = regex;
+        return regex;
+    }
+
+    function highlightTextNode(node, regexList, color) {
+        if (node.parentNode && node.parentNode.hasAttribute('data-highlighted')) {
+            return;
+        }
+
+        regexList.forEach(regex => {
+            if (regex.test(node.nodeValue)) {
+                const span = document.createElement("span");
+                span.setAttribute("data-highlighted", "true");
+                span.innerHTML = node.nodeValue.replace(regex, match => `<span style="color: ${color}; font-weight: bold;">${match}</span>`);
+                node.replaceWith(span);
+            }
+        });
+    }
+
+    function traverseAndHighlight(node, regexLists, colors) {
+        if (node.nodeType === 3 && node.nodeValue.trim()) {
+            regexLists.forEach((regexList, index) => highlightTextNode(node, regexList, colors[index]));
+        } else if (node.nodeType === 1 && node.childNodes && !/^(script|style|iframe|noscript|textarea)$/i.test(node.tagName)) {
+            Array.from(node.childNodes).forEach(child => traverseAndHighlight(child, regexLists, colors));
+        }
+    }
+
+    async function main() {
+        try {
+            const { deleteKeywords, group1Keywords, group2Keywords, group3Keywords } = await Promise.all([
+                fetchKeywords(urls.delete),
+                fetchKeywords(urls.group1),
+                fetchKeywords(urls.group2),
+                fetchKeywords(urls.group3),
+            ]).then(responses => ({
+                deleteKeywords: responses[0],
+                group1Keywords: responses[1],
+                group2Keywords: responses[2],
+                group3Keywords: responses[3],
+            }));
+
+            const deleteRegexList = deleteKeywords.map(buildRegex);
+            const groupRegexes = {
+                group1: group1Keywords.filter(k => !deleteRegexList.some(regex => regex.test(k))).map(buildRegex),
+                group2: group2Keywords.filter(k => !deleteRegexList.some(regex => regex.test(k))).map(buildRegex),
+                group3: group3Keywords.filter(k => !deleteRegexList.some(regex => regex.test(k))).map(buildRegex),
+            };
+
+            function applyHighlights() {
+                document.body.querySelectorAll("[data-highlighted]").forEach(el => el.replaceWith(el.textContent));
+
+                const activeRegexLists = activeGroups.map(group => groupRegexes[group]);
+                const activeColors = activeGroups.map(group => colors[group]);
+
+                traverseAndHighlight(document.body, activeRegexLists, activeColors);
+            }
+
+            applyHighlights();
+        } catch (err) {
+            console.error("Error during execution:", err);
+        }
+    }
+
+    main();
+})();
+
+
 // 8.0：无缓存版
 
 // ==UserScript==
