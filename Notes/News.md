@@ -21,3 +21,7 @@
 [World agrees to climate deal on financial aid for developing countries after summit nearly implodes
 峰会几乎破裂后，世界同意就向发展中国家提供财政援助的气候协议](https://edition.cnn.com/2024/11/23/climate/cop29-agreement/index.html)
 *Date: November 24, 2024*
+
+[Nominee for agriculture secretary completes Trump cabinet
+农业部长提名人完成特朗普内阁](https://www.bbc.com/news/articles/c629vn5j836o)
+*Date: November 24, 2024*
