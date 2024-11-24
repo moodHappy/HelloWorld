@@ -190,3 +190,4 @@ prime
 UN
 countries
 help
+global
