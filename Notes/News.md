@@ -13,3 +13,7 @@
 [China’s richest man blasts tech giants and government inaction in rare rebuke
 中国首富罕见谴责科技巨头和政府不作为](https://edition.cnn.com/2024/11/22/tech/china-zhongshanshan-pdd-criticism-hnk-intl/index.html)
 *Date: November 23, 2024*
+
+[China's giant sinkholes are a tourist hit - but ancient forests inside are at risk
+中国的巨型天坑深受游客欢迎，但内部的古老森林正面临危险](https://www.bbc.com/news/articles/c8697gqwyx6o)
+*Date: November 24, 2024*
