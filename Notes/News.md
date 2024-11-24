@@ -17,3 +17,7 @@
 [China's giant sinkholes are a tourist hit - but ancient forests inside are at risk
 中国的巨型天坑深受游客欢迎，但内部的古老森林正面临危险](https://www.bbc.com/news/articles/c8697gqwyx6o)
 *Date: November 24, 2024*
+
+[World agrees to climate deal on financial aid for developing countries after summit nearly implodes
+峰会几乎破裂后，世界同意就向发展中国家提供财政援助的气候协议](https://edition.cnn.com/2024/11/23/climate/cop29-agreement/index.html)
+*Date: November 24, 2024*
