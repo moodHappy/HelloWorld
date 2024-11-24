@@ -6,6 +6,7 @@ BBC
 CNN
 s
 t
+ve
 hrs
 mins
 Russia
