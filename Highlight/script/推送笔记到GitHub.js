@@ -2,7 +2,7 @@
 
 // ==UserScript==
 
-// @name         新闻推送系统
+// @name         新闻收藏推送系统
 
 // @namespace    http://tampermonkey.net/
 
@@ -230,7 +230,7 @@
 
     const pushButton = document.createElement("button");
 
-    pushButton.textContent = "推送选中新闻";
+    pushButton.textContent = "推送新闻收藏";
 
     pushButton.style.position = "fixed";
 
