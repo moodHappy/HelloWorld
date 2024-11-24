@@ -1,3 +1,211 @@
+// 8.0：无缓存版
+
+// ==UserScript==
+// @name         高亮关键词（无缓存版）
+// @namespace    http://tampermonkey.net/
+// @version      8.0
+// @description  支持动态页面内容高亮，实时从 URL 获取关键词，无缓存
+// @author       You
+// @match        *://*/*
+// @grant        GM_xmlhttpRequest
+// @connect      *
+// ==/UserScript==
+
+(function () {
+    'use strict';
+
+    // 检查语言是否为英语
+    if (!document.documentElement.lang || !document.documentElement.lang.startsWith('en')) {
+        console.log("Not an English page. Script halted.");
+        return;
+    }
+
+    const urls = {
+        group1: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/2-2.txt",
+        group2: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/3.txt",
+        group3: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/keywords/45.txt",
+        delete: "https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Highlight/script/Remove%20highlight/3.txt",
+    };
+
+    const colors = {
+        group1: "green",
+        group2: "blue",
+        group3: "red",
+    };
+
+    let activeGroups = ["group1", "group2", "group3"]; // 默认启用所有高亮组
+
+    // 请求函数
+    async function fetchKeywords(url) {
+        return new Promise((resolve, reject) => {
+            GM_xmlhttpRequest({
+                method: "GET",
+                url: url,
+                onload: res => {
+                    if (res.status === 200) {
+                        const keywords = res.responseText.split("\n").map(word => word.trim()).filter(Boolean);
+                        console.log(`Fetched keywords from ${url}`);
+                        resolve(keywords);
+                    } else {
+                        reject(`Failed to load ${url}`);
+                    }
+                },
+                onerror: err => reject(err),
+            });
+        });
+    }
+
+    const regexCache = {};
+    function buildRegex(word) {
+        if (regexCache[word]) return regexCache[word];
+
+        const forms = [word, `${word}s?`, word.replace(/y$/, "i") + "es?", `${word}ed`, `${word}ing`];
+        const regex = new RegExp(`\\b(${forms.join("|")})\\b`, "gi");
+        regexCache[word] = regex;
+        return regex;
+    }
+
+    function highlightTextNode(node, regexList, color) {
+        if (node.parentNode && node.parentNode.hasAttribute('data-highlighted')) {
+            return;
+        }
+
+        regexList.forEach(regex => {
+            if (regex.test(node.nodeValue)) {
+                const span = document.createElement("span");
+                span.setAttribute("data-highlighted", "true");
+                span.innerHTML = node.nodeValue.replace(regex, match => `<span style="color: ${color}; font-weight: bold;">${match}</span>`);
+                node.replaceWith(span);
+            }
+        });
+    }
+
+    function traverseAndHighlight(node, regexLists, colors) {
+        if (node.nodeType === 3 && node.nodeValue.trim()) {
+            regexLists.forEach((regexList, index) => highlightTextNode(node, regexList, colors[index]));
+        } else if (node.nodeType === 1 && node.childNodes && !/^(script|style|iframe|noscript|textarea)$/i.test(node.tagName)) {
+            Array.from(node.childNodes).forEach(child => traverseAndHighlight(child, regexLists, colors));
+        }
+    }
+
+    async function main() {
+        try {
+            const { deleteKeywords, group1Keywords, group2Keywords, group3Keywords } = await Promise.all([
+                fetchKeywords(urls.delete),
+                fetchKeywords(urls.group1),
+                fetchKeywords(urls.group2),
+                fetchKeywords(urls.group3),
+            ]).then(responses => ({
+                deleteKeywords: responses[0],
+                group1Keywords: responses[1],
+                group2Keywords: responses[2],
+                group3Keywords: responses[3],
+            }));
+
+            const deleteRegexList = deleteKeywords.map(buildRegex);
+            const groupRegexes = {
+                group1: group1Keywords.filter(k => !deleteRegexList.some(regex => regex.test(k))).map(buildRegex),
+                group2: group2Keywords.filter(k => !deleteRegexList.some(regex => regex.test(k))).map(buildRegex),
+                group3: group3Keywords.filter(k => !deleteRegexList.some(regex => regex.test(k))).map(buildRegex),
+            };
+
+            function applyHighlights() {
+                document.body.querySelectorAll("[data-highlighted]").forEach(el => el.replaceWith(el.textContent));
+
+                const activeRegexLists = activeGroups.map(group => groupRegexes[group]);
+                const activeColors = activeGroups.map(group => colors[group]);
+
+                traverseAndHighlight(document.body, activeRegexLists, activeColors);
+            }
+
+            applyHighlights();
+
+            // 添加控制按钮和弹窗
+            const button = document.createElement("button");
+            button.textContent = "高亮控制";
+            button.style.position = "fixed";
+            button.style.top = "10px";
+            button.style.left = "10px";
+            button.style.zIndex = "10000";
+            button.style.backgroundColor = "black";
+            button.style.color = "white";
+            button.style.padding = "10px";
+            button.style.cursor = "pointer";
+            button.style.transition = "opacity 0.3s";
+            document.body.appendChild(button);
+
+            const modal = document.createElement("div");
+            modal.style.position = "fixed";
+            modal.style.top = "50px";
+            modal.style.left = "10px";
+            modal.style.width = "220px";
+            modal.style.height = "120px";
+            modal.style.zIndex = "10000";
+            modal.style.backgroundColor = "white";
+            modal.style.border = "1px solid black";
+            modal.style.padding = "10px";
+            modal.style.display = "none";
+
+            // 添加滑动条
+            const slider = document.createElement("input");
+            slider.type = "range";
+            slider.min = 1;
+            slider.max = 3;
+            slider.value = 3; // 默认启用刻度3
+            slider.style.width = "100%";
+            slider.addEventListener("input", () => {
+                const level = parseInt(slider.value, 10);
+                if (level === 1) {
+                    activeGroups = ["group3"];
+                } else if (level === 2) {
+                    activeGroups = ["group3", "group2"];
+                } else {
+                    activeGroups = ["group1", "group2", "group3"];
+                }
+                applyHighlights();
+            });
+
+            // 添加刻度和标签
+            const labels = document.createElement("div");
+            labels.style.display = "flex";
+            labels.style.justifyContent = "space-between";
+            labels.style.marginTop = "10px";
+
+            ["1", "2", "3"].forEach(text => {
+                const label = document.createElement("span");
+                label.textContent = text;
+                label.style.fontSize = "14px";
+                label.style.fontWeight = "bold";
+                labels.appendChild(label);
+            });
+
+            modal.appendChild(slider);
+            modal.appendChild(labels);
+            document.body.appendChild(modal);
+
+            button.addEventListener("click", () => {
+                modal.style.display = modal.style.display === "none" ? "block" : "none";
+            });
+
+            // 滚动事件隐藏按钮
+            let lastScrollY = window.scrollY;
+            window.addEventListener("scroll", () => {
+                const currentScrollY = window.scrollY;
+                if (currentScrollY > lastScrollY) {
+                    button.style.opacity = "0"; // 向下滚动时隐藏按钮
+                } else {
+                    button.style.opacity = "1"; // 向上滚动时显示按钮
+                }
+                lastScrollY = currentScrollY;
+            });
+        } catch (err) {
+            console.error("Error during execution:", err);
+        }
+    }
+
+    main();
+})();
+
 // 7.1：增加滑动条
 
 // ==UserScript==
