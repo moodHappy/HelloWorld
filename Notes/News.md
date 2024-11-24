@@ -25,3 +25,6 @@
 [Nominee for agriculture secretary completes Trump cabinet
 农业部长提名人完成特朗普内阁](https://www.bbc.com/news/articles/c629vn5j836o)
 *Date: November 24, 2024*
+
+["As our next Secretary of Agriculture, Brooke will spearhead the effort to protect American Farmers, who are truly the backbone of our Country," Trump said in a statement.](https://www.bbc.com/news/articles/c629vn5j836o)
+*Date: November 24, 2024*
