@@ -45,3 +45,7 @@
 [One dead and three injured in Lithuania cargo jet crash
 立陶宛货机坠毁造成1人死亡、3人受伤](https://www.bbc.com/news/articles/cgr0v5rdnkzo)
 *Date: November 25, 2024*
+
+[Pakistan police clash with Imran Khan supporters demanding his release
+巴基斯坦警方与伊姆兰·汗支持者发生冲突，要求释放他](https://www.bbc.com/news/live/c5yr75pr07xt)
+*Date: November 25, 2024*
