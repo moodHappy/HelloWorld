@@ -37,3 +37,7 @@
 [‘Pregnant’ for 15 months: Inside the 'miracle' pregnancy scam
 “怀孕”15个月：“奇迹”怀孕骗局的内幕](https://www.bbc.com/news/articles/c78dyryreyxo)
 *Date: November 25, 2024*
+
+[Far-right candidate poised for shock win in Romania presidential election
+极右翼候选人有望在罗马尼亚总统选举中取得惊人胜利](https://www.bbc.com/news/articles/c9dlw5pq967o)
+*Date: November 25, 2024*
