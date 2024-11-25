@@ -33,6 +33,3 @@
 [Huge deal struck but is it enough? 5 takeaways from a dramatic COP29
 达成了一项巨大的协议，但这就足够了吗？戏剧性的 COP29 的 5 个要点](https://www.bbc.com/news/articles/cp35rrvv2dpo)
 *Date: November 25, 2024*
-
-[In closed groups on Facebook, many posts use religious terminology to hail the bogus “treatment” as a “miracle” for those who’ve been unable to conceive.](https://www.bbc.com/news/articles/c78dyryreyxo)
-*Date: November 25, 2024*
