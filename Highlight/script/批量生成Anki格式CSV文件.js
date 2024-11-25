@@ -18,7 +18,7 @@
 
   // 创建按钮
   const pushButton = document.createElement("button");
-  pushButton.innerHTML = "&nbsp;&nbsp;添加到CSV&nbsp;&nbsp;<br>";
+  pushButton.innerHTML = "逗号分隔文件";
   pushButton.style.position = "fixed";
   pushButton.style.bottom = "60px";
   pushButton.style.right = "10px";
