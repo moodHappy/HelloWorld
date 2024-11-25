@@ -49,3 +49,7 @@
 [Pakistan police clash with Imran Khan supporters demanding his release
 巴基斯坦警方与伊姆兰·汗支持者发生冲突，要求释放他](https://www.bbc.com/news/live/c5yr75pr07xt)
 *Date: November 25, 2024*
+
+[Angela Merkel defends ties with Russia and blocking Ukraine from Nato
+安格拉·默克尔捍卫与俄罗斯的关系并阻止乌克兰加入北约](https://www.bbc.com/news/articles/c3e8y1qly52o)
+*Date: November 25, 2024*
