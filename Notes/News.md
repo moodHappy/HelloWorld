@@ -26,9 +26,6 @@
 农业部长提名人完成特朗普内阁](https://www.bbc.com/news/articles/c629vn5j836o)
 *Date: November 24, 2024*
 
-[Homeless man’s alleged killing spree exposes NYC’s ‘whole rotten system’](https://www.cnn.com/2024/11/24/us/ramon-rivera-nyc-stabbings/index.html)
-*Date: November 25, 2024*
-
 [Huge deal struck but is it enough? 5 takeaways from a dramatic COP29](https://www.bbc.com/news/articles/cp35rrvv2dpo)
 *Date: November 25, 2024*
 
