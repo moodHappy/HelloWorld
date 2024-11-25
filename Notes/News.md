@@ -41,3 +41,7 @@
 [Far-right candidate poised for shock win in Romania presidential election
 极右翼候选人有望在罗马尼亚总统选举中取得惊人胜利](https://www.bbc.com/news/articles/c9dlw5pq967o)
 *Date: November 25, 2024*
+
+[One dead and three injured in Lithuania cargo jet crash
+立陶宛货机坠毁造成1人死亡、3人受伤](https://www.bbc.com/news/articles/cgr0v5rdnkzo)
+*Date: November 25, 2024*
