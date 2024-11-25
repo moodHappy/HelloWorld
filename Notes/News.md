@@ -33,3 +33,7 @@
 [Huge deal struck but is it enough? 5 takeaways from a dramatic COP29
 达成了一项巨大的协议，但这就足够了吗？戏剧性的 COP29 的 5 个要点](https://www.bbc.com/news/articles/cp35rrvv2dpo)
 *Date: November 25, 2024*
+
+[‘Pregnant’ for 15 months: Inside the 'miracle' pregnancy scam
+“怀孕”15个月：“奇迹”怀孕骗局的内幕](https://www.bbc.com/news/articles/c78dyryreyxo)
+*Date: November 25, 2024*
