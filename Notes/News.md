@@ -57,3 +57,7 @@
 [Triumph over legal cases seals Trump's comeback
 法律案件的胜利标志着特朗普的东山再起](https://www.bbc.com/news/articles/c39nmy17em2o)
 *Date: November 26, 2024*
+
+[Russian deserter reveals war secrets of guarding nuclear base
+俄罗斯逃兵透露守卫核基地的战争秘密](https://www.bbc.com/news/articles/c9dl2pv0yj0o)
+*Date: November 26, 2024*
