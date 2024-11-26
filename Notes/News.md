@@ -53,3 +53,7 @@
 [Angela Merkel defends ties with Russia and blocking Ukraine from Nato
 安格拉·默克尔捍卫与俄罗斯的关系并阻止乌克兰加入北约](https://www.bbc.com/news/articles/c3e8y1qly52o)
 *Date: November 25, 2024*
+
+[Triumph over legal cases seals Trump's comeback
+法律案件的胜利标志着特朗普的东山再起](https://www.bbc.com/news/articles/c39nmy17em2o)
+*Date: November 26, 2024*
