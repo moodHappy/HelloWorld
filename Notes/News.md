@@ -61,3 +61,7 @@
 [Russian deserter reveals war secrets of guarding nuclear base
 俄罗斯逃兵透露守卫核基地的战争秘密](https://www.bbc.com/news/articles/c9dl2pv0yj0o)
 *Date: November 26, 2024*
+
+[Israel-Hezbollah ceasefire comes into force with Biden insistent on ‘permanent cessation of hostilities’
+以色列与真主党停火生效，拜登坚持“永久停止敌对行动”](https://www.theguardian.com/world/2024/nov/27/israel-hezbollah-ceasefire-begins-biden-lebanon-iran)
+*Date: November 27, 2024*
