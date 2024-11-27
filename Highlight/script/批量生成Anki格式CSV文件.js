@@ -1,3 +1,280 @@
+// 修复按钮滚动隐藏
+
+// ==UserScript==
+// @name         生成Anki格式CSV文件-Free
+// @namespace    http://tampermonkey.net/
+// @version      5.0
+// @description  选中文本，点击按钮生成CSV文件，每存储5次自动导出，支持移动端滚动隐藏按钮，同时支持双击左下角手动导出。
+// @author       moodHappy
+// @match        *://*/*
+// @grant        none
+// ==/UserScript==
+
+(function () {
+  "use strict";
+
+  let dataCollection = JSON.parse(localStorage.getItem("ankiTextCollection")) || [];
+  const exportThreshold = 5;
+  let isSaving = false;
+
+  // 配置 ChatGPT API 密钥
+  const chatGPTAPIKey = "sk-Gf0QKD1zMOrlwXbhNCWzd7d2gHONxDWfUNTKfmpDSsIGO9Mh"; // 替换为您自己的 ChatGPT API 密钥
+
+  // 添加按钮和导出区域
+  const pushButton = document.createElement("button");
+  pushButton.innerHTML = "逗号分隔文件";
+  pushButton.style.position = "fixed";
+  pushButton.style.bottom = "60px";
+  pushButton.style.right = "10px";
+  pushButton.style.zIndex = 1000;
+  pushButton.style.padding = "10px";
+  pushButton.style.backgroundColor = "transparent";
+  pushButton.style.border = "2px solid #007bff";
+  pushButton.style.color = "#007bff";
+  pushButton.style.borderRadius = "5px";
+  pushButton.style.cursor = "pointer";
+  pushButton.style.fontWeight = "bold";
+  pushButton.style.boxShadow = "0 4px 8px rgba(0, 123, 255, 0.2)";
+  pushButton.style.transition = "opacity 0.3s ease";
+  pushButton.style.opacity = "1";
+  document.body.appendChild(pushButton);
+
+let lastScrollY = window.scrollY; // 记录上次滚动位置
+
+// 监听滚动事件
+window.addEventListener("scroll", () => {
+  const currentScrollY = window.scrollY;
+
+  if (currentScrollY > lastScrollY) {
+    // 向下滚动时隐藏按钮
+    pushButton.style.opacity = "0";
+  } else {
+    // 向上滚动时显示按钮
+    pushButton.style.opacity = "1";
+  }
+
+  lastScrollY = currentScrollY; // 更新上次滚动位置
+});
+
+  const exportArea = document.createElement("div");
+  exportArea.style.position = "fixed";
+  exportArea.style.bottom = "10px";
+  exportArea.style.left = "10px";
+  exportArea.style.width = "50px";
+  exportArea.style.height = "50px";
+  exportArea.style.backgroundColor = "transparent";
+  exportArea.style.zIndex = 999;
+  exportArea.style.border = "none";
+  exportArea.style.boxShadow = "none";
+  exportArea.style.borderRadius = "50%";
+  exportArea.style.cursor = "pointer";
+  document.body.appendChild(exportArea);
+
+  // 使用 ChatGPT 获取音标
+  async function getPhoneticSymbol(word) {
+    const apiURL = "https://api.chatanywhere.org/v1/chat/completions";
+
+    const headers = {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${chatGPTAPIKey}`,
+    };
+
+    const body = JSON.stringify({
+      model: "gpt-3.5-turbo",
+      messages: [
+        {
+          role: "user",
+          content: `请为单词 "${word}" 提供音标，只返回音标，并用斜线包裹，如：/音标/。`,
+        },
+      ],
+    });
+
+    
+
+    try {
+      const response = await fetch(apiURL, {
+        method: "POST",
+        headers: headers,
+        body: body,
+      });
+      const result = await response.json();
+      const phonetic = result.choices[0]?.message?.content;
+      return phonetic || "音标获取失败";
+    } catch (error) {
+      console.error("获取音标失败：", error);
+      return "音标获取失败";
+    }
+  }
+
+  // 保存为CSV文件
+  function saveAllToCSV(data) {
+    const csvContent = data
+      .map(
+        (item) =>
+          `"${item.customWord}"|"${item.phoneticSymbol}"|"${item.customWordDefinition}"|"${item.text}"|"${item.translation}"|"${item.url}"|"${item.sentenceAnalysis.replace(/\n/g, '<br>')}"` // 将换行符替换为<br>
+      )
+      .join("\n");
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const fileURL = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = fileURL;
+    a.download = "anki_texts_batch.csv";
+    a.click();
+    URL.revokeObjectURL(fileURL);
+    alert("已生成 CSV 文件。");
+  }
+
+  // 翻译文本
+  async function translateText(text) {
+    const apiURL = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=zh-CN&dt=t&q=${encodeURIComponent(
+      text
+    )}`;
+
+    try {
+      const response = await fetch(apiURL);
+      const data = await response.json();
+      return data[0]?.map((item) => item[0]).join("") || "翻译获取失败";
+    } catch (error) {
+      console.error("翻译请求失败：", error);
+      return "翻译获取失败";
+    }
+  }
+
+  // 获取自定义单词释义
+  async function getCustomWordDefinition(customWord) {
+    const apiURL = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=zh-CN&dt=t&q=${encodeURIComponent(
+      customWord
+    )}`;
+
+    try {
+      const response = await fetch(apiURL);
+      const data = await response.json();
+      return data[0]?.map((item) => item[0]).join(", ") || "释义获取失败";
+    } catch (error) {
+      console.error("获取释义失败：", error);
+      return "释义获取失败";
+    }
+  }
+
+  // 保存数据到localStorage
+  function saveToLocalStorage() {
+    try {
+      localStorage.setItem("ankiTextCollection", JSON.stringify(dataCollection));
+    } catch (error) {
+      console.error("保存到 localStorage 失败：", error);
+    }
+  }
+
+  // 句子分析功能
+  async function analyzeSentence(sentence) {
+    const apiURL = "https://api.chatanywhere.org/v1/chat/completions";
+    const headers = {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer sk-Gf0QKD1zMOrlwXbhNCWzd7d2gHONxDWfUNTKfmpDSsIGO9Mh", // 请在这里填写您的 API 密钥
+    };
+    const body = JSON.stringify({
+      model: "gpt-3.5-turbo",
+      messages: [
+        {
+          role: "user",
+          content: `请分析以下句子并提供：
+1. 主语、谓语、宾语；
+2. 短语类型及成分（如名词短语、动词短语）；
+3. 关键词及其意义；
+4. 句型结构（如主谓宾、主系表等）；
+5. 简要的语法讲解：
+${sentence}`,
+        },
+      ],
+    });
+
+    try {
+      const response = await fetch(apiURL, {
+        method: "POST",
+        headers: headers,
+        body: body,
+      });
+      const result = await response.json();
+      return result.choices[0].message.content || "句子分析失败";
+    } catch (error) {
+      console.error("句子分析失败：", error);
+      return "句子分析失败";
+    }
+  }
+
+  // 添加数据到集合
+  async function addData() {
+    const selectedText = window.getSelection().toString().trim();
+
+    if (!selectedText) {
+      alert("请先选中文本！");
+      return;
+    }
+
+    const customWord = prompt("请为选中文本输入一个自定义单词：", "");
+    if (!customWord) {
+      alert("自定义单词不能为空！");
+      return;
+    }
+
+    const currentURL = window.location.href;
+    const translation = await translateText(selectedText);
+    const customWordDefinition = await getCustomWordDefinition(customWord);
+    const sentenceAnalysis = await analyzeSentence(selectedText);
+    const phoneticSymbol = await getPhoneticSymbol(customWord);
+
+    const newData = {
+      customWord,
+      phoneticSymbol,
+      customWordDefinition,
+      text: selectedText,
+      translation,
+      url: currentURL,
+      sentenceAnalysis,
+    };
+
+    dataCollection.push(newData);
+
+    saveToLocalStorage();
+
+    alert(`已添加到列表。目前列表中有 ${dataCollection.length} 条记录。`);
+
+    if (dataCollection.length >= exportThreshold) {
+      saveAllToCSV(dataCollection);
+      dataCollection = [];
+      saveToLocalStorage();
+    }
+  }
+
+  function manualExport() {
+    if (dataCollection.length > 0) {
+      saveAllToCSV(dataCollection);
+      dataCollection = [];
+      saveToLocalStorage();
+    } else {
+      alert("当前没有可导出的数据。");
+    }
+  }
+
+  pushButton.addEventListener("click", async () => {
+    if (isSaving) return;
+    isSaving = true;
+    await addData();
+    isSaving = false;
+  });
+
+  exportArea.addEventListener("dblclick", () => {
+    manualExport();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.ctrlKey && event.key === "e") {
+      manualExport();
+    }
+  });
+})();
+
+
 // 修复音标输出
 
 // ==UserScript==
