@@ -65,3 +65,6 @@
 [Israel-Hezbollah ceasefire comes into force with Biden insistent on ‘permanent cessation of hostilities’
 以色列与真主党停火生效，拜登坚持“永久停止敌对行动”](https://www.theguardian.com/world/2024/nov/27/israel-hezbollah-ceasefire-begins-biden-lebanon-iran)
 *Date: November 27, 2024*
+
+[Former Prime Minister Lord David Cameron has backed moves to legalise assisted dying for terminally ill adults.](https://www.bbc.com/news/articles/cdd088r6j28o)
+*Date: November 28, 2024*
