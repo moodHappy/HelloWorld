@@ -1,74 +1,5 @@
-强制搭配背面///
-
+中日：
 正面：
-
-<script>
-// 在页面最上方调用 toggleBlur 函数
-toggleBlur(true); // 打开模糊
-// toggleBlur(false); // 关闭模糊
-
-function toggleBlur(isBlurred) {
-    document.addEventListener('DOMContentLoaded', function () {
-        var card = document.querySelector('.card');
-        if (isBlurred) {
-            card.classList.add('blurred'); // 添加模糊
-        } else {
-            card.classList.remove('blurred'); // 移除模糊
-        }
-    });
-}
-</script>
-
-<style>
-.card {
-    /* 去掉过渡效果 */
-}
-
-.card.blurred {
-    filter: blur(10px); /* 模糊效果 */
-}
-</style>
-
-<div class="card">
-    <!-- 卡片内容 -->
-</div>
-
-背面：
-
-<style>
-.card {
-    filter: none !important; /* 使用 !important 强制取消背面的模糊效果 */
-}
-</style>
-
-
-切换模糊：
-
-<script>
-function toggleBlur() {
-    var card = document.querySelector('.card');
-    card.classList.toggle('blurred'); // 切换模糊效果
-}
-</script>
-
-<style>
-.card {
-    transition: filter 0.3s ease; /* 添加过渡效果 */
-}
-
-.card.blurred {
-    filter: blur(10px); /* 模糊效果 */
-}
-</style>
-
-<div class="card">
-    <!-- 卡片内容 -->
-</div>
-
-<button onclick="toggleBlur()">切换模糊</button>
-
-
-强制清晰：
 <script>
 function forceClear() {
     var card = document.querySelector('.card');
@@ -80,12 +11,46 @@ function forceClear() {
 <style>
 .card {
     filter: blur(10px); /* 初始状态为模糊 */
-    transition: filter 0.3s ease; /* 添加过渡效果 */
+    transition: filter 0.1s ease; /* 添加过渡效果 */
 }
 </style>
 
-<div class="card">
-    <!-- 卡片内容 -->
-</div>
 
 <button onclick="forceClear()">强制清晰</button>
+
+背面：
+<style>
+.card {
+    filter: none !important; /* 使用 !important 强制取消背面的模糊效果 */
+}
+</style>
+
+
+
+
+日中：
+正面：
+<script>
+function forceClear() {
+    var card = document.querySelector('.card');
+    // 强制清除模糊效果
+    card.style.filter = 'blur(0)'; // 设置为清晰
+}
+</script>
+
+<style>
+.card {
+    filter: blur(10px); /* 初始状态为模糊 */
+    transition: filter 0.1s ease; /* 添加过渡效果 */
+}
+</style>
+
+
+<button onclick="forceClear()">强制清晰</button>
+
+背面：
+<style>
+.card {
+    filter: none !important; /* 使用 !important 强制取消背面的模糊效果 */
+}
+</style>
