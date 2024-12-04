@@ -65,3 +65,7 @@
 [Israel-Hezbollah ceasefire comes into force with Biden insistent on ‘permanent cessation of hostilities’
 以色列与真主党停火生效，拜登坚持“永久停止敌对行动”](https://www.theguardian.com/world/2024/nov/27/israel-hezbollah-ceasefire-begins-biden-lebanon-iran)
 *Date: November 27, 2024*
+
+[South Korea president backs down from martial law order after MPs vote to block it
+国会议员投票阻止后，韩国总统放弃了戒严令](https://www.bbc.com/news/live/cn38321180et)
+*Date: December 4, 2024*
