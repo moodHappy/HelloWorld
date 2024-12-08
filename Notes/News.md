@@ -69,3 +69,7 @@
 [South Korea president backs down from martial law order after MPs vote to block it
 国会议员投票阻止后，韩国总统放弃了戒严令](https://www.bbc.com/news/live/cn38321180et)
 *Date: December 4, 2024*
+
+[Rebels say Syria free of Assad after reports he has fled
+据报道阿萨德逃离后，叛军称叙利亚已经摆脱了阿萨德](https://www.bbc.com/news/live/cwy8xzxe0w7t)
+*Date: December 8, 2024*
