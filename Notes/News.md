@@ -73,3 +73,7 @@
 [Rebels say Syria free of Assad after reports he has fled
 据报道阿萨德逃离后，叛军称叙利亚已经摆脱了阿萨德](https://www.bbc.com/news/live/cwy8xzxe0w7t)
 *Date: December 8, 2024*
+
+[Luigi Mangione charged with murdering healthcare CEO in New York
+路易吉·曼吉奥内 (Luigi Mangione) 被控在纽约谋杀医疗保健首席执行官](https://www.bbc.com/news/articles/cly2zwqqr1ro)
+*Date: December 10, 2024*
