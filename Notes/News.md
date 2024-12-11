@@ -84,3 +84,7 @@
 
 [S Korea police raid president's office over martial law attempt](https://www.bbc.com/news/articles/ce3l0g37e4ro)
 *Date: December 11, 2024*
+
+[S Korea police raid president's office over martial law attempt
+韩国警方因戒严企图突袭总统办公室](https://www.bbc.com/news/articles/ce3l0g37e4ro)
+*Date: December 11, 2024*
