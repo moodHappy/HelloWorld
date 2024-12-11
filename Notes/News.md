@@ -81,3 +81,6 @@
 [I hope Assad pays the price, says mother whose son's death inflamed 2011 Syrian revolution
 儿子之死引发 2011 年叙利亚革命的母亲表示，我希望阿萨德付出代价](https://www.bbc.com/news/articles/ckg9z3r2xp9o)
 *Date: December 11, 2024*
+
+[S Korea police raid president's office over martial law attempt](https://www.bbc.com/news/articles/ce3l0g37e4ro)
+*Date: December 11, 2024*
