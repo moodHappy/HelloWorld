@@ -85,3 +85,7 @@
 [skorea police raid president's office over martial law attempt
 韩国警方因戒严企图突袭总统办公室](https://www.bbc.com/news/articles/ce3l0g37e4ro)
 *Date: December 11, 2024*
+
+[Luigi Mangione was charged with murder - then donations started pouring in
+路易吉·曼吉奥内 (Luigi Mangione) 被指控谋杀 - 随后捐款开始涌入](https://www.reuters.com/world/us/luigi-mangione-was-charged-with-murder-then-donations-started-pouring-2024-12-12/)
+*Date: December 12, 2024*
