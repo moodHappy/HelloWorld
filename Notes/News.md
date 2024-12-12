@@ -89,3 +89,7 @@
 [Luigi Mangione was charged with murder - then donations started pouring in
 路易吉·曼吉奥内 (Luigi Mangione) 被指控谋杀 - 随后捐款开始涌入](https://www.reuters.com/world/us/luigi-mangione-was-charged-with-murder-then-donations-started-pouring-2024-12-12/)
 *Date: December 12, 2024*
+
+[In Defiant Speech, South Korea’s President Defends Martial Law Decree
+韩国总统发表挑衅言论，捍卫戒严令](https://www.nytimes.com/2024/12/11/world/asia/yoon-south-korea-martial-law.html)
+*Date: December 12, 2024*
