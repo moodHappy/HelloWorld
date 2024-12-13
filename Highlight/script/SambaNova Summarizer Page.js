@@ -82,7 +82,7 @@
             data: JSON.stringify({
                 model: 'Meta-Llama-3.1-405B-Instruct',  // 使用你提供的 Meta-Llama-3.1-8B-Instruct 模型
                 messages: [
-                    { role: "system", content: "You are a helpful assistant." },
+                    { role: "system", content: "You are a helpful assistant. Please summarize the following content in Chinese, regardless of its original language." },
                     { role: "user", content: content }
                 ]
             }),
