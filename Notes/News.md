@@ -93,3 +93,7 @@
 [In Defiant Speech, South Korea’s President Defends Martial Law Decree
 韩国总统发表挑衅言论，捍卫戒严令](https://www.nytimes.com/2024/12/11/world/asia/yoon-south-korea-martial-law.html)
 *Date: December 12, 2024*
+
+[Where next for Iran now that its 'Axis of Resistance' is shattered
+既然伊朗的“抵抗轴心”已经瓦解，那么伊朗下一步该何去何从？](https://www.bbc.com/news/articles/c05pmmzp63zo)
+*Date: December 13, 2024*
