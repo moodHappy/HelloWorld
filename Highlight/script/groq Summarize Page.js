@@ -67,7 +67,7 @@ document.body.appendChild(button);
                 model: 'llama3-8b-8192',
                 messages: [{
                     role: 'user',
-                    content: `总结页面并翻译成中文，并且只输出翻译且不要中英文混用，分清段落：${pageContent}`
+                    content: `用中文总结以下内容：${pageContent}`
                 }]
             }),
             onload: function (response) {
