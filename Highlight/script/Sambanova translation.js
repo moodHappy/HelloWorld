@@ -1,7 +1,7 @@
 // 修复未知
 
 // ==UserScript==
-// @name         页面翻译工具
+// @name         sambanova translation
 // @namespace    http://tampermonkey.net/
 // @version      1.1
 // @description  使用API翻译页面内容，并将翻译结果插入到每段文字下面，包括标题。
