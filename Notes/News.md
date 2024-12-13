@@ -97,3 +97,7 @@
 [Where next for Iran now that its 'Axis of Resistance' is shattered
 既然伊朗的“抵抗轴心”已经瓦解，那么伊朗下一步该何去何从？](https://www.bbc.com/news/articles/c05pmmzp63zo)
 *Date: December 13, 2024*
+
+[Macron names centrist Bayrou as French PM in bid to end political instability
+马克龙任命中间派贝鲁为法国总理，以结束政治不稳定](https://www.bbc.com/news/articles/cwyx04pmnrgo)
+*Date: December 13, 2024*
