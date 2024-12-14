@@ -105,3 +105,7 @@
 [Georgia's turmoil deepens as ex-footballer named president
 前足球运动员被任命为总统，佐治亚州的动荡加剧](https://www.bbc.com/news/articles/c5ygejxej28o)
 *Date: December 14, 2024*
+
+[South Korea parliament votes to impeach president
+韩国国会投票弹劾总统](https://www.bbc.com/news/articles/c140xjv31lxo)
+*Date: December 14, 2024*
