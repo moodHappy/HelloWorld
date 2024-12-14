@@ -109,3 +109,7 @@
 [South Korea parliament votes to impeach president
 韩国国会投票弹劾总统](https://www.bbc.com/news/articles/c140xjv31lxo)
 *Date: December 14, 2024*
+
+['I felt like a breathing corpse': Stories from people freed from Syria torture prison
+“我感觉就像一具会呼吸的尸体”：从叙利亚酷刑监狱获释的人的故事](https://www.bbc.com/news/articles/cy4784vn4jdo)
+*Date: December 15, 2024*
