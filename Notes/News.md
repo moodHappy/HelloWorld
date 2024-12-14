@@ -113,3 +113,7 @@
 ['I felt like a breathing corpse': Stories from people freed from Syria torture prison
 “我感觉就像一具会呼吸的尸体”：从叙利亚酷刑监狱获释的人的故事](https://www.bbc.com/news/articles/cy4784vn4jdo)
 *Date: December 15, 2024*
+
+[What lies ahead for Assad and his family?
+阿萨德及其家人的未来是什么？](https://www.bbc.com/news/articles/cp31yj8wqqno)
+*Date: December 15, 2024*
