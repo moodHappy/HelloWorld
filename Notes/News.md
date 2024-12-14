@@ -101,3 +101,7 @@
 [Macron names centrist Bayrou as French PM in bid to end political instability
 马克龙任命中间派贝鲁为法国总理，以结束政治不稳定](https://www.bbc.com/news/articles/cwyx04pmnrgo)
 *Date: December 13, 2024*
+
+[Georgia's turmoil deepens as ex-footballer named president
+前足球运动员被任命为总统，佐治亚州的动荡加剧](https://www.bbc.com/news/articles/c5ygejxej28o)
+*Date: December 14, 2024*
