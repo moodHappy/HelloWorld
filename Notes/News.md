@@ -120,3 +120,7 @@
 
 [New name, no photos: Gisèle Pelicot removes all trace of her husband](https://www.bbc.com/news/articles/cvgx7xy77ydo)
 *Date: December 15, 2024*
+
+[How Italy’s PM Meloni could bridge the gap between Trump and Europe
+意大利总理梅洛尼如何弥合特朗普与欧洲之间的差距](https://edition.cnn.com/2024/12/14/europe/italy-giorgia-meloni-trump-relationship-intl/index.html)
+*Date: December 15, 2024*
