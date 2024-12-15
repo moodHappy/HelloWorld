@@ -124,3 +124,6 @@
 [How Italy’s PM Meloni could bridge the gap between Trump and Europe
 意大利总理梅洛尼如何弥合特朗普与欧洲之间的差距](https://edition.cnn.com/2024/12/14/europe/italy-giorgia-meloni-trump-relationship-intl/index.html)
 *Date: December 15, 2024*
+
+[意大利新总理梅洛尼何许人也？](https://amp.dw.com/zh/%E6%84%8F%E5%A4%A7%E5%88%A9%E6%96%B0%E6%80%BB%E7%90%86%E6%A2%85%E6%B4%9B%E5%B0%BC%E4%BD%95%E8%AE%B8%E4%BA%BA%E4%B9%9F/a-63240264)
+*Date: December 15, 2024*
