@@ -131,3 +131,7 @@
 [Prince Andrew says he 'ceased all contact' with alleged Chinese spy
 安德鲁王子表示，他“停止了与涉嫌中国间谍的所有联系”](https://www.bbc.com/news/articles/cvg6n6yq6nyo)
 *Date: December 15, 2024*
+
+[After 50 years of Assad cruelty, Syrians search for dead loved ones - and closure
+阿萨德暴行 50 年后，叙利亚人寻找死去的亲人并关闭](https://www.bbc.com/news/articles/cq5lwq911dwo)
+*Date: December 15, 2024*
