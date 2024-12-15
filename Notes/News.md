@@ -117,3 +117,6 @@
 [What lies ahead for Assad and his family?
 阿萨德及其家人的未来是什么？](https://www.bbc.com/news/articles/cp31yj8wqqno)
 *Date: December 15, 2024*
+
+[New name, no photos: Gisèle Pelicot removes all trace of her husband](https://www.bbc.com/news/articles/cvgx7xy77ydo)
+*Date: December 15, 2024*
