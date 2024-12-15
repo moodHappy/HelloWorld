@@ -135,3 +135,7 @@
 [After 50 years of Assad cruelty, Syrians search for dead loved ones - and closure
 阿萨德暴行 50 年后，叙利亚人寻找死去的亲人并关闭](https://www.bbc.com/news/articles/cq5lwq911dwo)
 *Date: December 15, 2024*
+
+[Federal response to mysterious drone sightings draws bipartisan criticism
+联邦对神秘无人机目击事件的反应招致两党批评](https://www.cnn.com/2024/12/15/politics/mysterious-drone-sightings-lawmakers-criticize-response/index.html)
+*Date: December 16, 2024*
