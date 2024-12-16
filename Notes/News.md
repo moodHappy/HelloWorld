@@ -139,3 +139,7 @@
 [Federal response to mysterious drone sightings draws bipartisan criticism
 联邦对神秘无人机目击事件的反应招致两党批评](https://www.cnn.com/2024/12/15/politics/mysterious-drone-sightings-lawmakers-criticize-response/index.html)
 *Date: December 16, 2024*
+
+[Israel plans to expand Golan settlements after fall of Assad
+阿萨德倒台后以色列计划扩大戈兰定居点](https://www.bbc.com/news/articles/cz6lgln128xo)
+*Date: December 16, 2024*
