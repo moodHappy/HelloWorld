@@ -155,3 +155,7 @@
 [Teacher and teenaged student killed in Wisconsin school shooting
 教师和青少年学生在威斯康星州学校枪击事件中丧生](https://www.bbc.com/news/articles/ckg13lz9zn4o)
 *Date: December 17, 2024*
+
+[Germany’s Scholz has lost a confidence vote. Here’s what comes next
+德国的肖尔茨在信任投票中落败。接下来会发生什么](https://edition.cnn.com/2024/12/16/europe/germany-scholz-election-government-collapse-intl/index.html)
+*Date: December 17, 2024*
