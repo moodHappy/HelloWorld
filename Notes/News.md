@@ -143,3 +143,7 @@
 [Israel plans to expand Golan settlements after fall of Assad
 阿萨德倒台后以色列计划扩大戈兰定居点](https://www.bbc.com/news/articles/cz6lgln128xo)
 *Date: December 16, 2024*
+
+[Bali Nine drug smugglers 'relieved' to be back in Australia
+巴厘岛九名毒品走私犯回到澳大利亚“如释重负”](https://www.bbc.com/news/articles/cjr2l1gvg3qo)
+*Date: December 16, 2024*
