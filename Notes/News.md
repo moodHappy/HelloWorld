@@ -147,3 +147,7 @@
 [Bali Nine drug smugglers 'relieved' to be back in Australia
 巴厘岛九名毒品走私犯回到澳大利亚“如释重负”](https://www.bbc.com/news/articles/cjr2l1gvg3qo)
 *Date: December 16, 2024*
+
+[Serbian authorities using spyware to illegally surveil activists, report finds
+报告发现塞尔维亚当局使用间谍软件非法监视活动人士](https://www.theguardian.com/world/2024/dec/16/serbian-authorities-using-spyware-to-illegally-surveil-activists-report-finds)
+*Date: December 16, 2024*
