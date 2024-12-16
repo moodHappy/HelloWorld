@@ -159,3 +159,7 @@
 [Germany’s Scholz has lost a confidence vote. Here’s what comes next
 德国的肖尔茨在信任投票中落败。接下来会发生什么](https://edition.cnn.com/2024/12/16/europe/germany-scholz-election-government-collapse-intl/index.html)
 *Date: December 17, 2024*
+
+[What we know about mysterious drone sightings
+我们对神秘无人机目击事件的了解](https://edition.cnn.com/2024/12/15/us/drone-sightings-east-coast/index.html)
+*Date: December 17, 2024*
