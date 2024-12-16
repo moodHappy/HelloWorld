@@ -151,3 +151,7 @@
 [Serbian authorities using spyware to illegally surveil activists, report finds
 报告发现塞尔维亚当局使用间谍软件非法监视活动人士](https://www.theguardian.com/world/2024/dec/16/serbian-authorities-using-spyware-to-illegally-surveil-activists-report-finds)
 *Date: December 16, 2024*
+
+[Teacher and teenaged student killed in Wisconsin school shooting
+教师和青少年学生在威斯康星州学校枪击事件中丧生](https://www.bbc.com/news/articles/ckg13lz9zn4o)
+*Date: December 17, 2024*
