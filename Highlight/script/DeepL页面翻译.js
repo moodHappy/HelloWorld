@@ -28,6 +28,7 @@
                 const translationElement = document.createElement("div");
                 translationElement.style.color = "green"; // 设置翻译文字颜色
 translationElement.style.fontSize = "18px"; // 将字号设置为14px
+translationElement.style.lineHeight = "1.4"; // 设置行距
                 translationElement.style.marginTop = "10px";
                 translationElement.textContent = translatedText;
 
