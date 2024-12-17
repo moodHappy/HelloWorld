@@ -21,7 +21,7 @@
   button.textContent = '新闻';
   button.style.position = 'fixed';
   button.style.bottom = '20px';
-  button.style.right = '20px';
+  button.style.right = '10px';
   button.style.padding = '10px 20px';
   button.style.background = '#4CAF50';
   button.style.color = 'white';
