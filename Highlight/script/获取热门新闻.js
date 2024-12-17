@@ -18,7 +18,7 @@
 
   // 创建按钮
   const button = document.createElement('button');
-  button.textContent = '获取新闻';
+  button.textContent = '新闻';
   button.style.position = 'fixed';
   button.style.bottom = '20px';
   button.style.right = '20px';
