@@ -191,3 +191,7 @@
 [Bomb that killed general reportedly hidden in electric scooter
 据报道，杀死将军的炸弹藏在电动滑板车中](https://www.bbc.com/news/articles/cm2ek388yxzo)
 *Date: December 17, 2024*
+
+[Igor Kirillov: Notorious mouthpiece and man behind Russia's chemical weapons
+伊戈尔·基里洛夫：臭名昭著的喉舌和俄罗斯化学武器的幕后黑手](https://www.bbc.com/news/articles/clyx4kvz4l0o)
+*Date: December 17, 2024*
