@@ -179,3 +179,7 @@
 [Magnitude 7.3 earthquake hits Pacific island nation of Vanuatu
 太平洋岛国瓦努阿图发生里氏7.3级地震](https://apnews.com/article/vanuatu-pacific-earthquake-ocean-3e4cc1e02bc0ec62d5931b00286688ed)
 *Date: December 17, 2024*
+
+[A crushing blow for the Justin Trudeau show
+贾斯汀·特鲁多秀的毁灭性打击](https://www.economist.com/the-americas/2024/12/16/a-crushing-blow-for-the-justin-trudeau-show)
+*Date: December 17, 2024*
