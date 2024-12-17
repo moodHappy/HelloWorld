@@ -187,3 +187,7 @@
 [How to Understand the Collapse of Germany’s Government, and What’s Next
 如何理解德国政府的崩溃以及接下来的发展](https://www.nytimes.com/2024/12/16/world/europe/germany-government-collapse-olaf-scholz.html)
 *Date: December 17, 2024*
+
+[Bomb that killed general reportedly hidden in electric scooter
+据报道，杀死将军的炸弹藏在电动滑板车中](https://www.bbc.com/news/articles/cm2ek388yxzo)
+*Date: December 17, 2024*
