@@ -195,3 +195,7 @@
 [Igor Kirillov: Notorious mouthpiece and man behind Russia's chemical weapons
 伊戈尔·基里洛夫：臭名昭著的喉舌和俄罗斯化学武器的幕后黑手](https://www.bbc.com/news/articles/clyx4kvz4l0o)
 *Date: December 17, 2024*
+
+[Whaling activist Paul Watson celebrates release from jail after Denmark refuses extradition to Japan
+丹麦拒绝引渡到日本后，捕鲸活动家保罗·沃森庆祝出狱](https://www.theguardian.com/world/2024/dec/17/denmark-refuses-to-extradite-whaling-activist-paul-watson-to-japan-says-lawyer)
+*Date: December 17, 2024*
