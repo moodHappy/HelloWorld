@@ -167,3 +167,7 @@
 [Drones over US show gaps in airspace security, top Trump adviser says
 特朗普高级顾问称美国上空无人机显示空域安全存在差距](https://www.reuters.com/world/us/drones-over-us-show-gaps-airspace-security-top-trump-adviser-says-2024-12-15/)
 *Date: December 17, 2024*
+
+['We thought it was a ball' - the bombs killing and maiming children
+“我们以为这是一个球”——炸弹炸死并致残儿童](https://www.bbc.com/news/articles/cgrwxll8z8lo)
+*Date: December 17, 2024*
