@@ -183,3 +183,7 @@
 [A crushing blow for the Justin Trudeau show
 贾斯汀·特鲁多秀的毁灭性打击](https://www.economist.com/the-americas/2024/12/16/a-crushing-blow-for-the-justin-trudeau-show)
 *Date: December 17, 2024*
+
+[How to Understand the Collapse of Germany’s Government, and What’s Next
+如何理解德国政府的崩溃以及接下来的发展](https://www.nytimes.com/2024/12/16/world/europe/germany-government-collapse-olaf-scholz.html)
+*Date: December 17, 2024*
