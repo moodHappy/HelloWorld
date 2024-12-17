@@ -1,3 +1,146 @@
+
+// 优化
+
+// ==UserScript==
+// @name        News API Popup Responsive with Translation
+// @namespace   Violentmonkey Scripts
+// @match       *://*/*
+// @grant       GM_xmlhttpRequest
+// @grant       GM_openInTab
+// @version     1.2
+// @description Fetch news from API and open in a new tab with responsive design and translation.
+// ==/UserScript==
+
+(function() {
+  'use strict';
+
+  const apiKey = 'dac6abc0634b4de08429b2580628dba8';
+  const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+
+  // 创建按钮
+  const button = document.createElement('button');
+  button.textContent = '新闻';
+  button.style.position = 'fixed';
+  button.style.bottom = '170px';
+  button.style.right = '10px';
+  button.style.padding = '10px';
+  button.style.background = '#4CAF50';
+  button.style.color = 'white';
+  button.style.border = 'none';
+  button.style.borderRadius = '5px';
+  button.style.cursor = 'pointer';
+  button.style.zIndex = 9999;
+  button.style.transition = 'opacity 0.3s ease';
+  document.body.appendChild(button);
+
+    let isButtonVisible = true;
+
+    // 滚动事件监听器
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100 && isButtonVisible) {
+            button.style.opacity = '0';
+            isButtonVisible = false;
+        } else if (window.scrollY <= 100 && !isButtonVisible) {
+            button.style.opacity = '1';
+            isButtonVisible = true;
+        }
+    });
+
+
+  button.addEventListener('click', () => {
+    GM_xmlhttpRequest({
+      method: "GET",
+      url: apiUrl,
+      onload: function(response) {
+        if (response.status === 200) {
+          const data = JSON.parse(response.responseText);
+          if (data.articles && data.articles.length > 0) {
+            let newsContent = `
+              <!DOCTYPE html>
+              <html lang="zh-CN">
+              <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>新闻列表</title>
+                <style>
+                  body { font-family: sans-serif; margin: 20px; }
+                  h1 { text-align: center; }
+                  ul { list-style: none; padding: 0; }
+                  li { border: 1px solid #eee; padding: 15px; margin-bottom: 10px; border-radius: 5px; }
+                  a { text-decoration: none; font-weight: bold; color: #333; }
+                  p { color: #666; margin-top: 5px; }
+                  a:hover { color: #0056b3; }
+                  .translation { font-style: italic; color: #888; margin-top: 5px; }
+                   @media (max-width: 600px) {
+                      body { margin: 10px; }
+                      li { padding: 10px; }
+                      h1 {font-size: 1.5em;}
+                  }
+                </style>
+              </head>
+              <body>
+              <h1>Latest News</h1>
+              <ul>
+            `;
+
+            const translatePromises = data.articles.map(async (article) => {
+                const translatedTitle = await translateText(article.title, 'en', 'zh-CN');
+                const translatedDescription = article.description ? await translateText(article.description, 'en', 'zh-CN') : 'No translation available.';
+                return { ...article, translatedTitle, translatedDescription };
+            });
+
+            Promise.all(translatePromises).then((translatedArticles) => {
+              translatedArticles.forEach(article => {
+                newsContent += `
+                  <li>
+                    <a href="${article.url}" target="_blank">${article.title}</a>
+                      <p class="translation" style="color: green;">${article.translatedTitle}</p>
+                    <p>${article.description || 'No description available.'}</p>
+                     <p class="translation" style="color: green;">${article.translatedDescription}</p>
+                  </li>
+                `;
+              });
+
+              newsContent += `
+                </ul>
+                </body>
+                </html>
+              `;
+              GM_openInTab(`data:text/html;charset=utf-8,${encodeURIComponent(newsContent)}`, { active: true });
+            });
+
+          } else {
+            alert('No news found.');
+          }
+        } else {
+          alert('Failed to fetch news. Status: ' + response.status);
+        }
+      }
+    });
+  });
+
+  async function translateText(text, sourceLang, targetLang) {
+    if (!text) {
+      return '';
+    }
+    const encodedText = encodeURIComponent(text);
+    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${sourceLang}&tl=${targetLang}&dt=t&q=${encodedText}`;
+
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        console.error("Translation API failed:", response.status);
+        return 'Translation failed.';
+      }
+      const data = await response.json();
+      return data[0][0][0];
+    } catch (error) {
+      console.error("Error during translation:", error);
+      return 'Translation failed.';
+    }
+  }
+})();
+
 // 新闻API 另一版
 
 // ==UserScript==
