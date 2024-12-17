@@ -163,3 +163,7 @@
 [What we know about mysterious drone sightings
 我们对神秘无人机目击事件的了解](https://edition.cnn.com/2024/12/15/us/drone-sightings-east-coast/index.html)
 *Date: December 17, 2024*
+
+[Drones over US show gaps in airspace security, top Trump adviser says
+特朗普高级顾问称美国上空无人机显示空域安全存在差距](https://www.reuters.com/world/us/drones-over-us-show-gaps-airspace-security-top-trump-adviser-says-2024-12-15/)
+*Date: December 17, 2024*
