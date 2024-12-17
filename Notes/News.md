@@ -171,3 +171,7 @@
 ['We thought it was a ball' - the bombs killing and maiming children
 “我们以为这是一个球”——炸弹炸死并致残儿童](https://www.bbc.com/news/articles/cgrwxll8z8lo)
 *Date: December 17, 2024*
+
+[Why Musk Doesn’t Have Access to SpaceX’s Biggest Government Secrets
+为什么马斯克无法接触 SpaceX 最大的政府机密](https://www.wsj.com/tech/musk-spacex-security-clearance-secrets-b9774346)
+*Date: December 17, 2024*
