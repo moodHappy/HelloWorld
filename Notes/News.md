@@ -199,3 +199,7 @@
 [Whaling activist Paul Watson celebrates release from jail after Denmark refuses extradition to Japan
 丹麦拒绝引渡到日本后，捕鲸活动家保罗·沃森庆祝出狱](https://www.theguardian.com/world/2024/dec/17/denmark-refuses-to-extradite-whaling-activist-paul-watson-to-japan-says-lawyer)
 *Date: December 17, 2024*
+
+[Trump sues Iowa newspaper over election poll claiming Harris’s lead
+特朗普因选举民意调查声称哈里斯领先而起诉爱荷华州报纸](https://www.theguardian.com/us-news/2024/dec/17/trump-des-moines-register-lawsuit)
+*Date: December 18, 2024*
