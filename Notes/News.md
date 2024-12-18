@@ -207,3 +207,7 @@
 [US violating law to fund Israel despite alleged human rights abuses, lawsuit says
 诉讼称：美国违反法律资助以色列，尽管其涉嫌侵犯人权](https://www.theguardian.com/us-news/2024/dec/17/palestine-israel-leahy-lawsuit)
 *Date: December 18, 2024*
+
+[Filipina who was nearly executed during 15 years on death row finally goes home
+菲律宾死囚15年差点被处决终于回家](https://www.bbc.com/news/articles/c8xj510081go)
+*Date: December 18, 2024*
