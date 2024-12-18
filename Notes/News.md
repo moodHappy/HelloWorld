@@ -211,3 +211,7 @@
 [Filipina who was nearly executed during 15 years on death row finally goes home
 菲律宾死囚15年差点被处决终于回家](https://www.bbc.com/news/articles/c8xj510081go)
 *Date: December 18, 2024*
+
+[How Tucker Carlson Killed Mike Pompeo’s Hopes of Joining the Trump Administration
+塔克·卡尔森如何扼杀了迈克·蓬佩奥加入特朗普政府的希望](https://www.wsj.com/politics/trump-tucker-carlson-cabinet-pompeo-683d9150?mod=mhp)
+*Date: December 18, 2024*
