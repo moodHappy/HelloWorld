@@ -215,3 +215,7 @@
 [How Tucker Carlson Killed Mike Pompeo’s Hopes of Joining the Trump Administration
 塔克·卡尔森如何扼杀了迈克·蓬佩奥加入特朗普政府的希望](https://www.wsj.com/politics/trump-tucker-carlson-cabinet-pompeo-683d9150?mod=mhp)
 *Date: December 18, 2024*
+
+[Fleeing Xi’s China: following the trail of migrants trying to reach Australia through Indonesia
+逃离习近平领导下的中国：追踪试图通过印度尼西亚到达澳大利亚的移民踪迹](https://www.theguardian.com/world/2024/dec/18/china-migrants-migration-route-indonesia-australia-ntwnfb)
+*Date: December 19, 2024*
