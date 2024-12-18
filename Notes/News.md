@@ -203,3 +203,7 @@
 [Trump sues Iowa newspaper over election poll claiming Harris’s lead
 特朗普因选举民意调查声称哈里斯领先而起诉爱荷华州报纸](https://www.theguardian.com/us-news/2024/dec/17/trump-des-moines-register-lawsuit)
 *Date: December 18, 2024*
+
+[US violating law to fund Israel despite alleged human rights abuses, lawsuit says
+诉讼称，尽管美国涉嫌侵犯人权，但资助以色列仍违反法律](https://www.theguardian.com/us-news/2024/dec/17/palestine-israel-leahy-lawsuit)
+*Date: December 18, 2024*
