@@ -227,3 +227,7 @@
 [Rare accounts of life for women inside notorious Iranian prison
 臭名昭著的伊朗监狱中女性生活的罕见记录](https://www.bbc.com/news/articles/cd75g5eyqv2o)
 *Date: December 19, 2024*
+
+[Gisèle Pelicot's ex-husband jailed for 20 years in mass rape trial
+吉赛尔·佩利科特前夫因大规模强奸案被判入狱 20 年](https://www.bbc.com/news/articles/c89xde5qzvgo)
+*Date: December 19, 2024*
