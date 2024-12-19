@@ -219,3 +219,7 @@
 [Fleeing Xi’s China: following the trail of migrants trying to reach Australia through Indonesia
 逃离习近平领导下的中国：追踪试图通过印度尼西亚到达澳大利亚的移民踪迹](https://www.theguardian.com/world/2024/dec/18/china-migrants-migration-route-indonesia-australia-ntwnfb)
 *Date: December 19, 2024*
+
+[How humanity discovered we’re all made of “star stuff”
+人类如何发现我们都是由“恒星物质”组成的](https://bigthink.com/the-past/how-we-discovered-were-all-made-of-star-stuff/)
+*Date: December 19, 2024*
