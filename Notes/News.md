@@ -231,3 +231,7 @@
 [Gisèle Pelicot's ex-husband jailed for 20 years in mass rape trial
 吉赛尔·佩利科特前夫因大规模强奸案被判入狱 20 年](https://www.bbc.com/news/articles/c89xde5qzvgo)
 *Date: December 19, 2024*
+
+[Trudeau's key ally says he will vote to topple him
+特鲁多的重要盟友表示将投票推翻他](https://www.bbc.com/news/articles/c4glpxpke91o)
+*Date: December 21, 2024*
