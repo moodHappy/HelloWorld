@@ -235,3 +235,7 @@
 [Trudeau's key ally says he will vote to topple him
 特鲁多的重要盟友表示将投票推翻他](https://www.bbc.com/news/articles/c4glpxpke91o)
 *Date: December 21, 2024*
+
+[One woman's 56-year fight to free her innocent brother from death sentence
+一名妇女为将无辜兄弟从死刑中解救出来而奋斗了 56 年](https://www.bbc.com/news/articles/c24nrr0mv4go)
+*Date: December 21, 2024*
