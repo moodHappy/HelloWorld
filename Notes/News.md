@@ -239,3 +239,7 @@
 [One woman's 56-year fight to free her innocent brother from death sentence
 一名妇女为将无辜兄弟从死刑中解救出来而奋斗了 56 年](https://www.bbc.com/news/articles/c24nrr0mv4go)
 *Date: December 21, 2024*
+
+[Five dead, more than 200 injured in car attack on German Christmas market
+德国圣诞集市发生汽车袭击事件 造成5人死亡、200多人受伤](https://www.bbc.com/news/articles/cdr0zx4e04no)
+*Date: December 21, 2024*
