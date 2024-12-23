@@ -251,3 +251,7 @@
 [Starbucks workers expand strike in US cities, including New York
 星巴克员工在纽约等美国城市扩大罢工](https://www.reuters.com/business/retail-consumer/starbucks-workers-expand-strike-us-cities-including-new-york-2024-12-22/)
 *Date: December 23, 2024*
+
+[A man's suicide leads to clamour around India's dowry law
+一名男子自杀引发印度嫁妆法争议](https://www.bbc.com/news/articles/c33d6161z3yo)
+*Date: December 23, 2024*
