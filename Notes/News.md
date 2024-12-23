@@ -247,3 +247,7 @@
 [A dam ignited rare Tibetan protests. They ended in beatings and arrests, BBC finds
 一座水坝引发了罕见的西藏抗议。英国广播公司发现，他们以殴打和逮捕告终](https://www.bbc.com/news/articles/c1d37zg1549o)
 *Date: December 23, 2024*
+
+[Starbucks workers expand strike in US cities, including New York
+星巴克员工在纽约等美国城市扩大罢工](https://www.reuters.com/business/retail-consumer/starbucks-workers-expand-strike-us-cities-including-new-york-2024-12-22/)
+*Date: December 23, 2024*
