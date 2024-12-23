@@ -243,3 +243,7 @@
 [Five dead, more than 200 injured in car attack on German Christmas market
 德国圣诞集市发生汽车袭击事件 造成5人死亡、200多人受伤](https://www.bbc.com/news/articles/cdr0zx4e04no)
 *Date: December 21, 2024*
+
+[A dam ignited rare Tibetan protests. They ended in beatings and arrests, BBC finds
+一座水坝引发了罕见的西藏抗议。英国广播公司发现，他们以殴打和逮捕告终](https://www.bbc.com/news/articles/c1d37zg1549o)
+*Date: December 23, 2024*
