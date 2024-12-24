@@ -263,3 +263,7 @@
 [Israel confirms it killed Hamas leader Haniyeh in Tehran
 以色列证实在德黑兰击毙哈马斯领导人哈尼亚](https://www.bbc.com/news/articles/c0ewr870z23o)
 *Date: December 24, 2024*
+
+[Spacecraft attempts closest-ever approach to Sun
+航天器尝试有史以来最接近太阳](https://www.bbc.com/news/articles/c9q7lnyw25wo)
+*Date: December 24, 2024*
