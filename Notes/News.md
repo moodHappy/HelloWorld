@@ -271,3 +271,7 @@
 [Xi Digs In With Top-Down Economic Plan Even as China Drowns in Debt
 尽管中国深陷债务泥潭，习近平仍坚持自上而下的经济计划](https://www.wsj.com/world/china/china-xi-debt-economic-plan-13aaeec1)
 *Date: December 24, 2024*
+
+[Protests erupt in Syria over Christmas tree burning
+叙利亚因焚烧圣诞树爆发抗议活动](https://www.bbc.com/news/articles/cx27yx1y0deo)
+*Date: December 24, 2024*
