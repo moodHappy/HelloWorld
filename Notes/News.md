@@ -267,3 +267,7 @@
 [Spacecraft attempts closest-ever approach to Sun
 航天器尝试有史以来最接近太阳](https://www.bbc.com/news/articles/c9q7lnyw25wo)
 *Date: December 24, 2024*
+
+[Xi Digs In With Top-Down Economic Plan Even as China Drowns in Debt
+尽管中国深陷债务泥潭，习近平仍坚持自上而下的经济计划](https://www.wsj.com/world/china/china-xi-debt-economic-plan-13aaeec1)
+*Date: December 24, 2024*
