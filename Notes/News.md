@@ -255,3 +255,7 @@
 [A man's suicide leads to clamour around India's dowry law
 一名男子自杀引发印度嫁妆法争议](https://www.bbc.com/news/articles/c33d6161z3yo)
 *Date: December 23, 2024*
+
+[Israel confirms it killed Hamas leader Haniyeh in Tehran
+以色列证实在德黑兰击毙哈马斯领导人哈尼亚](https://www.bbc.com/news/articles/c0ewr870z23o)
+*Date: December 24, 2024*
