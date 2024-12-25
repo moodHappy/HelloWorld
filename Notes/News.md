@@ -279,3 +279,7 @@
 [Ukraine's war stamps put humour, patriotism and swearing in the post
 乌克兰战争邮票充满幽默、爱国主义和咒骂](https://www.bbc.com/news/articles/cly4w8z28xzo)
 *Date: December 25, 2024*
+
+[Why festive gatherings can be so toxic
+为什么节日聚会如此有毒](https://www.bbc.com/future/article/20211201-why-family-estrangement-is-surprisingly-common)
+*Date: December 25, 2024*
