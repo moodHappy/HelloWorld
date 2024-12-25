@@ -275,3 +275,7 @@
 [Protests erupt in Syria over Christmas tree burning
 叙利亚因焚烧圣诞树爆发抗议活动](https://www.bbc.com/news/articles/cx27yx1y0deo)
 *Date: December 24, 2024*
+
+[Ukraine's war stamps put humour, patriotism and swearing in the post
+乌克兰战争邮票充满幽默、爱国主义和咒骂](https://www.bbc.com/news/articles/cly4w8z28xzo)
+*Date: December 25, 2024*
