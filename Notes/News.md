@@ -287,3 +287,7 @@
 [Twenty years on: 'My boat was metres from the shore when the tsunami hit'
 二十年后：“海啸袭击时我的船距离海岸只有几米”](https://www.bbc.com/news/articles/c6230646435o)
 *Date: December 26, 2024*
+
+[Hundreds escape Mozambique prison amid election protests
+数百人在选举抗议中逃离莫桑比克监狱](https://www.bbc.com/news/articles/cnv36qrnejno)
+*Date: December 26, 2024*
