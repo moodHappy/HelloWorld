@@ -291,3 +291,7 @@
 [Hundreds escape Mozambique prison amid election protests
 数百人在选举抗议中逃离莫桑比克监狱](https://www.bbc.com/news/articles/cnv36qrnejno)
 *Date: December 26, 2024*
+
+[Taiwan's ex-presidential candidate charged with corruption
+台湾前总统候选人被控腐败](https://www.bbc.com/news/articles/czd48v87md1o)
+*Date: December 26, 2024*
