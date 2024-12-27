@@ -311,3 +311,7 @@ Twitter 和 Flickr 如何记录孟买恐怖袭击](https://www.theguardian.com/t
 [South Korea's acting president faces impeachment as Yoon set for trial
 韩国代理总统尹正面临弹劾](https://www.reuters.com/world/asia-pacific/south-koreas-acting-president-faces-impeachment-vote-court-meets-martial-law-2024-12-26/)
 *Date: December 27, 2024*
+
+[China to build world's largest hydropower dam in Tibet
+中国将在西藏建设世界最大水电站](https://www.bbc.com/news/articles/crmn127kmr4o)
+*Date: December 27, 2024*
