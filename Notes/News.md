@@ -295,3 +295,7 @@
 [Taiwan's ex-presidential candidate charged with corruption
 台湾前总统候选人被控腐败](https://www.bbc.com/news/articles/czd48v87md1o)
 *Date: December 26, 2024*
+
+[Manmohan Singh, Indian ex-PM and architect of economic reform, dies at 92
+印度前总理、经济改革设计师曼莫汉·辛格去世，享年 92 岁](https://www.bbc.com/news/articles/cyrrd4nlr0yo)
+*Date: December 27, 2024*
