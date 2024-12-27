@@ -307,3 +307,7 @@ Twitter 和 Flickr 如何记录孟买恐怖袭击](https://www.theguardian.com/t
 [Mumbai rocked by deadly attacks
 孟买遭受致命袭击](http://news.bbc.co.uk/2/hi/south_asia/7751160.stm)
 *Date: December 27, 2024*
+
+[South Korea's acting president faces impeachment as Yoon set for trial
+韩国代理总统尹正面临弹劾](https://www.reuters.com/world/asia-pacific/south-koreas-acting-president-faces-impeachment-vote-court-meets-martial-law-2024-12-26/)
+*Date: December 27, 2024*
