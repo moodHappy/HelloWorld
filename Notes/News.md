@@ -299,3 +299,7 @@
 [Manmohan Singh, Indian ex-PM and architect of economic reform, dies at 92
 印度前总理、经济改革设计师曼莫汉·辛格去世，享年 92 岁](https://www.bbc.com/news/articles/cyrrd4nlr0yo)
 *Date: December 27, 2024*
+
+[How Twitter and Flickr recorded the Mumbai terror attacks
+Twitter 和 Flickr 如何记录孟买恐怖袭击](https://www.theguardian.com/technology/2008/nov/27/mumbai-terror-attacks-twitter-flickr)
+*Date: December 27, 2024*
