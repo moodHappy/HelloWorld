@@ -304,6 +304,6 @@
 Twitter 和 Flickr 如何记录孟买恐怖袭击](https://www.theguardian.com/technology/2008/nov/27/mumbai-terror-attacks-twitter-flickr)
 *Date: December 27, 2024*
 
-[Head of WHO at Yemen airport during Israeli air strikes
-以色列空袭期间世卫组织负责人在也门机场](https://www.bbc.com/news/articles/clyj88rye1jo)
+[Mumbai rocked by deadly attacks
+孟买遭受致命袭击](http://news.bbc.co.uk/2/hi/south_asia/7751160.stm)
 *Date: December 27, 2024*
