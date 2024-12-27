@@ -315,3 +315,7 @@ Twitter 和 Flickr 如何记录孟买恐怖袭击](https://www.theguardian.com/t
 [China to build world's largest hydropower dam in Tibet
 中国将在西藏建设世界最大水电站](https://www.bbc.com/news/articles/crmn127kmr4o)
 *Date: December 27, 2024*
+
+[Nasa makes history with closest-ever approach to Sun
+美国宇航局创造了有史以来最接近太阳的历史](https://www.bbc.com/news/articles/cgrwdxpljyxo)
+*Date: December 27, 2024*
