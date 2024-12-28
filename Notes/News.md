@@ -327,3 +327,7 @@ Twitter 和 Flickr 如何记录孟买恐怖袭击](https://www.theguardian.com/t
 [China is building new detention centers all over the country as Xi Jinping widens corruption purge
 随着习近平加大反腐败力度，中国正在全国各地修建新的看守所](https://edition.cnn.com/2024/12/28/china/china-liuzhi-detention-centers-dst-intl-hnk/index.html)
 *Date: December 28, 2024*
+
+['Assad's fall opened part of my husband's past I knew nothing about'
+“阿萨德的倒台揭开了我丈夫的部分过去，我对此一无所知”](https://www.bbc.com/news/articles/cy53qkd2z1eo)
+*Date: December 28, 2024*
