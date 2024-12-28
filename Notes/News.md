@@ -331,3 +331,7 @@ Twitter 和 Flickr 如何记录孟买恐怖袭击](https://www.theguardian.com/t
 ['Assad's fall opened part of my husband's past I knew nothing about'
 “阿萨德的倒台揭开了我丈夫的部分过去，我对此一无所知”](https://www.bbc.com/news/articles/cy53qkd2z1eo)
 *Date: December 28, 2024*
+
+[How OnlyFans turned into a global empire bent on redefining porn
+OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](https://www.reuters.com/investigates/special-report/onlyfans-sex-origins/)
+*Date: December 29, 2024*
