@@ -319,3 +319,7 @@ Twitter 和 Flickr 如何记录孟买恐怖袭击](https://www.theguardian.com/t
 [Nasa makes history with closest-ever approach to Sun
 美国宇航局创造了有史以来最接近太阳的历史](https://www.bbc.com/news/articles/cgrwdxpljyxo)
 *Date: December 27, 2024*
+
+[A year of mass attacks reveals anger and frustration in China
+一年来的大规模袭击暴露了中国的愤怒和沮丧](https://www.bbc.com/news/articles/c3dxz1vzdyzo)
+*Date: December 28, 2024*
