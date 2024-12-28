@@ -323,3 +323,7 @@ Twitter 和 Flickr 如何记录孟买恐怖袭击](https://www.theguardian.com/t
 [A year of mass attacks reveals anger and frustration in China
 一年来的大规模袭击暴露了中国的愤怒和沮丧](https://www.bbc.com/news/articles/c3dxz1vzdyzo)
 *Date: December 28, 2024*
+
+[China is building new detention centers all over the country as Xi Jinping widens corruption purge
+随着习近平加大反腐败力度，中国正在全国各地修建新的看守所](https://edition.cnn.com/2024/12/28/china/china-liuzhi-detention-centers-dst-intl-hnk/index.html)
+*Date: December 28, 2024*
