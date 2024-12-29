@@ -351,3 +351,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [As Putin reaches 25 years in power, has he 'taken care of Russia'?
 普京执政25年，他“照顾好俄罗斯”了吗？](https://www.bbc.com/news/articles/cd0ek943v7ko)
 *Date: December 29, 2024*
+
+[Azerbaijan’s president accuses Russia of downing airliner in Christmas Day crash and covering up cause
+阿塞拜疆总统指责俄罗斯在圣诞节坠机事件中击落客机并掩盖原因](https://edition.cnn.com/2024/12/29/asia/azerbaijan-airlines-crash-russia-intl/index.html)
+*Date: December 29, 2024*
