@@ -335,3 +335,7 @@ Twitter 和 Flickr 如何记录孟买恐怖袭击](https://www.theguardian.com/t
 [How OnlyFans turned into a global empire bent on redefining porn
 OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](https://www.reuters.com/investigates/special-report/onlyfans-sex-origins/)
 *Date: December 29, 2024*
+
+[At least 28 dead in South Korea plane crash - reports
+韩国空难至少28人死亡](https://www.bbc.com/news/articles/c3we2p3l36jo)
+*Date: December 29, 2024*
