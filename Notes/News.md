@@ -343,3 +343,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [Lost city found by accident and rhino IVF breakthrough: 2024's scientific wins
 意外发现的失落之城和犀牛试管受精突破：2024 年的科学胜利](https://www.bbc.com/news/articles/cm2v1rl32j8o)
 *Date: December 29, 2024*
+
+[From Squid Game to Blackpink, how South Korea became a culture powerhouse
+从 Squid Game 到 Blackpink，韩国如何成为文化强国](https://www.bbc.com/news/articles/cz6jynn5w9no)
+*Date: December 29, 2024*
