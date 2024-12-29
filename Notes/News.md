@@ -345,5 +345,5 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 *Date: December 29, 2024*
 
 [From Squid Game to Blackpink, how South Korea became a culture powerhouse
-从 Squid Game 到 Blackpink，韩国如何成为文化强国](https://www.bbc.com/news/articles/cz6jynn5w9no)
+从鱿鱼游戏（Squid Game）到 Blackpink，韩国如何成为文化强国](https://www.bbc.com/news/articles/cz6jynn5w9no)
 *Date: December 29, 2024*
