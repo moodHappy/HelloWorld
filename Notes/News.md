@@ -347,3 +347,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [From Squid Game to Blackpink, how South Korea became a culture powerhouse
 从鱿鱼游戏（Squid Game）到 Blackpink，韩国如何成为文化强国](https://www.bbc.com/news/articles/cz6jynn5w9no)
 *Date: December 29, 2024*
+
+[As Putin reaches 25 years in power, has he 'taken care of Russia'?
+普京执政25年，他“照顾好俄罗斯”了吗？](https://www.bbc.com/news/articles/cd0ek943v7ko)
+*Date: December 29, 2024*
