@@ -355,3 +355,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [Azerbaijan’s president accuses Russia of downing airliner in Christmas Day crash and covering up cause
 阿塞拜疆总统指责俄罗斯在圣诞节坠机事件中击落客机并掩盖原因](https://edition.cnn.com/2024/12/29/asia/azerbaijan-airlines-crash-russia-intl/index.html)
 *Date: December 29, 2024*
+
+[Former US President Jimmy Carter dies aged 100
+美国前总统吉米·卡特去世，享年 100 岁](https://www.bbc.com/news/live/ce98937nrqrt)
+*Date: December 30, 2024*
