@@ -363,3 +363,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [Jimmy Carter, former US president, dies aged 100
 美国前总统吉米·卡特去世，享年 100 岁](https://www.bbc.com/news/articles/cpww85w5p30o)
 *Date: December 30, 2024*
+
+['It was destiny': How Jimmy Carter embraced China and changed history
+“这是命运”：吉米·卡特如何拥抱中国并改变历史](https://www.bbc.com/news/articles/cn446nmjp1vo)
+*Date: December 31, 2024*
