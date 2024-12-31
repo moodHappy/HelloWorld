@@ -371,3 +371,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [Angelina Jolie and Brad Pitt reach divorce deal
 安吉丽娜·朱莉和布拉德·皮特达成离婚协议](https://www.bbc.com/news/articles/cx2nde444d0o)
 *Date: December 31, 2024*
+
+[South Korean court issues arrest warrant for embattled President Yoon Suk Yeol
+韩国法院对陷入困境的总统尹锡烈发出逮捕令](https://www.cnn.com/2024/12/30/asia/arrest-warrant-south-korea-president-yoon-suk-yeol-intl-hnk/index.html)
+*Date: December 31, 2024*
