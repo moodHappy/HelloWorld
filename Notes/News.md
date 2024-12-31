@@ -367,3 +367,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 ['It was destiny': How Jimmy Carter embraced China and changed history
 “这是命运”：吉米·卡特如何拥抱中国并改变历史](https://www.bbc.com/news/articles/cn446nmjp1vo)
 *Date: December 31, 2024*
+
+[Angelina Jolie and Brad Pitt reach divorce deal
+安吉丽娜·朱莉和布拉德·皮特达成离婚协议](https://www.bbc.com/news/articles/cx2nde444d0o)
+*Date: December 31, 2024*
