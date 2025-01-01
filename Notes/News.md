@@ -375,3 +375,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [South Korean court issues arrest warrant for embattled President Yoon Suk Yeol
 韩国法院对陷入困境的总统尹锡烈发出逮捕令](https://www.cnn.com/2024/12/30/asia/arrest-warrant-south-korea-president-yoon-suk-yeol-intl-hnk/index.html)
 *Date: December 31, 2024*
+
+[All the music, TV, film, art and more to get excited about in 2025
+2025 年所有令人兴奋的音乐、电视、电影、艺术等](https://www.bbc.com/news/articles/cx2nprmpr20o)
+*Date: January 1, 2025*
