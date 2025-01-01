@@ -379,3 +379,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [All the music, TV, film, art and more to get excited about in 2025
 2025 年所有令人兴奋的音乐、电视、电影、艺术等](https://www.bbc.com/news/articles/cx2nprmpr20o)
 *Date: January 1, 2025*
+
+[Driver who killed 10 in New Orleans attack was 'hell-bent on creating carnage', police say
+警方称，在新奥尔良袭击中造成 10 人死亡的司机“一心要制造屠杀”](https://www.bbc.com/news/live/cn4x88455qpt)
+*Date: January 1, 2025*
