@@ -383,3 +383,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [Driver who killed 10 in New Orleans attack was 'hell-bent on creating carnage', police say
 警方称，在新奥尔良袭击中造成 10 人死亡的司机“一心要制造屠杀”](https://www.bbc.com/news/live/cn4x88455qpt)
 *Date: January 1, 2025*
+
+[Where to go in 2025: The best places to visit
+2025 年去哪里：最佳旅游地点](https://www.cnn.com/travel/best-destinations-to-visit-2025/index.html)
+*Date: January 2, 2025*
