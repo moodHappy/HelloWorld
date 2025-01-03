@@ -391,3 +391,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [UK's biggest ever dinosaur footprint site unearthed
 英国有史以来最大的恐龙足迹遗址出土](https://www.bbc.com/news/articles/c24nzeqq1l2o)
 *Date: January 2, 2025*
+
+[High drama in Seoul as investigators try to arrest South Korea's president
+调查人员试图逮捕韩国总统，首尔上演戏剧性事件](https://www.bbc.com/news/live/czd4ezlmjq0t)
+*Date: January 3, 2025*
