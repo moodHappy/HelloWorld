@@ -399,3 +399,6 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [Attempt to arrest S Korea president Yoon suspended after dramatic standoff
 戏剧性对峙后，逮捕韩国总统尹正的尝试被暂停](https://www.bbc.com/news/articles/cy4pz3129pzo)
 *Date: January 3, 2025*
+
+[Investigators have until 6 January to arrest Yoon before the current warrant expires. They can, however, apply for a new warrant and try to detain him again.](https://www.bbc.com/news/articles/cy4pz3129pzo)
+*Date: January 3, 2025*
