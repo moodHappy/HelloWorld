@@ -403,3 +403,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [Venezuela offers reward for candidate's arrest
 委内瑞拉悬赏逮捕候选人](https://www.bbc.com/news/articles/cr560471ll2o)
 *Date: January 3, 2025*
+
+[Trump to be sentenced over hush money case but judge signals no jail time
+特朗普因封口费案被判刑但法官表示不会入狱](https://www.bbc.com/news/articles/c390mrmxndyo)
+*Date: January 4, 2025*
