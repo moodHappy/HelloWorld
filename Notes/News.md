@@ -407,3 +407,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [Trump to be sentenced over hush money case but judge signals no jail time
 特朗普因封口费案被判刑但法官表示不会入狱](https://www.bbc.com/news/articles/c390mrmxndyo)
 *Date: January 4, 2025*
+
+[China's overqualified youth taking jobs as drivers, labourers and film extras
+中国资历过高的年轻人从事司机、劳工和电影临时演员的工作](https://www.bbc.com/news/articles/ce8nlpy2n1lo)
+*Date: January 4, 2025*
