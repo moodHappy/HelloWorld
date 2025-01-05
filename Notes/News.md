@@ -414,3 +414,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 
 [Biggest winter storm in over a decade forecast to hit US](https://www.bbc.com/news/articles/c0kvlkvzdgzo)
 *Date: January 5, 2025*
+
+[Zendaya and Timothée Chalamet among stars gathering for Golden Globes
+赞达亚 (Zendaya) 和蒂莫西·查拉梅 (Timothée Chalamet) 等明星齐聚金球奖](https://www.bbc.com/news/articles/cew25kgdn5do)
+*Date: January 5, 2025*
