@@ -411,3 +411,6 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [China's overqualified youth taking jobs as drivers, labourers and film extras
 中国资历过高的年轻人从事司机、劳工和电影临时演员的工作](https://www.bbc.com/news/articles/ce8nlpy2n1lo)
 *Date: January 4, 2025*
+
+[Biggest winter storm in over a decade forecast to hit US](https://www.bbc.com/news/articles/c0kvlkvzdgzo)
+*Date: January 5, 2025*
