@@ -418,3 +418,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [Zendaya and Timothée Chalamet among stars gathering for Golden Globes
 赞达亚 (Zendaya) 和蒂莫西·查拉梅 (Timothée Chalamet) 等明星齐聚金球奖](https://www.bbc.com/news/articles/cew25kgdn5do)
 *Date: January 5, 2025*
+
+[Body of missing Indian journalist found in septic tank
+印度失踪记者尸体在化粪池中被发现](https://www.bbc.com/news/articles/clygl0rjy2no)
+*Date: January 6, 2025*
