@@ -422,3 +422,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [Body of missing Indian journalist found in septic tank
 印度失踪记者尸体在化粪池中被发现](https://www.bbc.com/news/articles/clygl0rjy2no)
 *Date: January 6, 2025*
+
+[Saving a species: The slow return of the Iberian lynx
+拯救物种：伊比利亚山猫的缓慢回归](https://www.bbc.com/news/articles/c17dx4v5plvo)
+*Date: January 6, 2025*
