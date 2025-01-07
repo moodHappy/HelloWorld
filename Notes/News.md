@@ -442,3 +442,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [French far-right politician Jean-Marie Le Pen dies at 96
 法国极右翼政治家让·马里·勒庞去世，享年 96 岁](https://www.bbc.com/news/articles/cvgm2jvkl2yo)
 *Date: January 7, 2025*
+
+[Jean-Marie Le Pen - founder of French far right and 'Devil of the Republic'
+让-马里·勒庞 - 法国极右翼创始人和“共和国魔鬼”](https://www.bbc.com/news/articles/c84z7pl4193o)
+*Date: January 7, 2025*
