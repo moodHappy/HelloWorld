@@ -430,3 +430,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [What to know about winter storm hitting North America
 关于冬季风暴袭击北美的知识](https://www.bbc.com/news/articles/c0kvlkvzdgzo)
 *Date: January 6, 2025*
+
+["Stop shooting! My daughter is dead": Woman killed as West Bank power struggle rages
+“停止射击！我的女儿死了”：西岸权力斗争激烈，一名妇女被杀](https://www.bbc.com/news/articles/cyv3rl9prp6o)
+*Date: January 7, 2025*
