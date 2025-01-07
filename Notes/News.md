@@ -434,3 +434,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 ["Stop shooting! My daughter is dead": Woman killed as West Bank power struggle rages
 “停止射击！我的女儿死了”：西岸权力斗争激烈，一名妇女被杀](https://www.bbc.com/news/articles/cyv3rl9prp6o)
 *Date: January 7, 2025*
+
+[US says tech giant Tencent works with Chinese military
+美国称科技巨头腾讯与中国军方合作](https://www.bbc.com/news/articles/c9q78wn9g8zo)
+*Date: January 7, 2025*
