@@ -438,3 +438,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [US says tech giant Tencent works with Chinese military
 美国称科技巨头腾讯与中国军方合作](https://www.bbc.com/news/articles/c9q78wn9g8zo)
 *Date: January 7, 2025*
+
+[French far-right politician Jean-Marie Le Pen dies at 96
+法国极右翼政治家让·马里·勒庞去世，享年 96 岁](https://www.bbc.com/news/articles/cvgm2jvkl2yo)
+*Date: January 7, 2025*
