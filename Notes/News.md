@@ -450,3 +450,6 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [What you need to know about HMPV
 关于 HMPV 您需要了解的信息](https://www.bbc.com/news/articles/c23vjg7v7k0o)
 *Date: January 7, 2025*
+
+[Flames ignite homes and cars as 30,000 people ordered to evacuate from Los Angeles wildfire](https://www.bbc.com/news/live/c5y81zyp1ext)
+*Date: January 8, 2025*
