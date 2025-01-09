@@ -461,3 +461,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [Billy Crystal and Paris Hilton among celebrities to lose homes in wildfires
 比利·克里斯托 (Billy Crystal) 和帕丽斯·希尔顿 (Paris Hilton) 等名人在野火中失去家园](https://www.bbc.com/news/articles/crmnm2g1z74o)
 *Date: January 9, 2025*
+
+[A politician was shot dead in Bangkok. Did another country do it?
+一名政客在曼谷被枪杀。其他国家也这么做过吗？](https://www.bbc.com/news/articles/cdr0rx307p3o)
+*Date: January 9, 2025*
