@@ -457,3 +457,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [Why do I feel so lonely even though I'm surrounded by people?
 为什么即使周围都是人，我还是感到如此孤独？](https://www.bbc.com/future/article/20250107-why-do-i-feel-so-lonely-even-though-im-surrounded-by-people)
 *Date: January 9, 2025*
+
+[Billy Crystal and Paris Hilton among celebrities to lose homes in wildfires
+比利·克里斯托 (Billy Crystal) 和帕丽斯·希尔顿 (Paris Hilton) 等名人在野火中失去家园](https://www.bbc.com/news/articles/crmnm2g1z74o)
+*Date: January 9, 2025*
