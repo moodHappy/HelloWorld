@@ -469,3 +469,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 ['It was a hellscape': The challenge of evacuating Los Angeles during wildfires
 “这是地狱般的景象”：在山火期间疏散洛杉矶的挑战](https://www.bbc.com/future/article/20250109-why-los-angeles-was-so-hard-to-evacuate-during-the-wildfires)
 *Date: January 10, 2025*
+
+[Violent protests in China after student falls to his death
+学生坠楼身亡后中国发生暴力抗议](https://www.bbc.com/news/articles/cj494zd7y14o)
+*Date: January 10, 2025*
