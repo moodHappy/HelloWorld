@@ -465,3 +465,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [A politician was shot dead in Bangkok. Did another country do it?
 一名政客在曼谷被枪杀。其他国家也这么做过吗？](https://www.bbc.com/news/articles/cdr0rx307p3o)
 *Date: January 9, 2025*
+
+['It was a hellscape': The challenge of evacuating Los Angeles during wildfires
+“这是地狱般的景象”：在山火期间疏散洛杉矶的挑战](https://www.bbc.com/future/article/20250109-why-los-angeles-was-so-hard-to-evacuate-during-the-wildfires)
+*Date: January 10, 2025*
