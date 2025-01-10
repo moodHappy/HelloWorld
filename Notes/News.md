@@ -473,3 +473,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [Violent protests in China after student falls to his death
 学生坠楼身亡后中国发生暴力抗议](https://www.bbc.com/news/articles/cj494zd7y14o)
 *Date: January 10, 2025*
+
+[Obama and Bush - cousins?
+奥巴马和布什——表兄弟？](https://www.theguardian.com/world/2008/mar/25/barackobama1)
+*Date: January 11, 2025*
