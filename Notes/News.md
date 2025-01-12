@@ -477,3 +477,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [Obama and Bush - cousins?
 奥巴马和布什——表兄弟？](https://www.theguardian.com/world/2008/mar/25/barackobama1)
 *Date: January 11, 2025*
+
+[A murder that shook British India and toppled a king
+震惊英属印度并推翻国王的谋杀案](https://www.bbc.com/news/articles/c70e0drd480o)
+*Date: January 13, 2025*
