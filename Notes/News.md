@@ -481,3 +481,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [A murder that shook British India and toppled a king
 震惊英属印度并推翻国王的谋杀案](https://www.bbc.com/news/articles/c70e0drd480o)
 *Date: January 13, 2025*
+
+[The truth behind your £10 dress: Inside the Chinese factories fuelling Shein's success
+10英镑裙子背后的真相：助推Shein成功的中国工厂内部](https://www.bbc.com/news/articles/cdrylgvr77jo)
+*Date: January 13, 2025*
