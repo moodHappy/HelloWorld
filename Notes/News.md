@@ -493,3 +493,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [China Discusses Sale of TikTok US to Musk as One Possible Option
 中国讨论将 TikTok US 出售给马斯克作为一种可能的选择](https://www.bloomberg.com/news/articles/2025-01-14/china-discusses-sale-of-tiktok-us-to-musk-as-one-possible-option?srnd=homepage-asia)
 *Date: January 14, 2025*
+
+[How a viral post saved a Chinese actor from Myanmar's scam centres
+一条病毒帖子如何将一名中国演员从缅甸的诈骗中心中拯救出来](https://www.bbc.com/news/articles/cd606l1407no)
+*Date: January 14, 2025*
