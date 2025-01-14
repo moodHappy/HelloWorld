@@ -485,3 +485,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [The truth behind your £10 dress: Inside the Chinese factories fuelling Shein's success
 10英镑裙子背后的真相：助推Shein成功的中国工厂内部](https://www.bbc.com/news/articles/cdrylgvr77jo)
 *Date: January 13, 2025*
+
+[Former Peruvian leader Alberto Fujimori dies at 86
+秘鲁前领导人阿尔贝托·藤森去世，享年 86 岁](https://www.bbc.com/news/articles/cy0r0rgrewlo)
+*Date: January 14, 2025*
