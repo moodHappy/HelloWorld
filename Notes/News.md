@@ -504,3 +504,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [TikTok users flock to Chinese app RedNote as US ban looms
 随着美国禁令的临近，TikTok 用户涌向中国应用程序 RedNote](https://www.bbc.com/news/articles/c2475l7zpqyo)
 *Date: January 15, 2025*
+
+[S Korea impeached president arrested after investigators scale walls
+韩国弹劾总统在调查人员翻墙后被捕](https://www.bbc.com/news/articles/cg45zqz225vo)
+*Date: January 15, 2025*
