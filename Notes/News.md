@@ -508,3 +508,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [S Korea impeached president arrested after investigators scale walls
 韩国弹劾总统在调查人员翻墙后被捕](https://www.bbc.com/news/articles/cg45zqz225vo)
 *Date: January 15, 2025*
+
+[Israel and Hamas reach Gaza ceasefire and hostage release deal, sources tell BBC
+消息人士告诉BBC，以色列和哈马斯达成加沙停火和释放人质协议](https://www.bbc.com/news/live/c3rwqpj70ert)
+*Date: January 16, 2025*
