@@ -497,3 +497,6 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [How a viral post saved a Chinese actor from Myanmar's scam centres
 一条病毒帖子如何将一名中国演员从缅甸的诈骗中心中拯救出来](https://www.bbc.com/news/articles/cd606l1407no)
 *Date: January 14, 2025*
+
+[TikTok users flock to Chinese app RedNote as US ban looms](https://www.bbc.com/news/articles/c2475l7zpqyo)
+*Date: January 15, 2025*
