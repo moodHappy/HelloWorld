@@ -512,3 +512,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [Israel and Hamas reach Gaza ceasefire and hostage release deal, sources tell BBC
 消息人士告诉BBC，以色列和哈马斯达成加沙停火和释放人质协议](https://www.bbc.com/news/live/c3rwqpj70ert)
 *Date: January 16, 2025*
+
+[Twin Peaks film director David Lynch dies at 78
+《双峰》导演大卫·林奇去世，享年 78 岁](https://www.bbc.com/news/articles/cly9vymjexvo)
+*Date: January 17, 2025*
