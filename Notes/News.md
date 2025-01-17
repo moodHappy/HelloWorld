@@ -516,3 +516,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [Twin Peaks film director David Lynch dies at 78
 《双峰》导演大卫·林奇去世，享年 78 岁](https://www.bbc.com/news/articles/cly9vymjexvo)
 *Date: January 17, 2025*
+
+[TikTok faces ban in US by Sunday after Supreme Court rejects appeal
+最高法院驳回上诉后，TikTok 将于周日在美国面临禁令](https://www.bbc.com/news/live/czj37xe7jljt)
+*Date: January 18, 2025*
