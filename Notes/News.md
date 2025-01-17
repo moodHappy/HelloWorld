@@ -520,3 +520,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [TikTok faces ban in US by Sunday after Supreme Court rejects appeal
 最高法院驳回上诉后，TikTok 将于周日在美国面临禁令](https://www.bbc.com/news/live/czj37xe7jljt)
 *Date: January 18, 2025*
+
+[US Supreme Court upholds TikTok ban law
+美国最高法院维持 TikTok 禁令法](https://www.bbc.com/news/articles/c3e18qylq5do)
+*Date: January 18, 2025*
