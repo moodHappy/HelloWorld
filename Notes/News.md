@@ -524,3 +524,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [US Supreme Court upholds TikTok ban law
 美国最高法院维持 TikTok 禁令法](https://www.bbc.com/news/articles/c3e18qylq5do)
 *Date: January 18, 2025*
+
+[Israel's cabinet approves Gaza ceasefire and hostage release deal
+以色列内阁批准加沙停火和释放人质协议](https://www.bbc.com/news/articles/cvg44dkz551o)
+*Date: January 18, 2025*
