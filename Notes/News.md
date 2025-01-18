@@ -528,3 +528,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [Israel's cabinet approves Gaza ceasefire and hostage release deal
 以色列内阁批准加沙停火和释放人质协议](https://www.bbc.com/news/articles/cvg44dkz551o)
 *Date: January 18, 2025*
+
+[Why some animals appear to mourn their dead
+为什么有些动物似乎在哀悼死去的动物](https://www.bbc.com/future/article/20250110-why-some-animals-appear-to-mourn-their-dead)
+*Date: January 18, 2025*
