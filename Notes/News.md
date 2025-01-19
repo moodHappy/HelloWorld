@@ -532,3 +532,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [Why some animals appear to mourn their dead
 为什么有些动物似乎在哀悼死去的动物](https://www.bbc.com/future/article/20250110-why-some-animals-appear-to-mourn-their-dead)
 *Date: January 18, 2025*
+
+[TikTok goes offline in the US hours before ban due to come in
+TikTok 在美国因禁令生效前几小时下线](https://www.bbc.com/news/articles/cz6p1g54q85o)
+*Date: January 19, 2025*
