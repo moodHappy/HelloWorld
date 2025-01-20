@@ -536,3 +536,7 @@ OnlyFans 如何成为一个致力于重新定义色情内容的全球帝国](htt
 [TikTok goes offline in the US hours before ban due to come in
 TikTok 在美国因禁令生效前几小时下线](https://www.bbc.com/news/articles/cz6p1g54q85o)
 *Date: January 19, 2025*
+
+[Trump launches cryptocurrency with price rocketing
+特朗普推出加密货币，价格飙升](https://www.bbc.com/news/articles/c9vmym2jvy9o)
+*Date: January 20, 2025*
