@@ -540,3 +540,7 @@ TikTok 在美国因禁令生效前几小时下线](https://www.bbc.com/news/arti
 [Trump launches cryptocurrency with price rocketing
 特朗普推出加密货币，价格飙升](https://www.bbc.com/news/articles/c9vmym2jvy9o)
 *Date: January 20, 2025*
+
+[Trump pardons Silk Road dark web market creator Ross Ulbricht
+特朗普赦免丝绸之路暗网市场创建者罗斯·乌布利希](https://www.bbc.com/news/articles/cz7e0jve875o)
+*Date: January 22, 2025*
