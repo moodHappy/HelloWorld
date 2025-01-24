@@ -544,3 +544,7 @@ TikTok 在美国因禁令生效前几小时下线](https://www.bbc.com/news/arti
 [Trump pardons Silk Road dark web market creator Ross Ulbricht
 特朗普赦免丝绸之路暗网市场创建者罗斯·乌布利希](https://www.bbc.com/news/articles/cz7e0jve875o)
 *Date: January 22, 2025*
+
+[Trump orders plan for release of JFK and MLK assassination files
+特朗普订购了释放肯尼迪和MLK暗杀档案的计划](https://www.bbc.com/news/articles/cy8pgp0e1g6o)
+*Date: January 25, 2025*
