@@ -548,3 +548,7 @@ TikTok 在美国因禁令生效前几小时下线](https://www.bbc.com/news/arti
 [Trump orders plan for release of JFK and MLK assassination files
 特朗普订购了释放肯尼迪和MLK暗杀档案的计划](https://www.bbc.com/news/articles/cy8pgp0e1g6o)
 *Date: January 25, 2025*
+
+[Taiwan’s divided politics undermine defense resolve as Trump returns
+特朗普回归后，台湾的分裂政治削弱了国防决心](https://edition.cnn.com/2025/01/24/asia/taiwans-budget-freeze-defense-trump-intl-hnk/index.html)
+*Date: January 25, 2025*
