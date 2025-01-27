@@ -552,3 +552,7 @@ TikTok 在美国因禁令生效前几小时下线](https://www.bbc.com/news/arti
 [Taiwan’s divided politics undermine defense resolve as Trump returns
 特朗普回归后，台湾的分裂政治削弱了国防决心](https://edition.cnn.com/2025/01/24/asia/taiwans-budget-freeze-defense-trump-intl-hnk/index.html)
 *Date: January 25, 2025*
+
+[Chinese AI chatbot DeepSeek sparks market turmoil
+中国人工智能聊天机器人DeepSeek引发市场动荡](https://www.bbc.com/news/articles/c0qw7z2v1pgo)
+*Date: January 27, 2025*
