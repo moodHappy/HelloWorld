@@ -556,3 +556,7 @@ TikTok 在美国因禁令生效前几小时下线](https://www.bbc.com/news/arti
 [Chinese AI chatbot DeepSeek sparks market turmoil
 中国人工智能聊天机器人DeepSeek引发市场动荡](https://www.bbc.com/news/articles/c0qw7z2v1pgo)
 *Date: January 27, 2025*
+
+[Chinese AI bot DeepSeek sparks US market turmoil, wiping $500bn off major tech firm
+中国人工智能机器人 DeepSeek 引发美国市场动荡，导致大型科技公司损失 5000 亿美元](https://www.bbc.com/news/live/cjr85l2e4l4t)
+*Date: January 28, 2025*
