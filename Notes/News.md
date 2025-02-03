@@ -568,3 +568,7 @@ TikTok 在美国因禁令生效前几小时下线](https://www.bbc.com/news/arti
 [Grammy Awards 2025: Beyoncé finally wins best album
 格莱美奖2025：碧昂斯终于赢得了最佳专辑](https://www.bbc.com/news/articles/cwy18lpm7n2o)
 *Date: February 3, 2025*
+
+[Grammys 2025: Highlights, lowlights and a big pink pony
+Grammys 2025：亮点，低光和大粉红色小马](https://www.bbc.com/news/articles/c4g35pjd48xo)
+*Date: February 3, 2025*
