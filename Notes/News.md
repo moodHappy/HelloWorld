@@ -564,3 +564,7 @@ TikTok 在美国因禁令生效前几小时下线](https://www.bbc.com/news/arti
 [Trump's tariffs hit China hard before - this time, it's ready
 特朗普的关税以前很难击中中国 - 这次，已经准备好了](https://www.bbc.com/news/articles/c4g3z22938jo)
 *Date: February 2, 2025*
+
+[Grammy Awards 2025: Beyoncé finally wins best album
+格莱美奖2025：碧昂斯终于赢得了最佳专辑](https://www.bbc.com/news/articles/cwy18lpm7n2o)
+*Date: February 3, 2025*
