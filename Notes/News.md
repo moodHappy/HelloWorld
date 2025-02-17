@@ -576,3 +576,7 @@ Grammys 2025：亮点，低光和大粉红色小马](https://www.bbc.com/news/ar
 [Why more young men in Germany are turning to the far right
 为什么德国越来越多的年轻人转向极右翼](https://www.bbc.com/news/articles/cy082dn7rkqo)
 *Date: February 11, 2025*
+
+[Can Europe and UK persuade Trump they're relevant to Ukraine's future?
+欧洲和英国能否说服特朗普他们与乌克兰的未来息息相关？](https://www.bbc.com/news/articles/c9qjq4z0xw8o)
+*Date: February 17, 2025*
