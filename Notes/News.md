@@ -580,3 +580,7 @@ Grammys 2025：亮点，低光和大粉红色小马](https://www.bbc.com/news/ar
 [Can Europe and UK persuade Trump they're relevant to Ukraine's future?
 欧洲和英国能否说服特朗普他们与乌克兰的未来息息相关？](https://www.bbc.com/news/articles/c9qjq4z0xw8o)
 *Date: February 17, 2025*
+
+[Trump commends Zelensky ahead of White House talks
+特朗普在白宫会谈前赞扬泽连斯基](https://www.bbc.com/news/articles/cqjdd2ej4peo)
+*Date: February 28, 2025*
