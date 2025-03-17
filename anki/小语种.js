@@ -49,8 +49,8 @@
         const languageVoices = {
             "de": "de-DE-ConradNeural",  // 德语
             "fr": "fr-FR-DeniseNeural",  // 法语
-            "es": "es-ES-AlvaroNeural",  // 西班牙语
-            "it": "it-IT-DiegoNeural",   // 意大利语
+            "es": "es-ES-AlvaroNeural",  // 西语
+            "it": "it-IT-DiegoNeural",   // 意语
             "hi": "hi-IN-SwaraNeural",   // 印地语
             "ko": "ko-KR-SunHiNeural",   // 韩语
             "ru": "ru-RU-DmitryNeural",  // 俄语
