@@ -33,23 +33,27 @@
 
 日中：
 正面：
+
 <script>
-function forceClear() {
-    var card = document.querySelector('.card');
-    // 强制清除模糊效果
-    card.style.filter = 'blur(0)'; // 设置为清晰
-}
+    // 监听点击事件，当点击屏幕下半部分时清晰化
+    document.addEventListener('click', function(event) {
+        var card = document.querySelector('.card');
+        var screenHeight = window.innerHeight; // 获取屏幕高度
+        var clickY = event.clientY; // 获取点击位置的Y坐标
+
+        // 判断是否点击在屏幕下半区域
+        if (clickY > screenHeight / 2) {
+            card.style.filter = 'blur(0)'; // 设置为清晰
+        }
+    });
 </script>
 
 <style>
-.card {
-    filter: blur(10px); /* 初始状态为模糊 */
-    transition: filter 0.1s ease; /* 添加过渡效果 */
-}
+    .card {
+        filter: blur(10px); /* 初始状态为模糊 */
+        transition: filter 0.1s ease; /* 添加过渡效果 */
+    }
 </style>
-
-
-<button onclick="forceClear()">强制清晰</button>
 
 背面：
 <style>
