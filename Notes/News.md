@@ -584,3 +584,7 @@ Grammys 2025：亮点，低光和大粉红色小马](https://www.bbc.com/news/ar
 [Trump commends Zelensky ahead of White House talks
 特朗普在白宫会谈前赞扬泽连斯基](https://www.bbc.com/news/articles/cqjdd2ej4peo)
 *Date: February 28, 2025*
+
+[Turkish President Erdogan's main rival jailed
+土耳其总统埃尔多安的主要竞争对手被判入狱](https://www.bbc.com/news/articles/c0egjvj8vdro)
+*Date: March 24, 2025*
