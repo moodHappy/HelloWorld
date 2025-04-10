@@ -1,0 +1,250 @@
+{{FrontSide}}
+
+<hr>
+
+<span class="back-text">{{Back}}</span>
+
+<script>
+// 获取Front字段的文本内容
+const frontText = document.querySelector('.front-text') ? document.querySelector('.front-text').textContent.trim() : '';
+
+// 如果没有 Front 内容，直接退出
+if (!frontText) {
+    console.log('没有找到前面内容，无法进行分析');
+} else {
+    // 你的API密钥
+    const apiKey = '1fbf3ed7-a429-4938-89b1-06a99a654ab6';
+
+    // API的URL
+    const apiUrl = 'https://api.sambanova.ai/v1/chat/completions';
+
+    // 异步函数：发起API请求，获取分析数据
+    async function fetchAnalysis() {
+        try {
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`,
+                },
+                body: JSON.stringify({
+                    model: 'Meta-Llama-3.1-405B-Instruct',
+                    messages: [
+                        { 
+                            role: "system", 
+                            content: "你是一个智能助手，请用中文分析下面的句子，按照以下要求：\n1. 难度等级（A1-C2），并简要说明判断依据。\n2. 句子结构分析，列出主要成分（主语、谓语、宾语等）。\n3. 短语与用法，列出句中的固定搭配、短语、从句等，并解释其作用。\n4. 完整翻译。\n5. 拓展相关短语。"
+                        },
+                        { 
+                            role: "user", 
+                            content: frontText 
+                        }
+                    ]
+                })
+            });
+
+            const data = await response.json();
+            console.log('API返回数据:', data);
+
+            if (data.choices && data.choices[0].message) {
+                const analysis = data.choices[0].message.content;  // 获取分析内容
+
+                // 确保在卡片背面插入自定义分析内容
+                const backTextElement = document.querySelector('.back-text');
+                if (backTextElement) {
+                    const analysisDiv = document.createElement('div');
+                    analysisDiv.classList.add('notes');
+
+                    // 添加固定标题
+                    const noteTitle = document.createElement('div');
+                    noteTitle.classList.add('note');
+                    noteTitle.textContent = '笔记';
+
+                    // 插入标题和分析内容
+                    backTextElement.insertAdjacentElement('beforeend', noteTitle);
+                    backTextElement.insertAdjacentElement('beforeend', analysisDiv);
+                    analysisDiv.textContent = analysis;
+
+                    console.log('已插入分析结果:', analysis);
+                }
+            } else {
+                console.error('API返回的数据格式不正确');
+            }
+        } catch (error) {
+            console.error('请求失败:', error);
+            alert('无法获取分析数据，请稍后再试！');
+        }
+    }
+
+    // 延迟执行API请求，确保页面加载完成
+    setTimeout(() => {
+        fetchAnalysis();
+    }, 1000); // 延迟1秒，确保卡片内容已完全渲染
+}
+</script>
+
+
+
+
+
+
+
+<!-- // Markdown 渲染处理。 -->  
+<style>  
+.table-container {  
+    max-height: 300px; /* 根据需要调整高度 */  
+    overflow: auto;  
+}  
+/* 文本容器，保留纯文本的换行 */  
+.notes {  
+    overflow: auto;  
+    white-space: pre-wrap;  
+}  
+/* 表格基本样式 */  
+table {  
+    border-collapse: collapse;  
+    width: 100%;  
+}  
+th, td {  
+    border: 1px solid black;  
+    padding: 8px;  
+    text-align: left;  
+}  
+th {  
+    background-color: #f2f2f2;  
+}  
+</style>  
+
+<script>
+// 辅助函数：处理内联格式（加粗）
+function processInlineFormatting(text) {
+    // 处理 **加粗** 和 __加粗__
+    return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+               .replace(/__(.*?)__/g, '<strong>$1</strong>');
+}
+
+// Markdown 转换函数
+function markdownToHTML(markdown) {
+    // 按行拆分文本  
+    const lines = markdown.split('\n');
+    let resultLines = [];
+    let i = 0;
+    while (i < lines.length) {
+        let line = lines[i];
+        // 处理表格块：行以 | 开头和结尾
+        if (/^\s*\|.*\|\s*$/.test(line)) {
+            let tableLines = [];
+            while (i < lines.length && /^\s*\|.*\|\s*$/.test(lines[i])) {
+                tableLines.push(lines[i]);
+                i++;
+            }
+            const tableHTML = processTableBlock(tableLines);
+            resultLines.push(tableHTML);
+            continue;
+        }
+        // 处理列表块：行以 *、- 或 + 开头
+        if (/^\s*[\*\-\+]\s+/.test(line)) {
+            let listLines = [];
+            while (i < lines.length && /^\s*[\*\-\+]\s+/.test(lines[i])) {
+                listLines.push(lines[i]);
+                i++;
+            }
+            const listHTML = processListBlock(listLines);
+            resultLines.push(listHTML);
+            continue;
+        }
+        // 处理标题（1-6级标题）
+        if (/^(#{1,6})\s*(.*)$/.test(line)) {
+            line = line.replace(/^(#{1,6})\s*(.*)$/, (match, hashes, content) => {
+                const level = hashes.length;
+                // 同时处理内联格式
+                return `<h${level}>${processInlineFormatting(content)}</h${level}>`;
+            });
+            resultLines.push(line);
+            i++;
+            continue;
+        }
+        // 处理引用
+        if (/^>\s*(.*)$/.test(line)) {
+            line = line.replace(/^>\s*(.*)$/, (match, content) => {
+                return `<blockquote>${processInlineFormatting(content)}</blockquote>`;
+            });
+            resultLines.push(line);
+            i++;
+            continue;
+        }
+        // 处理内联格式（加粗）
+        line = processInlineFormatting(line);
+        resultLines.push(line);
+        i++;
+    }
+    let html = resultLines.join('\n');
+    // 处理以 $ 包裹的内容变红色  
+    html = html.replace(/\$(.*?)\$/g, '<span style="color: red;">$1</span>');
+    // 如果转换结果中没有 HTML 标签（即纯文本），则替换换行符为 <br>
+    if (!/<[^>]+>/.test(html)) {
+        html = html.replace(/\n/g, '<br>');
+    }
+    return html;
+}
+
+// 处理表格块，将表格内容包裹在滚动容器中  
+function processTableBlock(lines) {
+    if (lines.length < 2) {
+        return lines.join('<br>');
+    }
+    // 处理表头：去掉首尾的 | 后按 | 分割  
+    let headerLine = lines[0].trim();
+    headerLine = headerLine.substring(1, headerLine.length - 1);
+    const headers = headerLine.split('|').map(cell => processInlineFormatting(cell.trim()));
+    // 表体行（从第三行开始）  
+    const bodyRows = [];
+    for (let j = 2; j < lines.length; j++) {
+        let rowLine = lines[j].trim();
+        if (rowLine.startsWith('|') && rowLine.endsWith('|')) {
+            rowLine = rowLine.substring(1, rowLine.length - 1);
+        }
+        const cells = rowLine.split('|').map(cell => processInlineFormatting(cell.trim()));
+        bodyRows.push(cells);
+    }
+    // 构造表格 HTML  
+    let tableHTML = '<div class="table-container"><table>';
+    tableHTML += '<thead><tr>';
+    headers.forEach(header => {
+        tableHTML += `<th>${header}</th>`;
+    });
+    tableHTML += '</tr></thead>';
+    tableHTML += '<tbody>';
+    bodyRows.forEach(row => {
+        tableHTML += '<tr>';
+        for (let i = 0; i < headers.length; i++) {
+            const cellContent = row[i] !== undefined ? row[i] : '';
+            tableHTML += `<td>${cellContent}</td>`;
+        }
+        tableHTML += '</tr>';
+    });
+    tableHTML += '</tbody></table></div>';
+    return tableHTML;
+}
+
+// 处理列表块，将连续的列表项合并为一个 <ul>  
+function processListBlock(lines) {
+    let listHTML = '<ul>';
+    lines.forEach(line => {
+        // 移除列表标记（*、-、+）及多余空白  
+        const item = line.replace(/^\s*[\*\-\+]\s+/, '');
+        listHTML += `<li>${processInlineFormatting(item)}</li>`;
+    });
+    listHTML += '</ul>';
+    return listHTML;
+}
+
+// Anki 渲染时执行转换  
+document.addEventListener("DOMContentLoaded", function() {
+    const notesDiv = document.querySelector('.notes');
+    if (notesDiv) {
+        const originalMarkdown = notesDiv.innerText;
+        const convertedHTML = markdownToHTML(originalMarkdown);
+        notesDiv.innerHTML = convertedHTML;
+    }
+});
+</script>
