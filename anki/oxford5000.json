@@ -1,8 +1,6 @@
-[
-  "abandon",
-  "ability",
-  "able",
-  "about",
-  "bacteria",  // 添加Bacteria到这里
+{
+  "abandon": "B2",
+  "ability": "B1",
+  "able": "A2",
   ...
-]
+}
