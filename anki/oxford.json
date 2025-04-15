@@ -1,6 +1,5 @@
 {
-  "abandon": "B2",
-  "ability": "B1",
-  "bacteria": "A2",
-  ...
+  "Bacteria": 1,
+  "be": 2,
+  "and": 3,
 }
