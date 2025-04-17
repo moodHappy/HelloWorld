@@ -1,3 +1,168 @@
+## 七版
+
+<div class="card">    
+  <div class="word typing-effect" id="animated-text"></div>    
+  <div class="phonetic" id="phonetic-text"></div>    
+</div>    
+
+<button class="btn" id="playWordButton" onclick="playWordTTS()">▶</button>    
+<button class="btn" id="playExampleButton" onclick="playExampleTTS()">▶</button>  
+
+<script>    
+  // 定义单词和语种（模板变量）    
+  const word = "{{单词}}";    
+  const language = "{{语种}}".trim();    
+  const container = document.getElementById("animated-text");    
+  const phoneticContainer = document.getElementById("phonetic-text");    
+  const eudicURL = `eudic://dict/${word}`;    
+
+  // 直接显示完整单词    
+  container.innerHTML = `<a href="${eudicURL}" style="color: inherit; text-decoration: none;">${word}</a>`;    
+  phoneticContainer.textContent = "{{IPA}}";    
+
+  // 语言映射表    
+  const voiceMap = {    
+    "de": "de-DE-ConradNeural",    
+    "es": "es-ES-AlvaroNeural",    
+    "it": "it-IT-DiegoNeural",    
+    "hi": "hi-IN-MadhurNeural",    
+    "ko": "ko-KR-SunHiNeural",    
+    "fr": "fr-FR-DeniseNeural",    
+    "ru": "ru-RU-DmitryNeural",    
+    "he": "he-IL-AvriNeural",    
+    "": "en-US-EricNeural"    
+  };    
+
+  const selectedVoice = voiceMap[language] || "en-US-EricNeural";    
+
+  // 播放 TTS 的公共函数    
+  function playTTS(text, audioId) {    
+    if (!text) {    
+      alert('文本为空，无法生成音频');    
+      return;    
+    }    
+    const queryString = new URLSearchParams({    
+      text: text.trim(),    
+      voiceName: selectedVoice,    
+      speed: 0,    
+    }).toString();    
+
+    // 清除旧的 <audio>    
+    const old = document.getElementById(audioId);    
+    if (old) old.remove();    
+
+    const audio = document.createElement('audio');    
+    audio.id = audioId;    
+    audio.style.display = 'none';    
+    const src = `https://ms-ra-forwarder-for-ifreetime-beta-two.vercel.app/api/aiyue?${queryString}`;    
+    audio.innerHTML = `<source src="${src}" type="audio/mpeg">`;    
+    document.body.append(audio);    
+    audio.play();    
+  }    
+
+  function playWordTTS() {    
+    playTTS(word, 'hiddenAudioWord');    
+  }    
+  function playExampleTTS() {    
+    const exampleText = document.querySelector('.example')?.innerText?.trim() || '';    
+    playTTS(exampleText, 'hiddenAudioExample');    
+  }    
+
+  // 按钮定位    
+  ['Word','Example'].forEach(type => {    
+    const btn = document.getElementById(`play${type}Button`);    
+    btn.style.position = 'fixed';    
+    btn.style.bottom = type === 'Word' ? '200px' : '150px';    
+    btn.style.left = '50%';    
+    btn.style.transform = 'translateX(-50%)';    
+  });    
+
+  window.onload = playWordTTS;    
+</script>  
+
+<!-- 右下角 JTWord 按钮 -->  
+<div style="text-align: right;">  
+  <button onclick="copyAndGo('{{单词}}')" style="  
+    background: #f0f0f0;  
+    color: #999;  
+    font-size: 80%;  
+    padding: 4px 8px;  
+    border: 1px solid #ccc;  
+    border-radius: 4px;  
+    opacity: 0.4;  
+    cursor: pointer;">  
+    JTWord  
+  </button>  
+</div>  
+
+<script>  
+  function copyAndGo(word) {  
+    navigator.clipboard.writeText(word).finally(() => {  
+      window.open('https://www.just-the-word.com', '_blank');  
+    });  
+  }  
+</script>  
+
+<!-- 词频显示 -->  
+<div style="display: flex; justify-content: center; gap: 10px; margin-top: 5px;">    
+  <div id="frequency-coca">COCA：加载中...</div>    
+  <div id="frequency-google">Google：加载中...</div>    
+  <div id="frequency-oxford">Oxford：加载中...</div>    
+</div>    
+<div id="word-data" style="display: none;">{{单词}}</div>  
+
+<script>  
+  window.addEventListener("DOMContentLoaded", function () {    
+    const currentWord = document.getElementById("word-data").textContent.trim().toLowerCase();    
+    const anchor = document.querySelector('#animated-text a');    
+    let foundInCoca = false, foundInGoogle = false, foundInOxford = false;    
+
+    // COCA    
+    fetch("https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/anki/COCA.json")  
+      .then(res => res.json())  
+      .then(cocaList => {    
+        const rank = cocaList[currentWord];    
+        document.getElementById("frequency-coca").textContent = rank ? `COCA：${rank}` : `COCA：未找到`;    
+        foundInCoca = !!rank;    
+      })  
+
+    // Google    
+      .then(() => fetch("https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/anki/Google.json"))  
+      .then(res => res.json())  
+      .then(googleList => {    
+        const rank = googleList[currentWord];    
+        document.getElementById("frequency-google").textContent = rank ? `Google：${rank}` : `Google：未找到`;    
+        foundInGoogle = !!rank;    
+      })  
+
+    // Oxford    
+      .then(() => fetch("https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/anki/Oxford.json"))  
+      .then(res => res.json())  
+      .then(oxfordList => {    
+        const info = oxfordList[currentWord];    
+        document.getElementById("frequency-oxford").textContent = info ? `Oxford：${currentWord}` : `Oxford：未找到`;    
+        foundInOxford = !!info;    
+      })  
+
+    // 后续统一更新颜色    
+      .catch(() => { /* 加载失败时保持默认 */ })  
+      .finally(() => updateWordColor(foundInCoca, foundInGoogle, foundInOxford, anchor));    
+
+    function updateWordColor(inCoca, inGoogle, inOxford, a) {    
+      if (!a) return;    
+      if (inCoca && inGoogle && inOxford)       a.style.color = '#800080';    
+      else if (inCoca && inGoogle)              a.style.color = 'pink';    
+      else if (inCoca && inOxford)              a.style.color = 'red';    
+      else if (inGoogle && inOxford)            a.style.color = 'blue';    
+      else if (inCoca)                          a.style.color = 'black';    
+      else if (inGoogle)                        a.style.color = 'blue';    
+      else if (inOxford)                        a.style.color = 'green';    
+      else                                      a.style.color = 'inherit';    
+    }    
+  });  
+</script>
+
+
 ## 六版
 
 <div class="card">
