@@ -462,7 +462,174 @@
             return; // Stop here, no AI call needed for explanation
         }
 
-        console.log(`Cache miss for "${word}". Call
+        console.log(`Cache miss for "${word}". Calling AI...`);
+        // Pass false for isSuccess as we are showing loading
+        showLoading(word);
+
+        const messages = [
+            { role: "system", content: "你是一个专业的英语学习助手，请详细解释这个词或句子的意思、例句、词性，并附上翻译。尽量包含常用的音标，但不强求词根信息，保持回复简洁且信息丰富。" },
+            { role: "user", content: `请解释和翻译这个英文词或句子：\n"${word}"` }
+        ];
+
+        const sendRequest = (ai) => new Promise((resolve, reject) => {
+            GM_xmlhttpRequest({
+                method: "POST",
+                url: ai.url,
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${ai.apiKey}`
+                },
+                data: JSON.stringify({
+                    model: ai.model,
+                    messages: messages,
+                    temperature: 0.7
+                }),
+                timeout: 25000, // Increased timeout slightly
+                onload: res => {
+                    try {
+                        const json = JSON.parse(res.responseText);
+                        // Check for common AI response structures
+                        const reply = json.choices?.[0]?.message?.content || json.output?.choices?.[0]?.message?.content;
+
+                        if (reply) {
+                            // Store the successful response in cache along with the AI source name
+                            setCachedExplanation(word, reply, ai.name);
+                            resolve({ explanation: reply, source: ai.name }); // Resolve with explanation and source
+                        } else {
+                             console.error("AI returned empty or unexpected response:", json);
+                            reject("AI 返回内容为空或格式异常。");
+                        }
+                    } catch (e) {
+                        console.error("Error parsing AI response:", e);
+                        reject("AI 返回解析失败。");
+                    }
+                },
+                onerror: (err) => {
+                     console.error("GM_xmlhttpRequest Error:", err);
+                     reject(`AI 请求出错: ${err.statusText || err.status || 'Unknown error'}`);
+                },
+                ontimeout: () => reject("AI 请求超时。")
+            });
+        });
+
+        // Attempt primary AI, then backup
+        sendRequest(primaryAI)
+            .then(result => showModal(result.explanation, word, true, result.source)) // Pass success, explanation, word, and source
+            .catch(primaryErr => {
+                console.warn("Primary AI failed, trying backup:", primaryErr);
+                sendRequest(backupAI)
+                    .then(result => showModal(result.explanation, word, true, result.source)) // Pass success, explanation, word, and source
+                    .catch(backupErr => {
+                        console.error("Backup AI also failed:", backupErr);
+                        // Pass false for error, no source info in case of complete failure
+                        showModal(`<p style="color:red;text-align:center">主备AI请求均失败：<br>主AI: ${primaryErr}<br>备用AI: ${backupErr}</p>`, word, false, '');
+                    });
+            });
+    }
+    // --- End AI API Call ---
+
+
+    // --- TTS Playback ---
+    function playTTS(word) {
+        if (!word) return;
+
+        // Construct TTS URLs
+        const audioUrls = ttsDomain.map(domain => {
+            const encodedWord = encodeURIComponent(word);
+            // Assuming speed 1.0
+            return `${domain}/api/aiyue?text=${encodedWord}&voiceName=${encodeURIComponent(voice)}&speed=1.0`;
+        });
+
+        // Create audio element and sources
+        // Create a new audio element each time to avoid interference
+        const audio = new Audio();
+
+        audioUrls.forEach(url => {
+            const source = document.createElement('source');
+            source.src = url;
+            source.type = 'audio/mpeg'; // Assume MP3, adjust if needed based on service
+            audio.appendChild(source);
+        });
+
+        // Add event listeners for error and ending to clean up
+        const cleanUp = () => {
+            if (audio && audio.parentNode) {
+                audio.parentNode.removeChild(audio);
+            }
+        };
+        audio.addEventListener('ended', cleanUp);
+        audio.addEventListener('error', (e) => {
+             console.error("Audio playback error for word:", word, e);
+             cleanUp(); // Clean up on error as well
+             // Optionally, provide visual feedback to the user
+             if (playButton && playButton.textContent === '🔊 Playing...') {
+                 playButton.textContent = 'Playback Failed';
+                 // Maybe disable button temporarily or reset text after a delay
+             }
+        });
+
+        // Update modal button state if it's visible and playing
+        if (playButton && playButton.textContent === '🔊 Play') {
+             playButton.textContent = '🔊 Playing...';
+             playButton.disabled = true; // Disable button while playing
+             audio.addEventListener('ended', () => {
+                 if (playButton.textContent === '🔊 Playing...') { // Only reset if it's still in playing state
+                     playButton.textContent = '🔊 Play';
+                     playButton.disabled = false;
+                 }
+             });
+             audio.addEventListener('error', () => {
+                  if (playButton.textContent === '🔊 Playing...') { // Only reset if it's still in playing state
+                      playButton.textContent = '🔊 Play'; // Or "Failed"
+                      playButton.disabled = false;
+                  }
+             });
+        }
+
+
+        // Attempt to play the audio
+        audio.play().catch(error => {
+            console.error("Audio play failed for word:", word, error);
+            // Handle cases where play() promise is rejected (e.g., user gesture required, though click should satisfy this)
+             if (playButton && playButton.textContent === '🔊 Playing...') {
+                 playButton.textContent = 'Play Failed'; // Indicate failure on the button
+                 playButton.disabled = false;
+             }
+            cleanUp(); // Clean up on play failure as well
+        });
+    }
+    // --- End TTS Playback ---
+
+
+    // --- Initialization ---
+    // Use document-idle to wait until the browser is generally free
+    // This is often a good time for scripts that modify the DOM
+    // and need access to elements, balancing readiness with not blocking rendering.
+    // The MutationObserver will handle anything loaded or changed later.
+
+     function initializeScript() {
+         console.log("Script initialized. Starting initial scan and observing DOM changes.");
+         createModal(); // Create modal early, it's hidden by default
+         scanAndHighlight(document.body); // Perform initial scan on the entire body
+         // The observer is already started and will catch subsequent changes.
+     }
+
+     // Wait for the 'document-idle' state. If it's already idle or beyond, run immediately.
+    if (document.readyState === 'complete' || document.readyState === 'interactive' || document.readyState === 'idle') {
+        initializeScript();
+    } else {
+        // Wait for the 'readystatechange' event and check for 'interactive' or 'complete' or 'idle'
+        document.addEventListener('readystatechange', () => {
+            if (document.readyState === 'complete' || document.readyState === 'interactive' || document.readyState === 'idle') {
+                 initializeScript();
+            }
+        }, { once: true }); // Use { once: true } to automatically remove the listener after it fires
+    }
+
+    // --- End Initialization ---
+
+})();
+
 
 ## 二版
 
