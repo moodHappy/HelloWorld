@@ -1,4 +1,4 @@
-正面2：
+正面2：拼读连读结合，false状态点击按钮是拼读
 
 <div class="card">
   <div class="word typing-effect" id="animated-text"></div>
