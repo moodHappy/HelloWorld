@@ -1,4 +1,206 @@
-正面：// 拼读连读隔离版
+正面2：
+
+<div class="card">
+  <div class="word typing-effect" id="animated-text"></div>
+  <div class="phonetic" id="phonetic-text"></div>
+</div>
+
+<button class="btn" id="playWordButton" onclick="playSpellingAndWord()">▶</button>
+<button class="btn" id="playExampleButton" onclick="playExampleTTS()">▶</button>
+<button class="btn" id="repeatWordButton" onclick="playWordTTSRepeated()">▶</button>
+
+<script>
+  // 全局开关变量，true 为开启自动拼读，false 为关闭
+  let enablePronunciation = false; // 默认设置为 false，关闭自动拼读
+
+  const word = "{{单词}}";
+  const language = "{{语种}}".trim();
+  const container = document.getElementById("animated-text");
+  const phoneticContainer = document.getElementById("phonetic-text");
+  const eudicURL = `eudic://dict/${word}`;
+
+  container.innerHTML = `<a href="${eudicURL}" style="color: inherit; text-decoration: none;">${word}</a>`;
+  phoneticContainer.textContent = "{{IPA}}";
+
+  const voiceMap = {
+    "de": "de-DE-ConradNeural",
+    "es": "es-ES-AlvaroNeural",
+    "it": "it-IT-DiegoNeural",
+    "hi": "hi-IN-MadhurNeural",
+    "ko": "ko-KR-SunHiNeural",
+    "fr": "fr-FR-DeniseNeural",
+    "ru": "ru-RU-DmitryNeural",
+    "he": "he-IL-AvriNeural",
+    "": "en-US-EricNeural"
+  };
+
+  const selectedVoice = voiceMap[language] || "en-US-EricNeural";
+
+  function playTTS(text, audioId, callback) {
+    if (!text) {
+      alert('Text is empty, unable to generate audio');
+      return;
+    }
+    const queryString = new URLSearchParams({
+      text: text.trim(),
+      voiceName: selectedVoice,
+      speed: 0,
+    }).toString();
+
+    const old = document.getElementById(audioId);
+    if (old) old.remove();
+
+    const audio = document.createElement('audio');
+    audio.id = audioId;
+    audio.style.display = 'none';
+    const src = `https://ms-ra-forwarder-for-ifreetime-beta-two.vercel.app/api/aiyue?${queryString}`;
+    audio.innerHTML = `<source src="${src}" type="audio/mpeg">`;
+    document.body.append(audio);
+
+    audio.onended = () => callback?.();
+    audio.play();
+  }
+
+  function playSpellingAndWord() {
+    const letters = word.toLowerCase().split('').join(', ');
+    playTTS(letters, 'audioSpell', () => {
+      playTTS(word, 'audioFullWord');
+    });
+  }
+
+  function playWordTTS() {
+    playTTS(word, 'audioFullWord');
+  }
+
+  function playExampleTTS() {
+    const exampleText = document.querySelector('.example')?.innerText?.trim() || '';
+    playTTS(exampleText, 'hiddenAudioExample');
+  }
+
+  function playWordTTSRepeated(times = 10) {
+    let count = 0;
+    const playNext = () => {
+      if (++count < times) {
+        playTTS(word, 'hiddenAudioWordRepeated', playNext);
+      }
+    };
+    playTTS(word, 'hiddenAudioWordRepeated', playNext);
+  }
+
+  // 按钮定位样式
+  const buttonStyle = `
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  `;
+
+  document.getElementById("playWordButton").style = `${buttonStyle} bottom: 200px;`;
+  document.getElementById("playExampleButton").style = `${buttonStyle} bottom: 150px;`;
+  const repeatBtn = document.getElementById("repeatWordButton");
+  repeatBtn.style = `${buttonStyle} bottom: 100px; color: red; font-weight: bold;`;
+
+  window.onload = function() {
+    if (enablePronunciation) {
+      playSpellingAndWord();
+    } else {
+      playWordTTS();
+    }
+  };
+</script>
+
+<div style="text-align: right;">
+  <button onclick="copyAndGo('{{单词}}')" style="
+    background: #f0f0f0;
+    color: #999;
+    font-size: 80%;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    opacity: 0.4;
+    cursor: pointer;">
+    JTWord
+  </button>
+</div>
+
+<script>
+  function copyAndGo(word) {
+    navigator.clipboard.writeText(word).finally(() => {
+      window.open('https://www.just-the-word.com', '_blank');
+    });
+  }
+</script>
+
+<div style="display: flex; justify-content: center; gap: 10px; margin-top: 5px;">
+  <div id="frequency-coca">COCA：加载中...</div>
+  <div id="frequency-google">Google：加载中...</div>
+  <div id="frequency-oxford">Oxford：加载中...</div>
+</div>
+
+<div id="word-data" style="display: none;">{{单词}}</div>
+
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    const currentWord = document.getElementById("word-data").textContent.trim().toLowerCase();
+    const anchor = document.querySelector('#animated-text a');
+    let foundInCoca = false, foundInGoogle = false, foundInOxford = false;
+
+    fetch("./_COCA.json")
+      .then(res => res.json())
+      .then(cocaList => {
+        const rank = cocaList[currentWord];
+        document.getElementById("frequency-coca").textContent = rank ? `COCA：${rank}` : `COCA：未找到`;
+        foundInCoca = !!rank;
+      })
+      .catch(() => {
+        document.getElementById("frequency-coca").textContent = `COCA：加载失败`;
+      })
+      .then(() => fetch("./_Google.json"))
+      .then(res => res.json())
+      .then(googleList => {
+        const rank = googleList[currentWord];
+        document.getElementById("frequency-google").textContent = rank ? `Google：${rank}` : `Google：未找到`;
+        foundInGoogle = !!rank;
+      })
+      .catch(() => {
+        document.getElementById("frequency-google").textContent = `Google：加载失败`;
+      })
+      .then(() => fetch("./_OxfordLevels.json"))
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        return res.json();
+      })
+      .then(oxfordList => {
+        const rank = oxfordList[currentWord];
+        document.getElementById("frequency-oxford").textContent = rank ? `Oxford：${rank}` : `Oxford：未找到`;
+        foundInOxford = !!rank;
+      })
+      .catch(error => {
+        console.error("Error fetching Oxford data:", error);
+        document.getElementById("frequency-oxford").textContent = `Oxford：加载失败`;
+      })
+      .finally(() => updateWordColor(foundInCoca, foundInGoogle, foundInOxford, anchor));
+
+    function updateWordColor(inCoca, inGoogle, inOxford, a) {
+      if (!a) return;
+      if (inCoca && inGoogle && inOxford)       a.style.color = '#8A2BE2';
+      else if (inCoca && inGoogle)              a.style.color = 'pink';
+      else if (inCoca && inOxford)              a.style.color = 'red';
+      else if (inGoogle && inOxford)            a.style.color = 'blue';
+      else if (inCoca)                          a.style.color = 'black';
+      else if (inGoogle)                        a.style.color = 'blue';
+      else if (inOxford)                        a.style.color = 'green';
+      else                                      a.style.color = 'inherit';
+    }
+  });
+</script>
+
+
+正面1：// 拼读连读隔离版
 
 <div class="card">
   <div class="word typing-effect" id="animated-text"></div>
