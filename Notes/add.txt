@@ -1,3 +1,4 @@
+tackle
 directive
 interpretation
 mandate
