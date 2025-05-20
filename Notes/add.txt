@@ -1,4 +1,3 @@
-the
 directive
 interpretation
 mandate
