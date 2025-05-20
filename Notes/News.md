@@ -51,3 +51,5 @@ used
 standing
 
 Goodwill
+
+diagnosis
