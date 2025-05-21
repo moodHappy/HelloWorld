@@ -1,5 +1,3 @@
-Trump
-
 right
 
 court
