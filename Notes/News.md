@@ -55,5 +55,3 @@ diagnosis
 Trump
 
 added
-
-Italy has backed President Donald Trump's suggestion the Vatican might mediate talks on negotiating a ceasefire in Ukraine, while he appears keen to step back from the process himself.
