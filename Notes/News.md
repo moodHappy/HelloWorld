@@ -65,3 +65,5 @@ minute
 minutes
 
 Trump's
+
+homes
