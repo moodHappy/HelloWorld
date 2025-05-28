@@ -67,3 +67,5 @@ minutes
 Trump's
 
 homes
+
+injured
