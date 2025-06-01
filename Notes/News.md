@@ -71,3 +71,5 @@ homes
 injured
 
 in
+
+attack
