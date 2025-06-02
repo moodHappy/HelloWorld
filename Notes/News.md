@@ -276,3 +276,5 @@ today
 ago
 
 students
+
+like
