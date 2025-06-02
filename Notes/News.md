@@ -110,3 +110,6 @@ drones
 
 [Martial law fractured South Korea. Can this election heal the nation?](https://www.bbc.com/news/articles/c7069pg4zpko)
 *Date: June 2, 2025*
+
+[The striking feature of this election has been the leading opposition candidate, Lee Jae-myung, campaigning in a bullet-proof vest.](https://www.bbc.com/news/articles/c7069pg4zpko)
+*Date: June 2, 2025*
