@@ -300,3 +300,5 @@ cat
 Wall
 
 cover
+
+bear
