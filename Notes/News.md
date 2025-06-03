@@ -298,3 +298,5 @@ ice
 cat
 
 Wall
+
+cover
