@@ -324,3 +324,5 @@ story
 know
 
 calling
+
+ban
