@@ -1,6 +1,6 @@
 <a href="https://www.bbc.com/news/live/cyvm2181lqvt">URL</a>
 
-<p>Title: "The Last Customer"</p>
+<p>Title: "Trump-Musk Fallout"</p>
 
 <p>Here is a summary of the article in simple English at the B1 level:</p>
 <p>US President Donald Trump and billionaire Elon Musk are having a big argument. Trump is thinking about selling his Tesla car because of the fight. Musk said that Trump would have lost the election without his help, which made Trump very angry. Trump called Musk "the man who has lost his mind" and said he doesn't want to talk to him.</p>
