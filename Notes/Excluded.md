@@ -328,9 +328,3 @@ calling
 ban
 
 President
-
-What happens when the richest person and the most powerful politician have a knock-down, drag-out fight?
-
-The world is finding out – and it's not a pretty picture. Donald Trump and Elon Musk have two of the biggest megaphones, and they have now turned them on each other, as a disagreement has ballooned into a war of words.
-
-Elon
