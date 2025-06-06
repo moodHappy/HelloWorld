@@ -1,3 +1,13 @@
+<a href="https://www.bbc.com/news/live/cyvm2181lqvt">URL</a>
+
+<p>Title: "The Last Customer"</p>
+
+<p>Here is a summary of the article in simple English at the B1 level:</p>
+<p>US President Donald Trump and billionaire Elon Musk are having a big argument. Trump is thinking about selling his Tesla car because of the fight. Musk said that Trump would have lost the election without his help, which made Trump very angry. Trump called Musk "the man who has lost his mind" and said he doesn't want to talk to him.</p>
+<p>The argument started when Musk criticized Trump's spending bill. Trump then said that Musk's companies, including Tesla and SpaceX, get too much money from the government. Musk said that Trump is ungrateful and that he helped him win the election.</p>
+<p>Some people think that the argument will end soon, but others think it will last a long time. Musk's father said that his son is standing up for what he believes in, but that he needs to learn to compromise.</p>
+<p>Trump and Musk have had disagreements before, but this one is very public and intense. Both men have a lot of power and influence, and it's not clear who will win the argument.</p>
+
 <a href="https://privatebin.net/?3fe6be61998b73ff#8JewKF3uwH59FY254MbThdn6xinmCMGq9S6j7LPFj4Ck">URL</a>
 
 <p>Title: "The Last Customer"</p>
