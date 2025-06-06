@@ -330,3 +330,5 @@ ban
 President
 
 and
+
+Sunday
