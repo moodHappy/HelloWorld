@@ -1,6 +1,7 @@
 <a href="https://www.bbc.com/zhongwen/articles/c787ydn2wexo/simp">URL</a>
 
 <p>Title: "Hong Kong Activist Joshua Wong Charged with Colluding with Foreign Forces"</p>
+
 <p>Joshua Wong, a well-known Hong Kong activist, has been charged with colluding with foreign forces to harm China's national security. If found guilty, he could face life imprisonment. Wong was taken from prison to a court in Hong Kong, where he was formally charged. He is the second person in Hong Kong to be charged with this crime, after media tycoon Jimmy Lai.</p>
 <p>The charge is related to Wong's activities with a former lawmaker, Nathan Law, and others. They are accused of asking foreign organizations and people to sanction China and Hong Kong. The court did not provide more details about the case.</p>
 <p>Wong has been in prison since 2021 for his involvement in pro-democracy protests. He was a leader of the student group Scholarism and later co-founded the Demosisto party, which was disbanded after the national security law was passed in 2020.</p>
