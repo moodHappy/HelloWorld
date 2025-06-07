@@ -2,7 +2,7 @@
 
 [添加高亮](https://github.com/moodHappy/HelloWorld/blob/master/Notes%2Fadd.txt)
 
-[推送文章朗读中转站](https://github.com/moodHappy/HelloWorld/blob/master/Notes%2FB1.md)
+[推送文章朗读中转站](https://github.com/moodHappy/HelloWorld/tree/master/Notes)
 
 
 
