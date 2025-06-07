@@ -1,6 +1,6 @@
 <a href="https://www.bbc.com/zhongwen/articles/c787ydn2wexo/simp">URL</a>
 
-<p>Title: "Forces"</p>
+<p>Title: "Joshua Wong Charged with Foreign Collusion"</p>
 
 <p>Joshua Wong, a well-known Hong Kong activist, has been charged with colluding with foreign forces to harm China's national security. If found guilty, he could face life imprisonment. Wong was taken from prison to a court in Hong Kong, where he was formally charged. He is the second person in Hong Kong to be charged with this crime, after media tycoon Jimmy Lai.</p>
 <p>The charge is related to Wong's activities with a former lawmaker, Nathan Law, and others. They are accused of asking foreign organizations and people to sanction China and Hong Kong. The court did not provide more details about the case.</p>
