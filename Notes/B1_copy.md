@@ -1,3 +1,10 @@
+<a href="https://www.bbc.com/zhongwen/articles/clyg7egdq95o/simp">URL</a>
+
+<p>Title: "Chinese Duo Charged for Smuggling Fungus"</p>
+<p>Two Chinese citizens, Yunqing Jian and Zunyong Liu, have been accused of smuggling a dangerous fungus into the United States. The fungus, called Fusarium graminearum, can cause disease in wheat, barley, corn, and rice, and can also harm humans if eaten.</p>
+<p>The two Chinese citizens were arrested and charged with conspiracy, smuggling, and making false statements. They allegedly tried to bring the fungus into the US through Detroit airport so that they could study it at a laboratory at the University of Michigan.</p>
+<p>The US government is very concerned about this because the fungus could be used as a kind of "biological weapon" to harm American crops. The investigation was carried out by the FBI and the US Customs and Border Protection agency.</p>
+<p>The Chinese government has said that it does not know anything about the case, but that it always tells its citizens to follow the laws of the countries they are visiting. The incident has happened at a time when relations between the US and China are tense.</p>
 <a href="https://www.bbc.com/news/articles/cev4l7kxdllo">URL</a>
 
 <p>Title: "Israel Finds Body of Thai Hostage in Gaza"</p>
