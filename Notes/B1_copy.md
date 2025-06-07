@@ -1,6 +1,6 @@
 <a href="https://www.bbc.com/news/articles/c14jpymxrkno">URL</a>
 
-Title: "Polo-loving drug lord exposed"
+<p>Title: "Polo-loving drug lord exposed"</p>
 
 <p>Here is a summary of the article in simple English at B1 level:</p>
 <p>Muhammed Asif Hafeez was a man with two lives. On the surface, he was a successful businessman and a member of a prestigious polo club in London. He even met with members of the British royal family. However, in reality, Hafeez was a major drug trafficker known as "the Sultan." He controlled a vast network of drug suppliers and distributors across the world.</p>
