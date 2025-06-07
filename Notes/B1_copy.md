@@ -1,3 +1,14 @@
+<a href="https://www.bbc.com/news/articles/c14jpymxrkno">URL</a>
+
+Title: "Polo-loving drug lord exposed"
+
+<p>Here is a summary of the article in simple English at B1 level:</p>
+<p>Muhammed Asif Hafeez was a man with two lives. On the surface, he was a successful businessman and a member of a prestigious polo club in London. He even met with members of the British royal family. However, in reality, Hafeez was a major drug trafficker known as "the Sultan." He controlled a vast network of drug suppliers and distributors across the world.</p>
+<p>Hafeez would often inform the authorities about rival drug cartels, pretending to be a concerned citizen. However, his real motive was to eliminate his competitors. He was able to fool many people, including the authorities, with his fake persona.</p>
+<p>However, his luck ran out when two of his associates met with an undercover agent from the US Drug Enforcement Administration (DEA) in Kenya. The agent was posing as a buyer from Colombia, and Hafeez's associates offered to sell him large quantities of heroin. The meeting was secretly filmed, and the footage was used as evidence against Hafeez.</p>
+<p>Hafeez was eventually arrested and extradited to the US, where he pleaded guilty to conspiring to import drugs. He was sentenced to 16 years in prison. The authorities were able to piece together evidence from seized devices and other sources to reveal Hafeez's true identity as a major drug trafficker.</p>
+<p>Despite his attempts to fool everyone, Hafeez's double life eventually caught up with him, and he is now facing the consequences of his actions.</p>
+
 <a href="https://www.bbc.com/news/live/cyvm2181lqvt">URL</a>
 
 <p>Title: "Trump-Musk Fallout"</p>
