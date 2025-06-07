@@ -1,3 +1,12 @@
+<a href="https://www.bbc.com/news/articles/c7v7ynv98r8o">URL</a>
+
+<p>Title: "US Brings Back Deported Salvadoran to Face Charges"</p>
+<p>The US has brought back a 29-year-old Salvadoran man, Kilmar Ábrego García, who was mistakenly deported in March. He will face two federal criminal charges for participating in a trafficking conspiracy that moved undocumented migrants from Texas to other parts of the country.</p>
+<p>García was accused of playing a significant role in an alien smuggling ring, bringing thousands of illegal immigrants to the US. He was also accused of transporting members of the MS-13 gang, which is considered a foreign terrorist organization by the US.</p>
+<p>García's lawyers have called the charges "preposterous" and said that the government's actions are an "abuse of power". They argue that García has never been convicted of any criminal offense, including gang membership, in the US or in El Salvador.</p>
+<p>The US government had previously alleged that García was a member of the MS-13 gang, which he has denied. The case has sparked a debate about immigration and the use of a wartime law to detain or deport people.</p>
+<p>García will appear in court for an initial hearing, and a judge will determine if there are grounds to keep him detained ahead of his trial. His lawyers have requested a full and fair trial in front of the same immigration judge who heard the case in 2019.</p>
+
 <a href="https://www.bbc.com/news/articles/c14jpymxrkno">URL</a>
 
 <p>Title: "Polo-loving drug lord exposed"</p>
