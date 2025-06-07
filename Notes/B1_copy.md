@@ -1,3 +1,10 @@
+<a href="https://www.bbc.com/news/articles/cwy30nqwy99o">URL</a>
+
+<p>Title: "Boy Dies After Falling from Cliffs of Moher"</p>
+<p>A 12-year-old boy from China died after falling from the Cliffs of Moher in Ireland. The boy, Zhihan Zhao, was on holiday with his mother when the accident happened. He slipped in a puddle near the edge of the cliff and fell 214 meters to his death.</p>
+<p>The boy's mother reported him missing when she couldn't find him on the trail. A French tourist saw the boy fall and told the police. A big search operation was started, but it took five days to find the boy's body in the sea.</p>
+<p>The coroner said that the boy died from injuries caused by the fall. She also said that the boy's death was an accident and that he didn't shout or make any noise when he fell.</p>
+<p>This is the second time someone has died after falling from the Cliffs of Moher in a short time. The trail has been partially closed due to safety concerns.</p>
 <a href="https://www.bbc.com/news/articles/c7v7ynv98r8o">URL</a>
 
 <p>Title: "US Brings Back Deported Salvadoran to Face Charges"</p>
