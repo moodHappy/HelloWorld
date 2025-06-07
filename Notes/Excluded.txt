@@ -346,3 +346,5 @@ disease
 couple
 
 spokesperson
+
+Adams
