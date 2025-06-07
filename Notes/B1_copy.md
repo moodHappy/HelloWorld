@@ -1,3 +1,10 @@
+<a href="https://www.bbc.com/news/articles/cev4l7kxdllo">URL</a>
+
+<p>Title: "Israel Finds Body of Thai Hostage in Gaza"</p>
+<p>Israel has found the body of a Thai man who was taken hostage by Hamas in October 2023. The man, named Nattapong Pinta, was a 35-year-old farm worker who was kidnapped while working in southern Israel. The Israeli military said that Nattapong was probably killed in the first few months of his captivity.</p>
+<p>Nattapong's body was found in a special operation in the Rafah area of southern Gaza. Before this, it was not known if he was dead or alive. The Israeli military said that the operation was based on information from a captured terrorist.</p>
+<p>Nattapong was married and had a young son. He was working in Israel to support his family in Thailand. His wife was very sad when she heard the news and sent a photo of their crying son.</p>
+<p>This news comes after the Israeli army found the bodies of two Israeli Americans in Gaza earlier this week. There have been many problems in Gaza, including a long war between Israel and Hamas. Many people have been killed or hurt, and some are still being held captive.</p>
 <a href="https://www.bbc.com/zhongwen/articles/c787ydn2wexo/simp">URL</a>
 
 <p>Title: "Joshua Wong Charged with Foreign Collusion"</p>
