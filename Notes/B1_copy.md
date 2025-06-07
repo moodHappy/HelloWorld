@@ -1,3 +1,13 @@
+<a href="https://www.bbc.com/news/articles/ce82p6yq061o">URL</a>
+
+<p>Title: "Attenborough: Oceans in Big Trouble"</p>
+<p>Sir David Attenborough, a famous TV naturalist, has told Prince William that he is shocked by the damage some fishing methods are causing to the world's oceans. Attenborough said that what we have done to the deep ocean floor is "unspeakably awful" and that if we did the same thing on land, everyone would be very angry.</p>
+<p>The world's countries are meeting for the first time in three years to discuss how to better protect the oceans, which are facing big threats from plastic pollution, climate change, and overfishing. The UN wants to get 60 countries to agree to protect 30% of the ocean by 2030.</p>
+<p>Attenborough hopes that the leaders meeting at the UN conference will understand how important the oceans are to all of us. The ocean is crucial for the survival of all living things on the planet, providing 80% of the oxygen we breathe and supporting many economies.</p>
+<p>However, some fishing practices, like bottom trawling, are causing a lot of damage to the ocean floor and marine life. Scientists and charities are worried that these practices will continue even in protected areas. They want the UN to ban bottom trawling in these areas to help fish stocks recover and protect the ocean.</p>
+<p>The conference is also discussing the impact of climate change on the oceans, which are absorbing excess heat and greenhouse gases. Scientists warn that if the oceans were not absorbing this heat, the world would be much warmer, and many places would be uninhabitable.</p>
+<p>Overall, the UN conference aims to find ways to protect the oceans and address the many threats they face. Sir David Attenborough's message is clear: we must take action to protect the oceans, which are essential for our survival.</p>
+
 <a href="https://www.bbc.com/zhongwen/articles/clyg7egdq95o/simp">URL</a>
 
 <p>Title: "Chinese Duo Charged for Smuggling Fungus"</p>
