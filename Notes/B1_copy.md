@@ -1,3 +1,10 @@
+<a href="https://www.bbc.com/news/articles/clyge290l4xo">URL</a>
+<p>Title: "Using 'Poo Pills' to Fight Superbugs"</p>
+<p>Doctors in the UK are trying a new way to fight superbugs, which are bacteria that are hard to kill with antibiotics. They are using "poo pills" that contain good bacteria from healthy people's stool. The idea is to replace the bad bacteria in the body with good ones. The pills are made from stool samples that are frozen and then put into a special capsule. When the capsule reaches the intestines, it dissolves and releases the good bacteria.</p>
+<p>So far, the results are promising. The good bacteria have been found in the patients' intestines for at least a month after taking the pills. The doctors think that this treatment could help fight superbugs and make people healthier. They also believe that it could be used to prevent infections in people who are at risk, such as those with weakened immune systems.</p>
+<p>This is a new approach to fighting superbugs, and it's based on the idea that the bacteria in our bodies are important for our health. The researchers are excited about the potential of this treatment and think that it could be a big step forward in the fight against superbugs.</p>
+
+
 <a href="https://www.bbc.com/news/articles/ce82p6yq061o">URL</a>
 
 <p>Title: "Attenborough: Oceans in Big Trouble"</p>
