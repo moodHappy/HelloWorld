@@ -151,14 +151,14 @@
       "lastReview": 0
     },
     "brew": {
-      "status": "new",
+      "status": "learning",
       "repetitions": 0,
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 0,
-      "lastReview": 0
+      "learningStep": 1,
+      "nextReview": 1749475787074,
+      "lastReview": 1749475667074
     },
     "hence": {
       "status": "learning",
@@ -225,7 +225,7 @@
       "daring",
       "feast"
     ],
-    "currentIndex": 14,
+    "currentIndex": 15,
     "showedSummary": false
   }
 }
