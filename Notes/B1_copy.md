@@ -1,3 +1,12 @@
+<a href="https://www.bbc.com/news/live/cvg7vxx888kt">URL</a>
+
+<p>Title: "Protests in Los Angeles Turn Violent"</p>
+<p>Protests against immigration raids in Los Angeles have turned violent. Demonstrators have blocked a major highway, and police have used tear gas to try to move them. The US President, Donald Trump, has sent in the National Guard to help control the situation.</p>
+<p>The protests started on Friday and have been going on for three days. Some protesters have thrown objects at the police, and several people have been arrested. The police have also been injured.</p>
+<p>The Governor of California, Gavin Newsom, has asked President Trump to remove the National Guard from the city. Newsom thinks that the President's decision to send in the National Guard is making the situation worse.</p>
+<p>Other politicians have also criticized the President's decision. They think that it is an abuse of power and that the President should not have sent in the National Guard without talking to the Governor first.</p>
+<p>The situation in Los Angeles is still tense, and it is not clear what will happen next. The police are trying to keep the peace, but the protesters are still angry and upset.</p>
+
 <a href="https://www.bbc.com/news/articles/clyge290l4xo">URL</a>
 <p>Title: "Using 'Poo Pills' to Fight Superbugs"</p>
 <p>Doctors in the UK are trying a new way to fight superbugs, which are bacteria that are hard to kill with antibiotics. They are using "poo pills" that contain good bacteria from healthy people's stool. The idea is to replace the bad bacteria in the body with good ones. The pills are made from stool samples that are frozen and then put into a special capsule. When the capsule reaches the intestines, it dissolves and releases the good bacteria.</p>
