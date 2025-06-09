@@ -214,7 +214,7 @@
       "daring",
       "feast"
     ],
-    "currentIndex": 19,
-    "showedSummary": true
+    "currentIndex": 19, // <-- 关键修改：从 20 变为 19
+    "showedSummary": false // <-- 关键修改：设置为 false，这样它会在显示完后弹出总结
   }
 }
