@@ -50,11 +50,11 @@
       "nextReview": 0
     },
     "unbeaten": {
-      "status": "new",
-      "lastReview": 0,
-      "repetitions": 0,
+      "status": "mastered",
+      "lastReview": 1749462597141,
+      "repetitions": 1,
       "ignoreCount": 0,
-      "nextReview": 0
+      "nextReview": 1749548997141
     },
     "accessory": {
       "status": "learning",
@@ -78,11 +78,11 @@
       "nextReview": 0
     },
     "reassure": {
-      "status": "learning",
-      "lastReview": 1749462558272,
-      "repetitions": 0,
+      "status": "mastered",
+      "lastReview": 1749462584314,
+      "repetitions": 1,
       "ignoreCount": 0,
-      "nextReview": 0
+      "nextReview": 1749548984314
     },
     "symphony": {
       "status": "learning",
@@ -99,22 +99,22 @@
       "nextReview": 0
     },
     "idle": {
-      "status": "new",
-      "lastReview": 0,
+      "status": "learning",
+      "lastReview": 1749462602938,
       "repetitions": 0,
       "ignoreCount": 0,
       "nextReview": 0
     },
     "cemetery": {
-      "status": "new",
-      "lastReview": 0,
+      "status": "learning",
+      "lastReview": 1749462612354,
       "repetitions": 0,
       "ignoreCount": 0,
       "nextReview": 0
     },
     "lounge": {
-      "status": "new",
-      "lastReview": 0,
+      "status": "learning",
+      "lastReview": 1749462584340,
       "repetitions": 0,
       "ignoreCount": 0,
       "nextReview": 0
@@ -134,8 +134,8 @@
       "nextReview": 0
     },
     "authentic": {
-      "status": "new",
-      "lastReview": 0,
+      "status": "learning",
+      "lastReview": 1749462597166,
       "repetitions": 0,
       "ignoreCount": 0,
       "nextReview": 0
@@ -165,7 +165,7 @@
       "inclined",
       "resemble"
     ],
-    "currentIndex": 8,
+    "currentIndex": 13,
     "showedSummary": false
   }
 }
