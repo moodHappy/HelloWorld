@@ -134,8 +134,8 @@
       "nextReview": 0
     },
     "minus": {
-      "status": "new",
-      "lastReview": 0,
+      "status": "learning",
+      "lastReview": 1749462196351,
       "repetitions": 0,
       "ignoreCount": 0,
       "nextReview": 0
@@ -165,7 +165,7 @@
       "dessert",
       "petty"
     ],
-    "currentIndex": 7,
+    "currentIndex": 8,
     "showedSummary": false
   }
 }
