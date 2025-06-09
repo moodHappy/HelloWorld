@@ -1,30 +1,231 @@
 {
-  "words": {},
+  "words": {
+    "tribunal": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "sweat": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "prose": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "hack": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "rub": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "pistol": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "sheikh": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "franc": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749465264114,
+      "lastReview": 1749465144114
+    },
+    "rib": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 1,
+      "interval": 1,
+      "easeFactor": 2.3,
+      "learningStep": 0,
+      "nextReview": 1749465605337,
+      "lastReview": 1749465485337
+    },
+    "puzzle": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "levy": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "i.e.": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "hollow": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "enforce": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "feast": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "brew": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "hence": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "ponder": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "bleak": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "daring": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    }
+  },
   "dailyWords": {
     "date": "Mon Jun 09 2025",
     "words": [
-      "bunker",
-      "rub",
-      "interval",
-      "ace",
-      "dole",
+      "sweat",
+      "franc",
+      "tribunal",
+      "rib",
+      "hence",
+      "sheikh",
+      "hack",
+      "enforce",
+      "levy",
+      "pistol",
+      "i.e.",
+      "prose",
+      "puzzle",
+      "bleak",
+      "brew",
       "ponder",
-      "ego",
-      "eel",
-      "nut",
-      "wee",
-      "shaft",
-      "brace",
-      "dub",
-      "crawl",
-      "cereal",
-      "gospel",
-      "cockpit",
-      "chant",
-      "hurl",
-      "depict"
+      "rub",
+      "hollow",
+      "daring",
+      "feast"
     ],
-    "currentIndex": 1,
+    "currentIndex": 6,
     "showedSummary": false
   }
 }
