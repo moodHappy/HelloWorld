@@ -1,1 +1,231 @@
-{}
+{
+  "words": {
+    "Taurus": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "derive": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749480978126,
+      "lastReview": 1749480858126
+    },
+    "batter": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749481041600,
+      "lastReview": 1749480921600
+    },
+    "energetic": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749480995968,
+      "lastReview": 1749480875968
+    },
+    "wisdom": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749481034957,
+      "lastReview": 1749480914957
+    },
+    "e.g.": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "robust": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "withhold": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749480981312,
+      "lastReview": 1749480861312
+    },
+    "narrative": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749481025928,
+      "lastReview": 1749480905928
+    },
+    "dame": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749480974337,
+      "lastReview": 1749480854337
+    },
+    "perennial": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749481038447,
+      "lastReview": 1749480918447
+    },
+    "fuss": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749481002932,
+      "lastReview": 1749480882932
+    },
+    "scarcely": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749480992856,
+      "lastReview": 1749480872856
+    },
+    "vinyl": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749481016922,
+      "lastReview": 1749480896922
+    },
+    "nest": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "stubborn": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749480963438,
+      "lastReview": 1749480843438
+    },
+    "ritual": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749480987278,
+      "lastReview": 1749480867278
+    },
+    "formulate": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749481022428,
+      "lastReview": 1749480902428
+    },
+    "interval": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "imminent": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749481007328,
+      "lastReview": 1749480887328
+    }
+  },
+  "dailyWords": {
+    "date": "Mon Jun 09 2025",
+    "words": [
+      "stubborn",
+      "robust",
+      "dame",
+      "derive",
+      "withhold",
+      "ritual",
+      "scarcely",
+      "energetic",
+      "e.g.",
+      "fuss",
+      "imminent",
+      "Taurus",
+      "vinyl",
+      "formulate",
+      "narrative",
+      "nest",
+      "interval",
+      "wisdom",
+      "perennial",
+      "batter"
+    ],
+    "currentIndex": 20,
+    "showedSummary": true
+  }
+}
