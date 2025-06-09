@@ -26,5 +26,33 @@
     "masteredCount": 0,
     "ignoredCount": 0,
     "lastIgnoreTime": 0
+  },
+  "rod": {
+    "word": "rod",
+    "status": "mastered",
+    "reviewLevel": 9,
+    "lastReviewTime": 1749447236308,
+    "nextReviewTime": 1749533636308,
+    "reviewCount": 2,
+    "createdAt": 1749447208852,
+    "ignoredUntil": 0,
+    "masteredAt": 1749447236308,
+    "masteredCount": 1,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "nut": {
+    "word": "nut",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749447237241,
+    "nextReviewTime": 1749447297241,
+    "reviewCount": 1,
+    "createdAt": 1749447237241,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   }
 }
