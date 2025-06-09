@@ -1,171 +1,30 @@
 {
-  "words": {
-    "famine": {
-      "status": "learning",
-      "lastReview": 1749461922186,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "solidarity": {
-      "status": "learning",
-      "lastReview": 1749462033107,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "distinct": {
-      "status": "new",
-      "lastReview": 0,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "abstract": {
-      "status": "new",
-      "lastReview": 0,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "conceive": {
-      "status": "new",
-      "lastReview": 0,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "resemble": {
-      "status": "new",
-      "lastReview": 0,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "diabetes": {
-      "status": "learning",
-      "lastReview": 1749461910686,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "unbeaten": {
-      "status": "mastered",
-      "lastReview": 1749462597141,
-      "repetitions": 1,
-      "ignoreCount": 0,
-      "nextReview": 1749548997141
-    },
-    "accessory": {
-      "status": "learning",
-      "lastReview": 1749461934858,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "irregular": {
-      "status": "learning",
-      "lastReview": 1749462033077,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "umpire": {
-      "status": "new",
-      "lastReview": 0,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "reassure": {
-      "status": "mastered",
-      "lastReview": 1749462584314,
-      "repetitions": 1,
-      "ignoreCount": 0,
-      "nextReview": 1749548984314
-    },
-    "symphony": {
-      "status": "learning",
-      "lastReview": 1749462544812,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "inclined": {
-      "status": "new",
-      "lastReview": 0,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "idle": {
-      "status": "learning",
-      "lastReview": 1749462602938,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "cemetery": {
-      "status": "learning",
-      "lastReview": 1749462612354,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "lounge": {
-      "status": "learning",
-      "lastReview": 1749462584340,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "inherent": {
-      "status": "learning",
-      "lastReview": 1749461943019,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "doctrine": {
-      "status": "new",
-      "lastReview": 0,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "authentic": {
-      "status": "learning",
-      "lastReview": 1749462597166,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    }
-  },
+  "words": {},
   "dailyWords": {
     "date": "Mon Jun 09 2025",
     "words": [
-      "diabetes",
-      "famine",
-      "accessory",
-      "inherent",
-      "irregular",
-      "solidarity",
-      "symphony",
-      "reassure",
-      "lounge",
-      "unbeaten",
-      "authentic",
-      "idle",
-      "cemetery",
-      "conceive",
-      "abstract",
-      "doctrine",
-      "umpire",
-      "distinct",
-      "inclined",
-      "resemble"
+      "bunker",
+      "rub",
+      "interval",
+      "ace",
+      "dole",
+      "ponder",
+      "ego",
+      "eel",
+      "nut",
+      "wee",
+      "shaft",
+      "brace",
+      "dub",
+      "crawl",
+      "cereal",
+      "gospel",
+      "cockpit",
+      "chant",
+      "hurl",
+      "depict"
     ],
-    "currentIndex": 13,
+    "currentIndex": 1,
     "showedSummary": false
   }
 }
