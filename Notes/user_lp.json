@@ -1,1 +1,171 @@
-{}
+{
+  "words": {
+    "flush": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "curriculum": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "amnesty": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "winger": {
+      "status": "mastered",
+      "lastReview": 1749459236125,
+      "repetitions": 1,
+      "ignoreCount": 0,
+      "nextReview": 1749545636125
+    },
+    "forge": {
+      "status": "learning",
+      "lastReview": 1749459227137,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "inter": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "tray": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "deepen": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "staple": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "puzzle": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "wisdom": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "choke": {
+      "status": "learning",
+      "lastReview": 1749459236158,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "feast": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "petty": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "glare": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "crawl": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "ponder": {
+      "status": "learning",
+      "lastReview": 1749459212256,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "dessert": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "Aries": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "minus": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    }
+  },
+  "dailyWords": {
+    "date": "Mon Jun 09 2025",
+    "words": [
+      "ponder",
+      "forge",
+      "winger",
+      "choke",
+      "inter",
+      "tray",
+      "glare",
+      "minus",
+      "amnesty",
+      "Aries",
+      "deepen",
+      "curriculum",
+      "puzzle",
+      "wisdom",
+      "flush",
+      "crawl",
+      "feast",
+      "staple",
+      "dessert",
+      "petty"
+    ],
+    "currentIndex": 4,
+    "showedSummary": false
+  }
+}
