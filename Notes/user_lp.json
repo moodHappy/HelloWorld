@@ -1,5 +1,15 @@
 {
   "words": {
+    "tribunal": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
     "sweat": {
       "status": "new",
       "repetitions": 0,
@@ -196,6 +206,7 @@
     "words": [
       "sweat",
       "franc",
+      "tribunal",
       "rib",
       "hence",
       "sheikh",
@@ -214,7 +225,7 @@
       "daring",
       "feast"
     ],
-    "currentIndex": 19, // <-- 关键修改：从 20 变为 19
-    "showedSummary": false // <-- 关键修改：设置为 false，这样它会在显示完后弹出总结
+    "currentIndex": 20,
+    "showedSummary": true
   }
 }
