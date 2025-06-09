@@ -1,169 +1,229 @@
 {
   "words": {
+    "tribunal": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "sweat": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "prose": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 1,
+      "interval": 1,
+      "easeFactor": 2.3,
+      "learningStep": 0,
+      "nextReview": 1749474345706,
+      "lastReview": 1749474225706
+    },
+    "hack": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749465646676,
+      "lastReview": 1749465526676
+    },
+    "rub": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 1,
+      "interval": 1,
+      "easeFactor": 2.3,
+      "learningStep": 0,
+      "nextReview": 1749476751967,
+      "lastReview": 1749476631967
+    },
+    "pistol": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "sheikh": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "franc": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749465264114,
+      "lastReview": 1749465144114
+    },
+    "rib": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 1,
+      "interval": 1,
+      "easeFactor": 2.3,
+      "learningStep": 0,
+      "nextReview": 1749465605337,
+      "lastReview": 1749465485337
+    },
+    "puzzle": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "levy": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
     "i.e.": {
       "status": "learning",
-      "lastReview": 1749479640504,
       "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "assert": {
-      "status": "mastered",
-      "lastReview": 1749479627958,
-      "repetitions": 1,
-      "ignoreCount": 0,
-      "nextReview": 1749566027959
-    },
-    "swamp": {
-      "status": "learning",
-      "lastReview": 1749479618145,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "sneak": {
-      "status": "learning",
-      "lastReview": 1749479637204,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "mar": {
-      "status": "mastered",
-      "lastReview": 1749479633262,
-      "repetitions": 1,
-      "ignoreCount": 0,
-      "nextReview": 1749566033262
-    },
-    "hedge": {
-      "status": "learning",
-      "lastReview": 1749479432541,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "bog": {
-      "status": "learning",
-      "lastReview": 1749479445175,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "cereal": {
-      "status": "learning",
-      "lastReview": 1749479383358,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "jaw": {
-      "status": "learning",
-      "lastReview": 1749479633279,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "forehead": {
-      "status": "learning",
-      "lastReview": 1749479649106,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "vivid": {
-      "status": "mastered",
-      "lastReview": 1749479618113,
-      "repetitions": 1,
-      "ignoreCount": 0,
-      "nextReview": 1749566018114
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
     },
     "hollow": {
-      "status": "mastered",
-      "lastReview": 1749479389321,
-      "repetitions": 1,
-      "ignoreCount": 0,
-      "nextReview": 1749565789321
-    },
-    "affirm": {
-      "status": "mastered",
-      "lastReview": 1749479652584,
-      "repetitions": 1,
-      "ignoreCount": 0,
-      "nextReview": 1749566052584
-    },
-    "robust": {
-      "status": "mastered",
-      "lastReview": 1749479432515,
-      "repetitions": 1,
-      "ignoreCount": 0,
-      "nextReview": 1749565832515
-    },
-    "ego": {
       "status": "learning",
-      "lastReview": 1749479374907,
       "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749476778755,
+      "lastReview": 1749476658755
     },
-    "flick": {
+    "enforce": {
       "status": "learning",
-      "lastReview": 1749479627992,
       "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
     },
-    "ace": {
-      "status": "mastered",
-      "lastReview": 1749479637189,
-      "repetitions": 1,
-      "ignoreCount": 0,
-      "nextReview": 1749566037189
-    },
-    "bunker": {
-      "status": "mastered",
-      "lastReview": 1749479445143,
-      "repetitions": 1,
-      "ignoreCount": 0,
-      "nextReview": 1749565845143
-    },
-    "pinch": {
+    "feast": {
       "status": "learning",
-      "lastReview": 1749479389357,
       "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749477278948,
+      "lastReview": 1749477158948
     },
-    "breach": {
+    "brew": {
       "status": "learning",
-      "lastReview": 1749479551281,
       "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749475787074,
+      "lastReview": 1749475667074
+    },
+    "hence": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "ponder": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749475824091,
+      "lastReview": 1749475704091
+    },
+    "bleak": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749474374574,
+      "lastReview": 1749474254574
+    },
+    "daring": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749477262275,
+      "lastReview": 1749477142275
     }
   },
   "dailyWords": {
     "date": "Mon Jun 09 2025",
     "words": [
-      "ego",
-      "cereal",
-      "hollow",
-      "pinch",
-      "robust",
-      "hedge",
-      "bunker",
-      "bog",
-      "breach",
-      "vivid",
-      "swamp",
-      "assert",
-      "flick",
-      "mar",
-      "jaw",
-      "ace",
-      "sneak",
+      "sweat",
+      "franc",
+      "tribunal",
+      "rib",
+      "hence",
+      "sheikh",
+      "hack",
+      "enforce",
+      "levy",
+      "pistol",
       "i.e.",
-      "forehead",
-      "affirm"
+      "prose",
+      "puzzle",
+      "bleak",
+      "brew",
+      "ponder",
+      "rub",
+      "hollow",
+      "daring",
+      "feast"
     ],
     "currentIndex": 20,
     "showedSummary": true
