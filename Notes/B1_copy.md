@@ -1,3 +1,13 @@
+<a href="https://www.bbc.com/zhongwen/articles/cj93dze9yklo/simp">URL</a>
+<p>Title: "Chinese Student's Harvard Speech Sparks Controversy"</p>
+<p>A 25-year-old Chinese student named Jiang Yufeng gave a speech at Harvard University's graduation ceremony. She talked about the importance of kindness and humanity in a world that is becoming more divided. However, her speech sparked controversy in both the US and China.</p>
+<p>In the US, some people thought that Jiang's speech was a message from Harvard to the Trump government. In China, some people criticized Jiang's speech, saying it was full of Western values and empty words. They also questioned her family background, suggesting that she only got into Harvard because of her father's connections.</p>
+<p>Jiang tried to explain herself on social media, but it only made things worse. She said she felt like she was being "drowned" by the criticism and that she had "felt the reality" of the situation. Despite this, Jiang still believes in the importance of kindness and humanity.</p>
+<p>The controversy surrounding Jiang's speech has highlighted the difficulties faced by Chinese students in the US, particularly those from wealthy or well-connected families. It has also shown how sensitive and divided the current social and political climate is.</p>
+<p>Jiang's story is similar to that of another Chinese student, Yang Shuping, who gave a graduation speech at the University of Maryland in 2017. Yang's speech also sparked controversy, and she was criticized for her comments about air pollution in China.</p>
+<p>Overall, Jiang's speech at Harvard has sparked a lot of debate and discussion about the role of Chinese students in the US, the importance of kindness and humanity, and the challenges of navigating complex social and political issues.</p>
+
+
 <a href="https://www.bbc.com/news/live/cvg7vxx888kt">URL</a>
 
 <p>Title: "Protests in Los Angeles Turn Violent"</p>
