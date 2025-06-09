@@ -1,0 +1,231 @@
+{
+  "words": {
+    "tribunal": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "sweat": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "prose": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 1,
+      "interval": 1,
+      "easeFactor": 2.3,
+      "learningStep": 0,
+      "nextReview": 1749474345706,
+      "lastReview": 1749474225706
+    },
+    "hack": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749465646676,
+      "lastReview": 1749465526676
+    },
+    "rub": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 1,
+      "interval": 1,
+      "easeFactor": 2.3,
+      "learningStep": 0,
+      "nextReview": 1749476751967,
+      "lastReview": 1749476631967
+    },
+    "pistol": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "sheikh": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "franc": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749465264114,
+      "lastReview": 1749465144114
+    },
+    "rib": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 1,
+      "interval": 1,
+      "easeFactor": 2.3,
+      "learningStep": 0,
+      "nextReview": 1749465605337,
+      "lastReview": 1749465485337
+    },
+    "puzzle": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "levy": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "i.e.": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "hollow": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749476778755,
+      "lastReview": 1749476658755
+    },
+    "enforce": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "feast": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749477278948,
+      "lastReview": 1749477158948
+    },
+    "brew": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749475787074,
+      "lastReview": 1749475667074
+    },
+    "hence": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "ponder": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749475824091,
+      "lastReview": 1749475704091
+    },
+    "bleak": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749474374574,
+      "lastReview": 1749474254574
+    },
+    "daring": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 1,
+      "nextReview": 1749477262275,
+      "lastReview": 1749477142275
+    }
+  },
+  "dailyWords": {
+    "date": "Mon Jun 09 2025",
+    "words": [
+      "sweat",
+      "franc",
+      "tribunal",
+      "rib",
+      "hence",
+      "sheikh",
+      "hack",
+      "enforce",
+      "levy",
+      "pistol",
+      "i.e.",
+      "prose",
+      "puzzle",
+      "bleak",
+      "brew",
+      "ponder",
+      "rub",
+      "hollow",
+      "daring",
+      "feast"
+    ],
+    "currentIndex": 20,
+    "showedSummary": true
+  }
+}
