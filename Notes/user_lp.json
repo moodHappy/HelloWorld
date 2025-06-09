@@ -1,15 +1,5 @@
 {
   "words": {
-    "tribunal": {
-      "status": "new",
-      "repetitions": 0,
-      "lapses": 0,
-      "interval": 0,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 0,
-      "lastReview": 0
-    },
     "sweat": {
       "status": "new",
       "repetitions": 0,
@@ -206,13 +196,13 @@
     "words": [
       "sweat",
       "franc",
-      "tribunal",
       "rib",
       "hence",
       "sheikh",
       "hack",
       "enforce",
       "levy",
+      "pistol",
       "i.e.",
       "prose",
       "puzzle",
@@ -224,7 +214,7 @@
       "daring",
       "feast"
     ],
-    "currentIndex": 20,
+    "currentIndex": 19,
     "showedSummary": true
   }
 }
