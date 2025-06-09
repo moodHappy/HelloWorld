@@ -8,7 +8,10 @@
     "reviewCount": 1,
     "createdAt": 1749449346865,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "RAF": {
     "word": "RAF",
@@ -19,7 +22,10 @@
     "reviewCount": 1,
     "createdAt": 1749451196739,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "ace": {
     "word": "ace",
@@ -30,7 +36,10 @@
     "reviewCount": 1,
     "createdAt": 1749450990047,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "apt": {
     "word": "apt",
@@ -41,7 +50,10 @@
     "reviewCount": 1,
     "createdAt": 1749451277989,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "bog": {
     "word": "bog",
@@ -52,7 +64,10 @@
     "reviewCount": 1,
     "createdAt": 1749449373977,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "bud": {
     "word": "bud",
@@ -63,7 +78,10 @@
     "reviewCount": 1,
     "createdAt": 1749449406666,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "dub": {
     "word": "dub",
@@ -74,7 +92,10 @@
     "reviewCount": 1,
     "createdAt": 1749449413793,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "eel": {
     "word": "eel",
@@ -85,7 +106,10 @@
     "reviewCount": 1,
     "createdAt": 1749449355744,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "ego": {
     "word": "ego",
@@ -96,7 +120,10 @@
     "reviewCount": 1,
     "createdAt": 1749449383782,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "hen": {
     "word": "hen",
@@ -107,7 +134,10 @@
     "reviewCount": 1,
     "createdAt": 1749451250082,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "hut": {
     "word": "hut",
@@ -118,7 +148,10 @@
     "reviewCount": 1,
     "createdAt": 1749451186971,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "lag": {
     "word": "lag",
@@ -129,7 +162,10 @@
     "reviewCount": 1,
     "createdAt": 1749449423772,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "mar": {
     "word": "mar",
@@ -140,7 +176,10 @@
     "reviewCount": 1,
     "createdAt": 1749449387101,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "nut": {
     "word": "nut",
@@ -151,7 +190,10 @@
     "reviewCount": 1,
     "createdAt": 1749449365035,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "owl": {
     "word": "owl",
@@ -162,7 +204,10 @@
     "reviewCount": 1,
     "createdAt": 1749451274021,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "pal": {
     "word": "pal",
@@ -173,7 +218,10 @@
     "reviewCount": 1,
     "createdAt": 1749449426813,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "pat": {
     "word": "pat",
@@ -184,7 +232,10 @@
     "reviewCount": 1,
     "createdAt": 1749450995666,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "rag": {
     "word": "rag",
@@ -195,7 +246,10 @@
     "reviewCount": 1,
     "createdAt": 1749451244607,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "rev": {
     "word": "rev",
@@ -206,7 +260,10 @@
     "reviewCount": 1,
     "createdAt": 1749451057032,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "rib": {
     "word": "rib",
@@ -217,7 +274,10 @@
     "reviewCount": 1,
     "createdAt": 1749449401530,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "rod": {
     "word": "rod",
@@ -228,7 +288,10 @@
     "reviewCount": 1,
     "createdAt": 1749449357927,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "rub": {
     "word": "rub",
@@ -239,7 +302,10 @@
     "reviewCount": 1,
     "createdAt": 1749449448895,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "rue": {
     "word": "rue",
@@ -250,7 +316,10 @@
     "reviewCount": 1,
     "createdAt": 1749449433806,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "tow": {
     "word": "tow",
@@ -261,7 +330,10 @@
     "reviewCount": 1,
     "createdAt": 1749451271796,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "tug": {
     "word": "tug",
@@ -272,7 +344,10 @@
     "reviewCount": 1,
     "createdAt": 1749451201501,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "wee": {
     "word": "wee",
@@ -283,7 +358,10 @@
     "reviewCount": 1,
     "createdAt": 1749449393787,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "jaw": {
     "word": "jaw",
@@ -294,7 +372,10 @@
     "reviewCount": 1,
     "createdAt": 1749451705517,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "pave": {
     "word": "pave",
@@ -305,7 +386,10 @@
     "reviewCount": 2,
     "createdAt": 1749451713933,
     "ignoredUntil": 0,
-    "masteredAt": 1749451716609
+    "masteredAt": 1749451716609,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "grim": {
     "word": "grim",
@@ -316,7 +400,10 @@
     "reviewCount": 1,
     "createdAt": 1749451716713,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "cane": {
     "word": "cane",
@@ -327,7 +414,10 @@
     "reviewCount": 2,
     "createdAt": 1749451724066,
     "ignoredUntil": 0,
-    "masteredAt": 1749451735637
+    "masteredAt": 1749451735637,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "dole": {
     "word": "dole",
@@ -338,7 +428,10 @@
     "reviewCount": 1,
     "createdAt": 1749451735742,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "plug": {
     "word": "plug",
@@ -349,7 +442,10 @@
     "reviewCount": 2,
     "createdAt": 1749451744097,
     "ignoredUntil": 0,
-    "masteredAt": 1749451748487
+    "masteredAt": 1749451748487,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "cord": {
     "word": "cord",
@@ -360,7 +456,10 @@
     "reviewCount": 1,
     "createdAt": 1749451748592,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "tick": {
     "word": "tick",
@@ -371,7 +470,10 @@
     "reviewCount": 1,
     "createdAt": 1749451754055,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "hurl": {
     "word": "hurl",
@@ -382,7 +484,10 @@
     "reviewCount": 1,
     "createdAt": 1749451769123,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "bait": {
     "word": "bait",
@@ -393,7 +498,10 @@
     "reviewCount": 1,
     "createdAt": 1749451776051,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "hull": {
     "word": "hull",
@@ -404,7 +512,10 @@
     "reviewCount": 1,
     "createdAt": 1749451788498,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "dine": {
     "word": "dine",
@@ -415,7 +526,10 @@
     "reviewCount": 1,
     "createdAt": 1749451791471,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "flap": {
     "word": "flap",
@@ -426,7 +540,10 @@
     "reviewCount": 1,
     "createdAt": 1749451796378,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "dart": {
     "word": "dart",
@@ -437,7 +554,10 @@
     "reviewCount": 1,
     "createdAt": 1749451806346,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "bias": {
     "word": "bias",
@@ -448,18 +568,10 @@
     "reviewCount": 1,
     "createdAt": 1749451819014,
     "ignoredUntil": 0,
-    "masteredAt": 0
-  },
-  "clan": {
-    "word": "clan",
-    "status": "ignored",
-    "reviewLevel": 1,
-    "lastReviewTime": 1749451828687,
-    "nextReviewTime": 1749451888687,
-    "reviewCount": 1,
-    "createdAt": 1749451828687,
-    "ignoredUntil": 1749452132740,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "sway": {
     "word": "sway",
@@ -470,7 +582,10 @@
     "reviewCount": 1,
     "createdAt": 1749451832845,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "rite": {
     "word": "rite",
@@ -481,7 +596,10 @@
     "reviewCount": 2,
     "createdAt": 1749451838685,
     "ignoredUntil": 0,
-    "masteredAt": 1749451852308
+    "masteredAt": 1749451852308,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "envy": {
     "word": "envy",
@@ -492,7 +610,10 @@
     "reviewCount": 1,
     "createdAt": 1749451852411,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "cosy": {
     "word": "cosy",
@@ -503,7 +624,10 @@
     "reviewCount": 1,
     "createdAt": 1749451857180,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "pine": {
     "word": "pine",
@@ -514,7 +638,10 @@
     "reviewCount": 1,
     "createdAt": 1749451866293,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "feat": {
     "word": "feat",
@@ -525,7 +652,10 @@
     "reviewCount": 1,
     "createdAt": 1749451876699,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "rein": {
     "word": "rein",
@@ -536,7 +666,10 @@
     "reviewCount": 1,
     "createdAt": 1749451879760,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "fort": {
     "word": "fort",
@@ -547,7 +680,10 @@
     "reviewCount": 1,
     "createdAt": 1749451883465,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "putt": {
     "word": "putt",
@@ -558,7 +694,10 @@
     "reviewCount": 1,
     "createdAt": 1749451888712,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "bloc": {
     "word": "bloc",
@@ -569,7 +708,10 @@
     "reviewCount": 1,
     "createdAt": 1749451896158,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "idle": {
     "word": "idle",
@@ -580,7 +722,10 @@
     "reviewCount": 1,
     "createdAt": 1749451914298,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "knot": {
     "word": "knot",
@@ -591,7 +736,10 @@
     "reviewCount": 1,
     "createdAt": 1749451920368,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "vain": {
     "word": "vain",
@@ -602,7 +750,10 @@
     "reviewCount": 1,
     "createdAt": 1749451924795,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "patron": {
     "word": "patron",
@@ -613,7 +764,10 @@
     "reviewCount": 1,
     "createdAt": 1749451936389,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "ache": {
     "word": "ache",
@@ -624,7 +778,10 @@
     "reviewCount": 1,
     "createdAt": 1749451944902,
     "ignoredUntil": 0,
-    "masteredAt": 1749451948738
+    "masteredAt": 1749451948738,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "defy": {
     "word": "defy",
@@ -635,7 +792,10 @@
     "reviewCount": 1,
     "createdAt": 1749451948840,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "swap": {
     "word": "swap",
@@ -646,7 +806,10 @@
     "reviewCount": 1,
     "createdAt": 1749451954593,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "qualifier": {
     "word": "qualifier",
@@ -657,7 +820,10 @@
     "reviewCount": 1,
     "createdAt": 1749451963754,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "quest": {
     "word": "quest",
@@ -668,7 +834,10 @@
     "reviewCount": 1,
     "createdAt": 1749451982913,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "dial": {
     "word": "dial",
@@ -679,7 +848,10 @@
     "reviewCount": 1,
     "createdAt": 1749451993757,
     "ignoredUntil": 0,
-    "masteredAt": 1749452000070
+    "masteredAt": 1749452000070,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "olive": {
     "word": "olive",
@@ -690,7 +862,10 @@
     "reviewCount": 1,
     "createdAt": 1749452000172,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "merit": {
     "word": "merit",
@@ -701,7 +876,10 @@
     "reviewCount": 1,
     "createdAt": 1749452003762,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "ethic": {
     "word": "ethic",
@@ -712,7 +890,10 @@
     "reviewCount": 1,
     "createdAt": 1749452006985,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "tuck": {
     "word": "tuck",
@@ -723,7 +904,10 @@
     "reviewCount": 1,
     "createdAt": 1749452010288,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "potent": {
     "word": "potent",
@@ -734,7 +918,10 @@
     "reviewCount": 1,
     "createdAt": 1749452015534,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "thumb": {
     "word": "thumb",
@@ -745,7 +932,10 @@
     "reviewCount": 1,
     "createdAt": 1749452017781,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   },
   "crouch": {
     "word": "crouch",
@@ -756,6 +946,415 @@
     "reviewCount": 1,
     "createdAt": 1749452035958,
     "ignoredUntil": 0,
-    "masteredAt": 0
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "clan": {
+    "word": "clan",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749451828687,
+    "nextReviewTime": 1749451888687,
+    "reviewCount": 1,
+    "createdAt": 1749451828687,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "tilt": {
+    "word": "tilt",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749453872551,
+    "nextReviewTime": 1749453932551,
+    "reviewCount": 1,
+    "createdAt": 1749453872551,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "scar": {
+    "word": "scar",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749453874518,
+    "nextReviewTime": 1749453934518,
+    "reviewCount": 1,
+    "createdAt": 1749453874518,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "bind": {
+    "word": "bind",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749453893417,
+    "nextReviewTime": 1749453953417,
+    "reviewCount": 1,
+    "createdAt": 1749453893417,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "Brit": {
+    "word": "Brit",
+    "status": "mastered",
+    "reviewLevel": 9,
+    "lastReviewTime": 1749453911273,
+    "nextReviewTime": 1749540311273,
+    "reviewCount": 2,
+    "createdAt": 1749453904405,
+    "ignoredUntil": 0,
+    "masteredAt": 1749453911273,
+    "masteredCount": 1,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "lash": {
+    "word": "lash",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749453912175,
+    "nextReviewTime": 1749453972175,
+    "reviewCount": 1,
+    "createdAt": 1749453912175,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "weed": {
+    "word": "weed",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749453923813,
+    "nextReviewTime": 1749453983813,
+    "reviewCount": 1,
+    "createdAt": 1749453923813,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "bash": {
+    "word": "bash",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749453933494,
+    "nextReviewTime": 1749453993494,
+    "reviewCount": 1,
+    "createdAt": 1749453933494,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "beam": {
+    "word": "beam",
+    "status": "mastered",
+    "reviewLevel": 9,
+    "lastReviewTime": 1749453949039,
+    "nextReviewTime": 1749540349039,
+    "reviewCount": 2,
+    "createdAt": 1749453944380,
+    "ignoredUntil": 0,
+    "masteredAt": 1749453949039,
+    "masteredCount": 1,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "fury": {
+    "word": "fury",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749453950163,
+    "nextReviewTime": 1749454010163,
+    "reviewCount": 1,
+    "createdAt": 1749453950163,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "howl": {
+    "word": "howl",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749453964268,
+    "nextReviewTime": 1749454024268,
+    "reviewCount": 1,
+    "createdAt": 1749453964268,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "Sikh": {
+    "word": "Sikh",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749453987751,
+    "nextReviewTime": 1749454047751,
+    "reviewCount": 1,
+    "createdAt": 1749453987751,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "lime": {
+    "word": "lime",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749453993476,
+    "nextReviewTime": 1749454053476,
+    "reviewCount": 1,
+    "createdAt": 1749453993476,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "herb": {
+    "word": "herb",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749454026163,
+    "nextReviewTime": 1749454086163,
+    "reviewCount": 1,
+    "createdAt": 1749454026163,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "brew": {
+    "word": "brew",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749454042196,
+    "nextReviewTime": 1749454102196,
+    "reviewCount": 1,
+    "createdAt": 1749454042196,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "carp": {
+    "word": "carp",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749454045071,
+    "nextReviewTime": 1749454105071,
+    "reviewCount": 1,
+    "createdAt": 1749454045071,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "deaf": {
+    "word": "deaf",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749454115399,
+    "nextReviewTime": 1749454175399,
+    "reviewCount": 1,
+    "createdAt": 1749454115399,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "rave": {
+    "word": "rave",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749454116511,
+    "nextReviewTime": 1749454176511,
+    "reviewCount": 1,
+    "createdAt": 1749454116511,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "hike": {
+    "word": "hike",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749454126288,
+    "nextReviewTime": 1749454186288,
+    "reviewCount": 1,
+    "createdAt": 1749454126288,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "sole": {
+    "word": "sole",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749454179518,
+    "nextReviewTime": 1749454239518,
+    "reviewCount": 1,
+    "createdAt": 1749454179518,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "prop": {
+    "word": "prop",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749454187501,
+    "nextReviewTime": 1749454247501,
+    "reviewCount": 1,
+    "createdAt": 1749454187501,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "vine": {
+    "word": "vine",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749453880475,
+    "nextReviewTime": 1749453940475,
+    "reviewCount": 1,
+    "createdAt": 1749453880475,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 1,
+    "lastIgnoreTime": 1749453891619
+  },
+  "bust": {
+    "word": "bust",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749453892660,
+    "nextReviewTime": 1749453952660,
+    "reviewCount": 1,
+    "createdAt": 1749453892660,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 1,
+    "lastIgnoreTime": 1749453892912
+  },
+  "levy": {
+    "word": "levy",
+    "status": "ignored",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749454196775,
+    "nextReviewTime": 1749454256775,
+    "reviewCount": 1,
+    "createdAt": 1749454196775,
+    "ignoredUntil": 1749454502166,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 1,
+    "lastIgnoreTime": 1749454202166
+  },
+  "vest": {
+    "word": "vest",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749454203317,
+    "nextReviewTime": 1749454263317,
+    "reviewCount": 1,
+    "createdAt": 1749454203317,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "bulb": {
+    "word": "bulb",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749454216594,
+    "nextReviewTime": 1749454276594,
+    "reviewCount": 1,
+    "createdAt": 1749454216594,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "lure": {
+    "word": "lure",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749454226669,
+    "nextReviewTime": 1749454286669,
+    "reviewCount": 1,
+    "createdAt": 1749454226669,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "lump": {
+    "word": "lump",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749454228174,
+    "nextReviewTime": 1749454288174,
+    "reviewCount": 1,
+    "createdAt": 1749454228174,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "blur": {
+    "word": "blur",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749454236841,
+    "nextReviewTime": 1749454296841,
+    "reviewCount": 1,
+    "createdAt": 1749454236841,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
   }
 }
