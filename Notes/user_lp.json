@@ -1,1 +1,30 @@
-{}
+{
+  "LP": {
+    "word": "LP",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749450677072,
+    "nextReviewTime": 1749450737072,
+    "reviewCount": 1,
+    "createdAt": 1749450677072,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "eel": {
+    "word": "eel",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749450683388,
+    "nextReviewTime": 1749450743388,
+    "reviewCount": 1,
+    "createdAt": 1749450683388,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  }
+}
