@@ -36,15 +36,15 @@
       "nextReview": 0
     },
     "inter": {
-      "status": "new",
-      "lastReview": 0,
+      "status": "learning",
+      "lastReview": 1749460196835,
       "repetitions": 0,
       "ignoreCount": 0,
       "nextReview": 0
     },
     "tray": {
-      "status": "new",
-      "lastReview": 0,
+      "status": "learning",
+      "lastReview": 1749460215556,
       "repetitions": 0,
       "ignoreCount": 0,
       "nextReview": 0
@@ -99,8 +99,8 @@
       "nextReview": 0
     },
     "glare": {
-      "status": "new",
-      "lastReview": 0,
+      "status": "learning",
+      "lastReview": 1749460223619,
       "repetitions": 0,
       "ignoreCount": 0,
       "nextReview": 0
@@ -165,7 +165,7 @@
       "dessert",
       "petty"
     ],
-    "currentIndex": 4,
+    "currentIndex": 7,
     "showedSummary": false
   }
 }
