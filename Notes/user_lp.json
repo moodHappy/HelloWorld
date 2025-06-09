@@ -31,14 +31,14 @@
       "lastReview": 0
     },
     "hack": {
-      "status": "new",
+      "status": "learning",
       "repetitions": 0,
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 0,
-      "lastReview": 0
+      "learningStep": 1,
+      "nextReview": 1749465646676,
+      "lastReview": 1749465526676
     },
     "rub": {
       "status": "new",
@@ -51,7 +51,7 @@
       "lastReview": 0
     },
     "pistol": {
-      "status": "new",
+      "status": "learning",
       "repetitions": 0,
       "lapses": 0,
       "interval": 0,
@@ -101,7 +101,7 @@
       "lastReview": 0
     },
     "levy": {
-      "status": "new",
+      "status": "learning",
       "repetitions": 0,
       "lapses": 0,
       "interval": 0,
@@ -111,7 +111,7 @@
       "lastReview": 0
     },
     "i.e.": {
-      "status": "new",
+      "status": "learning",
       "repetitions": 0,
       "lapses": 0,
       "interval": 0,
@@ -131,7 +131,7 @@
       "lastReview": 0
     },
     "enforce": {
-      "status": "new",
+      "status": "learning",
       "repetitions": 0,
       "lapses": 0,
       "interval": 0,
@@ -225,7 +225,7 @@
       "daring",
       "feast"
     ],
-    "currentIndex": 6,
+    "currentIndex": 11,
     "showedSummary": false
   }
 }
