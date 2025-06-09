@@ -1,141 +1,141 @@
 {
   "words": {
-    "flush": {
-      "status": "new",
-      "lastReview": 0,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "curriculum": {
-      "status": "new",
-      "lastReview": 0,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "amnesty": {
-      "status": "new",
-      "lastReview": 0,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "winger": {
-      "status": "mastered",
-      "lastReview": 1749459236125,
-      "repetitions": 1,
-      "ignoreCount": 0,
-      "nextReview": 1749545636125
-    },
-    "forge": {
+    "famine": {
       "status": "learning",
-      "lastReview": 1749459227137,
+      "lastReview": 1749461922186,
       "repetitions": 0,
       "ignoreCount": 0,
       "nextReview": 0
     },
-    "inter": {
+    "solidarity": {
       "status": "learning",
-      "lastReview": 1749460196835,
+      "lastReview": 1749462033107,
       "repetitions": 0,
       "ignoreCount": 0,
       "nextReview": 0
     },
-    "tray": {
+    "distinct": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "abstract": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "conceive": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "resemble": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "diabetes": {
       "status": "learning",
-      "lastReview": 1749460215556,
+      "lastReview": 1749461910686,
       "repetitions": 0,
       "ignoreCount": 0,
       "nextReview": 0
     },
-    "deepen": {
+    "unbeaten": {
       "status": "new",
       "lastReview": 0,
       "repetitions": 0,
       "ignoreCount": 0,
       "nextReview": 0
     },
-    "staple": {
-      "status": "new",
-      "lastReview": 0,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "puzzle": {
-      "status": "new",
-      "lastReview": 0,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "wisdom": {
-      "status": "new",
-      "lastReview": 0,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "choke": {
+    "accessory": {
       "status": "learning",
-      "lastReview": 1749459236158,
+      "lastReview": 1749461934858,
       "repetitions": 0,
       "ignoreCount": 0,
       "nextReview": 0
     },
-    "feast": {
-      "status": "new",
-      "lastReview": 0,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "petty": {
-      "status": "new",
-      "lastReview": 0,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "glare": {
+    "irregular": {
       "status": "learning",
-      "lastReview": 1749460223619,
+      "lastReview": 1749462033077,
       "repetitions": 0,
       "ignoreCount": 0,
       "nextReview": 0
     },
-    "crawl": {
+    "umpire": {
       "status": "new",
       "lastReview": 0,
       "repetitions": 0,
       "ignoreCount": 0,
       "nextReview": 0
     },
-    "ponder": {
+    "reassure": {
       "status": "learning",
-      "lastReview": 1749459212256,
+      "lastReview": 1749462558272,
       "repetitions": 0,
       "ignoreCount": 0,
       "nextReview": 0
     },
-    "dessert": {
-      "status": "new",
-      "lastReview": 0,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "Aries": {
-      "status": "new",
-      "lastReview": 0,
-      "repetitions": 0,
-      "ignoreCount": 0,
-      "nextReview": 0
-    },
-    "minus": {
+    "symphony": {
       "status": "learning",
-      "lastReview": 1749462196351,
+      "lastReview": 1749462544812,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "inclined": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "idle": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "cemetery": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "lounge": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "inherent": {
+      "status": "learning",
+      "lastReview": 1749461943019,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "doctrine": {
+      "status": "new",
+      "lastReview": 0,
+      "repetitions": 0,
+      "ignoreCount": 0,
+      "nextReview": 0
+    },
+    "authentic": {
+      "status": "new",
+      "lastReview": 0,
       "repetitions": 0,
       "ignoreCount": 0,
       "nextReview": 0
@@ -144,26 +144,26 @@
   "dailyWords": {
     "date": "Mon Jun 09 2025",
     "words": [
-      "ponder",
-      "forge",
-      "winger",
-      "choke",
-      "inter",
-      "tray",
-      "glare",
-      "minus",
-      "amnesty",
-      "Aries",
-      "deepen",
-      "curriculum",
-      "puzzle",
-      "wisdom",
-      "flush",
-      "crawl",
-      "feast",
-      "staple",
-      "dessert",
-      "petty"
+      "diabetes",
+      "famine",
+      "accessory",
+      "inherent",
+      "irregular",
+      "solidarity",
+      "symphony",
+      "reassure",
+      "lounge",
+      "unbeaten",
+      "authentic",
+      "idle",
+      "cemetery",
+      "conceive",
+      "abstract",
+      "doctrine",
+      "umpire",
+      "distinct",
+      "inclined",
+      "resemble"
     ],
     "currentIndex": 8,
     "showedSummary": false
