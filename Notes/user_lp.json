@@ -1,1 +1,58 @@
-{}
+{
+  "LP": {
+    "word": "LP",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749451456929,
+    "nextReviewTime": 1749451516929,
+    "reviewCount": 1,
+    "createdAt": 1749451456929,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "eel": {
+    "word": "eel",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749451465013,
+    "nextReviewTime": 1749451525013,
+    "reviewCount": 1,
+    "createdAt": 1749451465013,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "rod": {
+    "word": "rod",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749451473229,
+    "nextReviewTime": 1749451533229,
+    "reviewCount": 1,
+    "createdAt": 1749451473229,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  },
+  "nut": {
+    "word": "nut",
+    "status": "learning",
+    "reviewLevel": 1,
+    "lastReviewTime": 1749451501364,
+    "nextReviewTime": 1749451561364,
+    "reviewCount": 1,
+    "createdAt": 1749451501364,
+    "ignoredUntil": 0,
+    "masteredAt": 0,
+    "masteredCount": 0,
+    "ignoredCount": 0,
+    "lastIgnoreTime": 0
+  }
+}
