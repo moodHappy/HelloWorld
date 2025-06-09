@@ -388,3 +388,5 @@ seeking
 boat
 
 walking
+
+culture
