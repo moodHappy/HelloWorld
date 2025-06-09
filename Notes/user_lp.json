@@ -13,12 +13,12 @@
     "derive": {
       "status": "learning",
       "repetitions": 0,
-      "lapses": 0,
-      "interval": 0,
-      "easeFactor": 2.5,
-      "learningStep": 1,
-      "nextReview": 1749480978126,
-      "lastReview": 1749480858126
+      "lapses": 1,
+      "interval": 1,
+      "easeFactor": 2.3,
+      "learningStep": 0,
+      "nextReview": 1749485100250,
+      "lastReview": 1749484980250
     },
     "batter": {
       "status": "learning",
@@ -46,9 +46,9 @@
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
-      "learningStep": 1,
-      "nextReview": 1749481034957,
-      "lastReview": 1749480914957
+      "learningStep": 2,
+      "nextReview": 1749485556148,
+      "lastReview": 1749484956148
     },
     "e.g.": {
       "status": "learning",
@@ -76,9 +76,9 @@
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
-      "learningStep": 1,
-      "nextReview": 1749480981312,
-      "lastReview": 1749480861312
+      "learningStep": 2,
+      "nextReview": 1749485486453,
+      "lastReview": 1749484886453
     },
     "narrative": {
       "status": "learning",
@@ -86,9 +86,9 @@
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
-      "learningStep": 1,
-      "nextReview": 1749481025928,
-      "lastReview": 1749480905928
+      "learningStep": 2,
+      "nextReview": 1749485599235,
+      "lastReview": 1749484999235
     },
     "dame": {
       "status": "learning",
@@ -96,19 +96,19 @@
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
-      "learningStep": 1,
-      "nextReview": 1749480974337,
-      "lastReview": 1749480854337
+      "learningStep": 2,
+      "nextReview": 1749485658032,
+      "lastReview": 1749485058032
     },
     "perennial": {
       "status": "learning",
       "repetitions": 0,
-      "lapses": 0,
-      "interval": 0,
-      "easeFactor": 2.5,
-      "learningStep": 1,
-      "nextReview": 1749481038447,
-      "lastReview": 1749480918447
+      "lapses": 1,
+      "interval": 1,
+      "easeFactor": 2.3,
+      "learningStep": 0,
+      "nextReview": 1749484991719,
+      "lastReview": 1749484871719
     },
     "fuss": {
       "status": "learning",
@@ -116,19 +116,19 @@
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
-      "learningStep": 1,
-      "nextReview": 1749481002932,
-      "lastReview": 1749480882932
+      "learningStep": 2,
+      "nextReview": 1749485606569,
+      "lastReview": 1749485006569
     },
     "scarcely": {
       "status": "learning",
       "repetitions": 0,
-      "lapses": 0,
-      "interval": 0,
-      "easeFactor": 2.5,
-      "learningStep": 1,
-      "nextReview": 1749480992856,
-      "lastReview": 1749480872856
+      "lapses": 1,
+      "interval": 1,
+      "easeFactor": 2.3,
+      "learningStep": 0,
+      "nextReview": 1749485110269,
+      "lastReview": 1749484990269
     },
     "vinyl": {
       "status": "learning",
@@ -153,12 +153,12 @@
     "stubborn": {
       "status": "learning",
       "repetitions": 0,
-      "lapses": 0,
-      "interval": 0,
-      "easeFactor": 2.5,
-      "learningStep": 1,
-      "nextReview": 1749480963438,
-      "lastReview": 1749480843438
+      "lapses": 1,
+      "interval": 1,
+      "easeFactor": 2.3,
+      "learningStep": 0,
+      "nextReview": 1749485188190,
+      "lastReview": 1749485068190
     },
     "ritual": {
       "status": "learning",
@@ -166,9 +166,9 @@
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
-      "learningStep": 1,
-      "nextReview": 1749480987278,
-      "lastReview": 1749480867278
+      "learningStep": 2,
+      "nextReview": 1749485544695,
+      "lastReview": 1749484944695
     },
     "formulate": {
       "status": "learning",
@@ -176,9 +176,9 @@
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
-      "learningStep": 1,
-      "nextReview": 1749481022428,
-      "lastReview": 1749480902428
+      "learningStep": 2,
+      "nextReview": 1749485630855,
+      "lastReview": 1749485030855
     },
     "interval": {
       "status": "learning",
@@ -196,34 +196,84 @@
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
+      "learningStep": 2,
+      "nextReview": 1749485564690,
+      "lastReview": 1749484964690
+    },
+    "maturity": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
       "learningStep": 1,
-      "nextReview": 1749481007328,
-      "lastReview": 1749480887328
+      "nextReview": 1749485024458,
+      "lastReview": 1749484904458
+    },
+    "ponder": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 1,
+      "interval": 1,
+      "easeFactor": 2.3,
+      "learningStep": 0,
+      "nextReview": 1749485167912,
+      "lastReview": 1749485047912
+    },
+    "casual": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
+    },
+    "staple": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 1,
+      "interval": 1,
+      "easeFactor": 2.3,
+      "learningStep": 0,
+      "nextReview": 1749485041888,
+      "lastReview": 1749484921888
+    },
+    "scorer": {
+      "status": "learning",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0
     }
   },
   "dailyWords": {
-    "date": "Mon Jun 09 2025",
+    "date": "Tue Jun 10 2025",
     "words": [
-      "stubborn",
-      "robust",
-      "dame",
-      "derive",
-      "withhold",
-      "ritual",
-      "scarcely",
       "energetic",
-      "e.g.",
-      "fuss",
-      "imminent",
-      "Taurus",
-      "vinyl",
-      "formulate",
-      "narrative",
-      "nest",
-      "interval",
-      "wisdom",
       "perennial",
-      "batter"
+      "withhold",
+      "maturity",
+      "staple",
+      "vinyl",
+      "ritual",
+      "wisdom",
+      "imminent",
+      "casual",
+      "derive",
+      "batter",
+      "scarcely",
+      "narrative",
+      "fuss",
+      "scorer",
+      "formulate",
+      "ponder",
+      "dame",
+      "stubborn"
     ],
     "currentIndex": 20,
     "showedSummary": true
