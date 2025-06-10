@@ -61,9 +61,9 @@
       "lapses": 1,
       "interval": 1,
       "easeFactor": 2.3,
-      "learningStep": 0,
-      "nextReview": 1749516815451,
-      "lastReview": 1749516695451,
+      "learningStep": 1,
+      "nextReview": 1749598724995,
+      "lastReview": 1749598604995,
       "manual": false
     },
     "feat": {
@@ -94,9 +94,9 @@
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
-      "learningStep": 1,
-      "nextReview": 1749516794248,
-      "lastReview": 1749516674248,
+      "learningStep": 2,
+      "nextReview": 1749599179484,
+      "lastReview": 1749598579484,
       "manual": false
     },
     "valid": {
@@ -105,9 +105,9 @@
       "lapses": 1,
       "interval": 1,
       "easeFactor": 2.3,
-      "learningStep": 0,
-      "nextReview": 1749516779740,
-      "lastReview": 1749516659740,
+      "learningStep": 1,
+      "nextReview": 1749598707368,
+      "lastReview": 1749598587368,
       "manual": false
     },
     "dwarf": {
@@ -138,9 +138,9 @@
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
-      "learningStep": 1,
-      "nextReview": 1749516769637,
-      "lastReview": 1749516649637,
+      "learningStep": 2,
+      "nextReview": 1749599194546,
+      "lastReview": 1749598594546,
       "manual": false
     },
     "stain": {
@@ -171,9 +171,9 @@
       "lapses": 1,
       "interval": 1,
       "easeFactor": 2.3,
-      "learningStep": 0,
-      "nextReview": 1749516856028,
-      "lastReview": 1749516736028,
+      "learningStep": 1,
+      "nextReview": 1749598732542,
+      "lastReview": 1749598612542,
       "manual": false
     },
     "rue": {
@@ -331,14 +331,14 @@
       "manual": true
     },
     "appal": {
-      "status": "new",
+      "status": "learning",
       "repetitions": 0,
-      "lapses": 0,
-      "interval": 0,
-      "easeFactor": 2.5,
+      "lapses": 1,
+      "interval": 1,
+      "easeFactor": 2.3,
       "learningStep": 0,
-      "nextReview": 0,
-      "lastReview": 0,
+      "nextReview": 1749598745289,
+      "lastReview": 1749598625289,
       "manual": false
     },
     "imminent": {
@@ -388,7 +388,7 @@
       "mare",
       "appal"
     ],
-    "currentIndex": 14,
-    "showedSummary": false
+    "currentIndex": 20,
+    "showedSummary": true
   }
 }
