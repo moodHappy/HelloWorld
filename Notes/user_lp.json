@@ -219,6 +219,17 @@
       "nextReview": 1749516717245,
       "lastReview": 1749516597245,
       "manual": false
+    },
+    "bite": {
+      "status": "review",
+      "repetitions": 999,
+      "lapses": 0,
+      "interval": 3650,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 1749518854981,
+      "lastReview": 1749518854981,
+      "manual": true
     }
   },
   "dailyWords": {
