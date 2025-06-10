@@ -12,25 +12,25 @@
       "manual": false
     },
     "cynical": {
-      "status": "new",
+      "status": "learning",
       "repetitions": 0,
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 0,
-      "lastReview": 0,
+      "learningStep": 1,
+      "nextReview": 1749516580805,
+      "lastReview": 1749516460805,
       "manual": false
     },
     "symphony": {
-      "status": "new",
+      "status": "learning",
       "repetitions": 0,
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 0,
-      "lastReview": 0,
+      "learningStep": 1,
+      "nextReview": 1749516573154,
+      "lastReview": 1749516453154,
       "manual": false
     },
     "tray": {
@@ -45,7 +45,7 @@
       "manual": false
     },
     "knot": {
-      "status": "new",
+      "status": "learning",
       "repetitions": 0,
       "lapses": 0,
       "interval": 0,
@@ -72,9 +72,9 @@
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 0,
-      "lastReview": 0,
+      "learningStep": 1,
+      "nextReview": 1749516539166,
+      "lastReview": 1749516419166,
       "manual": false
     },
     "e.g.": {
@@ -219,6 +219,17 @@
       "nextReview": 0,
       "lastReview": 0,
       "manual": false
+    },
+    "launch": {
+      "status": "review",
+      "repetitions": 999,
+      "lapses": 0,
+      "interval": 3650,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 1749516496573,
+      "lastReview": 1749516496573,
+      "manual": true
     }
   },
   "dailyWords": {
@@ -245,7 +256,7 @@
       "ditch",
       "e.g."
     ],
-    "currentIndex": 2,
+    "currentIndex": 5,
     "showedSummary": false
   }
 }
