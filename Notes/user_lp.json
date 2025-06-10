@@ -285,6 +285,17 @@
       "nextReview": 1749520586463,
       "lastReview": 1749520586463,
       "manual": true
+    },
+    "assumption": {
+      "status": "review",
+      "repetitions": 999,
+      "lapses": 0,
+      "interval": 3650,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 1749521036619,
+      "lastReview": 1749521036619,
+      "manual": true
     }
   },
   "dailyWords": {
