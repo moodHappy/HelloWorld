@@ -1,3 +1,13 @@
+<a href="https://www.bbc.com/news/articles/cy8d4v69jw6o">URL</a>
+
+<p>Title: "China's Electric Cars: A Threat to Western Brands?"</p>
+<p>China's electric cars are becoming more popular and affordable, but some people are worried about the impact on Western brands. The BYD Dolphin Surf, a small electric car, has been very successful in China and is now being sold in Europe. It is expected to be priced around £18,000 in the UK, making it one of the cheapest electric cars available.</p>
+<p>BYD, the company behind the Dolphin Surf, is already the biggest player in China's electric car market and has overtaken Tesla as the world's best-selling electric vehicle manufacturer. The company wants to be number one in the British market within 10 years.</p>
+<p>Other Chinese brands, such as Nio, Xpeng, and Zeekr, are also expanding into Europe and could become household names. They offer a wide range of electric cars, from small runabouts to exotic supercars.</p>
+<p>However, some experts are concerned that Chinese electric cars could pose a security risk due to hacking and third-party interference. Additionally, Western manufacturers are worried about the competition from Chinese brands, which have lower labor costs and government subsidies.</p>
+<p>The US government has raised import tariffs on Chinese-made electric cars to 100%, effectively blocking them from the US market. The European Commission has also expressed concerns about the impact of Chinese state subsidies on the European market.</p>
+<p>Overall, China's electric cars are changing the global automotive industry, and Western brands will need to adapt to stay competitive.</p>
+
 <a href="https://www.bbc.com/zhongwen/articles/cj93dze9yklo/simp">URL</a>
 <p>Title: "Chinese Student's Harvard Speech Sparks Controversy"</p>
 <p>A 25-year-old Chinese student named Jiang Yufeng gave a speech at Harvard University's graduation ceremony. She talked about the importance of kindness and humanity in a world that is becoming more divided. However, her speech sparked controversy in both the US and China.</p>
