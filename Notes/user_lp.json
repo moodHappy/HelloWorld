@@ -67,7 +67,7 @@
       "manual": false
     },
     "feat": {
-      "status": "new",
+      "status": "learning",
       "repetitions": 0,
       "lapses": 0,
       "interval": 0,
@@ -219,17 +219,6 @@
       "nextReview": 0,
       "lastReview": 0,
       "manual": false
-    },
-    "hi": {
-      "status": "review",
-      "repetitions": 999,
-      "lapses": 0,
-      "interval": 3650,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 1749516261981,
-      "lastReview": 1749516261981,
-      "manual": true
     }
   },
   "dailyWords": {
@@ -256,7 +245,7 @@
       "ditch",
       "e.g."
     ],
-    "currentIndex": 1,
+    "currentIndex": 2,
     "showedSummary": false
   }
 }
