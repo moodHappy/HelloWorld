@@ -6,9 +6,9 @@
       "lapses": 1,
       "interval": 1,
       "easeFactor": 2.3,
-      "learningStep": 0,
-      "nextReview": 1749516843326,
-      "lastReview": 1749516723326,
+      "learningStep": 1,
+      "nextReview": 1749598650262,
+      "lastReview": 1749598530262,
       "manual": false
     },
     "cynical": {
@@ -28,9 +28,9 @@
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
-      "learningStep": 1,
-      "nextReview": 1749516573154,
-      "lastReview": 1749516453154,
+      "learningStep": 2,
+      "nextReview": 1749598191197,
+      "lastReview": 1749597591197,
       "manual": false
     },
     "tray": {
@@ -69,12 +69,12 @@
     "feat": {
       "status": "learning",
       "repetitions": 0,
-      "lapses": 0,
-      "interval": 0,
-      "easeFactor": 2.5,
-      "learningStep": 1,
-      "nextReview": 1749516539166,
-      "lastReview": 1749516419166,
+      "lapses": 1,
+      "interval": 1,
+      "easeFactor": 2.3,
+      "learningStep": 0,
+      "nextReview": 1749598624314,
+      "lastReview": 1749598504314,
       "manual": false
     },
     "e.g.": {
@@ -116,9 +116,9 @@
       "lapses": 1,
       "interval": 1,
       "easeFactor": 2.3,
-      "learningStep": 0,
-      "nextReview": 1749516743046,
-      "lastReview": 1749516623046,
+      "learningStep": 1,
+      "nextReview": 1749598634564,
+      "lastReview": 1749598514564,
       "manual": false
     },
     "goose": {
@@ -127,9 +127,9 @@
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
-      "learningStep": 1,
-      "nextReview": 1749516823915,
-      "lastReview": 1749516703915,
+      "learningStep": 2,
+      "nextReview": 1749599161473,
+      "lastReview": 1749598561473,
       "manual": false
     },
     "fond": {
@@ -193,9 +193,9 @@
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
-      "learningStep": 1,
-      "nextReview": 1749516804872,
-      "lastReview": 1749516684872,
+      "learningStep": 2,
+      "nextReview": 1749599139794,
+      "lastReview": 1749598539794,
       "manual": false
     },
     "ditch": {
@@ -388,7 +388,7 @@
       "mare",
       "appal"
     ],
-    "currentIndex": 4,
+    "currentIndex": 14,
     "showedSummary": false
   }
 }
