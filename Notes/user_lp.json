@@ -279,7 +279,7 @@
       "status": "review",
       "repetitions": 999,
       "lapses": 0,
-      "interval": 3650,
+      "interval": 2497.5,
       "easeFactor": 2.5,
       "learningStep": 0,
       "nextReview": 1749520586463,
@@ -290,11 +290,22 @@
       "status": "review",
       "repetitions": 999,
       "lapses": 0,
-      "interval": 3650,
+      "interval": 2497.5,
       "easeFactor": 2.5,
       "learningStep": 0,
       "nextReview": 1749521036619,
       "lastReview": 1749521036619,
+      "manual": true
+    },
+    "convention": {
+      "status": "review",
+      "repetitions": 999,
+      "lapses": 0,
+      "interval": 3650,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 1749523071906,
+      "lastReview": 1749523071906,
       "manual": true
     }
   },
