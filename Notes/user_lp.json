@@ -210,14 +210,14 @@
       "manual": false
     },
     "rev": {
-      "status": "learning",
-      "repetitions": 0,
+      "status": "review",
+      "repetitions": 1,
       "lapses": 0,
-      "interval": 0,
+      "interval": 1,
       "easeFactor": 2.5,
-      "learningStep": 2,
-      "nextReview": 1749572171025,
-      "lastReview": 1749571571025,
+      "learningStep": 0,
+      "nextReview": 1749772330298,
+      "lastReview": 1749685930298,
       "manual": false
     },
     "bite": {
@@ -347,9 +347,9 @@
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
-      "learningStep": 1,
-      "nextReview": 1749573169306,
-      "lastReview": 1749573049306,
+      "learningStep": 2,
+      "nextReview": 1749686510423,
+      "lastReview": 1749685910423,
       "manual": false
     },
     "stripe": {
