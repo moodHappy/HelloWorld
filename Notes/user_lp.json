@@ -362,6 +362,17 @@
       "nextReview": 1749573183555,
       "lastReview": 1749573063555,
       "manual": false
+    },
+    "loan": {
+      "status": "review",
+      "repetitions": 999,
+      "lapses": 0,
+      "interval": 3650,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 1749608967690,
+      "lastReview": 1749608967690,
+      "manual": true
     }
   },
   "dailyWords": {
