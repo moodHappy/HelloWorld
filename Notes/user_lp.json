@@ -26,7 +26,7 @@
       "status": "review",
       "repetitions": 1,
       "lapses": 0,
-      "interval": 1,
+      "interval": 2.5,
       "easeFactor": 2.5,
       "learningStep": 0,
       "nextReview": 1749772281334,
@@ -355,12 +355,12 @@
     "stripe": {
       "status": "learning",
       "repetitions": 0,
-      "lapses": 1,
+      "lapses": 2,
       "interval": 1,
-      "easeFactor": 2.3,
+      "easeFactor": 2.0999999999999996,
       "learningStep": 0,
-      "nextReview": 1749573183555,
-      "lastReview": 1749573063555,
+      "nextReview": 1749686020329,
+      "lastReview": 1749685900329,
       "manual": false
     },
     "loan": {
@@ -487,7 +487,7 @@
       "imminent",
       "rev"
     ],
-    "currentIndex": 17,
+    "currentIndex": 20,
     "showedSummary": false
   }
 }
