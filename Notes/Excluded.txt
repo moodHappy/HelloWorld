@@ -406,3 +406,5 @@ learn
 point
 
 confirmed
+
+televised
