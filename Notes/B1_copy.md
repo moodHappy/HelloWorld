@@ -1,5 +1,24 @@
+<a href="https://privatebin.net/?be16b3c8ff65c855#GtCVoyqrwXbRLS43Ybsjr7bmpspQUb4qGcW4d8BNewrj">URL</a>
 
 Title: "A Principal's Abuse of Power"
+
+<p>Bai Jie is a young married woman wearing a peach-colored blouse and a light yellow gauze skirt, with straight, shapely calves visible under the short skirt, clad in sheer white stockings. Principal Gao Yi stares at Bai Jie’s clothing, his eyes fixed on her breasts, which tremble slightly as she speaks, feeling a rush of excitement.</p>
+
+<p>Gao Yi invites Bai Jie to sit on the sofa, informing her that he plans to promote her to a mid-level title and asks her to write a work summary and a personal statement. Bai Jie expresses some concern, but Gao Yi reassures her not to worry about petty people. His eyes remain glued to her clothing, almost as if trying to see through it.</p>
+
+<p>The next day, Bai Jie wears a white silk dress with yellow floral patterns, its shoulder straps delicate, paired with a light pink vest. She visits Gao Yi’s home to deliver the summaries. Upon opening the door and seeing Bai Jie, Gao Yi’s eyes widen. He offers her a cup of iced coffee, which she drinks. Suddenly, she feels dizzy and collapses onto the sofa.</p>
+
+<p>Gao Yi calls out to her a few times, but she doesn’t respond. Emboldened, he reaches out and squeezes her full breast. Bai Jie remains unresponsive, only breathing softly. It turns out Gao Yi had spiked the coffee with a potent foreign sedative that lasts for hours and has an aphrodisiac effect.</p>
+
+<p>Unable to restrain himself, Gao Yi pounces on Bai Jie as she lies on the sofa. He lifts her vest and pulls the straps of her dress aside, revealing her full, firm breasts in a thin white lace bra. Gao Yi sucks on her nipple while his hand slips under her skirt, caressing her stocking-clad thighs and rubbing her private area.</p>
+
+<p>In her drugged sleep, Bai Jie stirs slightly. Gao Yi, overcome with desire, strips off his clothes, his erect penis red and throbbing. He lifts Bai Jie’s skirt, revealing the lace-trimmed tops of her white stockings, which contrast sensually with her fair skin.</p>
+
+<p>Gao Yi pulls down her panties, his hands caressing her soft, beautiful legs. Her dark, silky pubic hair lies neatly over her mound, and her delicate pink labia are tightly closed at the base of her snowy thighs. His fingers glide over the soft hair, reaching her tender, moist labia.</p>
+
+<p>Gao Yi lifts one of Bai Jie’s legs onto his shoulder, stroking her smooth thigh while guiding his thick penis to her soft labia. With a thrust, he penetrates her halfway, and the muscles in her legs tense. After a few movements, he fully inserts himself. Bai Jie’s delicate brows furrow slightly, and she lets out a soft “mm” as her body trembles.</p>
+
+<p>Gao Yi rapidly thrusts a few times, then withdraws and quickly moves to her slightly open mouth, ejaculating a stream of milky semen that drips from the corner of her lips. Reluctantly, he pulls his now-soft penis from her mouth, panting heavily. After a moment, he retrieves an instant camera from another room and poses Bai Jie in several provocative positions, taking over a dozen photos.</p>
 
 <a href="https://www.odditycentral.com/animals/filipino-healer-treats-the-sick-with-pit-viper-bites.html">URL</a>
 <p>Title: "Healer Uses Snake Bites to Treat Sick People"</p>
