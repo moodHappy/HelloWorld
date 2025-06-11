@@ -116,9 +116,9 @@
       "lapses": 1,
       "interval": 1,
       "easeFactor": 2.3,
-      "learningStep": 1,
-      "nextReview": 1749598634564,
-      "lastReview": 1749598514564,
+      "learningStep": 2,
+      "nextReview": 1749686407918,
+      "lastReview": 1749685807918,
       "manual": false
     },
     "goose": {
@@ -160,9 +160,9 @@
       "lapses": 1,
       "interval": 1,
       "easeFactor": 2.3,
-      "learningStep": 0,
-      "nextReview": 1749571880144,
-      "lastReview": 1749571760144,
+      "learningStep": 1,
+      "nextReview": 1749685918480,
+      "lastReview": 1749685798480,
       "manual": false
     },
     "mare": {
@@ -455,7 +455,7 @@
       "status": "review",
       "repetitions": 999,
       "lapses": 0,
-      "interval": 3650,
+      "interval": 2497.5,
       "easeFactor": 2.5,
       "learningStep": 0,
       "nextReview": 1749685736799,
@@ -487,7 +487,7 @@
       "imminent",
       "rev"
     ],
-    "currentIndex": 9,
+    "currentIndex": 12,
     "showedSummary": false
   }
 }
