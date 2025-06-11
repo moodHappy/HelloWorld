@@ -1,3 +1,6 @@
+
+Title: "A Principal's Abuse of Power"
+
 <a href="https://www.odditycentral.com/animals/filipino-healer-treats-the-sick-with-pit-viper-bites.html">URL</a>
 <p>Title: "Healer Uses Snake Bites to Treat Sick People"</p>
 <p>There is a man from the Philippines named Rosalio Culit. He says he can heal sick people by letting them get bitten by poisonous snakes. These snakes are called pit vipers. Rosalio claims that the snake's venom can cure many illnesses. He discovered this by accident when one of his pet snakes bit him, and he felt better after that.</p>
