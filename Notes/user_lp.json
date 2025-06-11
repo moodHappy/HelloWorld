@@ -422,7 +422,7 @@
       "status": "review",
       "repetitions": 999,
       "lapses": 0,
-      "interval": 3650,
+      "interval": 2497.5,
       "easeFactor": 2.5,
       "learningStep": 0,
       "nextReview": 1749635032749,
@@ -433,11 +433,22 @@
       "status": "review",
       "repetitions": 999,
       "lapses": 0,
-      "interval": 3650,
+      "interval": 2497.5,
       "easeFactor": 2.5,
       "learningStep": 0,
       "nextReview": 1749635065958,
       "lastReview": 1749635065958,
+      "manual": true
+    },
+    "retaliate": {
+      "status": "review",
+      "repetitions": 999,
+      "lapses": 0,
+      "interval": 3650,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 1749645253163,
+      "lastReview": 1749645253163,
       "manual": true
     }
   },
