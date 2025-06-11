@@ -378,11 +378,22 @@
       "status": "review",
       "repetitions": 999,
       "lapses": 0,
-      "interval": 3650,
+      "interval": 2497.5,
       "easeFactor": 2.5,
       "learningStep": 0,
       "nextReview": 1749609251561,
       "lastReview": 1749609251561,
+      "manual": true
+    },
+    "sentence": {
+      "status": "review",
+      "repetitions": 999,
+      "lapses": 0,
+      "interval": 3650,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 1749634433654,
+      "lastReview": 1749634433654,
       "manual": true
     }
   },
