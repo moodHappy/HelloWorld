@@ -428,6 +428,17 @@
       "nextReview": 1749635032749,
       "lastReview": 1749635032749,
       "manual": true
+    },
+    "bond": {
+      "status": "review",
+      "repetitions": 999,
+      "lapses": 0,
+      "interval": 3650,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 1749635065958,
+      "lastReview": 1749635065958,
+      "manual": true
     }
   },
   "dailyWords": {
