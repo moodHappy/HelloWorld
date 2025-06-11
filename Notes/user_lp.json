@@ -23,14 +23,14 @@
       "manual": false
     },
     "symphony": {
-      "status": "learning",
-      "repetitions": 0,
+      "status": "review",
+      "repetitions": 1,
       "lapses": 0,
-      "interval": 0,
+      "interval": 1,
       "easeFactor": 2.5,
-      "learningStep": 2,
-      "nextReview": 1749598191197,
-      "lastReview": 1749597591197,
+      "learningStep": 0,
+      "nextReview": 1749772281334,
+      "lastReview": 1749685881334,
       "manual": false
     },
     "tray": {
@@ -125,7 +125,7 @@
       "status": "review",
       "repetitions": 1,
       "lapses": 0,
-      "interval": 1,
+      "interval": 2.5,
       "easeFactor": 2.5,
       "learningStep": 0,
       "nextReview": 1749772246724,
@@ -182,9 +182,9 @@
       "lapses": 1,
       "interval": 1,
       "easeFactor": 2.3,
-      "learningStep": 0,
-      "nextReview": 1749516752642,
-      "lastReview": 1749516632642,
+      "learningStep": 1,
+      "nextReview": 1749685986609,
+      "lastReview": 1749685866609,
       "manual": false
     },
     "fairy": {
@@ -487,7 +487,7 @@
       "imminent",
       "rev"
     ],
-    "currentIndex": 15,
+    "currentIndex": 17,
     "showedSummary": false
   }
 }
