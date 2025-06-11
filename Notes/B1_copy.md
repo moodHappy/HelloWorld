@@ -1,3 +1,12 @@
+<a href="https://www.bbc.com/news/articles/cn7z45pyrvvo">URL</a>
+<p>Title: "Protests in Los Angeles: Trump Vows to 'Liberate' City"</p>
+<p>Protests are happening in Los Angeles because of US President Donald Trump's immigration rules. The Los Angeles police have made many arrests and the city's mayor, Karen Bass, has introduced a curfew to stop people damaging property and looting shops. The curfew affects a small area in the city center.</p>
+<p>Trump has sent National Guard troops to help border control agents, but they don't have the power to make arrests. The president says he wants to "liberate" Los Angeles, but the state's governor, Gavin Newsom, thinks this is an "assault" on democracy.</p>
+<p>Protests are also happening in other US cities, including Atlanta and New York. In Atlanta, police used tear gas on protesters, and in New York, many people were arrested for blocking traffic.</p>
+<p>The mayor of Los Angeles says that Immigration and Customs Enforcement (ICE) has caused the unrest by doing raids in Latino areas. She has asked the government to stop the raids. The cost of sending troops to Los Angeles will be $134 million.</p>
+<p>Trump and Newsom are arguing about the protests, with Trump calling the protesters "animals" and Newsom saying that democracy is under attack.</p>
+
+
 <a href="https://www.bbc.com/news/articles/ced27g4e6xwo">URL</a>
 
 <p>Title: "Austria School Shooting Leaves 11 Dead"</p>
