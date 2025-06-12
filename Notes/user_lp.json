@@ -1,1 +1,253 @@
-{}
+{
+  "words": {
+    "credibility": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "crumble": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "ponder": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "comply": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "wisdom": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "thrust": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "albeit": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "robust": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "mighty": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "depict": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "stitch": {
+      "due": 1750862080931,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
+      "elapsed_days": 0,
+      "last_review": 1749704693724,
+      "reps": 1,
+      "lapses": 0,
+      "state": 2,
+      "manual": false,
+      "grade": 3
+    },
+    "thrift": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "puzzle": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "hurdle": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "affirm": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "staple": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "reopen": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "ambush": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "clinch": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "witty": {
+      "due": 1749829102872,
+      "stability": 0.6000000238418579,
+      "difficulty": 0.6000000238418579,
+      "elapsed_days": 0,
+      "last_review": 1749704686863,
+      "reps": 1,
+      "lapses": 0,
+      "state": 2,
+      "manual": false,
+      "grade": 2
+    }
+  },
+  "dailyWords": {
+    "date": "Thu Jun 12 2025",
+    "words": [
+      "witty",
+      "stitch",
+      "ambush",
+      "thrust",
+      "credibility",
+      "reopen",
+      "puzzle",
+      "affirm",
+      "crumble",
+      "clinch",
+      "comply",
+      "thrift",
+      "wisdom",
+      "staple",
+      "robust",
+      "depict",
+      "ponder",
+      "albeit",
+      "mighty",
+      "hurdle"
+    ],
+    "currentIndex": 2,
+    "showedSummary": false
+  }
+}
