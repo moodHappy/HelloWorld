@@ -80,12 +80,12 @@
     "e.g.": {
       "status": "learning",
       "repetitions": 0,
-      "lapses": 0,
-      "interval": 0,
-      "easeFactor": 2.5,
-      "learningStep": 1,
-      "nextReview": 1749516879317,
-      "lastReview": 1749516759317,
+      "lapses": 1,
+      "interval": 1,
+      "easeFactor": 2.3,
+      "learningStep": 0,
+      "nextReview": 1749689620298,
+      "lastReview": 1749689500298,
       "manual": false
     },
     "bout": {
@@ -460,6 +460,17 @@
       "learningStep": 0,
       "nextReview": 1749685736799,
       "lastReview": 1749685736799,
+      "manual": true
+    },
+    "apple": {
+      "status": "review",
+      "repetitions": 999,
+      "lapses": 0,
+      "interval": 3650,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 1749689516132,
+      "lastReview": 1749689516132,
       "manual": true
     }
   },
