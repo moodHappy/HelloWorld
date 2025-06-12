@@ -1,6 +1,6 @@
 {
   "words": {
-    "plantation": {
+    "provisional": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -9,9 +9,10 @@
       "reps": 0,
       "lapses": 0,
       "state": 0,
-      "manual": false
+      "manual": false,
+      "grade": 0
     },
-    "weed": {
+    "hockey": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -20,175 +21,22 @@
       "reps": 0,
       "lapses": 0,
       "state": 0,
-      "manual": false
+      "manual": false,
+      "grade": 0
     },
-    "cushion": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false
-    },
-    "rod": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false
-    },
-    "rue": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false
-    },
-    "feat": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false
-    },
-    "lag": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false
-    },
-    "expel": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false
-    },
-    "Br.": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false
-    },
-    "R&D": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false
-    },
-    "rave": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false
-    },
-    "rib": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false
-    },
-    "lump": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false
-    },
-    "howl": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false
-    },
-    "rub": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false
-    },
-    "allocate": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false
-    },
-    "gasoline": {
-      "due": 1750850240176,
+    "tribe": {
+      "due": 1750373413009,
       "stability": 2.4000000953674316,
       "difficulty": 2.4000000953674316,
       "elapsed_days": 0,
-      "last_review": 1749706756709,
+      "last_review": 1749712890123,
       "reps": 1,
       "lapses": 0,
       "state": 2,
       "manual": false,
       "grade": 3
     },
-    "jealous": {
+    "spike": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -197,9 +45,10 @@
       "reps": 0,
       "lapses": 0,
       "state": 0,
-      "manual": false
+      "manual": false,
+      "grade": 0
     },
-    "pal": {
+    "bland": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -208,9 +57,22 @@
       "reps": 0,
       "lapses": 0,
       "state": 0,
-      "manual": false
+      "manual": false,
+      "grade": 0
     },
-    "heap": {
+    "relay": {
+      "due": 1749744077055,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 1749709517055,
+      "reps": 1,
+      "lapses": 1,
+      "state": 3,
+      "manual": false,
+      "grade": 0
+    },
+    "weary": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -219,34 +81,191 @@
       "reps": 0,
       "lapses": 0,
       "state": 0,
-      "manual": false
+      "manual": false,
+      "grade": 0
+    },
+    "bang": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "heir": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "dole": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "thumb": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "hack": {
+      "due": 1750114594938,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
+      "elapsed_days": 0,
+      "last_review": 1749712914096,
+      "reps": 1,
+      "lapses": 0,
+      "state": 2,
+      "manual": false,
+      "grade": 3
+    },
+    "tray": {
+      "due": 1749998623347,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
+      "elapsed_days": 0,
+      "last_review": 1749712933923,
+      "reps": 1,
+      "lapses": 0,
+      "state": 2,
+      "manual": false,
+      "grade": 3
+    },
+    "halve": {
+      "due": 1749743967103,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 1749709407103,
+      "reps": 1,
+      "lapses": 1,
+      "state": 3,
+      "manual": false,
+      "grade": 0
+    },
+    "pine": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "hurl": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "intake": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "agony": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "amnesty": {
+      "due": 1750917906853,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
+      "elapsed_days": 0,
+      "last_review": 1749712845691,
+      "reps": 1,
+      "lapses": 0,
+      "state": 2,
+      "manual": false,
+      "grade": 3
+    },
+    "probe": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
     }
   },
   "dailyWords": {
     "date": "Thu Jun 12 2025",
     "words": [
-      "gasoline",
-      "plantation",
-      "Br.",
-      "lag",
-      "rub",
-      "R&D",
-      "pal",
-      "allocate",
-      "rave",
-      "weed",
-      "howl",
-      "lump",
-      "cushion",
-      "rod",
-      "jealous",
-      "rib",
-      "heap",
-      "rue",
-      "feat",
-      "expel"
+      "heir",
+      "bland",
+      "spike",
+      "halve",
+      "relay",
+      "amnesty",
+      "tribe",
+      "hack",
+      "hurl",
+      "tray",
+      "bang",
+      "intake",
+      "weary",
+      "agony",
+      "hockey",
+      "provisional",
+      "thumb",
+      "dole",
+      "probe",
+      "pine"
     ],
-    "currentIndex": 3,
+    "currentIndex": 11,
     "showedSummary": false
   }
 }
