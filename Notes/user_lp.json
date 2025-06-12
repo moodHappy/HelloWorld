@@ -1,6 +1,6 @@
 {
   "words": {
-    "credibility": {
+    "plantation": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -11,7 +11,7 @@
       "state": 0,
       "manual": false
     },
-    "crumble": {
+    "weed": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -22,7 +22,7 @@
       "state": 0,
       "manual": false
     },
-    "ponder": {
+    "cushion": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -33,7 +33,7 @@
       "state": 0,
       "manual": false
     },
-    "comply": {
+    "rod": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -44,7 +44,7 @@
       "state": 0,
       "manual": false
     },
-    "wisdom": {
+    "rue": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -55,7 +55,7 @@
       "state": 0,
       "manual": false
     },
-    "thrust": {
+    "feat": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -66,7 +66,7 @@
       "state": 0,
       "manual": false
     },
-    "albeit": {
+    "lag": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -77,7 +77,7 @@
       "state": 0,
       "manual": false
     },
-    "robust": {
+    "expel": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -88,7 +88,7 @@
       "state": 0,
       "manual": false
     },
-    "mighty": {
+    "Br.": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -99,7 +99,7 @@
       "state": 0,
       "manual": false
     },
-    "depict": {
+    "R&D": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -110,19 +110,85 @@
       "state": 0,
       "manual": false
     },
-    "stitch": {
-      "due": 1750862080931,
+    "rave": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "rib": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "lump": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "howl": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "rub": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "allocate": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false
+    },
+    "gasoline": {
+      "due": 1750850240176,
       "stability": 2.4000000953674316,
       "difficulty": 2.4000000953674316,
       "elapsed_days": 0,
-      "last_review": 1749704693724,
+      "last_review": 1749706756709,
       "reps": 1,
       "lapses": 0,
       "state": 2,
       "manual": false,
       "grade": 3
     },
-    "thrift": {
+    "jealous": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -133,7 +199,7 @@
       "state": 0,
       "manual": false
     },
-    "puzzle": {
+    "pal": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -144,7 +210,7 @@
       "state": 0,
       "manual": false
     },
-    "hurdle": {
+    "heap": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -154,100 +220,33 @@
       "lapses": 0,
       "state": 0,
       "manual": false
-    },
-    "affirm": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false
-    },
-    "staple": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false
-    },
-    "reopen": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false
-    },
-    "ambush": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false
-    },
-    "clinch": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false
-    },
-    "witty": {
-      "due": 1749829102872,
-      "stability": 0.6000000238418579,
-      "difficulty": 0.6000000238418579,
-      "elapsed_days": 0,
-      "last_review": 1749704686863,
-      "reps": 1,
-      "lapses": 0,
-      "state": 2,
-      "manual": false,
-      "grade": 2
     }
   },
   "dailyWords": {
     "date": "Thu Jun 12 2025",
     "words": [
-      "witty",
-      "stitch",
-      "ambush",
-      "thrust",
-      "credibility",
-      "reopen",
-      "puzzle",
-      "affirm",
-      "crumble",
-      "clinch",
-      "comply",
-      "thrift",
-      "wisdom",
-      "staple",
-      "robust",
-      "depict",
-      "ponder",
-      "albeit",
-      "mighty",
-      "hurdle"
+      "gasoline",
+      "plantation",
+      "Br.",
+      "lag",
+      "rub",
+      "R&D",
+      "pal",
+      "allocate",
+      "rave",
+      "weed",
+      "howl",
+      "lump",
+      "cushion",
+      "rod",
+      "jealous",
+      "rib",
+      "heap",
+      "rue",
+      "feat",
+      "expel"
     ],
-    "currentIndex": 2,
+    "currentIndex": 1,
     "showedSummary": false
   }
 }
