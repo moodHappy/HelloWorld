@@ -58,12 +58,12 @@
     "rigid": {
       "status": "learning",
       "repetitions": 0,
-      "lapses": 0,
-      "interval": 0,
-      "easeFactor": 2.5,
+      "lapses": 1,
+      "interval": 1,
+      "easeFactor": 2.3,
       "learningStep": 0,
-      "nextReview": 0,
-      "lastReview": 0,
+      "nextReview": 1749688928526,
+      "lastReview": 1749688808526,
       "manual": false
     },
     "steward": {
@@ -219,6 +219,17 @@
       "nextReview": 0,
       "lastReview": 0,
       "manual": false
+    },
+    "hello": {
+      "status": "review",
+      "repetitions": 999,
+      "lapses": 0,
+      "interval": 3650,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 1749688824501,
+      "lastReview": 1749688824501,
+      "manual": true
     }
   },
   "dailyWords": {
