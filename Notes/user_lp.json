@@ -1,28 +1,28 @@
 {
   "words": {
     "ivory": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1749992144203,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749722530141,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 3
     },
     "columnist": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1749987705592,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749722442610,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 3
     },
     "gown": {
       "due": 0,
@@ -37,16 +37,16 @@
       "grade": 0
     },
     "cane": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1749998838722,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749722575713,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 3
     },
     "LP": {
       "due": 0,
@@ -73,14 +73,14 @@
       "grade": 0
     },
     "nasty": {
-      "due": 0,
+      "due": 1749756665426,
       "stability": 0,
       "difficulty": 0,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
+      "last_review": 1749722105426,
+      "reps": 1,
+      "lapses": 1,
+      "state": 3,
       "manual": false,
       "grade": 0
     },
@@ -97,16 +97,16 @@
       "grade": 3
     },
     "apt": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1750010524749,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749722509559,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 3
     },
     "mar": {
       "due": 1749998508097,
@@ -121,16 +121,16 @@
       "grade": 3
     },
     "avert": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1749996864300,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749722159844,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 3
     },
     "knot": {
       "due": 0,
@@ -169,52 +169,52 @@
       "grade": 0
     },
     "grim": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1749743301936,
+      "stability": 0.4000000059604645,
+      "difficulty": 0.4000000059604645,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749722565935,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 1
     },
     "bunker": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1750008081106,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749722151889,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 3
     },
     "excite": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1749743322108,
+      "stability": 0.4000000059604645,
+      "difficulty": 0.4000000059604645,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749722586107,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 1
     },
     "hedge": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1750012714553,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749722545230,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 3
     },
     "clinch": {
       "due": 1749997054588,
@@ -265,7 +265,7 @@
       "cane",
       "excite"
     ],
-    "currentIndex": 7,
-    "showedSummary": false
+    "currentIndex": 20,
+    "showedSummary": true
   }
 }
