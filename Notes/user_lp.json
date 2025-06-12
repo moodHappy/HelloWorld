@@ -1,6 +1,6 @@
 {
   "words": {
-    "Curriculum": {
+    "warehouse": {
       "status": "new",
       "repetitions": 0,
       "lapses": 0,
@@ -11,7 +11,7 @@
       "lastReview": 0,
       "manual": false
     },
-    "birdie": {
+    "assign": {
       "status": "new",
       "repetitions": 0,
       "lapses": 0,
@@ -22,7 +22,7 @@
       "lastReview": 0,
       "manual": false
     },
-    "ordeal": {
+    "pint": {
       "status": "new",
       "repetitions": 0,
       "lapses": 0,
@@ -33,40 +33,18 @@
       "lastReview": 0,
       "manual": false
     },
-    "fertile": {
-      "status": "new",
-      "repetitions": 0,
-      "lapses": 0,
-      "interval": 0,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 0,
-      "lastReview": 0,
-      "manual": false
-    },
-    "portion": {
-      "status": "new",
-      "repetitions": 0,
-      "lapses": 0,
-      "interval": 0,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 0,
-      "lastReview": 0,
-      "manual": false
-    },
-    "enzyme": {
+    "climax": {
       "status": "learning",
       "repetitions": 0,
       "lapses": 1,
       "interval": 0.1,
       "easeFactor": 2.3,
       "learningStep": 0,
-      "nextReview": 1749701914272,
-      "lastReview": 1749701794272,
+      "nextReview": 1749702953417,
+      "lastReview": 1749702833417,
       "manual": false
     },
-    "barrack": {
+    "Virgo": {
       "status": "new",
       "repetitions": 0,
       "lapses": 0,
@@ -77,7 +55,7 @@
       "lastReview": 0,
       "manual": false
     },
-    "bowler": {
+    "Hindu": {
       "status": "new",
       "repetitions": 0,
       "lapses": 0,
@@ -88,7 +66,7 @@
       "lastReview": 0,
       "manual": false
     },
-    "uneasy": {
+    "prone": {
       "status": "new",
       "repetitions": 0,
       "lapses": 0,
@@ -99,95 +77,7 @@
       "lastReview": 0,
       "manual": false
     },
-    "migrate": {
-      "status": "new",
-      "repetitions": 0,
-      "lapses": 0,
-      "interval": 0,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 0,
-      "lastReview": 0,
-      "manual": false
-    },
-    "marshal": {
-      "status": "new",
-      "repetitions": 0,
-      "lapses": 0,
-      "interval": 0,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 0,
-      "lastReview": 0,
-      "manual": false
-    },
-    "divine": {
-      "status": "new",
-      "repetitions": 0,
-      "lapses": 0,
-      "interval": 0,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 0,
-      "lastReview": 0,
-      "manual": false
-    },
-    "compel": {
-      "status": "new",
-      "repetitions": 0,
-      "lapses": 0,
-      "interval": 0,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 0,
-      "lastReview": 0,
-      "manual": false
-    },
-    "snatch": {
-      "status": "new",
-      "repetitions": 0,
-      "lapses": 0,
-      "interval": 0,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 0,
-      "lastReview": 0,
-      "manual": false
-    },
-    "footie": {
-      "status": "new",
-      "repetitions": 0,
-      "lapses": 0,
-      "interval": 0,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 0,
-      "lastReview": 0,
-      "manual": false
-    },
-    "dilemma": {
-      "status": "new",
-      "repetitions": 0,
-      "lapses": 0,
-      "interval": 0,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 0,
-      "lastReview": 0,
-      "manual": false
-    },
-    "tricky": {
-      "status": "new",
-      "repetitions": 0,
-      "lapses": 0,
-      "interval": 0,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 0,
-      "lastReview": 0,
-      "manual": false
-    },
-    "ritual": {
+    "minus": {
       "status": "learning",
       "repetitions": 0,
       "lapses": 0,
@@ -198,7 +88,7 @@
       "lastReview": 0,
       "manual": false
     },
-    "draught": {
+    "LP": {
       "status": "new",
       "repetitions": 0,
       "lapses": 0,
@@ -209,43 +99,164 @@
       "lastReview": 0,
       "manual": false
     },
-    "cavalry": {
-      "status": "learning",
+    "swamp": {
+      "status": "new",
       "repetitions": 0,
-      "lapses": 1,
-      "interval": 1,
-      "easeFactor": 2.3,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
       "learningStep": 0,
-      "nextReview": 1749701992414,
-      "lastReview": 1749701872414,
+      "nextReview": 0,
+      "lastReview": 0,
       "manual": false
+    },
+    "robust": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
+    },
+    "rue": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
+    },
+    "alarming": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
+    },
+    "inter": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
+    },
+    "fraction": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
+    },
+    "regiment": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
+    },
+    "rigid": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
+    },
+    "comedown": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
+    },
+    "manifest": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
+    },
+    "bunker": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
+    },
+    "app": {
+      "status": "review",
+      "repetitions": 999,
+      "lapses": 0,
+      "interval": 3650,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 1749703256259,
+      "lastReview": 1749703256259,
+      "manual": true
     }
   },
   "dailyWords": {
     "date": "Thu Jun 12 2025",
     "words": [
-      "enzyme",
-      "cavalry",
-      "ritual",
-      "divine",
-      "fertile",
-      "barrack",
-      "bowler",
-      "ordeal",
-      "snatch",
-      "compel",
-      "birdie",
-      "draught",
-      "uneasy",
-      "marshal",
-      "tricky",
-      "portion",
-      "footie",
-      "migrate",
-      "Curriculum",
-      "dilemma"
+      "climax",
+      "minus",
+      "rue",
+      "manifest",
+      "comedown",
+      "LP",
+      "warehouse",
+      "Hindu",
+      "assign",
+      "regiment",
+      "Virgo",
+      "fraction",
+      "robust",
+      "bunker",
+      "swamp",
+      "pint",
+      "inter",
+      "prone",
+      "alarming",
+      "rigid"
     ],
-    "currentIndex": 3,
+    "currentIndex": 2,
     "showedSummary": false
   }
 }
