@@ -188,7 +188,7 @@
       "manual": false
     },
     "ritual": {
-      "status": "new",
+      "status": "learning",
       "repetitions": 0,
       "lapses": 0,
       "interval": 0,
@@ -212,12 +212,12 @@
     "cavalry": {
       "status": "learning",
       "repetitions": 0,
-      "lapses": 0,
-      "interval": 0,
-      "easeFactor": 2.5,
+      "lapses": 1,
+      "interval": 1,
+      "easeFactor": 2.3,
       "learningStep": 0,
-      "nextReview": 0,
-      "lastReview": 0,
+      "nextReview": 1749701992414,
+      "lastReview": 1749701872414,
       "manual": false
     }
   },
@@ -245,7 +245,7 @@
       "Curriculum",
       "dilemma"
     ],
-    "currentIndex": 2,
+    "currentIndex": 3,
     "showedSummary": false
   }
 }
