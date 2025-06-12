@@ -239,18 +239,6 @@
       "state": 0,
       "manual": false,
       "grade": 0
-    },
-    "app": {
-      "due": 1749722821801,
-      "stability": 730,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 1749722821801,
-      "reps": 999,
-      "lapses": 0,
-      "state": 2,
-      "manual": true,
-      "grade": 0
     }
   },
   "dailyWords": {
