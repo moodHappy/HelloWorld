@@ -1,6 +1,6 @@
 {
   "words": {
-    "staggering": {
+    "woo": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -11,174 +11,6 @@
       "state": 0,
       "manual": false,
       "grade": 0
-    },
-    "comply": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false,
-      "grade": 0
-    },
-    "sway": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false,
-      "grade": 0
-    },
-    "tick": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false,
-      "grade": 0
-    },
-    "wee": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false,
-      "grade": 0
-    },
-    "knot": {
-      "due": 1750961920728,
-      "stability": 2.4000000953674316,
-      "difficulty": 2.4000000953674316,
-      "elapsed_days": 0,
-      "last_review": 1749720756253,
-      "reps": 1,
-      "lapses": 0,
-      "state": 2,
-      "manual": false,
-      "grade": 3
-    },
-    "fibre": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false,
-      "grade": 0
-    },
-    "pagan": {
-      "due": 1749741496306,
-      "stability": 0.4000000059604645,
-      "difficulty": 0.4000000059604645,
-      "elapsed_days": 0,
-      "last_review": 1749720760305,
-      "reps": 1,
-      "lapses": 0,
-      "state": 2,
-      "manual": false,
-      "grade": 1
-    },
-    "herb": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false,
-      "grade": 0
-    },
-    "Aries": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false,
-      "grade": 0
-    },
-    "heap": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false,
-      "grade": 0
-    },
-    "spice": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false,
-      "grade": 0
-    },
-    "lump": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false,
-      "grade": 0
-    },
-    "essay": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
-      "manual": false,
-      "grade": 0
-    },
-    "ethic": {
-      "due": 1749741486258,
-      "stability": 0.4000000059604645,
-      "difficulty": 0.4000000059604645,
-      "elapsed_days": 0,
-      "last_review": 1749720750257,
-      "reps": 1,
-      "lapses": 0,
-      "state": 2,
-      "manual": false,
-      "grade": 1
     },
     "wagon": {
       "due": 0,
@@ -192,7 +24,7 @@
       "manual": false,
       "grade": 0
     },
-    "cattle": {
+    "scrub": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -204,7 +36,7 @@
       "manual": false,
       "grade": 0
     },
-    "artery": {
+    "rib": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -216,7 +48,7 @@
       "manual": false,
       "grade": 0
     },
-    "brew": {
+    "defiant": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -228,7 +60,175 @@
       "manual": false,
       "grade": 0
     },
-    "crisp": {
+    "LP": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "hut": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "goose": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "maggot": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "snatch": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "acclaim": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "nest": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "blur": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "ache": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "splash": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "misery": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "wholly": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "bud": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "seduce": {
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "state": 0,
+      "manual": false,
+      "grade": 0
+    },
+    "mar": {
       "due": 0,
       "stability": 0,
       "difficulty": 0,
@@ -244,28 +244,28 @@
   "dailyWords": {
     "date": "Thu Jun 12 2025",
     "words": [
-      "ethic",
-      "knot",
-      "pagan",
-      "comply",
+      "nest",
+      "LP",
+      "defiant",
+      "ache",
+      "acclaim",
+      "rib",
+      "bud",
+      "mar",
+      "scrub",
+      "seduce",
+      "misery",
+      "snatch",
       "wagon",
-      "fibre",
-      "artery",
-      "spice",
-      "crisp",
-      "tick",
-      "essay",
-      "lump",
-      "staggering",
-      "herb",
-      "cattle",
-      "wee",
-      "heap",
-      "brew",
-      "sway",
-      "Aries"
+      "blur",
+      "woo",
+      "splash",
+      "hut",
+      "maggot",
+      "wholly",
+      "goose"
     ],
-    "currentIndex": 3,
+    "currentIndex": 2,
     "showedSummary": false
   }
 }
