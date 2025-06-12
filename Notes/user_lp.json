@@ -1,0 +1,251 @@
+{
+  "words": {
+    "stubborn": {
+      "state": 0,
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "manual": false
+    },
+    "ethical": {
+      "state": 0,
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "manual": false
+    },
+    "hurl": {
+      "state": 0,
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "manual": false
+    },
+    "rash": {
+      "state": 0,
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "manual": false
+    },
+    "mute": {
+      "state": 0,
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "manual": false
+    },
+    "swap": {
+      "state": 0,
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "manual": false
+    },
+    "hack": {
+      "state": 0,
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "manual": false
+    },
+    "lure": {
+      "state": 0,
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "manual": false
+    },
+    "veto": {
+      "state": 0,
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "manual": false
+    },
+    "expel": {
+      "state": 0,
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "manual": false
+    },
+    "nasty": {
+      "state": 0,
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "manual": false
+    },
+    "tribe": {
+      "state": 0,
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "manual": false
+    },
+    "tick": {
+      "state": 0,
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "manual": false
+    },
+    "weed": {
+      "state": 0,
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "manual": false
+    },
+    "sneak": {
+      "state": 0,
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "manual": false
+    },
+    "scope": {
+      "state": 0,
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "manual": false
+    },
+    "cruel": {
+      "state": 0,
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "manual": false
+    },
+    "isle": {
+      "state": 0,
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "manual": false
+    },
+    "bleak": {
+      "state": 0,
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "manual": false
+    },
+    "pinch": {
+      "state": 0,
+      "due": 0,
+      "stability": 0,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 0,
+      "reps": 0,
+      "lapses": 0,
+      "manual": false
+    }
+  },
+  "dailyWords": {
+    "date": "Thu Jun 12 2025",
+    "words": [
+      "lure",
+      "ethical",
+      "expel",
+      "tick",
+      "weed",
+      "hurl",
+      "hack",
+      "tribe",
+      "stubborn",
+      "swap",
+      "rash",
+      "veto",
+      "nasty",
+      "scope",
+      "mute",
+      "isle",
+      "pinch",
+      "cruel",
+      "bleak",
+      "sneak"
+    ],
+    "currentIndex": 2,
+    "showedSummary": false
+  }
+}
