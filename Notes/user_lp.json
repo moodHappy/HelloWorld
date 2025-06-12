@@ -1,39 +1,61 @@
 {
   "words": {
-    "guild": {
-      "status": "learning",
+    "chilli": {
+      "status": "new",
       "repetitions": 0,
-      "lapses": 1,
-      "interval": 1,
-      "easeFactor": 2.3,
-      "learningStep": 2,
-      "nextReview": 1749686309479,
-      "lastReview": 1749685709479,
-      "manual": false
-    },
-    "cynical": {
-      "status": "learning",
-      "repetitions": 0,
-      "lapses": 1,
-      "interval": 1,
-      "easeFactor": 2.3,
-      "learningStep": 0,
-      "nextReview": 1749657889594,
-      "lastReview": 1749657769594,
-      "manual": false
-    },
-    "symphony": {
-      "status": "review",
-      "repetitions": 1,
       "lapses": 0,
-      "interval": 2.5,
+      "interval": 0,
       "easeFactor": 2.5,
       "learningStep": 0,
-      "nextReview": 1749772281334,
-      "lastReview": 1749685881334,
+      "nextReview": 0,
+      "lastReview": 0,
       "manual": false
     },
-    "tray": {
+    "scenario": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
+    },
+    "simmer": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
+    },
+    "isle": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
+    },
+    "weave": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
+    },
+    "rigid": {
       "status": "learning",
       "repetitions": 0,
       "lapses": 0,
@@ -44,7 +66,29 @@
       "lastReview": 0,
       "manual": false
     },
-    "knot": {
+    "steward": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
+    },
+    "spike": {
+      "status": "new",
+      "repetitions": 0,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
+    },
+    "agony": {
       "status": "learning",
       "repetitions": 0,
       "lapses": 0,
@@ -55,95 +99,40 @@
       "lastReview": 0,
       "manual": false
     },
-    "swamp": {
-      "status": "learning",
-      "repetitions": 0,
-      "lapses": 1,
-      "interval": 1,
-      "easeFactor": 2.3,
-      "learningStep": 1,
-      "nextReview": 1749598724995,
-      "lastReview": 1749598604995,
-      "manual": false
-    },
-    "feat": {
-      "status": "learning",
-      "repetitions": 0,
-      "lapses": 1,
-      "interval": 1,
-      "easeFactor": 2.3,
-      "learningStep": 0,
-      "nextReview": 1749598624314,
-      "lastReview": 1749598504314,
-      "manual": false
-    },
-    "e.g.": {
-      "status": "learning",
+    "knit": {
+      "status": "new",
       "repetitions": 0,
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
-      "learningStep": 1,
-      "nextReview": 1749516879317,
-      "lastReview": 1749516759317,
-      "manual": false
-    },
-    "bout": {
-      "status": "review",
-      "repetitions": 1,
-      "lapses": 0,
-      "interval": 2.5,
-      "easeFactor": 2.5,
       "learningStep": 0,
-      "nextReview": 1749772236502,
-      "lastReview": 1749685836502,
+      "nextReview": 0,
+      "lastReview": 0,
       "manual": false
     },
-    "valid": {
-      "status": "learning",
+    "solely": {
+      "status": "new",
       "repetitions": 0,
-      "lapses": 2,
-      "interval": 1,
-      "easeFactor": 2.0999999999999996,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
       "learningStep": 0,
-      "nextReview": 1749684316786,
-      "lastReview": 1749684196786,
+      "nextReview": 0,
+      "lastReview": 0,
       "manual": false
     },
-    "dwarf": {
-      "status": "learning",
+    "grin": {
+      "status": "new",
       "repetitions": 0,
-      "lapses": 1,
-      "interval": 1,
-      "easeFactor": 2.3,
-      "learningStep": 2,
-      "nextReview": 1749686407918,
-      "lastReview": 1749685807918,
-      "manual": false
-    },
-    "goose": {
-      "status": "review",
-      "repetitions": 1,
       "lapses": 0,
-      "interval": 2.5,
+      "interval": 0,
       "easeFactor": 2.5,
       "learningStep": 0,
-      "nextReview": 1749772246724,
-      "lastReview": 1749685846724,
+      "nextReview": 0,
+      "lastReview": 0,
       "manual": false
     },
-    "fond": {
-      "status": "review",
-      "repetitions": 1,
-      "lapses": 0,
-      "interval": 2.5,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 1749772227741,
-      "lastReview": 1749685827741,
-      "manual": false
-    },
-    "stain": {
+    "wholly": {
       "status": "learning",
       "repetitions": 0,
       "lapses": 0,
@@ -154,340 +143,109 @@
       "lastReview": 0,
       "manual": false
     },
-    "min.": {
-      "status": "learning",
-      "repetitions": 0,
-      "lapses": 1,
-      "interval": 1,
-      "easeFactor": 2.3,
-      "learningStep": 1,
-      "nextReview": 1749685918480,
-      "lastReview": 1749685798480,
-      "manual": false
-    },
-    "mare": {
-      "status": "learning",
-      "repetitions": 0,
-      "lapses": 1,
-      "interval": 1,
-      "easeFactor": 2.3,
-      "learningStep": 2,
-      "nextReview": 1749684713916,
-      "lastReview": 1749684113916,
-      "manual": false
-    },
-    "rue": {
-      "status": "learning",
-      "repetitions": 0,
-      "lapses": 1,
-      "interval": 1,
-      "easeFactor": 2.3,
-      "learningStep": 1,
-      "nextReview": 1749685986609,
-      "lastReview": 1749685866609,
-      "manual": false
-    },
-    "fairy": {
-      "status": "review",
-      "repetitions": 1,
-      "lapses": 0,
-      "interval": 2.5,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 1749770762154,
-      "lastReview": 1749684362154,
-      "manual": false
-    },
-    "ditch": {
-      "status": "learning",
-      "repetitions": 0,
-      "lapses": 1,
-      "interval": 1,
-      "easeFactor": 2.3,
-      "learningStep": 0,
-      "nextReview": 1749657826830,
-      "lastReview": 1749657706830,
-      "manual": false
-    },
-    "rev": {
-      "status": "review",
-      "repetitions": 1,
-      "lapses": 0,
-      "interval": 2.5,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 1749772330298,
-      "lastReview": 1749685930298,
-      "manual": false
-    },
-    "bite": {
-      "status": "review",
-      "repetitions": 999,
-      "lapses": 0,
-      "interval": 2497.5,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 1749518854981,
-      "lastReview": 1749518854981,
-      "manual": true
-    },
-    "original": {
-      "status": "review",
-      "repetitions": 999,
-      "lapses": 0,
-      "interval": 2497.5,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 1749518985734,
-      "lastReview": 1749518985734,
-      "manual": true
-    },
-    "aspect": {
-      "status": "review",
-      "repetitions": 999,
-      "lapses": 0,
-      "interval": 2497.5,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 1749519088051,
-      "lastReview": 1749519088051,
-      "manual": true
-    },
-    "accord": {
-      "status": "review",
-      "repetitions": 999,
-      "lapses": 0,
-      "interval": 2497.5,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 1749519215804,
-      "lastReview": 1749519215804,
-      "manual": true
-    },
-    "throughout": {
-      "status": "review",
-      "repetitions": 999,
-      "lapses": 0,
-      "interval": 2497.5,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 1749519308203,
-      "lastReview": 1749519308203,
-      "manual": true
-    },
-    "retain": {
-      "status": "review",
-      "repetitions": 999,
-      "lapses": 0,
-      "interval": 2497.5,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 1749520586463,
-      "lastReview": 1749520586463,
-      "manual": true
-    },
-    "assumption": {
-      "status": "review",
-      "repetitions": 999,
-      "lapses": 0,
-      "interval": 2497.5,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 1749521036619,
-      "lastReview": 1749521036619,
-      "manual": true
-    },
-    "convention": {
-      "status": "review",
-      "repetitions": 999,
-      "lapses": 0,
-      "interval": 2497.5,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 1749523071906,
-      "lastReview": 1749523071906,
-      "manual": true
-    },
-    "permanent": {
-      "status": "review",
-      "repetitions": 999,
-      "lapses": 0,
-      "interval": 2497.5,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 1749523116306,
-      "lastReview": 1749523116306,
-      "manual": true
-    },
-    "expected": {
-      "status": "review",
-      "repetitions": 999,
-      "lapses": 0,
-      "interval": 2497.5,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 1749523507815,
-      "lastReview": 1749523507815,
-      "manual": true
-    },
-    "appal": {
-      "status": "learning",
-      "repetitions": 0,
-      "lapses": 1,
-      "interval": 1,
-      "easeFactor": 2.3,
-      "learningStep": 0,
-      "nextReview": 1749598745289,
-      "lastReview": 1749598625289,
-      "manual": false
-    },
-    "imminent": {
-      "status": "learning",
+    "defy": {
+      "status": "new",
       "repetitions": 0,
       "lapses": 0,
       "interval": 0,
       "easeFactor": 2.5,
-      "learningStep": 2,
-      "nextReview": 1749686510423,
-      "lastReview": 1749685910423,
+      "learningStep": 0,
+      "nextReview": 0,
+      "lastReview": 0,
       "manual": false
     },
-    "stripe": {
-      "status": "learning",
+    "franc": {
+      "status": "new",
       "repetitions": 0,
-      "lapses": 2,
-      "interval": 1,
-      "easeFactor": 2.0999999999999996,
+      "lapses": 0,
+      "interval": 0,
+      "easeFactor": 2.5,
       "learningStep": 0,
-      "nextReview": 1749686020329,
-      "lastReview": 1749685900329,
+      "nextReview": 0,
+      "lastReview": 0,
       "manual": false
     },
-    "loan": {
-      "status": "review",
-      "repetitions": 999,
+    "albeit": {
+      "status": "new",
+      "repetitions": 0,
       "lapses": 0,
-      "interval": 2497.5,
+      "interval": 0,
       "easeFactor": 2.5,
       "learningStep": 0,
-      "nextReview": 1749608967690,
-      "lastReview": 1749608967690,
-      "manual": true
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
     },
-    "inevitable": {
-      "status": "review",
-      "repetitions": 999,
+    "jerk": {
+      "status": "new",
+      "repetitions": 0,
       "lapses": 0,
-      "interval": 2497.5,
+      "interval": 0,
       "easeFactor": 2.5,
       "learningStep": 0,
-      "nextReview": 1749609251561,
-      "lastReview": 1749609251561,
-      "manual": true
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
     },
-    "sentence": {
-      "status": "review",
-      "repetitions": 999,
+    "spouse": {
+      "status": "new",
+      "repetitions": 0,
       "lapses": 0,
-      "interval": 2497.5,
+      "interval": 0,
       "easeFactor": 2.5,
       "learningStep": 0,
-      "nextReview": 1749634433654,
-      "lastReview": 1749634433654,
-      "manual": true
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
     },
-    "instance": {
-      "status": "review",
-      "repetitions": 999,
+    "pulse": {
+      "status": "new",
+      "repetitions": 0,
       "lapses": 0,
-      "interval": 2497.5,
+      "interval": 0,
       "easeFactor": 2.5,
       "learningStep": 0,
-      "nextReview": 1749634466157,
-      "lastReview": 1749634466157,
-      "manual": true
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
     },
-    "distinctive": {
-      "status": "review",
-      "repetitions": 999,
+    "carp": {
+      "status": "new",
+      "repetitions": 0,
       "lapses": 0,
-      "interval": 2497.5,
+      "interval": 0,
       "easeFactor": 2.5,
       "learningStep": 0,
-      "nextReview": 1749634655981,
-      "lastReview": 1749634655981,
-      "manual": true
-    },
-    "scientific": {
-      "status": "review",
-      "repetitions": 999,
-      "lapses": 0,
-      "interval": 2497.5,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 1749635032749,
-      "lastReview": 1749635032749,
-      "manual": true
-    },
-    "bond": {
-      "status": "review",
-      "repetitions": 999,
-      "lapses": 0,
-      "interval": 2497.5,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 1749635065958,
-      "lastReview": 1749635065958,
-      "manual": true
-    },
-    "retaliate": {
-      "status": "review",
-      "repetitions": 999,
-      "lapses": 0,
-      "interval": 2497.5,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 1749645253163,
-      "lastReview": 1749645253163,
-      "manual": true
-    },
-    "device": {
-      "status": "review",
-      "repetitions": 999,
-      "lapses": 0,
-      "interval": 2497.5,
-      "easeFactor": 2.5,
-      "learningStep": 0,
-      "nextReview": 1749685736799,
-      "lastReview": 1749685736799,
-      "manual": true
+      "nextReview": 0,
+      "lastReview": 0,
+      "manual": false
     }
   },
   "dailyWords": {
     "date": "Thu Jun 12 2025",
     "words": [
-      "ditch",
-      "appal",
-      "cynical",
-      "mare",
-      "e.g.",
-      "valid",
-      "fairy",
-      "feat",
-      "guild",
-      "swamp",
-      "min.",
-      "dwarf",
-      "fond",
-      "bout",
-      "goose",
-      "rue",
-      "symphony",
-      "stripe",
-      "imminent",
-      "rev"
+      "agony",
+      "wholly",
+      "rigid",
+      "isle",
+      "knit",
+      "solely",
+      "chilli",
+      "carp",
+      "scenario",
+      "simmer",
+      "pulse",
+      "grin",
+      "weave",
+      "spouse",
+      "steward",
+      "albeit",
+      "spike",
+      "defy",
+      "franc",
+      "jerk"
     ],
-    "currentIndex": 20,
-    "showedSummary": true
+    "currentIndex": 3,
+    "showedSummary": false
   }
 }
