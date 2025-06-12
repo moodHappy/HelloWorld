@@ -1,3 +1,12 @@
+<a href="https://www.bbc.com/news/live/c8d1r3m8z92t">URL</a>
+
+<p>Title: "Plane Crashes in India with 242 People on Board"</p>
+<p>A plane flying from India to London has crashed with 242 people on board. The plane, which belonged to Air India, took off from Ahmedabad in western India but crashed shortly after. There were 169 Indian nationals, 53 British nationals, one Canadian national, and seven Portuguese nationals on the flight.</p>
+<p>The plane was a Boeing 787-8 Dreamliner, and it gave a mayday call to air traffic control after taking off. However, it then stopped responding, and the signal was lost seconds after take-off when the plane had reached 625 feet.</p>
+<p>The plane crashed into a residential area near the airport, specifically into a hostel used by doctors. Rescue operations are ongoing, and firefighters are trying to put out a fire at the scene.</p>
+<p>The UK Foreign Office has set up a crisis team to help British nationals affected by the crash. The Indian Prime Minister, Narendra Modi, has expressed his sadness and shock at the tragedy.</p>
+<p>This is the first time a Boeing 787 aircraft has crashed in this way. The cause of the crash is not yet known, but an investigation is underway.</p>
+
 <a href="https://www.bbc.com/news/articles/cg71xrxrn8go">URL</a>
 
 <p>Title: "Beach Boys Co-Founder Brian Wilson Dies at 82"</p>
