@@ -219,6 +219,17 @@
       "reps": 0,
       "lapses": 0,
       "manual": false
+    },
+    "app": {
+      "state": 2,
+      "due": 1749701338219,
+      "stability": 730,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 1749701338219,
+      "reps": 999,
+      "lapses": 0,
+      "manual": true
     }
   },
   "dailyWords": {
