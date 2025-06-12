@@ -1,3 +1,11 @@
+<a href="https://www.bbc.com/news/articles/cg71xrxrn8go">URL</a>
+
+<p>Title: "Beach Boys Co-Founder Brian Wilson Dies at 82"</p>
+<p>Brian Wilson, the legendary frontman and co-founder of the iconic 1960s band The Beach Boys, has died at the age of 82. His family announced his passing in a statement online, expressing their heartbreak and requesting respect for their privacy.</p>
+<p>Born in 1942 in Hawthorne, California, Wilson formed The Beach Boys with his younger brothers Carl and Dennis, cousin Mike Love, and friend Al Jardine. The band became one of the most successful rock bands in the US, selling over 100 million records worldwide.</p>
+<p>Wilson was the primary songwriter for the band, creating dozens of hit singles, including "I Get Around," "Help Me, Rhonda," and "Good Vibrations." He was known for his innovative use of the recording studio to create unique sounds, particularly on the album "Pet Sounds," which cemented his reputation as a music pioneer.</p>
+<p>Tributes have poured in from the music industry, with artists such as Nancy Sinatra, Mick Fleetwood, and Elton John expressing their sadness and admiration for Wilson's genius. Despite struggling with mental health issues and personal losses, including the death of his wife Melinda in 2024, Wilson's legacy as a music icon will live on.</p>
+
 <a href="https://privatebin.net/?be16b3c8ff65c855#GtCVoyqrwXbRLS43Ybsjr7bmpspQUb4qGcW4d8BNewrj">URL</a>
 
 Title: "A Principal's Abuse of Power"
