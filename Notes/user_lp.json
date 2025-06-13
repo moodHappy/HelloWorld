@@ -61,25 +61,25 @@
       "grade": 0
     },
     "chord": {
-      "due": 1749755727738,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1750057754792,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
       "elapsed_days": 0,
-      "last_review": 1749721167738,
-      "reps": 0,
+      "last_review": 1749780490869,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 3
     },
     "nasty": {
-      "due": 1749756665426,
-      "stability": 0,
+      "due": 1749815100620,
+      "stability": 1.4900000095367432,
       "difficulty": 0,
       "elapsed_days": 0,
-      "last_review": 1749722105426,
-      "reps": 1,
-      "lapses": 1,
+      "last_review": 1749780540620,
+      "reps": 2,
+      "lapses": 2,
       "state": 3,
       "manual": false,
       "grade": 0
@@ -241,14 +241,14 @@
       "grade": 0
     },
     "cosmetic": {
-      "due": 0,
+      "due": 1749817186033,
       "stability": 0,
       "difficulty": 0,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
+      "last_review": 1749782626033,
+      "reps": 1,
+      "lapses": 1,
+      "state": 3,
       "manual": false,
       "grade": 0
     },
@@ -265,14 +265,14 @@
       "grade": 3
     },
     "herb": {
-      "due": 0,
+      "due": 1749817510114,
       "stability": 0,
       "difficulty": 0,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
+      "last_review": 1749782950114,
+      "reps": 1,
+      "lapses": 1,
+      "state": 3,
       "manual": false,
       "grade": 0
     },
@@ -289,16 +289,16 @@
       "grade": 0
     },
     "Sikh": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1750059463110,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749782148694,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 3
     },
     "ditch": {
       "due": 0,
@@ -325,50 +325,50 @@
       "grade": 0
     },
     "wisdom": {
-      "due": 0,
+      "due": 1749816850733,
       "stability": 0,
       "difficulty": 0,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
+      "last_review": 1749782290733,
+      "reps": 1,
+      "lapses": 1,
+      "state": 3,
       "manual": false,
       "grade": 0
     },
     "erode": {
-      "due": 0,
+      "due": 1749817613200,
       "stability": 0,
       "difficulty": 0,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
+      "last_review": 1749783053200,
+      "reps": 1,
+      "lapses": 1,
+      "state": 3,
       "manual": false,
       "grade": 0
     },
     "nest": {
-      "due": 0,
+      "due": 1749816781725,
       "stability": 0,
       "difficulty": 0,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
+      "last_review": 1749782221725,
+      "reps": 1,
+      "lapses": 1,
+      "state": 3,
       "manual": false,
       "grade": 0
     },
     "vivid": {
-      "due": 0,
+      "due": 1749816654736,
       "stability": 0,
       "difficulty": 0,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
+      "last_review": 1749782094736,
+      "reps": 1,
+      "lapses": 1,
+      "state": 3,
       "manual": false,
       "grade": 0
     },
@@ -421,14 +421,14 @@
       "grade": 0
     },
     "gland": {
-      "due": 0,
+      "due": 1749815192778,
       "stability": 0,
       "difficulty": 0,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
+      "last_review": 1749780632778,
+      "reps": 1,
+      "lapses": 1,
+      "state": 3,
       "manual": false,
       "grade": 0
     }
@@ -457,7 +457,7 @@
       "pagan",
       "puzzle"
     ],
-    "currentIndex": 2,
-    "showedSummary": false
+    "currentIndex": 20,
+    "showedSummary": true
   }
 }
