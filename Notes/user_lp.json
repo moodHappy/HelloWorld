@@ -455,6 +455,18 @@
       "state": 2,
       "manual": true,
       "grade": 0
+    },
+    "metal": {
+      "due": 1749808050661,
+      "stability": 730,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 1749808050661,
+      "reps": 999,
+      "lapses": 0,
+      "state": 2,
+      "manual": true,
+      "grade": 0
     }
   },
   "dailyWords": {
