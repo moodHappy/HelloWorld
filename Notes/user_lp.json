@@ -431,6 +431,18 @@
       "state": 3,
       "manual": false,
       "grade": 0
+    },
+    "flame": {
+      "due": 1749807238226,
+      "stability": 730,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 1749807238226,
+      "reps": 999,
+      "lapses": 0,
+      "state": 2,
+      "manual": true,
+      "grade": 0
     }
   },
   "dailyWords": {
