@@ -1,3 +1,12 @@
+<a href="https://www.bbc.com/news/articles/cvgv26zz5wzo">URL</a>
+
+<p>Title: "Traffic Saved My Life"</p>
+<p>A student named Bhoomi Chauhan was traveling from India to London. She was supposed to take an Air India flight, but she was late because of traffic. She arrived at the airport 10 minutes after the flight was supposed to leave. The airline staff did not let her board the plane.</p>
+<p>Chauhan was very disappointed and frustrated. She left the airport and went to drink tea with her driver. Then, she received a call that the plane had crashed, killing 241 people.</p>
+<p>Chauhan feels very lucky that she missed the flight. She thinks that the traffic saved her life. She was originally assigned to seat 36G in economy class.</p>
+<p>The plane took off on schedule but struggled to gain altitude and crashed about 30 seconds into the flight. It hit a residential area, killing people on the ground as well.</p>
+<p>Chauhan is grateful to be alive and feels that it was a miracle that she missed the flight.</p>
+
 <a href="https://www.bbc.com/news/live/c93ydeqyq71t">URL</a>
 <p>Title: "Israel Launches Strikes on Iran's Nuclear Program"</p>
 <p>Israel has attacked Iran's nuclear program, according to the Israeli Defense Forces (IDF). The strikes were part of "Operation Rising Lion," said Israeli Prime Minister Benjamin Netanyahu. He added that Iran is a threat to Israel's survival. Israel has declared a state of emergency, expecting retaliation from Iran.</p>
