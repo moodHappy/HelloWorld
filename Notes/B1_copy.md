@@ -1,3 +1,12 @@
+<a href="https://www.bbc.com/news/live/c93ydeqyq71t">URL</a>
+<p>Title: "Israel Launches Strikes on Iran's Nuclear Program"</p>
+<p>Israel has attacked Iran's nuclear program, according to the Israeli Defense Forces (IDF). The strikes were part of "Operation Rising Lion," said Israeli Prime Minister Benjamin Netanyahu. He added that Iran is a threat to Israel's survival. Israel has declared a state of emergency, expecting retaliation from Iran.</p>
+<p>The attacks targeted Iran's nuclear facilities and other military sites. Iranian state media reported that Israel hit residential areas in Tehran, killing children among others. Israeli officials say senior Iranian nuclear scientists may have been killed.</p>
+<p>The international community is reacting to the escalation. Australian Foreign Minister Penny Wong said her country is "alarmed" by the situation and called for calm. US Secretary of State Marco Rubio stated that the US is not involved in the strikes, but is protecting American forces in the region.</p>
+<p>The situation is causing global concern, with oil prices rising and stocks falling. Flights to Tel Aviv have been diverted, and Tehran's international airport has suspended all flights. The Israeli military is on high alert, warning citizens to seek shelter when emergency alerts are sent out.</p>
+<p>Netanyahu thanked former US President Donald Trump for his "leadership" on nuclear program talks. Trump had earlier said he hoped to avoid conflict, but believed an attack was "fairly close." The US is waiting for a potential response from Iran.</p>
+
+
 <a href="https://www.bbc.com/news/live/c8d1r3m8z92t">URL</a>
 
 <p>Title: "Plane Crashes in India with 242 People on Board"</p>
