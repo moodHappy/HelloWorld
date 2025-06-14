@@ -1,3 +1,10 @@
+<a href="https://www.bbc.com/news/live/c93ydeqyq71t">URL</a>
+<p>Title: "Israel and Iran Exchange Military Strikes"</p>
+<p>Israel and Iran have been exchanging military strikes, with both countries launching attacks on each other. Iran launched missiles at Israel in response to Israel's attacks on its nuclear facilities and military bases. At least two people have been killed and many injured in Israel. The Israeli Defense Forces (IDF) say they are continuing to strike Iran. Iran's representative to the UN says that 78 people were killed and over 320 injured in the Israeli strikes, mostly civilians.</p>
+<p>The conflict between Israel and Iran has been ongoing, with Israel seeking to damage Iran's nuclear program. Israeli Prime Minister Benjamin Netanyahu has urged the Iranian people to rise up against their leaders. The international community is calling for restraint, with UN Secretary-General Antonio Guterres saying "enough escalation. Time to stop." The US has also been involved, with US President Donald Trump urging Iran to make a deal on its nuclear program.</p>
+<p>The situation is still developing, with both sides continuing to exchange fire. The consequences of the conflict are unclear, but it is likely to have significant regional and global implications.</p>
+
+
 <a href="https://www.bbc.com/news/articles/cy5e6l06rlvo">URL</a>
 
 <p>Title: "Heston Blumenthal's Struggle with Bipolar Disorder"</p>
