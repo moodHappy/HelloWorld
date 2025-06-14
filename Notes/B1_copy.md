@@ -1,3 +1,12 @@
+<a href="https://www.bbc.com/news/articles/cy5e6l06rlvo">URL</a>
+
+<p>Title: "Heston Blumenthal's Struggle with Bipolar Disorder"</p>
+<p>Celebrity chef Heston Blumenthal has talked openly about his struggle with bipolar disorder. In a new BBC documentary, he shares how his condition affected his family and work. Heston's son, Jack, says it was hard to have a normal conversation with his father because of his unpredictable behavior.</p>
+<p>Heston thought his mood swings were just part of his personality, but they got worse over time. He had extreme highs and lows, which made it difficult for him to work and be with his family. He even had to be hospitalized after a severe episode.</p>
+<p>A psychiatrist, Professor John Geddes, says Heston's behavior was a clear sign of bipolar disorder. He believes Heston's creative work and celebrity status masked his condition, making it harder to diagnose.</p>
+<p>After his diagnosis, Heston started taking medication, including lithium, which has helped him manage his condition. He says he wouldn't want to get rid of his bipolar disorder, as it's a part of who he is. Professor Geddes agrees that treatment doesn't erase the condition but makes it manageable.</p>
+<p>Heston's story highlights the importance of timely diagnosis and treatment for bipolar disorder. In the UK, it takes an average of nine years to get a diagnosis, and many patients face long waits for treatment. Heston is now using his platform to raise awareness about the condition and encourage others to seek help.</p>
+
 <a href="https://www.bbc.com/news/articles/cgeg39vr3j3o">URL</a>
 
 <p>Title: "Two Men Jailed for Stealing £4.8m Gold Toilet"</p>
