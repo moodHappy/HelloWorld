@@ -589,6 +589,8 @@
       "grade": 0
     }
   },
+  "lastUpdate": "2025-06-14T17:24:03.940Z",
+  "infiniteWords": [],
   "dailyWords": {
     "date": "Sat Jun 14 2025",
     "words": [
@@ -615,5 +617,6 @@
     ],
     "currentIndex": 20,
     "showedSummary": true
-  }
+  },
+  "githubSha": "38c2a28a219dab0010d21efb9c71cdb1fb5ed2e0"
 }
