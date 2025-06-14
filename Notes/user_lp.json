@@ -587,6 +587,16 @@
       "state": 3,
       "manual": false,
       "grade": 0
+    },
+    "battalion": {
+      "word": "battalion",
+      "difficulty": 5,
+      "stability": 0,
+      "interval": 0,
+      "dueDate": null,
+      "lastReview": null,
+      "reviewCount": 0,
+      "created": "2025-06-14T17:24:12.796Z"
     }
   },
   "lastUpdate": "2025-06-14T17:24:03.940Z",
@@ -618,5 +628,5 @@
     "currentIndex": 20,
     "showedSummary": true
   },
-  "githubSha": "38c2a28a219dab0010d21efb9c71cdb1fb5ed2e0"
+  "githubSha": "cce91d816f42a9ece9fbcc4beb196538b98c8507"
 }
