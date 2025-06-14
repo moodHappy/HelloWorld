@@ -1,3 +1,10 @@
+<a href="https://www.bbc.com/news/articles/cgeg39vr3j3o">URL</a>
+
+<p>Title: "Two Men Jailed for Stealing £4.8m Gold Toilet"</p>
+<p>Two men from Oxford have been sent to prison for stealing a £4.8m gold toilet from an art exhibition at Blenheim Palace in 2019. The toilet, made of 18-carat solid gold, was taken just hours after a launch party. James Sheen, 40, and Michael Jones, 39, were found guilty of the crime. Sheen was given a four-year sentence, while Jones was given two years and three months.</p>
+<p>The thieves broke into the palace and ripped out the toilet, which weighed 98kg. Sheen was a key player in the crime and had a long history of committing crimes. He was caught after police found his DNA at the scene and gold fragments in his clothing. Jones, who worked for Sheen, had visited the palace before the theft and took pictures of the toilet.</p>
+<p>The investigation took a long time, and police arrested 12 people before charging Sheen and Jones. The judge described the crime as "bold and brazen" and said that Sheen had a "truly shocking list of previous convictions". The gold toilet has not been fully recovered, and some of it was sold to an unknown buyer in Birmingham for £520,000.</p>
+
 <a href="https://www.bbc.com/news/articles/cvgv26zz5wzo">URL</a>
 
 <p>Title: "Traffic Saved My Life"</p>
