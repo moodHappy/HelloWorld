@@ -979,14 +979,12 @@
       "grade": 0
     },
     "symphony": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1749984232137,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
+      "last_review": 1749949672137,
+      "reps": 1,
+      "lapses": 1,
+      "state": 3,
       "manual": false,
       "grade": 0
     },
@@ -1423,16 +1421,16 @@
       "grade": 0
     },
     "incorporate": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1749968913086,
+      "stability": 0.4000000059604645,
+      "difficulty": 0.4000000059604645,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749948177085,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 1
     },
     "Frenchwoman": {
       "due": 0,
@@ -1639,16 +1637,16 @@
       "grade": 0
     },
     "accessory": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1750224666147,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749948160528,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 3
     },
     "approximate": {
       "due": 0,
@@ -1927,16 +1925,16 @@
       "grade": 0
     },
     "posture": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1749970179765,
+      "stability": 0.4000000059604645,
+      "difficulty": 0.4000000059604645,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749949443764,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 1
     },
     "scar": {
       "due": 1750191871362,
@@ -2035,16 +2033,16 @@
       "grade": 0
     },
     "owl": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1749970156322,
+      "stability": 0.4000000059604645,
+      "difficulty": 0.4000000059604645,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749949420321,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 1
     },
     "absurd": {
       "due": 0,
@@ -2155,16 +2153,16 @@
       "grade": 0
     },
     "extract": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1750227273621,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749948890342,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 3
     },
     "conceive": {
       "due": 0,
@@ -2717,6 +2715,18 @@
       "state": 0,
       "manual": false,
       "grade": 0
+    },
+    "minor": {
+      "due": 1749949745588,
+      "stability": 730,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 1749949745588,
+      "reps": 999,
+      "lapses": 0,
+      "state": 2,
+      "manual": true,
+      "grade": 0
     }
   },
   "dailyWords": {
@@ -2923,7 +2933,7 @@
       "stump",
       "barricade"
     ],
-    "currentIndex": 15,
+    "currentIndex": 21,
     "showedSummary": false
   }
 }
