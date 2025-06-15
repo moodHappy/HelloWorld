@@ -1,7 +1,6 @@
 # **推送区域**
 
-[短语积累]
-(https://github.com/moodHappy/HelloWorld/blob/master/Notes%2Fphrase_note.json)
+[短语积累](https://github.com/moodHappy/HelloWorld/blob/master/Notes%2Fphrase_note.json)
 
 [推送文章朗读中转站](https://github.com/moodHappy/HelloWorld/tree/master/Notes)
 
