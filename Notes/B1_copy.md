@@ -1,3 +1,12 @@
+<a href="https://www.bbc.com/news/articles/cgj83q2e562o">URL</a>
+
+<p>Title: "Two US Politicians Attacked, One Killed in Minnesota"</p>
+<p>A manhunt is happening in Minnesota, USA, after two politicians were attacked in their homes. One of them, Melissa Hortman, a 55-year-old Democrat, was killed along with her husband. The other politician, John Hoffman, a 60-year-old Democrat, was shot several times but is now stable after surgery.</p>
+<p>The police are looking for the suspect, Vance Luther Boelter, 57, who pretended to be a police officer. He used a fake badge and uniform to trick his way into the victims' homes. The police have found his car, but they think he is now on foot.</p>
+<p>The authorities have warned people in the area not to open their doors to anyone claiming to be a police officer unless there are two officers together. The FBI and hundreds of police officers are involved in the search.</p>
+<p>The attack is believed to be an act of targeted political violence. The Governor of Minnesota, Tim Walz, has activated the State Emergency Operations Center to manage the situation. He described Melissa Hortman as a "great leader and a dear friend" who worked hard to make the state a better place.</p>
+<p>Many politicians, including former Vice-President Al Gore and former House Speaker Nancy Pelosi, have condemned the attack and expressed their sadness at the loss of Melissa Hortman.</p>
+
 <a href="https://www.bbc.com/news/articles/cz0dkrz1kneo">URL</a>
 
 <p>Title: "Air India Plane Crashes into Canteen, Many Killed"</p>
