@@ -980,6 +980,8 @@
     },
     "symphony": {
       "due": 1749984232137,
+      "stability": 0,
+      "difficulty": 0,
       "elapsed_days": 0,
       "last_review": 1749949672137,
       "reps": 1,
@@ -2045,16 +2047,16 @@
       "grade": 1
     },
     "absurd": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1749970492433,
+      "stability": 0.4000000059604645,
+      "difficulty": 0.4000000059604645,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749949756432,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 1
     },
     "hack": {
       "due": 0,
@@ -2727,6 +2729,18 @@
       "state": 2,
       "manual": true,
       "grade": 0
+    },
+    "speculate": {
+      "due": 1749951985109,
+      "stability": 730,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 1749951985109,
+      "reps": 999,
+      "lapses": 0,
+      "state": 2,
+      "manual": true,
+      "grade": 0
     }
   },
   "dailyWords": {
@@ -2933,7 +2947,7 @@
       "stump",
       "barricade"
     ],
-    "currentIndex": 21,
+    "currentIndex": 23,
     "showedSummary": false
   }
 }
