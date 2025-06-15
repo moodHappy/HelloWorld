@@ -655,16 +655,16 @@
       "grade": 0
     },
     "bureaucratic": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1750192437559,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749924586903,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 3
     },
     "criterion": {
       "due": 0,
@@ -727,14 +727,14 @@
       "grade": 0
     },
     "evolution": {
-      "due": 0,
+      "due": 1749959710270,
       "stability": 0,
       "difficulty": 0,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
-      "lapses": 0,
-      "state": 0,
+      "last_review": 1749925150270,
+      "reps": 1,
+      "lapses": 1,
+      "state": 3,
       "manual": false,
       "grade": 0
     },
@@ -799,16 +799,16 @@
       "grade": 0
     },
     "woo": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1750210307305,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749946666322,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 3
     },
     "imaginative": {
       "due": 0,
@@ -1003,16 +1003,16 @@
       "grade": 0
     },
     "brand-new": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1750188383078,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749924668732,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 3
     },
     "qualifier": {
       "due": 0,
@@ -1135,16 +1135,16 @@
       "grade": 0
     },
     "tactical": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1750230058999,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749948123459,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 3
     },
     "intensive": {
       "due": 0,
@@ -1723,16 +1723,16 @@
       "grade": 0
     },
     "relentless": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1750200402396,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749925801974,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 3
     },
     "bias": {
       "due": 0,
@@ -1879,16 +1879,16 @@
       "grade": 0
     },
     "hurl": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1750186852391,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749924852639,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 3
     },
     "lash": {
       "due": 0,
@@ -1939,16 +1939,16 @@
       "grade": 0
     },
     "scar": {
-      "due": 0,
-      "stability": 0,
-      "difficulty": 0,
+      "due": 1750191871362,
+      "stability": 2.4000000953674316,
+      "difficulty": 2.4000000953674316,
       "elapsed_days": 0,
-      "last_review": 0,
-      "reps": 0,
+      "last_review": 1749924621544,
+      "reps": 1,
       "lapses": 0,
-      "state": 0,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 3
     },
     "handicap": {
       "due": 0,
@@ -2923,7 +2923,7 @@
       "stump",
       "barricade"
     ],
-    "currentIndex": 4,
+    "currentIndex": 15,
     "showedSummary": false
   }
 }
