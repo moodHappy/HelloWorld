@@ -2,7 +2,7 @@
 
 [短语积累](https://github.com/moodHappy/HelloWorld/blob/master/Notes%2Fphrase_note.json)
 
-[Notes](https://github.com/moodHappy/HelloWorld/tree/master/Notes)
+[📁Notes](https://github.com/moodHappy/HelloWorld/tree/master/Notes)
 
 [添加高亮](https://github.com/moodHappy/HelloWorld/blob/master/Notes%2Fadd.txt)
 
