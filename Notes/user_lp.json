@@ -2023,16 +2023,16 @@
       "grade": 0
     },
     "petition": {
-      "due": 1749959009958,
-      "stability": 0,
+      "due": 1750268725154,
+      "stability": 2.1071782214229033,
       "difficulty": 0,
-      "elapsed_days": 0,
-      "last_review": 1749924449958,
-      "reps": 1,
+      "elapsed_days": 1,
+      "last_review": 1750036893983,
+      "reps": 2,
       "lapses": 1,
-      "state": 3,
+      "state": 2,
       "manual": false,
-      "grade": 0
+      "grade": 3
     },
     "owl": {
       "due": 1749970156322,
@@ -3972,6 +3972,18 @@
       "difficulty": 0,
       "elapsed_days": 0,
       "last_review": 1750036561112,
+      "reps": 999,
+      "lapses": 0,
+      "state": 2,
+      "manual": true,
+      "grade": 0
+    },
+    "consistent": {
+      "due": 1750037680910,
+      "stability": 730,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 1750037680910,
       "reps": 999,
       "lapses": 0,
       "state": 2,
