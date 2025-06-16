@@ -3965,6 +3965,18 @@
       "state": 2,
       "manual": true,
       "grade": 0
+    },
+    "device": {
+      "due": 1750036561112,
+      "stability": 730,
+      "difficulty": 0,
+      "elapsed_days": 0,
+      "last_review": 1750036561112,
+      "reps": 999,
+      "lapses": 0,
+      "state": 2,
+      "manual": true,
+      "grade": 0
     }
   },
   "dailyWords": {
