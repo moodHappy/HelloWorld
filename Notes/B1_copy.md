@@ -1,3 +1,11 @@
+<a href="https://www.bbc.com/news/articles/cjrld3erq4eo">URL</a>
+
+<p>Title: "Trump's New Gold Phone Raises Questions"</p>
+<p>US President Donald Trump's company is releasing a new gold-colored smartphone that costs $499. However, experts doubt that the phone can be entirely made in the US, as Trump's company claims. They say it would be "virtually impossible" to manufacture the phone in the US due to the lack of a high-tech supply chain.</p>
+<p>The phone will come with a monthly mobile service fee of $47.45, which is a reference to Trump's presidency. Critics have raised questions about the ethics of using Trump's name to sell products, especially since he is still in office. They worry that people may buy the phone to try to influence Trump or gain favor with him.</p>
+<p>Trump's company has not said which company will manufacture the phone in the US. Experts believe that the phone may be assembled in the US with parts imported from abroad. The announcement has been met with mixed reactions online, with some people excited to buy the phone and others mocking the concept.</p>
+<p>The US mobile phone market is currently dominated by three major players: AT&T, Verizon, and T-Mobile. Trump's new phone service will have to compete with these companies, which offer phone service starting at less than $40 a month.</p>
+
 <a href="https://www.bbc.com/news/articles/cgj83q2e562o">URL</a>
 
 <p>Title: "Two US Politicians Attacked, One Killed in Minnesota"</p>
