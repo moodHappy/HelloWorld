@@ -1,3 +1,11 @@
+<a href="https://www.bbc.com/news/articles/c1wp72224jzo">URL</a>
+
+<p>Title: "Trump's Iran Dilemma Divides Supporters"</p>
+<p>US President Donald Trump is facing a difficult decision about whether to join Israel in attacking Iran. This issue has caused a big split among his supporters. Trump has often spoken out against long and pointless wars in the Middle East, but he also believes that Iran should not have nuclear weapons.</p>
+<p>Some of Trump's supporters think that the US should stay out of the conflict with Iran. They believe that getting involved in another war would go against Trump's promise to put America first. Others, however, think that the US should help Israel attack Iran to prevent it from getting nuclear weapons.</p>
+<p>The debate has become heated, with some of Trump's loyal supporters disagreeing with each other. A recent poll showed that most Trump voters would support the US helping Israel attack Iran. However, some important figures in Trump's party are warning against getting involved in another war.</p>
+<p>The situation is complex, and Trump's decision will have significant consequences. The world is watching to see what he will do next.</p>
+
 URL
 
 <p><strong>Chapter III: Escape</strong></p>
