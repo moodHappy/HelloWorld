@@ -2,7 +2,7 @@ name: delete expired
 
 on:
   schedule:
-    - cron: '* * * * *'  # 每分钟执行一次
+    - cron: '* * * * *'  # 每分钟执行一次 (实际约每5分钟)
   workflow_dispatch:
 
 jobs:
@@ -29,4 +29,9 @@ jobs:
           git config user.email "github-actions@github.com"
           git add Notes/
           git commit -m "⏰ Auto delete expired files" || echo "No changes"
+          # 在推送前，先尝试拉取远程最新更改并合并
+          # 这能解决“远程仓库有新内容而本地没有”导致的推送失败问题
+          git pull origin master --rebase || git pull origin master
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 确保git push也有权限
