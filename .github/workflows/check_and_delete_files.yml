@@ -2,8 +2,8 @@ name: Check and Delete Scheduled Files
 
 on:
   schedule:
-    # Runs every hour at minute 0, adjust as needed
-    - cron: '0 * * * *'
+    # Runs every minute, adjust as needed. Minimum granularity is 1 minute.
+    - cron: '* * * * *' # Changed from '0 * * * *' to '* * * * *'
   workflow_dispatch: # Allows manual triggering for testing
 
 jobs:
