@@ -1,4 +1,4 @@
-name: Auto Delete File
+name: Auto Delete File from Queue
 
 on:
   schedule:
@@ -28,13 +28,9 @@ jobs:
     - name: Run delete script
       env:
         # GITHUB_TOKEN 是 GitHub Actions 内置的 token，具有当前仓库的读写权限。
-        # 你也可以在这里使用你自己的 Personal Access Token，但内置 token 更安全方便。
-        # 如果你想删除私有仓库的文件，或者执行更高级的操作，可能需要使用 Personal Access Token
-        # 但对于当前需求，默认的 GITHUB_TOKEN 应该足够。
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # GITHUB_REPOSITORY 是 GitHub Actions 内置的环境变量，格式为 "owner/repo"
         GITHUB_REPOSITORY: ${{ github.repository }}
-        # 这是你想要删除的文件路径
-        FILE_PATH_TO_DELETE: 'Notes/transfer.txt' # <-- 将这里替换为你要删除的实际文件路径
+        # FILE_PATH_TO_DELETE 这个环境变量不再需要，因为 Python 脚本会从 delete_queue.json 中读取路径
       run: python delete_file.py
 
