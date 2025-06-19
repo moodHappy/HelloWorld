@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GitHub 文件同步助手</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background: #f9f9f9;
+      overflow-x: hidden;
+      padding-bottom: 90px;
+    }
+    input, button, textarea {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    button { cursor: pointer; }
+    textarea { height: 150px; }
+    #log { white-space: pre-wrap; color: green; }
+    #countdown { color: red; font-weight: bold; }
+    #shareLink {
+      width: 100%;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      margin: 10px 0;
+      border: none;
+      background: none;
+      padding-bottom: 20px;
+    }
+    #shareLink a { color: blue; }
+    #savingStatus { float: right; font-size: 16px; color: #666; }
+    #fixedBar {
+      position: fixed;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      gap: 10px;
+      padding: 10px;
+      background: #ffffffdd;
+      backdrop-filter: blur(4px);
+      border-top: 1px solid #ccc;
+      box-shadow: 0 -1px 6px rgba(0,0,0,0.1);
+      z-index: 1000;
+      flex-wrap: nowrap;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    @media (max-width: 600px) {
+      #fixedBar { padding-left: 20px; padding-right: 20px; }
+    }
+    #fixedBar button {
+      flex: 1 1 0%;
+      min-width: unset;
+    }
+    @media (max-width: 480px) {
+      h2 { font-size: 20px; }
+      input, button, textarea {
+        font-size: 16px;
+        padding: 8px;
+      }
+      #fixedBar button {
+        padding: 8px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>📦 GitHub 文件同步助手</h2>
+  <label>Token：</label>
+  <input id="tokenInput" type="password" placeholder="请输入你的 GitHub Token" />
+  <label>选择文件:</label>
+  <input id="fileInput" type="file" onchange="autoFillPath()" />
+  <label>上传路径:</label>
+  <input id="pathInput" />
+  <label>删除时间 (秒):</label>
+  <input id="deleteTimeInput" type="number" value="300" min="1" />
+  <button id="deleteBtn" style="display:none; background:#f44; color:#fff;" onclick="deleteFile()">🗑️ 立即删除</button>
+  <div id="countdown"></div>
+  <div id="savingStatus"></div>
+  <div id="shareLink"></div>
+  <div id="log"></div>
+  <h3>📄 文本同步</h3>
+  <textarea id="transferContent"></textarea>
+  <div id="fixedBar">
+    <button onclick="processUploadOrSubmit()">⬆️ 上传</button>
+    <button onclick="copyTransfer()">📋 复制</button>
+  </div>
+  <script>
+    const GITHUB_USERNAME = "moodHappy";
+    const GITHUB_REPO = "HelloWorld";
+    const BRANCH_NAME = "master";
+    let currentSHA = null;
+    let countdownTimer = null;
+
+    function encodePath(path) {
+      return path.split('/').map(encodeURIComponent).join('/');
+    }
+
+    async function processUploadOrSubmit() {
+      const token = document.getElementById("tokenInput").value.trim();
+      const file = document.getElementById("fileInput").files[0];
+      const pathInput = document.getElementById("pathInput").value.trim();
+      const log = document.getElementById("log");
+      log.textContent = "";
+      if (!token || !file || !pathInput) {
+        log.textContent = "❌ 请完整填写 token、选择文件并指定路径";
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = async () => {
+        const base64Data = reader.result.split(',')[1];
+        const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${pathInput}`;
+        let sha = null;
+        try {
+          const checkRes = await fetch(url, { headers: { Authorization: `token ${token}` } });
+          if (checkRes.ok) sha = (await checkRes.json()).sha;
+        } catch {}
+        const res = await fetch(url, {
+          method: "PUT",
+          headers: {
+            Authorization: `token ${token}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ message: `Upload ${file.name}`, content: base64Data, sha })
+        });
+        if (!res.ok) {
+          log.textContent = "❌ 上传失败";
+          return;
+        }
+        const confirmRes = await fetch(url, { headers: { Authorization: `token ${token}` } });
+        const data = await confirmRes.json();
+        currentSHA = data.sha;
+
+        // 自动删除任务写入 pending_deletion.json
+        const deleteAfterSec = parseInt(document.getElementById("deleteTimeInput").value, 10) || 60;
+        const deleteTimestamp = Date.now() + deleteAfterSec * 1000;
+        const pendingUrl = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/Notes/pending_deletion.json`;
+        let existingList = [];
+        let pendingSha = null;
+        try {
+          const res = await fetch(pendingUrl, { headers: { Authorization: `token ${token}` } });
+          if (res.ok) {
+            const json = await res.json();
+            existingList = JSON.parse(atob(json.content.replace(/\n/g, '')));
+            pendingSha = json.sha;
+          }
+        } catch {}
+        existingList.push({ path: pathInput, sha: currentSHA, deleteAt: deleteTimestamp });
+        await fetch(pendingUrl, {
+          method: "PUT",
+          headers: {
+            Authorization: `token ${token}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            message: `Add deletion task for ${pathInput}`,
+            content: btoa(unescape(encodeURIComponent(JSON.stringify(existingList, null, 2)))),
+            sha: pendingSha || undefined
+          })
+        });
+
+        log.textContent = `✅ 上传成功，${deleteAfterSec}秒后将自动删除（由 GitHub Actions 执行）`;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function autoFillPath() {
+      const file = document.getElementById("fileInput").files[0];
+      if (file) document.getElementById("pathInput").value = "Notes/" + file.name;
+    }
+
+    function copyTransfer() {
+      navigator.clipboard.writeText(document.getElementById("transferContent").value)
+        .then(() => alert("📋 transfer.txt 内容已复制"))
+        .catch(err => alert("❌ 复制失败：" + err.message));
+    }
+  </script>
+</body>
+</html>
