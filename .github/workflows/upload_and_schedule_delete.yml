@@ -1,0 +1,132 @@
+name: Upload File and Schedule Deletion
+
+on:
+  workflow_dispatch:
+    inputs:
+      file_path:
+        description: 'Path to upload the file to (e.g., Notes/test.txt)'
+        required: true
+      file_content:
+        description: 'Base64 encoded content of the file'
+        required: true
+      delete_after_seconds:
+        description: 'Delete file after X seconds (default: 3600 for 1 hour)'
+        required: false
+        default: 3600
+        type: number
+
+jobs:
+  upload_and_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Calculate deletion timestamp
+        id: calculate_time
+        run: |
+          DELETION_TIMESTAMP=$(( $(date +%s) + ${{ github.event.inputs.delete_after_seconds }} ))
+          echo "DELETION_TIMESTAMP=${DELETION_TIMESTAMP}" >> $GITHUB_ENV
+
+      - name: Decode file content
+        id: decode_content
+        run: |
+          echo "${{ github.event.inputs.file_content }}" | base64 -d > decoded_file_content.tmp
+          FILE_CONTENT_PATH="decoded_file_content.tmp"
+          echo "FILE_CONTENT_PATH=${FILE_CONTENT_PATH}" >> $GITHUB_ENV
+
+      - name: Get existing SHA (if file exists)
+        id: get_sha
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          API_URL="https://api.github.com/repos/${{ github.repository }}/contents/${{ github.event.inputs.file_path }}"
+          RESPONSE=$(curl -s -H "Authorization: token $GH_TOKEN" "$API_URL")
+          # Use jq to safely extract .sha; if not found, output empty string
+          SHA=$(echo "$RESPONSE" | jq -r '.sha // empty')
+          echo "EXISTING_SHA=$SHA" >> $GITHUB_ENV
+        continue-on-error: true # Allow this step to fail if file doesn't exist (e.g., 404 Not Found)
+
+      - name: Upload file to GitHub
+        id: upload_file
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const filePath = process.env.FILE_PATH; // This variable is not defined here, should use github.event.inputs.file_path
+            const fileContent = fs.readFileSync(process.env.FILE_CONTENT_PATH, { encoding: 'base64' });
+            const repoOwner = context.repo.owner;
+            const repoName = context.repo.repo;
+            const branch = context.ref.replace('refs/heads/', ''); // Get current branch name (e.g., master or main)
+            const uploadPath = '${{ github.event.inputs.file_path }}';
+            const existingSha = process.env.EXISTING_SHA || null;
+
+            console.log(`Attempting to upload/update file at: ${uploadPath}, existing SHA: ${existingSha}`);
+            
+            try {
+                const response = await github.rest.repos.createOrUpdateFileContents({
+                    owner: repoOwner,
+                    repo: repoName,
+                    path: uploadPath,
+                    message: `Upload file: ${uploadPath} via workflow_dispatch`,
+                    content: fileContent,
+                    sha: existingSha, // Only include if updating an existing file
+                    branch: branch
+                });
+                console.log('File uploaded successfully. Content URL:', response.data.content.html_url);
+                core.setOutput('file_sha', response.data.content.sha);
+                core.setOutput('raw_url', `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branch}/${uploadPath}`);
+
+            } catch (error) {
+                console.error('Error uploading file:', error);
+                core.setFailed(`Failed to upload file: ${error.message}`);
+            }
+
+      - name: Create or update deletion schedule issue
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
+          script: |
+            const filePath = '${{ github.event.inputs.file_path }}';
+            const deletionTimestamp = process.env.DELETION_TIMESTAMP;
+            const fileSha = steps.upload_file.outputs.file_sha;
+            const rawUrl = steps.upload_file.outputs.raw_url;
+            const issueTitle = `Scheduled Deletion for ${filePath}`;
+            const issueBody = `
+            This issue tracks a scheduled file deletion.
+            
+            **File Path:** \`${filePath}\`
+            **File SHA (at upload):** \`${fileSha}\`
+            **Raw URL:** ${rawUrl}
+            **Delete By Timestamp (Unix):** \`${deletionTimestamp}\`
+            
+            This issue will be closed automatically when the file is deleted.
+            `;
+
+            console.log(`Preparing to create/update issue for: ${filePath}, to be deleted by timestamp: ${deletionTimestamp}`);
+
+            // Search for existing open issue with this specific title
+            const searchResult = await github.rest.search.issuesAndPullRequests({
+              q: `in:title "${issueTitle}" repo:${context.repo.owner}/${context.repo.repo} type:issue state:open`
+            });
+
+            if (searchResult.data.items.length > 0) {
+              const existingIssue = searchResult.data.items[0];
+              console.log(`Found existing issue #${existingIssue.number} for ${filePath}. Updating it.`);
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existingIssue.number,
+                body: issueBody
+              });
+            } else {
+              console.log(`No existing issue found for ${filePath}. Creating a new one.`);
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: issueTitle,
+                body: issueBody,
+                labels: ['auto-delete'] // Optional: add a label for easy filtering
+              });
+            }
