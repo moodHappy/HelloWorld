@@ -58,7 +58,7 @@
   <label>删除时间 (秒):</label>
   <input id="deleteTimeInput" type="number" value="60" min="1" />
 
-  <button onclick="uploadFileAndTriggerAction()">⬆️ 上传并调度删除</button>
+  <button onclick="uploadFile()">⬆️ 上传</button>
   <button id="deleteBtn" style="display:none; background:#f44; color:#fff;" onclick="deleteFile()">🗑️ 立即删除</button>
 
   <div id="countdown"></div>
@@ -67,17 +67,14 @@
   <div id="log"></div>
 
   <script>
-    // ======================== 已根据你的提供信息配置 ========================
     const GITHUB_USERNAME = "moodHappy";
     const GITHUB_REPO = "HelloWorld";
-    const BRANCH_NAME = "master"; // 根据你的仓库默认分支改成 master 或 main
-    // ========================================================================
+    const BRANCH_NAME = "master";
 
     let currentSHA = null;
     let countdownTimer = null;
-    let countdownSeconds = 60; // 仅用于前端显示，实际删除由 GitHub Actions 决定
+    let countdownSeconds = 60;
 
-    // 将路径按 / 分割，对每段分别 encodeURIComponent，再拼接，防止 / 变成 %2F
     function encodePath(path) {
       return path.split('/').map(encodeURIComponent).join('/');
     }
@@ -92,7 +89,7 @@
     function getToken() {
       const token = document.getElementById("tokenInput").value.trim();
       if (!token) throw new Error("请先输入 GitHub Token");
-      localStorage.setItem("github_token", token); // 记住 Token
+      localStorage.setItem("github_token", token);
       return token;
     }
 
@@ -104,8 +101,7 @@
       }
     }
 
-    // --- 新的上传和触发 Actions 函数 ---
-    async function uploadFileAndTriggerAction() {
+    async function uploadFile() {
       let token;
       try {
         token = getToken();
@@ -116,8 +112,6 @@
 
       const file = document.getElementById("fileInput").files[0];
       const path = document.getElementById("pathInput").value.trim();
-      const deleteTime = parseInt(document.getElementById("deleteTimeInput").value, 10) || 60; // 获取删除时间
-
       const log = document.getElementById("log");
       const contentArea = document.getElementById("content");
       const deleteBtn = document.getElementById("deleteBtn");
@@ -134,7 +128,7 @@
         return;
       }
 
-      log.textContent = `📤 正在上传 ${file.name} 并调度删除...`;
+      log.textContent = `📤 正在上传 ${file.name}...`;
       deleteBtn.style.display = "none";
       contentArea.value = "";
       countdownDiv.textContent = "";
@@ -145,111 +139,78 @@
       const reader = new FileReader();
       reader.onload = async () => {
         const base64Data = reader.result.split(',')[1];
-        const githubContentUrl = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${path}`;
+        const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${path}`;
 
-        // 1. 检查文件是否存在并获取 SHA
         let sha = null;
         try {
-          const checkRes = await fetch(githubContentUrl, {
+          const checkRes = await fetch(url, {
             headers: { Authorization: `token ${token}` }
           });
           if (checkRes.ok) {
             const data = await checkRes.json();
             sha = data.sha;
-            log.textContent += "\n📄 文件已存在，将覆盖。";
+            log.textContent += "\n📄 文件已存在，将覆盖";
           }
         } catch (e) {
-          log.textContent += "\n⚠️ 检查文件失败（可能文件不存在）：" + e.message;
+          log.textContent += "\n⚠️ 检查文件失败：" + e.message;
         }
 
-        // 2. 上传文件到 GitHub Content API
+        const res = await fetch(url, {
+          method: "PUT",
+          headers: {
+            Authorization: `token ${token}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            message: `Upload ${file.name}`,
+            content: base64Data,
+            sha: sha
+          })
+        });
+
+        if (!res.ok) {
+          const err = await res.json();
+          log.textContent += `\n❌ 上传失败：${res.status} - ${err.message}`;
+          return;
+        }
+
+        log.textContent += "\n✅ 上传成功，正在确认...";
+        const confirmRes = await fetch(url, {
+          headers: { Authorization: `token ${token}` }
+        });
+
+        const data = await confirmRes.json();
+        currentSHA = data.sha;
+        await registerDeletionTask(token, path, currentSHA); // 记录删除任务
+
         try {
-          const uploadRes = await fetch(githubContentUrl, {
-            method: "PUT",
-            headers: {
-              Authorization: `token ${token}`,
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              message: `Upload ${file.name} via UI`,
-              content: base64Data,
-              sha: sha // 传递 SHA 用于更新，如果是新文件则为 null
-            })
-          });
-
-          if (!uploadRes.ok) {
-            const err = await uploadRes.json();
-            throw new Error(`上传失败：${uploadRes.status} - ${err.message}`);
+          const text = atob(data.content.replace(/\n/g, ""));
+          if (/[\x00-\x08\x0E-\x1F]{3,}/.test(text)) {
+            contentArea.value = "[非文本文件，无法显示]";
+          } else {
+            contentArea.value = text;
           }
+        } catch {
+          contentArea.value = "[内容解码失败]";
+        }
 
-          log.textContent += "\n✅ 文件上传成功。";
-          const uploadData = await uploadRes.json();
-          currentSHA = uploadData.content.sha; // 获取文件的新 SHA
-
-          // 预览文件内容
-          try {
-            const text = atob(uploadData.content.content.replace(/\n/g, ""));
-            if (/[\x00-\x08\x0E-\x1F]{3,}/.test(text)) {
-              contentArea.value = "[非文本文件，无法显示]";
-            } else {
-              contentArea.value = text;
-            }
-          } catch {
-            contentArea.value = "[内容解码失败]";
-          }
-
-          // 生成链接
-          const encodedPath = encodePath(path);
-
-          const githubPageLink = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}/blob/${BRANCH_NAME}/${encodedPath}`;
-          const rawLink = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/${BRANCH_NAME}/${encodedPath}`;
-          shareDiv.innerHTML = `📎 <b>GitHub 查看链接：</b><br>
+        const encodedPath = encodePath(path);
+        const githubPageLink = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}/blob/${BRANCH_NAME}/${encodedPath}`;
+        const rawLink = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/${BRANCH_NAME}/${encodedPath}`;
+        shareDiv.innerHTML = `📎 <b>GitHub 查看链接：</b><br>
 <a href="${githubPageLink}" target="_blank">${githubPageLink}</a><br><br>
 📥 <b>直链下载（程序可用）:</b><br>
 <a href="${rawLink}" target="_blank">${rawLink}</a>`;
 
-          log.textContent += "\n✨ 文件已发布。";
-
-          // 3. 触发 GitHub Actions 工作流来调度删除
-          log.textContent += `\n🚀 正在触发 GitHub Actions 调度自动删除 (${deleteTime} 秒后)...`;
-          const workflowDispatchUrl = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/dispatches`;
-          
-          const dispatchRes = await fetch(workflowDispatchUrl, {
-            method: "POST",
-            headers: {
-              Authorization: `token ${token}`,
-              Accept: "application/vnd.github.v3+json",
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              event_type: "file-upload-delete-schedule", // 这是一个自定义事件类型，Actions 工作流会监听
-              client_payload: {
-                file_path: path,
-                file_sha_at_upload: currentSHA, // 记录上传时的 SHA
-                delete_after_seconds: deleteTime
-              }
-            })
-          });
-
-          if (!dispatchRes.ok) {
-            const err = await dispatchRes.json();
-            throw new Error(`触发 GitHub Actions 失败：${dispatchRes.status} - ${err.message}`);
-          }
-
-          log.textContent += "\n✅ 成功触发 GitHub Actions 调度删除！";
-          log.textContent += "\n你可以在 GitHub Actions 页面查看调度状态和删除进度。";
-          
-        } catch (error) {
-          log.textContent += `\n❌ 操作失败：${error.message}`;
-        }
+        deleteBtn.style.display = "inline-block";
+        log.textContent += "\n⏳ 文件将在指定时间后自动删除";
+        startCountdown(token, path);
       };
 
       reader.readAsDataURL(file);
     }
 
-    // 以下函数现在主要用于手动删除（如果保留按钮）或仅作展示，不再是自动删除的核心
     function startCountdown(token, path) {
-      // 这里的倒计时只用于前端显示，不控制实际删除
       countdownSeconds = parseInt(document.getElementById("deleteTimeInput").value, 10) || 60;
       updateCountdownDisplay();
 
@@ -259,7 +220,7 @@
 
         if (countdownSeconds <= 0) {
           clearInterval(countdownTimer);
-          document.getElementById("countdown").textContent = "⏳ 自动删除已在 GitHub Actions 中调度执行。";
+          deleteFile(true, token, path);
         }
       }, 1000);
     }
@@ -267,13 +228,12 @@
     function updateCountdownDisplay() {
       const div = document.getElementById("countdown");
       if (countdownSeconds > 0) {
-        div.textContent = `⏱️ 已在后台调度，将在 GitHub Actions 执行删除（你也可以立即手动删除）`;
+        div.textContent = `⏱️ 将在 ${countdownSeconds} 秒后自动删除（你也可以现在手动删除）`;
       } else {
         div.textContent = "";
       }
     }
 
-    // 立即删除函数：如果保留手动删除按钮，这个函数仍然有用
     async function deleteFile(auto = false, tokenOverride = null, pathOverride = null) {
       let token;
       try {
@@ -295,9 +255,7 @@
         return;
       }
 
-      if (!auto && !confirm("确定要立即删除该文件？此操作将立即执行，且与自动调度无关。")) return;
-
-      log.textContent = `🗑️ 正在立即删除文件 ${path}...`;
+      if (!auto && !confirm("确定要立即删除该文件？")) return;
 
       const res = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${path}`, {
         method: "DELETE",
@@ -306,24 +264,71 @@
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          message: `Manual delete from UI`,
-          sha: currentSHA // 使用之前上传文件得到的 SHA
+          message: `Auto-delete ${path}`,
+          sha: currentSHA
         })
       });
 
       if (res.ok) {
-        log.textContent = `✅ 文件 ${path} 已成功立即删除！`;
+        log.textContent = `✅ 文件 ${path} 已成功删除`;
         contentArea.value = "";
         deleteBtn.style.display = "none";
         countdownDiv.textContent = "";
-        shareLink.innerHTML = "";
+        shareDiv.innerHTML = "";
         currentSHA = null;
-        clearInterval(countdownTimer); // 清除前端倒计时
-        // 注意：如果文件被手动删除，对应的 GitHub Issue 不会被自动关闭。
-        // 可能需要手动去 Issues 页面关闭。
       } else {
         const err = await res.json();
-        log.textContent = `❌ 立即删除失败：${res.status} - ${err.message}`;
+        log.textContent = `❌ 删除失败：${res.status} - ${err.message}`;
+      }
+
+      clearInterval(countdownTimer);
+    }
+
+    async function registerDeletionTask(token, path, sha) {
+      const taskPath = "Notes/pending_deletion.json";
+      const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${taskPath}`;
+      const now = Date.now();
+      const deleteAfter = parseInt(document.getElementById("deleteTimeInput").value, 10) * 1000;
+      const newTask = { path, sha, deleteAt: now + deleteAfter };
+
+      try {
+        const res = await fetch(url, {
+          headers: { Authorization: `token ${token}` }
+        });
+
+        let tasks = [];
+        let fileSHA = null;
+
+        if (res.ok) {
+          const data = await res.json();
+          fileSHA = data.sha;
+          tasks = JSON.parse(atob(data.content.replace(/\n/g, '')));
+        }
+
+        tasks.push(newTask);
+        const map = {};
+        for (let t of tasks) map[t.path] = t;
+        tasks = Object.values(map);
+
+        const updateRes = await fetch(url, {
+          method: "PUT",
+          headers: {
+            Authorization: `token ${token}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            message: `Register delete task for ${path}`,
+            content: btoa(JSON.stringify(tasks, null, 2)),
+            sha: fileSHA
+          })
+        });
+
+        if (!updateRes.ok) {
+          const err = await updateRes.json();
+          console.warn("⚠️ 删除任务写入失败：", err.message);
+        }
+      } catch (e) {
+        console.error("❌ 删除任务写入异常", e);
       }
     }
   </script>
