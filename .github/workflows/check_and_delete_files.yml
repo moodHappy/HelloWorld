@@ -1,117 +1,30 @@
-name: Check and Delete Scheduled Files
+name: Check and Delete Expired Files
 
 on:
   schedule:
-    # Runs every minute, adjust as needed. Minimum granularity is 1 minute.
-    - cron: '* * * * *' # Changed from '0 * * * *' to '* * * * *'
-  workflow_dispatch: # Allows manual triggering for testing
+    - cron: '*/1 * * * *'  # 每分钟执行一次
+  workflow_dispatch:      # 可手动触发
 
 jobs:
-  delete_old_files:
+  delete_expired:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
+      - name: Check out repository
         uses: actions/checkout@v4
-
-      - name: Find and Delete Scheduled Files
-        uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GH_TOKEN }}
-          script: |
-            const now = Math.floor(Date.now() / 1000); // Current Unix timestamp in seconds
-            const repoOwner = context.repo.owner;
-            const repoName = context.repo.repo;
+          persist-credentials: false  # 避免使用默认 token
 
-            console.log(`Current timestamp: ${now}`);
-            console.log('Searching for issues with "auto-delete" label...');
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
 
-            // Search for open issues with the 'auto-delete' label
-            const issues = await github.rest.search.issuesAndPullRequests({
-              q: `label:auto-delete repo:${repoOwner}/${repoName} is:open`
-            });
+      - name: Install dependencies
+        run: npm install axios
 
-            for (const issue of issues.data.items) {
-              const issueBody = issue.body;
-              console.log(`Processing Issue #${issue.number}: ${issue.title}`);
-
-              // Extract file path and deletion timestamp from the issue body
-              const filePathMatch = issueBody.match(/File Path: `([^`]+)`/);
-              const deletionTimestampMatch = issueBody.match(/Delete By Timestamp \(Unix\): `(\d+)`/);
-              const fileShaMatch = issueBody.match(/File SHA \(at upload\): `([^`]+)`/);
-
-              if (filePathMatch && deletionTimestampMatch && fileShaMatch) {
-                const filePath = filePathMatch[1];
-                const deleteByTimestamp = parseInt(deletionTimestampMatch[1], 10);
-                const fileSha = fileShaMatch[1]; // Store SHA from issue for logging, but use current SHA for deletion
-
-                console.log(`  File: ${filePath}, Scheduled for deletion by: ${deleteByTimestamp}`);
-
-                if (now >= deleteByTimestamp) {
-                  console.log(`  Time to delete ${filePath}...`);
-                  try {
-                    // Get current file SHA before attempting to delete
-                    let currentFileSha = null;
-                    try {
-                        const fileDataResponse = await github.rest.repos.getContent({
-                            owner: repoOwner,
-                            repo: repoName,
-                            path: filePath,
-                            ref: context.ref // Use current branch (e.g., master or main)
-                        });
-                        currentFileSha = fileDataResponse.data.sha;
-                        console.log(`  Current SHA of ${filePath}: ${currentFileSha}`);
-                    } catch (e) {
-                        if (e.status === 404) {
-                            console.log(`  File ${filePath} not found, it might have been deleted manually or moved.`);
-                            // If file is already gone, close the issue to clean up
-                            await github.rest.issues.update({
-                                owner: repoOwner,
-                                repo: repoName,
-                                issue_number: issue.number,
-                                state: 'closed',
-                                body: issueBody + `\n\n_Auto-closed: File was not found when deletion was attempted._`
-                            });
-                            continue; // Move to the next scheduled deletion issue
-                        } else {
-                            throw e; // Re-throw other errors
-                        }
-                    }
-
-                    // Attempt to delete the file using its *current* SHA
-                    const deleteResponse = await github.rest.repos.deleteFile({
-                      owner: repoOwner,
-                      repo: repoName,
-                      path: filePath,
-                      message: `Auto-deleted file: ${filePath} (scheduled by workflow)`,
-                      sha: currentFileSha, // Crucially, use the *current* SHA for deletion
-                      branch: context.ref // Delete from the current branch (e.g., master or main)
-                    });
-                    console.log(`  Successfully deleted ${filePath}.`);
-
-                    // Close the issue to mark the deletion as complete
-                    await github.rest.issues.update({
-                      owner: repoOwner,
-                      repo: repoName,
-                      issue_number: issue.number,
-                      state: 'closed',
-                      body: issueBody + `\n\n_Auto-deleted on ${new Date().toISOString()}._`
-                    });
-                    console.log(`  Closed issue #${issue.number}.`);
-
-                  } catch (error) {
-                    console.error(`  Failed to delete ${filePath}:`, error.message);
-                    // Add a comment to the issue about the failure
-                    await github.rest.issues.createComment({
-                      owner: repoOwner,
-                      repo: repoName,
-                      issue_number: issue.number,
-                      body: `Auto-deletion failed on ${new Date().toISOString()}: ${error.message}`
-                    });
-                  }
-                } else {
-                  console.log(`  Not yet time to delete ${filePath}.`);
-                }
-              } else {
-                console.warn(`  Could not parse file path or timestamp from issue body for #${issue.number}. Skipping.`);
-              }
-            }
+      - name: Run deletion script
+        run: node .github/scripts/delete_expired.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPO: moodHappy/HelloWorld
