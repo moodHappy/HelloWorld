@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GitHub 文件上传 + 自动删除助手</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    input, button, textarea {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    button {
+      cursor: pointer;
+    }
+    textarea {
+      height: 150px;
+    }
+    #log {
+      white-space: pre-wrap;
+      color: green;
+    }
+    #countdown {
+      color: red;
+      font-weight: bold;
+    }
+    #shareLink a {
+      word-break: break-all;
+      color: blue;
+    }
+    @media (max-width: 480px) {
+      h2 { font-size: 20px; }
+      input, button, textarea {
+        font-size: 16px;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>📦 GitHub 文件上传 + 自动删除助手</h2>
+
+  <label>GitHub Token：</label>
+  <input id="tokenInput" type="password" placeholder="请输入你的 GitHub Token" />
+
+  <input id="fileInput" type="file" onchange="autoFillPath()" />
+  <input id="pathInput" placeholder="上传到 GitHub 路径，例如 Notes/test.txt" />
+
+  <label>删除时间 (秒):</label>
+  <input id="deleteTimeInput" type="number" value="60" min="1" />
+
+  <button onclick="uploadFile()">⬆️ 上传</button>
+  <button id="deleteBtn" style="display:none; background:#f44; color:#fff;" onclick="deleteFile()">🗑️ 立即删除</button>
+
+  <div id="countdown"></div>
+  <textarea id="content" placeholder="上传后的文本预览（非文本无法显示）"></textarea>
+  <div id="shareLink"></div>
+  <div id="log"></div>
+
+  <script>
+    const GITHUB_USERNAME = "moodHappy";
+    const GITHUB_REPO = "HelloWorld";
+
+    let currentSHA = null;
+    let countdownTimer = null;
+    let countdownSeconds = 60;
+
+    window.onload = () => {
+      const savedToken = localStorage.getItem("github_token");
+      if (savedToken) {
+        document.getElementById("tokenInput").value = savedToken;
+      }
+    };
+
+    function getToken() {
+      const token = document.getElementById("tokenInput").value.trim();
+      if (!token) throw new Error("请先输入 GitHub Token");
+      localStorage.setItem("github_token", token); // 记住 Token
+      return token;
+    }
+
+    function autoFillPath() {
+      const file = document.getElementById("fileInput").files[0];
+      if (file) {
+        const pathInput = document.getElementById("pathInput");
+        if (!pathInput.value) pathInput.value = "Notes/" + file.name;
+      }
+    }
+
+    async function uploadFile() {
+      let token;
+      try {
+        token = getToken();
+      } catch (e) {
+        alert(e.message);
+        return;
+      }
+
+      const file = document.getElementById("fileInput").files[0];
+      const path = document.getElementById("pathInput").value.trim();
+      const log = document.getElementById("log");
+      const contentArea = document.getElementById("content");
+      const deleteBtn = document.getElementById("deleteBtn");
+      const countdownDiv = document.getElementById("countdown");
+      const shareDiv = document.getElementById("shareLink");
+
+      if (!file || !path) {
+        log.textContent = "❌ 请选择文件并填写上传路径";
+        return;
+      }
+
+      if (file.size > 100 * 1024 * 1024) {
+        log.textContent = "❌ GitHub 不支持上传超过 100MB 的文件";
+        return;
+      }
+
+      log.textContent = `📤 正在上传 ${file.name}...`;
+      deleteBtn.style.display = "none";
+      contentArea.value = "";
+      countdownDiv.textContent = "";
+      shareDiv.innerHTML = "";
+      clearInterval(countdownTimer);
+      currentSHA = null;
+
+      const reader = new FileReader();
+      reader.onload = async () => {
+        const base64Data = reader.result.split(',')[1];
+        const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${path}`;
+
+        let sha = null;
+        try {
+          const checkRes = await fetch(url, {
+            headers: { Authorization: `token ${token}` }
+          });
+          if (checkRes.ok) {
+            const data = await checkRes.json();
+            sha = data.sha;
+            log.textContent += "\n📄 文件已存在，将覆盖";
+          }
+        } catch (e) {
+          log.textContent += "\n⚠️ 检查文件失败：" + e.message;
+        }
+
+        const res = await fetch(url, {
+          method: "PUT",
+          headers: {
+            Authorization: `token ${token}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            message: `Upload ${file.name}`,
+            content: base64Data,
+            sha: sha
+          })
+        });
+
+        if (!res.ok) {
+          const err = await res.json();
+          log.textContent += `\n❌ 上传失败：${res.status} - ${err.message}`;
+          return;
+        }
+
+        log.textContent += "\n✅ 上传成功，正在确认...";
+        const confirmRes = await fetch(url, {
+          headers: { Authorization: `token ${token}` }
+        });
+
+        const data = await confirmRes.json();
+        currentSHA = data.sha;
+
+        try {
+          const text = atob(data.content.replace(/\n/g, ""));
+          if (/[\x00-\x08\x0E-\x1F]{3,}/.test(text)) {
+            contentArea.value = "[非文本文件，无法显示]";
+          } else {
+            contentArea.value = text;
+          }
+        } catch {
+          contentArea.value = "[内容解码失败]";
+        }
+
+        // 生成链接
+        const githubPageLink = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}/blob/main/${path}`;
+        const rawLink = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/main/${path}`;
+        shareDiv.innerHTML = `📎 <b>GitHub 查看链接：</b><br>
+<a href="${githubPageLink}" target="_blank">${githubPageLink}</a><br><br>
+📥 <b>直链下载（程序可用）:</b><br>
+<a href="${rawLink}" target="_blank">${rawLink}</a>`;
+
+        deleteBtn.style.display = "inline-block";
+        log.textContent += "\n⏳ 文件将在指定时间后自动删除";
+
+        startCountdown(token, path);
+      };
+
+      reader.readAsDataURL(file);
+    }
+
+    function startCountdown(token, path) {
+      countdownSeconds = parseInt(document.getElementById("deleteTimeInput").value, 10) || 60;
+      updateCountdownDisplay();
+
+      countdownTimer = setInterval(() => {
+        countdownSeconds--;
+        updateCountdownDisplay();
+
+        if (countdownSeconds <= 0) {
+          clearInterval(countdownTimer);
+          deleteFile(true, token, path);
+        }
+      }, 1000);
+    }
+
+    function updateCountdownDisplay() {
+      const div = document.getElementById("countdown");
+      if (countdownSeconds > 0) {
+        div.textContent = `⏱️ 将在 ${countdownSeconds} 秒后自动删除（你也可以现在手动删除）`;
+      } else {
+        div.textContent = "";
+      }
+    }
+
+    async function deleteFile(auto = false, tokenOverride = null, pathOverride = null) {
+      let token;
+      try {
+        token = tokenOverride || getToken();
+      } catch (e) {
+        alert(e.message);
+        return;
+      }
+
+      const path = pathOverride || document.getElementById("pathInput").value.trim();
+      const log = document.getElementById("log");
+      const contentArea = document.getElementById("content");
+      const deleteBtn = document.getElementById("deleteBtn");
+      const countdownDiv = document.getElementById("countdown");
+      const shareDiv = document.getElementById("shareLink");
+
+      if (!currentSHA || !path) {
+        log.textContent = "❌ 无法删除：缺少 SHA 或路径";
+        return;
+      }
+
+      if (!auto && !confirm("确定要立即删除该文件？")) return;
+
+      const res = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${path}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `token ${token}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          message: `Auto-delete ${path}`,
+          sha: currentSHA
+        })
+      });
+
+      if (res.ok) {
+        log.textContent = `✅ 文件 ${path} 已成功删除`;
+        contentArea.value = "";
+        deleteBtn.style.display = "none";
+        countdownDiv.textContent = "";
+        shareDiv.innerHTML = "";
+        currentSHA = null;
+      } else {
+        const err = await res.json();
+        log.textContent = `❌ 删除失败：${res.status} - ${err.message}`;
+      }
+
+      clearInterval(countdownTimer);
+    }
+  </script>
+</body>
+</html>
