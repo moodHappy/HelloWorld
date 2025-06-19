@@ -69,10 +69,16 @@
   <script>
     const GITHUB_USERNAME = "moodHappy";
     const GITHUB_REPO = "HelloWorld";
+    const BRANCH_NAME = "master"; // 根据你的仓库默认分支改成 master 或 main
 
     let currentSHA = null;
     let countdownTimer = null;
     let countdownSeconds = 60;
+
+    // 将路径按 / 分割，对每段分别 encodeURIComponent，再拼接，防止 / 变成 %2F
+    function encodePath(path) {
+      return path.split('/').map(encodeURIComponent).join('/');
+    }
 
     window.onload = () => {
       const savedToken = localStorage.getItem("github_token");
@@ -188,9 +194,11 @@
           contentArea.value = "[内容解码失败]";
         }
 
-        // 生成链接
-        const githubPageLink = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}/blob/main/${path}`;
-        const rawLink = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/main/${path}`;
+        // 生成正确编码的分享链接
+        const encodedPath = encodePath(path);
+
+        const githubPageLink = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}/blob/${BRANCH_NAME}/${encodedPath}`;
+        const rawLink = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/${BRANCH_NAME}/${encodedPath}`;
         shareDiv.innerHTML = `📎 <b>GitHub 查看链接：</b><br>
 <a href="${githubPageLink}" target="_blank">${githubPageLink}</a><br><br>
 📥 <b>直链下载（程序可用）:</b><br>
