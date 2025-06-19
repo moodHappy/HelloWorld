@@ -13,6 +13,8 @@
       background: #f9f9f9;
       /* 确保 body 不会溢出，尤其在移动端 */
       overflow-x: hidden;
+      /* Add padding-bottom to ensure content isn't obscured by fixedBar */
+      padding-bottom: 90px; /* Adjust this value if fixedBar height changes. Approx fixedBar height + its bottom margin */
     }
     input, button, textarea {
       width: 100%;
@@ -44,6 +46,8 @@
       border: none;
       background: none;
       box-sizing: border-box;
+      /* Ensure shareLink content is visible and does not get cut off */
+      padding-bottom: 20px; /* Give some space below the links */
     }
     #shareLink a {
       color: blue;
@@ -84,7 +88,6 @@
     }
     #fixedBar button {
       flex: 1 1 0%; /* flex-grow: 1, flex-shrink: 1, flex-basis: 0%. 允许按钮充分收缩 */
-      /* min-width: 30%; /* 移除或调整，因为它可能阻止按钮收缩 */
       min-width: unset; /* 移除之前设置的最小宽度，让 flex 属性完全控制 */
     }
     @media (max-width: 480px) {
@@ -114,12 +117,12 @@
   <div id="countdown"></div>
   <div id="savingStatus"></div>
   <textarea id="content" placeholder="可编辑的文本区，将自动同步到 transfer.txt"></textarea>
+  <div id="shareLink"></div> <div id="log"></div>
   <div id="fixedBar">
     <button onclick="manualSaveTransfer()">💾 提交</button>
     <button onclick="copyTransfer()">📋 复制</button>
   </div>
-  <div id="shareLink"></div>
-  <div id="log"></div>
+
   <script>
     const GITHUB_USERNAME = "moodHappy";
     const GITHUB_REPO = "HelloWorld";
