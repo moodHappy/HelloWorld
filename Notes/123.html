@@ -41,7 +41,7 @@
 <script>
 const GITHUB_USERNAME = "moodHappy";
 const GITHUB_REPO = "HelloWorld";
-const BRANCH_NAME = "master"; // 根据实际修改
+const BRANCH_NAME = "master";
 
 let currentSHA = null;
 let countdownTimer = null;
@@ -155,6 +155,12 @@ async function uploadFile() {
     deleteBtn.style.display = "inline-block";
     log.textContent += "\n⏳ 文件将在指定时间后自动删除";
 
+    // ✅ 显示人类时间
+    const readableTime = new Date(deleteAt).toLocaleString();
+    log.textContent += `\n🕒 将于 ${readableTime} 自动删除`;
+    console.log("[Debug] deleteAt =", deleteAt);
+    console.log("[Debug] 人类时间 =", readableTime);
+
     await updatePendingDeletionFile({ path: path, sha: currentSHA, deleteAt: deleteAt });
     startCountdown(token, path);
   };
@@ -165,7 +171,6 @@ async function uploadFile() {
 function startCountdown(token, path) {
   countdownSeconds = parseInt(document.getElementById("deleteTimeInput").value, 10) || 60;
   updateCountdownDisplay();
-
   countdownTimer = setInterval(() => {
     countdownSeconds--;
     updateCountdownDisplay();
