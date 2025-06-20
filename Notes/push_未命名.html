@@ -105,7 +105,7 @@
   <input id="pathInput" />
 
   <p style="color: gray; font-size: 0.9em;">
-    文件将在上传后大约 12 小时后删除。实际删除时间取决于 GitHub Actions 的运行周期。
+    上传的文件将在大约 12 小时后被 GitHub Actions 自动删除。
   </p>
 
   <div id="savingStatus"></div>
@@ -118,17 +118,17 @@
   <div id="fixedBar">
     <button onclick="processUploadOrSubmit()">⬆️ 上传</button>
     <button onclick="copyTransfer()">📋 复制</button>
+    <button onclick="deleteLastUploadedFile()">🗑️ 删除</button>
   </div>
 
   <script>
     const GITHUB_USERNAME = "moodHappy";
     const GITHUB_REPO = "HelloWorld";
     const BRANCH_NAME = "master";
-    const UPLOAD_PREFIX = "push_"; // Define the prefix
-    const DELETE_TIME_HOURS = 12; // Hardcode deletion time to 12 hours
-
+    const UPLOAD_PREFIX = "push_";
     let currentSHA = null;
     let transferTxtSHA = null;
+    let lastUploadedFilePath = null; // Store the path of the last uploaded file
 
     function encodePath(path) {
       return path.split('/').map(encodeURIComponent).join('/');
@@ -153,7 +153,6 @@
       const file = document.getElementById("fileInput").files[0];
       if (file) {
         const pathInput = document.getElementById("pathInput");
-        // Add the prefix to the filename
         if (!pathInput.value) pathInput.value = "Notes/" + UPLOAD_PREFIX + file.name;
       }
     }
@@ -176,6 +175,7 @@
       log.textContent = "";
       shareDiv.innerHTML = "";
       currentSHA = null;
+      lastUploadedFilePath = null; // Clear previous path on new upload attempt
 
       if (file) {
         if (!pathInput) {
@@ -191,7 +191,6 @@
         const reader = new FileReader();
         reader.onload = async () => {
           const base64Data = reader.result.split(',')[1];
-          // Ensure the uploaded path includes the prefix if not already present
           const finalPath = pathInput.includes(UPLOAD_PREFIX) ? pathInput : "Notes/" + UPLOAD_PREFIX + file.name;
           const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${finalPath}`;
 
@@ -223,19 +222,21 @@
           });
           const data = await confirmRes.json();
           currentSHA = data.sha;
+          lastUploadedFilePath = finalPath; // Save the path of the successfully uploaded file
 
-          const encodedPath = encodePath(finalPath); // Use finalPath here
+          const encodedPath = encodePath(finalPath);
           const githubPageLink = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}/blob/${BRANCH_NAME}/${encodedPath}`;
           const rawLink = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/${BRANCH_NAME}/${encodedPath}`;
           shareDiv.innerHTML = `📎 <b>GitHub 查看链接：</b><br><a href="${githubPageLink}" target="_blank">${githubPageLink}</a><br><br>📥 <b>直链下载:</b><br><a href="${rawLink}" target="_blank">${rawLink}</a>`;
 
-          // Calculate deletion time based on hardcoded DELETE_TIME_HOURS
-          const deleteAt = Date.now() + DELETE_TIME_HOURS * 60 * 60 * 1000; // Convert hours to milliseconds
+          // Fixed deletion time: 12 hours from now
+          const deleteTimeHours = 12;
+          const deleteAt = Date.now() + deleteTimeHours * 60 * 60 * 1000;
 
           try {
-            await updatePendingDeletion(finalPath, deleteAt, token); // Use finalPath here
-             log.textContent += `\n✅ 文件上传成功！`;
-              log.textContent += `\n⏳ 文件将在大约 ${DELETE_TIME_HOURS} 小时后被 GitHub Actions 自动删除。`;
+            await updatePendingDeletion(finalPath, deleteAt, token);
+            log.textContent += `\n✅ 文件上传成功！`;
+            log.textContent += `\n⏳ 文件将在大约 ${deleteTimeHours} 小时后被 GitHub Actions 自动删除。`;
           } catch (err) {
             log.textContent += `\n❌ 文件上传成功，但无法更新删除计划：${err.message}`;
           }
@@ -258,6 +259,64 @@
       }
     }
 
+    async function deleteLastUploadedFile() {
+      if (!lastUploadedFilePath) {
+        alert("没有最近上传的文件可以删除。");
+        return;
+      }
+
+      const confirmDelete = confirm(`确定要删除文件 "${lastUploadedFilePath}" 吗？`);
+      if (!confirmDelete) return;
+
+      let token;
+      try {
+        token = getToken();
+      } catch (e) {
+        alert(e.message);
+        return;
+      }
+
+      const log = document.getElementById("log");
+      const shareDiv = document.getElementById("shareLink");
+      log.textContent = `🗑️ 正在删除 ${lastUploadedFilePath}...`;
+      shareDiv.innerHTML = "";
+
+      const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${lastUploadedFilePath}`;
+
+      try {
+        // Get the SHA of the file to be deleted
+        const checkRes = await fetch(url, {
+          headers: { Authorization: `token ${token}` }
+        });
+        if (!checkRes.ok) {
+          const err = await checkRes.json();
+          throw new Error(`无法获取文件信息：${checkRes.status} - ${err.message || checkRes.statusText}`);
+        }
+        const fileData = await checkRes.json();
+        const shaToDelete = fileData.sha;
+
+        const res = await fetch(url, {
+          method: "DELETE",
+          headers: {
+            Authorization: `token ${token}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ message: `Delete ${lastUploadedFilePath}`, sha: shaToDelete })
+        });
+
+        if (!res.ok) {
+          const err = await res.json();
+          throw new Error(`删除失败：${res.status} - ${err.message || res.statusText}`);
+        }
+
+        log.textContent = `✅ 文件 ${lastUploadedFilePath} 已成功删除。`;
+        lastUploadedFilePath = null; // Clear the path after successful deletion
+      } catch (err) {
+        log.textContent = `❌ 删除失败：${err.message}`;
+      }
+    }
+
+
     async function updatePendingDeletion(filePath, deleteAt, token) {
       const pendingDeletionFileName = "pending_deletion.json";
       const pendingDeletionPath = `Notes/${pendingDeletionFileName}`;
@@ -270,6 +329,7 @@
         if (res.ok) {
           const json = await res.json();
           sha = json.sha;
+          // Decode content: Base64 -> UTF-8 -> parse JSON
           data = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
         } else if (res.status !== 404) {
           throw new Error(`无法获取 ${pendingDeletionFileName}: ${res.status} - ${res.statusText}`);
