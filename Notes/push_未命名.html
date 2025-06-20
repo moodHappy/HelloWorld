@@ -104,8 +104,11 @@
   <label>上传路径:</label>
   <input id="pathInput" />
 
-  <label>删除延迟 (小时):</label>
-  <input id="deleteTimeInput" type="number" value="12" min="20" />
+  <label>删除延迟 (分钟):</label>
+  <input id="deleteTimeInput" type="number" value="20" min="20" />
+  <p style="color: gray; font-size: 0.9em;">
+    文件将在上传后至少 20 分钟删除。实际删除时间取决于 GitHub Actions 的运行周期。
+  </p>
 
   <div id="savingStatus"></div>
   <div id="shareLink"></div>
