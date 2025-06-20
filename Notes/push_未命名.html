@@ -148,11 +148,14 @@
     const GITHUB_REPO = "HelloWorld";
     const BRANCH_NAME = "master";
     const UPLOAD_PREFIX = "push_";
-    let transferTxtSHA = null;
+    const PREVIEW_FILE_PATH = "Notes/Preview_and_Delete.json"; // New: Path to the preview file on GitHub
 
-    // Use localStorage for persistence
-    const LAST_UPLOADED_FILE_KEY = "lastUploadedFilePath";
-    const LAST_UPLOADED_SHA_KEY = "lastUploadedFileSHA";
+    let transferTxtSHA = null;
+    let previewFileSHA = null; // To store SHA of Preview_and_Delete.json
+
+    // Variables to hold the last uploaded file info retrieved from GitHub
+    let currentLastUploadedFilePath = null;
+    let currentLastUploadedFileSHA = null;
 
     function encodePath(path) {
       return path.split('/').map(encodeURIComponent).join('/');
@@ -163,7 +166,7 @@
       if (savedToken) {
         document.getElementById("tokenInput").value = savedToken;
         await loadTransfer();
-        await displayLastUploadedFile(); // Load and display last uploaded file
+        await loadLastUploadedFileInfoFromGitHub(); // Load and display last uploaded file from GitHub
       }
     };
 
@@ -199,8 +202,10 @@
 
       log.textContent = "";
       shareDiv.innerHTML = "";
-      localStorage.removeItem(LAST_UPLOADED_FILE_KEY); // Clear previous path on new upload attempt
-      localStorage.removeItem(LAST_UPLOADED_SHA_KEY);
+      // Clear current display before new upload attempt
+      document.getElementById("lastUploadedFileInfo").style.display = 'none';
+      document.getElementById("lastFileName").textContent = "";
+      document.getElementById("lastFileLinks").innerHTML = "";
 
       if (file) {
         if (!pathInput) {
@@ -219,12 +224,12 @@
           const finalPath = pathInput.includes(UPLOAD_PREFIX) ? pathInput : "Notes/" + UPLOAD_PREFIX + file.name;
           const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${finalPath}`;
 
-          let sha = null;
+          let fileSHA = null;
           try {
             const checkRes = await fetch(url, {
               headers: { Authorization: `token ${token}` }
             });
-            if (checkRes.ok) sha = (await checkRes.json()).sha;
+            if (checkRes.ok) fileSHA = (await checkRes.json()).sha;
           } catch (e) { }
 
           const res = await fetch(url, {
@@ -233,7 +238,7 @@
               Authorization: `token ${token}`,
               "Content-Type": "application/json"
             },
-            body: JSON.stringify({ message: `Upload ${file.name}`, content: base64Data, sha })
+            body: JSON.stringify({ message: `Upload ${file.name}`, content: base64Data, sha: fileSHA })
           });
 
           if (!res.ok) {
@@ -246,9 +251,12 @@
             headers: { Authorization: `token ${token}` }
           });
           const data = await confirmRes.json();
-          const currentSHA = data.sha;
-          localStorage.setItem(LAST_UPLOADED_FILE_KEY, finalPath); // Save the path
-          localStorage.setItem(LAST_UPLOADED_SHA_KEY, currentSHA); // Save the SHA
+          const uploadedFileSHA = data.sha;
+
+          // Update the preview file on GitHub
+          await updatePreviewFileOnGitHub(finalPath, uploadedFileSHA, token);
+          currentLastUploadedFilePath = finalPath;
+          currentLastUploadedFileSHA = uploadedFileSHA;
 
           const encodedPath = encodePath(finalPath);
           const githubPageLink = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}/blob/${BRANCH_NAME}/${encodedPath}`;
@@ -263,7 +271,7 @@
             await updatePendingDeletion(finalPath, deleteAt, token);
             log.textContent += `\n✅ 文件上传成功！`;
             log.textContent += `\n⏳ 文件将在大约 ${deleteTimeHours} 小时后被 GitHub Actions 自动删除。`;
-            await displayLastUploadedFile(); // Update the displayed info
+            await displayLastUploadedFile(); // Update the displayed info from current state
           } catch (err) {
             log.textContent += `\n❌ 文件上传成功，但无法更新删除计划：${err.message}`;
           }
@@ -286,16 +294,13 @@
       }
     }
 
-    async function deleteLastUploadedFile(fromPreview = false) {
-      const lastUploadedFilePath = localStorage.getItem(LAST_UPLOADED_FILE_KEY);
-      const shaToDelete = localStorage.getItem(LAST_UPLOADED_SHA_KEY);
-
-      if (!lastUploadedFilePath || !shaToDelete) {
+    async function deleteLastUploadedFile() {
+      if (!currentLastUploadedFilePath || !currentLastUploadedFileSHA) {
         alert("没有最近上传的文件可以删除。");
         return;
       }
 
-      const confirmDelete = confirm(`确定要删除文件 "${lastUploadedFilePath}" 吗？`);
+      const confirmDelete = confirm(`确定要删除文件 "${currentLastUploadedFilePath}" 吗？`);
       if (!confirmDelete) return;
 
       let token;
@@ -308,10 +313,10 @@
 
       const log = document.getElementById("log");
       const shareDiv = document.getElementById("shareLink");
-      log.textContent = `🗑️ 正在删除 ${lastUploadedFilePath}...`;
+      log.textContent = `🗑️ 正在删除 ${currentLastUploadedFilePath}...`;
       shareDiv.innerHTML = "";
 
-      const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${lastUploadedFilePath}`;
+      const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${currentLastUploadedFilePath}`;
 
       try {
         const res = await fetch(url, {
@@ -320,7 +325,7 @@
             Authorization: `token ${token}`,
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({ message: `Delete ${lastUploadedFilePath}`, sha: shaToDelete })
+          body: JSON.stringify({ message: `Delete ${currentLastUploadedFilePath}`, sha: currentLastUploadedFileSHA })
         });
 
         if (!res.ok) {
@@ -328,9 +333,11 @@
           throw new Error(`删除失败：${res.status} - ${err.message || res.statusText}`);
         }
 
-        log.textContent = `✅ 文件 ${lastUploadedFilePath} 已成功删除。`;
-        localStorage.removeItem(LAST_UPLOADED_FILE_KEY); // Clear the path after successful deletion
-        localStorage.removeItem(LAST_UPLOADED_SHA_KEY); // Clear the SHA
+        log.textContent = `✅ 文件 ${currentLastUploadedFilePath} 已成功删除。`;
+        // Clear the preview file on GitHub
+        await updatePreviewFileOnGitHub(null, null, token); // Pass nulls to clear
+        currentLastUploadedFilePath = null; // Clear local state
+        currentLastUploadedFileSHA = null;
         document.getElementById("lastUploadedFileInfo").style.display = 'none'; // Hide the preview
         document.getElementById("lastFileName").textContent = "";
         document.getElementById("lastFileLinks").innerHTML = "";
@@ -341,18 +348,16 @@
     }
 
     async function displayLastUploadedFile() {
-      const lastUploadedFilePath = localStorage.getItem(LAST_UPLOADED_FILE_KEY);
-      const lastUploadedFileSHA = localStorage.getItem(LAST_UPLOADED_SHA_KEY);
       const fileInfoDiv = document.getElementById("lastUploadedFileInfo");
       const fileNameP = document.getElementById("lastFileName");
       const fileLinksP = document.getElementById("lastFileLinks");
 
-      if (lastUploadedFilePath && lastUploadedFileSHA) {
-        const encodedPath = encodePath(lastUploadedFilePath);
+      if (currentLastUploadedFilePath && currentLastUploadedFileSHA) {
+        const encodedPath = encodePath(currentLastUploadedFilePath);
         const githubPageLink = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}/blob/${BRANCH_NAME}/${encodedPath}`;
         const rawLink = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/${BRANCH_NAME}/${encodedPath}`;
 
-        fileNameP.textContent = `文件名: ${lastUploadedFilePath.split('/').pop()}`;
+        fileNameP.textContent = `文件名: ${currentLastUploadedFilePath.split('/').pop()}`;
         fileLinksP.innerHTML = `
           <b>GitHub 查看链接：</b><br><a href="${githubPageLink}" target="_blank">${githubPageLink}</a><br>
           <b>直链下载:</b><br><a href="${rawLink}" target="_blank">${rawLink}</a>
@@ -360,6 +365,75 @@
         fileInfoDiv.style.display = 'block';
       } else {
         fileInfoDiv.style.display = 'none';
+      }
+    }
+
+    async function loadLastUploadedFileInfoFromGitHub() {
+      let token;
+      try {
+        token = getToken();
+      } catch (e) {
+        console.warn("Token not available, skipping loading last uploaded file info from GitHub.");
+        return;
+      }
+
+      const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${PREVIEW_FILE_PATH}`;
+      try {
+        const res = await fetch(url, { headers: { Authorization: `token ${token}` } });
+        if (res.ok) {
+          const data = await res.json();
+          previewFileSHA = data.sha; // Store SHA of the preview file
+          const content = JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, "")))));
+          if (content && content.path && content.sha) {
+            currentLastUploadedFilePath = content.path;
+            currentLastUploadedFileSHA = content.sha;
+            await displayLastUploadedFile();
+          } else {
+            console.log("Preview_and_Delete.json is empty or malformed.");
+            document.getElementById("lastUploadedFileInfo").style.display = 'none';
+          }
+        } else if (res.status === 404) {
+          console.log(`${PREVIEW_FILE_PATH} not found, initializing.`);
+          // File doesn't exist, will be created on first upload
+          document.getElementById("lastUploadedFileInfo").style.display = 'none';
+        } else {
+          console.error(`Failed to load ${PREVIEW_FILE_PATH}: ${res.status} - ${res.statusText}`);
+          alert(`⚠️ 获取最近上传文件信息失败: ${res.status}. 请检查Token或文件权限.`);
+          document.getElementById("lastUploadedFileInfo").style.display = 'none';
+        }
+      } catch (err) {
+        console.error(`Error loading ${PREVIEW_FILE_PATH}:`, err);
+        alert(`⚠️ 获取最近上传文件信息失败: ${err.message}.`);
+        document.getElementById("lastUploadedFileInfo").style.display = 'none';
+      }
+    }
+
+    async function updatePreviewFileOnGitHub(filePath, fileSHA, token) {
+      const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${PREVIEW_FILE_PATH}`;
+      let contentToSave = {};
+      if (filePath && fileSHA) {
+        contentToSave = { path: filePath, sha: fileSHA };
+      }
+
+      const base64Content = btoa(unescape(encodeURIComponent(JSON.stringify(contentToSave, null, 2))));
+      const message = filePath ? `Update last uploaded file info for ${filePath}` : `Clear last uploaded file info`;
+
+      try {
+        const putRes = await fetch(url, {
+          method: "PUT",
+          headers: { Authorization: `token ${token}`, "Content-Type": "application/json" },
+          body: JSON.stringify({ message: message, content: base64Content, sha: previewFileSHA })
+        });
+
+        if (!putRes.ok) {
+          const err = await putRes.json();
+          throw new Error(`无法更新 ${PREVIEW_FILE_PATH}: ${putRes.status} - ${err.message || putRes.statusText}`);
+        }
+        const data = await putRes.json();
+        previewFileSHA = data.content.sha; // Update SHA of the preview file itself
+      } catch (err) {
+        console.error(`Error updating ${PREVIEW_FILE_PATH}:`, err);
+        throw err; // Re-throw to be caught by calling function
       }
     }
 
@@ -376,7 +450,6 @@
         if (res.ok) {
           const json = await res.json();
           sha = json.sha;
-          // Decode content: Base64 -> UTF-8 -> parse JSON
           data = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
         } else if (res.status !== 404) {
           throw new Error(`无法获取 ${pendingDeletionFileName}: ${res.status} - ${res.statusText}`);
