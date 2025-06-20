@@ -5,105 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GitHub 文件同步助手</title>
   <style>
-    /* CSS Variables for theming and typography */
-    :root {
-      --bg-color: #f9f9f9;
-      --text-color: #222;
-      --textarea-bg-color: #fff;
-      --textarea-border-color: #ccc;
-      --article-bg-color: #fff;
-      --article-border-color: #ccc;
-      --status-color: #444;
-      --button-primary-bg: #4CAF50;
-      --button-secondary-bg: #2196F3;
-      --button-danger-bg: #f44336;
-      --modal-bg: rgba(0,0,0,0.5);
-      --modal-content-bg: #fff;
-      --input-border-color: #aaa;
-      --settings-icon-color: #333;
-
-      --primary-font: sans-serif;
-      --font-size: 17px;
-      --line-height: 1.6;
-    }
-
-    /* Dark Theme (optional) */
-    body.theme-dark {
-      --bg-color: #121212;
-      --text-color: #e0e0e0;
-      --textarea-bg-color: #1e1e1e;
-      --textarea-border-color: #444;
-      --article-bg-color: #1e1e1e;
-      --article-border-color: #444;
-      --status-color: #aaa;
-      --modal-content-bg: #2d2d2d;
-      --input-border-color: #555;
-      --settings-icon-color: #ccc;
-    }
-
-    /* Sepia Theme (optional) */
-    body.theme-sepia {
-      --bg-color: #f4f0e8;
-      --text-color: #5b4636;
-      --textarea-bg-color: #fdfaf3;
-      --textarea-border-color: #dcd3c3;
-      --article-bg-color: #fdfaf3;
-      --article-border-color: #dcd3c3;
-      --status-color: #5b4636;
-      --modal-content-bg: #fdfaf3;
-      --input-border-color: #c9bca8;
-      --settings-icon-color: #5b4636;
-    }
-
     body {
-      font-family: var(--primary-font);
-      background: var(--bg-color);
-      color: var(--text-color);
+      font-family: sans-serif;
       max-width: 600px;
       margin: auto;
       padding: 20px;
+      background: #f9f9f9;
       overflow-x: hidden;
-      padding-bottom: 90px; /* Space for fixed bar */
-      transition: background-color 0.3s, color 0.3s;
+      padding-bottom: 90px;
     }
-
-    h2, h3 {
-      color: var(--text-color);
-    }
-
-    input, button, textarea {
+    input, textarea {
       width: 100%;
       margin: 10px 0;
       padding: 10px;
-      font-size: var(--font-size);
+      font-size: 16px;
       box-sizing: border-box;
-      border-radius: 6px;
-      border: 1px solid var(--input-border-color);
-      background-color: var(--textarea-bg-color);
-      color: var(--text-color);
-      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
     }
-    textarea {
-      min-height: 150px;
-      resize: vertical;
-    }
-
     button {
       cursor: pointer;
-      background-color: var(--button-primary-bg);
-      border: none;
-      color: white;
-      padding: 10px 16px; /* Ensure consistent padding */
-      font-size: 16px; /* Ensure consistent font size */
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px 0;
     }
-    button.copy { background-color: var(--button-secondary-bg); }
-    button.delete { background-color: var(--button-danger-bg); }
-
+    textarea {
+      height: 150px;
+    }
     #log {
       white-space: pre-wrap;
-      color: var(--status-color); /* General status color for logs */
-      margin-top: 10px;
-      font-size: 0.9em;
+      color: green;
     }
     #shareLink {
       width: 100%;
@@ -115,20 +44,29 @@
       background: none;
       box-sizing: border-box;
       padding-bottom: 20px;
-      color: var(--text-color);
     }
     #shareLink a {
-      color: var(--button-secondary-bg); /* Use a consistent link color */
-      text-decoration: none;
+      color: blue;
     }
-    #shareLink a:hover {
-        text-decoration: underline;
-    }
-
     #savingStatus {
       float: right;
       font-size: 16px;
-      color: var(--status-color);
+      color: #666;
+    }
+    #tokenInputContainer {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    #tokenInputContainer input {
+        flex-grow: 1;
+        margin: 0;
+    }
+    #tokenInputContainer button {
+        margin: 0;
+        width: auto;
+        white-space: nowrap;
     }
     #fixedBar {
       position: fixed;
@@ -141,15 +79,14 @@
       display: flex;
       gap: 10px;
       padding: 10px;
-      background: var(--modal-content-bg); /* Use modal background for consistency */
+      background: #ffffffdd;
       backdrop-filter: blur(4px);
-      border-top: 1px solid var(--input-border-color);
+      border-top: 1px solid #ccc;
       box-shadow: 0 -1px 6px rgba(0,0,0,0.1);
       z-index: 1000;
       flex-wrap: nowrap;
       box-sizing: border-box;
       overflow: hidden;
-      border-radius: 8px; /* Slightly rounded corners for the bar */
     }
     @media (max-width: 600px) {
         #fixedBar {
@@ -160,7 +97,6 @@
     #fixedBar button {
       flex: 1 1 0%;
       min-width: unset;
-      margin: 0; /* Remove default margin */
     }
     @media (max-width: 480px) {
       h2 { font-size: 20px; }
@@ -173,86 +109,37 @@
         font-size: 14px;
       }
     }
-
-    /* Modal Styles */
-    .modal {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: var(--modal-bg);
-      display: none; /* Initially hidden */
-      justify-content: center;
-      align-items: center;
-      z-index: 9999; /* Higher z-index for modals */
-    }
-    .modal-content {
-      background: var(--modal-content-bg);
-      color: var(--text-color);
-      padding: 20px;
-      border-radius: 8px;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    .modal-content h3 {
-      margin-top: 0;
-      color: var(--text-color);
-    }
-    .modal-content input, .modal-content select {
-      width: 100%;
+    #lastUploadedFileInfo {
+      margin-top: 20px;
       padding: 10px;
-      margin-top: 10px;
-      font-size: 16px;
+      border: 1px solid #eee;
+      background: #fff;
       border-radius: 5px;
-      border: 1px solid var(--input-border-color);
-      background-color: var(--textarea-bg-color);
-      color: var(--text-color);
-      box-sizing: border-box;
+      display: none; /* Hidden by default, shown when content is available */
     }
-    .modal-content label {
-      display: block;
-      margin-top: 15px;
-      font-size: 14px;
-      color: var(--status-color);
+    #lastUploadedFileInfo p {
+      margin: 5px 0;
     }
-    #settings-icon {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 24px;
-      cursor: pointer;
-      color: var(--settings-icon-color);
-    }
-
-    /* Added for text preview/rendering */
-    article.rendered-content {
-      line-height: var(--line-height);
-      font-size: var(--font-size);
-      width: 100%;
-      box-sizing: border-box;
-      border-radius: 8px;
-      padding: 12px;
-      background-color: var(--article-bg-color);
-      border: 1px solid var(--article-border-color);
-      color: var(--text-color);
-      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-      margin-top: 10px; /* Space from other elements */
-    }
-    article.rendered-content p {
-      margin-bottom: 1em;
-      white-space: pre-wrap; /* Preserve whitespace and line breaks */
+    #lastUploadedFileInfo a {
+      color: blue;
+      word-break: break-all;
     }
   </style>
 </head>
 <body>
-  <div id="settings-icon" title="设置" onclick="openSettingsModal()">⚙️</div>
   <h2>📦 GitHub 文件同步助手</h2>
+  <label>Token：</label>
+  <div id="tokenInputContainer">
+    <input id="tokenInput" type="password" placeholder="请输入你的 GitHub Token" />
+    <button onclick="saveToken()">💾</button>
+  </div>
+
 
   <label>选择文件:</label>
   <input id="fileInput" type="file" onchange="autoFillPath()" />
 
   <label>上传路径:</label>
-  <input id="pathInput" placeholder="例如：Notes/my_document.pdf" />
+  <input id="pathInput" />
 
   <p style="color: gray; font-size: 0.9em;">
     上传的文件将在大约 12 小时后被 GitHub Actions 自动删除。
@@ -262,63 +149,20 @@
   <div id="shareLink"></div>
   <div id="log"></div>
 
-  <h3>📄 文本同步与预览</h3>
-  <textarea id="transferContent" placeholder="在此输入需要同步的文本内容..."></textarea>
-  <article id="renderedTransferContent" class="rendered-content" style="display:none;"></article>
+  <div id="lastUploadedFileInfo">
+    <h3>最近上传的文件：</h3>
+    <p id="lastFileName"></p>
+    <p id="lastFileLinks"></p>
+    <button onclick="deleteLastUploadedFile(true)">🗑️ 删除此文件</button>
+  </div>
 
+  <h3>📄 文本同步</h3>
+  <textarea id="transferContent"></textarea>
 
   <div id="fixedBar">
-    <button onclick="processUploadOrSubmit()">⬆️ 上传 / 同步文本</button>
-    <button class="copy" onclick="copyTransfer()">📋 复制文本</button>
-    <button class="delete" onclick="deleteLastUploadedFile()">🗑️ 删除文件</button>
-  </div>
-
-  <div id="tokenModal" class="modal">
-    <div class="modal-content">
-      <h3>🔐 请输入你的 GitHub Token：</h3>
-      <input type="password" id="tokenInput" placeholder="ghp_xxx 或 github_pat_xxx" />
-      <button style="margin-top:15px;" onclick="saveToken()">保存 Token</button>
-    </div>
-  </div>
-
-  <div id="settingsModal" class="modal">
-    <div class="modal-content">
-      <h3>⚙️ 个性化设置</h3>
-
-      <label for="theme-select">界面主题</label>
-      <select id="theme-select">
-        <option value="">默认 (亮色)</option>
-        <option value="theme-dark">护眼 (暗色)</option>
-        <option value="theme-sepia">纸张 (米色)</option>
-      </select>
-
-      <label for="font-family-select">阅读字体</label>
-      <select id="font-family-select">
-        <option value="sans-serif">无衬线体 (默认)</option>
-        <option value="serif">衬线体</option>
-        <option value="monospace">等宽字体</option>
-      </select>
-
-      <label for="font-size-select">内容字号</label>
-      <select id="font-size-select">
-          <option value="15px">小</option>
-          <option value="17px">中 (默认)</option>
-          <option value="19px">大</option>
-          <option value="21px">特大</option>
-      </select>
-
-      <label for="line-height-select">段落行高</label>
-      <select id="line-height-select">
-          <option value="1.4">紧凑</option>
-          <option value="1.6">适中 (默认)</option>
-          <option value="1.8">宽松</option>
-      </select>
-
-      <hr style="border: 0; border-top: 1px solid var(--textarea-border-color); margin: 20px 0;">
-
-      <button class="delete" onclick="resetToken()">重设 GitHub Token</button>
-      <button style="margin-top:10px; float: right;" onclick="saveAndApplySettings()">保存并关闭</button>
-    </div>
+    <button onclick="processUploadOrSubmit()">⬆️ 上传</button>
+    <button onclick="copyTransfer()">📋 复制</button>
+    <button onclick="deleteLastUploadedFile()">🗑️ 删除</button>
   </div>
 
   <script>
@@ -326,122 +170,56 @@
     const GITHUB_REPO = "HelloWorld";
     const BRANCH_NAME = "master";
     const UPLOAD_PREFIX = "push_";
-    const SETTINGS_KEY = "github_sync_assistant_settings";
+    const PREVIEW_FILE_PATH = "Notes/Preview_and_Delete.json"; // Path to the preview file on GitHub
 
-    let GITHUB_TOKEN = localStorage.getItem("github_token") || null;
-    let currentSHA = null;
     let transferTxtSHA = null;
-    let lastUploadedFilePath = null; // Store the path of the last uploaded file
+    let previewFileSHA = null; // To store SHA of Preview_and_Delete.json
 
-    const tokenModal = document.getElementById("tokenModal");
-    const settingsModal = document.getElementById("settingsModal");
-    const logDiv = document.getElementById("log");
-    const shareLinkDiv = document.getElementById("shareLink");
-    const transferContentArea = document.getElementById("transferContent");
-    const renderedTransferContentDiv = document.getElementById("renderedTransferContent");
-    const savingStatusDiv = document.getElementById("savingStatus");
-    const rootElement = document.documentElement;
+    // Variables to hold the last uploaded file info retrieved from GitHub
+    let currentLastUploadedFilePath = null;
+    let currentLastUploadedFileSHA = null;
 
-    // --- Settings Management ---
-    const defaultSettings = {
-        theme: '',
-        fontFamily: 'sans-serif',
-        fontSize: '17px',
-        lineHeight: '1.6'
-    };
-
-    function applySettings(settings) {
-        document.body.className = settings.theme || '';
-        rootElement.style.setProperty('--primary-font', settings.fontFamily);
-        rootElement.style.setProperty('--font-size', settings.fontSize);
-        rootElement.style.setProperty('--line-height', settings.lineHeight);
+    function encodePath(path) {
+      return path.split('/').map(encodeURIComponent).join('/');
     }
 
-    function loadSettings() {
-        const savedSettings = JSON.parse(localStorage.getItem(SETTINGS_KEY));
-        const currentSettings = { ...defaultSettings, ...savedSettings };
-        applySettings(currentSettings);
-    }
-
-    function openSettingsModal() {
-        const savedSettings = JSON.parse(localStorage.getItem(SETTINGS_KEY)) || defaultSettings;
-        document.getElementById('theme-select').value = savedSettings.theme;
-        document.getElementById('font-family-select').value = savedSettings.fontFamily;
-        document.getElementById('font-size-select').value = savedSettings.fontSize;
-        document.getElementById('line-height-select').value = savedSettings.lineHeight;
-        settingsModal.style.display = "flex";
-    }
-
-    function closeSettingsModal() {
-        settingsModal.style.display = "none";
-    }
-
-    function saveAndApplySettings() {
-        const newSettings = {
-            theme: document.getElementById('theme-select').value,
-            fontFamily: document.getElementById('font-family-select').value,
-            fontSize: document.getElementById('font-size-select').value,
-            lineHeight: document.getElementById('line-height-select').value
-        };
-        localStorage.setItem(SETTINGS_KEY, JSON.stringify(newSettings));
-        applySettings(newSettings);
-        closeSettingsModal();
-        logDiv.textContent = "⚙️ 设置已保存。";
-    }
-
-    // --- GitHub Token Management ---
-    function ensureToken() {
-      if (!GITHUB_TOKEN) {
-        tokenModal.style.display = "flex";
+    window.onload = async () => {
+      const savedToken = localStorage.getItem("github_token");
+      if (savedToken) {
+        document.getElementById("tokenInput").value = savedToken;
+        // Load transfer.txt and last uploaded file info only if token is present
+        await loadTransfer();
+        await loadLastUploadedFileInfoFromGitHub();
       }
-    }
+    };
 
     function saveToken() {
       const token = document.getElementById("tokenInput").value.trim();
-      if (!token.startsWith("ghp_") && !token.startsWith("github_pat_")) {
-        alert("请输入有效的 GitHub Token！Token 通常以 'ghp_' 或 'github_pat_' 开头。");
-        return;
-      }
-      localStorage.setItem("github_token", token);
-      GITHUB_TOKEN = token;
-      tokenModal.style.display = "none";
-      logDiv.textContent = "✅ Token 已保存。正在加载文本内容...";
-      loadTransfer(); // After saving token, try to load transfer.txt
-    }
-
-    function resetToken() {
-      if (confirm("确定要清除已保存的 GitHub Token 并重新输入吗？")) {
-        localStorage.removeItem("github_token");
-        GITHUB_TOKEN = null;
-        closeSettingsModal();
-        ensureToken(); // Re-prompt for token
-        logDiv.textContent = "⚠️ GitHub Token 已重设，请重新输入。";
+      if (token) {
+        localStorage.setItem("github_token", token);
+        alert("✅ GitHub Token 已保存！");
+        // Optionally, reload information after saving token
+        loadTransfer();
+        loadLastUploadedFileInfoFromGitHub();
+      } else {
+        alert("⚠️ Token 不能为空，无法保存。");
       }
     }
 
     function getToken() {
-      if (!GITHUB_TOKEN) {
-        throw new Error("请先输入 GitHub Token。");
-      }
-      return GITHUB_TOKEN;
-    }
-
-    // --- File Path Handling ---
-    function encodePath(path) {
-      // Encode each segment of the path separately
-      return path.split('/').map(segment => encodeURIComponent(segment)).join('/');
+      const token = document.getElementById("tokenInput").value.trim();
+      if (!token) throw new Error("请先输入 GitHub Token");
+      return token;
     }
 
     function autoFillPath() {
       const file = document.getElementById("fileInput").files[0];
       if (file) {
         const pathInput = document.getElementById("pathInput");
-        // Only auto-fill if pathInput is empty
-        if (!pathInput.value) pathInput.value = `Notes/${UPLOAD_PREFIX}${file.name}`;
+        if (!pathInput.value) pathInput.value = "Notes/" + UPLOAD_PREFIX + file.name;
       }
     }
 
-    // --- Core GitHub API Functions ---
     async function processUploadOrSubmit() {
       let token;
       try {
@@ -453,42 +231,41 @@
 
       const file = document.getElementById("fileInput").files[0];
       const pathInput = document.getElementById("pathInput").value.trim();
+      const log = document.getElementById("log");
+      const shareDiv = document.getElementById("shareLink");
+      const transferContentArea = document.getElementById("transferContent");
 
-      logDiv.textContent = "";
-      shareLinkDiv.innerHTML = "";
-      currentSHA = null;
-      lastUploadedFilePath = null; // Clear previous path on new upload attempt
+      log.textContent = "";
+      shareDiv.innerHTML = "";
+      // Clear current display before new upload attempt
+      document.getElementById("lastUploadedFileInfo").style.display = 'none';
+      document.getElementById("lastFileName").textContent = "";
+      document.getElementById("lastFileLinks").innerHTML = "";
 
       if (file) {
-        // --- File Upload Logic ---
         if (!pathInput) {
-          logDiv.textContent = "❌ 请填写文件上传路径";
+          log.textContent = "❌ 请填写文件上传路径";
           return;
         }
         if (file.size > 100 * 1024 * 1024) {
-          logDiv.textContent = "❌ GitHub 不支持上传超过 100MB 的文件（最大支持 100MB）";
+          log.textContent = "❌ GitHub 不支持上传超过 100MB 的文件";
           return;
         }
 
-        logDiv.textContent = `📤 正在上传 ${file.name}...`;
+        log.textContent = `📤 正在上传 ${file.name}...`;
         const reader = new FileReader();
         reader.onload = async () => {
           const base64Data = reader.result.split(',')[1];
-          // Ensure the path includes 'Notes/' and 'push_' if not explicitly set by user
-          const finalPath = pathInput.startsWith("Notes/") ? pathInput : `Notes/${pathInput}`;
-          const finalPathWithPrefix = finalPath.includes(UPLOAD_PREFIX) ? finalPath : finalPath.replace("Notes/", `Notes/${UPLOAD_PREFIX}`);
+          const finalPath = pathInput.includes(UPLOAD_PREFIX) ? pathInput : "Notes/" + UPLOAD_PREFIX + file.name;
+          const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${finalPath}`;
 
-          const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${finalPathWithPrefix}`;
-
-          let sha = null;
+          let fileSHA = null;
           try {
             const checkRes = await fetch(url, {
               headers: { Authorization: `token ${token}` }
             });
-            if (checkRes.ok) sha = (await checkRes.json()).sha;
-          } catch (e) {
-            console.warn("Could not get existing file SHA, proceeding with PUT (will create if not exists).", e);
-          }
+            if (checkRes.ok) fileSHA = (await checkRes.json()).sha;
+          } catch (e) { }
 
           const res = await fetch(url, {
             method: "PUT",
@@ -496,67 +273,69 @@
               Authorization: `token ${token}`,
               "Content-Type": "application/json"
             },
-            body: JSON.stringify({ message: `Upload ${file.name}`, content: base64Data, sha })
+            body: JSON.stringify({ message: `Upload ${file.name}`, content: base64Data, sha: fileSHA })
           });
 
           if (!res.ok) {
             const err = await res.json();
-            logDiv.textContent += `\n❌ 上传失败：${res.status} - ${err.message || res.statusText}`;
+            log.textContent += `\n❌ 上传失败：${res.status} - ${err.message || res.statusText}`;
             return;
           }
 
-          // Confirm and get the new SHA after upload
           const confirmRes = await fetch(url, {
             headers: { Authorization: `token ${token}` }
           });
           const data = await confirmRes.json();
-          currentSHA = data.sha;
-          lastUploadedFilePath = finalPathWithPrefix; // Save the path of the successfully uploaded file
+          const uploadedFileSHA = data.sha;
 
-          const encodedPath = encodePath(finalPathWithPrefix);
+          // Update the preview file on GitHub
+          await updatePreviewFileOnGitHub(finalPath, uploadedFileSHA, token);
+          currentLastUploadedFilePath = finalPath;
+          currentLastUploadedFileSHA = uploadedFileSHA;
+
+          const encodedPath = encodePath(finalPath);
           const githubPageLink = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}/blob/${BRANCH_NAME}/${encodedPath}`;
           const rawLink = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/${BRANCH_NAME}/${encodedPath}`;
-          shareLinkDiv.innerHTML = `📎 <b>GitHub 查看链接：</b><br><a href="${githubPageLink}" target="_blank">${githubPageLink}</a><br><br>📥 <b>直链下载:</b><br><a href="${rawLink}" target="_blank">${rawLink}</a>`;
+          shareDiv.innerHTML = `📎 <b>GitHub 查看链接：</b><br><a href="${githubPageLink}" target="_blank">${githubPageLink}</a><br><br>📥 <b>直链下载:</b><br><a href="${rawLink}" target="_blank">${rawLink}</a>`;
 
           // Fixed deletion time: 12 hours from now
           const deleteTimeHours = 12;
           const deleteAt = Date.now() + deleteTimeHours * 60 * 60 * 1000;
 
           try {
-            await updatePendingDeletion(finalPathWithPrefix, deleteAt, token);
-            logDiv.textContent += `\n✅ 文件上传成功！`;
-            logDiv.textContent += `\n⏳ 文件将在大约 ${deleteTimeHours} 小时后被 GitHub Actions 自动删除。`;
+            await updatePendingDeletion(finalPath, deleteAt, token);
+            log.textContent += `\n✅ 文件上传成功！`;
+            log.textContent += `\n⏳ 文件将在大约 ${deleteTimeHours} 小时后被 GitHub Actions 自动删除。`;
+            await displayLastUploadedFile(); // Update the displayed info from current state
           } catch (err) {
-            logDiv.textContent += `\n❌ 文件上传成功，但无法更新删除计划：${err.message}`;
+            log.textContent += `\n❌ 文件上传成功，但无法更新删除计划：${err.message}`;
           }
         };
         reader.readAsDataURL(file);
 
       } else if (transferContentArea.value.trim() !== "") {
-        // --- Text Content Sync Logic ---
-        logDiv.textContent = "📝 正在提交 Notes/transfer.txt 文本...";
+        log.textContent = "📝 正在提交 Notes/transfer.txt 文本...";
         const transferFilePath = "Notes/transfer.txt";
         try {
             await updateTransferFile(transferContentArea.value, token);
-            logDiv.textContent = "✅ 文本已成功提交到 Notes/transfer.txt";
+            log.textContent = "✅ 文本已成功提交到 Notes/transfer.txt";
             const transferTxtLink = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/${BRANCH_NAME}/${encodePath(transferFilePath)}`;
-            shareLinkDiv.innerHTML = `📝 <b>transfer.txt 直链:</b><br><a href="${transferTxtLink}" target="_blank">${transferTxtLink}</a>`;
-            renderTransferContent(transferContentArea.value); // Render the content after successful submission
+            shareDiv.innerHTML = `📝 <b>transfer.txt 直链:</b><br><a href="${transferTxtLink}" target="_blank">${transferTxtLink}</a>`;
         } catch (err) {
-            logDiv.textContent = `❌ 文本提交失败: ${err.message}`;
+            log.textContent = `❌ 文本提交失败: ${err.message}`;
         }
       } else {
-        logDiv.textContent = "⚠️ 请选择一个文件或在下方文本区输入要提交的文本";
+        log.textContent = "⚠️ 请选择一个文件或在下方文本区输入要提交的文本";
       }
     }
 
     async function deleteLastUploadedFile() {
-      if (!lastUploadedFilePath) {
-        alert("没有最近上传的文件可以删除。请确保您刚上传过文件且未刷新页面。");
+      if (!currentLastUploadedFilePath || !currentLastUploadedFileSHA) {
+        alert("没有最近上传的文件可以删除。");
         return;
       }
 
-      const confirmDelete = confirm(`确定要删除文件 "${lastUploadedFilePath}" 吗？此操作不可逆。`);
+      const confirmDelete = confirm(`确定要删除文件 "${currentLastUploadedFilePath}" 吗？`);
       if (!confirmDelete) return;
 
       let token;
@@ -567,30 +346,21 @@
         return;
       }
 
-      logDiv.textContent = `🗑️ 正在删除 ${lastUploadedFilePath}...`;
-      shareLinkDiv.innerHTML = "";
+      const log = document.getElementById("log");
+      const shareDiv = document.getElementById("shareLink");
+      log.textContent = `🗑️ 正在删除 ${currentLastUploadedFilePath}...`;
+      shareDiv.innerHTML = "";
 
-      const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${lastUploadedFilePath}`;
+      const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${currentLastUploadedFilePath}`;
 
       try {
-        // Get the SHA of the file to be deleted
-        const checkRes = await fetch(url, {
-          headers: { Authorization: `token ${token}` }
-        });
-        if (!checkRes.ok) {
-          const err = await checkRes.json();
-          throw new Error(`无法获取文件信息：${checkRes.status} - ${err.message || checkRes.statusText}`);
-        }
-        const fileData = await checkRes.json();
-        const shaToDelete = fileData.sha;
-
         const res = await fetch(url, {
           method: "DELETE",
           headers: {
             Authorization: `token ${token}`,
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({ message: `Delete ${lastUploadedFilePath}`, sha: shaToDelete })
+          body: JSON.stringify({ message: `Delete ${currentLastUploadedFilePath}`, sha: currentLastUploadedFileSHA })
         });
 
         if (!res.ok) {
@@ -598,10 +368,107 @@
           throw new Error(`删除失败：${res.status} - ${err.message || res.statusText}`);
         }
 
-        logDiv.textContent = `✅ 文件 ${lastUploadedFilePath} 已成功删除。`;
-        lastUploadedFilePath = null; // Clear the path after successful deletion
+        log.textContent = `✅ 文件 ${currentLastUploadedFilePath} 已成功删除。`;
+        // Clear the preview file on GitHub
+        await updatePreviewFileOnGitHub(null, null, token); // Pass nulls to clear
+        currentLastUploadedFilePath = null; // Clear local state
+        currentLastUploadedFileSHA = null;
+        document.getElementById("lastUploadedFileInfo").style.display = 'none'; // Hide the preview
+        document.getElementById("lastFileName").textContent = "";
+        document.getElementById("lastFileLinks").innerHTML = "";
+
       } catch (err) {
-        logDiv.textContent = `❌ 删除失败：${err.message}`;
+        log.textContent = `❌ 删除失败：${err.message}`;
+      }
+    }
+
+    async function displayLastUploadedFile() {
+      const fileInfoDiv = document.getElementById("lastUploadedFileInfo");
+      const fileNameP = document.getElementById("lastFileName");
+      const fileLinksP = document.getElementById("lastFileLinks");
+
+      if (currentLastUploadedFilePath && currentLastUploadedFileSHA) {
+        const encodedPath = encodePath(currentLastUploadedFilePath);
+        const githubPageLink = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}/blob/${BRANCH_NAME}/${encodedPath}`;
+        const rawLink = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/${BRANCH_NAME}/${encodedPath}`;
+
+        fileNameP.textContent = `文件名: ${currentLastUploadedFilePath.split('/').pop()}`;
+        fileLinksP.innerHTML = `
+          <b>GitHub 查看链接：</b><br><a href="${githubPageLink}" target="_blank">${githubPageLink}</a><br>
+          <b>直链下载:</b><br><a href="${rawLink}" target="_blank">${rawLink}</a>
+        `;
+        fileInfoDiv.style.display = 'block';
+      } else {
+        fileInfoDiv.style.display = 'none';
+      }
+    }
+
+    async function loadLastUploadedFileInfoFromGitHub() {
+      let token;
+      try {
+        token = getToken();
+      } catch (e) {
+        console.warn("Token not available, skipping loading last uploaded file info from GitHub.");
+        return;
+      }
+
+      const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${PREVIEW_FILE_PATH}`;
+      try {
+        const res = await fetch(url, { headers: { Authorization: `token ${token}` } });
+        if (res.ok) {
+          const data = await res.json();
+          previewFileSHA = data.sha; // Store SHA of the preview file
+          const content = JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, "")))));
+          if (content && content.path && content.sha) {
+            currentLastUploadedFilePath = content.path;
+            currentLastUploadedFileSHA = content.sha;
+            await displayLastUploadedFile();
+          } else {
+            console.log("Preview_and_Delete.json is empty or malformed.");
+            document.getElementById("lastUploadedFileInfo").style.display = 'none';
+          }
+        } else if (res.status === 404) {
+          console.log(`${PREVIEW_FILE_PATH} not found, initializing.`);
+          // File doesn't exist, will be created on first upload
+          document.getElementById("lastUploadedFileInfo").style.display = 'none';
+        } else {
+          console.error(`Failed to load ${PREVIEW_FILE_PATH}: ${res.status} - ${res.statusText}`);
+          alert(`⚠️ 获取最近上传文件信息失败: ${res.status}. 请检查Token或文件权限.`);
+          document.getElementById("lastUploadedFileInfo").style.display = 'none';
+        }
+      } catch (err) {
+        console.error(`Error loading ${PREVIEW_FILE_PATH}:`, err);
+        alert(`⚠️ 获取最近上传文件信息失败: ${err.message}.`);
+        document.getElementById("lastUploadedFileInfo").style.display = 'none';
+      }
+    }
+
+    async function updatePreviewFileOnGitHub(filePath, fileSHA, token) {
+      const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${PREVIEW_FILE_PATH}`;
+      let contentToSave = {};
+      if (filePath && fileSHA) {
+        contentToSave = { path: filePath, sha: fileSHA };
+      }
+
+      const base64Content = btoa(unescape(encodeURIComponent(JSON.stringify(contentToSave, null, 2))));
+      const message = filePath ? `Update last uploaded file info for ${filePath}` : `Clear last uploaded file info`;
+
+      try {
+        const putRes = await fetch(url, {
+          method: "PUT",
+          headers: { Authorization: `token ${token}`, "Content-Type": "application/json" },
+          body: JSON.stringify({ message: message, content: base64Content, sha: previewFileSHA })
+        });
+
+        if (!putRes.ok) {
+          const err = await putRes.json();
+          throw new Error(`无法更新 ${PREVIEW_FILE_PATH}: ${putRes.status} - ${err.message || putRes.statusText}`);
+        }
+        const data = await putRes.json();
+        previewFileSHA = data.content.sha; // Update SHA of the preview file itself
+      } catch (err) {
+        console.error(`Error updating ${PREVIEW_FILE_PATH}:`, err);
+        throw err; // Re-throw to be caught by calling function
       }
     }
 
@@ -618,22 +485,16 @@
         if (res.ok) {
           const json = await res.json();
           sha = json.sha;
-          // Decode content: Base64 -> UTF-8 -> parse JSON
-          // .replace(/\n/g, "") is important for older GitHub API responses that might include newlines in base64
           data = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
         } else if (res.status !== 404) {
           throw new Error(`无法获取 ${pendingDeletionFileName}: ${res.status} - ${res.statusText}`);
         }
       } catch (err) {
         console.error(`Error getting ${pendingDeletionFileName}:`, err);
-        // If there's an error getting the file, treat data as empty to avoid crashing, but log it.
-        data = [];
       }
 
-      // Add the new deletion entry
       data.push({ path: filePath, deleteAt: deleteAt });
 
-      // Encode to Base64
       const base64Content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
       const putRes = await fetch(url, {
         method: "PUT",
@@ -650,23 +511,23 @@
     async function updateTransferFile(text, token) {
       const filePath = "Notes/transfer.txt";
       const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${filePath}`;
-      let sha = transferTxtSHA; // Use cached SHA if available
+      let sha = transferTxtSHA;
 
-      if (!sha) { // If SHA is not cached, try to fetch it
+      if (!sha) {
           try {
             const res = await fetch(url, { headers: { Authorization: `token ${token}` } });
             if (res.ok) {
                 const data = await res.json();
                 sha = data.sha;
-                transferTxtSHA = data.sha; // Cache the SHA
+                transferTxtSHA = data.sha;
             } else if (res.status === 404) {
-                sha = null; // File does not exist, will be created
+                sha = null;
             } else {
                 throw new Error(`Failed to check existing ${filePath}: ${res.status}`);
             }
           } catch (e) {
               console.error("Error checking transfer.txt SHA:", e);
-              sha = null; // Assume file doesn't exist or ignore error for PUT
+              sha = null;
           }
       }
 
@@ -682,113 +543,54 @@
           throw new Error(`${putRes.status} - ${err.message || putRes.statusText}`);
       }
       const data = await putRes.json();
-      transferTxtSHA = data.content.sha; // Update cached SHA with the new one
+      transferTxtSHA = data.content.sha;
     }
 
-    // --- UI & Content Handling ---
-    function renderTransferContent(text) {
-      renderedTransferContentDiv.innerHTML = ""; // Clear previous content
-      const paragraphs = text.split(/\n{2,}/); // Split by one or more empty lines
-      for (const para of paragraphs) {
-        if (para.trim()) {
-          const p = document.createElement("p");
-          p.textContent = para.trim();
-          renderedTransferContentDiv.appendChild(p);
-        }
-      }
-      renderedTransferContentDiv.style.display = "block";
-      transferContentArea.style.display = "none";
-    }
-
-    function editTransferContentMode() {
-      transferContentArea.style.display = "block";
-      renderedTransferContentDiv.style.display = "none";
-    }
-
-
-    // --- Utility Functions ---
     function debounce(fn, delay) {
       let timer = null;
       return function (...args) {
         clearTimeout(timer);
-        savingStatusDiv.textContent = "💾 保存中...";
-        timer = setTimeout(async () => {
-          try {
-            await fn.apply(this, args);
-            savingStatusDiv.textContent = ""; // Clear on success
-            // After auto-save, render the content
-            renderTransferContent(transferContentArea.value);
-          } catch (e) {
-            savingStatusDiv.textContent = "❌ 自动保存失败";
-            console.error("Auto-save error:", e);
-            editTransferContentMode(); // Switch back to edit mode on error
-          }
+        document.getElementById("savingStatus").textContent = "💾 保存中...";
+        timer = setTimeout(() => {
+          fn.apply(this, args);
+          document.getElementById("savingStatus").textContent = "";
         }, delay);
       };
     }
 
+    document.getElementById("transferContent").addEventListener("input", debounce(async function () {
+      try {
+        await updateTransferFile(this.value, getToken());
+      } catch (e) {
+        document.getElementById("savingStatus").textContent = "❌ 自动保存失败";
+      }
+    }, 800));
+
     async function loadTransfer() {
       try {
-        const token = getToken(); // Ensure token is available
+        const token = getToken();
         const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/Notes/transfer.txt`;
         const res = await fetch(url, { headers: { Authorization: `token ${token}` } });
         if (!res.ok) {
           if (res.status === 404) {
-            transferContentArea.value = ""; // File doesn't exist, clear textarea
-            logDiv.textContent = "ℹ️ Notes/transfer.txt 不存在，您可以输入内容创建它。";
-            editTransferContentMode(); // Stay in edit mode if file not found
+            document.getElementById("transferContent").value = "";
             return;
           }
           throw new Error(`${res.status}`);
         }
         const data = await res.json();
-        transferTxtSHA = data.sha; // Cache SHA for future updates
-        const content = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ""))));
-        transferContentArea.value = content;
-        renderTransferContent(content); // Render the content immediately after loading
-        logDiv.textContent = "✅ Notes/transfer.txt 内容已加载并渲染。";
+        transferTxtSHA = data.sha;
+        document.getElementById("transferContent").value = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ""))));
       } catch (err) {
-        logDiv.textContent = "⚠️ 获取 Notes/transfer.txt 失败：" + err.message + ". 请确保文件路径正确或输入正确的 Token。";
-        console.error("Failed to load transfer.txt:", err);
-        editTransferContentMode(); // Switch to edit mode on load error
+        alert("⚠️ 获取 Notes/transfer.txt 失败：" + err.message + ". 请确保文件存在或输入正确的 Token。");
       }
     }
 
     function copyTransfer() {
-      const contentToCopy = renderedTransferContentDiv.style.display !== "none" ? renderedTransferContentDiv.innerText : transferContentArea.value;
-      if (!contentToCopy.trim()) {
-        alert("文本内容为空，无法复制。");
-        return;
-      }
-      navigator.clipboard.writeText(contentToCopy)
-        .then(() => alert("📋 文本内容已复制到剪贴板。"))
+      navigator.clipboard.writeText(document.getElementById("transferContent").value)
+        .then(() => alert("📋 transfer.txt 内容已复制"))
         .catch(err => alert("❌ 复制失败：" + err.message));
     }
-
-    // --- Initial Load ---
-    window.onload = () => {
-      loadSettings(); // Apply theme and font settings first
-      ensureToken(); // Check for token and prompt if missing
-      if (GITHUB_TOKEN) {
-        loadTransfer(); // Load transfer.txt content if token exists
-      } else {
-        logDiv.textContent = "👋 欢迎使用！请在弹出的窗口中输入 GitHub Token 以开始。";
-      }
-
-      // Add event listener to switch to edit mode when textarea is focused/clicked
-      transferContentArea.addEventListener('focus', editTransferContentMode);
-      transferContentArea.addEventListener('click', editTransferContentMode);
-    };
-
-    // Event listener for auto-save transfer.txt
-    transferContentArea.addEventListener("input", debounce(async function () {
-      try {
-        await updateTransferFile(this.value, getToken());
-      } catch (e) {
-        savingStatusDiv.textContent = "❌ 自动保存失败";
-        console.error("Auto-save failed:", e);
-      }
-    }, 800));
   </script>
 </body>
 </html>
