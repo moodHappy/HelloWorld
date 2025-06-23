@@ -100,7 +100,7 @@
     button.delete { background-color: var(--button-danger-bg); }
     button.save { background-color: var(--button-primary-bg); } /* Specific save button style */
 
-    #log, #accessCodeLog {
+    #log, #accessCodeLog, #mainExtractionLog {
       white-space: pre-wrap;
       color: var(--log-color); /* Apply log color */
       margin-top: 10px;
@@ -273,7 +273,7 @@
     #extractionSection h3 {
       margin-bottom: 15px;
     }
-    #extractionCodeInput {
+    #extractionCodeInputAlt { /* For the dedicated extraction mode */
       width: 150px;
       text-align: center;
       font-size: 24px;
@@ -314,6 +314,29 @@
         color: red; /* Error messages in red */
         font-weight: bold;
     }
+
+    /* Styles for the main file extraction input on the main page */
+    #mainFileExtractionInputContainer {
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 1px dashed var(--textarea-border-color);
+    }
+    #mainFileExtractionInput {
+        width: calc(100% - 70px); /* Adjust width to fit button */
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        font-size: var(--font-size);
+        padding: 8px 10px;
+        box-sizing: border-box;
+    }
+    #mainExtractButton {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+
   </style>
 </head>
 <body>
@@ -336,6 +359,14 @@
     <div id="shareLink"></div>
     <div id="log"></div>
 
+    <div id="mainFileExtractionInputContainer">
+      <h4>文件提取</h4>
+      <input type="text" id="mainFileExtractionInput" placeholder="请输入文件提取码 (4位数字)" maxlength="4" />
+      <button id="mainExtractButton" onclick="retrieveFileByCodeOnMainPage()">提取文件</button>
+      <div id="mainExtractionLog"></div>
+    </div>
+
+
     <div id="lastUploadedFileInfo">
       <h3>最近上传的文件：</h3>
       <p id="lastFileName"></p>
@@ -350,14 +381,14 @@
       <button onclick="processUploadOrSubmit()">⬆️ 上传</button>
       <button class="copy" onclick="copyTransfer()">📋 复制</button>
       <button class="delete" onclick="clearTransferContent()">🗑️ 删除</button>
-      <button onclick="toggleExtractionSection()">提取文件</button> </div>
+      <button onclick="toggleExtractionSection()">专用提取</button> </div>
   </div>
 
   <div id="extractionSection" style="display: none;">
-    <h3>🔐 单文件提取</h3>
+    <h3>🔐 单文件提取 (专用模式)</h3>
     <p>请输入四位数字提取码来查看上传的文件。</p>
-    <input type="text" id="extractionCodeInput" placeholder="请输入提取码" maxlength="4" />
-    <button onclick="retrieveFileByCode()">🔑 提取</button>
+    <input type="text" id="extractionCodeInputAlt" placeholder="请输入提取码" maxlength="4" />
+    <button onclick="retrieveFileByCodeAlt()">🔑 提取</button>
     <button onclick="toggleUploadSection()">返回主页</button>
     <div id="extractionResult">
       <div id="fileContentDisplay"></div>
@@ -635,7 +666,9 @@
         try {
             // These functions might still warn if no GitHub token is saved
             loadTransfer();
-            loadLastUploadedFileInfoFromGitHub();
+            // We no longer display last uploaded file info by default here,
+            // but keep the SHA loading for deletion logic if needed.
+            // displayLastUploadedFile(); // Removed from here
             loadPendingDeletionSHA();
             loadExtractionCodesSHA();
         } catch (e) {
@@ -663,9 +696,10 @@
             }
         });
         loadTransfer();
-        loadLastUploadedFileInfoFromGitHub();
         loadPendingDeletionSHA(); // Load SHA for pending_deletion.json
         loadExtractionCodesSHA(); // Load SHA for file_codes.json
+        // After token is saved, try to load the last uploaded file info (which is now triggered by main extraction)
+        // loadLastUploadedFileInfoFromGitHub(); // No longer called directly here.
       } else {
         alert("⚠️ Token 不能为空，无法保存。");
       }
@@ -716,11 +750,13 @@
         // This assumes that if someone has a direct file link, they don't need to pass the main page security
         document.getElementById('accessCodeSection').style.display = 'none'; // Hide page access section
         document.getElementById('settings-icon').style.display = 'none'; // Hide settings in this mode
-        toggleExtractionSection(); // Show the individual file extraction section
-        document.getElementById("extractionCodeInput").value = code;
-        await retrieveFileByCode(fileId);
+        document.getElementById('mainUploadSection').style.display = 'none'; // Hide main section
+        document.getElementById('fixedBar').style.display = 'none'; // Hide fixed bar
+        toggleExtractionSection(); // Show the dedicated individual file extraction section
+        document.getElementById("extractionCodeInputAlt").value = code; // Use the dedicated input
+        await retrieveFileByCodeAlt(fileId); // Use the dedicated extraction logic
       } else {
-        // If no file extraction in URL, display the main page access code section
+        // If no file extraction in URL, display the main page access code section or main content
         if (currentGlobalAccessCode) {
             // Page access code exists, show the access code input
             document.getElementById('accessCodeSection').style.display = 'flex';
@@ -740,7 +776,7 @@
         document.getElementById('mainUploadSection').style.display = 'none';
         document.getElementById('fixedBar').style.display = 'none'; // Hide fixed bar in extraction mode
         document.getElementById('extractionSection').style.display = 'block';
-        document.getElementById('extractionCodeInput').value = '';
+        document.getElementById('extractionCodeInputAlt').value = ''; // Clear dedicated input
         document.getElementById('extractionResult').style.display = 'none';
         document.getElementById('fileContentDisplay').innerHTML = '';
         document.getElementById('extractionLog').textContent = '';
@@ -755,6 +791,10 @@
         document.getElementById('fileContentDisplay').innerHTML = '';
         document.getElementById('extractionLog').textContent = '';
         document.getElementById('settings-icon').style.display = 'block'; // Show settings icon when back to main
+        // Also clear main page extraction input and log
+        document.getElementById('mainFileExtractionInput').value = '';
+        document.getElementById('mainExtractionLog').textContent = '';
+        document.getElementById("lastUploadedFileInfo").style.display = 'none'; // Hide it when returning to main page
     }
 
     async function processUploadOrSubmit() {
@@ -774,14 +814,12 @@
       log.textContent = "";
       shareDiv.innerHTML = "";
       // Don't clear file info display unless a new file is actively being uploaded in this call.
+      document.getElementById("lastUploadedFileInfo").style.display = 'none'; // Hide it on new upload or text sync
+      document.getElementById("lastFileName").textContent = "";
+      document.getElementById("lastFileLinks").innerHTML = "";
 
       if (file) {
         // --- Handle File Upload ---
-        // Clear file sync related info display when a new file upload is initiated
-        document.getElementById("lastUploadedFileInfo").style.display = 'none';
-        document.getElementById("lastFileName").textContent = "";
-        document.getElementById("lastFileLinks").innerHTML = "";
-
         const finalPath = DEFAULT_UPLOAD_FOLDER + UPLOAD_PREFIX + file.name;
 
         if (file.size > 100 * 1024 * 1024) {
@@ -973,44 +1011,26 @@
       }
     }
 
-    async function displayLastUploadedFile() {
+    async function displayLastUploadedFileDetails(filePath, fileSHA, fileId, extractionCode) {
       const fileInfoDiv = document.getElementById("lastUploadedFileInfo");
       const fileNameP = document.getElementById("lastFileName");
       const fileLinksP = document.getElementById("lastFileLinks");
 
-      if (currentLastUploadedFilePath && currentLastUploadedFileSHA) {
-        // Try to find the extraction code for the last uploaded file
-        let foundCode = '未知';
-        let foundFileId = '';
-        try {
-            const allCodes = await fetchFileCodes();
-            const entry = allCodes.find(e => e.path === currentLastUploadedFilePath);
-            if (entry) {
-                foundCode = entry.code;
-                foundFileId = entry.fileId;
-            }
-        } catch (e) {
-            console.warn("Could not retrieve extraction code for last uploaded file:", e);
-        }
+      const encodedPath = encodePath(filePath);
+      const githubPageLink = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}/blob/${BRANCH_NAME}/${encodedPath}`;
+      const rawLink = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/${BRANCH_NAME}/${encodedPath}`;
+      const extractionLink = `${window.location.origin}${window.location.pathname}?code=${extractionCode}&file=${fileId}`;
 
-        const encodedPath = encodePath(currentLastUploadedFilePath);
-        const githubPageLink = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}/blob/${BRANCH_NAME}/${encodedPath}`;
-        const rawLink = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/${BRANCH_NAME}/${encodedPath}`;
-        // Ensure extractionLink uses the foundFileId if available
-        const extractionLink = foundFileId ? `${window.location.origin}${window.location.pathname}?code=${foundCode}&file=${foundFileId}` : `无法生成提取链接`;
-
-        fileNameP.textContent = `文件名: ${currentLastUploadedFilePath.split('/').pop()}`;
-        fileLinksP.innerHTML = `
-          <b>GitHub 查看链接：</b><br><a href="${githubPageLink}" target="_blank">${githubPageLink}</a><br>
-          <b>直链下载:</b><br><a href="${rawLink}" target="_blank">${rawLink}</a><br>
-          <b>提取码:</b> <span style="color:red; font-weight:bold;">${foundCode}</span><br>
-          <b>提取链接:</b><br><a href="${extractionLink}" target="_blank">${extractionLink}</a>
-        `;
-        fileInfoDiv.style.display = 'block';
-      } else {
-        fileInfoDiv.style.display = 'none';
-      }
+      fileNameP.textContent = `文件名: ${filePath.split('/').pop()}`;
+      fileLinksP.innerHTML = `
+        <b>GitHub 查看链接：</b><br><a href="${githubPageLink}" target="_blank">${githubPageLink}</a><br>
+        <b>直链下载:</b><br><a href="${rawLink}" target="_blank">${rawLink}</a><br>
+        <b>提取码:</b> <span style="color:red; font-weight:bold;">${extractionCode}</span><br>
+        <b>提取链接:</b><br><a href="${extractionLink}" target="_blank">${extractionLink}</a>
+      `;
+      fileInfoDiv.style.display = 'block';
     }
+
 
     async function loadLastUploadedFileInfoFromGitHub() {
       let token;
@@ -1031,7 +1051,15 @@
           if (content && content.path && content.sha) {
             currentLastUploadedFilePath = content.path;
             currentLastUploadedFileSHA = content.sha;
-            await displayLastUploadedFile();
+            // Now, we need the fileId and extractionCode to display the links correctly
+            const allCodes = await fetchFileCodes(); // This uses public access if no token for fetch
+            const entry = allCodes.find(e => e.path === currentLastUploadedFilePath && e.sha === currentLastUploadedFileSHA);
+            if (entry) {
+                await displayLastUploadedFileDetails(entry.path, entry.sha, entry.fileId, entry.code);
+            } else {
+                console.log("Could not find file code entry for the last uploaded file.");
+                document.getElementById("lastUploadedFileInfo").style.display = 'none';
+            }
           } else {
             console.log("Preview_and_Delete.json is empty or malformed.");
             document.getElementById("lastUploadedFileInfo").style.display = 'none';
@@ -1370,8 +1398,55 @@
     }
 
 
-    async function retrieveFileByCode(fileIdFromURL = null) {
-        const extractionCodeInput = document.getElementById("extractionCodeInput");
+    // New function to handle extraction on the main page
+    async function retrieveFileByCodeOnMainPage() {
+        const extractionCodeInput = document.getElementById("mainFileExtractionInput");
+        const code = extractionCodeInput.value.trim();
+        const extractionLog = document.getElementById("mainExtractionLog");
+
+        extractionLog.textContent = "";
+        document.getElementById("lastUploadedFileInfo").style.display = 'none'; // Hide info until successful
+
+        if (!code || code.length !== 4 || !/^\d{4}$/.test(code)) {
+            extractionLog.textContent = "⚠️ 请输入有效的四位数字提取码。";
+            return;
+        }
+
+        extractionLog.textContent = "🔍 正在查找文件...";
+
+        try {
+            const allCodes = await fetchFileCodes();
+            const matchedEntry = allCodes.find(entry => entry.code === code);
+
+            if (!matchedEntry) {
+                extractionLog.textContent = "❌ 提取码不正确或文件不存在。";
+                return;
+            }
+
+            // Check if the file is still valid (e.g., within 12 hours) - requires loading pending_deletion.json
+            const pendingDeletions = await fetchPendingDeletions(); // Fetch without token for public check
+            const deletionEntry = pendingDeletions.find(entry => entry.fileId === matchedEntry.fileId);
+
+            if (deletionEntry && Date.now() > deletionEntry.deleteAt) {
+                extractionLog.textContent = "❌ 文件已过期，无法提取。";
+                return;
+            }
+
+            extractionLog.textContent = `✅ 提取码验证成功！`;
+            currentLastUploadedFilePath = matchedEntry.path;
+            currentLastUploadedFileSHA = matchedEntry.sha;
+            await displayLastUploadedFileDetails(matchedEntry.path, matchedEntry.sha, matchedEntry.fileId, matchedEntry.code);
+
+        } catch (err) {
+            extractionLog.textContent = `❌ 提取失败: ${err.message}`;
+            console.error("Main page file extraction error:", err);
+        }
+    }
+
+
+    // Function for the dedicated extraction mode (toggleExtractionSection)
+    async function retrieveFileByCodeAlt(fileIdFromURL = null) {
+        const extractionCodeInput = document.getElementById("extractionCodeInputAlt");
         const code = extractionCodeInput.value.trim();
         const extractionLog = document.getElementById("extractionLog");
         const fileContentDisplay = document.getElementById("fileContentDisplay");
@@ -1397,7 +1472,6 @@
                 matchedEntry = allCodes.find(entry => entry.fileId === fileIdFromURL && entry.code === code);
             } else {
                 // Otherwise, find by code. This is less secure as codes could collide.
-                // It's highly recommended to always use fileId for direct links.
                 matchedEntry = allCodes.find(entry => entry.code === code);
             }
 
@@ -1480,11 +1554,19 @@
         }
     });
 
-    // Set up event listener for Enter key in individual file extraction code input
-    document.getElementById("extractionCodeInput").addEventListener("keypress", function(event) {
+    // Set up event listener for Enter key in main page file extraction code input
+    document.getElementById("mainFileExtractionInput").addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
             event.preventDefault(); // Prevent default form submission
-            retrieveFileByCode();
+            retrieveFileByCodeOnMainPage();
+        }
+    });
+
+    // Set up event listener for Enter key in dedicated file extraction code input
+    document.getElementById("extractionCodeInputAlt").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); // Prevent default form submission
+            retrieveFileByCodeAlt();
         }
     });
   </script>
