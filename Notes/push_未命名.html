@@ -489,8 +489,10 @@
 
     // --- Core GitHub API Functions ---
     function encodePath(path) {
-      return path.split('/').map(encodeURIComponent).join('/');
+      // Handles spaces and other special characters in file paths properly
+      return path.split('/').map(segment => encodeURIComponent(segment.replace(/ /g, '_'))).join('/');
     }
+
 
     window.onload = async () => {
       loadSettings();
@@ -523,10 +525,11 @@
                 const json = await res.json();
                 passwordFileSHA = json.sha;
             } else if (res.status === 404) {
-                console.warn(`${PASSWORD_FILE_PATH} not found. Please create it on GitHub.`);
+                console.warn(`${PASSWORD_FILE_PATH} not found. Please create it on GitHub with a 4-digit password, e.g., {"password": "1234"}.`);
                 passwordFileSHA = null;
             } else {
-                throw new Error(`Failed to check existing ${PASSWORD_FILE_PATH}: ${res.status}`);
+                const errorData = await res.json();
+                throw new Error(`Failed to check existing ${PASSWORD_FILE_PATH}: ${res.status} - ${errorData.message || res.statusText}`);
             }
         } catch (e) {
             console.error(`Error loading ${PASSWORD_FILE_PATH} SHA:`, e);
@@ -541,7 +544,7 @@
         const verifiedContentDiv = document.getElementById("verifiedContent");
 
         const enteredCode = extractionCodeInput.value.trim();
-        if (enteredCode.length !== 4) {
+        if (enteredCode.length !== 4 || !/^\d{4}$/.test(enteredCode)) {
             log.textContent = "❌ 提取码必须是四位数字。";
             verifiedContentDiv.style.display = 'none';
             isVerified = false;
@@ -567,7 +570,7 @@
 
             if (!res.ok) {
                 if (res.status === 404) {
-                    log.textContent = "❌ 验证失败：password.json 文件不存在。请在 GitHub 上创建。";
+                    log.textContent = "❌ 验证失败：password.json 文件不存在。请在 GitHub 上创建此文件，内容格式为 {\"password\": \"1234\"}。";
                 } else {
                     const err = await res.json();
                     log.textContent = `❌ 验证失败：无法获取密码文件。${res.status} - ${err.message || res.statusText}`;
@@ -582,7 +585,7 @@
             const fileContent = JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, "")))));
 
             if (fileContent && fileContent.password === enteredCode) {
-                log.textContent = "✅ 提取码验证成功！";
+                log.textContent = "✅ 提取码验证成功！正在加载最近上传的文件信息...";
                 isVerified = true;
                 verifiedContentDiv.style.display = 'block'; // Show the content
                 // Load file info only after successful verification
@@ -602,7 +605,6 @@
 
 
     async function processUploadOrSubmit() {
-      // UPLOAD NO LONGER REQUIRES VERIFICATION!
       let token;
       try {
         token = getToken();
@@ -618,85 +620,106 @@
 
       log.textContent = "";
       shareDiv.innerHTML = "";
-      // Don't clear file info display unless a new file is actively being uploaded in this call.
+      document.getElementById("savingStatus").textContent = "";
+
 
       if (file) {
         // --- Handle File Upload ---
-        // Clear file sync related info display when a new file upload is initiated
-        // Note: The visibility of #lastUploadedFileInfo is managed by verifyExtractionCode,
-        // so we only update its *content*, not its display style here.
         document.getElementById("lastFileName").textContent = "";
         document.getElementById("lastFileLinks").innerHTML = "";
 
-        const finalPath = DEFAULT_UPLOAD_FOLDER + UPLOAD_PREFIX + file.name;
+        const finalFileName = file.name; // Keep original file name for display
+        const finalPath = DEFAULT_UPLOAD_FOLDER + UPLOAD_PREFIX + finalFileName;
+        const encodedFinalPath = encodePath(finalPath); // Use encoded path for API requests
 
         if (file.size > 100 * 1024 * 1024) {
           log.textContent = "❌ GitHub 不支持上传超过 100MB 的文件";
           return;
         }
 
-        log.textContent = `📤 正在上传 ${file.name} 到 ${finalPath}...`;
+        log.textContent = `📤 正在上传 ${finalFileName} 到 ${finalPath}...`;
         const reader = new FileReader();
+
         reader.onload = async () => {
           const base64Data = reader.result.split(',')[1];
-          const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${finalPath}`;
+          const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${encodedFinalPath}`; // Use encoded path here
 
           let fileSHA = null;
           try {
+            log.textContent = `📤 正在检查文件是否存在...`;
             const checkRes = await fetch(url, {
               headers: { Authorization: `token ${token}` }
             });
-            if (checkRes.ok) fileSHA = (await checkRes.json()).sha;
-          } catch (e) { /* ignore if file not found */ }
-
-          const res = await fetch(url, {
-            method: "PUT",
-            headers: {
-              Authorization: `token ${token}`,
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ message: `Upload ${file.name}`, content: base64Data, sha: fileSHA })
-          });
-
-          if (!res.ok) {
-            const err = await res.json();
-            log.textContent += `\n❌ 上传失败：${res.status} - ${err.message || res.statusText}`;
+            if (checkRes.ok) {
+              const checkData = await checkRes.json();
+              fileSHA = checkData.sha;
+              log.textContent = `📤 文件已存在，获取到 SHA: ${fileSHA.substring(0, 7)}... 正在更新文件...`;
+            } else if (checkRes.status === 404) {
+              log.textContent = `📤 文件不存在，正在创建新文件...`;
+            } else {
+              const checkErr = await checkRes.json();
+              throw new Error(`无法检查文件是否存在: ${checkRes.status} - ${checkErr.message || checkRes.statusText}`);
+            }
+          } catch (e) {
+            log.textContent = `❌ 检查文件存在时发生错误: ${e.message}`;
             return;
           }
 
-          const confirmRes = await fetch(url, {
-            headers: { Authorization: `token ${token}` }
-          });
-          const data = await confirmRes.json();
-          const uploadedFileSHA = data.sha;
-
-          // Update Preview_and_Delete.json for file uploads
-          await updatePreviewFileOnGitHub(finalPath, uploadedFileSHA, token);
-          currentLastUploadedFilePath = finalPath;
-          currentLastUploadedFileSHA = uploadedFileSHA;
-          // Only display the updated file info if currently verified
-          if (isVerified) {
-              await displayLastUploadedFile();
-          }
-
-
-          const encodedPath = encodePath(finalPath);
-          const githubPageLink = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}/blob/${BRANCH_NAME}/${encodedPath}`;
-          const rawLink = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/${BRANCH_NAME}/${encodedPath}`;
-          shareDiv.innerHTML = `📎 <b>GitHub 查看链接：</b><br><a href="${githubPageLink}" target="_blank">${githubPageLink}</a><br><br>📥 <b>直链下载:</b><br><a href="${rawLink}" target="_blank">${rawLink}</a>`;
-
-          const deleteTimeHours = 12; // This is a fixed value, no need for dynamic message
-          const deleteAt = Date.now() + deleteTimeHours * 60 * 60 * 1000;
-
           try {
-            // Update pending_deletion.json for file uploads
-            // This also only happens if isVerified is true, as the function itself checks.
-            await addEntryToPendingDeletion(finalPath, deleteAt, token);
-            log.textContent += `\n✅ 文件上传成功！`;
+            const putRes = await fetch(url, {
+              method: "PUT",
+              headers: {
+                Authorization: `token ${token}`,
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({ message: `Upload ${finalFileName}`, content: base64Data, sha: fileSHA, branch: BRANCH_NAME })
+            });
+
+            if (!putRes.ok) {
+              const err = await putRes.json();
+              throw new Error(`上传失败：${putRes.status} - ${err.message || putRes.statusText}`);
+            }
+
+            const putData = await putRes.json();
+            const uploadedFileSHA = putData.content.sha;
+
+            log.textContent += `\n✅ 文件上传成功！正在更新预览信息...`;
+
+            // Update Preview_and_Delete.json for file uploads
+            await updatePreviewFileOnGitHub(finalPath, uploadedFileSHA, token);
+            currentLastUploadedFilePath = finalPath;
+            currentLastUploadedFileSHA = uploadedFileSHA;
+            // Only display the updated file info if currently verified
+            if (isVerified) {
+                await displayLastUploadedFile();
+            }
+
+
+            const githubPageLink = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}/blob/${BRANCH_NAME}/${encodedFinalPath}`;
+            const rawLink = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/${BRANCH_NAME}/${encodedFinalPath}`;
+            shareDiv.innerHTML = `📎 <b>GitHub 查看链接：</b><br><a href="${githubPageLink}" target="_blank">${githubPageLink}</a><br><br>📥 <b>直链下载:</b><br><a href="${rawLink}" target="_blank">${rawLink}</a>`;
+
+            const deleteTimeHours = 12;
+            const deleteAt = Date.now() + deleteTimeHours * 60 * 60 * 1000;
+
+            try {
+              log.textContent += `\n✅ 文件上传成功！正在更新删除计划...`;
+              await addEntryToPendingDeletion(finalPath, deleteAt, token);
+              log.textContent += `\n✅ 文件上传及删除计划更新成功！`;
+              document.getElementById("fileInput").value = ""; // Clear file input field
+            } catch (err) {
+              log.textContent += `\n⚠️ 文件上传成功，但无法更新删除计划：${err.message}`;
+            }
+
           } catch (err) {
-            log.textContent += `\n❌ 文件上传成功，但无法更新删除计划：${err.message}`;
+            log.textContent += `\n❌ 文件上传最终失败：${err.message}`;
           }
         };
+
+        reader.onerror = (e) => {
+          log.textContent = `❌ 读取文件失败: ${e.target.error.name}`;
+        };
+
         reader.readAsDataURL(file);
 
       } else if (transferContentArea.value.trim() !== "") {
@@ -744,7 +767,7 @@
       log.textContent = `🗑️ 正在删除 ${currentLastUploadedFilePath}...`;
       shareDiv.innerHTML = "";
 
-      const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${currentLastUploadedFilePath}`;
+      const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${encodePath(currentLastUploadedFilePath)}`; // Ensure path is encoded for DELETE
 
       try {
         const res = await fetch(url, {
@@ -753,7 +776,7 @@
             Authorization: `token ${token}`,
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({ message: `Delete ${currentLastUploadedFilePath}`, sha: currentLastUploadedFileSHA })
+          body: JSON.stringify({ message: `Delete ${currentLastUploadedFilePath}`, sha: currentLastUploadedFileSHA, branch: BRANCH_NAME }) // Include branch
         });
 
         if (!res.ok) {
@@ -862,7 +885,8 @@
           document.getElementById("lastUploadedFileInfo").style.display = 'none';
         } else {
           console.error(`Failed to load ${PREVIEW_FILE_PATH}: ${res.status} - ${res.statusText}`);
-          document.getElementById("log").textContent = `⚠️ 获取最近上传文件信息失败: ${res.status}. 请检查Token或文件权限.`;
+          const errorData = await res.json();
+          document.getElementById("log").textContent = `⚠️ 获取最近上传文件信息失败: ${res.status}. ${errorData.message || res.statusText}. 请检查Token或文件权限.`;
           document.getElementById("lastUploadedFileInfo").style.display = 'none';
         }
       } catch (err) {
@@ -873,8 +897,6 @@
     }
 
     async function updatePreviewFileOnGitHub(filePath, fileSHA, token) {
-      // This function can be called even if not verified, as uploads are independent
-      // However, display will only happen if user is verified.
       const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${PREVIEW_FILE_PATH}`;
       let contentToSave = {};
       if (filePath && fileSHA) {
@@ -888,12 +910,12 @@
         const putRes = await fetch(url, {
           method: "PUT",
           headers: { Authorization: `token ${token}`, "Content-Type": "application/json" },
-          body: JSON.stringify({ message: message, content: base64Content, sha: previewFileSHA })
+          body: JSON.stringify({ message: message, content: base64Content, sha: previewFileSHA, branch: BRANCH_NAME }) // Include branch
         });
 
         if (!putRes.ok) {
           const err = await putRes.json();
-          throw new Error(`无法更新 ${PREVIEW_FILE_PATH}: ${putRes.status} - ${err.message || putRes.statusText}`);
+          throw new Error(`无法更新 ${PREVIEW_FILE_PATH}: ${putRes.status} - ${err.message || err.errors[0].message || putRes.statusText}`);
         }
         const data = await putRes.json();
         previewFileSHA = data.content.sha;
@@ -922,7 +944,8 @@
             } else if (res.status === 404) {
                 pendingDeletionSHA = null; // File doesn't exist yet
             } else {
-                throw new Error(`Failed to check existing ${PENDING_DELETION_FILE_NAME}: ${res.status}`);
+                const errorData = await res.json();
+                throw new Error(`Failed to check existing ${PENDING_DELETION_FILE_NAME}: ${res.status} - ${errorData.message || res.statusText}`);
             }
         } catch (e) {
             console.error(`Error loading ${PENDING_DELETION_FILE_NAME} SHA:`, e);
@@ -931,40 +954,47 @@
     }
 
     async function addEntryToPendingDeletion(filePath, deleteAt, token) {
-      if (!isVerified) return; // Only add if verified (since delete button is only visible then)
+      // This function's access is gated by `isVerified` in `processUploadOrSubmit` before being called for file uploads.
       const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${PENDING_DELETION_PATH}`;
       let data = [];
 
-      // Fetch current content and SHA first
-      if (pendingDeletionSHA) {
-          try {
-              const res = await fetch(url, { headers: { Authorization: `token ${token}` } });
-              if (res.ok) {
-                  const json = await res.json();
-                  data = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
-              } else if (res.status !== 404) {
-                  throw new Error(`无法获取 ${PENDING_DELETION_FILE_NAME}: ${res.status} - ${res.statusText}`);
-              }
-          } catch (err) {
-              console.error(`Error fetching ${PENDING_DELETION_FILE_NAME} for add:`, err);
-              // If fetching fails, proceed with an empty array, but keep the current SHA if we have it
-              data = [];
+      // Fetch current content and SHA first to ensure we have the latest.
+      try {
+          const res = await fetch(url, { headers: { Authorization: `token ${token}` } });
+          if (res.ok) {
+              const json = await res.json();
+              pendingDeletionSHA = json.sha; // Update SHA
+              data = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
+          } else if (res.status !== 404) { // Not 404 and not OK means an actual error
+              const errorData = await res.json();
+              throw new Error(`无法获取 ${PENDING_DELETION_FILE_NAME}: ${res.status} - ${errorData.message || res.statusText}`);
+          }
+      } catch (err) {
+          console.error(`Error fetching ${PENDING_DELETION_FILE_NAME} for add:`, err);
+          // If fetching fails, proceed with an empty array if file wasn't found (404),
+          // otherwise rethrow for real errors.
+          if (err.message && err.message.includes('404')) {
+             data = []; // Assume new file if 404
+             pendingDeletionSHA = null; // Reset SHA if 404 (will create new file)
+          } else {
+             throw err;
           }
       }
 
-
+      // Remove existing entry for the same path if it exists to avoid duplicates
+      data = data.filter(entry => entry.path !== filePath);
       data.push({ path: filePath, deleteAt: deleteAt });
 
       const base64Content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
       const putRes = await fetch(url, {
         method: "PUT",
         headers: { Authorization: `token ${token}`, "Content-Type": "application/json" },
-        body: JSON.stringify({ message: `Add deletion plan for ${filePath}`, content: base64Content, sha: pendingDeletionSHA })
+        body: JSON.stringify({ message: `Add deletion plan for ${filePath}`, content: base64Content, sha: pendingDeletionSHA, branch: BRANCH_NAME }) // Include branch
       });
 
       if (!putRes.ok) {
         const err = await putRes.json();
-        throw new Error(`无法更新 ${PENDING_DELETION_FILE_NAME}: ${putRes.status} - ${err.message || putRes.statusText}`);
+        throw new Error(`无法更新 ${PENDING_DELETION_FILE_NAME}: ${putRes.status} - ${err.message || err.errors[0].message || putRes.statusText}`);
       }
       const newSha = (await putRes.json()).content.sha;
       pendingDeletionSHA = newSha; // Update the SHA after successful write
@@ -990,7 +1020,8 @@
                 console.log(`${PENDING_DELETION_FILE_NAME} not found, nothing to remove.`);
                 return;
             } else {
-                throw new Error(`无法获取 ${PENDING_DELETION_FILE_NAME} 来移除条目: ${res.status} - ${res.statusText}`);
+                const errorData = await res.json();
+                throw new Error(`无法获取 ${PENDING_DELETION_FILE_NAME} 来移除条目: ${res.status} - ${errorData.message || res.statusText}`);
             }
         } catch (err) {
             console.error(`Error fetching ${PENDING_DELETION_FILE_NAME} for removal:`, err);
@@ -1011,12 +1042,12 @@
         const putRes = await fetch(url, {
             method: "PUT",
             headers: { Authorization: `token ${token}`, "Content-Type": "application/json" },
-            body: JSON.stringify({ message: message, content: base64Content, sha: pendingDeletionSHA })
+            body: JSON.stringify({ message: message, content: base64Content, sha: pendingDeletionSHA, branch: BRANCH_NAME }) // Include branch
         });
 
         if (!putRes.ok) {
             const err = await putRes.json();
-            throw new Error(`无法更新 ${PENDING_DELETION_FILE_NAME} 来移除条目: ${putRes.status} - ${err.message || putRes.statusText}`);
+            throw new Error(`无法更新 ${PENDING_DELETION_FILE_NAME} 来移除条目: ${putRes.status} - ${err.message || err.errors[0].message || putRes.statusText}`);
         }
         const newSha = (await putRes.json()).content.sha;
         pendingDeletionSHA = newSha; // Update the SHA after successful write
@@ -1036,9 +1067,10 @@
                 sha = data.sha;
                 transferTxtSHA = data.sha;
             } else if (res.status === 404) {
-                sha = null;
+                sha = null; // File doesn't exist, new file will be created
             } else {
-                throw new Error(`Failed to check existing ${TRANSFER_FILE_PATH}: ${res.status}`);
+                const errorData = await res.json();
+                throw new Error(`Failed to check existing ${TRANSFER_FILE_PATH}: ${res.status} - ${errorData.message || res.statusText}`);
             }
           } catch (e) {
               console.error("Error checking transfer.txt SHA:", e);
@@ -1050,12 +1082,12 @@
       const putRes = await fetch(url, {
         method: "PUT",
         headers: { Authorization: `token ${token}`, "Content-Type": "application/json" },
-        body: JSON.stringify({ message: text ? `Update ${TRANSFER_FILE_PATH}` : `Clear ${TRANSFER_FILE_PATH}`, content: base64Content, sha: sha })
+        body: JSON.stringify({ message: text ? `Update ${TRANSFER_FILE_PATH}` : `Clear ${TRANSFER_FILE_PATH}`, content: base64Content, sha: sha, branch: BRANCH_NAME }) // Include branch
       });
 
       if (!putRes.ok) {
           const err = await putRes.json();
-          throw new Error(`${putRes.status} - ${err.message || putRes.statusText}`);
+          throw new Error(`${putRes.status} - ${err.message || err.errors[0].message || putRes.statusText}`);
       }
       const data = await putRes.json();
       transferTxtSHA = data.content.sha;
@@ -1068,7 +1100,7 @@
         document.getElementById("savingStatus").textContent = "💾 保存中...";
         timer = setTimeout(() => {
           fn.apply(this, args);
-          document.getElementById("savingStatus").textContent = "";
+          document.getElementById("savingStatus").textContent = ""; // Clear status after debounce
         }, delay);
       };
     }
@@ -1076,8 +1108,9 @@
     document.getElementById("transferContent").addEventListener("input", debounce(async function () {
       try {
         await updateTransferFile(this.value, getToken());
+        document.getElementById("savingStatus").textContent = "✅ 已自动保存";
       } catch (e) {
-        document.getElementById("savingStatus").textContent = "❌ 自动保存失败";
+        document.getElementById("savingStatus").textContent = "❌ 自动保存失败: " + e.message;
         console.error("Auto-save failed:", e);
       }
     }, 800));
@@ -1092,7 +1125,8 @@
             document.getElementById("transferContent").value = "";
             return;
           }
-          throw new Error(`${res.status}`);
+          const errorData = await res.json();
+          throw new Error(`${res.status} - ${errorData.message || res.statusText}`);
         }
         const data = await res.json();
         transferTxtSHA = data.sha;
