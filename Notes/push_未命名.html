@@ -173,13 +173,12 @@
         font-size: 14px;
       }
     }
-    #lastUploadedFileInfo {
-      margin-top: 20px;
+    #lastUploadedFileInfo { /* Styles for this section now applied within #shareLink */
       padding: 10px;
-      border: 1px solid var(--article-border-color); /* Use border color */
-      background: var(--article-bg-color); /* Use article bg */
-      border-radius: 8px; /* Consistent radius */
-      display: none; /* Hidden by default, shown when content is available */
+      border: 1px solid var(--article-border-color);
+      background: var(--article-bg-color);
+      border-radius: 8px;
+      margin-top: 20px;
     }
     #lastUploadedFileInfo p {
       margin: 5px 0;
@@ -265,29 +264,22 @@
   <div id="savingStatus"></div>
   <div id="log"></div>
 
-  <div id="extractionCodeSection">
+  <div id="extractionCodeSection" style="display: none;">
     <h3></h3>
     <input type="text" id="extractionCodeInput" placeholder="4" maxlength="4" />
-    <button onclick="verifyExtractionCode()"></button>
+    <button onclick="verifyExtractionCode()"></button>
   </div>
 
-  <div id="shareLink"></div>
-
-
-  <div id="lastUploadedFileInfo">
-    <h3></h3>
-    <p id="lastFileName"></p>
-    <p id="lastFileLinks"></p>
-    <button class="delete" onclick="deleteUploadedFile()"> </button>
-  </div>
+  <div id="shareLink">
+    </div>
 
   <h3></h3>
   <textarea id="transferContent"></textarea>
 
   <div id="passwordSection">
-    <h3></h3>
-    <p>4</p>
-    <div id="generatedPassword" style="font-weight: bold; margin-bottom: 10px;"></div>
+    <h3> ()</h3>
+    <p>4</p>
+    <div id="generatedPasswordDisplay" style="font-weight: bold; margin-bottom: 10px;"></div>
   </div>
 
   <div id="fixedBar">
@@ -357,17 +349,16 @@
 
     // Constants for access code
     const ACCESS_CODE_FILE_PATH = "Notes/access_code.json";
-    let accessCodeFileSHA = null;
-    let currentAccessCode = null;
+    let accessCodeFileSHA = null; // To store the SHA of access_code.json
+    let currentAccessCode = null; // To store the fetched access code
 
     let transferTxtSHA = null;
-    let previewFileSHA = null;
-    let pendingDeletionSHA = null;
+    let previewFileSHA = null; // SHA for Preview_and_Delete.json
+    let pendingDeletionSHA = null; // SHA for pending_deletion.json
 
     let currentLastUploadedFilePath = null;
     let currentLastUploadedFileSHA = null;
-    let currentLastUploadedFileLinks = null; // Store the generated links
-    let currentLastUploadedFileName = null; // Store just the file name
+    let currentLastUploadedFileLinks = null; // Store the generated links (full HTML)
 
     const rootElement = document.documentElement;
 
@@ -399,6 +390,7 @@
         document.getElementById('font-size-select').value = savedSettings.fontSize;
         document.getElementById('line-height-select').value = savedSettings.lineHeight;
 
+        // Load token into settings modal input
         const savedToken = localStorage.getItem("github_token");
         if (savedToken) {
             document.getElementById("tokenInput").value = savedToken;
@@ -425,7 +417,7 @@
         document.getElementById("log").textContent = " ";
     }
 
-    // --- GitHub Token Management ---
+    // --- GitHub Token Management (now entirely within settings) ---
     function saveTokenFromSettings() {
       const token = document.getElementById("tokenInput").value.trim();
       if (token) {
@@ -435,10 +427,11 @@
         }
         localStorage.setItem("github_token", token);
         document.getElementById("log").textContent = " GitHub Token ";
+        // Reload information after saving token from settings
         loadTransfer();
-        loadLastUploadedFileInfoFromGitHub();
+        loadLastUploadedFileInfoFromGitHub(); // This will load the info, but not display links immediately
         loadPendingDeletionSHA();
-        loadAccessCodeFile();
+        // No need to load access code here, it's loaded by loadLastUploadedFileInfoFromGitHub
       } else {
         alert(" Token ");
       }
@@ -453,18 +446,16 @@
     function resetToken() {
       if (confirm(" GitHub Token ")) {
         localStorage.removeItem("github_token");
-        document.getElementById("tokenInput").value = "";
+        document.getElementById("tokenInput").value = ""; // Clear input in settings modal
         document.getElementById("log").textContent = " GitHub Token  Token";
+        // Clear content if token is removed
         document.getElementById("transferContent").value = "";
         
-        // Hide all file-related info and clear data
-        document.getElementById("lastUploadedFileInfo").style.display = 'none';
-        document.getElementById("lastFileName").textContent = "";
-        document.getElementById("lastFileLinks").innerHTML = "";
+        // Hide all file-related info
         document.getElementById("shareLink").style.display = 'none';
         document.getElementById("shareLink").innerHTML = "";
-        document.getElementById("extractionCodeInput").value = "";
         document.getElementById("extractionCodeSection").style.display = 'none';
+        document.getElementById("generatedPasswordDisplay").textContent = ""; // Clear auto-generated code
 
         transferTxtSHA = null;
         previewFileSHA = null;
@@ -474,8 +465,6 @@
         currentLastUploadedFilePath = null;
         currentLastUploadedFileSHA = null;
         currentLastUploadedFileLinks = null;
-        currentLastUploadedFileName = null;
-        document.getElementById('generatedPassword').textContent = ''; // Clear status message
       }
     }
 
@@ -487,13 +476,12 @@
     window.onload = async () => {
       loadSettings();
       try {
-        getToken();
-        await loadTransfer();
-        await loadLastUploadedFileInfoFromGitHub();
+        getToken(); // Check if token exists immediately
+        await loadTransfer(); // Load transfer.txt
+        await loadLastUploadedFileInfoFromGitHub(); // This will determine if extraction section should show
         await loadPendingDeletionSHA();
-        await loadAccessCodeFile(); // Load existing code if any, for display
       } catch (e) {
-        console.warn(e.message);
+        console.warn(e.message); // Log error but don't alert unless user tries to upload
       }
     };
 
@@ -514,11 +502,13 @@
       log.textContent = "";
       shareDiv.innerHTML = "";
       shareDiv.style.display = 'none'; // Ensure download links are hidden
-      document.getElementById("lastUploadedFileInfo").style.display = 'none'; // Hide file info
-      document.getElementById("extractionCodeInput").value = ""; // Clear extraction code input
-      document.getElementById("extractionCodeSection").style.display = 'none'; // Hide extraction section
+      document.getElementById("generatedPasswordDisplay").textContent = ""; // Clear auto-generated code display
 
       if (file) {
+        // --- Handle File Upload ---
+        document.getElementById("extractionCodeInput").value = ""; // Clear extraction code input
+        document.getElementById("extractionCodeSection").style.display = 'none'; // Hide until upload complete
+
         const finalPath = DEFAULT_UPLOAD_FOLDER + UPLOAD_PREFIX + file.name;
 
         if (file.size > 100 * 1024 * 1024) {
@@ -561,34 +551,23 @@
           const data = await confirmRes.json();
           const uploadedFileSHA = data.sha;
 
-          // **Automatically generate and save new access code**
-          await generateAndSaveAccessCode();
-
           // Update Preview_and_Delete.json for file uploads
           await updatePreviewFileOnGitHub(finalPath, uploadedFileSHA, token);
           currentLastUploadedFilePath = finalPath;
           currentLastUploadedFileSHA = uploadedFileSHA;
-          currentLastUploadedFileName = file.name; // Store the file name
 
-          const encodedPath = encodePath(finalPath);
-          const githubPageLink = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}/blob/${BRANCH_NAME}/${encodedPath}`;
-          const rawLink = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/${BRANCH_NAME}/${encodedPath}`;
-          
-          // Store links, but don't display yet
-          currentLastUploadedFileLinks = {
-            github: githubPageLink,
-            raw: rawLink
-          };
-          
-          log.textContent += `\n `;
-          document.getElementById('extractionCodeSection').style.display = 'block'; // Show extraction section
-          document.getElementById('generatedPassword').textContent = ``; // Update status
+          // Generate and save new access code
+          await generateAndSaveAccessCode(token); // THIS IS NOW AUTOMATIC
+          document.getElementById("generatedPasswordDisplay").textContent = `: ${currentAccessCode}`;
+
 
           const deleteTimeHours = 12;
           const deleteAt = Date.now() + deleteTimeHours * 60 * 60 * 1000;
 
           try {
             await addEntryToPendingDeletion(finalPath, deleteAt, token);
+            log.textContent += `\n `;
+            document.getElementById('extractionCodeSection').style.display = 'block'; // Show extraction section
           } catch (err) {
             log.textContent += `\n ${err.message}`;
           }
@@ -598,36 +577,37 @@
       } else if (transferContentArea.value.trim() !== "") {
         // --- Handle Text Synchronization ---
         log.textContent = "  Notes/transfer.txt ...";
-        document.getElementById("shareLink").style.display = 'none';
-        document.getElementById("extractionCodeSection").style.display = 'none';
-        document.getElementById("lastUploadedFileInfo").style.display = 'none';
-
+        shareDiv.style.display = 'none'; // Hide download links for text sync
+        document.getElementById("extractionCodeSection").style.display = 'none'; // Hide extraction section for text sync
+        document.getElementById("generatedPasswordDisplay").textContent = ""; // Clear auto-generated code
 
         try {
             await updateTransferFile(transferContentArea.value, token);
             log.textContent = "  Notes/transfer.txt";
             const transferTxtLink = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/${BRANCH_NAME}/${encodePath(TRANSFER_FILE_PATH)}`;
-            document.getElementById("shareLink").innerHTML = ` <b>transfer.txt :</b><br><a href="${transferTxtLink}" target="_blank">${transferTxtLink}</a>`;
-            document.getElementById("shareLink").style.display = 'block';
+            // For text sync, we can show the link immediately
+            shareDiv.innerHTML = ` <b>transfer.txt :</b><br><a href="${transferTxtLink}" target="_blank">${transferTxtLink}</a>`;
+            shareDiv.style.display = 'block';
             document.getElementById("fileInput").value = "";
         } catch (err) {
             log.textContent = ` : ${err.message}`;
         }
       } else {
         log.textContent = " ";
-        document.getElementById("shareLink").style.display = 'none';
+        shareDiv.style.display = 'none';
         document.getElementById("extractionCodeSection").style.display = 'none';
-        document.getElementById("lastUploadedFileInfo").style.display = 'none';
+        document.getElementById("generatedPasswordDisplay").textContent = "";
       }
     }
 
+    // Function to delete uploaded files (from the "" section)
     async function deleteUploadedFile() {
       if (!currentLastUploadedFilePath || !currentLastUploadedFileSHA) {
         alert("");
         return;
       }
 
-      const confirmDelete = confirm(` "${currentLastUploadedFileName}" `);
+      const confirmDelete = confirm(` "${currentLastUploadedFilePath}" `);
       if (!confirmDelete) return;
 
       let token;
@@ -640,12 +620,12 @@
 
       const log = document.getElementById("log");
       const shareDiv = document.getElementById("shareLink");
-      log.textContent = `  ${currentLastUploadedFileName}...`;
+      log.textContent = `  ${currentLastUploadedFilePath}...`;
       shareDiv.innerHTML = "";
-      shareDiv.style.display = 'none';
-      document.getElementById("extractionCodeInput").value = "";
-      document.getElementById("extractionCodeSection").style.display = 'none';
-
+      shareDiv.style.display = 'none'; // Hide share link div
+      document.getElementById("extractionCodeInput").value = ""; // Clear extraction code input
+      document.getElementById("extractionCodeSection").style.display = 'none'; // Hide extraction section
+      document.getElementById("generatedPasswordDisplay").textContent = ""; // Clear auto-generated code
 
       const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${currentLastUploadedFilePath}`;
 
@@ -656,7 +636,7 @@
             Authorization: `token ${token}`,
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({ message: `Delete ${currentLastUploadedFileName}`, sha: currentLastUploadedFileSHA })
+          body: JSON.stringify({ message: `Delete ${currentLastUploadedFilePath}`, sha: currentLastUploadedFileSHA })
         });
 
         if (!res.ok) {
@@ -664,28 +644,22 @@
           throw new Error(`${res.status} - ${err.message || res.statusText}`);
         }
 
-        log.textContent = `  ${currentLastUploadedFileName} `;
-        await updatePreviewFileOnGitHub(null, null, token);
+        log.textContent = `  ${currentLastUploadedFilePath} `;
+        await updatePreviewFileOnGitHub(null, null, token); // Clear the preview file
         await removeEntryFromPendingDeletion(currentLastUploadedFilePath, token);
+        await clearAccessCodeFile(token); // Clear the access code file and SHA
 
-        // Clear all cached file info and hide sections
         currentLastUploadedFilePath = null;
         currentLastUploadedFileSHA = null;
-        currentLastUploadedFileLinks = null;
-        currentLastUploadedFileName = null;
-        document.getElementById("lastUploadedFileInfo").style.display = 'none';
-        document.getElementById("lastFileName").textContent = "";
-        document.getElementById("lastFileLinks").innerHTML = "";
-        document.getElementById("fileInput").value = "";
-        document.getElementById("extractionCodeInput").value = "";
-        document.getElementById("extractionCodeSection").style.display = 'none';
-        document.getElementById("shareLink").style.display = 'none';
-        document.getElementById("generatedPassword").textContent = ''; // Clear extraction code status
+        currentLastUploadedFileLinks = null; // Clear cached links
+        document.getElementById("fileInput").value = ""; // Clear the file input field
+
       } catch (err) {
         log.textContent = ` ${err.message}`;
       }
     }
 
+    // Function to clear transfer content (from the fixed bar)
     async function clearTransferContent() {
       const transferContentArea = document.getElementById("transferContent");
       if (transferContentArea.value.trim() === "") {
@@ -706,36 +680,38 @@
 
       document.getElementById("log").textContent = " ...";
       try {
-        transferContentArea.value = "";
-        await updateTransferFile("", token);
+        transferContentArea.value = ""; // Clear the textarea
+        await updateTransferFile("", token); // Update GitHub with empty content
         document.getElementById("log").textContent = "  GitHub";
-        document.getElementById("shareLink").innerHTML = "";
+        document.getElementById("shareLink").innerHTML = ""; // Clear share link if visible
         document.getElementById("shareLink").style.display = 'none';
+        document.getElementById("extractionCodeSection").style.display = 'none'; // Hide extraction section
+        document.getElementById("generatedPasswordDisplay").textContent = ""; // Clear auto-generated code
       } catch (err) {
         document.getElementById("log").textContent = ` ${err.message}`;
       }
     }
 
-
-    // This function will now only *update the internal state* and visibility based on currentLastUploadedFilePath
-    async function displayLastUploadedFile() {
-      const fileInfoDiv = document.getElementById("lastUploadedFileInfo");
-      const fileNameP = document.getElementById("lastFileName");
-      const fileLinksP = document.getElementById("lastFileLinks");
-      const shareDiv = document.getElementById("shareLink");
-
+    // This function now *prepares* the content for #shareLink, but doesn't display it
+    function prepareLastUploadedFileContent() {
       if (currentLastUploadedFilePath && currentLastUploadedFileSHA) {
-        fileNameP.textContent = `: ${currentLastUploadedFileName || currentLastUploadedFilePath.split('/').pop()}`;
-        fileLinksP.innerHTML = `<em></em>`;
-        fileInfoDiv.style.display = 'block'; // Show the info block, but with a placeholder for links
-        document.getElementById("extractionCodeSection").style.display = 'block'; // Show extraction section
-        shareDiv.innerHTML = ""; // Clear previously displayed links
-        shareDiv.style.display = 'none'; // Ensure links are hidden
+        const encodedPath = encodePath(currentLastUploadedFilePath);
+        const githubPageLink = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}/blob/${BRANCH_NAME}/${encodedPath}`;
+        const rawLink = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/${BRANCH_NAME}/${encodedPath}`;
+
+        currentLastUploadedFileLinks = `
+          <div id="lastUploadedFileInfo">
+            <h3></h3>
+            <p id="lastFileName">: ${currentLastUploadedFilePath.split('/').pop()}</p>
+            <p id="lastFileLinks">
+              <b>GitHub </b><br><a href="${githubPageLink}" target="_blank">${githubPageLink}</a><br>
+              <b>:</b><br><a href="${rawLink}" target="_blank">${rawLink}</a>
+            </p>
+            <button class="delete" onclick="deleteUploadedFile()"> </button>
+          </div>
+        `;
       } else {
-        fileInfoDiv.style.display = 'none';
-        document.getElementById("extractionCodeSection").style.display = 'none';
-        shareDiv.innerHTML = "";
-        shareDiv.style.display = 'none';
+        currentLastUploadedFileLinks = null; // No file to show
       }
     }
 
@@ -745,6 +721,7 @@
         token = getToken();
       } catch (e) {
         console.warn("Token not available, skipping loading last uploaded file info from GitHub.");
+        document.getElementById("extractionCodeSection").style.display = 'none'; // Ensure hidden if no token
         return;
       }
 
@@ -758,38 +735,40 @@
           if (content && content.path && content.sha) {
             currentLastUploadedFilePath = content.path;
             currentLastUploadedFileSHA = content.sha;
-            currentLastUploadedFileName = content.path.split('/').pop(); // Extract file name
-
-            // Re-generate and store links but don't display yet
-            const encodedPath = encodePath(currentLastUploadedFilePath);
-            const githubPageLink = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}/blob/${BRANCH_NAME}/${encodedPath}`;
-            const rawLink = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/${BRANCH_NAME}/${encodedPath}`;
-            currentLastUploadedFileLinks = {
-                github: githubPageLink,
-                raw: rawLink
-            };
-
-            await displayLastUploadedFile(); // This will show the info div, but links will be hidden
+            prepareLastUploadedFileContent(); // Prepare the links but don't display
+            // Attempt to load the access code as well, since there's a file
+            await loadAccessCodeFile(token); 
+            document.getElementById("extractionCodeSection").style.display = 'block'; // Show extraction section if a file is present
           } else {
-            console.log("Preview_and_Delete.json is empty or malformed.");
-            document.getElementById("lastUploadedFileInfo").style.display = 'none';
-            document.getElementById("extractionCodeSection").style.display = 'none';
+            console.log(`${PREVIEW_FILE_PATH} is empty or malformed.`);
+            currentLastUploadedFilePath = null;
+            currentLastUploadedFileSHA = null;
+            currentLastUploadedFileLinks = null;
+            document.getElementById("extractionCodeSection").style.display = 'none'; // Hide if no valid file info
+            document.getElementById("shareLink").style.display = 'none'; // Ensure shareLink is hidden
+            currentAccessCode = null; // Clear any old access code if no file
           }
         } else if (res.status === 404) {
-          console.log(`${PREVIEW_FILE_PATH} not found, initializing.`);
-          document.getElementById("lastUploadedFileInfo").style.display = 'none';
-          document.getElementById("extractionCodeSection").style.display = 'none';
+          console.log(`${PREVIEW_FILE_PATH} not found.`);
+          currentLastUploadedFilePath = null;
+          currentLastUploadedFileSHA = null;
+          currentLastUploadedFileLinks = null;
+          document.getElementById("extractionCodeSection").style.display = 'none'; // Hide if file not found
+          document.getElementById("shareLink").style.display = 'none'; // Ensure shareLink is hidden
+          currentAccessCode = null; // Clear any old access code
         } else {
           console.error(`Failed to load ${PREVIEW_FILE_PATH}: ${res.status} - ${res.statusText}`);
           document.getElementById("log").textContent = ` : ${res.status}. Token.`;
-          document.getElementById("lastUploadedFileInfo").style.display = 'none';
           document.getElementById("extractionCodeSection").style.display = 'none';
+          document.getElementById("shareLink").style.display = 'none';
+          currentAccessCode = null; // Clear any old access code
         }
       } catch (err) {
         console.error(`Error loading ${PREVIEW_FILE_PATH}:`, err);
         document.getElementById("log").textContent = ` : ${err.message}.`;
-        document.getElementById("lastUploadedFileInfo").style.display = 'none';
         document.getElementById("extractionCodeSection").style.display = 'none';
+        document.getElementById("shareLink").style.display = 'none';
+        currentAccessCode = null; // Clear any old access code
       }
     }
 
@@ -837,7 +816,7 @@
                 const json = await res.json();
                 pendingDeletionSHA = json.sha;
             } else if (res.status === 404) {
-                pendingDeletionSHA = null;
+                pendingDeletionSHA = null; // File doesn't exist yet
             } else {
                 throw new Error(`Failed to check existing ${PENDING_DELETION_FILE_NAME}: ${res.status}`);
             }
@@ -851,6 +830,7 @@
       const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${PENDING_DELETION_PATH}`;
       let data = [];
 
+      // Fetch current content and SHA first
       if (pendingDeletionSHA) {
           try {
               const res = await fetch(url, { headers: { Authorization: `token ${token}` } });
@@ -862,9 +842,10 @@
               }
           } catch (err) {
               console.error(`Error fetching ${PENDING_DELETION_FILE_NAME} for add:`, err);
-              data = [];
+              data = []; // If fetching fails, proceed with an empty array, but keep the current SHA if we have it
           }
       }
+
 
       data.push({ path: filePath, deleteAt: deleteAt });
 
@@ -880,7 +861,7 @@
         throw new Error(` ${PENDING_DELETION_FILE_NAME}: ${putRes.status} - ${err.message || putRes.statusText}`);
       }
       const newSha = (await putRes.json()).content.sha;
-      pendingDeletionSHA = newSha;
+      pendingDeletionSHA = newSha; // Update the SHA after successful write
     }
 
     async function removeEntryFromPendingDeletion(filePathToRemove, token) {
@@ -889,14 +870,14 @@
 
         if (!pendingDeletionSHA) {
             console.warn(`${PENDING_DELETION_FILE_NAME} SHA is null, cannot remove entry.`);
-            return;
+            return; // No file to modify or its SHA is unknown
         }
 
         try {
             const res = await fetch(url, { headers: { Authorization: `token ${token}` } });
             if (res.ok) {
                 const json = await res.json();
-                pendingDeletionSHA = json.sha;
+                pendingDeletionSHA = json.sha; // Ensure we have the latest SHA
                 data = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
             } else if (res.status === 404) {
                 console.log(`${PENDING_DELETION_FILE_NAME} not found, nothing to remove.`);
@@ -914,7 +895,7 @@
 
         if (newData.length === initialLength) {
             console.log(` "${filePathToRemove}"  ${PENDING_DELETION_FILE_NAME} `);
-            return;
+            return; // File path not found in the array
         }
 
         const base64Content = btoa(unescape(encodeURIComponent(JSON.stringify(newData, null, 2))));
@@ -931,9 +912,10 @@
             throw new Error(` ${PENDING_DELETION_FILE_NAME} : ${putRes.status} - ${err.message || putRes.statusText}`);
         }
         const newSha = (await putRes.json()).content.sha;
-        pendingDeletionSHA = newSha;
+        pendingDeletionSHA = newSha; // Update the SHA after successful write
         console.log(` "${filePathToRemove}"  ${PENDING_DELETION_FILE_NAME} `);
     }
+
 
     async function updateTransferFile(text, token) {
       const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${TRANSFER_FILE_PATH}`;
@@ -1020,7 +1002,7 @@
     }
 
     // --- Access Code Generation and Saving Functions ---
-    function generateRandomAccessCode(length = 4) {
+    function generateRandomAccessCode(length = 4) { // Fixed to 4 digits
       let code = "";
       for (let i = 0; i < length; i++) {
         code += Math.floor(Math.random() * 10); // Generate a random digit (0-9)
@@ -1028,14 +1010,7 @@
       return code;
     }
 
-    async function loadAccessCodeFile() {
-        let token;
-        try {
-            token = getToken();
-        } catch (e) {
-            console.warn("Token not available, skipping loading access_code.json SHA.");
-            return;
-        }
+    async function loadAccessCodeFile(token) {
         const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${ACCESS_CODE_FILE_PATH}`;
         try {
             const res = await fetch(url, { headers: { Authorization: `token ${token}` } });
@@ -1044,33 +1019,21 @@
                 accessCodeFileSHA = json.sha;
                 const content = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
                 currentAccessCode = content.code; // Store the code
-                document.getElementById('generatedPassword').textContent = `: ${content.code}`;
+                // Not displaying it on load, only when automatically generated or successfully verified
             } else if (res.status === 404) {
                 accessCodeFileSHA = null;
                 currentAccessCode = null;
-                document.getElementById('generatedPassword').textContent = `Notes/access_code.json `;
             } else {
                 throw new Error(`Failed to check existing ${ACCESS_CODE_FILE_PATH}: ${res.status}`);
             }
         } catch (e) {
-            console.error(`Error loading ${ACCESS_CODE_FILE_PATH} SHA:`, e);
-            document.getElementById('generatedPassword').textContent = `: ${e.message}`;
-            accessCodeFileSHA = null;
+            console.error(`Error loading ${ACCESS_CODE_FILE_PATH} SHA/content:`, e);
             currentAccessCode = null;
+            accessCodeFileSHA = null;
         }
     }
 
-    async function generateAndSaveAccessCode() {
-      let token;
-      try {
-        token = getToken();
-      } catch (e) {
-        document.getElementById("log").textContent = ` ${e.message}`;
-        throw e; // Re-throw to stop the upload process if token is missing
-      }
-
-      document.getElementById("log").textContent = "...";
-
+    async function generateAndSaveAccessCode(token) { // Renamed and simplified
       const newCode = generateRandomAccessCode(4); // Ensure 4 digits
       const codeData = { code: newCode, generatedAt: new Date().toISOString() };
       const base64Content = btoa(unescape(encodeURIComponent(JSON.stringify(codeData, null, 2))));
@@ -1098,58 +1061,85 @@
         const data = await res.json();
         accessCodeFileSHA = data.content.sha; // Update SHA after successful save
         currentAccessCode = newCode; // Update cached code
-        document.getElementById('generatedPassword').textContent = `: ${newCode}`;
-        document.getElementById("log").textContent += "\n  Notes/access_code.json";
       } catch (err) {
-        document.getElementById("log").textContent = ` : ${err.message}`;
+        document.getElementById("log").textContent = ` : ${err.message}`;
         console.error("Error saving access code:", err);
-        throw err; // Re-throw to indicate failure
       }
+    }
+
+    async function clearAccessCodeFile(token) {
+        const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${ACCESS_CODE_FILE_PATH}`;
+        if (!accessCodeFileSHA) {
+            console.warn("No access code file SHA to delete.");
+            return;
+        }
+
+        try {
+            const res = await fetch(url, {
+                method: "DELETE",
+                headers: {
+                    Authorization: `token ${token}`,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ message: "Clear access code file", sha: accessCodeFileSHA })
+            });
+
+            if (!res.ok) {
+                const err = await res.json();
+                throw new Error(`Failed to clear access code file: ${res.status} - ${err.message || res.statusText}`);
+            }
+            accessCodeFileSHA = null;
+            currentAccessCode = null;
+            console.log("Access code file cleared.");
+        } catch (err) {
+            console.error("Error clearing access code file:", err);
+        }
     }
 
     async function verifyExtractionCode() {
         const inputCode = document.getElementById('extractionCodeInput').value.trim();
         const log = document.getElementById('log');
         const shareDiv = document.getElementById('shareLink');
-        const lastUploadedFileInfoDiv = document.getElementById("lastUploadedFileInfo");
-        const lastFileLinksP = document.getElementById("lastFileLinks");
 
-        log.textContent = "";
+        log.textContent = ""; // Clear previous log messages
 
-        if (!currentLastUploadedFileLinks || !currentLastUploadedFilePath) {
+        if (!currentLastUploadedFilePath || !currentLastUploadedFileSHA) {
             log.textContent = " ";
+            shareDiv.style.display = 'none';
             return;
         }
 
         if (inputCode.length !== 4 || !/^\d{4}$/.test(inputCode)) {
             log.textContent = " 4";
             shareDiv.style.display = 'none';
-            lastFileLinksP.innerHTML = `<em></em>`; // Revert placeholder
             return;
         }
 
-        if (!currentAccessCode) {
-            log.textContent = " ";
+        // Ensure we have the latest access code from GitHub
+        let token;
+        try {
+            token = getToken();
+            await loadAccessCodeFile(token); // Re-load to get latest
+        } catch (e) {
+            log.textContent = " Token";
             shareDiv.style.display = 'none';
-            lastFileLinksP.innerHTML = `<em></em>`; // Revert placeholder
-            await loadAccessCodeFile(); // Try to load it again
+            return;
+        }
+
+
+        if (!currentAccessCode) {
+            log.textContent = " ";
+            shareDiv.style.display = 'none';
             return;
         }
 
         if (inputCode === currentAccessCode) {
-            shareDiv.innerHTML = ` <b>GitHub </b><br><a href="${currentLastUploadedFileLinks.github}" target="_blank">${currentLastUploadedFileLinks.github}</a><br><br> <b>:</b><br><a href="${currentLastUploadedFileLinks.raw}" target="_blank">${currentLastUploadedFileLinks.raw}</a>`;
+            prepareLastUploadedFileContent(); // Re-prepare content to ensure it's up-to-date
+            shareDiv.innerHTML = currentLastUploadedFileLinks;
             shareDiv.style.display = 'block';
-
-            lastFileLinksP.innerHTML = `
-                <b>GitHub </b><br><a href="${currentLastUploadedFileLinks.github}" target="_blank">${currentLastUploadedFileLinks.github}</a><br>
-                <b>:</b><br><a href="${currentLastUploadedFileLinks.raw}" target="_blank">${currentLastUploadedFileLinks.raw}</a>
-            `;
-            lastUploadedFileInfoDiv.style.display = 'block'; // Ensure info section is visible with full links
-
             log.textContent = " ";
         } else {
             shareDiv.style.display = 'none';
-            lastFileLinksP.innerHTML = `<em></em>`; // Revert placeholder
             log.textContent = " ";
         }
     }
