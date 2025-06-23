@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Learning Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 15px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            animation: fadeInDown 0.6s ease-out;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .app-item {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 16px;
+            padding: 20px 15px;
+            text-align: center;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Adjusted animation delays for new items and existing ones */
+        .app-item:nth-child(1) { animation-delay: 0.0s; }
+        .app-item:nth-child(2) { animation-delay: 0.05s; }
+        .app-item:nth-child(3) { animation-delay: 0.1s; }
+        .app-item:nth-child(4) { animation-delay: 0.15s; }
+        .app-item:nth-child(5) { animation-delay: 0.2s; }
+        .app-item:nth-child(6) { animation-delay: 0.25s; }
+        .app-item:nth-child(7) { animation-delay: 0.3s; }
+        .app-item:nth-child(8) { animation-delay: 0.35s; }
+        .app-item:nth-child(9) { animation-delay: 0.4s; }
+        .app-item:nth-child(10) { animation-delay: 0.45s; }
+        .app-item:nth-child(11) { animation-delay: 0.5s; }
+        .app-item:nth-child(12) { animation-delay: 0.55s; }
+        .app-item:nth-child(13) { animation-delay: 0.6s; } /* New item animation delay */
+
+
+        .app-item:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .app-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #2d3748;
+            line-height: 1.2;
+            margin-bottom: 4px;
+        }
+
+        .app-desc {
+            font-size: 0.7rem;
+            color: #718096;
+            line-height: 1.3;
+        }
+
+        /* The .footer class is now applied only to the visitor-stats div for consistency */
+        .visitor-stats {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.8rem;
+            animation: fadeIn 0.8s ease-out 0.3s both;
+            line-height: 1.5; /* Added for better readability */
+            margin-top: 20px; /* Space above the visitor counter */
+        }
+
+        /* 各个应用的图标颜色 */
+        .app-item:nth-child(1) .app-icon { background: linear-gradient(135deg, #1abc9c, #16a085); }
+        .app-item:nth-child(2) .app-icon { background: linear-gradient(135deg, #FF6F61, #DE483A); }
+        .app-item:nth-child(3) .app-icon { background: linear-gradient(135deg, #3498db, #2980b9); }
+        .app-item:nth-child(4) .app-icon { background: linear-gradient(135deg, #ff6b6b, #ff8e8e); }
+        .app-item:nth-child(5) .app-icon { background: linear-gradient(135deg, #4ecdc4, #44d4cc); }
+        .app-item:nth-child(6) .app-icon { background: linear-gradient(135deg, #45b7d1, #5bc5e8); }
+        .app-item:nth-child(7) .app-icon { background: linear-gradient(135deg, #f9ca24, #f5cd2e); }
+        .app-item:nth-child(8) .app-icon { background: linear-gradient(135deg, #6c5ce7, #8b7ed8); }
+        .app-item:nth-child(9) .app-icon { background: linear-gradient(135deg, #fd79a8, #ff8eb5); }
+        .app-item:nth-child(10) .app-icon { background: linear-gradient(135deg, #00b894, #26d0ce); }
+        .app-item:nth-child(11) .app-icon { background: linear-gradient(135deg, #fdcb6e, #fed766); }
+        .app-item:nth-child(12) .app-icon { background: linear-gradient(135deg, #e17055, #e58e71); }
+        .app-item:nth-child(13) .app-icon { background: linear-gradient(135deg, #6a82fb, #fc5c7d); } /* New item color (purple/pink) */
+
+        /* 适配大屏手机 */
+        @media (min-width: 375px) {
+            .container {
+                max-width: 450px;
+            }
+
+            .app-grid {
+                gap: 18px;
+            }
+
+            .app-item {
+                padding: 22px 18px;
+            }
+
+            .app-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
+            }
+
+            .app-name {
+                font-size: 0.9rem;
+            }
+
+            .app-desc {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* 超大屏幕显示4列 */
+        @media (min-width: 600px) {
+            .container {
+                max-width: 600px;
+            }
+
+            .app-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+        }
+
+        /* 动画定义 */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* 点击波纹效果 */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+        }
+
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 English Hub</h1>
+            <p>英语学习资源</p>
+        </div>
+
+        <div class="app-grid">
+            <div class="app-item" onclick="openApp('https://moodhappy.github.io/moodHappy.gitHub.io-nce/style/B1-article-view.html', this)">
+                <div class="app-icon">📝</div>
+                <div class="app-name">B1 Article</div>
+                <div class="app-desc">B1级文章阅读</div>
+            </div>
+
+            <div class="app-item" onclick="openApp('https://moodhappy.github.io/moodHappy.gitHub.io-nce/style/Text_Sync.html', this)">
+                <div class="app-icon">☁️</div>
+                <div class="app-name">Text Sync</div>
+                <div class="app-desc">私用文本同步</div>
+            </div>
+
+            <div class="app-item" onclick="openApp('https://moodhappy.github.io/moodHappy.gitHub.io-nce/style/Texttohtml.html?hash=Y90YTV2KMBWCYOKL', this)">
+                <div class="app-icon">🔁</div>
+                <div class="app-name">中转站</div>
+                <div class="app-desc">B1文章临时存放</div>
+            </div>
+
+            <div class="app-item" onclick="openApp('https://englishnewsinlevels.com/', this)">
+                <div class="app-icon">📰</div>
+                <div class="app-name">News Levels</div>
+                <div class="app-desc">分级新闻阅读</div>
+            </div>
+
+            <div class="app-item" onclick="openApp('https://www.dogonews.com/', this)">
+                <div class="app-icon">🐕</div>
+                <div class="app-name">DOGOnews</div>
+                <div class="app-desc">学生新闻网站</div>
+            </div>
+
+            <div class="app-item" onclick="openApp('https://breakingnewsenglish.com/', this)">
+                <div class="app-icon">⚡</div>
+                <div class="app-name">Breaking News</div>
+                <div class="app-desc">时事英语练习</div>
+            </div>
+
+            <div class="app-item" onclick="openApp('https://www.newsinlevels.com/', this)">
+                <div class="app-icon">📊</div>
+                <div class="app-name">News Levels</div>
+                <div class="app-desc">三级难度新闻</div>
+            </div>
+
+            <div class="app-item" onclick="openApp('https://engoo.com/app/daily-news?max_level=5&min_level=5', this)">
+                <div class="app-icon">📖</div>
+                <div class="app-name">Engoo News</div>
+                <div class="app-desc">每日英语新闻</div>
+            </div>
+
+            <div class="app-item" onclick="openApp('https://www.bbc.com/future-planet', this)">
+                <div class="app-icon">🌍</div>
+                <div class="app-name">BBC Planet</div>
+                <div class="app-desc">环境深度报道</div>
+            </div>
+
+            <div class="app-item" onclick="openApp('https://privatebin.net/', this)">
+                <div class="app-icon">🔒</div>
+                <div class="app-name">PrivateBin</div>
+                <div class="app-desc">安全文本分享</div>
+            </div>
+
+            <div class="app-item" onclick="openApp('https://moodhappy.github.io/moodHappy.gitHub.io-nce/style/new.html', this)">
+                <div class="app-icon">😊</div>
+                <div class="app-name">Mood Happy</div>
+                <div class="app-desc">学习辅助工具</div>
+            </div>
+
+            <div class="app-item" onclick="openApp('https://www.daysinlevels.com/', this)">
+                <div class="app-icon">📅</div>
+                <div class="app-name">Days Levels</div>
+                <div class="app-desc">分级历史事件</div>
+            </div>
+
+            <div class="app-item" onclick="openApp('https://moodhappy.github.io/moodHappy.gitHub.io-nce/style/File_Sync_1.html', this)">
+                <div class="app-icon">🗄️</div>
+                <div class="app-name">File Sync</div>
+                <div class="app-desc">文件同步工具</div>
+            </div>
+        </div>
+
+        <div class="visitor-stats">
+            <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div>
+                本页访问次数：<span id="busuanzi_value_page_pv"></span> 次<br>
+                全站访问次数：<span id="busuanzi_value_site_pv"></span> 次
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openApp(url, element) {
+            // 创建波纹效果
+            createRipple(event, element);
+
+            // 添加点击反馈
+            element.style.transform = 'scale(0.95)';
+
+            setTimeout(() => {
+                window.open(url, '_blank');
+                element.style.transform = '';
+            }, 200);
+        }
+
+        function createRipple(event, element) {
+            const ripple = document.createElement('span');
+            const rect = element.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = event.clientX - rect.left - size / 2;
+            const y = event.clientY - rect.top - size / 2;
+
+            ripple.className = 'ripple';
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+
+            element.appendChild(ripple);
+
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        }
+
+        // 触摸反馈优化
+        document.querySelectorAll('.app-item').forEach(item => {
+            item.addEventListener('touchstart', function(e) {
+                this.style.transform = 'scale(0.97)';
+            }, { passive: true });
+
+            item.addEventListener('touchend', function(e) {
+                setTimeout(() => {
+                    if (this.style.transform !== 'scale(0.95)') {
+                        this.style.transform = '';
+                    }
+                }, 100);
+            }, { passive: true });
+        });
+
+        // 防止滑动误触
+        let startY;
+        document.addEventListener('touchstart', function(e) {
+            startY = e.touches[0].clientY;
+        }, { passive: true });
+
+        document.addEventListener('touchmove', function(e) {
+            if (Math.abs(e.touches[0].clientY - startY) > 10) {
+                document.querySelectorAll('.app-item').forEach(item => {
+                    item.style.transform = '';
+                });
+            }
+        }, { passive: true });
+    </script>
+</body>
+</html>
