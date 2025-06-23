@@ -100,7 +100,7 @@
     button.delete { background-color: var(--button-danger-bg); }
     button.save { background-color: var(--button-primary-bg); } /* Specific save button style */
 
-    #log {
+    #log, #accessCodeLog {
       white-space: pre-wrap;
       color: var(--log-color); /* Apply log color */
       margin-top: 10px;
@@ -260,7 +260,7 @@
         float: right;
     }
 
-    /* Styles for the new extraction page */
+    /* Styles for the new extraction page (for individual file retrieval) */
     #extractionSection {
       display: none; /* Hidden by default */
       margin-top: 20px;
@@ -285,13 +285,50 @@
       border-top: 1px dashed var(--textarea-border-color);
       padding-top: 20px;
     }
+
+    /* New styles for the initial page access code section */
+    #accessCodeSection {
+        display: flex; /* Flexbox for centering */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh; /* Occupy most of the viewport height */
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    #accessCodeSection h3 {
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+    #accessCodeInput {
+        width: 180px;
+        font-size: 28px;
+        padding: 15px;
+        letter-spacing: 5px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    #accessCodeLog {
+        margin-top: 15px;
+        color: red; /* Error messages in red */
+        font-weight: bold;
+    }
   </style>
 </head>
 <body>
-  <div id="settings-icon" title="设置" onclick="openSettingsModal()">⚙️</div>
-  <h2>📦 GitHub 文件同步助手</h2>
+  <div id="accessCodeSection">
+    <h3>🔐 请输入页面访问码</h3>
+    <p>这是一个私人同步助手，请输入访问码以继续。</p>
+    <input type="text" id="accessCodeInput" placeholder="四位数字访问码" maxlength="4" />
+    <button onclick="checkAccessCode()">进入助手</button>
+    <div id="accessCodeLog"></div>
+  </div>
 
-  <div id="mainUploadSection">
+  <div id="mainUploadSection" style="display: none;">
+    <div id="settings-icon" title="设置" onclick="openSettingsModal()">⚙️</div>
+    <h2>📦 GitHub 文件同步助手</h2>
+
     <h3>文件同步</h3>
     <input id="fileInput" type="file" />
 
@@ -316,12 +353,12 @@
       <button onclick="toggleExtractionSection()">提取文件</button> </div>
   </div>
 
-  <div id="extractionSection">
-    <h3>🔐 文件提取</h3>
-    <p>请输入四位数字提取码来查看文件。</p>
+  <div id="extractionSection" style="display: none;">
+    <h3>🔐 单文件提取</h3>
+    <p>请输入四位数字提取码来查看上传的文件。</p>
     <input type="text" id="extractionCodeInput" placeholder="请输入提取码" maxlength="4" />
     <button onclick="retrieveFileByCode()">🔑 提取</button>
-    <button onclick="toggleUploadSection()">返回上传</button>
+    <button onclick="toggleUploadSection()">返回主页</button>
     <div id="extractionResult">
       <div id="fileContentDisplay"></div>
       <div id="extractionLog" style="color: var(--log-color);"></div>
@@ -369,6 +406,12 @@
 
       <hr>
 
+      <label for="pageAccessCodeInput">页面访问码 (4位数字):</label>
+      <input type="text" id="pageAccessCodeInput" placeholder="设置页面访问码" maxlength="4" />
+      <button class="save" style="margin-top:10px;" onclick="savePageAccessCode()">保存访问码</button>
+      <button class="delete" style="margin-top:10px;" onclick="clearPageAccessCode()">清除访问码</button>
+      <hr>
+
       <button class="delete" onclick="resetToken()">重设 GitHub Token</button>
       <button class="save right-align" onclick="saveAndApplySettings()">保存并关闭</button>
     </div>
@@ -385,13 +428,14 @@
     const TRANSFER_FILE_PATH = "Notes/transfer.txt";
     const PENDING_DELETION_FILE_NAME = "pending_deletion.json";
     const PENDING_DELETION_PATH = `Notes/${PENDING_DELETION_FILE_NAME}`;
-    const FILE_CODES_PATH = "Notes/file_codes.json"; // New: Path for storing file codes
+    const FILE_CODES_PATH = "Notes/file_codes.json"; // Path for storing individual file codes
     const SETTINGS_KEY = "github_sync_assistant_settings_v2";
+    const PAGE_ACCESS_CODE_KEY = "github_sync_assistant_page_access_code"; // New: Key for page access code
 
     let transferTxtSHA = null;
-    let previewFileSHA = null; // SHA for Preview_and_Delete.json
-    let pendingDeletionSHA = null; // SHA for pending_deletion.json
-    let fileCodesSHA = null; // New: SHA for file_codes.json
+    let previewFileSHA = null;
+    let pendingDeletionSHA = null;
+    let fileCodesSHA = null;
 
     let currentLastUploadedFilePath = null;
     let currentLastUploadedFileSHA = null;
@@ -433,6 +477,10 @@
         } else {
             document.getElementById("tokenInput").value = "";
         }
+        // Load page access code into settings modal input
+        const savedPageAccessCode = localStorage.getItem(PAGE_ACCESS_CODE_KEY);
+        document.getElementById("pageAccessCodeInput").value = savedPageAccessCode || "";
+
         document.getElementById('settingsModal').style.display = "flex";
     }
 
@@ -453,6 +501,62 @@
         document.getElementById("log").textContent = "⚙️ 设置已保存。";
     }
 
+    // --- Page Access Code Management ---
+    function savePageAccessCode() {
+        const code = document.getElementById("pageAccessCodeInput").value.trim();
+        if (code && /^\d{4}$/.test(code)) {
+            localStorage.setItem(PAGE_ACCESS_CODE_KEY, code);
+            alert("✅ 页面访问码已保存！");
+        } else {
+            alert("⚠️ 页面访问码必须是四位数字！");
+        }
+    }
+
+    function clearPageAccessCode() {
+        if (confirm("确定要清除已保存的页面访问码吗？清除后页面将无需验证即可访问。")) {
+            localStorage.removeItem(PAGE_ACCESS_CODE_KEY);
+            document.getElementById("pageAccessCodeInput").value = "";
+            alert("✅ 页面访问码已清除。");
+        }
+    }
+
+    function checkAccessCode() {
+        const storedCode = localStorage.getItem(PAGE_ACCESS_CODE_KEY);
+        const enteredCode = document.getElementById("accessCodeInput").value.trim();
+        const accessLog = document.getElementById("accessCodeLog");
+
+        if (!storedCode) {
+            // No access code set, allow access
+            showMainContent();
+            return;
+        }
+
+        if (enteredCode === storedCode) {
+            showMainContent();
+        } else {
+            accessLog.textContent = "❌ 访问码错误，请重试。";
+            document.getElementById("accessCodeInput").value = ""; // Clear input
+        }
+    }
+
+    function showMainContent() {
+        document.getElementById('accessCodeSection').style.display = 'none';
+        document.getElementById('mainUploadSection').style.display = 'block';
+        document.getElementById('fixedBar').style.display = 'flex';
+        document.getElementById('settings-icon').style.display = 'block'; // Show settings icon
+        // Proceed with loading other data
+        try {
+            getToken(); // This might still throw if no GitHub token is saved
+            loadTransfer();
+            loadLastUploadedFileInfoFromGitHub();
+            loadPendingDeletionSHA();
+            loadExtractionCodesSHA();
+        } catch (e) {
+            console.warn(e.message);
+            document.getElementById("log").textContent = e.message; // Display token warning in main log
+        }
+    }
+
     // --- GitHub Token Management (now entirely within settings) ---
     function saveTokenFromSettings() {
       const token = document.getElementById("tokenInput").value.trim();
@@ -467,7 +571,7 @@
         loadTransfer();
         loadLastUploadedFileInfoFromGitHub();
         loadPendingDeletionSHA(); // Load SHA for pending_deletion.json
-        loadExtractionCodesSHA(); // New: Load SHA for file_codes.json
+        loadExtractionCodesSHA(); // Load SHA for file_codes.json
       } else {
         alert("⚠️ Token 不能为空，无法保存。");
       }
@@ -492,7 +596,7 @@
         transferTxtSHA = null;
         previewFileSHA = null;
         pendingDeletionSHA = null; // Clear SHA for pending_deletion.json
-        fileCodesSHA = null; // New: Clear SHA for file_codes.json
+        fileCodesSHA = null; // Clear SHA for file_codes.json
         currentLastUploadedFilePath = null;
         currentLastUploadedFileSHA = null;
       }
@@ -505,25 +609,32 @@
 
     window.onload = async () => {
       loadSettings();
-      // Check for extraction code in URL
+      // Check for extraction code in URL first (for individual file access)
       const urlParams = new URLSearchParams(window.location.search);
       const code = urlParams.get('code');
       const fileId = urlParams.get('file');
 
       if (code && fileId) {
-        toggleExtractionSection();
+        // If specific file extraction is requested via URL, bypass page access code for now
+        // This is a design choice: if a direct file link is given, we assume the page access code isn't relevant.
+        // If you want page access code to *always* apply, remove this check and only rely on checkAccessCode()
+        document.getElementById('accessCodeSection').style.display = 'none'; // Hide page access section
+        document.getElementById('settings-icon').style.display = 'none'; // Hide settings in this mode
+        toggleExtractionSection(); // Show the individual file extraction section
         document.getElementById("extractionCodeInput").value = code;
-        await retrieveFileByCode(fileId); // Pass fileId if present in URL
+        await retrieveFileByCode(fileId);
       } else {
-        // Removed the welcome message
-        try {
-          getToken();
-          await loadTransfer();
-          await loadLastUploadedFileInfoFromGitHub();
-          await loadPendingDeletionSHA(); // Load SHA for pending_deletion.json on page load
-          await loadExtractionCodesSHA(); // New: Load SHA for file_codes.json on page load
-        } catch (e) {
-          console.warn(e.message);
+        // If no file extraction in URL, display the main page access code section
+        const storedCode = localStorage.getItem(PAGE_ACCESS_CODE_KEY);
+        if (!storedCode) {
+            // No page access code set, show main content directly
+            showMainContent();
+        } else {
+            // Page access code exists, show the access code input
+            document.getElementById('accessCodeSection').style.display = 'flex';
+            document.getElementById('mainUploadSection').style.display = 'none';
+            document.getElementById('fixedBar').style.display = 'none';
+            document.getElementById('settings-icon').style.display = 'none'; // Hide settings until access granted
         }
       }
     };
@@ -537,6 +648,7 @@
         document.getElementById('extractionResult').style.display = 'none';
         document.getElementById('fileContentDisplay').innerHTML = '';
         document.getElementById('extractionLog').textContent = '';
+        document.getElementById('settings-icon').style.display = 'none'; // Hide settings icon in single file extraction
     }
 
     function toggleUploadSection() {
@@ -546,6 +658,7 @@
         // Clear any previous extraction results when switching back
         document.getElementById('fileContentDisplay').innerHTML = '';
         document.getElementById('extractionLog').textContent = '';
+        document.getElementById('settings-icon').style.display = 'block'; // Show settings icon when back to main
     }
 
     async function processUploadOrSubmit() {
@@ -615,7 +728,7 @@
           const data = await confirmRes.json();
           const uploadedFileSHA = data.sha;
 
-          // Generate a 4-digit extraction code
+          // Generate a 4-digit extraction code for the *file*
           const extractionCode = Math.floor(1000 + Math.random() * 9000).toString();
           const fileId = Date.now().toString(); // Simple unique ID for the file
 
@@ -648,10 +761,6 @@
       } else if (transferContentArea.value.trim() !== "") {
         // --- Handle Text Synchronization ---
         log.textContent = "📝 正在提交 Notes/transfer.txt 文本...";
-        // Ensure file upload section is not affected by text sync
-        // currentLastUploadedFilePath and currentLastUploadedFileSHA should retain their values
-        // or be null if no file was previously uploaded.
-
         try {
             await updateTransferFile(transferContentArea.value, token);
             log.textContent = "✅ 文本已成功提交到 Notes/transfer.txt";
@@ -709,8 +818,22 @@
 
         log.textContent = `✅ 文件 ${currentLastUploadedFilePath} 已成功删除。`;
         await updatePreviewFileOnGitHub(null, null, token); // Clear the preview file
-        await removeEntryFromPendingDeletion(currentLastUploadedFilePath, token); // NEW: Remove from pending_deletion.json
-        await removeFileCodeEntryByPath(currentLastUploadedFilePath, token); // New: Remove code entry
+
+        // Get the fileId associated with the file before removing deletion entry
+        let fileIdToDelete = null;
+        const pendingDeletions = await fetchPendingDeletions(token, true); // Fetch with token to get SHA
+        const deletionEntry = pendingDeletions.find(entry => entry.path === currentLastUploadedFilePath);
+        if (deletionEntry) {
+            fileIdToDelete = deletionEntry.fileId;
+        }
+
+        await removeEntryFromPendingDeletion(currentLastUploadedFilePath, token);
+        if (fileIdToDelete) {
+            await removeFileCodeEntryById(fileIdToDelete, token); // New: Remove code entry by fileId
+        } else {
+            // Fallback for older entries without fileId in pending_deletion or if lookup fails
+            await removeFileCodeEntryByPath(currentLastUploadedFilePath, token);
+        }
 
         currentLastUploadedFilePath = null;
         currentLastUploadedFileSHA = null;
@@ -754,7 +877,6 @@
       }
     }
 
-
     async function displayLastUploadedFile() {
       const fileInfoDiv = document.getElementById("lastUploadedFileInfo");
       const fileNameP = document.getElementById("lastFileName");
@@ -763,11 +885,13 @@
       if (currentLastUploadedFilePath && currentLastUploadedFileSHA) {
         // Try to find the extraction code for the last uploaded file
         let foundCode = '未知';
+        let foundFileId = '';
         try {
             const allCodes = await fetchFileCodes();
             const entry = allCodes.find(e => e.path === currentLastUploadedFilePath);
             if (entry) {
                 foundCode = entry.code;
+                foundFileId = entry.fileId;
             }
         } catch (e) {
             console.warn("Could not retrieve extraction code for last uploaded file:", e);
@@ -776,7 +900,8 @@
         const encodedPath = encodePath(currentLastUploadedFilePath);
         const githubPageLink = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO}/blob/${BRANCH_NAME}/${encodedPath}`;
         const rawLink = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_REPO}/${BRANCH_NAME}/${encodedPath}`;
-        const extractionLink = `${window.location.origin}${window.location.pathname}?code=${foundCode}&file=${getFileIdFromPendingDeletion(currentLastUploadedFilePath)}`;
+        // Ensure extractionLink uses the foundFileId if available
+        const extractionLink = foundFileId ? `${window.location.origin}${window.location.pathname}?code=${foundCode}&file=${foundFileId}` : `无法生成提取链接`;
 
         fileNameP.textContent = `文件名: ${currentLastUploadedFilePath.split('/').pop()}`;
         fileLinksP.innerHTML = `
@@ -886,25 +1011,7 @@
 
     async function addEntryToPendingDeletion(filePath, deleteAt, token, fileId) {
       const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${PENDING_DELETION_PATH}`;
-      let data = [];
-
-      // Fetch current content and SHA first
-      if (pendingDeletionSHA) {
-          try {
-              const res = await fetch(url, { headers: { Authorization: `token ${token}` } });
-              if (res.ok) {
-                  const json = await res.json();
-                  data = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
-              } else if (res.status !== 404) {
-                  throw new Error(`无法获取 ${PENDING_DELETION_FILE_NAME}: ${res.status} - ${res.statusText}`);
-              }
-          } catch (err) {
-              console.error(`Error fetching ${PENDING_DELETION_FILE_NAME} for add:`, err);
-              // If fetching fails, proceed with an empty array, but keep the current SHA if we have it
-              data = [];
-          }
-      }
-
+      let data = await fetchPendingDeletions(token, true); // Fetch current content and SHA with token
 
       data.push({ path: filePath, deleteAt: deleteAt, fileId: fileId }); // Store fileId for easier lookup
 
@@ -925,29 +1032,7 @@
 
     async function removeEntryFromPendingDeletion(filePathToRemove, token) {
         const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${PENDING_DELETION_PATH}`;
-        let data = [];
-
-        if (!pendingDeletionSHA) {
-            console.warn(`${PENDING_DELETION_FILE_NAME} SHA is null, cannot remove entry.`);
-            return; // No file to modify or its SHA is unknown
-        }
-
-        try {
-            const res = await fetch(url, { headers: { Authorization: `token ${token}` } });
-            if (res.ok) {
-                const json = await res.json();
-                pendingDeletionSHA = json.sha; // Ensure we have the latest SHA
-                data = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
-            } else if (res.status === 404) {
-                console.log(`${PENDING_DELETION_FILE_NAME} not found, nothing to remove.`);
-                return;
-            } else {
-                throw new Error(`无法获取 ${PENDING_DELETION_FILE_NAME} 来移除条目: ${res.status} - ${res.statusText}`);
-            }
-        } catch (err) {
-            console.error(`Error fetching ${PENDING_DELETION_FILE_NAME} for removal:`, err);
-            throw err;
-        }
+        let data = await fetchPendingDeletions(token, true); // Get latest content and SHA
 
         const initialLength = data.length;
         const newData = data.filter(entry => entry.path !== filePathToRemove);
@@ -974,16 +1059,6 @@
         pendingDeletionSHA = newSha; // Update the SHA after successful write
         console.log(`文件 "${filePathToRemove}" 已从 ${PENDING_DELETION_FILE_NAME} 中移除。`);
     }
-
-    function getFileIdFromPendingDeletion(filePath) {
-        // This is a simplified lookup. In a real scenario, you'd fetch pending_deletion.json
-        // and find the fileId associated with the filePath. For this client-side code,
-        // we'll assume the most recently uploaded file has a known fileId if it's in the URL
-        // or we'd need to re-fetch pending_deletion.json.
-        // For now, this is a placeholder.
-        return 'N/A'; // Or implement a proper lookup if pendingDeletionData is cached
-    }
-
 
     async function updateTransferFile(text, token) {
       const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${TRANSFER_FILE_PATH}`;
@@ -1069,7 +1144,7 @@
         .catch(err => document.getElementById("log").textContent = "❌ 复制失败：" + err.message);
     }
 
-    // --- New: File Extraction Code Logic ---
+    // --- New: File Extraction Code Logic (for individual file retrieval) ---
 
     async function loadExtractionCodesSHA() {
         let token;
@@ -1099,7 +1174,7 @@
     async function fetchFileCodes() {
         const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${FILE_CODES_PATH}`;
         try {
-            const res = await fetch(url); // No token needed for public file
+            const res = await fetch(url); // No token needed for public file (assuming file_codes.json is public)
             if (!res.ok) {
                 if (res.status === 404) return []; // File not found, return empty array
                 throw new Error(`Failed to fetch ${FILE_CODES_PATH}: ${res.status} - ${res.statusText}`);
@@ -1117,8 +1192,8 @@
         const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${FILE_CODES_PATH}`;
         let data = await fetchFileCodes(); // Get latest content and SHA
 
-        // Remove old entries for the same file path if they exist (in case of re-upload)
-        data = data.filter(entry => entry.path !== filePath);
+        // Remove old entries for the same fileId or path if they exist (in case of re-upload or update)
+        data = data.filter(entry => entry.fileId !== fileId && entry.path !== filePath);
         data.push({ fileId: fileId, path: filePath, sha: fileSHA, code: code, createdAt: Date.now() });
 
         const base64Content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
@@ -1136,6 +1211,36 @@
         }
         const newSha = (await putRes.json()).content.sha;
         fileCodesSHA = newSha; // Update the SHA after successful write
+    }
+
+    async function removeFileCodeEntryById(fileIdToRemove, token) {
+        const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${FILE_CODES_PATH}`;
+        let data = await fetchFileCodes(); // Get latest content and SHA
+
+        const initialLength = data.length;
+        const newData = data.filter(entry => entry.fileId !== fileIdToRemove);
+
+        if (newData.length === initialLength) {
+            console.log(`文件 ID "${fileIdToRemove}" 未在 ${FILE_CODES_PATH} 中找到，无需删除提取码。`);
+            return;
+        }
+
+        const base64Content = btoa(unescape(encodeURIComponent(JSON.stringify(newData, null, 2))));
+        const message = `Remove code entry for file ID ${fileIdToRemove}`;
+
+        const putRes = await fetch(url, {
+            method: "PUT",
+            headers: { Authorization: `token ${token}`, "Content-Type": "application/json" },
+            body: JSON.stringify({ message: message, content: base64Content, sha: fileCodesSHA })
+        });
+
+        if (!putRes.ok) {
+            const err = await putRes.json();
+            throw new Error(`无法更新 ${FILE_CODES_PATH} 来移除提取码: ${putRes.status} - ${err.message || putRes.statusText}`);
+        }
+        const newSha = (await putRes.json()).content.sha;
+        fileCodesSHA = newSha; // Update the SHA after successful write
+        console.log(`文件 ID "${fileIdToRemove}" 的提取码已从 ${FILE_CODES_PATH} 中移除。`);
     }
 
     async function removeFileCodeEntryByPath(filePathToRemove, token) {
@@ -1168,6 +1273,7 @@
         console.log(`文件 "${filePathToRemove}" 的提取码已从 ${FILE_CODES_PATH} 中移除。`);
     }
 
+
     async function retrieveFileByCode(fileIdFromURL = null) {
         const extractionCodeInput = document.getElementById("extractionCodeInput");
         const code = extractionCodeInput.value.trim();
@@ -1194,8 +1300,8 @@
                 // If fileId is present in URL, prioritize finding by fileId and then matching code
                 matchedEntry = allCodes.find(entry => entry.fileId === fileIdFromURL && entry.code === code);
             } else {
-                // Otherwise, find by code (might return multiple if codes are reused, but the first one found is used)
-                // In a real application, fileId should always be used to ensure uniqueness.
+                // Otherwise, find by code. This is less secure as codes could collide.
+                // It's highly recommended to always use fileId for direct links.
                 matchedEntry = allCodes.find(entry => entry.code === code);
             }
 
@@ -1206,7 +1312,7 @@
             }
 
             // Check if the file is still valid (e.g., within 12 hours) - requires loading pending_deletion.json
-            const pendingDeletions = await fetchPendingDeletions();
+            const pendingDeletions = await fetchPendingDeletions(); // Fetch without token as it's for public check
             const deletionEntry = pendingDeletions.find(entry => entry.fileId === matchedEntry.fileId);
 
             if (deletionEntry && Date.now() > deletionEntry.deleteAt) {
@@ -1246,15 +1352,17 @@
         }
     }
 
-    async function fetchPendingDeletions() {
+    async function fetchPendingDeletions(token = null, useToken = false) {
         const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${PENDING_DELETION_PATH}`;
+        const headers = useToken && token ? { Authorization: `token ${token}` } : {};
         try {
-            const res = await fetch(url); // No token needed for public file if repo is public
+            const res = await fetch(url, { headers: headers });
             if (!res.ok) {
                 if (res.status === 404) return [];
                 throw new Error(`Failed to fetch ${PENDING_DELETION_FILE_NAME}: ${res.status} - ${res.statusText}`);
             }
             const data = await res.json();
+            if (useToken) pendingDeletionSHA = data.sha; // Update SHA if we used a token
             return JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, "")))));
         } catch (err) {
             console.error(`Error fetching ${PENDING_DELETION_FILE_NAME}:`, err);
@@ -1268,14 +1376,21 @@
         return div.innerHTML;
     }
 
-    // Set up event listener for Enter key in extraction code input
+    // Set up event listener for Enter key in page access code input
+    document.getElementById("accessCodeInput").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            checkAccessCode();
+        }
+    });
+
+    // Set up event listener for Enter key in individual file extraction code input
     document.getElementById("extractionCodeInput").addEventListener("keypress", function(event) {
         if (event.key === "Enter") {
             event.preventDefault(); // Prevent default form submission
             retrieveFileByCode();
         }
     });
-
   </script>
 </body>
 </html>
