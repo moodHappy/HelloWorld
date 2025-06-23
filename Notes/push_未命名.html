@@ -429,16 +429,18 @@
     const PENDING_DELETION_FILE_NAME = "pending_deletion.json";
     const PENDING_DELETION_PATH = `Notes/${PENDING_DELETION_FILE_NAME}`;
     const FILE_CODES_PATH = "Notes/file_codes.json"; // Path for storing individual file codes
+    const PASSWORD_FILE_PATH = "Notes/password.json"; // New: Path for page access code
     const SETTINGS_KEY = "github_sync_assistant_settings_v2";
-    const PAGE_ACCESS_CODE_KEY = "github_sync_assistant_page_access_code"; // New: Key for page access code
 
     let transferTxtSHA = null;
     let previewFileSHA = null;
     let pendingDeletionSHA = null;
     let fileCodesSHA = null;
+    let passwordFileSHA = null; // New: SHA for password.json
 
     let currentLastUploadedFilePath = null;
     let currentLastUploadedFileSHA = null;
+    let currentGlobalAccessCode = null; // New: Store the loaded page access code
 
     const rootElement = document.documentElement;
 
@@ -477,9 +479,8 @@
         } else {
             document.getElementById("tokenInput").value = "";
         }
-        // Load page access code into settings modal input
-        const savedPageAccessCode = localStorage.getItem(PAGE_ACCESS_CODE_KEY);
-        document.getElementById("pageAccessCodeInput").value = savedPageAccessCode || "";
+        // Load current global access code (if available) into settings modal input
+        document.getElementById("pageAccessCodeInput").value = currentGlobalAccessCode || "";
 
         document.getElementById('settingsModal').style.display = "flex";
     }
@@ -501,37 +502,123 @@
         document.getElementById("log").textContent = "⚙️ 设置已保存。";
     }
 
-    // --- Page Access Code Management ---
-    function savePageAccessCode() {
+    // --- Page Access Code Management (now using GitHub file) ---
+
+    async function loadPageAccessCodeFromGitHub() {
+        const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${PASSWORD_FILE_PATH}`;
+        try {
+            const res = await fetch(url); // Public read, no token needed for fetching
+            if (res.ok) {
+                const data = await res.json();
+                passwordFileSHA = data.sha;
+                const content = JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, "")))));
+                if (content && content.code) {
+                    currentGlobalAccessCode = content.code;
+                    console.log("页面访问码已加载。");
+                    return true;
+                }
+            } else if (res.status === 404) {
+                console.log(`${PASSWORD_FILE_PATH} not found.`);
+            } else {
+                console.error(`Failed to load ${PASSWORD_FILE_PATH}: ${res.status} - ${res.statusText}`);
+            }
+        } catch (err) {
+            console.error(`Error loading ${PASSWORD_FILE_PATH}:`, err);
+        }
+        currentGlobalAccessCode = null; // No code found or error
+        return false;
+    }
+
+    async function savePageAccessCode() {
+        let token;
+        try {
+            token = getToken();
+        } catch (e) {
+            alert(e.message + "\n请先在设置中输入 GitHub Token 才能设置页面访问码。");
+            return;
+        }
+
         const code = document.getElementById("pageAccessCodeInput").value.trim();
-        if (code && /^\d{4}$/.test(code)) {
-            localStorage.setItem(PAGE_ACCESS_CODE_KEY, code);
-            alert("✅ 页面访问码已保存！");
-        } else {
+        if (!code || !/^\d{4}$/.test(code)) {
             alert("⚠️ 页面访问码必须是四位数字！");
+            return;
+        }
+
+        const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${PASSWORD_FILE_PATH}`;
+        const contentToSave = { code: code };
+        const base64Content = btoa(unescape(encodeURIComponent(JSON.stringify(contentToSave, null, 2))));
+        const message = `Set page access code`;
+
+        try {
+            const putRes = await fetch(url, {
+                method: "PUT",
+                headers: { Authorization: `token ${token}`, "Content-Type": "application/json" },
+                body: JSON.stringify({ message: message, content: base64Content, sha: passwordFileSHA }) // Use current SHA
+            });
+
+            if (!putRes.ok) {
+                const err = await putRes.json();
+                throw new Error(`无法更新 ${PASSWORD_FILE_PATH}: ${putRes.status} - ${err.message || putRes.statusText}`);
+            }
+            const data = await putRes.json();
+            passwordFileSHA = data.content.sha; // Update SHA after successful write
+            currentGlobalAccessCode = code; // Update in-memory code
+            alert("✅ 页面访问码已保存！");
+        } catch (err) {
+            alert(`❌ 保存页面访问码失败: ${err.message}`);
+            console.error("Error saving page access code:", err);
         }
     }
 
-    function clearPageAccessCode() {
+    async function clearPageAccessCode() {
+        let token;
+        try {
+            token = getToken();
+        } catch (e) {
+            alert(e.message + "\n请先在设置中输入 GitHub Token 才能清除页面访问码。");
+            return;
+        }
+
         if (confirm("确定要清除已保存的页面访问码吗？清除后页面将无需验证即可访问。")) {
-            localStorage.removeItem(PAGE_ACCESS_CODE_KEY);
-            document.getElementById("pageAccessCodeInput").value = "";
-            alert("✅ 页面访问码已清除。");
+            const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${PASSWORD_FILE_PATH}`;
+            try {
+                if (!passwordFileSHA) {
+                    alert("页面访问码文件不存在，无需清除。");
+                    return;
+                }
+                const delRes = await fetch(url, {
+                    method: "DELETE",
+                    headers: { Authorization: `token ${token}`, "Content-Type": "application/json" },
+                    body: JSON.stringify({ message: `Clear page access code`, sha: passwordFileSHA }) // Use current SHA
+                });
+
+                if (!delRes.ok) {
+                    const err = await delRes.json();
+                    throw new Error(`无法删除 ${PASSWORD_FILE_PATH}: ${delRes.status} - ${err.message || delRes.statusText}`);
+                }
+                passwordFileSHA = null; // Clear SHA
+                currentGlobalAccessCode = null; // Clear in-memory code
+                document.getElementById("pageAccessCodeInput").value = "";
+                alert("✅ 页面访问码已清除。");
+            } catch (err) {
+                alert(`❌ 清除页面访问码失败: ${err.message}`);
+                console.error("Error clearing page access code:", err);
+            }
         }
     }
 
-    function checkAccessCode() {
-        const storedCode = localStorage.getItem(PAGE_ACCESS_CODE_KEY);
+
+    async function checkAccessCode() {
         const enteredCode = document.getElementById("accessCodeInput").value.trim();
         const accessLog = document.getElementById("accessCodeLog");
 
-        if (!storedCode) {
-            // No access code set, allow access
+        if (currentGlobalAccessCode === null) {
+            // If no code is set in password.json, allow access directly
             showMainContent();
             return;
         }
 
-        if (enteredCode === storedCode) {
+        if (enteredCode === currentGlobalAccessCode) {
             showMainContent();
         } else {
             accessLog.textContent = "❌ 访问码错误，请重试。";
@@ -546,7 +633,7 @@
         document.getElementById('settings-icon').style.display = 'block'; // Show settings icon
         // Proceed with loading other data
         try {
-            getToken(); // This might still throw if no GitHub token is saved
+            // These functions might still warn if no GitHub token is saved
             loadTransfer();
             loadLastUploadedFileInfoFromGitHub();
             loadPendingDeletionSHA();
@@ -568,6 +655,13 @@
         localStorage.setItem("github_token", token);
         document.getElementById("log").textContent = "✅ GitHub Token 已保存！";
         // Reload information after saving token from settings
+        // Also try to re-load password.json as it might need the token
+        loadPageAccessCodeFromGitHub().then(() => {
+            // Re-check access if modal is closed or user tries to access
+            if (document.getElementById('accessCodeSection').style.display === 'flex') {
+                checkAccessCode(); // Try to automatically log in if code is now available
+            }
+        });
         loadTransfer();
         loadLastUploadedFileInfoFromGitHub();
         loadPendingDeletionSHA(); // Load SHA for pending_deletion.json
@@ -609,6 +703,9 @@
 
     window.onload = async () => {
       loadSettings();
+      // Load page access code first
+      await loadPageAccessCodeFromGitHub();
+
       // Check for extraction code in URL first (for individual file access)
       const urlParams = new URLSearchParams(window.location.search);
       const code = urlParams.get('code');
@@ -616,8 +713,7 @@
 
       if (code && fileId) {
         // If specific file extraction is requested via URL, bypass page access code for now
-        // This is a design choice: if a direct file link is given, we assume the page access code isn't relevant.
-        // If you want page access code to *always* apply, remove this check and only rely on checkAccessCode()
+        // This assumes that if someone has a direct file link, they don't need to pass the main page security
         document.getElementById('accessCodeSection').style.display = 'none'; // Hide page access section
         document.getElementById('settings-icon').style.display = 'none'; // Hide settings in this mode
         toggleExtractionSection(); // Show the individual file extraction section
@@ -625,16 +721,16 @@
         await retrieveFileByCode(fileId);
       } else {
         // If no file extraction in URL, display the main page access code section
-        const storedCode = localStorage.getItem(PAGE_ACCESS_CODE_KEY);
-        if (!storedCode) {
-            // No page access code set, show main content directly
-            showMainContent();
-        } else {
+        if (currentGlobalAccessCode) {
             // Page access code exists, show the access code input
             document.getElementById('accessCodeSection').style.display = 'flex';
             document.getElementById('mainUploadSection').style.display = 'none';
             document.getElementById('fixedBar').style.display = 'none';
             document.getElementById('settings-icon').style.display = 'none'; // Hide settings until access granted
+        } else {
+            // No page access code set in password.json, show main content directly
+            showMainContent();
+            document.getElementById("log").textContent = "⚠️ 注意：当前未设置页面访问码。您可以在设置中设置一个。";
         }
       }
     };
