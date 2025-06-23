@@ -640,7 +640,7 @@
             // Update Preview_and_Delete.json on GitHub
             await updatePreviewFileOnGitHub(token);
 
-            // Also remove the entry from pending_deletion.json
+            // --- IMPORTANT: Clear the corresponding record from pending_deletion.json ---
             await removeEntryFromPendingDeletion(filePathToDelete, token);
 
             document.getElementById("fileInput").value = ""; // Clear the file input field
@@ -834,7 +834,7 @@
         const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${PENDING_DELETION_PATH}`;
         let data = [];
 
-        // Always attempt to fetch the latest content and SHA before modifying
+        // Always re-fetch the latest content and SHA before modifying
         try {
             const res = await fetch(url, { headers: { Authorization: `token ${token}` } });
             if (res.ok) {
@@ -843,15 +843,14 @@
                 data = JSON.parse(decodeURIComponent(escape(atob(json.content.replace(/\n/g, "")))));
             } else if (res.status === 404) {
                 console.log(`${PENDING_DELETION_FILE_NAME} not found, nothing to remove.`);
-                pendingDeletionSHA = null; // Confirm it's null if not found
+                pendingDeletionSHA = null; // Confirm it's null if 404
                 return;
             } else {
                 throw new Error(`无法获取 ${PENDING_DELETION_FILE_NAME} 来移除条目: ${res.status} - ${res.statusText}`);
             }
         } catch (err) {
             console.error(`Error fetching ${PENDING_DELETION_FILE_NAME} for removal:`, err);
-            // If fetching fails, we can't reliably update, so log and return.
-            return;
+            throw err; // Re-throw to indicate failure
         }
 
         const initialLength = data.length;
@@ -859,47 +858,25 @@
 
         if (newData.length === initialLength) {
             console.log(`文件 "${filePathToRemove}" 未在 ${PENDING_DELETION_FILE_NAME} 中找到，无需删除。`);
-            return; // File path not found in the array
+            return; // File path not found in the array, no update needed
         }
 
         const base64Content = btoa(unescape(encodeURIComponent(JSON.stringify(newData, null, 2))));
         const message = `Remove deletion plan for ${filePathToRemove}`;
 
-        // If newData is empty, consider deleting the file itself.
-        // GitHub API requires a SHA to delete, and if it's empty, we should delete.
-        if (newData.length === 0 && pendingDeletionSHA) {
-            try {
-                const deleteRes = await fetch(url, {
-                    method: "DELETE",
-                    headers: { Authorization: `token ${token}`, "Content-Type": "application/json" },
-                    body: JSON.stringify({ message: `Delete empty ${PENDING_DELETION_FILE_NAME}`, sha: pendingDeletionSHA })
-                });
-                if (!deleteRes.ok) {
-                    const err = await deleteRes.json();
-                    throw new Error(`无法删除空的 ${PENDING_DELETION_FILE_NAME}: ${deleteRes.status} - ${err.message || deleteRes.statusText}`);
-                }
-                pendingDeletionSHA = null; // Clear SHA as file is deleted
-                console.log(`${PENDING_DELETION_FILE_NAME} 已清空并从 GitHub 删除。`);
-            } catch (err) {
-                console.error(`Error deleting empty ${PENDING_DELETION_FILE_NAME}:`, err);
-                throw err; // Re-throw to propagate error
-            }
-        } else {
-            // Otherwise, update the file with filtered content
-            const putRes = await fetch(url, {
-                method: "PUT",
-                headers: { Authorization: `token ${token}`, "Content-Type": "application/json" },
-                body: JSON.stringify({ message: message, content: base64Content, sha: pendingDeletionSHA })
-            });
+        const putRes = await fetch(url, {
+            method: "PUT",
+            headers: { Authorization: `token ${token}`, "Content-Type": "application/json" },
+            body: JSON.stringify({ message: message, content: base64Content, sha: pendingDeletionSHA }) // Use the latest SHA
+        });
 
-            if (!putRes.ok) {
-                const err = await putRes.json();
-                throw new Error(`无法更新 ${PENDING_DELETION_FILE_NAME} 来移除条目: ${putRes.status} - ${err.message || putRes.statusText}`);
-            }
-            const newSha = (await putRes.json()).content.sha;
-            pendingDeletionSHA = newSha; // Update the SHA after successful write
-            console.log(`文件 "${filePathToRemove}" 已从 ${PENDING_DELETION_FILE_NAME} 中移除。`);
+        if (!putRes.ok) {
+            const err = await putRes.json();
+            throw new Error(`无法更新 ${PENDING_DELETION_FILE_NAME} 来移除条目: ${putRes.status} - ${err.message || putRes.statusText}`);
         }
+        const newSha = (await putRes.json()).content.sha;
+        pendingDeletionSHA = newSha; // Update the SHA after successful write
+        console.log(`文件 "${filePathToRemove}" 已从 ${PENDING_DELETION_FILE_NAME} 中移除。`);
     }
 
 
