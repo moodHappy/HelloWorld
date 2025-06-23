@@ -438,3 +438,5 @@ start
 jump
 
 sleep
+
+entrance
