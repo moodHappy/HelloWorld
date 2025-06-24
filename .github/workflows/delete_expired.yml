@@ -2,7 +2,7 @@ name: delete expired
 
 on:
   schedule:
-    - cron: '*/10 * * * *'  # 每10分钟执行一次
+    - cron: '0 0,12 * * *'  # 每天 0 点和 12 点执行
   workflow_dispatch:
 
 jobs:
