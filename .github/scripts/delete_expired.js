@@ -1,45 +1,61 @@
 const fs = require("fs");
 const path = require("path");
 
-const target = path.join(__dirname, "../../Notes/pending_deletion.json");
-const now = Date.now();
+// tracked_files.json 的路径
+const TRACKED_FILES_TARGET = path.join(__dirname, "../../Notes/tracked_files.json");
+const now = Date.now(); // 当前时间戳
 
-let changed = false;
+let changed = false; // 标记文件是否有变动
 
-if (!fs.existsSync(target)) {
-  console.log("⛔ 没有找到 pending_deletion.json 文件");
+// 检查 tracked_files.json 文件是否存在
+if (!fs.existsSync(TRACKED_FILES_TARGET)) {
+  console.log("⛔ 没有找到 tracked_files.json 文件，无需处理。");
   process.exit(0); // 不报错，正常退出
 }
 
-let data = [];
+let allTrackedFiles = [];
 try {
-  data = JSON.parse(fs.readFileSync(target, "utf8"));
+  // 读取并解析 tracked_files.json
+  allTrackedFiles = JSON.parse(fs.readFileSync(TRACKED_FILES_TARGET, "utf8"));
+  if (!Array.isArray(allTrackedFiles)) {
+      console.warn("⚠️ tracked_files.json 内容格式不正确（非数组），将初始化为空数组。");
+      allTrackedFiles = [];
+  }
 } catch (e) {
-  console.error("❌ 解析 JSON 失败:", e);
+  console.error("❌ 解析 tracked_files.json 失败:", e);
   process.exit(1);
 }
 
-const keep = [];
-for (const item of data) {
-  if (now >= item.deleteAt) {
-    const filePath = path.join(__dirname, "../../", item.path);
+// 过滤出未过期且文件仍然存在的文件，并删除已过期文件
+const filesToKeep = [];
+for (const fileEntry of allTrackedFiles) {
+  // 检查是否有 deleteAt 字段，并且是否已过期
+  if (fileEntry.deleteAt && now >= new Date(fileEntry.deleteAt).getTime()) {
+    const filePath = path.join(__dirname, "../../", fileEntry.path);
     if (fs.existsSync(filePath)) {
-      fs.unlinkSync(filePath);
-      console.log(`🗑️ 已删除：${item.path}`);
+      fs.unlinkSync(filePath); // 删除实际文件
+      console.log(`🗑️ 已删除文件：${fileEntry.path}`);
       changed = true;
     } else {
-      console.log(`⚠️ 路径不存在：${item.path}`);
+      console.log(`⚠️ 文件路径不存在：${fileEntry.path}，已从记录中移除。`);
+      // 即使文件不存在，也应该将其从记录中移除，因为它“过期”了
+      changed = true;
     }
   } else {
-    keep.push(item);
+    // 如果没有 deleteAt 字段，或者未过期，则保留
+    filesToKeep.push(fileEntry);
   }
 }
 
-// 更新 JSON
-if (changed || keep.length !== data.length) {
-  fs.writeFileSync(target, JSON.stringify(keep, null, 2));
-  console.log("📝 更新 pending_deletion.json");
-  changed = true;
+// 如果有文件被删除或记录被清理，则更新 tracked_files.json
+if (changed || filesToKeep.length !== allTrackedFiles.length) {
+  fs.writeFileSync(TRACKED_FILES_TARGET, JSON.stringify(filesToKeep, null, 2));
+  console.log("📝 tracked_files.json 已更新。");
+  changed = true; // 确认有变动，用于git commit
+} else {
+  console.log("✅ tracked_files.json 无需更新。");
 }
 
+// 你的 GitHub Actions 脚本会处理 git commit 和 push，
+// 这里只需要确保脚本以成功状态退出，以便 Actions 继续执行后续步骤。
 process.exit(0);
