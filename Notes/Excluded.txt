@@ -464,3 +464,5 @@ goose
 destroy
 
 Force
+
+sneaking
