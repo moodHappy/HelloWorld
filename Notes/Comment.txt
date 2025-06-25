@@ -12,6 +12,19 @@
         "endOffset": 5,
         "text": "Trump"
       }
+    },
+    {
+      "id": "1750833267985",
+      "text": "from",
+      "note": "十九世纪",
+      "timestamp": "2025-06-25T06:34:27.985Z",
+      "rangeData": {
+        "startContainerPath": "html/body/div[2]/div/main/article/div[3]/p/span/text()[2]",
+        "startOffset": 90,
+        "endContainerPath": "html/body/div[2]/div/main/article/div[3]/p/span/text()[2]",
+        "endOffset": 94,
+        "text": "from"
+      }
     }
   ]
 }
