@@ -466,3 +466,5 @@ destroy
 Force
 
 sneaking
+
+Delete
