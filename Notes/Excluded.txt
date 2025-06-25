@@ -472,3 +472,5 @@ Delete
 command
 
 stand
+
+pay
