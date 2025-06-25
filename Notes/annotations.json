@@ -1,6 +1,15 @@
 {
   "aHR0cHMlM0ElMkYlMkZ3d3cuYmJjLmNvbSUyRm5ld3MlMkZhcnRpY2xlcyUyRmMxN3dlanB3Nzlxbw": [
     {
+      "id": "anno-17508378718100.3359599794491136",
+      "text": "Trump",
+      "note": "特朗普",
+      "color": "yellow",
+      "url": "https://www.bbc.com/news/articles/c17wejpw79qo",
+      "pageId": "aHR0cHMlM0ElMkYlMkZ3d3cuYmJjLmNvbSUyRm5ld3MlMkZhcnRpY2xlcyUyRmMxN3dlanB3Nzlxbw",
+      "createdAt": "2025-06-25T07:51:11.812Z"
+    },
+    {
       "id": "anno-1750838783262-15aeim9qr",
       "text": "takes victory lap",
       "note": "take a victory lap：意为 \"庆祝胜利\" 或 \"绕场一周庆祝\"",
@@ -48,51 +57,6 @@
       "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/style/B1-article-view.html?articleId=1",
       "pageId": "aHR0cHMlM0ElMkYlMkZtb29kaGFwcHkuZ2l0aHViLmlvJTJGbW9vZEhhcHB5LmdpdEh1Yi5pby1uY2UlMkZzdHlsZSUyRkIxLWFydGljbGUtdmlldy5odG1sJTNGYXJ0aWNsZUlkJTNEMQ",
       "createdAt": "2025-06-25T08:44:38.820Z"
-    },
-    {
-      "id": "anno-1750845701105-vdi3hx11r",
-      "text": "took command",
-      "note": "\"take command\"：接管指挥，掌控局面",
-      "color": "yellow",
-      "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/style/B1-article-view.html?articleId=1",
-      "pageId": "aHR0cHMlM0ElMkYlMkZtb29kaGFwcHkuZ2l0aHViLmlvJTJGbW9vZEhhcHB5LmdpdEh1Yi5pby1uY2UlMkZzdHlsZSUyRkIxLWFydGljbGUtdmlldy5odG1sJTNGYXJ0aWNsZUlkJTNEMQ",
-      "createdAt": "2025-06-25T10:01:41.108Z"
-    },
-    {
-      "id": "anno-1750845949738-2sim7gnwq",
-      "text": "give orders",
-      "note": "give orders：下命令",
-      "color": "yellow",
-      "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/style/B1-article-view.html?articleId=1",
-      "pageId": "aHR0cHMlM0ElMkYlMkZtb29kaGFwcHkuZ2l0aHViLmlvJTJGbW9vZEhhcHB5LmdpdEh1Yi5pby1uY2UlMkZzdHlsZSUyRkIxLWFydGljbGUtdmlldy5odG1sJTNGYXJ0aWNsZUlkJTNEMQ",
-      "createdAt": "2025-06-25T10:05:49.741Z"
-    },
-    {
-      "id": "anno-1750846548822-td61agq5k",
-      "text": "Skip around",
-      "note": "skip around: 绕圈跑",
-      "color": "yellow",
-      "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/style/B1-article-view.html?articleId=1",
-      "pageId": "aHR0cHMlM0ElMkYlMkZtb29kaGFwcHkuZ2l0aHViLmlvJTJGbW9vZEhhcHB5LmdpdEh1Yi5pby1uY2UlMkZzdHlsZSUyRkIxLWFydGljbGUtdmlldy5odG1sJTNGYXJ0aWNsZUlkJTNEMQ",
-      "createdAt": "2025-06-25T10:15:48.826Z"
-    },
-    {
-      "id": "anno-1750846716972-g1n3chito",
-      "text": "slip in and out",
-      "note": "slip in and out: 快速地进进出出",
-      "color": "yellow",
-      "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/style/B1-article-view.html?articleId=1",
-      "pageId": "aHR0cHMlM0ElMkYlMkZtb29kaGFwcHkuZ2l0aHViLmlvJTJGbW9vZEhhcHB5LmdpdEh1Yi5pby1uY2UlMkZzdHlsZSUyRkIxLWFydGljbGUtdmlldy5odG1sJTNGYXJ0aWNsZUlkJTNEMQ",
-      "createdAt": "2025-06-25T10:18:36.975Z"
-    },
-    {
-      "id": "anno-1750847225432-pu0dknvc8",
-      "text": "sprang for",
-      "note": "sprang for\"，意思是“跳向”。",
-      "color": "yellow",
-      "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/style/B1-article-view.html?articleId=1",
-      "pageId": "aHR0cHMlM0ElMkYlMkZtb29kaGFwcHkuZ2l0aHViLmlvJTJGbW9vZEhhcHB5LmdpdEh1Yi5pby1uY2UlMkZzdHlsZSUyRkIxLWFydGljbGUtdmlldy5odG1sJTNGYXJ0aWNsZUlkJTNEMQ",
-      "createdAt": "2025-06-25T10:27:05.435Z"
     }
   ]
 }
