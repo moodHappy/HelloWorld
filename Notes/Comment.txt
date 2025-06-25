@@ -1,7 +1,17 @@
---- URL: https://moodhappy.github.io/moodHappy.gitHub.io-nce/style/B1-article-view.html?articleId=1 ---
---- COLOR: #000000 ---
-逃跑
-
---- URL: https://www.bbc.com/news/articles/c17wejpw79qo ---
---- COLOR: #ff0000 ---
-特朗普
+{
+  "https://www.bbc.com/news/articles/c17wejpw79qo": [
+    {
+      "id": "1750833152106",
+      "text": "Trump",
+      "note": "特朗普",
+      "timestamp": "2025-06-25T06:32:32.106Z",
+      "rangeData": {
+        "startContainerPath": "html/body/div[2]/div/main/article/div/h1/span/text()",
+        "startOffset": 0,
+        "endContainerPath": "html/body/div[2]/div/main/article/div/h1/span/text()",
+        "endOffset": 5,
+        "text": "Trump"
+      }
+    }
+  ]
+}
