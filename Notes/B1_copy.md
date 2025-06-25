@@ -1,7 +1,3 @@
-<a href="https://www.economist.com/the-world-in-brief">URL</a>
-
-<p>nato’s members pledged to increase defence spending to 5% of gdp by 2035, bowing to Donald Trump’s demands. Spain refused to endorse the target but did not block it. In a brief joint statement, the alliance’s members reaffirmed support for Ukraine and their commitment to defending any ally under attack. Mr Trump, who has previously questioned Article 5, said that “if I didn’t stand [with nato], I wouldn’t be here”.</p>
-
 <a href="https://www.bbc.com/news/articles/c1wp72224jzo">URL</a>
 
 <p>Title: "Trump's Iran Dilemma Divides Supporters"</p>
