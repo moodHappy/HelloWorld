@@ -468,3 +468,5 @@ Force
 sneaking
 
 Delete
+
+command
