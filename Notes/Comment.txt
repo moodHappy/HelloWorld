@@ -4,7 +4,7 @@
     {
       "id": "1750833152106",
       "text": "Trump",
-      "note": "特朗普",
+      "note": "ç¹ææ®",
       "timestamp": "2025-06-25T06:32:32.106Z",
       "rangeData": {
         "startContainerPath": "html/body/div[2]/div/main/article/div/h1/span/text()",
@@ -17,7 +17,7 @@
     {
       "id": "1750833267985",
       "text": "from",
-      "note": "十九世纪",
+      "note": "åä¹ä¸çºª",
       "timestamp": "2025-06-25T06:34:27.985Z",
       "rangeData": {
         "startContainerPath": "html/body/div[2]/div/main/article/div[3]/p/span/text()[2]",
@@ -31,3 +31,12 @@
   "https://0.html-load.com/content/www.newsinlevels.com/29/625/608/255/d/vkdsgkckckjkskiff28kjek6k5dkc20k5k2k2w2c2tkmk5jwkcrk6k988k9j28fks8dk520fks8dk520efekp2bf20kmvv2820k6gkcmj": [],
   "https://imasdk.googleapis.com/js/core/bridge3.704.0_en.html#fid=goog_759050065": []
 }
+## Page: https://www.bbc.com/news/articles/c17wejpw79qo
+
+> Trump
+
+- **Note:** 特朗普
+- **Time:** 2025-06-25T06:43:53.517Z
+
+---
+
