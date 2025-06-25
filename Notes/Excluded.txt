@@ -474,3 +474,5 @@ command
 stand
 
 pay
+
+agreed
