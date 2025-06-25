@@ -28,5 +28,6 @@
       }
     }
   ],
-  "https://0.html-load.com/content/www.newsinlevels.com/29/625/608/255/d/vkdsgkckckjkskiff28kjek6k5dkc20k5k2k2w2c2tkmk5jwkcrk6k988k9j28fks8dk520fks8dk520efekp2bf20kmvv2820k6gkcmj": []
+  "https://0.html-load.com/content/www.newsinlevels.com/29/625/608/255/d/vkdsgkckckjkskiff28kjek6k5dkc20k5k2k2w2c2tkmk5jwkcrk6k988k9j28fks8dk520fks8dk520efekp2bf20kmvv2820k6gkcmj": [],
+  "https://imasdk.googleapis.com/js/core/bridge3.704.0_en.html#fid=goog_759050065": []
 }
