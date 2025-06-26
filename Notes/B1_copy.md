@@ -1,6 +1,6 @@
 <a href="https://englishnewsinlevels.com/news/level-1/south-koreas-dog-meat-ban">URL</a>
 
-<p>Title：“South Korea's Dog Meat Ban”</p>
+<p>Title: "Dog Meat Ban"</p>
 <p>South Korea's Dog Meat BanThursday, 26 June, 2025South Korea has made a big change. They will not allow people to sell dog meat anymore.</p>
 <p>This new rule starts in 2024, but farmers have until 2027 to stop selling dogs.Many people are worried about what will happen to the dogs. There are about 500,000 dogs on farms now.</p>
 <p>It's hard to find new homes for all of them. Some people think the dogs might have to be put to sleep if no one can take care of them.The farmers are also worried.</p>
