@@ -1,3 +1,355 @@
+## 九版，双TTS域名
+
+<script>
+// --- 背景色设置 ---
+// 设置为 true 开启随机背景色功能 (在浅色模式下排除绿色、蓝色、紫色等)
+// 设置为有效的CSS颜色字符串 (在浅色模式下使用)
+// 设置为 'auto' 则根据系统深色模式自动切换 (深色模式强制为 #1E1E1E)
+// 设置为 false 或其他非字符串/非 true /非 'auto' 的值则不应用特殊背景色 (使用Anki默认或CSS中定义的背景)
+
+// #F0F8FF  爱丽丝蓝
+// #FAF9F6  米白色
+// #EAF3FB  浅灰蓝
+// #EDF6EC  淡抹茶绿
+// #F5F5DC  沙色
+// #F2F2F2  浅灰
+// #FFF8DC  玉米丝色
+// #FFFAF0  花白色
+// #F4F1EE  烟雾米
+// #ECEBE4  砂岩灰
+// #F3F3E8  米灰色
+// #FAFAD2  淡金黄
+// #FFFACD  柠檬绸
+// #FFDAB9  桃仁色
+// #FFEBCD  白杏仁色
+// #FAF0E6  亚麻色
+// #FDF5E6  旧花边色
+// #F0FFF0  蜜露绿
+// #FFF5EE  海贝壳色
+// #F8F8FF  幽灵白
+// #E0FFFF  淡青色
+// #F0FFFF  蔚蓝
+// #FFF0F5  薰衣草绯红
+// #FFFAFA  雪白
+// #F5FFFA  薄荷奶油
+// #E6E6FA  淡紫罗兰
+// #FBEEC1  奶油杏
+// #F3E5AB  浅奶油黄
+// #EDEDED  极淡灰
+// #1E1E1E  夜间模式
+
+
+
+const backgroundColorSetting = '#EAF3FB'; // <--- 在这里设置 'true'、颜色字符串、'auto' 或 'false'
+
+
+
+
+
+// 深色模式强制背景色
+const darkModeOverrideColor = '#1E1E1E';
+
+// ---------------------
+
+let finalBackgroundColor = null; // 存储最终需要应用的背景色
+
+// --- HSL到Hex颜色转换函数 (标准实现) ---
+function hslToHex(h, s, l) {
+  l /= 100;
+  const a = s * Math.min(l, 1 - l) / 100;
+  const f = n => {
+    const k = (n + h / 30) % 12;
+    const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+    return Math.round(255 * color).toString(16).padStart(2, '0');
+  };
+  return `#${f(0)}${f(8)}${f(4)}`;
+}
+// --- 结束 HSL到Hex颜色转换函数 ---
+
+// 应用背景色的函数
+function applyBackgroundColor(color) {
+    if (color) {
+        const style = document.createElement('style');
+        style.innerHTML = `
+          body, html, .card, * {
+            background-color: ${color} !important;
+          }
+        `;
+        // 移除之前可能存在的 style 标签，避免叠加
+        const existingStyle = document.querySelector('style[data-background-changer]');
+        if (existingStyle) {
+            document.head.removeChild(existingStyle);
+        }
+        style.setAttribute('data-background-changer', 'true'); // 添加标记，方便后续查找和移除
+        document.head.appendChild(style);
+    } else {
+        // 如果 finalBackgroundColor 为 null，移除我们添加的 style 标签，恢复默认或 CSS 样式
+        const existingStyle = document.querySelector('style[data-background-changer]');
+        if (existingStyle) {
+            document.head.removeChild(existingStyle);
+        }
+    }
+}
+
+function determineBackgroundColor() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return darkModeOverrideColor; // 强制返回深色模式颜色
+    } else {
+        // 浅色模式下，根据 backgroundColorSetting 决定颜色
+        if (typeof backgroundColorSetting === 'string' && backgroundColorSetting) {
+            return backgroundColorSetting; // 使用自定义颜色
+        } else if (backgroundColorSetting === true) {
+            let isExcludedHue = true;
+            let h, s, l;
+            while (isExcludedHue) {
+              h = Math.floor(Math.random() * 361);
+              isExcludedHue =
+                (h >= 90 && h <= 150) ||
+                (h >= 210 && h <= 270) ||
+                (h >= 270 && h <= 330);
+            }
+            s = Math.floor(Math.random() * (101 - 40)) + 40;
+            l = Math.floor(Math.random() * (81 - 40)) + 40;
+            return hslToHex(h, s, l); // 返回随机颜色
+        } else {
+            return null; // 不应用特殊背景色
+        }
+    }
+}
+
+// 初始应用背景色
+applyBackgroundColor(determineBackgroundColor());
+
+// 监听系统颜色模式的变化
+if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        applyBackgroundColor(determineBackgroundColor());
+    });
+}
+
+</script>
+
+<div class="card">
+  <div class="word typing-effect" id="animated-text"></div>
+  <div class="phonetic" id="phonetic-text"></div>
+</div>
+
+<button class="btn" id="playWordButton" onclick="playSpellingAndWord()">▶</button>
+<button class="btn" id="playExampleButton" onclick="playExampleTTS()">▶</button>
+<button class="btn" id="repeatWordButton" onclick="playWordTTSRepeated()">▶</button>
+
+<script>
+  // 全局开关变量，true 为开启自动拼读，false 为关闭
+  let enablePronunciation = false; // 默认设置为 false，关闭自动拼读
+  
+  // 主 TTS 服务选择开关
+  let useAlternativeTTS = false; // 设置为 false 使用 LibreTTS，设置为 true 使用 Aiyue 服务
+
+  const word = "{{单词}}";
+  const language = "{{语种}}".trim();
+  const container = document.getElementById("animated-text");
+  const phoneticContainer = document.getElementById("phonetic-text");
+  const eudicURL = `eudic://dict/${word}`;
+
+  container.innerHTML = `<a href="${eudicURL}" style="color: inherit; text-decoration: none;">${word}</a>`;
+  phoneticContainer.textContent = "{{IPA}}";
+
+  // --- Start: Font size adjustment for long words ---
+  const WORD_LENGTH_THRESHOLD = 15; // Adjust this value as needed
+  if (word.length > WORD_LENGTH_THRESHOLD) {
+    container.style.fontSize = '24px';
+  }
+  // --- End: Font size adjustment for long words ---
+
+  const voiceMap = {
+    "de": "de-DE-ConradNeural",
+    "es": "es-ES-AlvaroNeural",
+    "it": "it-IT-DiegoNeural",
+    "hi": "hi-IN-MadhurNeural",
+    "ko": "ko-KR-SunHiNeural",
+    "fr": "fr-FR-DeniseNeural",
+    "ru": "ru-RU-DmitryNeural",
+    "he": "he-IL-AvriNeural",
+    "": "en-US-EricNeural"
+  };
+
+  const selectedVoice = voiceMap[language] || "en-US-EricNeural";
+
+  // --- 整合后的 TTS 播放函数 ---
+  function playTTS(text, audioId, callback) {
+    if (!text) {
+      alert('Text is empty, unable to generate audio');
+      return;
+    }
+    
+    const old = document.getElementById(audioId);
+    if (old) old.remove();
+
+    const audio = document.createElement('audio');
+    audio.id = audioId;
+    audio.style.display = 'none';
+    
+    let src;
+    if (useAlternativeTTS) {
+      // 使用备用 TTS 服务 (Aiyue)
+      const queryString = new URLSearchParams({
+        text: text.trim(),
+        voiceName: selectedVoice,
+        speed: 0,
+      }).toString();
+      src = `https://ms-ra-forwarder-for-ifreetime-beta-two.vercel.app/api/aiyue?${queryString}`;
+    } else {
+      // 使用主要 TTS 服务 (LibreTTS)
+      src = `https://libre-tts-nu.vercel.app/api/tts?t=${encodeURIComponent(text.trim())}&v=${encodeURIComponent(selectedVoice)}&r=0&p=0`;
+    }
+
+    audio.innerHTML = `<source src="${src}" type="audio/mpeg">`;
+    document.body.append(audio);
+
+    audio.onended = () => callback?.();
+    audio.play();
+  }
+  // --- 结束 整合后的 TTS 播放函数 ---
+
+  function playSpellingAndWord() {
+    const letters = word.toLowerCase().split('').join(', ');
+    playTTS(letters, 'audioSpell', () => {
+      playTTS(word, 'audioFullWord');
+    });
+  }
+
+  function playWordTTS() {
+    playTTS(word, 'audioFullWord');
+  }
+
+  function playExampleTTS() {
+    const exampleText = document.querySelector('.example')?.innerText?.trim() || '';
+    playTTS(exampleText, 'hiddenAudioExample');
+  }
+
+  function playWordTTSRepeated(times = 100) {
+    let count = 0;
+    const playNext = () => {
+      if (++count < times) {
+        playTTS(word, 'hiddenAudioWordRepeated', playNext);
+      }
+    };
+    playTTS(word, 'hiddenAudioWordRepeated', playNext);
+  }
+
+  // 按钮定位样式
+  const buttonStyle = `
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  `;
+
+  document.getElementById("playWordButton").style = `${buttonStyle} bottom: 200px;`;
+  document.getElementById("playExampleButton").style = `${buttonStyle} bottom: 150px;`;
+  const repeatBtn = document.getElementById("repeatWordButton");
+  repeatBtn.style = `${buttonStyle} bottom: 100px; color: red; font-weight: bold;`;
+
+  window.onload = function() {
+    if (enablePronunciation) {
+      playSpellingAndWord();
+    } else {
+      playWordTTS();
+    }
+  };
+</script>
+
+<div style="text-align: right;">
+  <button onclick="copyAndGo('{{单词}}')" style="
+    background: #f0f0f0;
+    color: #999;
+    font-size: 80%;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    opacity: 0.4;
+    cursor: pointer;">
+    JTWord
+  </button>
+</div>
+
+<script>
+  function copyAndGo(word) {
+    navigator.clipboard.writeText(word).finally(() => {
+      window.open('https://www.just-the-word.com', '_blank');
+    });
+  }
+</script>
+
+<div style="display: flex; justify-content: center; gap: 10px; margin-top: 5px;">
+  <div id="frequency-coca">COCA：加载中...</div>
+  <div id="frequency-google">Google：加载中...</div>
+  <div id="frequency-oxford">Oxford：加载中...</div>
+</div>
+
+<div id="word-data" style="display: none;">{{单词}}</div>
+
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    const currentWord = document.getElementById("word-data").textContent.trim().toLowerCase();
+    const anchor = document.querySelector('#animated-text a');
+    let foundInCoca = false, foundInGoogle = false, foundInOxford = false;
+
+    fetch("./_COCA.json")
+      .then(res => res.json())
+      .then(cocaList => {
+        const rank = cocaList[currentWord];
+        document.getElementById("frequency-coca").textContent = rank ? `COCA：${rank}` : `COCA：未找到`;
+        foundInCoca = !!rank;
+      })
+      .catch(() => {
+        document.getElementById("frequency-coca").textContent = `COCA：加载失败`;
+      })
+      .then(() => fetch("./_Google.json"))
+      .then(res => res.json())
+      .then(googleList => {
+        const rank = googleList[currentWord];
+        document.getElementById("frequency-google").textContent = rank ? `Google：${rank}` : `Google：未找到`;
+        foundInGoogle = !!rank;
+      })
+      .catch(() => {
+        document.getElementById("frequency-google").textContent = `Google：加载失败`;
+      })
+      .then(() => fetch("./_OxfordLevels.json"))
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        return res.json();
+      })
+      .then(oxfordList => {
+        const rank = oxfordList[currentWord];
+        document.getElementById("frequency-oxford").textContent = rank ? `Oxford：${rank}` : `Oxford：未找到`;
+        foundInOxford = !!rank;
+      })
+      .catch(error => {
+        console.error("Error fetching Oxford data:", error);
+        document.getElementById("frequency-oxford").textContent = `Oxford：加载失败`;
+      })
+      .finally(() => updateWordColor(foundInCoca, foundInGoogle, foundInOxford, anchor));
+
+    function updateWordColor(inCoca, inGoogle, inOxford, a) {
+      if (!a) return;
+      if (inCoca && inGoogle && inOxford)       a.style.color = '#8A2BE2';
+      else if (inCoca && inGoogle)              a.style.color = 'pink';
+      else if (inCoca && inOxford)              a.style.color = 'red';
+      else if (inGoogle && inOxford)            a.style.color = 'blue';
+      else if (inCoca)                          a.style.color = '#A9A9A9';
+      else if (inGoogle)                        a.style.color = 'blue';
+      else if (inOxford)                        a.style.color = 'green';
+      else                                      a.style.color = 'inherit';
+    }
+  });
+</script>
+
+
 ## 八版，JSON文件存储到anki媒体文件
 
 <div class="card">
