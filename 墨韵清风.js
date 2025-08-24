@@ -1,3 +1,565 @@
+背面智谱Ai：
+
+<div class="card">
+
+{{FrontSide}}
+
+{{片假名}}
+<div class="definition">{{释义}}</div>
+<div class="example">{{例句}}</div>
+<div class="translation blurred" onclick="toggleBlur(this)">{{例句翻译}}
+</div>
+
+<style>
+  .translation {
+    display: inline-block; /* 让它更自然地占位 */
+    cursor: pointer; /* 鼠标指针变成可点击 */
+    transition: filter 0.3s ease-in-out; /* 平滑过渡 */
+  }
+
+  .blurred {
+    filter: blur(5px); /* 初始模糊 */
+  }
+</style>
+
+<script>
+  // 确保脚本在 Anki 加载完成后执行
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".translation").forEach(el => {
+      el.addEventListener("click", function () {
+        this.classList.toggle("blurred"); // 切换模糊状态
+      });
+    });
+  });
+</script>
+
+<a href="https://www.playphrase.me/#/search?q={{单词}}&language=en" class="source-link">{{单词}}</a>
+</div>
+{{#Source-news}}
+<div class="source-news">
+<div class="news-title">News</div>
+<hr style="border: 1px solid grey;">
+
+<script>
+function createLink() {
+var field = "{{Source-news}}"; // 确保字段名称与实际一致
+var parts = field.split('|');
+if (parts.length === 2) {
+document.getElementById('link').innerHTML = '<a href="' + parts[0] + '" target="_blank">' + parts[1] + '</a>';
+} else {
+document.getElementById('link').innerHTML = field; // 如果格式不正确，则直接显示内容
+}
+}
+window.onload = createLink;
+</script>
+<div id="link"></div>
+</div>
+{{/Source-news}}
+<div class="Twitter-header">
+<a href="#" onclick="searchTwitter()">Twitter</a>
+</div>
+<div class="resources">
+<div class="resource-header">点击展开/折叠资源链接</div>
+<div id="resource1" class="resource-content">
+
+<div class="mammoth-memory">
+    <a href="https://mammothmemory.net/search/?q={{单词}}" target="_blank">Mammoth Memory</a>
+</div>
+
+<div class="thread">
+    <a href="https://www.threads.net/search?q={{单词}}" target="_blank">thread</a>
+</div>
+
+<div class="spotify">
+    <a href="spotify:search:{{单词}}" target="_blank">Spotify</a>
+</div>
+
+<div class="reddit">
+<a href="https://www.reddit.com/search/?q={{单词}}" target="_blank">Reddit</a>
+
+<div class="youdao">
+    <a href="https://dict.youdao.com/m/result?word={{单词}}&lang=en" target="_blank">有道词典</a>
+</div>
+
+<div class="giphy">
+<a href="https://giphy.com/search/{{单词}}" target="_blank">GIPHY</a>
+</div>
+
+<div class="vocabulary">
+<a href="https://www.vocabulary.com/dictionary/{{单词}}" target="_blank">Vocabulary</a>
+</div>
+
+<div class="picture">
+<a href="https://www.google.com/search?tbm=isch&q={{单词}}" target="_blank">谷歌搜图</a>
+</div>
+
+<div class="dictionary">
+<a href="https://news.google.com/search?q={{单词}}&hl=en" target="_blank">谷歌新闻</a>
+</div>
+
+<a href="https://www.youtube.com/results?search_query={{单词}}" target="_blank">YouTube</a>
+</div>
+
+<div class="Threads">
+<a href="https://www.threads.net/search?q={{单词}}" target="_blank">Threads</a>
+</div>
+
+<div class="TwitterWeb">
+<a href="#" onclick="searchTwitter()">TwitterWeb</a>
+</div>
+
+<div class="TwitterApp">
+<a href="twitter://search?query={{单词}}" target="_blank">TwitterApp</a>
+</div>
+
+<div class="dictionary">
+<a href="https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/%E8%8B%B1%E8%AF%AD-%E6%B1%89%E8%AF%AD-%E7%B9%81%E4%BD%93/{{单词}}" target="_blank">Cambridge</a>
+</div>
+
+<div class="dictionary">
+<a href="https://www.oxfordlearnersdictionaries.com/definition/english/{{单词}}" target="_blank">Oxford</a>
+</div>
+
+<div class="dictionary">
+<a href="https://www.merriam-webster.com/dictionary/{{单词}}" target="_blank">Merriam</a>
+</div>
+
+<div class="dictionary">
+<a href="https://www.macmillandictionary.com/dictionary/british/{{单词}}" target="_blank">Macmillan</a>
+</div>
+
+<div class="dictionary">
+<a href="https://en.wiktionary.org/wiki/{{单词}}" target="_blank">Wiktionary</a>
+</div>
+
+<div class="dictionary">
+<a href="https://www.wordreference.com/enzh/{{单词}}" target="_blank">WordReference</a>
+</div>
+</div>
+
+{{#image}}
+<div class="image">
+{{image}}
+</div>
+{{/image}}
+
+<div id="video-container" class="video-container">
+<iframe src="https://www.youtube.com/embed/{{YouTube-Video}}" frameborder="0" allowfullscreen></iframe>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+// Toggle content display
+function toggleContent(id) {
+var content = document.getElementById(id);
+if (content.style.display === "none" || content.style.display === "") {
+content.style.display = "block";
+} else {
+content.style.display = "none";
+}
+}
+// Attach click event to resource header
+var resourceHeader = document.querySelector(".resource-header");
+resourceHeader.addEventListener("click", function() {
+toggleContent('resource1');
+});
+// Highlight word forms in notes
+var wordElement = document.querySelector(".word");
+var notesElement = document.querySelector(".notes");
+var wordText = wordElement.textContent.trim().toLowerCase().replace(/\s+/g, '');
+var notesText = notesElement.innerHTML.trim();
+var wordFormsRegex = new RegExp('\\b(' +
+wordText + '|' +
+wordText + 's?' + '|' +
+wordText.replace(/y$/, 'i') + 'es?' + '|' +
+wordText + 'ed' + '|' +
+wordText + 'ing' + '|' +
+wordText + 'd' + '|' +
+wordText + 'er' + '|' +
+wordText + 'est' + '|' +
+wordText + 'ly' + '|' +
+wordText.replace(/y$/, 'ily') + '|' +
+wordText.replace(/ic$/, 'ically') + '|' +
+wordText.replace(/le$/, 'ly') +
+')\\b', 'gi');
+var formattedNotes = notesText.replace(wordFormsRegex, function(match) {
+return '<strong class="highlight">' + match + '</strong>';
+});
+notesElement.innerHTML = formattedNotes;
+// Hide video container if no source URL
+var videoContainer = document.getElementById("video-container");
+var sourceURL = "{{YouTube-Video}}";
+if (!sourceURL) {
+videoContainer.style.display = "none";
+}
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const iframe = document.querySelector('#video-container iframe');
+if (iframe) {
+let src = iframe.src;
+src = src.replace('https://youtu.be/', '');
+iframe.src = src;
+}
+});
+</script>
+
+
+
+
+
+
+
+
+{{#Phrase 1}}
+<div class="phrases-container">
+    <div class="phrase">
+        <span class="phrase-label">Phrase 1:</span> {{Phrase 1}}
+    </div>
+    {{#Phrase 2}}
+    <div class="phrase">
+        <span class="phrase-label">Phrase 2:</span> {{Phrase 2}}
+    </div>
+    {{/Phrase 2}}
+    {{#Phrase 3}}
+    <div class="phrase">
+        <span class="phrase-label">Phrase 3:</span> {{Phrase 3}}
+    </div>
+    {{/Phrase 3}}
+    {{#Phrase 4}}
+    <div class="phrase">
+        <span class="phrase-label">Phrase 4:</span> {{Phrase 4}}
+    </div>
+    {{/Phrase 4}}
+    {{#Phrase 5}}
+    <div class="phrase">
+        <span class="phrase-label">Phrase 5:</span> {{Phrase 5}}
+    </div>
+    {{/Phrase 5}}
+</div>
+{{/Phrase 1}}
+
+
+
+
+
+
+
+
+
+
+<div class="notes">
+{{笔记}}<br>
+</div>
+
+<div class="bottom-container">
+
+</div>
+<div class="responsive-iframe">
+<iframe frameborder="0" id="dailymotion-video" src="https://www.dailymotion.com/embed/video/{{Dailymotion-Video}}" allowfullscreen></iframe>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// 获取 dailymotion-Video 字段的值
+var dailymotionVideoId = document.querySelector('#dailymotion-video').src.split('/').pop(); // 示例：获取视频 ID，实际值需要调整
+// 如果视频 ID 为空，则移除包含 iframe 的 div
+if (!dailymotionVideoId) {
+var videoContainer = document.querySelector('.responsive-iframe');
+if (videoContainer) {
+videoContainer.parentNode.removeChild(videoContainer);
+}
+}
+});
+</script>
+<script>
+function getVideoId(url) {
+// 匹配 dailymotion 视频 URL 并提取视频 ID
+const match = url.match(/dailymotion\.com\/video\/([a-zA-Z0-9]+)/);
+return match ? match[1] : '';
+}
+document.addEventListener('DOMContentLoaded', () => {
+const dailymotionVideo = '{{Dailymotion-Video}}'; // 获取 dailymotion-Video 字段内容
+const videoId = getVideoId(dailymotionVideo); // 提取视频 ID
+if (videoId) {
+// 将 iframe 的 src 属性设置为提取到的视频 ID
+document.getElementById('dailymotion-video').src = `https://www.dailymotion.com/embed/video/${videoId}`;
+}
+});
+</script>
+<script>
+function searchTwitter() {
+window.open("https://twitter.com/search?q=" + encodeURIComponent("{{单词}}"), "_blank");
+}
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const frontText = document.querySelector('.typing-effect') ? document.querySelector('.typing-effect').textContent.trim() : '';
+  if (!frontText) return;
+
+  let notesElement = document.querySelector('.notes');
+  if (!notesElement) {
+    notesElement = document.createElement('div');
+    notesElement.classList.add('notes');
+    const backElement = document.querySelector('.back');
+    backElement ? backElement.insertAdjacentElement('afterend', notesElement) : document.body.appendChild(notesElement);
+  }
+
+  const noteTitle = document.createElement('div');
+  noteTitle.classList.add('note');
+  noteTitle.textContent = '笔记';
+  noteTitle.style.margin = '20px 0';
+  notesElement.insertAdjacentElement('beforebegin', noteTitle);
+
+  if (notesElement.textContent.trim()) return;
+
+  const cacheKey = `analysis_cache_${frontText}`;
+  const cached = localStorage.getItem(cacheKey);
+  if (cached) return insertAnalysis(cached, '来源：智谱AI');
+
+  const mainApi = {
+    url: 'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+    key: 'a96b8f1ea985481a89e8c142b32cd233.O3Qst5YxUmFw7B4T',
+    model: 'GLM-4.5-Flash'
+  };
+
+  async function fetchFromAPI(api, sourceName) {
+    const response = await fetch(api.url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${api.key}`,
+      },
+      body: JSON.stringify({
+        model: api.model,
+        messages: [
+          {
+            role: "system",
+            content: "你是一个智能助手，请用中文分析下面的单词，按照以下要求：\n1. 提供一个典型英文例句附中文。\n2.辨析同义词。（英文同义词并辨析其细微区别）\n3. 列出常用的固定搭配，简要说明它们的用法，并例句附中文。"
+          },
+          {
+            role: "user",
+            content: frontText
+          }
+        ]
+      })
+    });
+    const data = await response.json();
+    if (data.choices && data.choices[0].message) {
+      localStorage.setItem(cacheKey, data.choices[0].message.content);
+      insertAnalysis(data.choices[0].message.content, sourceName);
+    } else {
+      throw new Error('返回数据格式错误');
+    }
+  }
+
+  fetchFromAPI(mainApi, '<br><br>**来源**：智谱AI')
+  .catch(() => alert('无法连接到智谱AI服务。'));
+
+  const copyButton = document.createElement('button');
+  copyButton.textContent = 'Copy';
+  Object.assign(copyButton.style, {
+    position: 'fixed',
+    left: '0',
+    bottom: '0',
+    padding: '10px 20px',
+    backgroundColor: 'transparent',
+    color: 'black',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    opacity: '0.5'
+  });
+  document.body.appendChild(copyButton);
+
+  copyButton.addEventListener('click', () => {
+    const text = notesElement.textContent.trim();
+    if (text) {
+      navigator.clipboard.writeText(text).then(() => alert('分析内容已复制！'));
+    } else {
+      alert('没有可复制的分析内容！');
+    }
+  });
+});
+
+function insertAnalysis(analysis, sourceText) {
+  const notesElement = document.querySelector('.notes');
+  if (notesElement) {
+    notesElement.innerHTML = '';
+    const analysisDiv = document.createElement('div');
+    analysisDiv.textContent = analysis;
+    const sourceDiv = document.createElement('div');
+    sourceDiv.style.marginTop = '10px';
+    sourceDiv.style.fontStyle = 'italic';
+    sourceDiv.textContent = sourceText;
+    notesElement.appendChild(analysisDiv);
+    notesElement.appendChild(sourceDiv);
+  }
+}
+</script>
+
+<style>
+.table-container {
+    max-height: 300px; /* 根据需要调整高度 */
+    overflow: auto;
+}
+/* 文本容器，保留纯文本的换行 */
+.notes {
+    overflow: auto;
+    white-space: pre-wrap;
+}
+/* 表格基本样式 */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+</style>
+
+<script>
+// 辅助函数：处理内联格式（加粗）
+function processInlineFormatting(text) {
+    // 处理 **加粗** 和 __加粗__
+    return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+               .replace(/__(.*?)__/g, '<strong>$1</strong>');
+}
+
+// Markdown 转换函数
+function markdownToHTML(markdown) {
+    // 按行拆分文本
+    const lines = markdown.split('\n');
+    let resultLines = [];
+    let i = 0;
+    while (i < lines.length) {
+        let line = lines[i];
+        // 处理表格块：行以 | 开头和结尾
+        if (/^\s*\|.*\|\s*$/.test(line)) {
+            let tableLines = [];
+            while (i < lines.length && /^\s*\|.*\|\s*$/.test(lines[i])) {
+                tableLines.push(lines[i]);
+                i++;
+            }
+            const tableHTML = processTableBlock(tableLines);
+            resultLines.push(tableHTML);
+            continue;
+        }
+        // 处理列表块：行以 *、- 或 + 开头
+        if (/^\s*[\*\-\+]\s+/.test(line)) {
+            let listLines = [];
+            while (i < lines.length && /^\s*[\*\-\+]\s+/.test(lines[i])) {
+                listLines.push(lines[i]);
+                i++;
+            }
+            const listHTML = processListBlock(listLines);
+            resultLines.push(listHTML);
+            continue;
+        }
+        // 处理标题（1-6级标题）
+        if (/^(#{1,6})\s*(.*)$/.test(line)) {
+            line = line.replace(/^(#{1,6})\s*(.*)$/, (match, hashes, content) => {
+                const level = hashes.length;
+                // 同时处理内联格式
+                return `<h${level}>${processInlineFormatting(content)}</h${level}>`;
+            });
+            resultLines.push(line);
+            i++;
+            continue;
+        }
+        // 处理引用
+        if (/^>\s*(.*)$/.test(line)) {
+            line = line.replace(/^>\s*(.*)$/, (match, content) => {
+                return `<blockquote>${processInlineFormatting(content)}</blockquote>`;
+            });
+            resultLines.push(line);
+            i++;
+            continue;
+        }
+        // 处理内联格式（加粗）
+        line = processInlineFormatting(line);
+        resultLines.push(line);
+        i++;
+    }
+    let html = resultLines.join('\n');
+    // 处理以 $ 包裹的内容变红色
+    html = html.replace(/\$(.*?)\$/g, '<span style="color: red;">$1</span>');
+    // 如果转换结果中没有 HTML 标签（即纯文本），则替换换行符为 <br>
+    if (!/<[^>]+>/.test(html)) {
+        html = html.replace(/\n/g, '<br>');
+    }
+    return html;
+}
+
+// 处理表格块，将表格内容包裹在滚动容器中
+function processTableBlock(lines) {
+    if (lines.length < 2) {
+        return lines.join('<br>');
+    }
+    // 处理表头：去掉首尾的 | 后按 | 分割
+    let headerLine = lines[0].trim();
+    headerLine = headerLine.substring(1, headerLine.length - 1);
+    const headers = headerLine.split('|').map(cell => processInlineFormatting(cell.trim()));
+    // 表体行（从第三行开始）
+    const bodyRows = [];
+    for (let j = 2; j < lines.length; j++) {
+        let rowLine = lines[j].trim();
+        if (rowLine.startsWith('|') && rowLine.endsWith('|')) {
+            rowLine = rowLine.substring(1, rowLine.length - 1);
+        }
+        const cells = rowLine.split('|').map(cell => processInlineFormatting(cell.trim()));
+        bodyRows.push(cells);
+    }
+    // 构造表格 HTML
+    let tableHTML = '<div class="table-container"><table>';
+    tableHTML += '<thead><tr>';
+    headers.forEach(header => {
+        tableHTML += `<th>${header}</th>`;
+    });
+    tableHTML += '</tr></thead>';
+    tableHTML += '<tbody>';
+    bodyRows.forEach(row => {
+        tableHTML += '<tr>';
+        for (let i = 0; i < headers.length; i++) {
+            const cellContent = row[i] !== undefined ? row[i] : '';
+            tableHTML += `<td>${cellContent}</td>`;
+        }
+        tableHTML += '</tr>';
+    });
+    tableHTML += '</tbody></table></div>';
+    return tableHTML;
+}
+
+// 处理列表块，将连续的列表项合并为一个 <ul>
+function processListBlock(lines) {
+    let listHTML = '<ul>';
+    lines.forEach(line => {
+        // 移除列表标记（*、-、+）及多余空白
+        const item = line.replace(/^\s*[\*\-\+]\s+/, '');
+        listHTML += `<li>${processInlineFormatting(item)}</li>`;
+    });
+    listHTML += '</ul>';
+    return listHTML;
+}
+
+// Anki 渲染时执行转换
+document.addEventListener("DOMContentLoaded", function() {
+    const notesDiv = document.querySelector('.notes');
+    if (notesDiv) {
+        const originalMarkdown = notesDiv.innerText;
+        const convertedHTML = markdownToHTML(originalMarkdown);
+        notesDiv.innerHTML = convertedHTML;
+    }
+});
+</script>
+
+
+
 背面双 sambanova.ai：
 
 <div class="card">
