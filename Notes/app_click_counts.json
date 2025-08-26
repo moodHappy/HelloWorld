@@ -1,6 +1,7 @@
 {
-  "text-sync": 11,
+  "text-sync": 12,
   "fiction": 1,
+  "zhongzhuanzhan": 1,
   "b1-article": 0,
   "news-levels-1": 0,
   "dogonews": 0,
@@ -10,7 +11,6 @@
   "bbc-planet": 0,
   "days-levels": 0,
   "english-novel": 0,
-  "zhongzhuanzhan": 1,
   "privatebin": 0,
   "mood-happy": 0,
   "file-sync": 0,
