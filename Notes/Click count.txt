@@ -1,3 +1,4 @@
+text-sync:2
 fiction:0
 b1-article:0
 news-levels-1:0
@@ -9,7 +10,6 @@ bbc-planet:0
 days-levels:0
 english-novel:0
 zhongzhuanzhan:0
-text-sync:1
 privatebin:0
 mood-happy:0
 file-sync:0
