@@ -1,4 +1,4 @@
-text-sync:7
+text-sync:8
 fiction:0
 b1-article:0
 news-levels-1:0
