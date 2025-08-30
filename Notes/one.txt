@@ -213,7 +213,6 @@ jest
 jibe
 jolt
 judo
-just
 keel
 kerb
 kiln
