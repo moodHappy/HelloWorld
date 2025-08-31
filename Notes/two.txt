@@ -1,3 +1,5 @@
+linger
+stuck
 grill
 dragon
 trousers
