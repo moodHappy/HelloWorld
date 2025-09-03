@@ -719,38 +719,60 @@ if (exampleSentence.innerHTML.trim() !== "") {
             }
             
             // 2. 规则推断（处理常见变体）
-            // 移除 's'
-            if (lowerCaseWord.endsWith('s')) {
-                const singularForm = lowerCaseWord.slice(0, -1);
-                // 检查是否以'ss', 'is'结尾，防止误删，例如：'this'
-                if (!lowerCaseWord.endsWith('ss') && !lowerCaseWord.endsWith('is')) {
-                    return singularForm;
-                }
-            }
-            
-            // 移除 'es'
-            if (lowerCaseWord.endsWith('es')) {
-                return lowerCaseWord.slice(0, -2);
-            }
-            
             // 移除 'ies'
             if (lowerCaseWord.endsWith('ies')) {
                 return lowerCaseWord.slice(0, -3) + 'y';
             }
             
-            // 移除 'ed'
-            if (lowerCaseWord.endsWith('ed')) {
-                return lowerCaseWord.slice(0, -2);
+            // 移除 'es'
+            if (lowerCaseWord.endsWith('es')) {
+                // 确保不是以'ss'结尾的词
+                if (!lowerCaseWord.endsWith('ss')) {
+                    return lowerCaseWord.slice(0, -2);
+                }
             }
-
-            // 移除 'd'
-            if (lowerCaseWord.endsWith('d')) {
-                return lowerCaseWord.slice(0, -1);
+            
+            // 移除 's'
+            if (lowerCaseWord.endsWith('s')) {
+                // 确保不是以'is'结尾的词
+                if (!lowerCaseWord.endsWith('is')) {
+                     return lowerCaseWord.slice(0, -1);
+                }
             }
-
+            
             // 移除 'ing'
             if (lowerCaseWord.endsWith('ing')) {
+                // 检查双写辅音，例如 'shopping' -> 'shop'
+                const stem = lowerCaseWord.slice(0, -3);
+                const doubledConsonant = stem.slice(-1) === stem.slice(-2, -1) && 'aeiou'.indexOf(stem.slice(-1)) === -1;
+                if (doubledConsonant) {
+                    return stem.slice(0, -1);
+                }
+                // 检查是否以'e'结尾，例如 'mumbling' -> 'mumble'
+                if (lowerCaseWord.endsWith('bing')) {
+                    return lowerCaseWord.slice(0, -3) + 'e';
+                }
                 return lowerCaseWord.slice(0, -3);
+            }
+            
+            // 移除 'ed'
+            if (lowerCaseWord.endsWith('ed')) {
+                // 检查双写辅音
+                const stem = lowerCaseWord.slice(0, -2);
+                const doubledConsonant = stem.slice(-1) === stem.slice(-2, -1) && 'aeiou'.indexOf(stem.slice(-1)) === -1;
+                if (doubledConsonant) {
+                    return stem.slice(0, -1);
+                }
+                return lowerCaseWord.slice(0, -2);
+            }
+            
+            // 移除 'd' (处理mumbled -> mumble)
+            if (lowerCaseWord.endsWith('d')) {
+                const stem = lowerCaseWord.slice(0, -1);
+                // 检查是否以'e'结尾，如果是，则可能是由'e'结尾的单词加'd'构成
+                if (stem.endsWith('e')) {
+                    return stem;
+                }
             }
             
             // 3. 如果以上规则都不匹配，返回原始单词
