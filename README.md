@@ -4,7 +4,7 @@
 
 [📁Notes](https://github.com/moodHappy/HelloWorld/tree/master/Notes)
 
-[1](https://github.com/moodHappy/HelloWorld/tree/master/Notes)
+[变体映射](https://github.com/moodHappy/HelloWorld/blob/master/Notes%2Fstems.json)
 
 
 [添加高亮](https://github.com/moodHappy/HelloWorld/blob/master/Notes%2Fadd.txt)
