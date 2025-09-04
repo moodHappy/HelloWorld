@@ -1,42 +1,77 @@
 {
+  "miss": "miss",
   "missed": "miss",
   "misses": "miss",
   "missing": "miss",
 
+  "fish": "fish",
   "fished": "fish",
   "fishes": "fish",
   "fishing": "fish",
 
+  "water": "water",
   "watered": "water",
   "waters": "water",
   "watering": "water",
 
+  "run": "run",
   "ran": "run",
+  "runs": "run",
   "running": "run",
 
+  "swim": "swim",
   "swam": "swim",
+  "swims": "swim",
   "swimming": "swim",
 
-  "gone": "go",
+  "go": "go",
   "went": "go",
+  "gone": "go",
+  "goes": "go",
+  "going": "go",
 
-  "taken": "take",
+  "take": "take",
   "took": "take",
+  "taken": "take",
+  "takes": "take",
+  "taking": "take",
 
+  "hope": "hope",
+  "hoped": "hope",
+  "hopes": "hope",
   "hoping": "hope",
 
+  "slur": "slur",
   "slurred": "slur",
+  "slurs": "slur",
+  "slurring": "slur",
 
+  "illuminate": "illuminate",
+  "illuminated": "illuminate",
+  "illuminates": "illuminate",
   "illuminating": "illuminate",
 
+  "hug": "hug",
   "hugged": "hug",
+  "hugs": "hug",
+  "hugging": "hug",
 
+  "redress": "redress",
   "redressed": "redress",
+  "redresses": "redress",
+  "redressing": "redress",
 
+  "scribble": "scribble",
+  "scribbled": "scribble",
+  "scribbles": "scribble",
   "scribbling": "scribble",
 
+  "vibrate": "vibrate",
   "vibrated": "vibrate",
+  "vibrates": "vibrate",
+  "vibrating": "vibrate",
 
+  "fairy": "fairy",
   "fairies": "fairy",
 
   "rejuvenate": "rejuvenate",
