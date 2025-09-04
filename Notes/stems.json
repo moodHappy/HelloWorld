@@ -2,13 +2,55 @@
   "missed": "miss",
   "misses": "miss",
   "missing": "miss",
+
   "fished": "fish",
   "fishes": "fish",
   "fishing": "fish",
+
   "watered": "water",
   "waters": "water",
   "watering": "water",
+
   "ran": "run",
   "running": "run",
-  "swam": "swim"
+
+  "swam": "swim",
+  "swimming": "swim",
+
+  "gone": "go",
+  "went": "go",
+
+  "taken": "take",
+  "took": "take",
+
+  "hoping": "hope",
+
+  "slurred": "slur",
+
+  "illuminating": "illuminate",
+
+  "hugged": "hug",
+
+  "redressed": "redress",
+
+  "scribbling": "scribble",
+
+  "vibrated": "vibrate",
+
+  "fairies": "fairy",
+
+  "rejuvenate": "rejuvenate",
+  "rejuvenated": "rejuvenate",
+  "rejuvenates": "rejuvenate",
+  "rejuvenating": "rejuvenate",
+
+  "groove": "groove",
+  "grooved": "groove",
+  "grooves": "groove",
+  "grooving": "groove",
+
+  "sever": "sever",
+  "severed": "sever",
+  "severs": "sever",
+  "severing": "sever"
 }
