@@ -1,4 +1,3 @@
-thunder
 trio
 distinguish
 groove
