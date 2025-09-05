@@ -300,5 +300,9 @@
   "won": "win",
   "write": "write",
   "wrote": "write",
-  "written": "write"
+  "written": "write",
+  "clap": "clap",
+  "clapped": "clap",
+  "clapping": "clap",
+  "claps": "clap"
 }
