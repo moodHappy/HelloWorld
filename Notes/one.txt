@@ -46,7 +46,6 @@ grind
 grow
 gut
 hang
-have
 hear
 hide
 hit
