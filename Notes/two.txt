@@ -214,7 +214,6 @@ arch
 goat
 Brit
 lash
-span
 skip
 weed
 gaze
