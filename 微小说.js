@@ -1,6 +1,6 @@
 正面：
 
-<div id="version-info" style="display: none;">version: 2.0.1 (Aurora)</div>
+<div id="version-info" style="display: none;">version: 2.1.0 (Aurora)</div>
 
 <script>
 // --- 背景色设置 ---
@@ -153,7 +153,8 @@ function playTTS(type) {
     const voices = [
         "en-US-EricNeural",
         "en-US-JennyNeural",
-        "en-US-AvaNeural"   
+        "en-US-AvaNeural",
+        "en-US-SteffanNeural"   
     ];
     // 随机选择一个语音
     const voice = voices[Math.floor(Math.random() * voices.length)];
@@ -194,7 +195,9 @@ if (exampleSentence.innerHTML.trim() !== "") {
     const URL_LIST = [
         'https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Notes/one.txt',
         'https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Notes/two.txt',
-        'https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Notes/idiom.txt'
+        'https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Notes/idiom.txt',
+        // 新增：排除列表的 URL
+        'https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Notes/Excluded.txt'
     ];
     // TODO: 在这里写入你的 JSON URL。格式如下:
     const WORD_FORMS_URL = 'https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Notes/stems.json'; // <--- 更新为你的 stems.json URL
@@ -204,10 +207,13 @@ if (exampleSentence.innerHTML.trim() !== "") {
         ...URL_LIST.map(url => fetch(url).then(r => r.text())),
         fetch(WORD_FORMS_URL).then(r => r.json())
     ])
-    .then(([oneTxt, twoTxt, idiomTxt, wordForms]) => {
+    // 修改：将所有加载结果解构为不同的变量
+    .then(([oneTxt, twoTxt, idiomTxt, excludedTxt, wordForms]) => {
         const blueWords = new Set(oneTxt.split('\n').map(w => w.trim()).filter(Boolean));
         const redWords = new Set(twoTxt.split('\n').map(w => w.trim()).filter(Boolean));
         const idiomWords = new Set(idiomTxt.split('\n').map(w => w.trim()).filter(Boolean));
+        // 新增：创建排除列表的 Set
+        const excludedWords = new Set(excludedTxt.split('\n').map(w => w.trim()).filter(Boolean));
 
         const isConsonant = (char) => {
             const vowels = 'aeiou';
@@ -223,10 +229,16 @@ if (exampleSentence.innerHTML.trim() !== "") {
         };
 
         // 新增的 getWordBaseForms 函数（来自2025.9.4版本）
-        function getWordBaseForms(word, wordForms) {
+        function getWordBaseForms(word, wordForms, isExcludedCheck = false) { // 增加一个参数
             const lowerCaseWord = word.toLowerCase();
             const len = lowerCaseWord.length;
             const baseForms = new Set([lowerCaseWord]); // 总是包含原始词的标准化形式
+            
+            // 修复：只在进行普通单词高亮时，才检查排除列表
+            if (!isExcludedCheck && excludedWords.has(lowerCaseWord)) {
+                 return [];
+            }
+
 
             // 1. 优先从 JSON 映射中查找
             if (wordForms[lowerCaseWord]) {
@@ -309,7 +321,12 @@ if (exampleSentence.innerHTML.trim() !== "") {
 
         // isWordInSet 函数现在检查所有可能的词根
         function isWordInSet(word, set, wordForms) {
-            const baseForms = getWordBaseForms(word, wordForms);
+            // 修改：调用时传入一个标志，表示是习语检查还是普通单词检查
+            const baseForms = getWordBaseForms(word, wordForms, true);
+            // 检查 getWordBaseForms 返回的数组是否为空，如果为空则直接返回 false
+            if (baseForms.length === 0) {
+                 return false;
+            }
             for (const base of baseForms) {
                 if (set.has(base)) {
                     return true;
@@ -345,13 +362,14 @@ if (exampleSentence.innerHTML.trim() !== "") {
 
             // 只有当习语包含至少两个单词时才进行匹配
             if (idiomWordsArray.length >= 2) {
-                const baseFormIdiomWords = idiomWordsArray.map(word => getWordBaseForms(word, wordForms)).flat();
+                // 修改：在获取习语词根时，忽略排除列表的检查
+                const baseFormIdiomWords = idiomWordsArray.map(word => getWordBaseForms(word, wordForms, true)).flat();
 
                 // 查找习语在例句中的所有位置
                 for (let j = 0; j <= exampleWords.length - idiomWordsArray.length; j++) {
                     let isMatch = true;
                     for (let k = 0; k < idiomWordsArray.length; k++) {
-                        const currentExampleBaseForms = getWordBaseForms(exampleWords[j + k], wordForms);
+                        const currentExampleBaseForms = getWordBaseForms(exampleWords[j + k], wordForms, true); // 修复：这里也应该忽略排除列表检查
                         // 检查当前例句词的任何一个词根是否与当前习语词的词根匹配
                         const wordMatch = currentExampleBaseForms.some(baseForm => {
                             return baseFormIdiomWords.includes(baseForm);
@@ -381,6 +399,12 @@ if (exampleSentence.innerHTML.trim() !== "") {
         allExampleWords.forEach(word => {
             const lowerCaseWord = word.toLowerCase();
             let replacementHtml = word;
+
+            // 新增：在进行高亮前，先检查单词是否在排除列表中
+            // 修复：现在这里才进行排除列表检查
+            if (excludedWords.has(lowerCaseWord)) {
+                 return; // 如果在排除列表里，直接跳过当前循环
+            }
 
             if (isWordInSet(lowerCaseWord, blueWords, wordForms)) {
                 replacementHtml = `<span class="blue-word">${word}</span>`;
