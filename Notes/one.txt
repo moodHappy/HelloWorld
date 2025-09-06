@@ -17,7 +17,6 @@ cling
 come
 cost
 creep
-cut
 deal
 dig
 do
