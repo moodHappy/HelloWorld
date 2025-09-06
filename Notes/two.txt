@@ -1,16 +1,3 @@
-oz
-lb
-ft
-DJ
-km
-eh
-PM
-GB
-QC
-FM
-up
-cm
-LP
 tan
 gut
 sip
