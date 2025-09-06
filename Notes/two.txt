@@ -5,7 +5,6 @@ DJ
 km
 eh
 PM
-in
 GB
 QC
 FM
@@ -1846,7 +1845,6 @@ optimism
 comeback
 particle
 promptly
-sometime
 cylinder
 eventual
 volatile
