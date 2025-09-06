@@ -79,9 +79,6 @@ rid
 ride
 ring
 rise
-run
-say
-see
 seek
 sell
 send
