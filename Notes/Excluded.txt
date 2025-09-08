@@ -1,5 +1,5 @@
 know
-drink
+drinks
 tell
 do
 sun
