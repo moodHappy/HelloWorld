@@ -1,3 +1,6 @@
+go
+let
+put
 know
 drinks
 tell
