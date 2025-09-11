@@ -1,3 +1,4 @@
+forever
 think
 keeps
 thinks
