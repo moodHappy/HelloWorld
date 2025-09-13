@@ -58,7 +58,6 @@ rig
 lid
 lag
 pal
-naked
 rap
 ham
 GMT
