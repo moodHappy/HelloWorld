@@ -1,4 +1,8 @@
 {
+  "panic": "panic",
+  "panicked": "panic",
+  "panicking": "panic",
+  "panics": "panic",
   "wag": "wag",
   "wagged": "wag",
   "wagging": "wag",
