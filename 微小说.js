@@ -1,3 +1,441 @@
+正面：
+
+<script>
+// --- 背景色设置 ---
+// 设置为 true 开启随机背景色功能 (在浅色模式下排除绿色、蓝色、紫色等)
+// 设置为有效的CSS颜色字符串 (在浅色模式下使用)
+// 设置为 'auto' 则根据系统深色模式自动切换 (深色模式强制为 #1E1E1E)
+// 设置为 false 或其他非字符串/非 true /非 'auto' 的值则不应用特殊背景色 (使用Anki默认或CSS中定义的背景)
+// #F0F8FF  爱丽丝蓝
+// #FAF9F6  米白色
+// #EAF3FB  浅灰蓝
+// #EDF6EC  淡抹茶绿
+// #F5F5DC  沙色
+// #F2F2F2  浅灰
+// #FFF8DC  玉米丝色
+// #FFFAF0  花白色
+// #F4F1EE  烟雾米
+// #ECEBE4  砂岩灰
+// #F3E5AB  浅奶油黄
+// #EDEDED  极淡灰
+// #1E1E1E  夜间模式
+const backgroundColorSetting = '#E0FFFF'; // <--- 在这里设置 'true'、颜色字符串、'auto' 或 'false'
+// 深色模式强制背景色
+const darkModeOverrideColor = '#1E1E1E';
+// ---------------------
+let finalBackgroundColor = null; // 存储最终需要应用的背景色
+// --- HSL到Hex颜色转换函数 (标准实现) ---
+function hslToHex(h, s, l) {
+    l /= 100;
+    const a = s * Math.min(l, 1 - l) / 100;
+    const f = n => {
+        const k = (n + h / 30) % 12;
+        const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+        return Math.round(255 * color).toString(16).padStart(2, '0');
+    };
+    return `#${f(0)}${f(8)}${f(4)}`;
+}
+// --- 结束 HSL到Hex颜色转换函数 ---
+// 应用背景色的函数
+function applyBackgroundColor(color) {
+    if (color) {
+        const style = document.createElement('style');
+        style.innerHTML = `body, html, .card, * { background-color: ${color} !important; }`;
+        // 移除之前可能存在的 style 标签，避免叠加
+        const existingStyle = document.querySelector('style[data-background-changer]');
+        if (existingStyle) {
+            document.head.removeChild(existingStyle);
+        }
+        style.setAttribute('data-background-changer', 'true'); // 添加标记，方便后续查找和移除
+        document.head.appendChild(style);
+    } else {
+        // 如果 finalBackgroundColor 为 null，移除我们添加的 style 标签，恢复默认或 CSS 样式
+        const existingStyle = document.querySelector('style[data-background-changer]');
+        if (existingStyle) {
+            document.head.removeChild(existingStyle);
+        }
+    }
+}
+function determineBackgroundColor() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return darkModeOverrideColor; // 强制返回深色模式颜色
+    } else {
+        // 浅色模式下，根据 backgroundColorSetting 决定颜色
+        if (typeof backgroundColorSetting === 'string' && backgroundColorSetting) {
+            return backgroundColorSetting; // 使用自定义颜色
+        } else if (backgroundColorSetting === true) {
+            let isExcludedHue = true;
+            let h, s, l;
+            while (isExcludedHue) {
+                h = Math.floor(Math.random() * 361);
+                isExcludedHue =
+                    (h >= 90 && h <= 150) ||
+                    (h >= 210 && h <= 270) ||
+                    (h >= 270 && h <= 330);
+            }
+            s = Math.floor(Math.random() * (101 - 40)) + 40;
+            l = Math.floor(Math.random() * (81 - 40)) + 40;
+            return hslToHex(h, s, l); // 返回随机颜色
+        } else {
+            return null; // 不应用特殊背景色
+        }
+    }
+}
+// 初始应用背景色
+applyBackgroundColor(determineBackgroundColor());
+// 监听系统颜色模式的变化
+if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        applyBackgroundColor(determineBackgroundColor());
+    });
+}
+</script>
+<style>
+/* 将来自 two.txt 的单词变为红色，且不加粗 */
+.front .red-word {
+    color: red;
+}
+/* 将来自 one.txt 的单词变为蓝色 */
+.front .blue-word {
+    color: blue;
+}
+/* 新增：将来自 idiom.txt 的单词变为绿色 */
+.front .green-word {
+    color: green;
+}
+/* 初始化例句字段中的 i 标签为模糊效果 */
+.front i {
+    filter: blur(2px);
+    transition: filter 0.3s ease; /* 添加平滑过渡效果 */
+}
+/* 为 i 标签添加一个 .unblurred 类，用于移除模糊效果 */
+.front i.unblurred {
+    filter: none;
+}
+</style>
+<div class="word"></div>
+<div class="phonetics">
+</div>
+<div class="definition" onclick="toggleBlur(this)"></div>
+<div class="title">
+    {{标题}}
+</div>
+<div class="front">
+    {{例句}}
+</div>
+{{#来源}}
+<div class="source">
+    <a href="{{来源}}" target="_blank" rel="noopener noreferrer">来源</a>
+</div>
+{{/来源}}
+<button id="exampleTTSButton" onclick="playTTS('example')" class="tts-button">▶️</button>
+<script>
+// 播放音频的函数
+function playTTS(type) {
+    // 配置域名
+    const domain = [
+        'https://ms-ra-forwarder-for-ifreetime-2.vercel.app/',
+    ];
+    let exampleText;
+    if (type === 'word') {
+        exampleText = document.querySelector('.word').innerText.trim(); // 获取单词文本
+    } else if (type === 'example') {
+        exampleText = document.querySelector('.front').innerText.trim(); // 获取正面文本
+    }
+    // 如果文本为空，则返回
+    if (!exampleText) {
+        alert(`${type === 'word' ? '单词' : '正面'}字段为空，无法生成音频`);
+        return;
+    }
+    // 可用的美式英语语音列表
+    const voices = [
+        "en-US-EricNeural",
+        "en-US-JennyNeural",
+        "en-US-AvaNeural",
+        "en-US-SteffanNeural"   
+    ];
+    // 随机选择一个语音
+    const voice = voices[Math.floor(Math.random() * voices.length)];
+    // 设置语速为 0.5倍
+    const speed = -20;
+    // 生成查询参数
+    const queryString = new URLSearchParams({
+        text: exampleText, // 保留空格的文本
+        voiceName: voice,
+        speed: speed, // 语速设置为 -50, 对应 0.5倍速
+    }).toString();
+    // 检查是否已存在音频元素
+    let existingAudio = document.getElementById('hiddenAudioExample');
+    if (existingAudio) {
+        existingAudio.remove(); // 如果存在，先移除旧的音频元素
+    }
+    // 创建音频元素
+    const audio = document.createElement('audio');
+    audio.id = 'hiddenAudioExample'; // 设置ID以便于控制
+    audio.style.display = 'none'; // 隐藏音频条
+    // 为每个域名生成音频源
+    for (const url of domain) {
+        const source = document.createElement('source');
+        source.src = `${url}api/aiyue?${queryString}`;
+        source.type = 'audio/mpeg';
+        audio.append(source);
+    }
+    // 将音频元素插入页面
+    document.body.append(audio);
+    // 播放音频
+    audio.play();
+}
+// 获取例句字段的元素
+const exampleSentence = document.querySelector('.front');
+// 检查例句字段是否有内容
+if (exampleSentence.innerHTML.trim() !== "") {
+    // 定义要获取的URL列表
+    const URL_LIST = [
+        'https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Notes/one.txt',
+        'https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Notes/two.txt',
+        'https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Notes/idiom.txt',
+        // 新增：排除列表的 URL
+        'https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Notes/Excluded.txt'
+    ];
+    // TODO: 在这里写入你的 JSON URL。格式如下:
+    const WORD_FORMS_URL = 'https://raw.githubusercontent.com/moodHappy/HelloWorld/refs/heads/master/Notes/stems.json'; // <--- 更新为你的 stems.json URL
+
+    // 异步加载所有文件
+    Promise.all([
+        ...URL_LIST.map(url => fetch(url).then(r => r.text())),
+        fetch(WORD_FORMS_URL).then(r => r.json())
+    ])
+    // 修改：将所有加载结果解构为不同的变量
+    .then(([oneTxt, twoTxt, idiomTxt, excludedTxt, wordForms]) => {
+        const blueWords = new Set(oneTxt.split('\n').map(w => w.trim()).filter(Boolean));
+        const redWords = new Set(twoTxt.split('\n').map(w => w.trim()).filter(Boolean));
+        const idiomWords = new Set(idiomTxt.split('\n').map(w => w.trim()).filter(Boolean));
+        // 新增：创建排除列表的 Set
+        const excludedWords = new Set(excludedTxt.split('\n').map(w => w.trim()).filter(Boolean));
+
+        const isConsonant = (char) => {
+            const vowels = 'aeiou';
+            return vowels.indexOf(char.toLowerCase()) === -1 && char.match(/[a-z]/i);
+        };
+
+        const endsWithCVC = (word) => {
+            if (word.length < 3) return false;
+            const c1 = word[word.length - 3];
+            const v = word[word.length - 2];
+            const c2 = word[word.length - 1];
+            return isConsonant(c1) && 'aeiou'.includes(v) && isConsonant(c2) && !['w','x','y'].includes(c2);
+        };
+
+        // 新增的 getWordBaseForms 函数（来自2025.9.4版本）
+        function getWordBaseForms(word, wordForms, isExcludedCheck = false) { // 增加一个参数
+            const lowerCaseWord = word.toLowerCase();
+            const len = lowerCaseWord.length;
+            const baseForms = new Set([lowerCaseWord]); // 总是包含原始词的标准化形式
+            
+            // 修复：只在进行普通单词高亮时，才检查排除列表
+            if (!isExcludedCheck && excludedWords.has(lowerCaseWord)) {
+                 return [];
+            }
+
+
+            // 1. 优先从 JSON 映射中查找
+            if (wordForms[lowerCaseWord]) {
+                baseForms.add(wordForms[lowerCaseWord]);
+            }
+
+            // 2. 形容词比较级 / 最高级
+            if (len > 3) {
+                if (lowerCaseWord.endsWith('er')) {
+                    if (lowerCaseWord.endsWith('ier')) baseForms.add(lowerCaseWord.slice(0, len - 3) + 'y');
+                    const base = lowerCaseWord.slice(0, len - 2);
+                    if (endsWithCVC(base)) baseForms.add(lowerCaseWord.slice(0, len - 3));
+                    baseForms.add(base);
+                }
+                if (lowerCaseWord.endsWith('est')) {
+                    if (lowerCaseWord.endsWith('iest')) baseForms.add(lowerCaseWord.slice(0, len - 4) + 'y');
+                    const base = lowerCaseWord.slice(0, len - 3);
+                    if (endsWithCVC(base)) baseForms.add(lowerCaseWord.slice(0, len - 4));
+                    baseForms.add(base);
+                }
+            }
+
+            // 3. 动词过去式 / 过去分词
+            if (len > 2 && lowerCaseWord.endsWith('ed')) {
+                // 修复：处理以 'e' 结尾的单词，如 'grooved' -> 'groove'
+                const base = lowerCaseWord.slice(0, len - 1);
+                baseForms.add(base);
+
+                // 旧的逻辑 (仍保留以兼容其他情况)
+                if (lowerCaseWord.endsWith('ied')) baseForms.add(lowerCaseWord.slice(0, len - 3) + 'y');
+                let base2 = lowerCaseWord.slice(0, len - 2);
+                if (endsWithCVC(base2)) baseForms.add(lowerCaseWord.slice(0, len - 3));
+                if (base2.endsWith('e')) baseForms.add(base2);
+                baseForms.add(base2);
+            }
+
+            // 4. 动词现在分词 -ing
+            if (len > 3 && lowerCaseWord.endsWith('ing')) {
+                // 修复：处理以 'e' 结尾的单词，如 'rejuvenating' -> 'rejuvenate'
+                const base = lowerCaseWord.slice(0, len - 3) + 'e';
+                baseForms.add(base);
+
+                // 旧的逻辑 (仍保留以兼容其他情况)
+                const stem = lowerCaseWord.slice(0, len - 3);
+                const stemLen = stem.length;
+                if (stemLen > 1 && isConsonant(stem[stemLen - 1]) && stem[stemLen - 1] === stem[stemLen - 2]) {
+                    baseForms.add(stem.slice(0, stemLen - 1));
+                }
+                if (stem.endsWith('e')) {
+                    baseForms.add(stem.slice(0, -1));
+                }
+                baseForms.add(stem);
+            }
+
+            // 5. 副词
+            if (len > 2 && lowerCaseWord.endsWith('ly')) {
+                if (lowerCaseWord.endsWith('ily')) baseForms.add(lowerCaseWord.slice(0, len - 3) + 'y');
+                if (lowerCaseWord.endsWith('ically')) baseForms.add(lowerCaseWord.slice(0, len - 5));
+                baseForms.add(lowerCaseWord.slice(0, len - 2));
+            }
+
+            // 6. 名词复数 & 动词单三形式
+            if (len > 1 && lowerCaseWord.endsWith('s')) {
+                // 修复：简单处理大部分情况，去掉 's' 或 'es'
+                baseForms.add(lowerCaseWord.slice(0, len - 1));
+
+                // 旧的逻辑 (仍保留以兼容其他情况)
+                if (lowerCaseWord.endsWith('ies') && !'aeiou'.includes(lowerCaseWord[len - 4])) baseForms.add(lowerCaseWord.slice(0, len - 3) + 'y');
+                if (lowerCaseWord.endsWith('es')) {
+                    const ch = lowerCaseWord[len - 3];
+                    if (['s', 'x', 'z'].includes(ch) || lowerCaseWord.slice(len - 4, len - 2) === 'ch' || lowerCaseWord.slice(len - 4, len - 2) === 'sh') {
+                        baseForms.add(lowerCaseWord.slice(0, len - 2));
+                    }
+                }
+                if (!lowerCaseWord.endsWith('ss')) baseForms.add(lowerCaseWord.slice(0, len - 1));
+            }
+
+            return Array.from(baseForms).filter(b => b && b.length > 0);
+        }
+
+        // isWordInSet 函数现在检查所有可能的词根
+        function isWordInSet(word, set, wordForms) {
+            // 修改：调用时传入一个标志，表示是习语检查还是普通单词检查
+            const baseForms = getWordBaseForms(word, wordForms, true);
+            // 检查 getWordBaseForms 返回的数组是否为空，如果为空则直接返回 false
+            if (baseForms.length === 0) {
+                 return false;
+            }
+            for (const base of baseForms) {
+                if (set.has(base)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        // 辅助函数：获取例句中所有不带 HTML 标签的单词
+        function getExampleWords(html) {
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = html;
+            return tempDiv.innerText.toLowerCase().match(/\b\w+\b/g) || [];
+        }
+
+        // --- START: MODIFIED HIGHLIGHTING LOGIC ---
+
+        // 1. Start with the original sentence HTML
+        let workingHtml = exampleSentence.innerHTML;
+        
+        // 2. Temporarily replace <i> tags with placeholders to protect them
+        const iTagPlaceholders = {};
+        let iCounter = 0;
+        workingHtml = workingHtml.replace(/<i[^>]*>.*?<\/i>/g, (match) => {
+            const placeholder = `__I_TAG_${iCounter}__`;
+            iTagPlaceholders[placeholder] = match;
+            iCounter++;
+            return placeholder;
+        });
+
+        // 3. Find and highlight all matching idioms (green)
+        const exampleWords = getExampleWords(workingHtml);
+        idiomWords.forEach(idiom => {
+            const idiomWordsArray = idiom.split(' ').filter(word => word.trim() !== '');
+            if (idiomWordsArray.length < 2) return;
+
+            for (let j = 0; j <= exampleWords.length - idiomWordsArray.length; j++) {
+                let isMatch = true;
+                for (let k = 0; k < idiomWordsArray.length; k++) {
+                    const idiomWordBaseForms = getWordBaseForms(idiomWordsArray[k], wordForms, true);
+                    const exampleWordBaseForms = getWordBaseForms(exampleWords[j + k], wordForms, true);
+                    if (!exampleWordBaseForms.some(base => idiomWordBaseForms.includes(base))) {
+                        isMatch = false;
+                        break;
+                    }
+                }
+                if (isMatch) {
+                    const matchedPhrase = exampleWords.slice(j, j + idiomWordsArray.length).join(' ');
+                    const regex = new RegExp(`\\b${matchedPhrase.replace(/\s+/g, '\\s+')}\\b`, 'gi');
+                    workingHtml = workingHtml.replace(regex, (match) => `<span class="green-word">${match}</span>`);
+                }
+            }
+        });
+
+        // 4. Temporarily replace the new green <span> tags with placeholders
+        const spanPlaceholders = {};
+        let spanCounter = 0;
+        workingHtml = workingHtml.replace(/<span class="green-word">.*?<\/span>/g, (match) => {
+            const placeholder = `__SPAN_TAG_${spanCounter}__`;
+            spanPlaceholders[placeholder] = match;
+            spanCounter++;
+            return placeholder;
+        });
+
+        // 5. Highlight remaining individual words (red/blue)
+        // This regex looks for words and won't match the placeholders
+        workingHtml = workingHtml.replace(/\b[a-zA-Z'-]+\b/g, (word) => {
+            const lowerCaseWord = word.toLowerCase();
+
+            // Skip if the word is in the exclusion list
+            if (excludedWords.has(lowerCaseWord)) {
+                return word;
+            }
+
+            // Check for blue or red highlighting
+            if (isWordInSet(lowerCaseWord, blueWords, wordForms)) {
+                return `<span class="blue-word">${word}</span>`;
+            } else if (isWordInSet(lowerCaseWord, redWords, wordForms)) {
+                return `<span class="red-word">${word}</span>`;
+            }
+
+            // Otherwise, return the original, unchanged word
+            return word;
+        });
+
+        // 6. Restore all placeholders, starting with the inner ones (spans)
+        for (const placeholder in spanPlaceholders) {
+            workingHtml = workingHtml.replace(placeholder, spanPlaceholders[placeholder]);
+        }
+        for (const placeholder in iTagPlaceholders) {
+            workingHtml = workingHtml.replace(placeholder, iTagPlaceholders[placeholder]);
+        }
+        
+        // 7. Update the sentence with the final, correctly highlighted HTML
+        exampleSentence.innerHTML = workingHtml;
+        
+        // --- END: MODIFIED HIGHLIGHTING LOGIC ---
+
+        // Add click-to-unblur functionality to the appropriate elements
+        const elementsToToggle = document.querySelectorAll('.definition, .phonetics, .front i');
+        elementsToToggle.forEach(element => {
+            element.addEventListener('click', () => {
+                element.classList.toggle('unblurred');
+            });
+        });
+    })
+    .catch(error => {
+        console.error('加载远程文件时出错:', error);
+    });
+}
+</script>
+
 背面：
 
 {{FrontSide}}
