@@ -1,10 +1,27 @@
 正面：
 
-<div id="version-info" style="display: none;">version: 2.0.1 (Nebula)</div>
+<div id="version-info" style="display: none;">version: 2.1.0 (Nebula)</div>
 
 <script>
 // --- 背景色设置 ---
-const backgroundColorSetting = '#EAF3FB'; // <--- 在这里设置 'true'、颜色字符串、'auto' 或 'false'
+// 设置为 true 开启随机背景色功能 (在浅色模式下排除绿色、蓝色、紫色等)
+// 设置为有效的CSS颜色字符串 (在浅色模式下使用)
+// 设置为 'auto' 则根据系统深色模式自动切换 (深色模式强制为 #1E1E1E)
+// 设置为 false 或其他非字符串/非 true /非 'auto' 的值则不应用特殊背景色 (使用Anki默认或CSS中定义的背景)
+// #F0F8FF  爱丽丝蓝
+// #FAF9F6  米白色
+// #EAF3FB  浅灰蓝
+// #EDF6EC  淡抹茶绿
+// #F5F5DC  沙色
+// #F2F2F2  浅灰
+// #FFF8DC  玉米丝色
+// #FFFAF0  花白色
+// #F4F1EE  烟雾米
+// #ECEBE4  砂岩灰
+// #F3E5AB  浅奶油黄
+// #EDEDED  极淡灰
+// #1E1E1E  夜间模式
+const backgroundColorSetting = '#FFF8DC'; // <--- 在这里设置 'true'、颜色字符串、'auto' 或 'false'
 const darkModeOverrideColor = '#1E1E1E';
 function hslToHex(h, s, l) {
   l /= 100;
@@ -98,11 +115,23 @@ if (window.matchMedia) {
 
   // --- 更新后的随机选择英文语音 ---
   const englishVoices = [
-    "en-US-EricNeural",
-    "en-US-JennyMultilingualNeural",
-    "en-US-AndrewMultilingualNeural",
-    "en-US-AvaMultilingualNeural",
-    "en-US-EmmaMultilingualNeural"
+"en-US-AdamNeural",
+"en-US-AriaNeural",
+"en-US-AnaNeural",
+"en-US-AndrewNeural",
+"en-US-AvaNeural",
+"en-US-BrianNeural",
+"en-US-ChristopherNeural",
+"en-US-CoraNeural",
+"en-US-DavisNeural",
+"en-US-ElizabethNeural",
+"en-US-EricNeural",
+"en-US-GuyNeural",
+"en-US-JennyNeural",
+"en-US-MichelleNeural",
+"en-US-RogerNeural",
+"en-US-SteffanNeural",
+"en-US-TonyNeural"
   ];
 
   function getRandomEnglishVoice() {
@@ -618,6 +647,12 @@ document.addEventListener("DOMContentLoaded", function() {
     model: 'GLM-4.5'
   };
 
+  const backupApi = {
+    url: 'https://api.moonshot.cn/v1/chat/completions',
+    key: 'sk-uGcqq3JspZjg5ZszUp8ZHep6sFspvRtA7NmrzHzrCWC3ne5h',
+    model: 'moonshot-v1-8k'
+  };
+
   async function fetchFromAPI(api, sourceName) {
     const response = await fetch(api.url, {
       method: 'POST',
@@ -648,8 +683,21 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  fetchFromAPI(mainApi, '<br><br>**来源**：智谱AI')
-  .catch(() => alert('无法连接到智谱AI服务。'));
+  async function getAnalysis() {
+    try {
+      await fetchFromAPI(mainApi, '<br><br>**来源**：智谱AI');
+    } catch (error) {
+      console.error('主服务请求失败，尝试备用服务:', error);
+      try {
+        await fetchFromAPI(backupApi, '<br><br>**来源**：月之暗面');
+      } catch (backupError) {
+        console.error('备用服务请求也失败:', backupError);
+        alert('无法连接到AI服务获取分析。');
+      }
+    }
+  }
+
+  getAnalysis();
 
   const copyButton = document.createElement('button');
   copyButton.textContent = 'Copy';
@@ -853,7 +901,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-CSS：
+css：
 
 /* 基础按钮样式 */
 .btn {
