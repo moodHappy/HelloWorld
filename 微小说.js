@@ -1,5 +1,267 @@
+背面：
 
+{{FrontSide}}
 
+<style>
+.definition, .phonetics {
+    filter: none;
+}
+</style>
+
+{{#笔记}}
+<div class="notes">{{笔记}}</div>
+{{/笔记}}
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const frontText = document.querySelector('.front') ? document.querySelector('.front').textContent.trim() : '';
+  if (!frontText) {
+    console.log('没有找到正面内容，无法进行分析');
+    return;
+  }
+
+  let notesElement = document.querySelector('.notes');
+  if (!notesElement) {
+    notesElement = document.createElement('div');
+    notesElement.classList.add('notes');
+    const backElement = document.querySelector('.back');
+    if (backElement) {
+      backElement.insertAdjacentElement('afterend', notesElement);
+    } else {
+      document.body.appendChild(notesElement);
+    }
+  }
+
+  const noteTitle = document.createElement('div');
+  noteTitle.classList.add('note');
+  noteTitle.textContent = '笔记';
+  noteTitle.style.marginBottom = '20px';
+  noteTitle.style.marginTop = '20px';
+  notesElement.insertAdjacentElement('beforebegin', noteTitle);
+
+  if (notesElement.textContent.trim()) {
+    console.log('发现已有笔记，无需分析');
+    return;
+  }
+
+  const cacheKey = `analysis_cache_${frontText}`;
+  const cachedAnalysis = localStorage.getItem(cacheKey);
+  if (cachedAnalysis) {
+    console.log('使用缓存的分析结果');
+    insertAnalysis(cachedAnalysis);
+  } else {
+    fetchAnalysis();
+  }
+
+  const copyButton = document.createElement('button');
+  copyButton.textContent = 'Copy';
+  copyButton.style.position = 'fixed';
+  copyButton.style.left = '0';
+  copyButton.style.bottom = '0';
+  copyButton.style.padding = '10px 20px';
+  copyButton.style.backgroundColor = 'transparent';
+  copyButton.style.color = 'black';
+  copyButton.style.border = 'none';
+  copyButton.style.borderRadius = '5px';
+  copyButton.style.cursor = 'pointer';
+  copyButton.style.opacity = '0.5';
+  document.body.appendChild(copyButton);
+
+  copyButton.addEventListener('click', function() {
+    const notesText = notesElement.textContent.trim();
+    if (notesText) {
+      navigator.clipboard.writeText(notesText)
+        .then(() => alert('分析内容已复制！'))
+        .catch((error) => {
+          console.error('复制失败:', error);
+          alert('复制失败，请重试！');
+        });
+    } else {
+      alert('没有可复制的分析内容！');
+    }
+  });
+
+  function insertAnalysis(analysis) {
+    if (notesElement) {
+      notesElement.innerHTML = '';
+      notesElement.textContent = analysis;
+    }
+  }
+
+  async function fetchAnalysis() {
+    const apiKey = 'a96b8f1ea985481a89e8c142b32cd233.O3Qst5YxUmFw7B4T';
+    const apiUrl = 'https://open.bigmodel.cn/api/paas/v4/chat/completions';
+
+    try {
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+          model: 'GLM-4.5',
+          messages: [
+            {
+              role: "system",
+              content: "你是英语老师，请分析以下英文文本：\n1. 给出难度等级（A1–C2）并说明原因。\n2. 分析主要句子结构和语法特点。\n3. 解释重要词汇和短语。\n4. 简述文章主题和写作风格。"
+            },
+            {
+              role: "user",
+              content: frontText
+            }
+          ]
+        })
+      });
+
+      const data = await response.json();
+      if (data.choices && data.choices[0].message) {
+        const analysis = data.choices[0].message.content + '\n\n来源：GLM-4.5';
+        localStorage.setItem(cacheKey, analysis);
+        insertAnalysis(analysis);
+      } else {
+        if (data.error && data.error.message) {
+          throw new Error(`AI API Error: ${data.error.message}`);
+        }
+        throw new Error('AI返回格式错误');
+      }
+    } catch (error) {
+      console.error('AI请求失败:', error);
+      alert('无法获取分析数据，请检查网络或API配置！');
+    }
+  }
+});
+</script>
+
+<style>
+.table-container {
+    max-height: 300px;
+    overflow: auto;
+}
+.notes {
+    overflow: auto;
+    white-space: pre-wrap;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+</style>
+
+<script>
+function processInlineFormatting(text) {
+    return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+               .replace(/__(.*?)__/g, '<strong>$1</strong>');
+}
+function markdownToHTML(markdown) {
+    const lines = markdown.split('\n');
+    let resultLines = [];
+    let i = 0;
+    while (i < lines.length) {
+        let line = lines[i];
+        if (/^\s*\|.*\|\s*$/.test(line)) {
+            let tableLines = [];
+            while (i < lines.length && /^\s*\|.*\|\s*$/.test(lines[i])) {
+                tableLines.push(lines[i]);
+                i++;
+            }
+            const tableHTML = processTableBlock(tableLines);
+            resultLines.push(tableHTML);
+            continue;
+        }
+        if (/^\s*[\*\-\+]\s+/.test(line)) {
+            let listLines = [];
+            while (i < lines.length && /^\s*[\*\-\+]\s+/.test(lines[i])) {
+                listLines.push(lines[i]);
+                i++;
+            }
+            const listHTML = processListBlock(listLines);
+            resultLines.push(listHTML);
+            continue;
+        }
+        if (/^(#{1,6})\s*(.*)$/.test(line)) {
+            line = line.replace(/^(#{1,6})\s*(.*)$/, (match, hashes, content) => {
+                const level = hashes.length;
+                return `<h${level}>${processInlineFormatting(content)}</h${level}>`;
+            });
+            resultLines.push(line);
+            i++;
+            continue;
+        }
+        if (/^>\s*(.*)$/.test(line)) {
+            line = line.replace(/^>\s*(.*)$/, (match, content) => {
+                return `<blockquote>${processInlineFormatting(content)}</blockquote>`;
+            });
+            resultLines.push(line);
+            i++;
+            continue;
+        }
+        line = processInlineFormatting(line);
+        resultLines.push(line);
+        i++;
+    }
+    let html = resultLines.join('\n');
+    html = html.replace(/\$(.*?)\$/g, '<span style="color: red;">$1</span>');
+    if (!/<[^>]+>/.test(html)) {
+        html = html.replace(/\n/g, '<br>');
+    }
+    return html;
+}
+function processTableBlock(lines) {
+    if (lines.length < 2) return lines.join('<br>');
+    let headerLine = lines[0].trim();
+    headerLine = headerLine.substring(1, headerLine.length - 1);
+    const headers = headerLine.split('|').map(cell => processInlineFormatting(cell.trim()));
+    const bodyRows = [];
+    for (let j = 2; j < lines.length; j++) {
+        let rowLine = lines[j].trim();
+        if (rowLine.startsWith('|') && rowLine.endsWith('|')) {
+            rowLine = rowLine.substring(1, rowLine.length - 1);
+        }
+        const cells = rowLine.split('|').map(cell => processInlineFormatting(cell.trim()));
+        bodyRows.push(cells);
+    }
+    let tableHTML = '<div class="table-container"><table>';
+    tableHTML += '<thead><tr>';
+    headers.forEach(header => tableHTML += `<th>${header}</th>`);
+    tableHTML += '</tr></thead><tbody>';
+    bodyRows.forEach(row => {
+        tableHTML += '<tr>';
+        for (let i = 0; i < headers.length; i++) {
+            const cellContent = row[i] !== undefined ? row[i] : '';
+            tableHTML += `<td>${cellContent}</td>`;
+        }
+        tableHTML += '</tr>';
+    });
+    tableHTML += '</tbody></table></div>';
+    return tableHTML;
+}
+function processListBlock(lines) {
+    let listHTML = '<ul>';
+    lines.forEach(line => {
+        const item = line.replace(/^\s*[\*\-\+]\s+/, '');
+        listHTML += `<li>${processInlineFormatting(item)}</li>`;
+    });
+    listHTML += '</ul>';
+    return listHTML;
+}
+document.addEventListener("DOMContentLoaded", function() {
+    const notesDiv = document.querySelector('.notes');
+    if (notesDiv) {
+        const originalMarkdown = notesDiv.innerText;
+        const convertedHTML = markdownToHTML(originalMarkdown);
+        notesDiv.innerHTML = convertedHTML;
+    }
+});
+</script>
 
 css：
 
