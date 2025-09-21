@@ -1,3 +1,4 @@
+naked
 panic
 dip
 coy
