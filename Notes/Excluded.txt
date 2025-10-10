@@ -1,3 +1,5 @@
+sound
+fall
 trying
 re
 take
