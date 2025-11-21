@@ -1,3 +1,325 @@
+<div id="version-info" style="display: none;">version: 2.1.0 (Nebula)</div>
+
+<script>
+// --- 背景色设置 ---
+// 设置为 true 开启随机背景色功能 (在浅色模式下排除绿色、蓝色、紫色等)
+// 设置为有效的CSS颜色字符串 (在浅色模式下使用)
+// 设置为 'auto' 则根据系统深色模式自动切换 (深色模式强制为 #1E1E1E)
+// 设置为 false 或其他非字符串/非 true /非 'auto' 的值则不应用特殊背景色 (使用Anki默认或CSS中定义的背景)
+// #F0F8FF  爱丽丝蓝
+// #FAF9F6  米白色
+// #EAF3FB  浅灰蓝
+// #EDF6EC  淡抹茶绿
+// #F5F5DC  沙色
+// #F2F2F2  浅灰
+// #FFF8DC  玉米丝色
+// #FFFAF0  花白色
+// #F4F1EE  烟雾米
+// #ECEBE4  砂岩灰
+// #F3E5AB  浅奶油黄
+// #EDEDED  极淡灰
+// #1E1E1E  夜间模式
+const backgroundColorSetting = '#F4F1EE'; // <--- 在这里设置 'true'、颜色字符串、'auto' 或 'false'
+const darkModeOverrideColor = '#1E1E1E';
+function hslToHex(h, s, l) {
+  l /= 100;
+  const a = s * Math.min(l, 1 - l) / 100;
+  const f = n => {
+    const k = (n + h / 30) % 12;
+    const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+    return Math.round(255 * color).toString(16).padStart(2, '0');
+  };
+  return `#${f(0)}${f(8)}${f(4)}`;
+}
+function applyBackgroundColor(color) {
+    if (color) {
+        const style = document.createElement('style');
+        style.innerHTML = `
+          body, html, .card, * {
+            background-color: ${color} !important;
+          }
+        `;
+        const existingStyle = document.querySelector('style[data-background-changer]');
+        if (existingStyle) {
+            document.head.removeChild(existingStyle);
+        }
+        style.setAttribute('data-background-changer', 'true');
+        document.head.appendChild(style);
+    } else {
+        const existingStyle = document.querySelector('style[data-background-changer]');
+        if (existingStyle) {
+            document.head.removeChild(existingStyle);
+        }
+    }
+}
+function determineBackgroundColor() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return darkModeOverrideColor;
+    } else {
+        if (typeof backgroundColorSetting === 'string' && backgroundColorSetting) {
+            return backgroundColorSetting;
+        } else if (backgroundColorSetting === true) {
+            let isExcludedHue = true;
+            let h, s, l;
+            while (isExcludedHue) {
+              h = Math.floor(Math.random() * 361);
+              isExcludedHue =
+                (h >= 90 && h <= 150) ||
+                (h >= 210 && h <= 270) ||
+                (h >= 270 && h <= 330);
+            }
+            s = Math.floor(Math.random() * (101 - 40)) + 40;
+            l = Math.floor(Math.random() * (81 - 40)) + 40;
+            return hslToHex(h, s, l);
+        } else {
+            return null;
+        }
+    }
+}
+applyBackgroundColor(determineBackgroundColor());
+if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        applyBackgroundColor(determineBackgroundColor());
+    });
+}
+</script>
+
+<div class="card">
+  <div class="word typing-effect" id="animated-text"></div>
+  <div class="phonetic" id="phonetic-text"></div>
+</div>
+
+<button class="btn" id="playWordButton" onclick="playSpellingAndWord()">▶</button>
+<button class="btn" id="playExampleButton" onclick="playExampleTTS()">▶</button>
+<button class="btn" id="repeatWordButton" onclick="playWordTTSRepeated()">▶</button>
+
+<script>
+  let enablePronunciation = false;
+  let useAlternativeTTS = false;
+
+  const word = "{{单词}}";
+  const language = "{{语种}}".trim();
+  const container = document.getElementById("animated-text");
+  const phoneticContainer = document.getElementById("phonetic-text");
+  const eudicURL = `eudic://dict/${word}`;
+
+  container.innerHTML = `<a href="${eudicURL}" style="color: inherit; text-decoration: none;">${word}</a>`;
+  phoneticContainer.textContent = "{{IPA}}";
+
+  const WORD_LENGTH_THRESHOLD = 15;
+  if (word.length > WORD_LENGTH_THRESHOLD) {
+    container.style.fontSize = '24px';
+  }
+
+  // --- 更新后的随机选择英文语音 ---
+  const englishVoices = [
+"en-US-AdamNeural",
+"en-US-AriaNeural",
+"en-US-AnaNeural",
+"en-US-AndrewNeural",
+"en-US-AvaNeural",
+"en-US-BrianNeural",
+"en-US-ChristopherNeural",
+"en-US-CoraNeural",
+"en-US-DavisNeural",
+"en-US-ElizabethNeural",
+"en-US-EricNeural",
+"en-US-GuyNeural",
+"en-US-JennyNeural",
+"en-US-MichelleNeural",
+"en-US-RogerNeural",
+"en-US-SteffanNeural",
+"en-US-TonyNeural"
+  ];
+
+  function getRandomEnglishVoice() {
+    return englishVoices[Math.floor(Math.random() * englishVoices.length)];
+  }
+
+  const voiceMap = {
+    "de": "de-DE-ConradNeural",
+    "es": "es-ES-AlvaroNeural",
+    "it": "it-IT-DiegoNeural",
+    "hi": "hi-IN-MadhurNeural",
+    "ko": "ko-KR-SunHiNeural",
+    "fr": "fr-FR-DeniseNeural",
+    "ru": "ru-RU-DmitryNeural",
+    "he": "he-IL-AvriNeural",
+    "": getRandomEnglishVoice() // 如果语种为空，则随机选择一个英文语音
+  };
+
+  const selectedVoice = voiceMap[language] || getRandomEnglishVoice();
+  // --- 结束更新 ---
+
+  function playTTS(text, audioId, callback) {
+    if (!text) {
+      alert('Text is empty, unable to generate audio');
+      return;
+    }
+    
+    const old = document.getElementById(audioId);
+    if (old) old.remove();
+
+    const audio = document.createElement('audio');
+    audio.id = audioId;
+    audio.style.display = 'none';
+    
+    let src;
+    if (useAlternativeTTS) {
+      const queryString = new URLSearchParams({
+        text: text.trim(),
+        voiceName: selectedVoice,
+        speed: 0,
+      }).toString();
+      src = `https://ms-ra-forwarder-for-ifreetime-beta-two.vercel.app/api/aiyue?${queryString}`;
+    } else {
+      src = `https://libre-tts-nu.vercel.app/api/tts?t=${encodeURIComponent(text.trim())}&v=${encodeURIComponent(selectedVoice)}&r=0&p=0`;
+    }
+
+    audio.innerHTML = `<source src="${src}" type="audio/mpeg">`;
+    document.body.append(audio);
+
+    audio.onended = () => callback?.();
+    audio.play();
+  }
+
+  function playSpellingAndWord() {
+    const letters = word.toLowerCase().split('').join(', ');
+    playTTS(letters, 'audioSpell', () => {
+      playTTS(word, 'audioFullWord');
+    });
+  }
+
+  function playWordTTS() {
+    playTTS(word, 'audioFullWord');
+  }
+
+  function playExampleTTS() {
+    const exampleText = document.querySelector('.example')?.innerText?.trim() || '';
+    playTTS(exampleText, 'hiddenAudioExample');
+  }
+
+  function playWordTTSRepeated(times = 100) {
+    let count = 0;
+    const playNext = () => {
+      if (++count < times) {
+        playTTS(word, 'hiddenAudioWordRepeated', playNext);
+      }
+    };
+    playTTS(word, 'hiddenAudioWordRepeated', playNext);
+  }
+
+  const buttonStyle = `
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  `;
+
+  document.getElementById("playWordButton").style = `${buttonStyle} bottom: 200px;`;
+  document.getElementById("playExampleButton").style = `${buttonStyle} bottom: 150px;`;
+  const repeatBtn = document.getElementById("repeatWordButton");
+  repeatBtn.style = `${buttonStyle} bottom: 100px; color: red; font-weight: bold;`;
+
+  window.onload = function() {
+    if (enablePronunciation) {
+      playSpellingAndWord();
+    } else {
+      playWordTTS();
+    }
+  };
+</script>
+
+<div style="text-align: right;">
+  <button onclick="copyAndGo('{{单词}}')" style="
+    background: #f0f0f0;
+    color: #999;
+    font-size: 80%;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    opacity: 0.4;
+    cursor: pointer;">
+    JTWord
+  </button>
+</div>
+
+<script>
+  function copyAndGo(word) {
+    navigator.clipboard.writeText(word).finally(() => {
+      window.open('https://www.just-the-word.com', '_blank');
+    });
+  }
+</script>
+
+<div style="display: flex; justify-content: center; gap: 10px; margin-top: 5px;">
+  <div id="frequency-coca">COCA：加载中...</div>
+  <div id="frequency-google">Google：加载中...</div>
+  <div id="frequency-oxford">Oxford：加载中...</div>
+</div>
+
+<div id="word-data" style="display: none;">{{单词}}</div>
+
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    const currentWord = document.getElementById("word-data").textContent.trim().toLowerCase();
+    const anchor = document.querySelector('#animated-text a');
+    let foundInCoca = false, foundInGoogle = false, foundInOxford = false;
+
+    fetch("./_COCA.json")
+      .then(res => res.json())
+      .then(cocaList => {
+        const rank = cocaList[currentWord];
+        document.getElementById("frequency-coca").textContent = rank ? `COCA：${rank}` : `COCA：未找到`;
+        foundInCoca = !!rank;
+      })
+      .catch(() => {
+        document.getElementById("frequency-coca").textContent = `COCA：加载失败`;
+      })
+      .then(() => fetch("./_Google.json"))
+      .then(res => res.json())
+      .then(googleList => {
+        const rank = googleList[currentWord];
+        document.getElementById("frequency-google").textContent = rank ? `Google：${rank}` : `Google：未找到`;
+        foundInGoogle = !!rank;
+      })
+      .catch(() => {
+        document.getElementById("frequency-google").textContent = `Google：加载失败`;
+      })
+      .then(() => fetch("./_OxfordLevels.json"))
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        return res.json();
+      })
+      .then(oxfordList => {
+        const rank = oxfordList[currentWord];
+        document.getElementById("frequency-oxford").textContent = rank ? `Oxford：${rank}` : `Oxford：未找到`;
+        foundInOxford = !!rank;
+      })
+      .catch(error => {
+        console.error("Error fetching Oxford data:", error);
+        document.getElementById("frequency-oxford").textContent = `Oxford：加载失败`;
+      })
+      .finally(() => updateWordColor(foundInCoca, foundInGoogle, foundInOxford, anchor));
+
+    function updateWordColor(inCoca, inGoogle, inOxford, a) {
+      if (!a) return;
+      if (inCoca && inGoogle && inOxford)       a.style.color = '#8A2BE2';
+      else if (inCoca && inGoogle)              a.style.color = 'pink';
+      else if (inCoca && inOxford)              a.style.color = 'red';
+      else if (inGoogle && inOxford)            a.style.color = 'blue';
+      else if (inCoca)                          a.style.color = '#20B2AA';
+      else if (inGoogle)                        a.style.color = 'blue';
+      else if (inOxford)                        a.style.color = 'green';
+      else                                      a.style.color = 'inherit';
+    }
+  });
+</script>
+
 
 css：
 
