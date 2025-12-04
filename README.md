@@ -4,9 +4,6 @@
 
 [📁Notes](https://github.com/moodHappy/HelloWorld/tree/master/Notes)
 
-[变体映射](https://github.com/moodHappy/HelloWorld/blob/master/Notes%2Fstems.json)
-
-
 [排除高亮](https://github.com/moodHappy/HelloWorld/blob/master/Notes%2FExcluded.txt)
 
 
