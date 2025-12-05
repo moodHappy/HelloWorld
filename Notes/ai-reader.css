@@ -1,109 +1,6 @@
-/* =========================================
-   1. 基础页面布局 (从 HTML 移入)
-   ========================================= */
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.8;
-    color: #333;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 20px;
-}
+/* ai-reader.css - 通用阅读助手样式 */
 
-header { margin-bottom: 30px; text-align: center; }
-
-.container {
-    max-width: 700px;
-    margin: 0 auto;
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-p { margin-bottom: 24px; font-size: 18px; text-align: justify; }
-
-/* =========================================
-   2. 设置按钮与面板样式 (从 HTML 移入)
-   ========================================= */
-/* 右上角齿轮按钮 */
-.settings-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #fff;
-    border: 1px solid #ddd;
-    font-size: 20px;
-    color: #666;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    z-index: 1000;
-    outline: none;
-}
-.settings-btn:hover {
-    transform: rotate(90deg);
-    background-color: #f0f0f0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-/* Key 已保存时的样式（绿色） */
-.settings-btn.has-key {
-    border-color: #b7eb8f;
-    color: #52c41a;
-    background-color: #f6ffed;
-}
-
-/* 设置弹窗遮罩 */
-.settings-overlay {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.5); backdrop-filter: blur(2px);
-    display: none; /* 默认隐藏 */
-    justify-content: center; align-items: center; z-index: 2000;
-    opacity: 0; transition: opacity 0.3s;
-}
-.settings-overlay.active { display: flex; opacity: 1; }
-
-/* 设置面板卡片 */
-.settings-card {
-    background: white; padding: 25px; border-radius: 12px;
-    width: 90%; max-width: 450px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-    transform: scale(0.95); transition: transform 0.3s;
-}
-.settings-overlay.active .settings-card { transform: scale(1); }
-
-.settings-card h2 { margin: 0 0 20px 0; font-size: 18px; color: #333; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-
-.settings-group { margin-bottom: 15px; }
-.settings-group label { display: block; font-size: 14px; font-weight: 500; color: #555; margin-bottom: 5px; }
-.settings-group input {
-    width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;
-    font-size: 14px; box-sizing: border-box; transition: border-color 0.2s; font-family: monospace;
-}
-.settings-group input:focus { border-color: #1976D2; outline: none; }
-.settings-group input::placeholder { color: #ccc; }
-.settings-group .desc { font-size: 11px; color: #888; margin-top: 3px; }
-
-.btn-row { display: flex; justify-content: flex-end; gap: 10px; margin-top: 25px; }
-/* 按钮通用 */
-.btn-base { padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 14px; }
-.btn-save { background: #1976D2; color: white; border: none; font-weight: 500; }
-.btn-save:hover { background: #1565C0; }
-.btn-cancel { background: #f5f5f5; color: #333; border: 1px solid #ddd; }
-.btn-cancel:hover { background: #e0e0e0; }
-
-
-/* =========================================
-   3. AI Reader 核心组件样式
-   ========================================= */
-
-/* 点击单词 */
+/* --- 核心交互元素 --- */
 .clickable-word {
     cursor: pointer;
     border-radius: 3px;
@@ -112,13 +9,21 @@ p { margin-bottom: 24px; font-size: 18px; text-align: justify; }
     position: relative;
     z-index: 1;
 }
-.clickable-word:hover { background-color: rgba(0,0,0,0.05); }
+.clickable-word:hover {
+    background-color: rgba(0,0,0,0.05);
+}
 
-/* 高亮颜色 */
-.highlight-blue { color: #1967d2; font-weight: 500; }
-.highlight-red { color: #d93025; font-weight: 500; }
+/* 高亮颜色定义 */
+.highlight-blue {
+    color: #1967d2;
+    font-weight: 500;
+}
+.highlight-red {
+    color: #d93025;
+    font-weight: 500;
+}
 
-/* AI 分析按钮 (小魔术棒) */
+/* --- AI 分析按钮 (小魔术棒) --- */
 .ai-analyze-btn {
     display: inline-flex; align-items: center; justify-content: center;
     background-color: rgba(139, 115, 85, 0.1); 
@@ -134,7 +39,7 @@ p { margin-bottom: 24px; font-size: 18px; text-align: justify; }
 }
 .ai-analyze-btn svg { width: 10px; height: 10px; fill: currentColor; }
 
-/* 词典弹窗 (Tippy) */
+/* --- 词典弹窗样式 (Tippy 内容) --- */
 .dict-popup {
     text-align: left; font-size: 14px; line-height: 1.4; max-width: 280px; color: #333; padding: 2px;
     font-family: sans-serif;
@@ -157,7 +62,7 @@ p { margin-bottom: 24px; font-size: 18px; text-align: justify; }
 
 @keyframes ai-pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
 
-/* AI 分析结果模态框 */
+/* --- AI 分析结果模态框 (通用) --- */
 .ar-modal-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(44, 44, 44, 0.4); backdrop-filter: blur(4px);
@@ -189,6 +94,7 @@ p { margin-bottom: 24px; font-size: 18px; text-align: justify; }
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
+/* 分析内容样式 */
 .ar-original-sentence {
     background: #f4f0ec; padding: 12px 16px; border-radius: 8px; border-left: 4px solid #8b7355;
     color: #4a4a4a; font-style: italic; margin-bottom: 20px; line-height: 1.5;
@@ -197,12 +103,14 @@ p { margin-bottom: 24px; font-size: 18px; text-align: justify; }
 .ar-result-content h1, .ar-result-content h2 { color: #5a4a3f; margin: 1em 0 0.5em; font-size: 1.2em; border-bottom: 1px dashed #e0d5ca; padding-bottom: 5px; }
 .ar-result-content strong { color: #a0522d; background: rgba(160, 82, 45, 0.08); padding: 0 2px; }
 
+/* Loading Spinner */
 .ar-spinner {
     width: 30px; height: 30px; border: 3px solid rgba(139,115,85,0.3);
     border-top-color: #8b7355; border-radius: 50%; animation: ai-spin 0.8s linear infinite; margin: 20px auto;
 }
 @keyframes ai-spin { to { transform: rotate(360deg); } }
 
+/* 移动端适配 */
 @media (max-width: 600px) {
     .ar-modal-overlay { align-items: flex-end; }
     .ar-modal-card {
