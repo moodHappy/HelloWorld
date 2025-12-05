@@ -1,6 +1,5 @@
 /* ai-reader.js - 核心逻辑库
  * 依赖: Tippy.js, Marked.js, Compromise.js (可选但推荐)
- * 更新: 增加双击弹窗内容区域关闭功能
  */
 
 class AIReader {
@@ -266,8 +265,6 @@ class AIReader {
 
     _injectModalHTML() {
         if(document.getElementById('arResultModal')) return;
-        
-        // 创建模态框结构
         const div = document.createElement('div');
         div.innerHTML = `
             <div id="arResultModal" class="ar-modal-overlay">
@@ -284,21 +281,10 @@ class AIReader {
             </div>`;
         document.body.appendChild(div);
 
-        const modal = document.getElementById('arResultModal');
-        const card = modal.querySelector('.ar-modal-card');
-
-        // 事件 1: 单击遮罩层背景关闭
-        modal.onclick = (e) => {
-            if(e.target.id === 'arResultModal') modal.classList.remove('active');
+        // 点击遮罩关闭
+        document.getElementById('arResultModal').onclick = (e) => {
+            if(e.target.id === 'arResultModal') e.target.classList.remove('active');
         };
-
-        // 事件 2: 双击弹窗内容区域（白色卡片）关闭
-        // 注意：双击文本也可能触发选中，但会同时触发关闭
-        if (card) {
-            card.ondblclick = () => {
-                modal.classList.remove('active');
-            };
-        }
     }
 
     _bindGlobalEvents() {
