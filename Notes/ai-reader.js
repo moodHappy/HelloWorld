@@ -1,5 +1,4 @@
 /* ai-reader.js - 核心逻辑库
- * 修复版: 包含双击关闭弹窗功能
  * 依赖: Tippy.js, Marked.js, Compromise.js (可选但推荐)
  */
 
@@ -264,7 +263,6 @@ class AIReader {
         this.blueWords = b; this.redWords = r; this.excludedWords = e;
     }
 
-    // --- [修复重点] 更新了 _injectModalHTML 方法 ---
     _injectModalHTML() {
         if(document.getElementById('arResultModal')) return;
         const div = document.createElement('div');
@@ -283,25 +281,14 @@ class AIReader {
             </div>`;
         document.body.appendChild(div);
 
-        const overlay = document.getElementById('arResultModal');
-        const card = overlay.querySelector('.ar-modal-card');
-
-        // 1. 点击黑色遮罩层关闭
-        overlay.onclick = (e) => {
-            if(e.target.id === 'arResultModal') overlay.classList.remove('active');
+        // 点击遮罩关闭
+        document.getElementById('arResultModal').onclick = (e) => {
+            if(e.target.id === 'arResultModal') e.target.classList.remove('active');
         };
-
-        // 2. 双击卡片内容区域关闭 (修复重点)
-        // 注意：在移动端，如果双击的位置有文本，系统可能会先触发“选词”。
-        // 建议双击标题栏或空白处。
-        card.addEventListener('dblclick', (e) => {
-            // 可选：阻止双击选中文字的默认行为（如果想要极致的双击关闭体验）
-            // e.preventDefault(); 
-            overlay.classList.remove('active');
-        });
     }
 
     _bindGlobalEvents() {
+        // 全局播放函数暴露给 Window，因为 Tippy 内容是动态的 HTML 字符串
         window.AIReaderPlay = (text, btn) => {
             btn.classList.add('playing');
             const audio = new Audio(`https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(text)}&type=2`);
