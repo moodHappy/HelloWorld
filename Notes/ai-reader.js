@@ -1,5 +1,6 @@
 /* ai-reader.js - 核心逻辑库
  * 依赖: Tippy.js, Marked.js, Compromise.js (可选但推荐)
+ * 更新: 增加双击弹窗内容区域关闭功能
  */
 
 class AIReader {
@@ -8,7 +9,7 @@ class AIReader {
         this.apiKey = config.apiKey || localStorage.getItem('groq_api_key') || '';
         this.model = config.model || localStorage.getItem('groq_model') || 'meta-llama/llama-4-maverick-17b-128e-instruct';
         this.prompt = config.prompt || localStorage.getItem('groq_prompt') || "你是一位精通中英文的语言专家。请分析我提供的句子：\n1. 判断难度等级 (A1-C2)。\n2. 详细解释核心语法结构。\n3. 提供准确、优美的中文翻译。\n请使用 Markdown 格式输出。";
-        
+
         // 词表 URLs
         this.urls = {
             blue: config.blueUrl || localStorage.getItem('highlight_url_blue'),
@@ -49,7 +50,7 @@ class AIReader {
 
         nodes.forEach(node => {
             if (node.parentElement && ['SPAN', 'SCRIPT', 'STYLE'].includes(node.parentElement.tagName)) return;
-            
+
             const text = node.nodeValue;
             if (!text.trim()) return;
 
@@ -69,7 +70,7 @@ class AIReader {
             } else {
                 this._highlightText(text, fragment);
             }
-            
+
             node.parentNode.replaceChild(fragment, node);
         });
 
@@ -103,7 +104,7 @@ class AIReader {
     _checkInSet(word, set) {
         const lower = word.toLowerCase();
         if (set.has(lower)) return true;
-        
+
         // 尝试还原词根 (依赖 compromise.js)
         if (!this.lemmaCache.has(lower)) {
             let root = lower;
@@ -131,7 +132,7 @@ class AIReader {
     // --- 内部：AI 分析逻辑 ---
     async _handleAnalyzeClick(target) {
         if(!this.apiKey) { alert('请先配置 API Key (AIReader config)'); return; }
-        
+
         const btn = target.closest('.ai-analyze-btn');
         document.querySelectorAll('.ai-analyze-btn').forEach(b => b.classList.remove('last-clicked'));
         btn.classList.add('last-clicked');
@@ -159,7 +160,7 @@ class AIReader {
         const modal = document.getElementById('arResultModal');
         const originalBox = document.getElementById('arOriginalSentence');
         const contentBox = document.getElementById('arResultContent');
-        
+
         originalBox.innerText = sentence;
         contentBox.innerHTML = '<div class="ar-spinner"></div><p style="text-align:center;color:#666">正在请求 AI 分析...</p>';
         modal.classList.add('active');
@@ -239,7 +240,7 @@ class AIReader {
                 </div>
                 <div class="dict-basic-trans">${basic}</div>
             </div>`;
-        
+
         if(trans[1]) {
             html += `<div class="dict-details">`;
             trans[1].slice(0,2).forEach(entry => {
@@ -265,6 +266,8 @@ class AIReader {
 
     _injectModalHTML() {
         if(document.getElementById('arResultModal')) return;
+        
+        // 创建模态框结构
         const div = document.createElement('div');
         div.innerHTML = `
             <div id="arResultModal" class="ar-modal-overlay">
@@ -280,11 +283,22 @@ class AIReader {
                 </div>
             </div>`;
         document.body.appendChild(div);
-        
-        // 点击遮罩关闭
-        document.getElementById('arResultModal').onclick = (e) => {
-            if(e.target.id === 'arResultModal') e.target.classList.remove('active');
+
+        const modal = document.getElementById('arResultModal');
+        const card = modal.querySelector('.ar-modal-card');
+
+        // 事件 1: 单击遮罩层背景关闭
+        modal.onclick = (e) => {
+            if(e.target.id === 'arResultModal') modal.classList.remove('active');
         };
+
+        // 事件 2: 双击弹窗内容区域（白色卡片）关闭
+        // 注意：双击文本也可能触发选中，但会同时触发关闭
+        if (card) {
+            card.ondblclick = () => {
+                modal.classList.remove('active');
+            };
+        }
     }
 
     _bindGlobalEvents() {
