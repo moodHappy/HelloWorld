@@ -263,6 +263,7 @@ class AIReader {
         this.blueWords = b; this.redWords = r; this.excludedWords = e;
     }
 
+    // --- 修改点：_injectModalHTML 方法更新 ---
     _injectModalHTML() {
         if(document.getElementById('arResultModal')) return;
         const div = document.createElement('div');
@@ -281,9 +282,17 @@ class AIReader {
             </div>`;
         document.body.appendChild(div);
 
-        // 点击遮罩关闭
-        document.getElementById('arResultModal').onclick = (e) => {
+        const modal = document.getElementById('arResultModal');
+
+        // 原有功能：单击遮罩背景关闭
+        modal.onclick = (e) => {
             if(e.target.id === 'arResultModal') e.target.classList.remove('active');
+        };
+
+        // 【新增功能】：双击任意区域关闭 (支持移动端/桌面端)
+        // 注意：因为事件冒泡，双击 modal 内部的内容也会触发此事件，从而关闭弹窗
+        modal.ondblclick = (e) => {
+            modal.classList.remove('active');
         };
     }
 
