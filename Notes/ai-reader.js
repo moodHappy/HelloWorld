@@ -1,4 +1,5 @@
 /* ai-reader.js - 核心逻辑库
+ * 修复版: 增加双击关闭弹窗功能
  * 依赖: Tippy.js, Marked.js, Compromise.js (可选但推荐)
  */
 
@@ -281,10 +282,22 @@ class AIReader {
             </div>`;
         document.body.appendChild(div);
 
-        // 点击遮罩关闭
-        document.getElementById('arResultModal').onclick = (e) => {
-            if(e.target.id === 'arResultModal') e.target.classList.remove('active');
+        const modal = document.getElementById('arResultModal');
+        
+        // 1. 点击遮罩关闭
+        modal.onclick = (e) => {
+            if(e.target.id === 'arResultModal') modal.classList.remove('active');
         };
+
+        // 2. 双击内容区域关闭 (新增功能)
+        const card = modal.querySelector('.ar-modal-card');
+        card.addEventListener('dblclick', (e) => {
+            // 优化：如果用户双击是为了选词，不应该关闭
+            const selection = window.getSelection();
+            if(selection && selection.toString().length > 0) return; 
+
+            modal.classList.remove('active');
+        });
     }
 
     _bindGlobalEvents() {
