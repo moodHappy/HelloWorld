@@ -1,9 +1,10 @@
 /* =========================================
    AI Reader General Styles
+   Prefix: .air-
    ========================================= */
 
-/* --- 交互式单词 --- */
-.ai-word {
+/* --- 核心交互元素 --- */
+.air-clickable-word {
     cursor: pointer;
     border-radius: 3px;
     padding: 0 1px;
@@ -11,28 +12,22 @@
     position: relative;
 }
 
-.ai-word:hover {
+.air-clickable-word:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-.ai-word.active-word {
-    background-color: rgba(139, 115, 85, 0.2);
-    color: #5a4a3f;
-}
-
-/* 高亮颜色定义 */
-.ai-highlight-blue {
+.air-highlight-blue {
     color: #1967d2;
     font-weight: 500;
 }
 
-.ai-highlight-red {
+.air-highlight-red {
     color: #d93025;
     font-weight: 500;
 }
 
-/* --- 分析按钮 (小魔术棒/圆点) --- */
-.ai-analyze-btn {
+/* --- AI 分析按钮 (小魔术棒) --- */
+.air-analyze-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -43,45 +38,59 @@
     margin: 0 4px;
     cursor: pointer;
     color: #8b7355;
-    vertical-align: middle;
+    position: relative;
+    top: -1px;
     transition: all 0.2s;
     user-select: none;
 }
 
-.ai-analyze-btn:hover {
+.air-analyze-btn:hover {
     background-color: #8b7355;
     color: white;
     transform: scale(1.1);
 }
 
-.ai-analyze-btn.processing {
-    animation: ai-pulse 1s infinite;
-    background-color: #8b7355;
-    color: white;
+.air-analyze-btn.air-btn-active {
+    background-color: #d32f2f !important;
+    color: white !important;
+    transform: scale(1.15);
 }
 
-@keyframes ai-pulse {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.2); opacity: 0.8; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-.ai-analyze-btn svg {
+.air-analyze-btn svg {
     width: 10px;
     height: 10px;
     fill: currentColor;
 }
 
-/* =========================================
-   Custom Dictionary Popup (No Popper.js)
-   ========================================= */
-.ai-dict-popup {
+/* --- 自定义悬浮设置按钮 (Floating Action Button) --- */
+#air-fab-settings {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9990;
+    transition: transform 0.2s;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+#air-fab-settings:hover { transform: scale(1.1); }
+#air-fab-settings svg { width: 24px; height: 24px; color: #555; }
+
+/* --- 自定义词典弹窗 (无 Tippy 依赖) --- */
+#air-dict-popup {
     position: absolute;
     z-index: 10000;
     background: #fff;
     border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     padding: 12px;
     width: 280px;
     max-width: 90vw;
@@ -91,179 +100,83 @@
     color: #333;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.2s, transform 0.2s;
-    pointer-events: none; /* Hidden by default */
+    transition: opacity 0.2s, top 0.2s, left 0.2s;
+    pointer-events: none; /* Hidden state */
 }
 
-.ai-dict-popup.visible {
+#air-dict-popup.active {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
 }
 
-/* 词典内容样式 */
-.ai-dict-header {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 8px;
-    margin-bottom: 8px;
-}
+/* 词典内部样式 */
+.air-dict-header { border-bottom: 1px solid #eee; padding-bottom: 8px; margin-bottom: 8px; display: flex; align-items: baseline; gap: 8px; }
+.air-dict-word { font-weight: bold; color: #d32f2f; font-size: 18px; }
+.air-dict-ipa { font-family: "Lucida Sans Unicode", sans-serif; color: #666; font-size: 13px; background: #f5f5f5; padding: 1px 4px; border-radius: 4px; }
+.air-dict-speaker { cursor: pointer; color: #1976d2; margin-left: auto; display: inline-flex; align-items: center; }
+.air-dict-speaker:hover { opacity: 0.7; }
+.air-dict-speaker.playing { color: #e91e63; animation: air-pulse 1s infinite; }
+.air-dict-pos { font-style: italic; color: #1976d2; font-weight: bold; font-size: 12px; margin-right: 4px; }
+.air-dict-loading { color: #888; font-style: italic; display: flex; align-items: center; gap: 6px; }
 
-.ai-dict-word-line {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.ai-dict-headword {
-    font-weight: bold;
-    color: #D32F2F;
-    font-size: 18px;
-}
-
-.ai-dict-ipa {
-    color: #666;
-    font-size: 13px;
-    background: #f0f0f0;
-    padding: 1px 6px;
-    border-radius: 4px;
-    font-family: "Lucida Sans Unicode", sans-serif;
-}
-
-.ai-dict-speaker {
-    cursor: pointer;
-    color: #1976D2;
-    display: flex;
-    align-items: center;
-}
-.ai-dict-speaker:hover { opacity: 0.7; }
-.ai-dict-speaker svg { width: 16px; height: 16px; }
-
-.ai-dict-pos-block { margin-bottom: 6px; }
-.ai-dict-pos-tag { font-style: italic; color: #1976D2; font-weight: bold; font-size: 12px; margin-right: 4px; }
-
-/* =========================================
-   AI Analysis Modal
-   ========================================= */
-.ai-modal-overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
+/* --- 通用模态框 (Settings & AI Result) --- */
+.air-modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(4px);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.25s ease;
+    backdrop-filter: blur(2px);
+    z-index: 11000;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; visibility: hidden; transition: all 0.25s ease;
 }
+.air-modal-overlay.active { opacity: 1; visibility: visible; }
 
-.ai-modal-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.ai-modal-card {
-    background: #fff;
-    width: 90%;
-    max-width: 650px;
-    max-height: 85vh;
+.air-modal-card {
+    background: #fff; width: 92%; max-width: 600px;
     border-radius: 12px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    display: flex;
-    flex-direction: column;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    max-height: 85vh;
+    display: flex; flex-direction: column;
     transform: scale(0.95);
-    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-    overflow: hidden;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+.air-modal-overlay.active .air-modal-card { transform: scale(1); }
 
-.ai-modal-overlay.active .ai-modal-card {
-    transform: scale(1);
-}
-
-/* Modal Header */
-.ai-modal-header {
+.air-modal-header {
     padding: 16px 20px;
-    background: #f9f9f9;
     border-bottom: 1px solid #eee;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-shrink: 0;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.air-modal-title { font-size: 18px; font-weight: 600; color: #333; display: flex; align-items: center; gap: 8px; }
+.air-close-btn { background: none; border: none; cursor: pointer; padding: 4px; color: #666; }
+.air-close-btn:hover { color: #000; background: #eee; border-radius: 4px; }
+
+.air-modal-body {
+    flex: 1; overflow-y: auto; padding: 20px;
+    font-size: 15px; color: #333; line-height: 1.6;
 }
 
-.ai-modal-title {
-    font-size: 1.1em;
-    font-weight: 600;
-    color: #333;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+/* AI Result Specifics */
+.air-original-sentence {
+    background: #f5f5f5; padding: 12px 16px; border-radius: 8px;
+    border-left: 4px solid #8b7355; color: #555; font-style: italic; margin-bottom: 16px;
 }
+.air-ai-content h1, .air-ai-content h2 { margin-top: 1em; font-size: 1.2em; color: #444; border-bottom: 1px dashed #ccc; padding-bottom: 4px; }
+.air-ai-content strong { color: #a0522d; background: rgba(160, 82, 45, 0.08); padding: 0 2px; }
 
-.ai-close-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #666;
-    padding: 4px;
-    display: flex;
+/* Settings Inputs */
+.air-input-group { margin-bottom: 15px; }
+.air-label { display: block; margin-bottom: 6px; font-weight: 500; font-size: 0.9em; color: #555; }
+.air-input, .air-textarea, .air-select {
+    width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;
+    font-family: inherit; font-size: 14px; box-sizing: border-box;
 }
-.ai-close-btn:hover { color: #000; background: #eee; border-radius: 4px; }
+.air-btn-primary {
+    width: 100%; padding: 10px; background: #8b7355; color: white;
+    border: none; border-radius: 6px; cursor: pointer; font-size: 15px; margin-top: 10px;
+}
+.air-btn-primary:hover { background: #6b5b4f; }
 
-/* Modal Body */
-.ai-modal-body {
-    padding: 20px;
-    overflow-y: auto;
-    flex: 1;
-    font-size: 16px;
-    line-height: 1.7;
-    color: #2c2c2c;
-}
-
-/* Original Sentence Box */
-.ai-original-text {
-    background: #f4f0ec;
-    padding: 12px 16px;
-    border-radius: 8px;
-    border-left: 4px solid #8b7355;
-    margin-bottom: 20px;
-    font-style: italic;
-    color: #555;
-}
-
-/* Markdown Styles inside Modal */
-.ai-result-content h1, .ai-result-content h2, .ai-result-content h3 {
-    margin-top: 1em;
-    margin-bottom: 0.5em;
-    color: #333;
-    font-weight: 600;
-}
-.ai-result-content p { margin-bottom: 1em; }
-.ai-result-content strong { color: #a0522d; background: rgba(160, 82, 45, 0.1); padding: 0 2px; border-radius: 2px;}
-.ai-result-content ul { margin-left: 20px; margin-bottom: 1em; }
-
-/* Loading Spinner */
-.ai-spinner {
-    width: 30px; height: 30px;
-    border: 3px solid rgba(139,115,85,0.3);
-    border-top-color: #8b7355;
-    border-radius: 50%;
-    animation: ai-spin 0.8s linear infinite;
-    margin: 20px auto;
-    display: block;
-}
-@keyframes ai-spin { to { transform: rotate(360deg); } }
-
-/* Mobile Adaptation */
-@media (max-width: 600px) {
-    .ai-modal-overlay { align-items: flex-end; }
-    .ai-modal-card {
-        width: 100%; max-width: 100%;
-        border-radius: 16px 16px 0 0;
-        max-height: 80vh;
-        transform: translateY(100%);
-    }
-    .ai-modal-overlay.active .ai-modal-card { transform: translateY(0); }
-}
+@keyframes air-pulse { 0% { transform: scale(1); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+@keyframes air-spin { to { transform: rotate(360deg); } }
+.air-spinner { width: 24px; height: 24px; border: 3px solid rgba(0,0,0,0.1); border-top-color: #8b7355; border-radius: 50%; animation: air-spin 0.8s linear infinite; margin: 20px auto; }
