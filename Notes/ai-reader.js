@@ -263,7 +263,7 @@ class AIReader {
         this.blueWords = b; this.redWords = r; this.excludedWords = e;
     }
 
-    // --- 修改点：_injectModalHTML 方法更新 ---
+    // --- 修改点：使用时间戳手动实现双击逻辑 ---
     _injectModalHTML() {
         if(document.getElementById('arResultModal')) return;
         const div = document.createElement('div');
@@ -284,20 +284,28 @@ class AIReader {
 
         const modal = document.getElementById('arResultModal');
 
-        // 原有功能：单击遮罩背景关闭
+        // 1. 正常的单击背景关闭（保持不变）
         modal.onclick = (e) => {
             if(e.target.id === 'arResultModal') e.target.classList.remove('active');
         };
 
-        // 【新增功能】：双击任意区域关闭 (支持移动端/桌面端)
-        // 注意：因为事件冒泡，双击 modal 内部的内容也会触发此事件，从而关闭弹窗
-        modal.ondblclick = (e) => {
-            modal.classList.remove('active');
-        };
+        // 2. 强力双击检测（时间戳方案，解决移动端兼容性）
+        let lastTapTime = 0;
+        modal.addEventListener('click', (e) => {
+            const currentTime = new Date().getTime();
+            const tapLength = currentTime - lastTapTime;
+
+            // 如果两次点击间隔小于 350ms，且大于 0ms，视为双击
+            if (tapLength < 350 && tapLength > 0) {
+                // 阻止默认行为（防止移动端双击选中文字或缩放）
+                e.preventDefault(); 
+                modal.classList.remove('active');
+            }
+            lastTapTime = currentTime;
+        });
     }
 
     _bindGlobalEvents() {
-        // 全局播放函数暴露给 Window，因为 Tippy 内容是动态的 HTML 字符串
         window.AIReaderPlay = (text, btn) => {
             btn.classList.add('playing');
             const audio = new Audio(`https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(text)}&type=2`);
