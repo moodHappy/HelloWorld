@@ -1,104 +1,23 @@
-/* ai-reader.js - 核心逻辑 + 设置管理
- * 依赖: Tippy.js, Marked.js, Compromise.js
+/* ai-reader.js - 核心逻辑库
+ * 更新: 优化提示词 + 适配移动端双击关闭
+ * 依赖: Tippy.js, Marked.js, Compromise.js (可选但推荐)
  */
 
-const LOCAL_KEYS = {
-    API: 'groq_api_key',
-    RED: 'highlight_url_red',
-    BLUE: 'highlight_url_blue',
-    EXCLUDE: 'highlight_url_exclude',
-    MODEL: 'groq_model',
-    PROMPT: 'groq_prompt'
-};
-
-// ==========================================
-// Class 1: Settings Manager (处理设置面板交互)
-// ==========================================
-class AIReaderSettings {
-    constructor() {
-        this.modal = document.getElementById('settingsModal');
-        this.btnConfig = document.getElementById('configBtn');
-        this.inputs = {
-            key: document.getElementById('cfg_key'),
-            red: document.getElementById('cfg_red'),
-            blue: document.getElementById('cfg_blue'),
-            ex: document.getElementById('cfg_ex')
-        };
-        this.btns = {
-            save: document.querySelector('.btn-save'),
-            cancel: document.querySelector('.btn-cancel')
-        };
-
-        if (this.btnConfig) this.init();
-    }
-
-    init() {
-        // 1. 初始化按钮状态
-        this.updateBtnState();
-
-        // 2. 绑定事件 (替代 HTML 中的 onclick)
-        this.btnConfig.addEventListener('click', () => this.open());
-        this.btns.cancel.addEventListener('click', () => this.close());
-        this.btns.save.addEventListener('click', () => this.save());
-        
-        // 点击遮罩关闭
-        if(this.modal) {
-            this.modal.addEventListener('click', (e) => {
-                if(e.target === this.modal) this.close();
-            });
-        }
-    }
-
-    updateBtnState() {
-        if(localStorage.getItem(LOCAL_KEYS.API)) {
-            this.btnConfig.classList.add('has-key');
-        } else {
-            this.btnConfig.classList.remove('has-key');
-        }
-    }
-
-    open() {
-        if(!this.modal) return;
-        this.inputs.key.value = localStorage.getItem(LOCAL_KEYS.API) || '';
-        this.inputs.red.value = localStorage.getItem(LOCAL_KEYS.RED) || '';
-        this.inputs.blue.value = localStorage.getItem(LOCAL_KEYS.BLUE) || '';
-        this.inputs.ex.value = localStorage.getItem(LOCAL_KEYS.EXCLUDE) || '';
-        this.modal.classList.add('active');
-    }
-
-    close() {
-        if(this.modal) this.modal.classList.remove('active');
-    }
-
-    save() {
-        const val = (el) => el.value.trim();
-        
-        val(this.inputs.key) ? localStorage.setItem(LOCAL_KEYS.API, val(this.inputs.key)) : localStorage.removeItem(LOCAL_KEYS.API);
-        val(this.inputs.red) ? localStorage.setItem(LOCAL_KEYS.RED, val(this.inputs.red)) : localStorage.removeItem(LOCAL_KEYS.RED);
-        val(this.inputs.blue) ? localStorage.setItem(LOCAL_KEYS.BLUE, val(this.inputs.blue)) : localStorage.removeItem(LOCAL_KEYS.BLUE);
-        val(this.inputs.ex) ? localStorage.setItem(LOCAL_KEYS.EXCLUDE, val(this.inputs.ex)) : localStorage.removeItem(LOCAL_KEYS.EXCLUDE);
-
-        alert("设置已保存！页面将刷新以应用更改。");
-        location.reload();
-    }
-}
-
-// ==========================================
-// Class 2: AI Reader Core (核心阅读逻辑)
-// ==========================================
 class AIReader {
     constructor(config = {}) {
         this.containerSelector = config.containerSelector || '#content';
-        this.apiKey = config.apiKey || localStorage.getItem(LOCAL_KEYS.API) || '';
-        this.model = config.model || localStorage.getItem(LOCAL_KEYS.MODEL) || 'meta-llama/llama-3.3-70b-versatile'; // 更新模型
+        this.apiKey = config.apiKey || localStorage.getItem('groq_api_key') || '';
+        this.model = config.model || localStorage.getItem('groq_model') || 'meta-llama/llama-4-maverick-17b-128e-instruct';
 
-        this.prompt = config.prompt || localStorage.getItem(LOCAL_KEYS.PROMPT) || 
+        // --- 修改点：更新后的 Prompt 指令 ---
+        this.prompt = config.prompt || localStorage.getItem('groq_prompt') || 
             "你是一位精通中英文的语言专家。请分析我提供的句子：\n1. 判断难度等级 (A1-C2)。\n2. 提供准确、优美的中文翻译。\n3. 句中关键短语及例句、例句翻译。\n请使用 Markdown源码格式输出。";
 
+        // 词表 URLs
         this.urls = {
-            blue: config.blueUrl || localStorage.getItem(LOCAL_KEYS.BLUE),
-            red: config.redUrl || localStorage.getItem(LOCAL_KEYS.RED),
-            exclude: config.excludeUrl || localStorage.getItem(LOCAL_KEYS.EXCLUDE)
+            blue: config.blueUrl || localStorage.getItem('highlight_url_blue'),
+            red: config.redUrl || localStorage.getItem('highlight_url_red'),
+            exclude: config.excludeUrl || localStorage.getItem('highlight_url_exclude')
         };
 
         this.blueWords = new Set();
@@ -111,12 +30,13 @@ class AIReader {
 
     async init() {
         console.log('AI Reader: Initializing...');
-        this._injectModalHTML();
-        await this._loadWordLists();
-        this.processContent();
-        this._bindGlobalEvents();
+        this._injectModalHTML(); // 1. 注入模态框
+        await this._loadWordLists(); // 2. 加载词表
+        this.processContent(); // 3. 处理文本
+        this._bindGlobalEvents(); // 4. 绑定音频播放等全局事件
     }
 
+    // --- 核心：处理文本，注入 Span 和 按钮 ---
     processContent() {
         const container = document.querySelector(this.containerSelector);
         if (!container) {
@@ -124,6 +44,7 @@ class AIReader {
             return;
         }
 
+        // 清理旧按钮
         container.querySelectorAll('.ai-analyze-btn').forEach(b => b.remove());
 
         const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT);
@@ -132,11 +53,14 @@ class AIReader {
 
         nodes.forEach(node => {
             if (node.parentElement && ['SPAN', 'SCRIPT', 'STYLE'].includes(node.parentElement.tagName)) return;
+
             const text = node.nodeValue;
             if (!text.trim()) return;
 
             const fragment = document.createDocumentFragment();
+
             if (text.includes('.')) {
+                // 按句号分割
                 const parts = text.split(/(\.)/);
                 parts.forEach(part => {
                     if (part === '.') {
@@ -149,11 +73,15 @@ class AIReader {
             } else {
                 this._highlightText(text, fragment);
             }
+
             node.parentNode.replaceChild(fragment, node);
         });
+
+        // 初始化 Tippy (查词)
         this._initTippy();
     }
 
+    // --- 内部：高亮逻辑 ---
     _highlightText(text, container) {
         const parts = text.split(/([a-zA-Z0-9\u00C0-\u024F]+)/g);
         parts.forEach(part => {
@@ -163,6 +91,7 @@ class AIReader {
                 span.textContent = part;
 
                 if (this._checkInSet(part, this.excludedWords)) {
+                    // Excluded: do nothing (just clickable)
                 } else if (this._checkInSet(part, this.redWords)) {
                     span.classList.add('highlight-red');
                 } else if (this._checkInSet(part, this.blueWords)) {
@@ -178,6 +107,8 @@ class AIReader {
     _checkInSet(word, set) {
         const lower = word.toLowerCase();
         if (set.has(lower)) return true;
+
+        // 尝试还原词根 (依赖 compromise.js)
         if (!this.lemmaCache.has(lower)) {
             let root = lower;
             if (window.nlp) {
@@ -197,15 +128,18 @@ class AIReader {
         const span = document.createElement('span');
         span.className = 'ai-analyze-btn';
         span.innerHTML = '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-2h2zm0-4h-2V7h2z"/></svg>';
-        span.addEventListener('click', (e) => this._handleAnalyzeClick(e.target));
+        span.onclick = (e) => this._handleAnalyzeClick(e.target);
         return span;
     }
 
+    // --- 内部：AI 分析逻辑 ---
     async _handleAnalyzeClick(target) {
-        if(!this.apiKey) { alert('请点击右上角设置图标配置 API Key'); return; }
+        if(!this.apiKey) { alert('请先配置 API Key (AIReader config)'); return; }
+
         const btn = target.closest('.ai-analyze-btn');
         document.querySelectorAll('.ai-analyze-btn').forEach(b => b.classList.remove('last-clicked'));
         btn.classList.add('last-clicked');
+
         const sentence = this._extractSentence(btn);
         this._openModal(sentence);
     }
@@ -234,7 +168,8 @@ class AIReader {
         contentBox.innerHTML = '<div class="ar-spinner"></div><p style="text-align:center;color:#666">正在请求 AI 分析...</p>';
         modal.classList.add('active');
 
-        const cacheKey = `ar_cache_${this._hash(sentence + this.model + this.prompt)}`;
+        // Cache Check
+        const cacheKey = `ar_cache_${this._hash(sentence + this.model + this.prompt)}`; // prompt 也加入 hash 确保更新指令后不读旧缓存
         const cached = this._getFromCache(cacheKey);
         if(cached) {
             contentBox.innerHTML = `<div class="ar-result-content">${marked.parse(cached)}</div>`;
@@ -265,6 +200,7 @@ class AIReader {
         return data.choices[0]?.message?.content || "";
     }
 
+    // --- 内部：查词与 Tippy ---
     _initTippy() {
         if(window._arTippy) window._arTippy.forEach(i => i.destroy());
         window._arTippy = tippy('.clickable-word', {
@@ -319,6 +255,7 @@ class AIReader {
         return html + `</div>`;
     }
 
+    // --- 辅助功能 ---
     async _loadWordLists() {
         const fetchSet = async (url) => {
             if(!url) return new Set();
@@ -330,15 +267,17 @@ class AIReader {
         this.blueWords = b; this.redWords = r; this.excludedWords = e;
     }
 
+    // --- 关键修改：修复移动端双击逻辑 (保持不变) ---
     _injectModalHTML() {
         if(document.getElementById('arResultModal')) return;
         const div = document.createElement('div');
+        // 添加 touch-action: manipulation 禁止双击缩放，提高点击响应速度
         div.innerHTML = `
             <div id="arResultModal" class="ar-modal-overlay" style="touch-action: manipulation;">
                 <div class="ar-modal-card">
                     <div class="ar-modal-header">
                         <div class="ar-modal-title">AI 分析</div>
-                        <button class="ar-close-btn">✕</button>
+                        <button class="ar-close-btn" onclick="document.getElementById('arResultModal').classList.remove('active')">✕</button>
                     </div>
                     <div class="ar-modal-body">
                         <div id="arOriginalSentence" class="ar-original-sentence"></div>
@@ -349,21 +288,22 @@ class AIReader {
         document.body.appendChild(div);
 
         const modal = document.getElementById('arResultModal');
-        const closeBtn = modal.querySelector('.ar-close-btn');
 
-        // Close events
-        const closeModal = () => modal.classList.remove('active');
-        closeBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => {
-            if(e.target.id === 'arResultModal') closeModal();
-        });
+        // 单击阴影部分关闭
+        modal.onclick = (e) => {
+            if(e.target.id === 'arResultModal') {
+                e.target.classList.remove('active');
+            }
+        };
 
-        // Double click to close
+        // 【移动端/全平台通用双击检测】
         let lastClickTime = 0;
-        modal.addEventListener('click', () => {
+
+        modal.addEventListener('click', (e) => {
             const currentTime = new Date().getTime();
+            // 400ms 内连续点击两次视为双击
             if (currentTime - lastClickTime < 400) {
-                closeModal();
+                modal.classList.remove('active');
                 lastClickTime = 0; 
             } else {
                 lastClickTime = currentTime;
@@ -380,21 +320,9 @@ class AIReader {
         };
     }
 
-    _hash(str) { let h = 0; for(let i=0; i<str.length; i++) h = ((h<<5)-h)+str.charCodeAt(i)|0; return Math.abs(h); }
+    _hash(str) {
+        let h = 0; for(let i=0; i<str.length; i++) h = ((h<<5)-h)+str.charCodeAt(i)|0; return Math.abs(h);
+    }
     _getFromCache(k) { const i = JSON.parse(localStorage.getItem(k)); return (i && Date.now()-i.t < 86400000) ? i.c : null; }
     _saveToCache(k, c) { try { localStorage.setItem(k, JSON.stringify({c, t:Date.now()})); } catch(e){} }
 }
-
-// ==========================================
-// 3. 自动启动逻辑
-// ==========================================
-document.addEventListener('DOMContentLoaded', () => {
-    // 启动设置管理器
-    new AIReaderSettings();
-
-    // 启动阅读器
-    new AIReader({
-        containerSelector: '#content-area'
-    });
-    console.log("AI Reader & Settings Manager Loaded.");
-});
