@@ -1,0 +1,124 @@
+/* ==========================================
+   EnLight 样式表
+   ========================================== */
+
+/* 1. CSS 变量定义 (由 JS 动态注入数值) */
+:root {
+    --el-font-size-ratio: 1; /* 默认 100% */
+    --el-line-height: 1.6;
+    --el-text-color: #333333;
+    --el-margin-top: 6px;
+    
+    /* 主题变量占位 */
+    --el-bg-color: #f7f9fa;
+    --el-border-left: 3px solid #007AFF;
+    --el-padding: 6px 10px;
+    --el-border-radius: 4px;
+    --el-box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    --el-border-bottom: none;
+    --el-border: none;
+    --el-font-style: normal;
+}
+
+/* 2. 高亮样式 */
+.wh-highlighted {
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+/* 3. 翻译块通用样式 */
+.it-trans-block {
+    all: initial;
+    display: block;
+    margin-top: var(--el-margin-top);
+    margin-bottom: 8px;
+    line-height: var(--el-line-height);
+    color: var(--el-text-color);
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+    width: auto;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    transition: filter 0.3s ease;
+    
+    /* 主题应用 */
+    background-color: var(--el-bg-color);
+    border-left: var(--el-border-left);
+    padding: var(--el-padding);
+    border-radius: var(--el-border-radius);
+    box-shadow: var(--el-box-shadow);
+    border-bottom: var(--el-border-bottom);
+    border: var(--el-border);
+    font-style: var(--el-font-style);
+}
+
+.it-trans-block.it-trans-blur {
+    filter: blur(6px);
+    user-select: none;
+    cursor: pointer;
+}
+.it-trans-block.it-trans-blur:hover {
+    filter: blur(4px);
+}
+.it-trans-block.it-from-cache {
+    border-left-color: #34C759 !important;
+}
+
+/* 暗黑模式适配 */
+@media (prefers-color-scheme: dark) {
+    .it-trans-block { color: #ccc; }
+}
+
+/* BBC Live 专用补丁 */
+body[data-bbc-live="true"] .it-trans-block {
+    clear: both;
+    margin-top: 6px;
+    font-size: 0.95em;
+    width: 100% !important;
+    flex-basis: 100% !important;
+    box-sizing: border-box !important;
+}
+body[data-bbc-live="true"] li {
+    flex-wrap: wrap !important;
+}
+
+/* 4. TTS 喇叭样式 */
+.para-read-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-left: 8px;
+    cursor: pointer;
+    color: #5f6368;
+    transition: all 0.2s ease;
+    vertical-align: middle;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.03);
+    -webkit-tap-highlight-color: transparent;
+    flex-shrink: 0;
+}
+.para-read-btn:active {
+    transform: scale(0.9);
+    background-color: rgba(26, 115, 232, 0.2);
+}
+.para-read-btn svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+    pointer-events: none;
+}
+.para-read-btn.playing {
+    color: #1a73e8;
+    background-color: rgba(26, 115, 232, 0.1);
+    animation: para-pulse 1.5s infinite;
+}
+@keyframes para-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(26, 115, 232, 0.4); }
+    70% { box-shadow: 0 0 0 6px rgba(26, 115, 232, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(26, 115, 232, 0); }
+}
+
+/* 5. 查词弹窗 Shadow DOM 样式 (作为字符串存储在 JS 中更方便，但此处保留结构供参考) */
+/* 注意：ShadowDOM 样式通常需要内联在 JS 中注入 ShadowRoot，或者通过 CSS 变量穿透 */
