@@ -1,41 +1,44 @@
 /* ==========================================
-   EnLight 样式表 (Enhanced Version)
+   EnLight 样式表 (Clean Text Version)
    ========================================== */
 
-/* 1. 全局变量与主题定义 */
 :root {
     /* --- 布局与排版 --- */
     --el-font-size-ratio: 1;
-    --el-line-height: 1.65; /* 稍微增加行高提升阅读感 */
-    --el-margin-top: 8px;   /* 增加间距 */
-    --el-border-radius: 6px; /* 更现代的圆角 */
+    --el-line-height: 1.65;
+    --el-margin-top: 8px;
+    --el-border-radius: 6px;
     
-    /* --- 亮色模式 (Light Mode) 默认值 --- */
+    /* --- 亮色模式 (Light Mode) --- */
     --el-text-color: #2c3e50;
-    --el-bg-color: rgba(247, 249, 250, 0.95); /* 轻微透明，为毛玻璃做准备 */
+    --el-bg-color: rgba(247, 249, 250, 0.95);
     --el-border-left-color: #007AFF;
-    --el-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* 更柔和的投影 */
-    --el-highlight-bg: linear-gradient(to bottom, transparent 60%, rgba(255, 212, 0, 0.5) 60%); /* 荧光笔效果 */
+    --el-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     --el-btn-hover: rgba(0, 0, 0, 0.05);
     --el-icon-color: #5f6368;
     --el-active-color: #1a73e8;
+    
+    /* [重点] 高亮文字颜色 */
+    --el-highlight-color: #007AFF; 
 }
 
-/* --- 深色模式 (Dark Mode) 自动适配 --- */
+/* --- 深色模式 (Dark Mode) --- */
 @media (prefers-color-scheme: dark) {
     :root {
         --el-text-color: #e0e0e0;
-        --el-bg-color: rgba(45, 45, 48, 0.95); /* 深灰背景，不使用纯黑 */
-        --el-border-left-color: #409cff;       /* 稍微提亮蓝色，增加对比度 */
+        --el-bg-color: rgba(45, 45, 48, 0.95);
+        --el-border-left-color: #409cff;
         --el-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        --el-highlight-bg: linear-gradient(to bottom, transparent 60%, rgba(180, 140, 0, 0.6) 60%);
         --el-btn-hover: rgba(255, 255, 255, 0.1);
         --el-icon-color: #a0a0a0;
         --el-active-color: #8ab4f8;
+
+        /* [重点] 深色模式下的高亮颜色 */
+        --el-highlight-color: #64D2FF; 
     }
 }
 
-/* 2. 关键帧动画 (Animations) */
+/* 动画定义 */
 @keyframes el-slide-in {
     from { opacity: 0; transform: translateY(6px); }
     to { opacity: 1; transform: translateY(0); }
@@ -52,25 +55,24 @@
     100% { background-position: -200% 0; }
 }
 
-/* 3. 高亮样式 (荧光笔效果) */
+/* [修改后的部分] 高亮样式 */
 .wh-highlighted {
+    background: none;
+    box-shadow: none;
+    padding: 0;
     font-weight: 600;
-    background: var(--el-highlight-bg);
-    border-radius: 2px;
-    padding: 0 1px;
-    transition: background 0.3s;
+    color: var(--el-highlight-color);
+    transition: color 0.3s ease;
 }
 
-/* 4. 翻译块主容器 */
+/* 翻译块主容器 */
 .it-trans-block {
-    /* 样式隔离，防止宿主网站 CSS 污染 */
     all: initial; 
     display: block;
     box-sizing: border-box;
     width: auto;
     max-width: 100%;
 
-    /* 排版 */
     margin-top: var(--el-margin-top);
     margin-bottom: 10px;
     padding: 8px 12px;
@@ -78,31 +80,26 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: calc(1rem * var(--el-font-size-ratio));
     color: var(--el-text-color);
-    text-align: justify; /* 两端对齐，中文排版更整齐 */
+    text-align: justify;
     word-wrap: break-word;
     
-    /* 外观 */
     background-color: var(--el-bg-color);
     border-left: 3px solid var(--el-border-left-color);
     border-radius: var(--el-border-radius);
     box-shadow: var(--el-shadow);
     
-    /* 现代特性 */
-    backdrop-filter: blur(8px); /* 毛玻璃效果 (若浏览器支持) */
+    backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     
-    /* 动画 */
     animation: el-slide-in 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
     transition: filter 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* 悬停微动效 */
 .it-trans-block:hover {
     transform: translateY(-1px);
     box-shadow: 0 6px 16px rgba(0,0,0,0.12);
 }
 
-/* 模糊/隐私模式 */
 .it-trans-block.it-trans-blur {
     filter: blur(8px);
     user-select: none;
@@ -114,12 +111,10 @@
     opacity: 1;
 }
 
-/* 缓存标识 (绿色边框) */
 .it-trans-block.it-from-cache {
     border-left-color: #34C759 !important;
 }
 
-/* 加载中骨架屏状态 (可选) */
 .it-trans-block.loading {
     min-height: 36px;
     color: transparent;
@@ -128,7 +123,7 @@
     animation: el-skeleton-loading 1.5s infinite;
 }
 
-/* 5. TTS 朗读按钮 */
+/* TTS 按钮 */
 .para-read-btn {
     display: inline-flex;
     align-items: center;
@@ -142,21 +137,18 @@
     background-color: transparent;
     transition: all 0.2s ease;
     vertical-align: middle;
-    position: relative; /* 为 Tooltip 定位 */
+    position: relative;
 }
 
-/* 按钮悬停态 */
 .para-read-btn:hover {
     background-color: var(--el-btn-hover);
     color: var(--el-active-color);
 }
 
-/* 按钮点击态 */
 .para-read-btn:active {
     transform: scale(0.92);
 }
 
-/* 图标 SVG 尺寸 */
 .para-read-btn svg {
     width: 18px;
     height: 18px;
@@ -164,14 +156,13 @@
     pointer-events: none;
 }
 
-/* 播放中状态 */
 .para-read-btn.playing {
     color: var(--el-active-color);
     background-color: rgba(26, 115, 232, 0.1);
     animation: el-pulse 1.5s infinite;
 }
 
-/* 简单的 Tooltip 提示 */
+/* Tooltip */
 .para-read-btn:hover::after {
     content: "朗读";
     position: absolute;
@@ -190,9 +181,7 @@
     animation: el-slide-in 0.2s forwards;
 }
 
-/* 6. 特定网站适配补丁 (Patch) */
-
-/* BBC Live */
+/* BBC Live Patch */
 body[data-bbc-live="true"] .it-trans-block {
     clear: both;
     margin-top: 6px;
