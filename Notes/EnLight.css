@@ -1,5 +1,5 @@
 /* ==========================================
-   EnLight 样式表 (Final Version)
+   EnLight 样式表 (Final Clean Version)
    ========================================== */
 
 :root {
@@ -77,7 +77,7 @@
     margin-top: var(--el-margin-top);
     margin-bottom: 10px;
     
-    /* [修改] 内边距设置：上10 右14 下10 左18 (左侧加宽) */
+    /* 内边距设置：上10 右14 下10 左18 (左侧加宽) */
     padding: 10px 14px 10px 18px; 
     
     line-height: var(--el-line-height);
@@ -141,7 +141,6 @@
     background-color: transparent;
     transition: all 0.2s ease;
     vertical-align: middle;
-    position: relative;
 }
 
 .para-read-btn:hover {
@@ -164,25 +163,6 @@
     color: var(--el-active-color);
     background-color: rgba(26, 115, 232, 0.1);
     animation: el-pulse 1.5s infinite;
-}
-
-/* Tooltip */
-.para-read-btn:hover::after {
-    content: "朗读";
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 5px;
-    padding: 4px 8px;
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    font-size: 11px;
-    border-radius: 4px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    animation: el-slide-in 0.2s forwards;
 }
 
 /* BBC Live Patch */
