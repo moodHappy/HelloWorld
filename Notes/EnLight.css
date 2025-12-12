@@ -1,164 +1,150 @@
 /* ==========================================
-   EnLight 样式表
+   EnLight 样式表 (定制版：绿色呼吸感风格)
    ========================================== */
 
-/* 1. CSS 变量定义
-   这些变量充当"配置中心"。
-   注意：JS 可能会动态修改这些值（例如切换主题或调整字号时）
-*/
+/* 1. CSS 变量定义 (配置中心) */
 :root {
-    /* --- 基础排版设置 --- */
-    --el-font-size-ratio: 1;    /* 字体大小倍率，默认 100% */
-    --el-line-height: 1.6;      /* 行高，提供舒适的阅读体验 */
-    --el-text-color: #333333;   /* 默认字体颜色（深灰） */
-    --el-margin-top: 6px;       /* 翻译块与原文的间距 */
+    /* --- 排版设置 --- */
+    --el-font-size-ratio: 1;    
+    --el-line-height: 1.75;      /* [修改] 增加行高，提升阅读呼吸感 */
+    --el-text-color: #2c3e50;   /* [修改] 稍微加深字体颜色，对比度更好 */
+    --el-margin-top: 10px;      /* [修改] 增加外部上间距，与原文拉开距离 */
     
-    /* --- 主题外观变量 (通常由 JS 根据选定主题注入) --- */
-    --el-bg-color: #f7f9fa;               /* 背景色 */
-    --el-border-left: 3px solid #007AFF;  /* 左侧装饰条（默认蓝色） */
-    --el-padding: 6px 10px;               /* 内边距 */
-    --el-border-radius: 4px;              /* 圆角 */
-    --el-box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* 轻微阴影，增加立体感 */
-    --el-border-bottom: none;             /* 底部边框（默认无） */
-    --el-border: none;                    /* 全局边框（默认无） */
-    --el-font-style: normal;              /* 字体样式（如斜体） */
+    /* --- 主题外观变量 --- */
+    --el-bg-color: #f7f9fa;     /* 背景色：极淡的灰白色 */
+    
+    /* [修改] 左侧绿色竖条：4px 宽度，#42b983 为清新的绿色 */
+    --el-border-left: 4px solid #42b983; 
+    
+    /* [修改] 内边距：上下 12px，左右 16px。
+       增加左侧 padding (16px) 可以让文字与左侧绿条保持舒适的距离 */
+    --el-padding: 12px 16px;
+    
+    --el-border-radius: 6px;    /* [修改]稍微增大圆角，更现代 */
+    --el-box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* [修改] 阴影稍微加深，增加悬浮层次感 */
+    --el-border-bottom: none;
+    --el-border: none;
+    --el-font-style: normal;
 }
 
-/* 2. 原文高亮样式
-   当鼠标悬停或选中某段文字时，应用此样式
-*/
+/* 2. 原文高亮样式 */
 .wh-highlighted {
-    font-weight: bold;   /* 加粗显示 */
-    border-radius: 3px;  /* 稍微圆角 */
-    /* 这里通常还会配合背景色，可能由 JS 动态添加 */
+    background-color: rgba(66, 185, 131, 0.15); /* [新增] 配合主题的淡绿色背景 */
+    border-bottom: 2px solid #42b983;           /* [新增] 下划线强调 */
+    font-weight: bold;
+    border-radius: 3px;
+    color: #000;
 }
 
-/* 3. 翻译块通用样式 (核心容器) */
+/* 3. 翻译块通用样式 */
 .it-trans-block {
-    /* 关键属性：重置所有继承样式。
-       防止宿主网页（如淘宝、BBC）的全局 CSS 污染翻译框的样式 */
+    /* 重置继承样式，防止网页 CSS 污染 */
     all: initial; 
-
-    /* 布局与排版 */
+    
     display: block;
     margin-top: var(--el-margin-top);
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     line-height: var(--el-line-height);
     color: var(--el-text-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     
-    /* 字体栈：优先使用系统默认字体，确保加载快且美观 */
-    font-family: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
-    
-    /* 宽度与换行控制 */
     width: auto;
-    box-sizing: border-box;       /* 边框计算在宽度内 */
-    word-wrap: break-word;        /* 强制长单词换行，防止撑破布局 */
-    overflow-wrap: break-word;    /* 同上，兼容性写法 */
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    transition: all 0.3s ease; /* 过渡效果 */
     
-    /* 动画过渡：用于模糊效果的平滑切换 */
-    transition: filter 0.3s ease;
-    
-    /* 应用主题变量 */
+    /* --- 核心外观应用 --- */
     background-color: var(--el-bg-color);
-    border-left: var(--el-border-left);
-    padding: var(--el-padding);
-    border-radius: var(--el-border-radius);
+    border-left: var(--el-border-left);    /* 这里应用了上面的绿色竖条 */
+    padding: var(--el-padding);            /* 这里应用了增大的内边距 */
+    border-radius: 0 var(--el-border-radius) var(--el-border-radius) 0; /* 左侧直角(贴合竖条)，右侧圆角 */
     box-shadow: var(--el-box-shadow);
     border-bottom: var(--el-border-bottom);
     border: var(--el-border);
     font-style: var(--el-font-style);
 }
 
-/* 3.1 模糊模式 (隐私或防剧透) */
+/* 3.1 模糊模式 */
 .it-trans-block.it-trans-blur {
-    filter: blur(6px);  /* 默认模糊看不清 */
-    user-select: none;  /* 禁止选中文字 */
-    cursor: pointer;    /* 鼠标变成手型，提示可点击 */
+    filter: blur(5px);
+    user-select: none;
+    cursor: pointer;
+    opacity: 0.8;
 }
-/* 鼠标悬停时减少模糊，或是提示用户可以交互 */
 .it-trans-block.it-trans-blur:hover {
-    filter: blur(4px);
+    filter: blur(3px);
+    opacity: 1;
 }
 
-/* 3.2 缓存标识
-   如果翻译结果来自本地缓存（而非实时 API 请求），
-   将左侧边框变为绿色 (#34C759) 以示区分
-*/
+/* 3.2 缓存标识 (由于默认已经是绿色，这里可以改为深绿色或者保持不变) */
 .it-trans-block.it-from-cache {
-    border-left-color: #34C759 !important;
+    /* 如果是缓存，加深左边框颜色以示区分，或者你可以删掉这行让它和普通翻译一样 */
+    border-left-color: #2ea44f !important; 
 }
 
-/* 3.3 暗黑模式适配
-   检测用户系统是否开启了深色模式，自动调整文字颜色
-*/
+/* 暗黑模式适配 */
 @media (prefers-color-scheme: dark) {
-    .it-trans-block { color: #ccc; }
+    :root {
+        --el-bg-color: #2d2d2d;
+        --el-text-color: #e0e0e0;
+        --el-box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+    .wh-highlighted {
+        background-color: rgba(66, 185, 131, 0.4);
+        color: #fff;
+    }
 }
 
-/* 3.4 特定网站补丁：BBC Live
-   针对 BBC 直播页面的特殊布局修复，防止翻译块破坏 Flex 布局
-*/
+/* BBC Live 专用补丁 (保持不变) */
 body[data-bbc-live="true"] .it-trans-block {
-    clear: both;             /* 清除浮动 */
-    margin-top: 6px;
-    font-size: 0.95em;       /* 稍微调小字体 */
-    width: 100% !important;  /* 强制占满宽度 */
-    flex-basis: 100% !important; /* 在 Flex 容器中强制换行 */
+    clear: both;
+    margin-top: 8px;
+    font-size: 0.95em;
+    width: 100% !important;
+    flex-basis: 100% !important;
     box-sizing: border-box !important;
 }
-/* 强制列表项换行，适应插入的翻译块 */
 body[data-bbc-live="true"] li {
     flex-wrap: wrap !important;
 }
 
-/* 4. TTS (文本转语音) 喇叭按钮样式 */
+/* 4. TTS 喇叭样式 (保持不变，微调颜色适配绿色主题) */
 .para-read-btn {
-    display: inline-flex;       /*以此实现内部图标居中 */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
-    margin-left: 8px;           /* 与文字保持距离 */
+    width: 28px;
+    height: 28px;
+    margin-left: 10px;
     cursor: pointer;
-    color: #5f6368;             /* 默认灰色图标 */
-    transition: all 0.2s ease;  /* 交互动画 */
-    vertical-align: middle;     /* 垂直对齐 */
-    border-radius: 50%;         /* 圆形按钮 */
-    background-color: rgba(0,0,0,0.03); /* 极淡的背景色 */
-    -webkit-tap-highlight-color: transparent; /* 移动端点击无高亮背景 */
-    flex-shrink: 0;             /* 防止在 Flex 布局中被挤压变形 */
+    color: #888;
+    transition: all 0.2s ease;
+    vertical-align: middle;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.04);
+    -webkit-tap-highlight-color: transparent;
+    flex-shrink: 0;
 }
-
-/* 按钮点击时的按压效果 */
 .para-read-btn:active {
-    transform: scale(0.9);      /* 缩小 */
-    background-color: rgba(26, 115, 232, 0.2); /* 蓝色背景加深 */
+    transform: scale(0.92);
+    background-color: rgba(66, 185, 131, 0.2);
 }
-
-/* SVG 图标通用样式 */
 .para-read-btn svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     display: block;
-    pointer-events: none; /* 关键：让点击事件穿透 SVG，直接触发按钮的事件 */
+    pointer-events: none;
 }
-
-/* 4.1 播放状态样式
-   当正在朗读时添加此类
-*/
+/* 播放中状态 */
 .para-read-btn.playing {
-    color: #1a73e8; /* 变为蓝色 */
-    background-color: rgba(26, 115, 232, 0.1);
-    animation: para-pulse 1.5s infinite; /* 启用呼吸灯动画 */
+    color: #42b983; /* 播放时变为绿色 */
+    background-color: rgba(66, 185, 131, 0.1);
+    animation: para-pulse 1.5s infinite;
 }
 
-/* 定义呼吸灯动画 (Pulse Effect) */
 @keyframes para-pulse {
-    0% { box-shadow: 0 0 0 0 rgba(26, 115, 232, 0.4); }   /* 初始状态：无扩散 */
-    70% { box-shadow: 0 0 0 6px rgba(26, 115, 232, 0); }  /* 扩散并消失 */
-    100% { box-shadow: 0 0 0 0 rgba(26, 115, 232, 0); }   /* 结束 */
+    0% { box-shadow: 0 0 0 0 rgba(66, 185, 131, 0.4); }
+    70% { box-shadow: 0 0 0 6px rgba(66, 185, 131, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(66, 185, 131, 0); }
 }
-
-/* 5. 查词弹窗 Shadow DOM 样式 
-   (注意：这通常作为字符串存储在 JS 中，用于注入到 ShadowRoot 内部，
-    以实现样式完全隔离，不受外部 CSS 影响) */
