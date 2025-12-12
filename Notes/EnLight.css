@@ -1,177 +1,204 @@
 /* ==========================================
-   EnLight 样式表 (Optimized)
+   EnLight 样式表 (Enhanced Version)
    ========================================== */
 
-/* 1. CSS 变量定义 */
+/* 1. 全局变量与主题定义 */
 :root {
-    /* 布局与排版 */
+    /* --- 布局与排版 --- */
     --el-font-size-ratio: 1;
-    --el-line-height: 1.6;
-    --el-margin-top: 6px;
-    --el-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
-    /* 主题颜色 (建议由 JS 检测系统主题后动态注入，或在此处使用媒体查询覆盖) */
-    --el-text-color: #333333;
-    --el-bg-color: #f7f9fa;
-    --el-border-left: 3px solid #007AFF;
-    --el-border: none;
-    --el-border-bottom: none;
-    --el-padding: 8px 12px; /* 稍微增加内边距让文字呼吸 */
+    --el-line-height: 1.65; /* 稍微增加行高提升阅读感 */
+    --el-margin-top: 8px;   /* 增加间距 */
     --el-border-radius: 6px; /* 更现代的圆角 */
-    --el-box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 稍微柔和的阴影 */
-    --el-font-style: normal;
     
-    /* 交互颜色 */
-    --el-btn-hover-bg: rgba(0,0,0,0.05);
-    --el-btn-active-bg: rgba(26, 115, 232, 0.2);
-    --el-btn-active-color: #1a73e8;
+    /* --- 亮色模式 (Light Mode) 默认值 --- */
+    --el-text-color: #2c3e50;
+    --el-bg-color: rgba(247, 249, 250, 0.95); /* 轻微透明，为毛玻璃做准备 */
+    --el-border-left-color: #007AFF;
+    --el-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* 更柔和的投影 */
+    --el-highlight-bg: linear-gradient(to bottom, transparent 60%, rgba(255, 212, 0, 0.5) 60%); /* 荧光笔效果 */
+    --el-btn-hover: rgba(0, 0, 0, 0.05);
+    --el-icon-color: #5f6368;
+    --el-active-color: #1a73e8;
 }
 
-/* 2. 暗黑模式适配 (建议通过变量覆盖，而不是在具体类中写死) */
+/* --- 深色模式 (Dark Mode) 自动适配 --- */
 @media (prefers-color-scheme: dark) {
     :root {
         --el-text-color: #e0e0e0;
-        /* 如果 JS 未注入背景色，这里提供一个默认暗色兜底 */
-        /* --el-bg-color: #2d2d2d; */ 
+        --el-bg-color: rgba(45, 45, 48, 0.95); /* 深灰背景，不使用纯黑 */
+        --el-border-left-color: #409cff;       /* 稍微提亮蓝色，增加对比度 */
+        --el-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        --el-highlight-bg: linear-gradient(to bottom, transparent 60%, rgba(180, 140, 0, 0.6) 60%);
+        --el-btn-hover: rgba(255, 255, 255, 0.1);
+        --el-icon-color: #a0a0a0;
+        --el-active-color: #8ab4f8;
     }
 }
 
-/* 3. 高亮样式 */
+/* 2. 关键帧动画 (Animations) */
+@keyframes el-slide-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes el-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(26, 115, 232, 0.4); }
+    70% { box-shadow: 0 0 0 8px rgba(26, 115, 232, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(26, 115, 232, 0); }
+}
+
+@keyframes el-skeleton-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* 3. 高亮样式 (荧光笔效果) */
 .wh-highlighted {
-    background-color: rgba(255, 235, 59, 0.3); /* 增加默认背景色以防丢失 */
-    font-weight: 600; /* 使用数值更精确 */
-    border-radius: 3px;
-    padding: 0 2px; /* 防止高亮文字紧贴背景边缘 */
+    font-weight: 600;
+    background: var(--el-highlight-bg);
+    border-radius: 2px;
+    padding: 0 1px;
+    transition: background 0.3s;
 }
 
-/* 4. 翻译块通用样式 */
+/* 4. 翻译块主容器 */
 .it-trans-block {
-    /* --- 样式隔离核心 --- */
-    all: initial; /* 强力重置，防止宿主样式污染 */
+    /* 样式隔离，防止宿主网站 CSS 污染 */
+    all: initial; 
     display: block;
-    box-sizing: border-box; /* 必须重新声明，因为 all: initial 会重置为 content-box */
-    
-    /* --- 布局与排版 --- */
+    box-sizing: border-box;
     width: auto;
+    max-width: 100%;
+
+    /* 排版 */
     margin-top: var(--el-margin-top);
-    margin-bottom: 8px;
-    padding: var(--el-padding);
-    
-    font-family: var(--el-font-family);
+    margin-bottom: 10px;
+    padding: 8px 12px;
     line-height: var(--el-line-height);
-    font-size: calc(1rem * var(--el-font-size-ratio)); /* 允许相对缩放 */
-    font-style: var(--el-font-style);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: calc(1rem * var(--el-font-size-ratio));
     color: var(--el-text-color);
+    text-align: justify; /* 两端对齐，中文排版更整齐 */
+    word-wrap: break-word;
     
-    /* --- 视觉外观 --- */
+    /* 外观 */
     background-color: var(--el-bg-color);
-    border: var(--el-border);
-    border-left: var(--el-border-left);
-    border-bottom: var(--el-border-bottom);
+    border-left: 3px solid var(--el-border-left-color);
     border-radius: var(--el-border-radius);
-    box-shadow: var(--el-box-shadow);
+    box-shadow: var(--el-shadow);
     
-    /* --- 文本处理 --- */
-    overflow-wrap: break-word; /* 标准属性 */
-    word-break: break-word;    /* 兼容性增强 */
+    /* 现代特性 */
+    backdrop-filter: blur(8px); /* 毛玻璃效果 (若浏览器支持) */
+    -webkit-backdrop-filter: blur(8px);
     
-    /* --- 交互与动画 --- */
-    transition: filter 0.3s ease, opacity 0.2s ease;
-    -webkit-text-size-adjust: none; /* 防止移动端旋转时字体突变 */
+    /* 动画 */
+    animation: el-slide-in 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+    transition: filter 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* 模糊状态 */
+/* 悬停微动效 */
+.it-trans-block:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* 模糊/隐私模式 */
 .it-trans-block.it-trans-blur {
-    filter: blur(5px); /* 6px 有点太重，5px 通常足够 */
+    filter: blur(8px);
     user-select: none;
     cursor: pointer;
-    opacity: 0.8; /* 模糊时稍微降低不透明度，增加层次感 */
+    opacity: 0.8;
 }
 .it-trans-block.it-trans-blur:hover {
-    filter: blur(3px);
+    filter: blur(4px);
     opacity: 1;
 }
 
-/* 缓存标识 */
+/* 缓存标识 (绿色边框) */
 .it-trans-block.it-from-cache {
     border-left-color: #34C759 !important;
 }
 
-/* BBC Live 专用补丁 (保持原样，增加特异性注释) */
-body[data-bbc-live="true"] .it-trans-block {
-    clear: both;
-    margin-top: 6px;
-    font-size: 0.95em;
-    width: 100% !important;
-    flex-basis: 100% !important;
-}
-body[data-bbc-live="true"] li {
-    flex-wrap: wrap !important;
+/* 加载中骨架屏状态 (可选) */
+.it-trans-block.loading {
+    min-height: 36px;
+    color: transparent;
+    background: linear-gradient(90deg, var(--el-bg-color) 25%, rgba(128,128,128,0.05) 50%, var(--el-bg-color) 75%);
+    background-size: 200% 100%;
+    animation: el-skeleton-loading 1.5s infinite;
 }
 
-/* 5. TTS 喇叭样式 */
+/* 5. TTS 朗读按钮 */
 .para-read-btn {
-    /* --- 布局 --- */
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    vertical-align: middle;
-    
-    /* --- 尺寸 --- */
-    width: 32px;  /* 稍微加大触控区域 */
-    height: 32px;
+    width: 28px;
+    height: 28px;
     margin-left: 8px;
-    flex-shrink: 0;
-    
-    /* --- 外观 --- */
-    color: #5f6368;
-    background-color: transparent; /* 默认透明，hover时才显示背景 */
-    border-radius: 50%;
-    border: none; /* 确保没有边框 */
     cursor: pointer;
-    
-    /* --- 交互 --- */
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), 
-                color 0.2s ease, 
-                transform 0.1s ease;
+    color: var(--el-icon-color);
+    border-radius: 50%;
+    background-color: transparent;
+    transition: all 0.2s ease;
+    vertical-align: middle;
+    position: relative; /* 为 Tooltip 定位 */
 }
 
-/* 悬停与聚焦状态 */
+/* 按钮悬停态 */
 .para-read-btn:hover {
-    background-color: var(--el-btn-hover-bg);
-    color: #333;
+    background-color: var(--el-btn-hover);
+    color: var(--el-active-color);
 }
+
+/* 按钮点击态 */
 .para-read-btn:active {
     transform: scale(0.92);
-    background-color: var(--el-btn-active-bg);
 }
 
-/* 播放状态 */
-.para-read-btn.playing {
-    color: var(--el-btn-active-color);
-    background-color: rgba(26, 115, 232, 0.1);
-    animation: para-pulse 1.5s infinite;
-}
-
-/* SVG 图标通用设置 */
+/* 图标 SVG 尺寸 */
 .para-read-btn svg {
-    width: 20px; /* 稍微加大图标 */
-    height: 20px;
+    width: 18px;
+    height: 18px;
     display: block;
-    pointer-events: none; /* 点击穿透 */
-    fill: currentColor; /* 关键：让 SVG 颜色跟随文字颜色 */
+    pointer-events: none;
 }
 
-/* 键盘无障碍焦点 (如果是一个 <button> 元素) */
-.para-read-btn:focus-visible {
-    outline: 2px solid #007AFF;
-    outline-offset: 2px;
+/* 播放中状态 */
+.para-read-btn.playing {
+    color: var(--el-active-color);
+    background-color: rgba(26, 115, 232, 0.1);
+    animation: el-pulse 1.5s infinite;
 }
 
-@keyframes para-pulse {
-    0% { box-shadow: 0 0 0 0 rgba(26, 115, 232, 0.4); }
-    70% { box-shadow: 0 0 0 6px rgba(26, 115, 232, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(26, 115, 232, 0); }
+/* 简单的 Tooltip 提示 */
+.para-read-btn:hover::after {
+    content: "朗读";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 5px;
+    padding: 4px 8px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-size: 11px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    animation: el-slide-in 0.2s forwards;
+}
+
+/* 6. 特定网站适配补丁 (Patch) */
+
+/* BBC Live */
+body[data-bbc-live="true"] .it-trans-block {
+    clear: both;
+    margin-top: 6px;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+body[data-bbc-live="true"] li {
+    flex-wrap: wrap !important;
 }
