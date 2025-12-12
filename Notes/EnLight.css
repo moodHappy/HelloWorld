@@ -1,104 +1,124 @@
 /* ==========================================
-   EnLight 终极修正版 (修复喇叭巨大化)
+   EnLight 样式表
    ========================================== */
 
-/* 1. 翻译块核心 (暴力强制) */
+/* 1. CSS 变量定义 (由 JS 动态注入数值) */
+:root {
+    --el-font-size-ratio: 1; /* 默认 100% */
+    --el-line-height: 1.6;
+    --el-text-color: #333333;
+    --el-margin-top: 6px;
+    
+    /* 主题变量占位 */
+    --el-bg-color: #f7f9fa;
+    --el-border-left: 3px solid #007AFF;
+    --el-padding: 6px 10px;
+    --el-border-radius: 4px;
+    --el-box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    --el-border-bottom: none;
+    --el-border: none;
+    --el-font-style: normal;
+}
+
+/* 2. 高亮样式 */
+.wh-highlighted {
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+/* 3. 翻译块通用样式 */
 .it-trans-block {
-    all: initial; /* 清除所有干扰 */
+    all: initial;
+    display: block;
+    margin-top: var(--el-margin-top);
+    margin-bottom: 8px;
+    line-height: var(--el-line-height);
+    color: var(--el-text-color);
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+    width: auto;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    transition: filter 0.3s ease;
     
-    display: block !important;
-    width: auto !important;
-    box-sizing: border-box !important;
-    word-wrap: break-word !important;
-    
-    /* 强制排版和呼吸感 */
-    line-height: 1.75 !important;
-    color: #333333 !important;
-    font-family: -apple-system, sans-serif !important;
-    margin-top: 10px !important;
-    margin-bottom: 12px !important;
-    
-    /* 强制外观 (绿色竖条 + 留白) */
-    background-color: #f7f9fa !important;
-    border-left: 4px solid #42b983 !important;
-    padding: 12px 16px !important;
-    border-radius: 0 6px 6px 0 !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
-    
-    /* 清除其他多余边框 */
-    border-bottom: none !important;
-    border-top: none !important;
-    border-right: none !important;
-    
-    transition: all 0.3s ease !important;
+    /* 主题应用 */
+    background-color: var(--el-bg-color);
+    border-left: var(--el-border-left);
+    padding: var(--el-padding);
+    border-radius: var(--el-border-radius);
+    box-shadow: var(--el-box-shadow);
+    border-bottom: var(--el-border-bottom);
+    border: var(--el-border);
+    font-style: var(--el-font-style);
 }
 
-/* 2. 喇叭按钮容器 (锁死大小) */
-.para-read-btn {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    
-    /* [关键] 强制容器尺寸，防止被撑开 */
-    width: 30px !important;
-    height: 30px !important;
-    min-width: 30px !important;
-    min-height: 30px !important;
-    
-    margin-left: 8px !important;
-    cursor: pointer !important;
-    border-radius: 50% !important;
-    background-color: rgba(0,0,0,0.03) !important;
-    flex-shrink: 0 !important; /* 防止被挤压 */
-}
-
-/* 3. [修复核心] SVG 图标 (锁死大小) 
-   这里不加 important，SVG 就会像气球一样膨胀
-*/
-.para-read-btn svg {
-    width: 18px !important;
-    height: 18px !important;
-    max-width: 18px !important;
-    max-height: 18px !important;
-    display: block !important;
-    pointer-events: none !important;
-}
-
-/* 4. 播放时的绿色呼吸效果 */
-.para-read-btn.playing {
-    color: #42b983 !important;
-    background-color: rgba(66, 185, 131, 0.1) !important;
-    animation: para-pulse 1.5s infinite !important;
-}
-
-/* 5. 模糊模式 */
 .it-trans-block.it-trans-blur {
-    filter: blur(5px) !important;
-    opacity: 0.8 !important;
+    filter: blur(6px);
+    user-select: none;
+    cursor: pointer;
 }
 .it-trans-block.it-trans-blur:hover {
-    filter: blur(3px) !important;
-    opacity: 1 !important;
+    filter: blur(4px);
+}
+.it-trans-block.it-from-cache {
+    border-left-color: #34C759 !important;
 }
 
-/* 6. 原文高亮 (仅字体加粗，无背景) */
-.wh-highlighted {
-    background-color: transparent !important;
-    font-weight: bold !important;
-    border-bottom: none !important;
-}
-
-/* 呼吸灯动画 */
-@keyframes para-pulse {
-    0% { box-shadow: 0 0 0 0 rgba(66, 185, 131, 0.4); }
-    70% { box-shadow: 0 0 0 6px rgba(66, 185, 131, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(66, 185, 131, 0); }
-}
-
-/* 暗黑模式简单适配 */
+/* 暗黑模式适配 */
 @media (prefers-color-scheme: dark) {
-    .it-trans-block {
-        background-color: #2d2d2d !important;
-        color: #e0e0e0 !important;
-    }
+    .it-trans-block { color: #ccc; }
 }
+
+/* BBC Live 专用补丁 */
+body[data-bbc-live="true"] .it-trans-block {
+    clear: both;
+    margin-top: 6px;
+    font-size: 0.95em;
+    width: 100% !important;
+    flex-basis: 100% !important;
+    box-sizing: border-box !important;
+}
+body[data-bbc-live="true"] li {
+    flex-wrap: wrap !important;
+}
+
+/* 4. TTS 喇叭样式 */
+.para-read-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-left: 8px;
+    cursor: pointer;
+    color: #5f6368;
+    transition: all 0.2s ease;
+    vertical-align: middle;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.03);
+    -webkit-tap-highlight-color: transparent;
+    flex-shrink: 0;
+}
+.para-read-btn:active {
+    transform: scale(0.9);
+    background-color: rgba(26, 115, 232, 0.2);
+}
+.para-read-btn svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+    pointer-events: none;
+}
+.para-read-btn.playing {
+    color: #1a73e8;
+    background-color: rgba(26, 115, 232, 0.1);
+    animation: para-pulse 1.5s infinite;
+}
+@keyframes para-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(26, 115, 232, 0.4); }
+    70% { box-shadow: 0 0 0 6px rgba(26, 115, 232, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(26, 115, 232, 0); }
+}
+
+/* 5. 查词弹窗 Shadow DOM 样式 (作为字符串存储在 JS 中更方便，但此处保留结构供参考) */
+/* 注意：ShadowDOM 样式通常需要内联在 JS 中注入 ShadowRoot，或者通过 CSS 变量穿透 */
