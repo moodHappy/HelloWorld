@@ -1,75 +1,93 @@
 /* ==========================================
-   EnLight 样式表
+   EnLight Global Styles
    ========================================== */
-
-/* 1. CSS 变量定义 (由 JS 动态注入数值) */
 :root {
-    --el-font-size-ratio: 1; /* 默认 100% */
-    --el-line-height: 1.6;
-    --el-text-color: #333333;
-    --el-margin-top: 6px;
-    
-    /* 主题变量占位 */
-    --el-bg-color: #f7f9fa;
-    --el-border-left: 3px solid #007AFF;
-    --el-padding: 6px 10px;
-    --el-border-radius: 4px;
-    --el-box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    --el-border-bottom: none;
-    --el-border: none;
-    --el-font-style: normal;
+    --enlight-line-height: 1.6;
+    --enlight-color: #333333;
+    --enlight-margin-top: 6px;
+    --enlight-font-size-ratio: 1; /* 1 = 100% */
 }
 
-/* 2. 高亮样式 */
+/* 高亮样式 */
 .wh-highlighted {
     font-weight: bold;
     border-radius: 3px;
 }
 
-/* 3. 翻译块通用样式 */
+/* 翻译块基础样式 */
 .it-trans-block {
     all: initial;
     display: block;
-    margin-top: var(--el-margin-top);
-    margin-bottom: 8px;
-    line-height: var(--el-line-height);
-    color: var(--el-text-color);
+    margin-top: var(--enlight-margin-top);
+    margin-bottom: 10px;
+    line-height: var(--enlight-line-height);
+    color: var(--enlight-color);
     font-family: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
     width: auto;
-    box-sizing: border-box;
+    max-width: 100%;
+    box-sizing: border-box !important;
     word-wrap: break-word;
     overflow-wrap: break-word;
     transition: filter 0.3s ease;
-    
-    /* 主题应用 */
-    background-color: var(--el-bg-color);
-    border-left: var(--el-border-left);
-    padding: var(--el-padding);
-    border-radius: var(--el-border-radius);
-    box-shadow: var(--el-box-shadow);
-    border-bottom: var(--el-border-bottom);
-    border: var(--el-border);
-    font-style: var(--el-font-style);
+    user-select: text !important;
+    -webkit-user-select: text !important;
+    font-size: calc(1em * var(--enlight-font-size-ratio));
 }
 
-.it-trans-block.it-trans-blur {
+/* 翻译块主题 */
+.it-trans-block.theme-card {
+    background-color: #f7f9fa;
+    border-left: 4px solid #007AFF;
+    padding: 10px 16px !important;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.it-trans-block.theme-minimal {
+    background-color: transparent;
+    border-left: none;
+    padding: 6px 0;
+    font-style: italic;
+    color: #555;
+}
+
+.it-trans-block.theme-dashed {
+    background-color: #fff;
+    border: 1px dashed #999;
+    padding: 10px 16px !important;
+    border-radius: 6px;
+}
+
+.it-trans-block.theme-underline {
+    background-color: transparent;
+    border-bottom: 1px solid #ddd;
+    padding: 6px 0 10px 0;
+    margin-bottom: 8px;
+}
+
+.it-trans-block.theme-dark {
+    background-color: #2c2c2e;
+    color: #e5e5e5 !important;
+    border-left: 4px solid #FF9500;
+    padding: 10px 16px !important;
+    border-radius: 4px;
+}
+
+/* 学习模式模糊 */
+.it-trans-blur {
     filter: blur(6px);
     user-select: none;
     cursor: pointer;
 }
-.it-trans-block.it-trans-blur:hover {
-    filter: blur(4px);
-}
-.it-trans-block.it-from-cache {
-    border-left-color: #34C759 !important;
-}
+.it-trans-blur:hover { filter: blur(4px); }
+.it-from-cache { border-left-color: #34C759 !important; }
 
 /* 暗黑模式适配 */
 @media (prefers-color-scheme: dark) {
     .it-trans-block { color: #ccc; }
 }
 
-/* BBC Live 专用补丁 */
+/* BBC Live 特殊适配 */
 body[data-bbc-live="true"] .it-trans-block {
     clear: both;
     margin-top: 6px;
@@ -78,11 +96,9 @@ body[data-bbc-live="true"] .it-trans-block {
     flex-basis: 100% !important;
     box-sizing: border-box !important;
 }
-body[data-bbc-live="true"] li {
-    flex-wrap: wrap !important;
-}
+body[data-bbc-live="true"] li { flex-wrap: wrap !important; }
 
-/* 4. TTS 喇叭样式 */
+/* 段落朗读按钮 */
 .para-read-btn {
     display: inline-flex;
     align-items: center;
@@ -98,17 +114,13 @@ body[data-bbc-live="true"] li {
     background-color: rgba(0,0,0,0.03);
     -webkit-tap-highlight-color: transparent;
     flex-shrink: 0;
+    user-select: none;
 }
 .para-read-btn:active {
     transform: scale(0.9);
     background-color: rgba(26, 115, 232, 0.2);
 }
-.para-read-btn svg {
-    width: 18px;
-    height: 18px;
-    display: block;
-    pointer-events: none;
-}
+.para-read-btn svg { width: 18px; height: 18px; display: block; pointer-events: none; }
 .para-read-btn.playing {
     color: #1a73e8;
     background-color: rgba(26, 115, 232, 0.1);
@@ -119,6 +131,57 @@ body[data-bbc-live="true"] li {
     70% { box-shadow: 0 0 0 6px rgba(26, 115, 232, 0); }
     100% { box-shadow: 0 0 0 0 rgba(26, 115, 232, 0); }
 }
+div:where(.swal2-container) { z-index: 2147483647 !important; }
 
-/* 5. 查词弹窗 Shadow DOM 样式 (作为字符串存储在 JS 中更方便，但此处保留结构供参考) */
-/* 注意：ShadowDOM 样式通常需要内联在 JS 中注入 ShadowRoot，或者通过 CSS 变量穿透 */
+/* ==========================================
+   Shadow DOM Popup Styles
+   ========================================== */
+/* 注意：这些样式会被注入到 Shadow Root 中 */
+:host { all: initial; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; z-index: 2147483647; }
+#custom-dict-popup {
+    position: fixed; background: #fff; border: 1px solid #eee;
+    border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12); padding: 15px;
+    width: 290px; max-width: 85vw;
+    max-height: 50vh; overflow-y: auto;
+    font-size: 14px; line-height: 1.5; color: #333;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transform: translateY(5px); text-align: left;
+    box-sizing: border-box; touch-action: manipulation;
+}
+#custom-dict-popup.active { opacity: 1; pointer-events: auto; transform: translateY(0); }
+#custom-dict-popup::-webkit-scrollbar { width: 4px; }
+#custom-dict-popup::-webkit-scrollbar-thumb { background: #ddd; border-radius: 2px; }
+
+.g-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid #f5f5f5;
+}
+.g-word-row { display: flex; align-items: center; gap: 8px; flex: 1; }
+.g-word { font-size: 20px; font-weight: bold; color: #111; line-height: 1.2; word-break: break-all; }
+.g-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; align-items: center; }
+.g-phonetic { color: #666; font-size: 13px; font-family: "Lucida Sans Unicode", sans-serif; background: #f0f2f5; padding: 2px 6px; border-radius: 4px; }
+.g-tag {
+    background: #f7bf34; color: #fff; padding: 1px 6px; border-radius: 4px;
+    font-size: 11px; font-weight: bold; display: inline-block; line-height: 1.4;
+}
+.g-tag.collins { background: #ff9c38; }
+
+/* 星星样式 */
+.g-stars { display:inline-flex; align-items:center; color: #e0e0e0; font-size: 14px; letter-spacing: 1px; line-height: 1; margin-left:4px; vertical-align: middle; }
+.g-stars-active { color: #f5c518; }
+
+.g-list { margin: 0; padding: 0; list-style: none; color: #444; font-size: 14px; line-height: 1.6; }
+.g-list li { margin-bottom: 6px; display: flex; align-items: baseline; }
+.g-bullet { color: #007AFF; margin-right: 8px; font-size: 16px; line-height: 1; font-weight: bold; }
+.g-msg { color: #999; font-size: 12px; font-style: italic; }
+.cdp-play-btn {
+    cursor: pointer; color: #007AFF; background: #f0f8ff;
+    border: none; padding: 6px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: background 0.2s;
+}
+.cdp-play-btn:active { background-color: #dbeafe; }
+.cdp-play-btn svg { width: 20px; height: 20px; }
+.cdp-play-btn.playing { color: #E91E63; animation: cdp-pulse 1s infinite; }
+@keyframes cdp-pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
