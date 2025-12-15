@@ -4,6 +4,8 @@
 
 [📁Notes](https://github.com/moodHappy/HelloWorld/tree/master/Notes)
 
+[📁Notes](https://github.com/moodHappy/HelloWorld/tree/master/Notes%2FNews)
+
 [排除高亮](https://github.com/moodHappy/HelloWorld/blob/master/Notes%2FExcluded.txt)
 
 
