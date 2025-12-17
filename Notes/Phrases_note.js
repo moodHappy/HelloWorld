@@ -1,4 +1,4 @@
-// Notes_Config.js
+// Phrases_note.js
 // 单词/笔记专用配置文件
 
 const NotesConfig = {
