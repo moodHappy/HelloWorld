@@ -1,0 +1,18 @@
+# US reportedly pursuing third oil tanker linked to Venezuela
+
+> 📅 2025/12/22 08:54:25
+> 🔗 原文: [https://www.bbc.com/news/articles/c99722j4lkgo](https://www.bbc.com/news/articles/c99722j4lkgo)
+
+1. **User123**: Can’t believe the audacity of the US calling it "sanction evasion" when they’re basically just stealing someone else's resources. 🤦‍♂️
+
+2. **VenezuelanPride**: The world needs to stand together against these acts of piracy! International waters should be respected! 🚢✊
+
+3. **OilMan87**: So, are we really just going to ignore the fact that the US military is essentially running a blockade? This feels like old-school imperialism. 😒
+
+4. **TruthSeeker22**: Does anyone else find it suspicious that the US claims these ships are illegal but can’t provide proof? 🤔 Where’s the transparency, Biden admin?
+
+5. **CoastGuardFan22**: I guess the Coast Guard is too busy with these "pirate chases" to help with actual coast protection! 😂
+
+6. **DebateMaster3000**: Tbh, both sides seem to have their issues. Venezuela has a history of corruption, but the US isn’t innocent either. War is just gonna make it worse... 😩
+
+7. **CutTheDrama**: Just a reminder that real people are suffering due to all this power struggle. This isn’t just about oil; it’s about lives. 💔
