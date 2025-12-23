@@ -14,22 +14,20 @@ const NotesConfig = {
     startYear: 2025,
     totalYears: 30,
 
-    // 4. 生成文件名的逻辑 (关键修改)
-    // 目标结构: [Year]/Note_[Year]-[Month].json
+    // 4. 生成文件名的逻辑 (关键修改点)
+    // 目标结构: [Year]/Notes_[Year]-[Month].json
     getFileName: function(year, month) {
         // 确保月份是两位数 (1 -> 01)
         const mm = month.toString().padStart(2, '0');
-        
-        // 修改点：
-        // 1. 增加了 `${year}/` 目录前缀
-        // 2. 将 'Notes_' 改为了单数 'Note_'
-        return `${year}/Note_${year}-${mm}${this.fileExtension}`;
+
+        // 修改点：这里的 Note_ 改成了 Notes_
+        return `${year}/Notes_${year}-${mm}${this.fileExtension}`;
     },
 
     // 5. 获取最终链接的逻辑
     getUrl: function(year, month) {
         const key = `${year}-${month.toString().padStart(2, '0')}`;
-        
+
         // 优先检查是否有手动覆盖的链接
         if (this.manualOverrides && this.manualOverrides[key]) {
             const manualLink = this.manualOverrides[key];
@@ -37,7 +35,7 @@ const NotesConfig = {
                 return manualLink;
             }
         }
-        
+
         // 否则使用自动生成的 GitHub/CDN 链接
         return this.repoBaseUrl + this.getFileName(year, month);
     },
