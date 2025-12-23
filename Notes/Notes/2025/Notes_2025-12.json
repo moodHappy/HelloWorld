@@ -1,11 +1,821 @@
 [
   {
-    "id": "1766488901890",
-    "text": "from",
-    "note": "1",
-    "time": "2025/12/23 19:21:41",
-    "timestamp": 1766488901895,
-    "url": "https://www.bbc.com/news/articles/cd0kxrr2jyko",
-    "pageTitle": "Bondi shooting: Injured officer Jack Hibbert released from hospital"
+    "id": "1766481219150",
+    "text": "isn’t the first incident",
+    "note": "这不是第一次发生类似事件，强调重复性或持续性问题。",
+    "time": "2025/12/23 17:13:39",
+    "timestamp": 1766481219150,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Laos_ferry_disaster__Screams_for_help_and_panic_as_1766480444097.html",
+    "pageTitle": "Laos ferry disaster: Screams for help and panic as tourists rescued from fatal sinking - ReadSense Archive"
+  },
+  {
+    "id": "1766481078966",
+    "text": "Can we talk about",
+    "note": "可以谈谈…吗？，用于请求讨论某事。",
+    "time": "2025/12/23 17:11:18",
+    "timestamp": 1766481078966,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Laos_ferry_disaster__Screams_for_help_and_panic_as_1766480444097.html",
+    "pageTitle": "Laos ferry disaster: Screams for help and panic as tourists rescued from fatal sinking - ReadSense Archive"
+  },
+  {
+    "id": "1766480958503",
+    "text": "lead to",
+    "note": "导致",
+    "time": "2025/12/23 17:09:18",
+    "timestamp": 1766480958504,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Laos_ferry_disaster__Screams_for_help_and_panic_as_1766480444097.html",
+    "pageTitle": "Laos ferry disaster: Screams for help and panic as tourists rescued from fatal sinking - ReadSense Archive"
+  },
+  {
+    "id": "1766480835025",
+    "text": "Doesn’t seem right",
+    "note": "看起来不对劲",
+    "time": "2025/12/23 17:07:15",
+    "timestamp": 1766480835026,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Laos_ferry_disaster__Screams_for_help_and_panic_as_1766480444097.html",
+    "pageTitle": "Laos ferry disaster: Screams for help and panic as tourists rescued from fatal sinking - ReadSense Archive"
+  },
+  {
+    "id": "1766480694428",
+    "text": "life jackets",
+    "note": "救生衣",
+    "time": "2025/12/23 17:04:54",
+    "timestamp": 1766480694428,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Laos_ferry_disaster__Screams_for_help_and_panic_as_1766480444097.html",
+    "pageTitle": "Laos ferry disaster: Screams for help and panic as tourists rescued from fatal sinking - ReadSense Archive"
+  },
+  {
+    "id": "1766480586738",
+    "text": "My heart goes out to",
+    "note": "常用表达，表示“我对……深感同情/哀悼”。",
+    "time": "2025/12/23 17:03:06",
+    "timestamp": 1766480586744,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Laos_ferry_disaster__Screams_for_help_and_panic_as_1766480444097.html",
+    "pageTitle": "Laos ferry disaster: Screams for help and panic as tourists rescued from fatal sinking - ReadSense Archive"
+  },
+  {
+    "id": "1766467981293",
+    "text": "peace talks",
+    "note": "和平谈判",
+    "time": "2025/12/23 13:33:01",
+    "timestamp": 1766467981293,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Russia_escalates_attacks_on_key_Ukrainian_region_o_1766465796854.html",
+    "pageTitle": "Russia escalates attacks on key Ukrainian region of Odesa - ReadSense Archive"
+  },
+  {
+    "id": "1766467924245",
+    "text": "feelings",
+    "note": "矛盾的情感/复杂情绪",
+    "time": "2025/12/23 13:32:04",
+    "timestamp": 1766467924246,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Russia_escalates_attacks_on_key_Ukrainian_region_o_1766465796854.html",
+    "pageTitle": "Russia escalates attacks on key Ukrainian region of Odesa - ReadSense Archive"
+  },
+  {
+    "id": "1766467825121",
+    "text": "turn the tide",
+    "note": "扭转局势/逆转形势",
+    "time": "2025/12/23 13:30:25",
+    "timestamp": 1766467825121,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Russia_escalates_attacks_on_key_Ukrainian_region_o_1766465796854.html",
+    "pageTitle": "Russia escalates attacks on key Ukrainian region of Odesa - ReadSense Archive"
+  },
+  {
+    "id": "1766467638068",
+    "text": "this has to end",
+    "note": "这必须结束，表达强烈的紧迫性和期望。",
+    "time": "2025/12/23 13:27:18",
+    "timestamp": 1766467638072,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Russia_escalates_attacks_on_key_Ukrainian_region_o_1766465796854.html",
+    "pageTitle": "Russia escalates attacks on key Ukrainian region of Odesa - ReadSense Archive"
+  },
+  {
+    "id": "1766467042570",
+    "text": "No matter what",
+    "note": "无论发生什么 / 不管怎样",
+    "time": "2025/12/23 13:17:22",
+    "timestamp": 1766467042575,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Russia_escalates_attacks_on_key_Ukrainian_region_o_1766465796854.html",
+    "pageTitle": "Russia escalates attacks on key Ukrainian region of Odesa - ReadSense Archive"
+  },
+  {
+    "id": "1766466659005",
+    "text": "getting away with it",
+    "note": "逍遥法外、做了坏事却未被发现或惩罚。",
+    "time": "2025/12/23 13:10:59",
+    "timestamp": 1766466659005,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Russia_escalates_attacks_on_key_Ukrainian_region_o_1766465796854.html",
+    "pageTitle": "Russia escalates attacks on key Ukrainian region of Odesa - ReadSense Archive"
+  },
+  {
+    "id": "1766466446708",
+    "text": "getting battered",
+    "note": "正在遭受严重打击/摧残（比喻用法，强调持续性）",
+    "time": "2025/12/23 13:07:26",
+    "timestamp": 1766466446714,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Russia_escalates_attacks_on_key_Ukrainian_region_o_1766465796854.html",
+    "pageTitle": "Russia escalates attacks on key Ukrainian region of Odesa - ReadSense Archive"
+  },
+  {
+    "id": "1766459202966",
+    "text": "demand accountability",
+    "note": "要求问责/追究责任",
+    "time": "2025/12/23 11:06:42",
+    "timestamp": 1766459202971,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/In_rebel_held_Myanmar__civilians_flee_junta_airstr_1766371876997.html",
+    "pageTitle": "In rebel-held Myanmar, civilians flee junta airstrikes and a forced election - ReadSense Archive"
+  },
+  {
+    "id": "1766414390548",
+    "text": "snuggle buddy",
+    "note": "直译为“可以拥抱/依偎的伙伴”；可指人（朋友、恋人、伴侣）或毛绒玩具等温暖对象，具体含义视上下文而定。",
+    "time": "2025/12/22 22:39:50",
+    "timestamp": 1766414390549,
+    "url": "https://x.com/Grace_Upton9/status/2002922143764398564",
+    "pageTitle": "X 上的 Grace Upton：「I need a snuggle buddy for christmas https://t.co/jre6XsOpTV」 / X"
+  },
+  {
+    "id": "1766413695798",
+    "text": "The last thing we need",
+    "note": "习语: 表示“最不想要的事情/事态”。",
+    "time": "2025/12/22 22:28:15",
+    "timestamp": 1766413695799,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Russian_general_killed_by_car_bomb_in_Moscow__offi_1766407326527.html",
+    "pageTitle": "Russian general killed by car bomb in Moscow, officials say - ReadSense Archive"
+  },
+  {
+    "id": "1766413565109",
+    "text": "This reminds me of",
+    "note": "这让我想起...",
+    "time": "2025/12/22 22:26:05",
+    "timestamp": 1766413565109,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Russian_general_killed_by_car_bomb_in_Moscow__offi_1766407326527.html",
+    "pageTitle": "Russian general killed by car bomb in Moscow, officials say - ReadSense Archive"
+  },
+  {
+    "id": "1766412670466",
+    "text": "Is it just me or",
+    "note": "难道只有我一个人这么觉得，还是……（用于征求他人是否有同感的疑问句开头）",
+    "time": "2025/12/22 22:11:10",
+    "timestamp": 1766412670485,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Russian_general_killed_by_car_bomb_in_Moscow__offi_1766407326527.html",
+    "pageTitle": "Russian general killed by car bomb in Moscow, officials say - ReadSense Archive"
+  },
+  {
+    "id": "1766408513221",
+    "text": "Gotta keep it real",
+    "note": "“必须说真话/保持真实”，强调直说实情。",
+    "time": "2025/12/22 21:01:53",
+    "timestamp": 1766408513230,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Russian_general_killed_by_car_bomb_in_Moscow__offi_1766407326527.html",
+    "pageTitle": "Russian general killed by car bomb in Moscow, officials say - ReadSense Archive"
+  },
+  {
+    "id": "1766407997539",
+    "text": "Stay safe everyone!",
+    "note": "请大家注意安全/保重。",
+    "time": "2025/12/22 20:53:17",
+    "timestamp": 1766407997539,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Bondi_gunmen_threw_explosives_at_start_of_attack_a_1766395507756.html",
+    "pageTitle": "Bondi gunmen threw explosives at start of attack and practised shooting weeks before, police allege - ReadSense Archive"
+  },
+  {
+    "id": "1766407986945",
+    "text": "Big props",
+    "note": "大大的赞扬",
+    "time": "2025/12/22 20:53:06",
+    "timestamp": 1766407986945,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Bondi_gunmen_threw_explosives_at_start_of_attack_a_1766395507756.html",
+    "pageTitle": "Bondi gunmen threw explosives at start of attack and practised shooting weeks before, police allege - ReadSense Archive"
+  },
+  {
+    "id": "1766407828696",
+    "text": "Sickening to think",
+    "note": "想到这件事就让人感到厌恶/恶心",
+    "time": "2025/12/22 20:50:28",
+    "timestamp": 1766407828696,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Bondi_gunmen_threw_explosives_at_start_of_attack_a_1766395507756.html",
+    "pageTitle": "Bondi gunmen threw explosives at start of attack and practised shooting weeks before, police allege - ReadSense Archive"
+  },
+  {
+    "id": "1766407730015",
+    "text": "How did no one notice",
+    "note": "疑问句，表示对“没有人发现/注意到”的惊讶或质疑。",
+    "time": "2025/12/22 20:48:50",
+    "timestamp": 1766407730015,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Bondi_gunmen_threw_explosives_at_start_of_attack_a_1766395507756.html",
+    "pageTitle": "Bondi gunmen threw explosives at start of attack and practised shooting weeks before, police allege - ReadSense Archive"
+  },
+  {
+    "id": "1766407624371",
+    "text": "What even is that?",
+    "note": "疑问句，强调惊讶和不解，意为“那到底是什么？”或“这究竟是什么？”",
+    "time": "2025/12/22 20:47:04",
+    "timestamp": 1766407624371,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Bondi_gunmen_threw_explosives_at_start_of_attack_a_1766395507756.html",
+    "pageTitle": "Bondi gunmen threw explosives at start of attack and practised shooting weeks before, police allege - ReadSense Archive"
+  },
+  {
+    "id": "1766407594437",
+    "text": "This is getting out of hand!",
+    "note": "习语，表示情况越来越失控、难以控制。",
+    "time": "2025/12/22 20:46:34",
+    "timestamp": 1766407594445,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Bondi_gunmen_threw_explosives_at_start_of_attack_a_1766395507756.html",
+    "pageTitle": "Bondi gunmen threw explosives at start of attack and practised shooting weeks before, police allege - ReadSense Archive"
+  },
+  {
+    "id": "1766403714262",
+    "text": "How can someone",
+    "note": "怎么能/一个人怎么会",
+    "time": "2025/12/22 19:41:54",
+    "timestamp": 1766403714267,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/Bondi_gunmen_threw_explosives_at_start_of_attack_a_1766395507756.html",
+    "pageTitle": "Bondi gunmen threw explosives at start of attack and practised shooting weeks before, police allege - ReadSense Archive"
+  },
+  {
+    "id": "1766390311825",
+    "text": "I get that",
+    "note": "我理解/我知道",
+    "time": "2025/12/22 15:58:31",
+    "timestamp": 1766390311825,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/US_reportedly_pursuing_third_oil_tanker_linked_to__1766369875289.html",
+    "pageTitle": "US reportedly pursuing third oil tanker linked to Venezuela - ReadSense Archive"
+  },
+  {
+    "id": "1766390069918",
+    "text": "ramping up",
+    "note": "意为“加大力度”、“增加强度”。",
+    "time": "2025/12/22 15:54:29",
+    "timestamp": 1766390069918,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/US_reportedly_pursuing_third_oil_tanker_linked_to__1766369875289.html",
+    "pageTitle": "US reportedly pursuing third oil tanker linked to Venezuela - ReadSense Archive"
+  },
+  {
+    "id": "1766389393163",
+    "text": "runs on",
+    "note": "意为“依赖……运行”或“以……为动力”",
+    "time": "2025/12/22 15:43:13",
+    "timestamp": 1766389393169,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/US_reportedly_pursuing_third_oil_tanker_linked_to__1766369875289.html",
+    "pageTitle": "US reportedly pursuing third oil tanker linked to Venezuela - ReadSense Archive"
+  },
+  {
+    "id": "1766377524621",
+    "text": "high-stakes soap opera",
+    "note": "高赌注/高风险的肥皂剧（比喻事件的戏剧性和紧张感）",
+    "time": "2025/12/22 12:25:24",
+    "timestamp": 1766377524622,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/US_reportedly_pursuing_third_oil_tanker_linked_to__1766369875289.html",
+    "pageTitle": "US reportedly pursuing third oil tanker linked to Venezuela - ReadSense Archive"
+  },
+  {
+    "id": "1766377404776",
+    "text": "flexing its muscles",
+    "note": "习语，意思是“显摆实力/摆出强硬姿态/炫耀力量”。",
+    "time": "2025/12/22 12:23:24",
+    "timestamp": 1766377404776,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/US_reportedly_pursuing_third_oil_tanker_linked_to__1766369875289.html",
+    "pageTitle": "US reportedly pursuing third oil tanker linked to Venezuela - ReadSense Archive"
+  },
+  {
+    "id": "1766377317214",
+    "text": "linked to Venezuela",
+    "note": "与委内瑞拉有关/与委内瑞拉有联系",
+    "time": "2025/12/22 12:21:57",
+    "timestamp": 1766377317220,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/US_reportedly_pursuing_third_oil_tanker_linked_to__1766369875289.html",
+    "pageTitle": "US reportedly pursuing third oil tanker linked to Venezuela - ReadSense Archive"
+  },
+  {
+    "id": "1766376155319",
+    "text": "needs to step in now",
+    "note": "现在必须介入/出面干预\"；释义：需要立即采取行动",
+    "time": "2025/12/22 12:02:35",
+    "timestamp": 1766376155320,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/In_rebel_held_Myanmar__civilians_flee_junta_airstr_1766371876997.html",
+    "pageTitle": "In rebel-held Myanmar, civilians flee junta airstrikes and a forced election - ReadSense Archive"
+  },
+  {
+    "id": "1766376136484",
+    "text": "caught in",
+    "note": "被卷入/被卷入其中\"；释义：处于被动、卷入某种情况",
+    "time": "2025/12/22 12:02:16",
+    "timestamp": 1766376136484,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/In_rebel_held_Myanmar__civilians_flee_junta_airstr_1766371876997.html",
+    "pageTitle": "In rebel-held Myanmar, civilians flee junta airstrikes and a forced election - ReadSense Archive"
+  },
+  {
+    "id": "1766375869156",
+    "text": "a threat to their existence",
+    "note": "对他们生存的威胁",
+    "time": "2025/12/22 11:57:49",
+    "timestamp": 1766375869163,
+    "url": "https://moodhappy.github.io/moodHappy.gitHub.io-nce/Notes/danmu/2025/In_rebel_held_Myanmar__civilians_flee_junta_airstr_1766371876997.html",
+    "pageTitle": "In rebel-held Myanmar, civilians flee junta airstrikes and a forced election - ReadSense Archive"
+  },
+  {
+    "id": "1766321012332",
+    "text": "observing the silence.",
+    "note": "默哀、守默。",
+    "time": "2025/12/21 20:43:32",
+    "timestamp": 1766321012332,
+    "url": "https://www.bbc.com/news/articles/cre3l2xq9nzo",
+    "pageTitle": "Minute's silence held to remember Bondi Beach attack victims"
+  },
+  {
+    "id": "1766319460880",
+    "text": "police patrol boat",
+    "note": "警用巡逻艇",
+    "time": "2025/12/21 20:17:40",
+    "timestamp": 1766319460880,
+    "url": "https://www.bbc.com/news/articles/cre3l2xq9nzo",
+    "pageTitle": "Minute's silence held to remember Bondi Beach attack victims"
+  },
+  {
+    "id": "1766319227680",
+    "text": "guarded by armed riot squad officers",
+    "note": "由武装防暴警察守卫",
+    "time": "2025/12/21 20:13:47",
+    "timestamp": 1766319227680,
+    "url": "https://www.bbc.com/news/articles/cre3l2xq9nzo",
+    "pageTitle": "Minute's silence held to remember Bondi Beach attack victims"
+  },
+  {
+    "id": "1766319123289",
+    "text": "cordoned-off areas",
+    "note": "划定区域",
+    "time": "2025/12/21 20:12:03",
+    "timestamp": 1766319123289,
+    "url": "https://www.bbc.com/news/articles/cre3l2xq9nzo",
+    "pageTitle": "Minute's silence held to remember Bondi Beach attack victims"
+  },
+  {
+    "id": "1766318711874",
+    "text": "memorial event",
+    "note": "纪念活动",
+    "time": "2025/12/21 20:05:11",
+    "timestamp": 1766318711874,
+    "url": "https://www.bbc.com/news/articles/cre3l2xq9nzo",
+    "pageTitle": "Minute's silence held to remember Bondi Beach attack victims"
+  },
+  {
+    "id": "1766318323272",
+    "text": "in honour of",
+    "note": "为了向……致敬，表示出于对某事或某人的尊重。",
+    "time": "2025/12/21 19:58:43",
+    "timestamp": 1766318323277,
+    "url": "https://www.bbc.com/news/articles/cre3l2xq9nzo",
+    "pageTitle": "Minute's silence held to remember Bondi Beach attack victims"
+  },
+  {
+    "id": "1766313773506",
+    "text": "according to police figures.",
+    "note": "根据警方数据，表明信息来源权威性。",
+    "time": "2025/12/21 18:42:53",
+    "timestamp": 1766313773506,
+    "url": "https://www.bbc.com/news/articles/c79xyxdpzrxo",
+    "pageTitle": "Bekkersdal shooting: Gunmen kill nine in South Africa tavern attack"
+  },
+  {
+    "id": "1766313751046",
+    "text": "highest murder rates",
+    "note": "指某个地区谋杀率极高，通常说明犯罪情况严重。",
+    "time": "2025/12/21 18:42:31",
+    "timestamp": 1766313751046,
+    "url": "https://www.bbc.com/news/articles/c79xyxdpzrxo",
+    "pageTitle": "Bekkersdal shooting: Gunmen kill nine in South Africa tavern attack"
+  },
+  {
+    "id": "1766313419574",
+    "text": "and opened fire at patrons.",
+    "note": "并对在场顾客开火",
+    "time": "2025/12/21 18:36:59",
+    "timestamp": 1766313419574,
+    "url": "https://www.bbc.com/news/articles/c79xyxdpzrxo",
+    "pageTitle": "Bekkersdal shooting: Gunmen kill nine in South Africa tavern attack"
+  },
+  {
+    "id": "1766312927735",
+    "text": "A manhunt is under way",
+    "note": "正在展开的搜捕行动",
+    "time": "2025/12/21 18:28:47",
+    "timestamp": 1766312927735,
+    "url": "https://www.bbc.com/news/articles/c79xyxdpzrxo",
+    "pageTitle": "Bekkersdal shooting: Gunmen kill nine in South Africa tavern attack"
+  },
+  {
+    "id": "1766312890635",
+    "text": "left nine people dead",
+    "note": "导致九人死亡",
+    "time": "2025/12/21 18:28:10",
+    "timestamp": 1766312890640,
+    "url": "https://www.bbc.com/news/articles/c79xyxdpzrxo",
+    "pageTitle": "Bekkersdal shooting: Gunmen kill nine in South Africa tavern attack"
+  },
+  {
+    "id": "1766310286308",
+    "text": "winning all the point",
+    "note": "意指在某方面表现出色，赢得他人的认可或赞赏。",
+    "time": "2025/12/21 17:44:46",
+    "timestamp": 1766310286308,
+    "url": "https://x.com/0xAugustt/status/2002576499170529652",
+    "pageTitle": "X 上的 augustxbt：「@Enezator Bro is winning all the point for the girls」 / X"
+  },
+  {
+    "id": "1766310184915",
+    "text": "over",
+    "note": "表示偏好对比，相当于 “instead of / rather than”。",
+    "time": "2025/12/21 17:43:04",
+    "timestamp": 1766310184915,
+    "url": "https://x.com/RohitChauh21195/status/2002586374911013160",
+    "pageTitle": "X 上的 RoHiit：「@Enezator A true gentleman... But Will she date him over a toxic guy?」 / X"
+  },
+  {
+    "id": "1766310022634",
+    "text": "doesn't have time for her",
+    "note": "没有时间陪伴她",
+    "time": "2025/12/21 17:40:22",
+    "timestamp": 1766310022634,
+    "url": "https://x.com/funnyhubs/status/2002405801252556891",
+    "pageTitle": "X 上的 Daily Laughs：「@Enezator He's ready to marry her, but from my experience, shell rather date a gangster who doesn't have time for her」 / X"
+  },
+  {
+    "id": "1766308546400",
+    "text": "don't value",
+    "note": "不重视 / 不欣赏",
+    "time": "2025/12/21 17:15:46",
+    "timestamp": 1766308546400,
+    "url": "https://x.com/gre8thenry/status/2002408274759455124",
+    "pageTitle": "X 上的 Henryprestige：「@Enezator Women don't value this!」 / X"
+  },
+  {
+    "id": "1766308024898",
+    "text": "was observed",
+    "note": "被动语态，意为“被举行/被遵守”，强调沉默这个行为由人群共同完成。",
+    "time": "2025/12/21 17:07:04",
+    "timestamp": 1766308024898,
+    "url": "https://www.bbc.com/news/articles/c5ydzl0nwqeo",
+    "pageTitle": "Australian PM announces intelligence review as country mourns Bondi attack"
+  },
+  {
+    "id": "1766307949358",
+    "text": "is being held",
+    "note": "现在进行时的被动语态，表示“正在举行/正在被组织”。",
+    "time": "2025/12/21 17:05:49",
+    "timestamp": 1766307949380,
+    "url": "https://www.bbc.com/news/articles/c5ydzl0nwqeo",
+    "pageTitle": "Australian PM announces intelligence review as country mourns Bondi attack"
+  },
+  {
+    "id": "1766303583561",
+    "text": "nervous and sceptical",
+    "note": "形容词短语，表示对某件事情感到 紧张 和 怀疑，在这里指对释放文件的态度。",
+    "time": "2025/12/21 15:53:03",
+    "timestamp": 1766303583583,
+    "url": "https://www.bbc.com/news/articles/c14vy02847vo",
+    "pageTitle": "Survivors are 'nervous and sceptical' about partial Epstein file release"
+  },
+  {
+    "id": "1766294489673",
+    "text": "cost",
+    "note": "代价是……",
+    "time": "2025/12/21 13:21:29",
+    "timestamp": 1766294489673,
+    "url": "https://www.bbc.com/news/articles/c5yqr485d84o",
+    "pageTitle": "Hong Kong billionaire Jimmy Lai tested China's limits. It cost him his freedom"
+  },
+  {
+    "id": "1766294465924",
+    "text": "tested China's limits",
+    "note": "测试中国的极限",
+    "time": "2025/12/21 13:21:05",
+    "timestamp": 1766294465942,
+    "url": "https://www.bbc.com/news/articles/c5yqr485d84o",
+    "pageTitle": "Hong Kong billionaire Jimmy Lai tested China's limits. It cost him his freedom"
+  },
+  {
+    "id": "1766279831925",
+    "text": "Not everything",
+    "note": "并非所有事物；强调并非全部都符合某一判断或印象。",
+    "time": "2025/12/21 09:17:11",
+    "timestamp": 1766279831925,
+    "url": "https://x.com/TansuYegen/status/2001969960084803999",
+    "pageTitle": "X 上的 Tansu Yegen：「Not everything is as it seems https://t.co/el0XhqZw2y」 / X"
+  },
+  {
+    "id": "1766279806652",
+    "text": "as it seems",
+    "note": "如它所看起来的那样；像表面看起来一样，含“表面现象不一定等同于真实”的意味。",
+    "time": "2025/12/21 09:16:46",
+    "timestamp": 1766279806652,
+    "url": "https://x.com/TansuYegen/status/2001969960084803999",
+    "pageTitle": "X 上的 Tansu Yegen：「Not everything is as it seems https://t.co/el0XhqZw2y」 / X"
+  },
+  {
+    "id": "1766232127953",
+    "text": "Being late",
+    "note": "迟到、延迟",
+    "time": "2025/12/20 20:02:07",
+    "timestamp": 1766232127954,
+    "url": "https://x.com/sciencegirl/status/2001932175093256327",
+    "pageTitle": "X 上的 Science girl：「Being late doesn’t mean you’ve lost https://t.co/elNa7MOGXO」 / X"
+  },
+  {
+    "id": "1766231803929",
+    "text": "goes viral",
+    "note": "在网络上迅速走红、被疯狂转发",
+    "time": "2025/12/20 19:56:43",
+    "timestamp": 1766231803930,
+    "url": "https://x.com/Rainmaker1973/status/2001804678456119723",
+    "pageTitle": "X 上的 Massimo：「Dog goes viral after accidentally adopting himself at a stoplight. https://t.co/bB3AFxRg4c」 / X"
+  },
+  {
+    "id": "1766231249168",
+    "text": "spread your wings",
+    "note": "伸展翅膀，意思是尝试、冒险或独立。",
+    "time": "2025/12/20 19:47:29",
+    "timestamp": 1766231249168,
+    "url": "https://x.com/ValaAfshar/status/2002043006942101984",
+    "pageTitle": "X 上的 Vala Afshar：「“Until you spread your wings, you will never know how far you can fly.” https://t.co/MKhWxPVACb」 / X"
+  },
+  {
+    "id": "1766231017063",
+    "text": "responsible for",
+    "note": "对……负责",
+    "time": "2025/12/20 19:43:37",
+    "timestamp": 1766231017065,
+    "url": "https://x.com/LibertyCappy/status/2001921693275853246",
+    "pageTitle": "X 上的 Declaration of Memes：「When you finally realize who's responsible for most of your problems... 😏😏😏🤣 https://t.co/VlzQFd3YVX」 / X"
+  },
+  {
+    "id": "1766217776846",
+    "text": "never missed a chance",
+    "note": "从不错过机会",
+    "time": "2025/12/20 16:02:56",
+    "timestamp": 1766217776846,
+    "url": "https://x.com/Rainmaker1973/status/2001842422519841052",
+    "pageTitle": "X 上的 Massimo：「The boy who never missed a chance to wave at his favorite team's bus finally got the surprise of his life. https://t.co/WvT1ML1zqg」 / X"
+  },
+  {
+    "id": "1766217663639",
+    "text": "an unexpected turn",
+    "note": "意外的变化或转折",
+    "time": "2025/12/20 16:01:03",
+    "timestamp": 1766217663639,
+    "url": "https://x.com/PrinceOf_Darkns/status/2001977897893138735",
+    "pageTitle": "X 上的 ☀️𝕾𝖆𝖆𝖍𝖎𝖑☀️：「The ending took an unexpected turn☠️😭 https://t.co/t3IO787vvr」 / X"
+  },
+  {
+    "id": "1766212221241",
+    "text": "a little too much",
+    "note": "表示超过了一般的程度，暗示对某事物的喜爱或沉迷超过了正常范围",
+    "time": "2025/12/20 14:30:21",
+    "timestamp": 1766212221241,
+    "url": "https://x.com/CNviolations/status/2002170834786660498",
+    "pageTitle": "X 上的 Community Notes & Violations：「I enjoyed this a little too much. https://t.co/lrscS6Tp5T」 / X"
+  },
+  {
+    "id": "1766210006684",
+    "text": "Several hundred thousand pages",
+    "note": "数十万页",
+    "time": "2025/12/20 13:53:26",
+    "timestamp": 1766210006684,
+    "url": "https://www.bbc.com/news/articles/c8r38ne1x2mo",
+    "pageTitle": "Epstein files: What is in the documents released by Department of Justice"
+  },
+  {
+    "id": "1766209517800",
+    "text": "highly anticipated",
+    "note": "备受期待",
+    "time": "2025/12/20 13:45:17",
+    "timestamp": 1766209517800,
+    "url": "https://www.bbc.com/news/articles/c8r38ne1x2mo",
+    "pageTitle": "Epstein files: What is in the documents released by Department of Justice"
+  },
+  {
+    "id": "1766209324902",
+    "text": "initial tranche of documents",
+    "note": "第一批文件",
+    "time": "2025/12/20 13:42:04",
+    "timestamp": 1766209324903,
+    "url": "https://www.bbc.com/news/articles/c8r38ne1x2mo",
+    "pageTitle": "Epstein files: What is in the documents released by Department of Justice"
+  },
+  {
+    "id": "1766190696312",
+    "text": "just as",
+    "note": "正如、恰如",
+    "time": "2025/12/20 08:31:36",
+    "timestamp": 1766190696312,
+    "url": "https://www.bbc.com/news/articles/cp89p082y2xo",
+    "pageTitle": "Putin vows no more wars if West treats Russia with respect"
+  },
+  {
+    "id": "1765987649441",
+    "text": "slanted-eyes",
+    "note": "斜眼",
+    "time": "2025/12/18 00:07:29",
+    "timestamp": 1765987649441,
+    "url": "https://www.bbc.com/news/articles/cde657xj3pxo",
+    "pageTitle": "Miss Finland's viral 'slanted-eyes' photo stirs racism firestorm"
+  },
+  {
+    "id": "1765968622628",
+    "text": "variety of genres",
+    "note": "多种类型",
+    "time": "2025/12/17 18:50:22",
+    "timestamp": 1765968622628,
+    "url": "https://www.bbc.com/news/articles/c5yjv5md3jzo",
+    "pageTitle": "Nick Reiner charged with his parents Rob and Michele murders"
+  },
+  {
+    "id": "1765968538456",
+    "text": "15 counts of murder",
+    "note": "15项谋杀罪",
+    "time": "2025/12/17 18:48:58",
+    "timestamp": 1765968538463,
+    "url": "https://www.bbc.com/news/articles/c98nm1ry38jo",
+    "pageTitle": "Bondi shooting suspect Naveed Akram charged with 15 counts of murder"
+  },
+  {
+    "id": "1765681062231",
+    "text": "lifts sanctions",
+    "note": "解除制裁",
+    "time": "2025/12/14 10:57:42",
+    "timestamp": 1765681062239,
+    "url": "https://www.bbc.com/news/articles/c4gpwlkklyxo",
+    "pageTitle": "Belarus frees 123 prisoners as US lifts sanctions"
+  },
+  {
+    "id": "1765682085721",
+    "text": "As well as the EU",
+    "note": "除了欧盟之外 / 和欧盟一样",
+    "time": "2025/12/14 11:14:45",
+    "timestamp": 1765682085721,
+    "url": "https://www.bbc.com/news/articles/c4gpwlkklyxo",
+    "pageTitle": "Belarus frees 123 prisoners as US lifts sanctions"
+  },
+  {
+    "id": "1765682264372",
+    "text": "following unfair elections five years ago",
+    "note": "following unfair elections five years ago\n\n👉 在五年前那场不公正选举之后\n\nfollowing = 在……之后（介词）",
+    "time": "2025/12/14 11:17:44",
+    "timestamp": 1765682264372,
+    "url": "https://www.bbc.com/news/articles/c4gpwlkklyxo",
+    "pageTitle": "Belarus frees 123 prisoners as US lifts sanctions"
+  },
+  {
+    "id": "1765683658215",
+    "text": "engage with",
+    "note": "与...交往、接触",
+    "time": "2025/12/14 11:40:58",
+    "timestamp": 1765683658234,
+    "url": "https://www.bbc.com/news/articles/c4gpwlkklyxo",
+    "pageTitle": "Belarus frees 123 prisoners as US lifts sanctions"
+  },
+  {
+    "id": "1765683677882",
+    "text": "odds with",
+    "note": "与...相抵触、不一致",
+    "time": "2025/12/14 11:41:17",
+    "timestamp": 1765683677882,
+    "url": "https://www.bbc.com/news/articles/c4gpwlkklyxo",
+    "pageTitle": "Belarus frees 123 prisoners as US lifts sanctions"
+  },
+  {
+    "id": "1765686688054",
+    "text": "in exchange for",
+    "note": "作为交换",
+    "time": "2025/12/14 12:31:28",
+    "timestamp": 1765686688075,
+    "url": "https://www.bbc.com/news/articles/c4gpwlkklyxo",
+    "pageTitle": "Belarus frees 123 prisoners as US lifts sanctions"
+  },
+  {
+    "id": "1765691433855",
+    "text": "as expensive as",
+    "note": "尽可能……",
+    "time": "2025/12/14 13:50:33",
+    "timestamp": 1765691433871,
+    "url": "https://www.bbc.com/news/articles/c4gpwlkklyxo",
+    "pageTitle": "Belarus frees 123 prisoners as US lifts sanctions"
+  },
+  {
+    "id": "1765691790544",
+    "text": "heart still races",
+    "note": "心脏仍然快速跳动，表示兴奋或紧张",
+    "time": "2025/12/14 13:56:30",
+    "timestamp": 1765691790546,
+    "url": "https://www.bbc.com/news/articles/c5y2qd1795yo",
+    "pageTitle": "Tricked, abducted and abused: Inside China's schools for 'rebellious' teens"
+  },
+  {
+    "id": "1765692072684",
+    "text": "takes her back to",
+    "note": "take sb back to：把某人带回到（过去的记忆/某个阶段）",
+    "time": "2025/12/14 14:01:12",
+    "timestamp": 1765692072685,
+    "url": "https://www.bbc.com/news/articles/c5y2qd1795yo",
+    "pageTitle": "Tricked, abducted and abused: Inside China's schools for 'rebellious' teens"
+  },
+  {
+    "id": "1765692225978",
+    "text": "marked",
+    "note": "给……留下明显印记 / 定义了",
+    "time": "2025/12/14 14:03:45",
+    "timestamp": 1765692225978,
+    "url": "https://www.bbc.com/news/articles/c5y2qd1795yo",
+    "pageTitle": "Tricked, abducted and abused: Inside China's schools for 'rebellious' teens"
+  },
+  {
+    "id": "1765692252406",
+    "text": "every one of her days",
+    "note": "她度过的每一天（强调每一天都是如此）",
+    "time": "2025/12/14 14:04:12",
+    "timestamp": 1765692252406,
+    "url": "https://www.bbc.com/news/articles/c5y2qd1795yo",
+    "pageTitle": "Tricked, abducted and abused: Inside China's schools for 'rebellious' teens"
+  },
+  {
+    "id": "1765697644636",
+    "text": "sleep on their backs",
+    "note": "仰着睡",
+    "time": "2025/12/14 15:34:04",
+    "timestamp": 1765697644659,
+    "url": "https://www.bbc.com/news/articles/c5y2qd1795yo",
+    "pageTitle": "Tricked, abducted and abused: Inside China's schools for 'rebellious' teens"
+  },
+  {
+    "id": "1765697795679",
+    "text": "so severely",
+    "note": "极其严重（此处that被省略）",
+    "time": "2025/12/14 15:36:35",
+    "timestamp": 1765697795679,
+    "url": "https://www.bbc.com/news/articles/c5y2qd1795yo",
+    "pageTitle": "Tricked, abducted and abused: Inside China's schools for 'rebellious' teens"
+  },
+  {
+    "id": "1765698265941",
+    "text": "taken to the institutions",
+    "note": "被送进这些机构",
+    "time": "2025/12/14 15:44:25",
+    "timestamp": 1765698265941,
+    "url": "https://www.bbc.com/news/articles/c5y2qd1795yo",
+    "pageTitle": "Tricked, abducted and abused: Inside China's schools for 'rebellious' teens"
+  },
+  {
+    "id": "1765698342124",
+    "text": "has uncovered",
+    "note": "已经揭露",
+    "time": "2025/12/14 15:45:42",
+    "timestamp": 1765698342124,
+    "url": "https://www.bbc.com/news/articles/c5y2qd1795yo",
+    "pageTitle": "Tricked, abducted and abused: Inside China's schools for 'rebellious' teens"
+  },
+  {
+    "id": "1765698364954",
+    "text": "others in the same network",
+    "note": "同一体系（network/institutions 往往暗示系统性问题,而非个案）",
+    "time": "2025/12/14 15:46:04",
+    "timestamp": 1765698364954,
+    "url": "https://www.bbc.com/news/articles/c5y2qd1795yo",
+    "pageTitle": "Tricked, abducted and abused: Inside China's schools for 'rebellious' teens"
+  },
+  {
+    "id": "1765713967493",
+    "text": "swirling",
+    "note": "流传、传播",
+    "time": "2025/12/14 20:06:07",
+    "timestamp": 1765713967511,
+    "url": "https://www.bbc.com/news/articles/cvg1r89m6g7o",
+    "pageTitle": "'Never give up': Belarusian prisoners celebrate release after US lifts sanctions"
+  },
+  {
+    "id": "1765714070028",
+    "text": "Rumours of",
+    "note": "关于……的传闻",
+    "time": "2025/12/14 20:07:50",
+    "timestamp": 1765714070029,
+    "url": "https://www.bbc.com/news/articles/cvg1r89m6g7o",
+    "pageTitle": "'Never give up': Belarusian prisoners celebrate release after US lifts sanctions"
+  },
+  {
+    "id": "1765946152976",
+    "text": "life without the possibility of parole",
+    "note": "终身监禁不得假释",
+    "time": "2025/12/17 12:35:52",
+    "timestamp": 1765946152980,
+    "url": "https://www.bbc.com/news/articles/c5yjv5md3jzo",
+    "pageTitle": "Rob and Michele Reiner's son Nick charged with murder in parents' deaths"
+  },
+  {
+    "id": "1765946414823",
+    "text": "medically cleared",
+    "note": "医学上认为没有健康问题",
+    "time": "2025/12/17 12:40:14",
+    "timestamp": 1765946414824,
+    "url": "https://www.bbc.com/news/articles/c5yjv5md3jzo",
+    "pageTitle": "Rob and Michele Reiner's son Nick charged with murder in parents' deaths"
   }
 ]
