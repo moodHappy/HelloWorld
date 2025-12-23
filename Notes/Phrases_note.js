@@ -1,41 +1,71 @@
 // Phrases_note.js
 // 单词/笔记专用配置文件
+// 适用范围：2025 - 2054 (30年)
 
 const NotesConfig = {
     // 1. 默认的基础路径 
-    // 注意：根据你的描述，JSON文件在 Notes/Notes/ 目录下
-    repoBaseUrl: "https://cdn.jsdelivr.net/gh/moodHappy/HelloWorld@master/Notes/Notes/",
-    
+    // 指向 Notes 根目录，以便后续拼接 "年份/文件名"
+    repoBaseUrl: "https://cdn.jsdelivr.net/gh/moodHappy/HelloWorld@master/Notes/",
+
     // 2. 文件后缀
     fileExtension: ".json",
 
-    // 3. 辅助函数：生成标准文件名 
-    // 你的格式是: Notes_2025-12.json
+    // 3. 核心配置：起始年份与跨度
+    startYear: 2025,
+    totalYears: 30,
+
+    // 4. 生成文件名的逻辑 (关键修改)
+    // 目标结构: [Year]/Note_[Year]-[Month].json
     getFileName: function(year, month) {
-        return `Notes_${year}-${month.toString().padStart(2, '0')}${this.fileExtension}`;
+        // 确保月份是两位数 (1 -> 01)
+        const mm = month.toString().padStart(2, '0');
+        
+        // 修改点：
+        // 1. 增加了 `${year}/` 目录前缀
+        // 2. 将 'Notes_' 改为了单数 'Note_'
+        return `${year}/Note_${year}-${mm}${this.fileExtension}`;
     },
 
-    // 4. 获取最终链接的逻辑
+    // 5. 获取最终链接的逻辑
     getUrl: function(year, month) {
         const key = `${year}-${month.toString().padStart(2, '0')}`;
-        const manualLink = this.manualOverrides[key];
-
-        if (manualLink && manualLink.trim() !== "") {
-            return manualLink;
+        
+        // 优先检查是否有手动覆盖的链接
+        if (this.manualOverrides && this.manualOverrides[key]) {
+            const manualLink = this.manualOverrides[key];
+            if (manualLink.trim() !== "") {
+                return manualLink;
+            }
         }
+        
+        // 否则使用自动生成的 GitHub/CDN 链接
         return this.repoBaseUrl + this.getFileName(year, month);
     },
 
-    // 5. 手动链接列表 (2025-2054)
+    // 6. 手动链接占位符
+    // (下方的循环代码会自动填充满30年，无需手动列出)
     manualOverrides: {
-        // --- 2025年 ---
-        "2025-01": "", "2025-02": "", "2025-03": "", "2025-04": "",
-        "2025-05": "", "2025-06": "", "2025-07": "", "2025-08": "",
-        "2025-09": "", "2025-10": "", "2025-11": "", "2025-12": "",
-        // ... (此处为了节省篇幅省略中间年份，实际使用时请保留你原来的完整30年列表) ...
-        // 建议直接复用你 News.js 里的那个长列表，结构是一样的
-    },
-
-    startYear: 2025,
-    totalYears: 30
+        // 示例：如果某个月份不走 GitHub，想走自己的服务器，可以在这里填
+        // "2025-01": "https://example.com/special-file.json",
+    }
 };
+
+// ==========================================
+// 自动初始化 30 年的空配置 (2025 - 2054)
+// 避免手动写 360 行代码
+// ==========================================
+(function initYears() {
+    const start = NotesConfig.startYear;
+    const end = start + NotesConfig.totalYears;
+
+    for (let y = start; y < end; y++) {
+        for (let m = 1; m <= 12; m++) {
+            const key = `${y}-${m.toString().padStart(2, '0')}`;
+            // 只有当该 key 不存在时才初始化为空字符串
+            if (!NotesConfig.manualOverrides.hasOwnProperty(key)) {
+                NotesConfig.manualOverrides[key] = "";
+            }
+        }
+    }
+    // console.log("Phrases_note.js: 30年配置已就绪");
+})();
