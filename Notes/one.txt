@@ -2858,7 +2858,6 @@ lesion
 linear
 loathe
 lumber
-matrix
 mister
 nettle
 pewter
