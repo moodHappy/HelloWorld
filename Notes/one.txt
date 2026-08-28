@@ -15,15 +15,12 @@ devoid
 reclaim
 erratic
 perimeter
-smirk
-chuckle
 sneer
 disdain
 shudder
 flinch
 stammer
 feign
-suffocate
 clench
 evaporate
 ignite
@@ -33,7 +30,6 @@ collide
 twitch
 breathtaking
 vibrant
-chaotic
 serene
 pristine
 fleeting
