@@ -535,6 +535,7 @@ empress
 gunshot
 handbag
 illicit
+invoice
 laundry
 remnant
 sparing
@@ -547,15 +548,19 @@ lavender
 obedient
 overload
 powdered
+secluded
 absorbing
 annoyance
+blueprint
 dissipate
+gratitude
 intrusion
 limousine
 overheads
 patterned
 shameless
 unnatural
+vengeance
 dismissive
 indulgence
 resounding
