@@ -36,7 +36,6 @@ robe
 nipple
 devoid
 muffle
-directly
 predator
 stricken
 registered
@@ -63,7 +62,6 @@ drawn
 fitted
 rounded
 entrance
-added
 crate
 primal
 shriek
@@ -382,6 +380,7 @@ convenience
 untouchable
 breathtaking
 aroma
+agreed
 cellar
 clench
 shroud
@@ -3795,6 +3794,7 @@ tramp
 trawl
 triad
 trout
+trump
 tuber
 tummy
 turbo
@@ -6068,6 +6068,7 @@ tracksuit
 transpire
 treachery
 treasurer
+trumpeter
 two-piece
 unanimity
 undecided
