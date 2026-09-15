@@ -347,7 +347,6 @@ roam
 amber
 apron
 churn
-drone
 feign
 greed
 plush
