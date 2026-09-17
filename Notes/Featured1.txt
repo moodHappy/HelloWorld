@@ -2037,7 +2037,6 @@ diver
 dowse
 dryer
 dummy
-eagle
 eater
 edict
 eject
