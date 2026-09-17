@@ -1446,7 +1446,6 @@ beret
 biker
 bogus
 camel
-candy
 colon
 crumb
 douse
