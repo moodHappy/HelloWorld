@@ -2707,7 +2707,6 @@ customary
 decidedly
 deodorant
 disgraced
-dishonest
 disparate
 disparity
 disregard
@@ -3588,7 +3587,6 @@ jazzy
 jerky
 jetty
 jihad
-joker
 junta
 juror
 khaki
@@ -5293,7 +5291,6 @@ mythical
 narcotic
 nautical
 needless
-neo-Nazi
 new town
 newscast
 nicotine
