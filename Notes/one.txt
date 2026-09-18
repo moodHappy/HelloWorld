@@ -1580,7 +1580,6 @@ unjust
 unsold
 unsure
 unwrap
-verify
 violet
 watery
 willow
