@@ -1580,7 +1580,6 @@ unjust
 unsold
 unsure
 unwrap
-verify
 violet
 watery
 willow
@@ -4844,7 +4843,6 @@ Semitic
 sensual
 shatter
 sheriff
-shooter
 shorten
 shotgun
 sibling
