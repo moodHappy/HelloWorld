@@ -143,7 +143,6 @@ mundane
 protocol
 back room
 evaporate
-considered
 knead
 plump
 stale
@@ -1994,7 +1993,6 @@ snip
 snug
 stew
 stub
-swan
 tart
 teem
 trot
