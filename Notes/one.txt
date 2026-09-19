@@ -13,7 +13,6 @@ grouping
 exposed
 ringing
 swelling
-clothed
 crimson
 machine
 pleasing
