@@ -39,7 +39,6 @@ sighting
 neon
 flying
 raging
-spotted
 washing
 glisten
 sterile
