@@ -331,7 +331,6 @@ plush
 razor
 relic
 salty
-stool
 vault
 frenzy
 hooked
