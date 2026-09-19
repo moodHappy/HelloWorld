@@ -10,7 +10,6 @@ hitch
 grown
 mocking
 grouping
-exposed
 ringing
 swelling
 crimson
