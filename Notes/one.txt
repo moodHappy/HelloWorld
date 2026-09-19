@@ -34,7 +34,6 @@ glint
 throb
 chained
 hallway
-providing
 chilling
 sighting
 neon
