@@ -1085,6 +1085,7 @@ brat
 bunk
 clog
 crib
+cute
 darn
 doom
 dune
@@ -3009,7 +3010,6 @@ inseparable
 intentional
 irreparable
 lead singer
-life-saving
 malfunction
 marketplace
 memorabilia
@@ -5482,7 +5482,6 @@ treatise
 truthful
 tutorial
 unbroken
-uncommon
 undercut
 underdog
 underpin
