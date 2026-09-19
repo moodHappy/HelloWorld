@@ -1085,7 +1085,6 @@ brat
 bunk
 clog
 crib
-cute
 darn
 doom
 dune
