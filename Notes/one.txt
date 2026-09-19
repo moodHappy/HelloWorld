@@ -1457,7 +1457,6 @@ pleat
 poppy
 pouch
 ranch
-robot
 scour
 scowl
 shank
