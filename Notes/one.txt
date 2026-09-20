@@ -503,7 +503,6 @@ cascade
 crumple
 defined
 empress
-gunshot
 handbag
 illicit
 invoice
