@@ -2086,7 +2086,6 @@ tacky
 trait
 tunic
 untie
-usage
 vigil
 whiff
 whirl
