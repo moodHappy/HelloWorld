@@ -934,7 +934,6 @@ shrill
 sponge
 sprout
 squeal
-Sunday
 tarmac
 tester
 tinned
