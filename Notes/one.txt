@@ -45,7 +45,6 @@ uniformed
 drawn
 fitted
 rounded
-entrance
 crate
 primal
 shriek
