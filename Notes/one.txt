@@ -2341,7 +2341,6 @@ glacier
 glorify
 golfing
 grenade
-handgun
 happily
 harness
 hostess
