@@ -97,7 +97,6 @@ intimacy
 oblivious
 comforting
 networking
-seal
 thud
 filth
 charged
