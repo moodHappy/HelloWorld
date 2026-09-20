@@ -1698,7 +1698,6 @@ precinct
 prophecy
 recharge
 redirect
-refinery
 remotely
 resonate
 retarded
