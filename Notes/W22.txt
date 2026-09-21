@@ -22929,7 +22929,6 @@ participation
 mexican
 asian
 evaluation
-heavily
 approximately
 strongly
 occasionally
