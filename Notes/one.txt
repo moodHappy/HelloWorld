@@ -5077,7 +5077,6 @@ explorer
 exponent
 exporter
 eyesight
-fairness
 famously
 fanciful
 farmland
