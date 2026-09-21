@@ -3474,7 +3474,6 @@ detox
 digit
 dodgy
 dogma
-dolly
 droop
 Druid
 duchy
