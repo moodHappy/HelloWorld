@@ -27335,7 +27335,6 @@ sydney
 ss
 trends
 sexo
-ap
 javascript
 nm
 mn
