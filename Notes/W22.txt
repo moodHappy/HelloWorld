@@ -25662,7 +25662,6 @@ congo
 glen
 botswana
 nav
-delays
 undefined
 cyber
 verizon
