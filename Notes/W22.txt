@@ -22914,7 +22914,6 @@ chinese
 slowly
 soviet
 french
-indian
 russian
 greatest
 carefully
