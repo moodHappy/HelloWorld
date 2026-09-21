@@ -32145,7 +32145,6 @@ barbell
 armada
 staged
 impulsively
-android
 confidante
 incantation
 verbatim
