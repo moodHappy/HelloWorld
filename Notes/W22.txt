@@ -27567,7 +27567,6 @@ roman
 firmness
 blackjack
 occurs
-lies
 taught
 stopped
 kings
