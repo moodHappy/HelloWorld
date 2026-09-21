@@ -106,7 +106,6 @@ metallic
 strapped
 moonlight
 distraction
-bear
 idiot
 coding
 barring
