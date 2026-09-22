@@ -4199,7 +4199,6 @@ decker
 decode
 deejay
 deemed
-deeply
 deface
 defame
 defang
