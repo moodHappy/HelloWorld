@@ -481,7 +481,6 @@ gob
 goo
 goy
 gpl
-gps
 gsm
 gst
 gtk
