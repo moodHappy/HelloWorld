@@ -6160,7 +6160,6 @@ tagger
 tahini
 tailed
 taiwan
-taking
 talcum
 talker
 talkie
