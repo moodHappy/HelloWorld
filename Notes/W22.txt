@@ -10140,7 +10140,6 @@ stonily
 stoning
 stooped
 stopgap
-stopped
 stopper
 storied
 stowage
