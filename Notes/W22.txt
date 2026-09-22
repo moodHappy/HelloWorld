@@ -1722,7 +1722,6 @@ weal
 weft
 welt
 wend
-went
 wham
 whap
 whee
