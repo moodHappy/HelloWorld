@@ -14396,7 +14396,6 @@ remaking
 remedies
 renaming
 reoccupy
-reopened
 repaired
 repairer
 repartee
