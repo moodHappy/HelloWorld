@@ -2036,7 +2036,6 @@ carob
 carom
 carte
 cased
-cases
 casey
 casio
 catty
