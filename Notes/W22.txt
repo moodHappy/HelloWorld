@@ -8470,7 +8470,6 @@ islamic
 israeli
 issuing
 isthmus
-italian
 italics
 itching
 itemize
