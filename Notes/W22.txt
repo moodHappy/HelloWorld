@@ -250,7 +250,6 @@ ti
 tm
 tn
 tp
-tr
 ts
 tt
 tu
