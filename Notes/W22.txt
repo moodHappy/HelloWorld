@@ -707,7 +707,6 @@ sos
 sot
 sou
 sox
-sql
 src
 sri
 ssl
