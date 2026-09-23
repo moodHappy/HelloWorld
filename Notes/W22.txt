@@ -18710,7 +18710,6 @@ microcode
 microcosm
 microfilm
 microgram
-microsoft
 mid cabin
 mid level
 mid major
