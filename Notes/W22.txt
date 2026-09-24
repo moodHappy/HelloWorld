@@ -18561,7 +18561,6 @@ magnetism
 magnetite
 magnetize
 magnetron
-magnified
 magnifier
 mah jongg
 maharajah
