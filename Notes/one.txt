@@ -1676,7 +1676,6 @@ linesman
 luminous
 magician
 neurosis
-outdated
 overcoat
 pamphlet
 pinnacle
