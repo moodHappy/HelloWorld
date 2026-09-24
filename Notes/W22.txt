@@ -10965,7 +10965,6 @@ archaism
 archduke
 archival
 archived
-archives
 ardently
 areawide
 arginine
