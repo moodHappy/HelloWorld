@@ -1312,7 +1312,6 @@ lout
 lows
 luau
 lube
-lucy
 luge
 luis
 luke
