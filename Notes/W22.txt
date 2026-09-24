@@ -2334,7 +2334,6 @@ fixes
 fizzy
 fjord
 flack
-flags
 flaky
 flats
 fleas
