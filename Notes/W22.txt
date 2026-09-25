@@ -1628,7 +1628,6 @@ taro
 tarp
 teal
 teat
-tech
 temp
 tern
 thai
