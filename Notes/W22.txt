@@ -681,7 +681,6 @@ sam
 san
 sao
 sas
-sat
 sax
 sci
 sec
