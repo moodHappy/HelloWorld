@@ -9382,7 +9382,6 @@ prosody
 protean
 protege
 protist
-proudly
 proverb
 proving
 proviso
