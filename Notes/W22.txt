@@ -1077,7 +1077,6 @@ faqs
 faro
 faun
 faze
-felt
 feof
 fess
 feta
