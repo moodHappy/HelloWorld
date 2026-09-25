@@ -140,7 +140,6 @@ ky
 la
 lc
 ld
-le
 lf
 lg
 li
