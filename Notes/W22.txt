@@ -354,7 +354,6 @@ ccd
 cds
 cdt
 cel
-ceo
 cet
 cfr
 cgi
