@@ -4556,7 +4556,6 @@ geisha
 gelato
 geneva
 genres
-gently
 george
 gerald
 gerbil
