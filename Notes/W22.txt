@@ -83,7 +83,6 @@ fl
 fo
 fp
 fs
-fu
 fw
 fx
 fy
