@@ -7715,7 +7715,6 @@ endgame
 endnote
 endowed
 england
-english
 engorge
 engross
 ennoble
