@@ -411,7 +411,6 @@ dsl
 dts
 dui
 dun
-dvd
 eau
 eco
 eds
