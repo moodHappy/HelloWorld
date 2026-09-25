@@ -34,7 +34,6 @@ cl
 cn
 co
 cp
-cr
 cs
 ct
 cu
