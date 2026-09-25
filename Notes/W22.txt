@@ -9585,7 +9585,6 @@ reveals
 reveler
 revelry
 revered
-reverie
 reviled
 revised
 revived
