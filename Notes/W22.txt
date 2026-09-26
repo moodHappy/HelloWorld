@@ -1150,7 +1150,6 @@ gulf
 gull
 gums
 gunk
-guns
 gyre
 gyro
 gzip
