@@ -219,7 +219,6 @@ rw
 rx
 sa
 sc
-sd
 se
 sg
 si
