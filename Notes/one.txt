@@ -430,7 +430,6 @@ dotted
 falter
 fumble
 gravel
-hushed
 locker
 sensor
 sewage
