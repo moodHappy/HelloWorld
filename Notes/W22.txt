@@ -1145,7 +1145,6 @@ gout
 grad
 gras
 grav
-gray
 greg
 grog
 guam
