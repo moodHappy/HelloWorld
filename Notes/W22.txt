@@ -133,7 +133,6 @@ ko
 ks
 kw
 ky
-la
 lc
 ld
 lf
