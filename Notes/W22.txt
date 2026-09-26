@@ -748,7 +748,6 @@ uri
 url
 urw
 usa
-usb
 usc
 usd
 usr
