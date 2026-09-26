@@ -65,7 +65,6 @@ eq
 er
 es
 et
-eu
 ev
 ex
 ey
