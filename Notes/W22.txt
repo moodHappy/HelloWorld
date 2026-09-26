@@ -2050,7 +2050,6 @@ clade
 clams
 clang
 clank
-clara
 clark
 claro
 cleat
