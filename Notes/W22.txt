@@ -390,7 +390,6 @@ air
 ala
 ale
 ali
-all
 alt
 amd
 amo
