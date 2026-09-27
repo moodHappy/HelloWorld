@@ -12982,7 +12982,6 @@ all-out
 allayed
 alleges
 allegro
-allowed
 alloyed
 alluded
 alludes
