@@ -131,7 +131,6 @@ im
 io
 iq
 ir
-is
 it
 iv
 ix
