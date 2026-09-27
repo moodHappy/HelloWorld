@@ -1278,7 +1278,6 @@ byte
 cabs
 cafe
 calf
-came
 camo
 cams
 cans
