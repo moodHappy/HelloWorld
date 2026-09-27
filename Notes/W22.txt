@@ -3420,7 +3420,6 @@ carps
 carte
 carts
 cased
-cases
 casey
 casio
 casts
