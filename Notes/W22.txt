@@ -3519,7 +3519,6 @@ cloak
 clogs
 clomp
 clone
-close
 clots
 clout
 clove
