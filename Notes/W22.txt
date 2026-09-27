@@ -5859,7 +5859,6 @@ sisal
 sissy
 sitar
 sited
-sites
 sixes
 sized
 sizes
