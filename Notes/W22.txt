@@ -7470,7 +7470,6 @@ venice
 venoms
 venous
 vented
-verify
 verily
 verity
 vermin
