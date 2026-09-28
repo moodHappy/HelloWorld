@@ -17780,7 +17780,6 @@ stakeout
 stammers
 stand in
 standbys
-standing
 standoff
 standout
 stanford
