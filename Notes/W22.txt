@@ -1401,7 +1401,6 @@ ibex
 ibis
 icky
 idly
-idol
 ieee
 iffy
 ikat
