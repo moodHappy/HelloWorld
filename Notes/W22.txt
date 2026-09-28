@@ -23795,7 +23795,6 @@ simulator
 simulcast
 sincerity
 sing song
-singapore
 singleton
 singulars
 sinhalese
