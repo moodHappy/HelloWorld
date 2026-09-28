@@ -50,7 +50,6 @@ shriek
 topping
 exhaustion
 aisle
-serving
 possessive
 purr
 boating
