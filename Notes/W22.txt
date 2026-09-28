@@ -920,7 +920,6 @@ vid
 vie
 vii
 vim
-vip
 von
 vpn
 wad
