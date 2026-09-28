@@ -817,7 +817,6 @@ san
 sao
 sap
 sas
-saw
 sax
 sci
 sec
