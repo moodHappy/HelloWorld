@@ -666,7 +666,6 @@ mgs
 mhz
 mia
 mic
-mid
 mil
 mit
 mlb
