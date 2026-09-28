@@ -31432,7 +31432,6 @@ confidant
 confiding
 configure
 confining
-confirmed
 conflicts
 confluent
 conformal
