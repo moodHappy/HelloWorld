@@ -12134,7 +12134,6 @@ telexed
 telexes
 tellers
 tellies
-telling
 temblor
 tempera
 tempest
