@@ -5888,7 +5888,6 @@ loggia
 logjam
 loiter
 lolita
-London
 loners
 loofah
 looker
