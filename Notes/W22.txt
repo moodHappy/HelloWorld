@@ -12832,7 +12832,6 @@ airiness
 airpower
 airshaft
 airships
-airspace
 airspeed
 airtight
 akkadian
