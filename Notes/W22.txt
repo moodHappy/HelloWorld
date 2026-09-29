@@ -3628,7 +3628,6 @@ scuba
 scuff
 scull
 scums
-seals
 seams
 seamy
 sebum
