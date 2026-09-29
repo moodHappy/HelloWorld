@@ -3842,7 +3842,6 @@ tabla
 taffy
 tahoe
 taiga
-takes
 talky
 talon
 talus
