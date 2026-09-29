@@ -14184,7 +14184,6 @@ diocesan
 dioceses
 diplomas
 dipstick
-directly
 disables
 disabuse
 disarmed
