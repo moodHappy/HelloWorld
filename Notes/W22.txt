@@ -1041,7 +1041,6 @@ batt
 baud
 bawd
 bdsm
-bear
 beau
 beck
 beep
