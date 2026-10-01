@@ -121,7 +121,6 @@ sparkling
 void
 lunge
 mundane
-protocol
 back room
 evaporate
 knead
