@@ -3230,7 +3230,6 @@ peck
 peep
 pelt
 perm
-pike
 pimp
 plod
 ploy
