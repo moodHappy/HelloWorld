@@ -1185,7 +1185,6 @@ dint
 dist
 ditz
 divx
-docs
 dodo
 doer
 doff
