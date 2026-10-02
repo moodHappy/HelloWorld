@@ -4091,7 +4091,6 @@ xhtml
 xylem
 y yes
 ya ya
-yahoo
 yanks
 yappy
 yarns
