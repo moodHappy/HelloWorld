@@ -191,7 +191,6 @@ blazer
 grease
 insane
 rooted
-typing
 flutter
 stammer
 vibrant
