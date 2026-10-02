@@ -241,7 +241,6 @@ sa
 sc
 se
 sg
-sh
 si
 sk
 sl
