@@ -2595,7 +2595,6 @@ emacs
 ember
 emcee
 emery
-emily
 emirs
 emits
 emote
