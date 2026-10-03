@@ -17991,7 +17991,6 @@ teething
 tefillin
 telecast
 telecosm
-telegram
 telemark
 telepath
 telethon
