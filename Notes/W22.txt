@@ -5037,7 +5037,6 @@ egoist
 egress
 ejecta
 ejects
-eldest
 elixir
 eluded
 eludes
