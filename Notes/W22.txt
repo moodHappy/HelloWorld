@@ -19768,7 +19768,6 @@ co writer
 coagulant
 coagulate
 coalfield
-coastline
 coattails
 cobwebbed
 cochineal
