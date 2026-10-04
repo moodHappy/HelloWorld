@@ -212,7 +212,6 @@ pk
 pl
 pn
 po
-pp
 ps
 pt
 qt
