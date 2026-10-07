@@ -3313,7 +3313,6 @@ papua
 parch
 pared
 pares
-paris
 parka
 parry
 parse
