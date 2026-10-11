@@ -150,7 +150,6 @@ ln
 lo
 ls
 lu
-ma
 mb
 mc
 md
