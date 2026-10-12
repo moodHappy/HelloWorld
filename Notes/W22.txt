@@ -71,7 +71,6 @@ er
 es
 et
 ev
-ex
 ey
 ez
 fa
