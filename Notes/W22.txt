@@ -15103,7 +15103,6 @@ jj
 jm
 jo
 jp
-jr
 js
 kb
 ko
