@@ -191,7 +191,6 @@ apis
 apml
 appl
 appr
-apps
 appt
 appy
 appz
