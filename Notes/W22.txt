@@ -6616,7 +6616,6 @@ halle
 hallo
 halon
 halos
-hamas
 hamel
 hamer
 hamid
