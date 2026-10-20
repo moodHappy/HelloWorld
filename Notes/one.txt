@@ -3227,7 +3227,6 @@ punt
 quay
 quid
 quip
-quiz
 ream
 reap
 reed
