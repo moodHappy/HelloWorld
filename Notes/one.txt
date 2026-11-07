@@ -920,7 +920,6 @@ monsoon
 ominous
 platter
 plunger
-polling
 prelude
 rewrite
 saunter
