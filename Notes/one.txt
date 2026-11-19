@@ -895,7 +895,6 @@ shrill
 sponge
 sprout
 squeal
-tarmac
 tester
 tinned
 vortex
